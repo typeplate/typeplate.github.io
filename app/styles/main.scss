@@ -1,6 +1,11 @@
+//This is the line I cannot get Yeoman to import
+//so I just dragged the file in myself manually WTF!
 //@import "components/normalize.scss/normalize.scss";
 @import "normalize";
+
 @import "compass";
+
+// Code Highlighting for snippets
 @import "prism";
 
 //Current Pattern Libraries
@@ -12,9 +17,10 @@
 //http://inuitcss.com
 //THIS IS RESPONSIVE
 //http://bradfrost.github.com/this-is-responsive/
+//WebCraft
+////https://github.com/zakkain/webcraft
 
 //RESOURCES
-//https://github.com/zakkain/webcraft
 //http://stylemanual.org/
 //http://dev.w3.org/csswg/css3-fonts/
 //http://ui-patterns.com/
@@ -24,10 +30,6 @@
 //http://nimbupani.com/jscamp-css-next.html
 //http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range/
 //http://trentwalton.com/2011/09/07/css-hyphenation/
-
-//[1/5/13 11:29:03 AM] Gray Ghost Visuals: "I find pears way too strict and uncustomizable" <--how would you change it?
-//[1/5/13 11:29:41 AM] Zak Kain: There's too much styling on top of the basic structure to be useful; I spend all my time stripping it down to the actual pattern and re-styling to fit my needs
-//[1/5/13 11:30:19 AM] Zak Kain: also the structure is too rigid (in a "it isn't OOCSS" kind of way). I really like inuit.css' approach to patterns. All simple classes, mix-and-match-able, etc
 
 
 /* Will be compiled down to a single stylesheet with your sass files */
