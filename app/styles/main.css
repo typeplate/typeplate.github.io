@@ -921,3 +921,44 @@ code {
   font-size: 0.1875rem;
   font-weight: normal;
 }
+
+/* line 419, main.scss */
+.lining dt, .lining dd {
+  display: inline;
+  margin: 0;
+}
+/* line 425, main.scss */
+.lining dt + dt:before, .lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+/* line 433, main.scss */
+.lining dd + dd:before {
+  content: ", ";
+}
+/* line 437, main.scss */
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/* line 445, main.scss */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+/* line 449, main.scss */
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+  /* removes extra space between the dt and the comma */
+}
+/* line 455, main.scss */
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+/* line 458, main.scss */
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}

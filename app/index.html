@@ -62,7 +62,7 @@ body {
             <h1 class="georgia">x</h1>
             <figure><pre><code class="language-sass">body {
     font-size-adjust: 1;
-}</code></pre><figcaption>CSS</figcaption>
+}</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
 
@@ -211,7 +211,7 @@ p {
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: break-word;
-}</code></pre><figcaption>CSS</figcaption>
+}</code></pre><figcaption>Sass</figcaption>
 </figure>
         </section>
 
@@ -223,7 +223,7 @@ p {
             <p>Small print The small element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements.</p>
 
             <small>Copyright © 1922-2011 Acme Corporation. All Rights Reserved.</small>
-            <figure><pre><code class="language-markup">&lt;small&gt;Copyright &copy; 1922-2011 Acme Corporation. All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
+            <figure><pre><code class="language-markup">&lt;small&gt;Copyright &amp;copy; 2012 All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
         </section>
 
         <!-- Hyphens -->
@@ -268,7 +268,7 @@ body {
             <p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
             <figure><pre><code class="language-css">//color
 body { color: #444; }
-h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>CSS</figcaption>
+h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>Sass</figcaption>
 </figure>
         </section>
 
@@ -465,12 +465,7 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
             </ul>
             <figure><pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
 &lt;ul class=&quot;stats-tabs&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1,234 &lt;b&gt;Stratocasters&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;567 &lt;b&gt;Acoustic&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;23,456 &lt;b&gt;Banjo&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3,456 &lt;b&gt;Dulcimer&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;456 &lt;b&gt;Ukes&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;26 &lt;b&gt;Bass Guitar&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre><figcaption>HTML</figcaption>
 </figure>
             <figure><pre><code class="language-sass">//Stats Tabs Variables
@@ -511,6 +506,134 @@ $stats-border-style: 0.125rem solid #ccc;
     }
 }</code></pre><figcaption>Sass</figcaption>
 </figure>
+        </section>
+
+        <section class="definition-lists">
+            <header>
+                <h1>Definition Lists</h1>
+            </header>
+
+            <p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
+
+            <p>Primer offers different styles for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
+
+            <h2>Default</h2>
+            <dl>
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd>And it gets a definition too, which is this line</dd>
+                    <dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
+            </dl>
+
+            <figure><pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+
+            <h2>Lining</h2>
+            <p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
+            <dl class="lining">
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd class="micro">And it gets a definition too, which is this line</dd>
+                    <dd class="micro"> this is a 2<sup>nd</sup> definition for a single term.</dd>
+                <dt><b>Term</b></dt>
+                <dt><b>Other Defined Term</b></dt>
+                    <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+            </dl>
+            <figure><pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+
+            <figure><pre><code class="language-sass">@mixin definition-list-style($style) {
+    // lining style
+    @if $style == lining {
+        dt, dd {
+            display: inline;
+            margin: 0;
+        }
+        dt, dd {
+            & + dt {
+                &:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+            }
+        }
+        dd {
+            & + dd {
+                &:before {
+                    content: ", ";
+                }
+            }
+            &:before {
+                    content: ": ";
+                    margin-left: -0.2rem; // removes extra space between the dt and the colon
+            }
+        }
+    }
+}
+
+dl {
+  @include definition-list-style(lining);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+
+            <h2>Dictionary-Style</h2>
+            <p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
+            <dl class="dictionary-style">
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd>And it gets a definition too, which is this line</dd>
+                    <dd> this is a 2<sup>nd</sup> definition for a single term.</dd>
+                <dt><b>Term</b></dt>
+                <dt><b>Other Defined Term</b></dt>
+                    <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+            </dl>
+            <figure><pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+            <figure><pre><code class="language-sass">@mixin definition-list-style($style) {
+    // dictionary-style
+    @if $style == dictionary-style {
+        dt {
+            display: inline;
+            counter-reset: definitions;
+            & + dt {
+                &:before {
+                    content: ", ";
+                    margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+                }
+            }
+        }
+        dd {
+            display: block;
+            counter-increment: definitions;
+            &:before {
+                content: counter(definitions, decimal) ". ";
+            }
+        }
+    }
+}
+
+dl {
+    @include definition-list-style(dictionary-style);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
