@@ -65,6 +65,23 @@
 // http://trentwalton.com/2011/09/07/css-hyphenation
 
 
+// $Demo Page Styling
+// ============================================================
+
+figure {
+    position: relative;
+    figcaption {
+        border-radius: 0 6px 0 0;
+        padding: 0 .5em 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(0,0,0,0.50);
+        color: #EFEFEF;
+    }
+}
+
+
 // $Body Type Base
 // ============================================================
 
@@ -163,11 +180,11 @@ h4 {
 }
 
 h5 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading5, $font-base, 'rem'); //0.875rem
 }
 
 h6 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading6, $font-base, 'rem'); //0.875rem
 }
 
 p {
@@ -296,6 +313,20 @@ p {
     padding-top: 15px;
     font-size: 700%;
     color: red;
+}
+
+
+// $Blockquotes
+// ============================================================
+
+@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
+}
+
+cite {
+    @include cite-style;
 }
 
 

@@ -680,7 +680,22 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-/* line 83, main.scss */
+/* line 71, main.scss */
+figure {
+  position: relative;
+}
+/* line 73, main.scss */
+figure figcaption {
+  border-radius: 0 6px 0 0;
+  padding: 0 .5em 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #EFEFEF;
+}
+
+/* line 100, main.scss */
 body {
   max-width: 40em;
   margin: 0 auto;
@@ -691,18 +706,18 @@ body {
   color: #444;
 }
 
-/* line 97, main.scss */
+/* line 114, main.scss */
 #title {
   font-size: 48px;
 }
 
-/* line 102, main.scss */
+/* line 119, main.scss */
 .ampersands h2 {
   font-size: 2em;
   color: #333;
 }
 
-/* line 114, main.scss */
+/* line 131, main.scss */
 h1.helvetica,
 h1.georgia {
   display: inline-block;
@@ -711,53 +726,53 @@ h1.georgia {
   font-size: 9em;
 }
 
-/* line 120, main.scss */
+/* line 137, main.scss */
 h1.helvetica {
   font-family: Helvetica;
 }
 
-/* line 123, main.scss */
+/* line 140, main.scss */
 h1.georgia {
   font-family: Georgia;
 }
 
-/* line 148, main.scss */
+/* line 165, main.scss */
 h1 {
   font-size: 3.75rem;
 }
 
-/* line 152, main.scss */
+/* line 169, main.scss */
 h2 {
   font-size: 3rem;
   line-height: 1.08333333333333;
 }
 
-/* line 157, main.scss */
+/* line 174, main.scss */
 h3 {
   font-size: 2.25rem;
 }
 
-/* line 161, main.scss */
+/* line 178, main.scss */
 h4 {
   font-size: 1.5rem;
 }
 
-/* line 165, main.scss */
+/* line 182, main.scss */
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
 }
 
-/* line 169, main.scss */
+/* line 186, main.scss */
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
-/* line 173, main.scss */
+/* line 190, main.scss */
 p {
   font-size: 1rem;
 }
 
-/* line 186, main.scss */
+/* line 203, main.scss */
 h1,
 h2,
 h3,
@@ -767,14 +782,14 @@ h6 {
   color: #222;
 }
 
-/* line 202, main.scss */
+/* line 219, main.scss */
 abbr {
   font-variant: small-caps;
   font-weight: 600;
   text-transform: lowercase;
   color: gray;
 }
-/* line 204, main.scss */
+/* line 221, main.scss */
 abbr:hover {
   cursor: help;
 }
@@ -792,12 +807,12 @@ abbr:hover {
   unicode-range: U+270C;
 }
 
-/* line 230, main.scss */
+/* line 247, main.scss */
 * {
   font-family: Ampersand, Arial, sans-serif;
 }
 
-/* line 252, main.scss */
+/* line 269, main.scss */
 body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -805,17 +820,17 @@ body {
   hyphens: auto;
 }
 
-/* line 262, main.scss */
+/* line 279, main.scss */
 p + p {
   text-indent: 1.5em;
 }
 
-/* line 271, main.scss */
+/* line 288, main.scss */
 .entry {
   position: relative;
   padding-right: 50%;
 }
-/* line 274, main.scss */
+/* line 291, main.scss */
 .entry .pull-quote {
   position: absolute;
   top: 0;
@@ -823,7 +838,7 @@ p + p {
   width: 45%;
 }
 
-/* line 282, main.scss */
+/* line 299, main.scss */
 .bqstart {
   float: left;
   height: 45px;
@@ -833,7 +848,7 @@ p + p {
   color: red;
 }
 
-/* line 292, main.scss */
+/* line 309, main.scss */
 .bqend {
   float: right;
   height: 25px;
@@ -843,26 +858,33 @@ p + p {
   color: red;
 }
 
-/* line 306, main.scss */
+/* line 328, main.scss */
+cite {
+  display: block;
+  font-size: 0.875em;
+  text-align: right;
+}
+
+/* line 337, main.scss */
 pre code {
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
-/* line 311, main.scss */
+/* line 342, main.scss */
 pre {
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
 }
 
-/* line 317, main.scss */
+/* line 348, main.scss */
 code {
   white-space: pre;
   font-family: monospace;
 }
 
-/* line 337, main.scss */
+/* line 368, main.scss */
 .drop-cap:first-letter {
   float: left;
   margin: 0 0.5em auto 0;
@@ -873,26 +895,26 @@ code {
   color: white;
 }
 
-/* line 353, main.scss */
+/* line 384, main.scss */
 .stats-tabs li {
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
   border-right: 0.125rem solid #cccccc;
 }
-/* line 358, main.scss */
+/* line 389, main.scss */
 .stats-tabs li:last-child {
   margin: 0;
   padding: 0;
   border: none;
 }
-/* line 363, main.scss */
+/* line 394, main.scss */
 .stats-tabs li a {
   display: inline-block;
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* line 367, main.scss */
+/* line 398, main.scss */
 .stats-tabs li a b {
   display: block;
   margin: 0.125rem 0 0 0;

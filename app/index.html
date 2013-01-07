@@ -62,7 +62,8 @@ body {
             <h1 class="georgia">x</h1>
             <figure><pre><code class="language-sass">body {
     font-size-adjust: 1;
-}</code></pre></figure>
+}</code></pre><figcaption>CSS</figcaption>
+            </figure>
         </section>
 
         <section class="typographic-scale">
@@ -113,11 +114,11 @@ h4 {
 }
 
 h5 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading5, $font-base, 'rem'); //0.875rem
 }
 
 h6 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading6, $font-base, 'rem'); //0.875rem
 }
 
 p {
@@ -162,8 +163,7 @@ code {
                 <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
                 <figure><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
                 </figure>
-                <figure><pre><code class="language-css">//small caps
-@mixin smallcaps($color, $font-weight) {
+                <figure><pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
     text-transform: lowercase;
@@ -211,7 +211,7 @@ p {
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: break-word;
-}</code></pre><figcaption>Sass</figcaption>
+}</code></pre><figcaption>CSS</figcaption>
 </figure>
         </section>
 
@@ -220,8 +220,7 @@ p {
                 <h1>CSS Hyphenation</h1>
             </header>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ipsam dicta "Methionylthreonylthreonylglutaminylarginylisoleucine" obcaecati molestias id alias tempore ducimus possimus accusamus modi enim magni praesentium voluptatem consequatur recusandae provident corporis vel tempora?</p>
-            <figure><pre><code class="language-sass">
-@mixin css-hyphens($val) {
+            <figure><pre><code class="language-sass">@mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
     -ms-hyphens: $val; // IE10
@@ -339,24 +338,21 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
                 <h1>Blockquotes</h1>
             </header>
 
-            <blockquote cite="http://where-i-got-my-info-from.com">
-                <p>&Prime;The more uninteresting the letter, the more useful it is to the typographer.&Prime;</p>
-                <cite class="author"><a href="http://where-i-got-my-info-from.com">Piet Zwart</a></cite>
-            </blockquote>
-<pre><code class="language-markup">&lt;blockquote cite=&quot;http://where-i-got-my-info-from.com&quot;&gt;
-    &lt;p&gt;&amp;Prime;The more uninteresting the letter, the more useful it is to the typographer.&amp;Prime;&lt;/p&gt;
-    &lt;cite class=&quot;author&quot;&gt;&lt;a href=&quot;http://where-i-got-my-info-from.com&quot;&gt;Piet Zwart&lt;/a&gt;&lt;/cite&gt;
-&lt;/blockquote&gt;</code></pre>
+            <p>The blockquote element represents a section that is being quoted from another source.</p>
 
-            <blockquote>
-                <p>This is a longer block quote.</p>
-                <p>It uses paragraph elements.</p>
+            <blockquote cite="http://where-i-got-my-info-from.com">
+                <p>&Prime;Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web&Prime;</p>
+                <cite>
+                    <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
+                </cite>
             </blockquote>
-            <figure><pre><code class="language-markup">&lt;blockquote&gt;
-    &lt;p&gt;This is a longer block quote.&lt;/p&gt;
-    &lt;p&gt;It uses paragraph elements.&lt;/p&gt;
+            <figure><pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
+    &lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
+    &lt;cite&gt;
+        &lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+    &lt;/cite&gt;
 &lt;/blockquote&gt;</code></pre><figcaption>HTML</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Fractions -->
@@ -365,9 +361,10 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
                 <h1>Fractions</h1>
             </header>
             <p>&frac12; or &frac34;</p>
-        <pre><code class="language-markup">&lt;!-- Character Entity --&gt;
+            <figure><pre><code class="language-markup">&lt;!-- Character Entity --&gt;
 &amp;frac12;
-&amp;frac11;</code></pre>
+&amp;frac11;</code></pre><figcaption>HTML</figcaption>
+            </figure>
         </section>
 
         <!-- Pull Quotes -->
