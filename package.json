@@ -1,0 +1,9 @@
+{
+    "author": "GrayGhostVisuals",
+    "name": "flui",
+    "version": "0.0.1",
+    "dependencies": {
+        "normalize" : "2.0.1"
+    },
+    "devDependencies": {}
+}

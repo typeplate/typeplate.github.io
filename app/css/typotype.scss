@@ -1,0 +1,176 @@
+// ==========================================================================
+// $Variables
+// ==========================================================================
+
+$weight: normal;
+$lineheight: 1.5;
+$fontsize: 100%;
+$fontbase: 16;
+$font-family: sans-serif;
+$font-properties: $weight, $lineheight, $fontsize, $font-family;
+
+//ampersand
+$amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+
+//headings
+$heading1:   36;
+$heading2:   24;
+$heading3:   18;
+$heading4:   14;
+
+//paragraphs
+$paragraphs: 16;
+$indent-val: 1.5em;
+
+
+// ==========================================================================
+// $Mixins
+// ==========================================================================
+
+@mixin body-copy($weight, $lineheight, $fontsize, $font-family...) {
+   font: $weight #{$fontsize}/#{$lineheight} $font-family;
+}
+
+//http://thesassway.com/projects/modular-scale
+@function calc-modular-scale($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+
+@mixin modular-scale($scale, $base, $value) {
+  font-size: calc-modular-scale($scale, $base, $value);
+}
+
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+
+//http://trentwalton.com/2011/09/07/css-hyphenation/
+@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val; // standard
+};
+
+@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+// ==========================================================================
+// $Ampersand fontface
+// ==========================================================================
+
+@font-face {
+    font-family: 'Ampersand';
+    src: $amp-font;
+    unicode-range: U+26;
+}
+//fallback for unicode range
+@font-face {
+    /* Ampersand fallback font */
+    font-family: 'Ampersand';
+    src: local('Georgia');
+    unicode-range: U+270C;
+}
+
+
+// ==========================================================================
+// $Ampersand
+// ==========================================================================
+
+* {
+    font-family: Ampersand, Arial, sans-serif;
+}
+
+
+// ==========================================================================
+// $Body Type Base
+// ==========================================================================
+
+// Reverse Variable Arguments
+body {
+    @include body-copy($font-properties...);
+    font-size-adjust: 1;
+    color: #444;
+}
+
+
+// ==========================================================================
+// $Headings
+// ==========================================================================
+
+h1 {
+    @include modular-scale($heading1, $fontbase, 'rem'); //2.25rem
+}
+h2 {
+    @include modular-scale($heading2, $fontbase, 'rem'); //1.5rem
+    line-height: 1.08333333333333;
+}
+h3 {
+    @include modular-scale($heading3, $fontbase, 'rem'); //1.125rem
+}
+h4 {
+    @include modular-scale($heading4, $fontbase, 'rem'); //0.875rem
+}
+
+
+// ==========================================================================
+// $Paragraphs
+// ==========================================================================
+
+p {
+    @include modular-scale($paragraphs, $fontbase, 'rem'); //1rem
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: break-word; // other option is normal
+    //Ala Trent Walton
+    @include css-hyphens(auto);
+    //siblings indentation
+    & + p {
+        //Indenting
+        @include txt-indent($indent-val);
+    }
+}
+
+
+// ==========================================================================
+// $Dropcaps
+// ==========================================================================
+
+@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
+    float: $float;
+    margin: $margin;
+    padding: $padding;
+    font-family: $font;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    background: $bg;
+    color: $color;
+}
+
+.drop-cap:first-letter {
+    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+}
+
+
+// ==========================================================================
+// $Small Caps
+// ==========================================================================
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}
+
+
+// ==========================================================================
+// $Color
+// ==========================================================================
+
+h1,h2,h3,h4,h5,h6 { color: #222; }
