@@ -24,35 +24,19 @@
             <hgroup>
                 <h1 id="title">web&ndash;thang</h1>
             </hgroup>
-            <nav role="navigation">
-                <ul>
-                    <li><a href="">Base Typography</a></li>
-                    <li><a href="">Font Size Adjust</a></li>
-                    <li><a href="">Typographic Scale</a></li>
-                    <li><a href="">Code Blocks</a></li>
-                    <li><a href="">Small Caps</a></li>
-                    <li><a href="">Paragraphs</a></li>
-                    <li><a href="">Hyphenation</a></li>
-                    <li><a href="">Drop Caps</a></li>
-                </ul>
-            </nav>
         </header>
 
         <figure class="hero">
             <p>The problem with most frameworks is that they make decisions on how to organize, structure and design a site, but pattern libraries are similarly too tied up in markup matching their specific style and design&hellip;What we aim for is &ndash; a thing that doesn&rsquo;t do that. web&ndash;thang is a "typographic boilerplate", where we don&rsquo;t make too many design choices, but we do set out patterns for proper markup and "pre&ndash;designed" styles. Something really stripped&ndash;down that&rsquo;s concerned with the technical and appropriate implementations of design patterns &ndash;not how they look.</p>
         </figure>
 
-        <!--
-        ======================================================[Typography]===========================================================
-        -->
-        <h1>Typography</h1>
-
         <!-- base typography standardization -->
         <section class="base-type">
             <header>
                 <h1>Base Type</h1>
-                <p>For our base we use the following font settings on our <code>body</code> element to standardize the typographic scale for us in a consistent manner without the dependency of a library or reset style sheet.</p>
-<pre><code class="language-sass">$weight: normal;
+            </header>
+            <p>For our base we use the following font settings on our <code>body</code> element to standardize the typographic scale for us in a consistent manner without the dependency of a library or reset style sheet.</p>
+<figure><pre><code class="language-sass">$weight: normal;
 $lineheight: 1.5;
 $fontsize: 100%;
 $font-family: sans-serif;
@@ -64,8 +48,8 @@ $font-properties: $weight, $lineheight, $fontsize, $font-family;
 
 body {
     @include body-copy($font-properties...);
-}</code></pre>
-            </header>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- font-size adjust -->
@@ -76,9 +60,9 @@ body {
             <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x&ndash;height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
             <h1 class="helvetica">x</h1>
             <h1 class="georgia">x</h1>
-<pre><code class="language-sass"></code>body {
+            <figure><pre><code class="language-sass">body {
     font-size-adjust: 1;
-}</pre>
+}</code></pre></figure>
         </section>
 
         <section class="typographic-scale">
@@ -94,15 +78,7 @@ body {
             <h5>Hello</h5>
             <h6>Hello</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos distinctio earum ea numquam placeat expedita praesentium in. Amet cupiditate facere praesentium recusandae consequuntur molestiae repellat voluptate tempora voluptas unde.</p>
-<!-- Code Example -->
-<pre><code class="language-css">// $Typographic scale
-$fontbase: 16;
-$heading1: 36;
-$heading2: 24;
-$heading3: 18;
-$heading4: 14;
-$paragraphs: 16;
-
+            <figure><pre><code class="language-css">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
@@ -111,32 +87,53 @@ $paragraphs: 16;
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
+$heading1:   60;
+$heading2:   48;
+$heading3:   36;
+$heading4:   24;
+$heading5:   21;
+$heading6:   18;
+$paragraphs: 16;
+
 h1 {
-    @include modular-scale($heading1, $fontbase, 'rem'); //2.25rem
+    @include modular-scale($heading1, $font-base, 'rem'); //2.25rem
 }
+
 h2 {
-    @include modular-scale($heading2, $fontbase, 'rem'); //1.5rem
+    @include modular-scale($heading2, $font-base, 'rem'); //1.5rem
     line-height: 1.08333333333333;
 }
+
 h3 {
-    @include modular-scale($heading3, $fontbase, 'rem'); //1.125rem
+    @include modular-scale($heading3, $font-base, 'rem'); //1.125rem
 }
+
 h4 {
-    @include modular-scale($heading4, $fontbase, 'rem'); //0.875rem
+    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
 }
+
+h5 {
+    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+}
+
+h6 {
+    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+}
+
 p {
-    @include modular-scale($paragraphs, $fontbase, 'rem'); //1rem
-}</code></pre>
+    @include modular-scale($paragraphs, $font-base, 'rem'); //1rem
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Code Blocks -->
-        <section>
+        <section class="code-blocks">
             <header>
                 <h1>Code Blocks</h1>
             </header>
             <p><code>monospace</code> fonts just like you like for all your code block dreams!</p>
             <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
-<pre><code class="language-sass">pre code {
+            <figure><pre><code class="language-sass">pre code {
     word-wrap: normal;
     //https://developer.mozilla.org/en-US/docs/CSS/white-space
     white-space: pre-wrap;
@@ -151,7 +148,8 @@ pre {
 code {
     white-space: pre;
     font-family: monospace;
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- small caps -->
@@ -162,8 +160,9 @@ code {
                 <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content.</p>
                 <p>True small capitals are now possible on the web.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
-<pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre>
-<pre><code class="language-css">//small caps
+                <figure><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
+                </figure>
+                <figure><pre><code class="language-css">//small caps
 @mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
@@ -176,7 +175,8 @@ abbr {
     &:hover {
         cursor: help;
     }
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Paragraph indenting -->
@@ -191,9 +191,7 @@ abbr {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
-
-<!-- Code Example -->
-<pre><code class="language-sass">//paragraph siblings indent
+            <figure><pre><code class="language-sass">//paragraph siblings indent
 $indent-val: 1.5em;
 @mixin txt-indent($indent) {
     text-indent: $indent;
@@ -202,17 +200,19 @@ p {
     & + p {
         @include txt-indent($indent-val);
     }
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
 
             <!-- Word Wrapping -->
             <h2>Word Wrap</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
-<pre><code class="language-sass">body {
+            <figure><pre><code class="language-sass">body {
     // normal: Indicates that lines may only break at normal word break points.
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: break-word;
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <section class="hyphenate">
@@ -220,7 +220,7 @@ p {
                 <h1>CSS Hyphenation</h1>
             </header>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ipsam dicta "Methionylthreonylthreonylglutaminylarginylisoleucine" obcaecati molestias id alias tempore ducimus possimus accusamus modi enim magni praesentium voluptatem consequatur recusandae provident corporis vel tempora?</p>
-<pre><code class="language-sass">
+            <figure><pre><code class="language-sass">
 @mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
@@ -232,7 +232,8 @@ body {
     //Ala Trent Walton
     //http://trentwalton.com/2011/09/07/css-hyphenation
     @include css-hyphens(auto);
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Figures -->
@@ -243,9 +244,9 @@ body {
             </header>
 
             <figure>
-                <p>A figure of somehting</p>
+                <p>A figure of something</p>
                 <figcaption>
-                    <small>something about the fiugure</small>
+                    <small>something about the figure</small>
                 </figcaption>
             </figure>
         </section>
@@ -254,9 +255,10 @@ body {
         <section class="color">
             <h1>Color</h1>
             <p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
-<pre><code class="language-css">//color
+            <figure><pre><code class="language-css">//color
 body { color: #444; }
-h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre>
+h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>CSS</figcaption>
+</figure>
         </section>
 
         <!-- Ampersands -->
@@ -266,7 +268,7 @@ h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre>
             </header>
             <p>With the <code>unicode&ndash;range</code> property we can avoid using verbose markup and only target the charcters we like according to the unicode unique identifier.</p>
             <h2>Amper &amp; Sands</h2>
-<pre><code class="language-sass">//Unicode Ampersand
+            <figure><pre><code class="language-sass">//Unicode Ampersand
 $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
 @font-face {
     font-family: 'Ampersand';
@@ -283,7 +285,8 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
 
 * {
     font-family: Ampersand, Arial, sans-serif;
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Drop Caps -->
@@ -291,8 +294,9 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
             <h1>Drop Caps</h1>
             <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
-<pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
-<pre><code class="language-sass">// Dropcaps
+            <figure><pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+            <figure><pre><code class="language-sass">// Dropcaps
 @mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
     float: $float;
     margin: $margin;
@@ -306,7 +310,8 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
 
 .drop-cap:first-letter {
     @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Primes and Double Primes Typography -->
@@ -347,11 +352,11 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
                 <p>This is a longer block quote.</p>
                 <p>It uses paragraph elements.</p>
             </blockquote>
-<pre><code class="language-markup">&lt;blockquote&gt;
+            <figure><pre><code class="language-markup">&lt;blockquote&gt;
     &lt;p&gt;This is a longer block quote.&lt;/p&gt;
     &lt;p&gt;It uses paragraph elements.&lt;/p&gt;
-&lt;/blockquote&gt;
-</code></pre>
+&lt;/blockquote&gt;</code></pre><figcaption>HTML</figcaption>
+</figure>
         </section>
 
         <!-- Fractions -->
@@ -380,21 +385,20 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. "Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus." lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?</p>
                 <aside class="pull-quote">
                     <blockquote>
-                        <span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.<span class="bqend">&#8221;</span>
+                        <span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
                     </blockquote>
                 </aside>
             </article>
-<h3>HTML</h3>
-<pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
+            <figure><pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
     &lt;aside class=&quot;pull-quote&quot;&gt;
         &lt;blockquote&gt;
             &lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
         &lt;/blockquote&gt;
     &lt;/aside&gt;
-&lt;/article&gt;</code></pre>
-<h3>CSS</h3>
-<pre><code class="language-sass">.entry {
+&lt;/article&gt;</code></pre><figcaption>HTML</figcaption>
+</figure>
+<figure><pre><code class="language-sass">.entry {
     position: relative;
     padding-right: 50%;
     .pull-quote {
@@ -422,7 +426,8 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
     padding-top: 15px;
     font-size: 700%;
     color: red;
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
 
         <!-- Temperature -->
@@ -438,24 +443,28 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
         <!-- Stats -->
         <section class="stats">
             <header>
-                <h1>Stats Tabs Ala Pears</h1>
+                <h1>Stats Tabs Ala <a href="http://pea.rs" rel="external">Pears</a></h1>
             </header>
             <!-- Stats Tabs -->
             <ul class="stats-tabs">
-                <li><a href="#">1,234 <span>Stratocasters</span></a></li>
-                <li><a href="#">567 <span>Acoustic</span></a></li>
-                <li><a href="#">23,456 <span>Banjo</span></a></li>
-                <li><a href="#">3,456 <span>Dulcimer</span></a></li>
-                <li><a href="#">456 <span>Ukes</span></a></li>
-                <li><a href="#">26 <span>Pianos</span></a></li>
+                <li><a href="#">1,234 <b>Stratocasters</b></a></li>
+                <li><a href="#">567 <b>Acoustic</b></a></li>
+                <li><a href="#">23,456 <b>Banjo</b></a></li>
+                <li><a href="#">3,456 <b>Dulcimer</b></a></li>
+                <li><a href="#">456 <b>Ukes</b></a></li>
+                <li><a href="#">26 <b>Bass Guitar</b></a></li>
             </ul>
-            <pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
+            <figure><pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
 &lt;ul class=&quot;stats-tabs&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;stat-value &lt;span&gt;stat-name&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;stat-value &lt;span&gt;stat-name&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;stat-value &lt;span&gt;stat-name&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-            <pre><code class="language-sass">//Stats Tabs Variables
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;1,234 &lt;b&gt;Stratocasters&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;567 &lt;b&gt;Acoustic&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;23,456 &lt;b&gt;Banjo&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;3,456 &lt;b&gt;Dulcimer&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;456 &lt;b&gt;Ukes&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;26 &lt;b&gt;Bass Guitar&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><figcaption>HTML</figcaption>
+</figure>
+            <figure><pre><code class="language-sass">//Stats Tabs Variables
 $stats-font-size: 1.125rem;
 $stats-list-margin: 0 0.625rem 0 0;
 $stats-list-padding: 0 0.625rem 0 0;
@@ -491,166 +500,9 @@ $stats-border-style: 0.125rem solid #ccc;
             }
         }
     }
-}</code></pre>
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
         </section>
-
-
-        <!--
-        ======================================================[UI Elements]===========================================================
-        -->
-        <h1>UI Patterns</h1>
-        <!-- search field -->
-        <section>
-            <header>
-                <h1>Search Field</h1>
-            </header>
-            <form action="#" class="search">
-                <fieldset name="search">
-                    <input type="search" placeholder="Search" />
-                    <input type="submit" value="Go" />
-                </fieldset>
-            </form>
-<pre><code class="language-markup">&lt;form action=&quot;#&quot; class=&quot;search&quot;&gt;
-    &lt;fieldset&gt;
-        &lt;input type=&quot;search&quot; placeholder=&quot;Search&quot; /&gt;
-        &lt;input type=&quot;submit&quot; value=&quot;Go&quot; /&gt;
-    &lt;/fieldset&gt;
-&lt;/form&gt;
-</code></pre>
-<pre><code class="language-sass">// Search UI
-.search input[type="search"] {
-    width: 80%;
-    padding: 10px 14px;
-    font-size: 18px;
-    border: 1px solid #ddd;
-    background: #f5f5f5;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-    border-radius: 4px;
-}
-.search input[type="submit"] {
-    margin: 10px 0;
-    padding: 10px 14px;
-    font-size: 18px;
-    color: #fff;
-    border: none;
-    background: #999;
-    border-radius: 4px;
-}
-.search input[type="submit"]:hover,
-.search input[type="submit"]:focus {
-    background: #777;
-}
-.search fieldset input[type="submit"]:active {
-    background: #666;
-}</code></pre>
-        </section>
-
-        <section class="button-mixins">
-            <header>
-                <h1>Simple Button Mixins</h1>
-            </header>
-            <!-- buttons -->
-            <a href="#" class="button button-dimension" role="button">button</a>
-            <a href="#" class="button button-flat" role="button">button</a>
-<pre><code class="language-markup">&lt;a href=&quot;#&quot; class=&quot;button button-dimension&quot; role=&quot;button&quot;&gt;button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button button-flat&quot; role=&quot;button&quot;&gt;button&lt;/a&gt;</code></pre>
-<pre><code class="language-sass">//button
-@mixin button {
-    //layout
-    border-radius: 3px;
-    display: inline-block;
-    width: 5em;
-    margin: 0 auto;
-    //typography
-    font-size: 1em;
-    line-height: 1.5;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    //hover state
-    //&:hover {}
-    //active state
-    //&:active {}
-}
-
-//button
-@mixin button-dimension {
-    //layout
-    border-top: 1px solid rgb(130,130,130);
-    border-left: 1px solid #DDD;
-    border-right: 1px solid #DDD;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.70),
-              0 1px 2px rgba(0,0,0,0.70);
-
-    background: gray;
-    @include background-image(linear-gradient(top, #f9f9f9, #dedede));
-    //hover state
-    &:hover {
-        @include background-image(linear-gradient(top, #f7f7f7, #cdcdcd));
-    }
-    //active state
-    &:active {
-        border-right: 1px solid #cce4eb;
-        border-left: 1px solid #f0f7f9;
-        box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.4);
-        @include background-image(linear-gradient(top, #dedede, #f7f7f7));
-        color: #9b9b9b;
-    }
-}
-
-@mixin button-flat {
-    background: gray;
-}
-
-.button {
-    @include button;
-}
-
-.button-dimension {
-    @include button-dimension;
-}
-
-.button-flat{
-    @include button-flat;
-}</code></pre>
-        </section>
-
-        <!-- Orange UI -->
-        <div id="orangeUI">
-            <nav>
-                <ul class="menu">
-                    <li>Menu<div class="arrow-down"></div><div class="arrow-shadow"></div></li>
-                    <li class="hover">Hovered<div class="arrow-down"></div><div class="arrow-shadow"></div></li>
-                    <li class="current">Current<div class="arrow-down"></div><div class="arrow-shadow"></div></li>
-                </ul>
-            </nav>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="#">C++</a><div class="bread-shadow">C++</div></li>
-                    <li><a href="#">Boost</a><div class="bread-shadow">Boost</div></li>
-                    <li><a href="#">Algorithm</a><div class="bread-shadow">Algorithm</div></li>
-                    <li><a href="#" class="current">Current</a><div class="bread-shadow">Current</div></li>
-                </ul>
-            </div>
-            <div class="pagenation">
-                <ul>
-                    <li>Prev</li>
-                    <li class="current">2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li class="dot">...</li>
-                    <li>Next</li>
-                </ul>
-            </div>
-        </div>
-
-
-
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
