@@ -228,24 +228,31 @@ abbr {
 // ============================================================
 // targeting ampersands through unicode-range
 
-$amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
 
 @font-face {
-    font-family: 'Ampersand';
-    src: $amp-font;
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
     unicode-range: U+26;
 }
-
-//fallback for unicode range
 @font-face {
-    /* Ampersand fallback font */
-    font-family: 'Ampersand';
-    src: local('Georgia');
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
     unicode-range: U+270C;
 }
 
-* {
-    // font-family: Ampersand, Arial, sans-serif;
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
 }
 
 

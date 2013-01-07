@@ -795,24 +795,23 @@ abbr:hover {
 }
 
 @font-face {
-  font-family: 'Ampersand';
+  font-family: "Ampersand";
   src: local("Georgia"), local("Palatino"), local("Book Antiqua");
   unicode-range: U+26;
 }
 
 @font-face {
-  /* Ampersand fallback font */
-  font-family: 'Ampersand';
+  font-family: "Ampersand";
   src: local("Georgia");
   unicode-range: U+270C;
 }
 
-/* line 247, main.scss */
-* {
+/* line 250, main.scss */
+.amp {
   font-family: Ampersand, Arial, sans-serif;
 }
 
-/* line 269, main.scss */
+/* line 276, main.scss */
 body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -820,17 +819,17 @@ body {
   hyphens: auto;
 }
 
-/* line 279, main.scss */
+/* line 286, main.scss */
 p + p {
   text-indent: 1.5em;
 }
 
-/* line 288, main.scss */
+/* line 295, main.scss */
 .entry {
   position: relative;
   padding-right: 50%;
 }
-/* line 291, main.scss */
+/* line 298, main.scss */
 .entry .pull-quote {
   position: absolute;
   top: 0;
@@ -838,7 +837,7 @@ p + p {
   width: 45%;
 }
 
-/* line 299, main.scss */
+/* line 306, main.scss */
 .bqstart {
   float: left;
   height: 45px;
@@ -848,7 +847,7 @@ p + p {
   color: red;
 }
 
-/* line 309, main.scss */
+/* line 316, main.scss */
 .bqend {
   float: right;
   height: 25px;
@@ -858,33 +857,33 @@ p + p {
   color: red;
 }
 
-/* line 328, main.scss */
+/* line 335, main.scss */
 cite {
   display: block;
   font-size: 0.875em;
   text-align: right;
 }
 
-/* line 337, main.scss */
+/* line 344, main.scss */
 pre code {
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
-/* line 342, main.scss */
+/* line 349, main.scss */
 pre {
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
 }
 
-/* line 348, main.scss */
+/* line 355, main.scss */
 code {
   white-space: pre;
   font-family: monospace;
 }
 
-/* line 368, main.scss */
+/* line 375, main.scss */
 .drop-cap:first-letter {
   float: left;
   margin: 0 0.5em auto 0;
@@ -895,26 +894,26 @@ code {
   color: white;
 }
 
-/* line 384, main.scss */
+/* line 391, main.scss */
 .stats-tabs li {
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
   border-right: 0.125rem solid #cccccc;
 }
-/* line 389, main.scss */
+/* line 396, main.scss */
 .stats-tabs li:last-child {
   margin: 0;
   padding: 0;
   border: none;
 }
-/* line 394, main.scss */
+/* line 401, main.scss */
 .stats-tabs li a {
   display: inline-block;
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* line 398, main.scss */
+/* line 405, main.scss */
 .stats-tabs li a b {
   display: block;
   margin: 0.125rem 0 0 0;
@@ -922,43 +921,43 @@ code {
   font-weight: normal;
 }
 
-/* line 419, main.scss */
+/* line 426, main.scss */
 .lining dt, .lining dd {
   display: inline;
   margin: 0;
 }
-/* line 425, main.scss */
+/* line 432, main.scss */
 .lining dt + dt:before, .lining dd + dt:before {
   content: "\A";
   white-space: pre;
 }
-/* line 433, main.scss */
+/* line 440, main.scss */
 .lining dd + dd:before {
   content: ", ";
 }
-/* line 437, main.scss */
+/* line 444, main.scss */
 .lining dd:before {
   content: ": ";
   margin-left: -0.2rem;
 }
 
-/* line 445, main.scss */
+/* line 452, main.scss */
 .dictionary-style dt {
   display: inline;
   counter-reset: definitions;
 }
-/* line 449, main.scss */
+/* line 456, main.scss */
 .dictionary-style dt + dt:before {
   content: ", ";
   margin-left: -0.2rem;
   /* removes extra space between the dt and the comma */
 }
-/* line 455, main.scss */
+/* line 462, main.scss */
 .dictionary-style dd {
   display: block;
   counter-increment: definitions;
 }
-/* line 458, main.scss */
+/* line 465, main.scss */
 .dictionary-style dd:before {
   content: counter(definitions, decimal) ". ";
 }
