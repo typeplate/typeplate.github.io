@@ -77,12 +77,12 @@ body {
             </header>
             <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, though, as the size progression might look inconsistent. Use a modular scale that calculates those sizes from a ratio. There’s an excellent calculator for this at modularscale.com.</p>
 
-            <h1>Hello</h1>
-            <h2>Hello</h2>
-            <h3>Hello</h3>
-            <h4>Hello</h4>
-            <h5>Hello</h5>
-            <h6>Hello</h6>
+            <h1>Hello World</h1>
+            <h2>Hello World</h2>
+            <h3>Hello World</h3>
+            <h4>Hello World</h4>
+            <h5>Hello World</h5>
+            <h6>Hello World</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos distinctio earum ea numquam placeat expedita praesentium in. Amet cupiditate facere praesentium recusandae consequuntur molestiae repellat voluptate tempora voluptas unde.</p>
             <figure><pre><code class="language-css">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {
@@ -100,34 +100,34 @@ $heading4:   24;
 $heading5:   21;
 $heading6:   18;
 $paragraphs: 16;
+$type-scale-unit-value: rem;
 
 h1 {
-    @include modular-scale($heading1, $font-base, 'rem'); //2.25rem
+    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}');
 }
 
 h2 {
-    @include modular-scale($heading2, $font-base, 'rem'); //1.5rem
-    line-height: 1.08333333333333;
+    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}');
 }
 
 h3 {
-    @include modular-scale($heading3, $font-base, 'rem'); //1.125rem
+    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}');
 }
 
 h4 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}');
 }
 
 h5 {
-    @include modular-scale($heading5, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}');
 }
 
 h6 {
-    @include modular-scale($heading6, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}');
 }
 
 p {
-    @include modular-scale($paragraphs, $font-base, 'rem'); //1rem
+    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}');
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>

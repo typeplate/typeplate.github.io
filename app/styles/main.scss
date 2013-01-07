@@ -118,7 +118,7 @@ body {
 .ampersands {
     h2 {
         font-size: 2em;
-        color: #333;
+        text-align: center;
     }
 }
 
@@ -161,34 +161,35 @@ $heading4:   24;
 $heading5:   21;
 $heading6:   18;
 $paragraphs: 16;
+$type-scale-unit-value: rem;
 
 h1 {
-    @include modular-scale($heading1, $font-base, 'rem'); //2.25rem
+    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
 }
 
 h2 {
-    @include modular-scale($heading2, $font-base, 'rem'); //1.5rem
+    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
     line-height: 1.08333333333333;
 }
 
 h3 {
-    @include modular-scale($heading3, $font-base, 'rem'); //1.125rem
+    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
 }
 
 h4 {
-    @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
 }
 
 h5 {
-    @include modular-scale($heading5, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
 }
 
 h6 {
-    @include modular-scale($heading6, $font-base, 'rem'); //0.875rem
+    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
 }
 
 p {
-    @include modular-scale($paragraphs, $font-base, 'rem'); //1rem
+    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
 }
 
 
