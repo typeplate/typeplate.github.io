@@ -1,3 +1,6 @@
+// $Imports
+// ============================================================
+
 //This is the line I cannot get Yeoman to import
 //so I just dragged the file in myself manually WTF!
 //@import "components/normalize.scss/normalize.scss";
@@ -8,34 +11,42 @@
 // Code Highlighting for snippets
 @import "prism";
 
-//Current Pattern Libraries
-//REUZE ME
-//http://reuze.me
-//PEARS
-//http://pea.rs
-//INUIT
-//http://inuitcss.com
-//THIS IS RESPONSIVE
-//http://bradfrost.github.com/this-is-responsive/
-//WebCraft
-////https://github.com/zakkain/webcraft
 
-//RESOURCES
-//http://stylemanual.org/
-//http://dev.w3.org/csswg/css3-fonts/
-//http://ui-patterns.com/
-//http://www.kaikkonendesign.fi/typography
-//http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
-//http://webdesignerwall.com/tutorials/using-html-symbol-entities
-//http://nimbupani.com/jscamp-css-next.html
-//http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range/
-//http://trentwalton.com/2011/09/07/css-hyphenation/
+// $Current Pattern Libraries
+// ============================================================
+
+// REUZE ME
+// http://reuze.me
+
+// PEARS
+// http://pea.rs
+
+// INUIT
+// http://inuitcss.com
+
+// THIS IS RESPONSIVE
+// http://bradfrost.github.com/this-is-responsive/
+
+// WebCraft
+// https://github.com/zakkain/webcraft
 
 
-/* Will be compiled down to a single stylesheet with your sass files */
-// ==========================================================================
+// $Resources
+// ============================================================
+
+// http://stylemanual.org
+// http://dev.w3.org/csswg/css3-fonts
+// http://ui-patterns.com
+// http://www.kaikkonendesign.fi/typography
+// http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
+// http://webdesignerwall.com/tutorials/using-html-symbol-entities
+// http://nimbupani.com/jscamp-css-next.html
+// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
+// http://trentwalton.com/2011/09/07/css-hyphenation
+
+
 // $Body Type Base
-// ==========================================================================
+// ============================================================
 
 $weight: normal;
 $line-height: 1.5;
@@ -74,9 +85,10 @@ body {
     }
 }
 
-// ==========================================================================
+
 // $Font Size Adjust
-// ==========================================================================
+// ============================================================
+// correct x-height for fallback fonts
 
 h1.helvetica,
 h1.georgia {
@@ -93,10 +105,9 @@ h1.georgia {
 }
 
 
-// ==========================================================================
 // $Typographic scale
-// ==========================================================================
-//http://thesassway.com/projects/modular-scale
+// ============================================================
+// http://thesassway.com/projects/modular-scale
 
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
@@ -115,45 +126,41 @@ $paragraphs: 16;
 h1 {
     @include modular-scale($heading1, $font-base, 'rem'); //2.25rem
 }
+
 h2 {
     @include modular-scale($heading2, $font-base, 'rem'); //1.5rem
     line-height: 1.08333333333333;
 }
+
 h3 {
     @include modular-scale($heading3, $font-base, 'rem'); //1.125rem
 }
+
 h4 {
     @include modular-scale($heading4, $font-base, 'rem'); //0.875rem
 }
+
 p {
     @include modular-scale($paragraphs, $font-base, 'rem'); //1rem
 }
 
 
-// ==========================================================================
 // $Color
-// ==========================================================================
-h1,h2,h3,h4,h5,h6 { color: #222; }
+// ============================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+}
 
 
-// ==========================================================================
 // $Small Caps
-// ==========================================================================
-// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face/
-
-// I think it would be neat, under the Small Caps section, to provide an alternate
-// mixin as well, for fonts that don't support font-variant. One that does text-transform
-// uppercase and lowers the font-size slightly?
-
-//Most fonts actually don't have small-caps glyphs. Most fonts will "fake" it,
-//like fake bold or italics in the browser, which looks really bad. So better to
-//manually set it than let the browser mangle small-caps out of a typeface
-
-// font-variant isn't going to work a lot of the time, as I understand it
-
-//for fonts with OpenType support, your current mixin works fine. But for the
-//majority of fonts out there, including the web-safe ones, the appropriate smallcaps
-//styling would be simply "text-transform: uppercase; font-size: 80%" or somesuch
+// ============================================================
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
 
 @mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
@@ -170,15 +177,18 @@ abbr {
 }
 
 
-// ==========================================================================
 // $Unicode Ampersand
-// ==========================================================================
+// ============================================================
+// targeting ampersands through unicode-range
+
 $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+
 @font-face {
     font-family: 'Ampersand';
     src: $amp-font;
     unicode-range: U+26;
 }
+
 //fallback for unicode range
 @font-face {
     /* Ampersand fallback font */
@@ -192,16 +202,15 @@ $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
 }
 
 
-// ==========================================================================
 // $Hyphens
-// ==========================================================================
+// ============================================================
+//http://trentwalton.com/2011/09/07/css-hyphenation
 
 $indent-val: 1.5em;
 @mixin txt-indent($indent) {
     text-indent: $indent;
 }
 
-//http://trentwalton.com/2011/09/07/css-hyphenation/
 @mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
@@ -215,19 +224,18 @@ body {
 }
 
 
-// ==========================================================================
-// $Indenting Paragraphs
-// ==========================================================================
+// $Indenting
+// ============================================================
 
-p + p {
-    //Indenting
-    @include txt-indent($indent-val);
+p {
+    & + p {
+        @include txt-indent($indent-val);
+    }
 }
 
 
-// ==========================================================================
 // $Pull Quotes
-// ==========================================================================
+// ============================================================
 
 .entry {
     position: relative;
@@ -260,20 +268,19 @@ p + p {
 }
 
 
-// ==========================================================================
 // $Code Blocks
-// ==========================================================================
+// ============================================================
+// https://developer.mozilla.org/en-US/docs/CSS/white-space
 
 pre code {
     word-wrap: normal;
-    //https://developer.mozilla.org/en-US/docs/CSS/white-space
     white-space: pre-wrap;
 }
 
 pre {
-    word-wrap: break-word;      /* IE 5.5-7 */
-    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-    white-space: pre-wrap;      /* current browsers */
+    word-wrap: break-word;      // IE 5.5-7
+    white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+    white-space: pre-wrap;      // current browsers
 }
 
 code {
@@ -282,9 +289,9 @@ code {
 }
 
 
-// ==========================================================================
-// $Dropcaps
-// ==========================================================================
+// $Drop Cap
+// ============================================================
+
 @mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
     float: $float;
     margin: $margin;
@@ -301,15 +308,16 @@ code {
 }
 
 
-// ==========================================================================
-// $Stats Tabs
-// ==========================================================================
+// $Stats Tab
+// ============================================================
+
 $stats-font-size: 1.125rem;
 $stats-list-margin: 0 0.625rem 0 0;
 $stats-list-padding: 0 0.625rem 0 0;
 $stats-item-font-size: 0.1875rem;
 $stats-item-margin: 0.125rem 0 0 0;
 $stats-border-style: 0.125rem solid #ccc;
+
 .stats-tabs {
     li {
         display: inline-block;
@@ -336,9 +344,9 @@ $stats-border-style: 0.125rem solid #ccc;
 }
 
 
-// ==========================================================================
 // $Search Input
-// ==========================================================================
+// ============================================================
+
 @mixin search-input($border-radius, $box-sizing, $width, $padding, $font-size, $bg, $border, $box-shadow...) {
     border-radius: $border-radius;
     @include box-sizing($box-sizing);
@@ -372,9 +380,9 @@ input[type="submit"]:focus {
 }
 
 
-// ==========================================================================
 // $Button
-// ==========================================================================
+// ============================================================
+
 @mixin button {
     //layout
     border-radius: 3px;
@@ -432,11 +440,10 @@ input[type="submit"]:focus {
 }
 
 
-// ==========================================================================
 // $Orange UI
-// ==========================================================================
+// ============================================================
+// http://codepen.io/ishibashijun/pen/nkJfG
 
-//http://codepen.io/ishibashijun/pen/nkJfG
 #orangeUI {
   width: 410px;
   height: 220px;

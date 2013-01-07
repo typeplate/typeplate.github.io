@@ -662,8 +662,7 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-/* Will be compiled down to a single stylesheet with your sass files */
-/* line 52, main.scss */
+/* line 63, main.scss */
 body {
   max-width: 40em;
   margin: 0 auto;
@@ -674,18 +673,18 @@ body {
   color: #444;
 }
 
-/* line 66, main.scss */
+/* line 77, main.scss */
 #title {
   font-size: 48px;
 }
 
-/* line 71, main.scss */
+/* line 82, main.scss */
 .ampersands h2 {
   font-size: 2em;
   color: #333;
 }
 
-/* line 82, main.scss */
+/* line 94, main.scss */
 h1.helvetica,
 h1.georgia {
   display: inline-block;
@@ -694,55 +693,60 @@ h1.georgia {
   font-size: 9em;
 }
 
-/* line 88, main.scss */
+/* line 100, main.scss */
 h1.helvetica {
   font-family: Helvetica;
 }
 
-/* line 91, main.scss */
+/* line 103, main.scss */
 h1.georgia {
   font-family: Georgia;
 }
 
-/* line 115, main.scss */
+/* line 126, main.scss */
 h1 {
   font-size: 2.25rem;
 }
 
-/* line 118, main.scss */
+/* line 130, main.scss */
 h2 {
   font-size: 1.5rem;
   line-height: 1.08333333333333;
 }
 
-/* line 122, main.scss */
+/* line 135, main.scss */
 h3 {
   font-size: 1.125rem;
 }
 
-/* line 125, main.scss */
+/* line 139, main.scss */
 h4 {
   font-size: 0.875rem;
 }
 
-/* line 128, main.scss */
+/* line 143, main.scss */
 p {
   font-size: 1rem;
 }
 
-/* line 136, main.scss */
-h1, h2, h3, h4, h5, h6 {
+/* line 156, main.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #222;
 }
 
-/* line 165, main.scss */
+/* line 172, main.scss */
 abbr {
   font-variant: small-caps;
   font-weight: 600;
   text-transform: lowercase;
   color: gray;
 }
-/* line 167, main.scss */
+/* line 174, main.scss */
 abbr:hover {
   cursor: help;
 }
@@ -760,12 +764,12 @@ abbr:hover {
   unicode-range: U+270C;
 }
 
-/* line 190, main.scss */
+/* line 200, main.scss */
 * {
   font-family: Ampersand, Arial, sans-serif;
 }
 
-/* line 212, main.scss */
+/* line 221, main.scss */
 body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -773,17 +777,17 @@ body {
   hyphens: auto;
 }
 
-/* line 222, main.scss */
+/* line 231, main.scss */
 p + p {
   text-indent: 1.5em;
 }
 
-/* line 232, main.scss */
+/* line 240, main.scss */
 .entry {
   position: relative;
   padding-right: 50%;
 }
-/* line 235, main.scss */
+/* line 243, main.scss */
 .entry .pull-quote {
   position: absolute;
   top: 0;
@@ -791,7 +795,7 @@ p + p {
   width: 45%;
 }
 
-/* line 243, main.scss */
+/* line 251, main.scss */
 .bqstart {
   float: left;
   height: 45px;
@@ -801,7 +805,7 @@ p + p {
   color: red;
 }
 
-/* line 253, main.scss */
+/* line 261, main.scss */
 .bqend {
   float: right;
   height: 25px;
@@ -811,29 +815,26 @@ p + p {
   color: red;
 }
 
-/* line 267, main.scss */
+/* line 275, main.scss */
 pre code {
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
-/* line 273, main.scss */
+/* line 280, main.scss */
 pre {
   word-wrap: break-word;
-  /* IE 5.5-7 */
   white-space: -moz-pre-wrap;
-  /* Firefox 1.0-2.0 */
   white-space: pre-wrap;
-  /* current browsers */
 }
 
-/* line 279, main.scss */
+/* line 286, main.scss */
 code {
   white-space: pre;
   font-family: monospace;
 }
 
-/* line 299, main.scss */
+/* line 306, main.scss */
 .drop-cap:first-letter {
   float: left;
   margin: 0 0.5em auto 0;
@@ -844,26 +845,26 @@ code {
   color: white;
 }
 
-/* line 314, main.scss */
+/* line 322, main.scss */
 .stats-tabs li {
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
   border-right: 0.125rem solid #cccccc;
 }
-/* line 319, main.scss */
+/* line 327, main.scss */
 .stats-tabs li:last-child {
   margin: 0;
   padding: 0;
   border: none;
 }
-/* line 324, main.scss */
+/* line 332, main.scss */
 .stats-tabs li a {
   display: inline-block;
   font-size: 1.125rem;
   font-weight: bold;
 }
-/* line 328, main.scss */
+/* line 336, main.scss */
 .stats-tabs li a span {
   display: block;
   margin: 0.125rem 0 0 0;
@@ -871,7 +872,7 @@ code {
   font-weight: normal;
 }
 
-/* line 353, main.scss */
+/* line 361, main.scss */
 input[type="search"] {
   border-radius: 4px;
   -webkit-box-sizing: border-box;
@@ -885,7 +886,7 @@ input[type="search"] {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* line 357, main.scss */
+/* line 365, main.scss */
 input[type="submit"] {
   margin: 10px 0;
   padding: 10px 14px;
@@ -895,18 +896,18 @@ input[type="submit"] {
   background: #999;
   border-radius: 4px;
 }
-/* line 365, main.scss */
+/* line 373, main.scss */
 input[type="submit"]:active {
   background: #666;
 }
 
-/* line 370, main.scss */
+/* line 378, main.scss */
 input[type="submit"]:hover,
 input[type="submit"]:focus {
   background: #777;
 }
 
-/* line 424, main.scss */
+/* line 432, main.scss */
 .button {
   border-radius: 3px;
   display: inline-block;
@@ -919,7 +920,7 @@ input[type="submit"]:focus {
   text-transform: uppercase;
 }
 
-/* line 427, main.scss */
+/* line 435, main.scss */
 .button-dimension {
   border-top: 1px solid #828282;
   border-left: 1px solid #DDD;
@@ -932,7 +933,7 @@ input[type="submit"]:focus {
   background-image: -o-linear-gradient(top, #f9f9f9, #dedede);
   background-image: linear-gradient(top, #f9f9f9, #dedede);
 }
-/* line 407, main.scss */
+/* line 415, main.scss */
 .button-dimension:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #cdcdcd));
   background-image: -webkit-linear-gradient(top, #f7f7f7, #cdcdcd);
@@ -940,7 +941,7 @@ input[type="submit"]:focus {
   background-image: -o-linear-gradient(top, #f7f7f7, #cdcdcd);
   background-image: linear-gradient(top, #f7f7f7, #cdcdcd);
 }
-/* line 411, main.scss */
+/* line 419, main.scss */
 .button-dimension:active {
   border-right: 1px solid #cce4eb;
   border-left: 1px solid #f0f7f9;
@@ -953,12 +954,12 @@ input[type="submit"]:focus {
   color: #9b9b9b;
 }
 
-/* line 430, main.scss */
+/* line 438, main.scss */
 .button-flat {
   background: gray;
 }
 
-/* line 440, main.scss */
+/* line 447, main.scss */
 #orangeUI {
   width: 410px;
   height: 220px;
@@ -968,7 +969,7 @@ input[type="submit"]:focus {
   font-weight: bold;
 }
 
-/* line 448, main.scss */
+/* line 455, main.scss */
 ul {
   list-style: none;
 }
@@ -976,17 +977,17 @@ ul {
 /****************************
     Menu
 ****************************/
-/* line 455, main.scss */
+/* line 462, main.scss */
 nav {
   padding-bottom: 60px;
 }
 
-/* line 458, main.scss */
+/* line 465, main.scss */
 .menu li {
   float: left;
 }
 
-/* line 461, main.scss */
+/* line 468, main.scss */
 .menu li:first-child {
   -webkit-border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
@@ -995,7 +996,7 @@ nav {
   border-radius: 5px 0 0 5px;
 }
 
-/* line 468, main.scss */
+/* line 475, main.scss */
 .menu li:last-child {
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -1004,7 +1005,7 @@ nav {
   border-radius: 0 5px 5px 0;
 }
 
-/* line 476, main.scss */
+/* line 483, main.scss */
 .menu li,
 .pagenation li {
   position: relative;
@@ -1025,7 +1026,7 @@ nav {
   box-shadow: inset 0px 1px 0 white, 0 1px 0 rgba(0, 0, 0, 0.3), 0px 3px 4px rgba(0, 0, 0, 0.14);
 }
 
-/* line 496, main.scss */
+/* line 503, main.scss */
 .menu li:hover,
 .menu li.hover,
 .pagenation li:hover {
@@ -1037,7 +1038,7 @@ nav {
   cursor: pointer;
 }
 
-/* line 504, main.scss */
+/* line 511, main.scss */
 .menu li:active {
   border: none;
   color: #9b9b9b;
@@ -1053,7 +1054,7 @@ nav {
   box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.9), 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* line 521, main.scss */
+/* line 528, main.scss */
 .menu .current,
 .menu .current:hover,
 .pagenation .current,
@@ -1072,7 +1073,7 @@ nav {
   box-shadow: inset 0px 1px 0 #f1a154, 0 1px 0 rgba(0, 0, 0, 0.3), 0px 3px 4px rgba(0, 0, 0, 0.14);
 }
 
-/* line 536, main.scss */
+/* line 543, main.scss */
 .arrow-down,
 .arrow-shadow {
   position: absolute;
@@ -1087,12 +1088,12 @@ nav {
   border-top: 7px solid #e47327;
 }
 
-/* line 548, main.scss */
+/* line 555, main.scss */
 .menu .current .arrow-down {
   display: block;
 }
 
-/* line 551, main.scss */
+/* line 558, main.scss */
 .arrow-shadow {
   left: 44px;
   bottom: -8px;
@@ -1102,7 +1103,7 @@ nav {
   border-top: 8px solid rgba(0, 0, 0, 0.45);
 }
 
-/* line 559, main.scss */
+/* line 566, main.scss */
 .menu .current .arrow-shadow {
   display: block;
 }
@@ -1110,21 +1111,21 @@ nav {
 /****************************
     Breadcrumb
 ****************************/
-/* line 566, main.scss */
+/* line 573, main.scss */
 .breadcrumbs {
   overflow: hidden;
   width: 100%;
   margin-bottom: 30px;
 }
 
-/* line 571, main.scss */
+/* line 578, main.scss */
 .breadcrumbs li {
   position: relative;
   float: left;
   margin: 0.5em 0 1em;
 }
 
-/* line 576, main.scss */
+/* line 583, main.scss */
 .breadcrumbs a {
   position: relative;
   z-index: 3;
@@ -1143,7 +1144,7 @@ nav {
   background-image: linear-gradient(to right, #f9f9f9 0%, #dedede 100%);
 }
 
-/* line 594, main.scss */
+/* line 601, main.scss */
 .breadcrumbs a:hover {
   background-image: -moz-linear-gradient(left, #efefef 0%, #d6d6d6 100%);
   background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #efefef), color-stop(100%, #d6d6d6));
@@ -1153,7 +1154,7 @@ nav {
   background-image: linear-gradient(to right, #efefef 0%, #d6d6d6 100%);
 }
 
-/* line 603, main.scss */
+/* line 610, main.scss */
 .breadcrumbs a::before {
   content: "";
   position: absolute;
@@ -1166,12 +1167,12 @@ nav {
   left: -1.25em;
 }
 
-/* line 614, main.scss */
+/* line 621, main.scss */
 .breadcrumbs a:hover::before {
   border-color: #efefef #efefef #efefef transparent;
 }
 
-/* line 617, main.scss */
+/* line 624, main.scss */
 .breadcrumbs a::after {
   content: "";
   position: absolute;
@@ -1184,12 +1185,12 @@ nav {
   right: -1.29em;
 }
 
-/* line 628, main.scss */
+/* line 635, main.scss */
 .breadcrumbs a:hover::after {
   border-left-color: #d6d6d6;
 }
 
-/* line 632, main.scss */
+/* line 639, main.scss */
 .breadcrumbs .current,
 .breadcrumbs .current:hover {
   color: #fff;
@@ -1202,19 +1203,19 @@ nav {
   background-image: linear-gradient(to right, #f1a154 0%, #e47327 100%);
 }
 
-/* line 643, main.scss */
+/* line 650, main.scss */
 .breadcrumbs a.current::before,
 .breadcrumbs a.current:hover::before {
   border-color: #f1a154 #f1a154 #f1a154 transparent;
 }
 
-/* line 647, main.scss */
+/* line 654, main.scss */
 .breadcrumbs a.current::after,
 .breadcrumbs a.current:hover::after {
   border-left: 1.3em solid #e47327;
 }
 
-/* line 650, main.scss */
+/* line 657, main.scss */
 .bread-shadow {
   position: absolute;
   top: 1px;
@@ -1224,7 +1225,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 658, main.scss */
+/* line 665, main.scss */
 .bread-shadow::before {
   content: "";
   position: absolute;
@@ -1237,7 +1238,7 @@ nav {
   left: -1.25em;
 }
 
-/* line 669, main.scss */
+/* line 676, main.scss */
 .bread-shadow::after {
   content: "";
   position: absolute;
@@ -1253,7 +1254,7 @@ nav {
 /****************************
     Pagenation
 ****************************/
-/* line 685, main.scss */
+/* line 692, main.scss */
 .pagenation li,
 .pagenation li.current {
   display: inline;
@@ -1261,13 +1262,13 @@ nav {
   border: none;
 }
 
-/* line 691, main.scss */
+/* line 698, main.scss */
 .pagenation li:hover,
 .pagenation li.current:hover {
   border: none;
 }
 
-/* line 694, main.scss */
+/* line 701, main.scss */
 .pagenation li.dot {
   border: none;
   background: none;
@@ -1275,7 +1276,7 @@ nav {
   cursor: default;
 }
 
-/* line 700, main.scss */
+/* line 707, main.scss */
 .pagenation ul li:first-child {
   -webkit-border-radius: 7px 0 0 7px;
   -moz-border-radius: 7px 0 0 7px;
@@ -1284,7 +1285,7 @@ nav {
   border-radius: 7px 0 0 7px;
 }
 
-/* line 707, main.scss */
+/* line 714, main.scss */
 .pagenation ul li:last-child {
   -webkit-border-radius: 0 7px 7px 0;
   -moz-border-radius: 0 7px 7px 0;
