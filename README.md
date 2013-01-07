@@ -1,8 +1,7 @@
-web-thang
-=========
-Inspiration
-[http://zakkain.github.com/webcraft/styleguide](http://zakkain.github.com/webcraft/styleguide)
+#[web-thang](https://github.com/zakkain/web-thang)
 
+##Inspiration
+[http://zakkain.github.com/webcraft/styleguide](http://zakkain.github.com/webcraft/styleguide)
 
 The problem with most frameworks is that they make decisions on how to organize, structure and design a site, but pattern libraries are similarly too tied up in markup matching their specific style and design&hellip;What we aim for is &ndash; a thing that doesn&rquo;t do that.
 
