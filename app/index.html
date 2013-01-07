@@ -124,7 +124,7 @@ h6 {
 p {
     @include modular-scale($paragraphs, $font-base, 'rem'); //1rem
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Code Blocks -->
@@ -150,7 +150,7 @@ code {
     white-space: pre;
     font-family: monospace;
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- small caps -->
@@ -176,7 +176,7 @@ abbr {
         cursor: help;
     }
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Paragraph indenting -->
@@ -201,7 +201,7 @@ p {
         @include txt-indent($indent-val);
     }
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
 
             <!-- Word Wrapping -->
             <h2>Word Wrap</h2>
@@ -215,6 +215,18 @@ p {
 </figure>
         </section>
 
+        <!-- Copyright i.e. Small Print -->
+        <section class="copyright">
+            <header>
+                <h1>Small Print</h1>
+            </header>
+            <p>Small print The small element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements.</p>
+
+            <small>Copyright © 1922-2011 Acme Corporation. All Rights Reserved.</small>
+            <figure><pre><code class="language-markup">&lt;small&gt;Copyright &copy; 1922-2011 Acme Corporation. All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
+        </section>
+
+        <!-- Hyphens -->
         <section class="hyphenate">
             <header>
                 <h1>CSS Hyphenation</h1>
@@ -232,7 +244,7 @@ body {
     //http://trentwalton.com/2011/09/07/css-hyphenation
     @include css-hyphens(auto);
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Figures -->
@@ -285,7 +297,7 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
 * {
     font-family: Ampersand, Arial, sans-serif;
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Drop Caps -->
@@ -310,7 +322,7 @@ $amp-font: local('Baskerville'), local('Palatino'), local('Book Antiqua');
 .drop-cap:first-letter {
     @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- Primes and Double Primes Typography -->
