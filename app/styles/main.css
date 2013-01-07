@@ -1,4 +1,22 @@
 @charset "UTF-8";
+/*
+ * web-thang v1.0
+ ============================================================
+ *    url: https://github.com/zakkain/web-thang
+ *
+ *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *    license: this work is in the public domain
+ *    http://creativecommons.org/publicdomain/zero/1.0
+ *
+ *    elements of this stylesheet were first published by:
+ *    Paul Irish, Divya Manian, Nicolas Gallagher,
+ *    Mathias Bynens, Shi Chuan, Harry Roberts,
+ *    Lea Verou, Joni Korpi, Tim Brown, and many others.
+ *
+ *    this stylesheet was written with the utmost care and
+ *    dedication given to proper attribution and sourcing.
+ ============================================================
+*/
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* normalize.scss v2.0.1 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
 /* ==========================================================================
@@ -662,7 +680,7 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-/* line 63, main.scss */
+/* line 83, main.scss */
 body {
   max-width: 40em;
   margin: 0 auto;
@@ -673,18 +691,18 @@ body {
   color: #444;
 }
 
-/* line 77, main.scss */
+/* line 97, main.scss */
 #title {
   font-size: 48px;
 }
 
-/* line 82, main.scss */
+/* line 102, main.scss */
 .ampersands h2 {
   font-size: 2em;
   color: #333;
 }
 
-/* line 94, main.scss */
+/* line 114, main.scss */
 h1.helvetica,
 h1.georgia {
   display: inline-block;
@@ -693,53 +711,53 @@ h1.georgia {
   font-size: 9em;
 }
 
-/* line 100, main.scss */
+/* line 120, main.scss */
 h1.helvetica {
   font-family: Helvetica;
 }
 
-/* line 103, main.scss */
+/* line 123, main.scss */
 h1.georgia {
   font-family: Georgia;
 }
 
-/* line 128, main.scss */
+/* line 148, main.scss */
 h1 {
   font-size: 3.75rem;
 }
 
-/* line 132, main.scss */
+/* line 152, main.scss */
 h2 {
   font-size: 3rem;
   line-height: 1.08333333333333;
 }
 
-/* line 137, main.scss */
+/* line 157, main.scss */
 h3 {
   font-size: 2.25rem;
 }
 
-/* line 141, main.scss */
+/* line 161, main.scss */
 h4 {
   font-size: 1.5rem;
 }
 
-/* line 145, main.scss */
+/* line 165, main.scss */
 h5 {
   font-size: 1.5rem;
 }
 
-/* line 149, main.scss */
+/* line 169, main.scss */
 h6 {
   font-size: 1.5rem;
 }
 
-/* line 153, main.scss */
+/* line 173, main.scss */
 p {
   font-size: 1rem;
 }
 
-/* line 166, main.scss */
+/* line 186, main.scss */
 h1,
 h2,
 h3,
@@ -749,14 +767,14 @@ h6 {
   color: #222;
 }
 
-/* line 182, main.scss */
+/* line 202, main.scss */
 abbr {
   font-variant: small-caps;
   font-weight: 600;
   text-transform: lowercase;
   color: gray;
 }
-/* line 184, main.scss */
+/* line 204, main.scss */
 abbr:hover {
   cursor: help;
 }
@@ -774,12 +792,12 @@ abbr:hover {
   unicode-range: U+270C;
 }
 
-/* line 210, main.scss */
+/* line 230, main.scss */
 * {
   font-family: Ampersand, Arial, sans-serif;
 }
 
-/* line 232, main.scss */
+/* line 252, main.scss */
 body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -787,17 +805,17 @@ body {
   hyphens: auto;
 }
 
-/* line 242, main.scss */
+/* line 262, main.scss */
 p + p {
   text-indent: 1.5em;
 }
 
-/* line 251, main.scss */
+/* line 271, main.scss */
 .entry {
   position: relative;
   padding-right: 50%;
 }
-/* line 254, main.scss */
+/* line 274, main.scss */
 .entry .pull-quote {
   position: absolute;
   top: 0;
@@ -805,7 +823,7 @@ p + p {
   width: 45%;
 }
 
-/* line 262, main.scss */
+/* line 282, main.scss */
 .bqstart {
   float: left;
   height: 45px;
@@ -815,7 +833,7 @@ p + p {
   color: red;
 }
 
-/* line 272, main.scss */
+/* line 292, main.scss */
 .bqend {
   float: right;
   height: 25px;
@@ -825,26 +843,26 @@ p + p {
   color: red;
 }
 
-/* line 286, main.scss */
+/* line 306, main.scss */
 pre code {
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
-/* line 291, main.scss */
+/* line 311, main.scss */
 pre {
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
 }
 
-/* line 297, main.scss */
+/* line 317, main.scss */
 code {
   white-space: pre;
   font-family: monospace;
 }
 
-/* line 317, main.scss */
+/* line 337, main.scss */
 .drop-cap:first-letter {
   float: left;
   margin: 0 0.5em auto 0;
@@ -855,26 +873,26 @@ code {
   color: white;
 }
 
-/* line 333, main.scss */
+/* line 353, main.scss */
 .stats-tabs li {
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
   border-right: 0.125rem solid #cccccc;
 }
-/* line 338, main.scss */
+/* line 358, main.scss */
 .stats-tabs li:last-child {
   margin: 0;
   padding: 0;
   border: none;
 }
-/* line 343, main.scss */
+/* line 363, main.scss */
 .stats-tabs li a {
   display: inline-block;
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* line 347, main.scss */
+/* line 367, main.scss */
 .stats-tabs li a b {
   display: block;
   margin: 0.125rem 0 0 0;
