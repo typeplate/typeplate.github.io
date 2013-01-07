@@ -681,11 +681,11 @@ pre[class*="language-"] {
 }
 
 /* line 71, main.scss */
-figure {
+.web-thang-code-block {
   position: relative;
 }
 /* line 73, main.scss */
-figure figcaption {
+.web-thang-code-block figcaption {
   border-radius: 0 6px 0 0;
   padding: 0 .5em 0;
   position: absolute;
