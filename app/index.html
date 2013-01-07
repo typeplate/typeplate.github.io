@@ -65,8 +65,13 @@ body {
             <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x&ndash;height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
             <h1 class="helvetica">x</h1>
             <h1 class="georgia">x</h1>
-            <figure><pre><code class="language-sass">body {
-    font-size-adjust: 1;
+            <figure><pre><code class="language-sass">@mixin font-size-adjust($adjust-value) {
+    // firefox 17+ only (as of Jan 2013)
+    font-size-adjust: $adjust-value;
+}
+
+body {
+    @include font-size-adjust(1);
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
