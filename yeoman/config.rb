@@ -23,6 +23,9 @@ sass_dir = "app/styles"
 images_dir = "app/images"
 javascripts_dir = "temp/scripts"
 
+#Projects Font Directory
+fonts_dir = "fonts"
+
 # Development
 output_style = :expanded
 environment = :development

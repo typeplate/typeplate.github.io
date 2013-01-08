@@ -222,7 +222,43 @@ p {
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: break-word;
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
+        </section>
+
+        <!-- icon helper -->
+        <section class="icon-helper">
+            <header>
+                <h1>Icon Font Helper</h1>
+            </header>
+            <div class="icons">
+                <b class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</b> <b class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</b>
+            </div>
+            <p>So you've got a few icon fonts floating around, but don't wanna change all the reference links for the icon files and especially the multitude of file types needed to include like EOT, TTF, SVG, &amp; WOFF. With so many URLs to change it can be extremely tedious, but not anymore as it can be done in one spot using a Sass loop and the compass <code class="language-sass">@include font-face</code> helper function. This will require a bit of configuration on your part depending on your project and workflow settings.</p>
+            <figure class="web-thang-code-block"><pre><code class="language-sass">$fonts: (icon-font-name, another-icon-font-name);
+@each $font in $fonts {
+    @include font-face( $font,
+        font-files(
+            '#{$font}/#{$font}.woff',
+            '#{$font}/#{$font}.ttf',
+            '#{$font}/#{$font}.svg', svg
+        ),
+        '#{$font}/#{$font}.eot'
+    )
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+
+            <figure class="web-thang-code-block"><pre><code class="language-css">@font-face {
+  font-family: "icon-font-name";
+  src: url('//fonts/icon-font-name/icon-font-name.eot');
+  src: url('//fonts/icon-font-name/icon-font-name.eot?#iefix') format('eot'), url('//fonts/icon-font-name/icon-font-name.woff') format('woff'), url('//fonts/icon-font-name/icon-font-name.ttf') format('truetype'), url('//fonts/icon-font-name/icon-font-name.svg') format('svg');
+}
+
+@font-face {
+  font-family: "another-icon-font-name";
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot');
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot?#iefix') format('eot'), url('//fonts/another-icon-font-name/another-icon-font-name.woff') format('woff'), url('//fonts/another-icon-font-name/another-icon-font-name.ttf') format('truetype'), url('//fonts/another-icon-font-name/another-icon-font-name.svg') format('svg');
+}</code></pre><figcaption>CSS output</figcaption>
+            </figure>
         </section>
 
         <!-- Copyright i.e. Small Print -->
@@ -236,12 +272,36 @@ p {
             <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;small&gt;Copyright &amp;copy; 2012 All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
         </section>
 
-        <!-- Hyphens -->
+        <!-- foot note -->
+        <section class="fn">
+            <header>
+                <h1>Foot Notes</h1>
+            </header>
+            <article>
+                <p>The sites we’ve built to display on a desktop, smartphone, or a tablet today could be on a TV Screen, coffee table display, or mega space yacht projection system tomorrow. Do yourself a favor and heed the advice of the Dao: A fully-scalable web<sup><a href="#fn-item1" id="fn-return">1</a></sup></p>
+                <footer class="foot-note">
+                    <ol>
+                        <li id="fn-item1">Style sheets that use relative units can more easily scale from one output environment to another. Most of the time I use em and rem. <a href="#fn-return">↩</a></li>
+                    </ol>
+                </footer>
+            </article>
+            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;article&gt;
+    &lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    &lt;footer class=&quot;foot-note&quot;&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre><figcaption>Markup</figcaption>
+            </figure>
+        </section>
+
+        <!-- $Hyphens -->
         <section class="hyphenate">
             <header>
                 <h1>CSS Hyphenation</h1>
             </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ipsam dicta "Methionylthreonylthreonylglutaminylarginylisoleucine" obcaecati molestias id alias tempore ducimus possimus accusamus modi enim magni praesentium voluptatem consequatur recusandae provident corporis vel tempora?</p>
+            <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts.</p>
             <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19

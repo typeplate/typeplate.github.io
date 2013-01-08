@@ -26,10 +26,16 @@
 //@import "../components/normalize.scss/normalize.scss";
 @import "normalize";
 
+//what is base? Saw this on Paul irish Video Talk
+//@import "base";
+
 @import "compass";
 
-// Prism Code Highlighting
+// Prism code highlighting
 @import "prism";
+
+// icon fonts
+@import "icons";
 
 
 // $Current Pattern Libraries
@@ -37,32 +43,31 @@
 
 // REUZE ME
 // http://reuze.me
-
 // PEARS
 // http://pea.rs
-
 // INUIT
 // http://inuitcss.com
-
 // THIS IS RESPONSIVE
 // http://bradfrost.github.com/this-is-responsive/
-
 // WebCraft
 // https://github.com/zakkain/webcraft
+
+
+// $W3C Specs
+// ============================================================
+
+// http://dev.w3.org/csswg/css3-fonts
 
 
 // $Resources
 // ============================================================
 
 // http://stylemanual.org
-// http://dev.w3.org/csswg/css3-fonts
 // http://ui-patterns.com
 // http://www.kaikkonendesign.fi/typography
 // http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
 // http://webdesignerwall.com/tutorials/using-html-symbol-entities
-// http://nimbupani.com/jscamp-css-next.html
-// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
-// http://trentwalton.com/2011/09/07/css-hyphenation
+
 
 
 // $Demo Page Styling
@@ -90,7 +95,6 @@ $line-height: 1.5;
 $font-size: 100%;
 $font-base: 16;
 $font-family: sans-serif;
-
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
@@ -98,22 +102,25 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 }
 
 body {
+    @include body-copy($font-properties...);
+}
+
+
+// $Demo Styles
+// ============================================================
+
+body {
     max-width: 40em;
     margin: 0 auto;
     width: 90vw;
-    @include body-copy($font-properties...);
-    // normal: Indicates that lines may only break at normal word break points.
-    // break-word : Indicates that normally unbreakable words may be broken at ...
-    // arbitrary points if there are no otherwise acceptable break points in the line.
-    word-wrap: break-word;
-    color: #444;
 }
 
-// Title
+// title
 #title {
     font-size: 48px;
 }
 
+// ampersands
 .ampersands {
     h2 {
         font-size: 2em;
@@ -121,11 +128,33 @@ body {
     }
 }
 
+//icon demo font-size
+.icons {
+    font-size: 3em;
+    .fs1 {
+        display: inline-block;
+        &:before {
+            padding-right: .25em;
+            color: gray;
+        }
+    }
+}
+
+
+// $Word Wrap
+// ============================================================
+
+body {
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: break-word;
+}
+
 
 // $Font Size Adjust
 // ============================================================
 // correct x-height for fallback fonts
-
 
 @mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
@@ -217,6 +246,7 @@ h6 {
 
 // $Small Caps
 // ============================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
 // ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
 
 @mixin smallcaps($color, $font-weight) {
@@ -237,6 +267,8 @@ abbr {
 // $Unicode Ampersand
 // ============================================================
 // targeting ampersands through unicode-range
+// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
+// http://nimbupani.com/jscamp-css-next.html
 
 $amp-font-name: Ampersand;
 $amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
@@ -301,6 +333,7 @@ p {
 
 // $Pull Quotes
 // ============================================================
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
 
 .entry {
     position: relative;
@@ -357,7 +390,7 @@ pre code {
 }
 
 pre {
-    word-wrap: break-word;      // IE 5.5-7
+    word-wrap: auto;      // IE 5.5-7
     white-space: -moz-pre-wrap; // Firefox 1.0-2.0
     white-space: pre-wrap;      // current browsers
 }
@@ -421,6 +454,7 @@ $stats-border-style: 0.125rem solid #ccc;
         }
     }
 }
+
 
 // $Definition Lists
 // ============================================================

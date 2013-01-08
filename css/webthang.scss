@@ -56,9 +56,10 @@ $stats-item-margin: 0.125rem 0 0 0;
 $stats-border-style: 0.125rem solid #ccc;
 
 
-// $Font-Face
+// $Font-Faces
 // ==========================================================================
 
+//ampersand font face
 @font-face {
     font-family: '#{$amp-font-name}';
     src: $amp-font-source;
@@ -68,6 +69,28 @@ $stats-border-style: 0.125rem solid #ccc;
     font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
     src: $amp-font-fallback;
     unicode-range: U+270C;
+}
+
+
+// $Icon Font Helper
+// ============================================================
+// Using Sass's @each loop to automatically generate code for web fonts
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+// replace [name] with your unique string name (i.e. $fonts: (icomoon); )
+$fonts: ([name]);
+
+@each $font in $fonts {
+    @include font-face( $font,
+        font-files(
+            '#{$font}/#{$font}.woff',
+            '#{$font}/#{$font}.ttf',
+            '#{$font}/#{$font}.svg', svg
+        ),
+        '#{$font}/#{$font}.eot'
+    )
 }
 
 
