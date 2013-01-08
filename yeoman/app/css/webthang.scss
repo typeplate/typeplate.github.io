@@ -1,0 +1,282 @@
+// ==========================================================================
+// $Variables
+// ==========================================================================
+
+$weight: normal;
+$line-height: 1.5;
+$font-size: 100%;
+$font-base: 16;
+$font-family: sans-serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
+
+//ampersand
+$amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+
+//headings
+$heading1:   60;
+$heading2:   48;
+$heading3:   36;
+$heading4:   24;
+$heading5:   21;
+$heading6:   18;
+$paragraphs: 16;
+$type-scale-unit-value: rem;
+
+//paragraphs indent
+$indent-val: 1.5em;
+
+//ampersand @font-face declarations
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+
+// ==========================================================================
+// $Font-Face
+// ==========================================================================
+
+@font-face {
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
+    unicode-range: U+26;
+}
+@font-face {
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
+    unicode-range: U+270C;
+}
+
+
+// ==========================================================================
+// $Mixins
+// ==========================================================================
+
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}/#{$line-height} $font-family;
+}
+
+//http://thesassway.com/projects/modular-scale
+@function calc-modular-scale($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+
+@mixin modular-scale($scale, $base, $value) {
+  font-size: calc-modular-scale($scale, $base, $value);
+}
+
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+
+//http://trentwalton.com/2011/09/07/css-hyphenation/
+@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val; // standard
+};
+
+@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+@mixin font-size-adjust($adjust-value) {
+    // firefox 17+ only (as of Jan 2013)
+    font-size-adjust: $adjust-value;
+}
+
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+@mixin definition-list-style($style) {
+    // lining style
+    @if $style == lining {
+        dt, dd {
+            display: inline;
+            margin: 0;
+        }
+        dt, dd {
+            & + dt {
+                &:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+            }
+        }
+        dd {
+            & + dd {
+                &:before {
+                    content: ", ";
+                }
+            }
+            &:before {
+                    content: ": ";
+                    margin-left: -0.2rem; // removes extra space between the dt and the colon
+            }
+        }
+    }
+    // dictionary-style
+    @if $style == dictionary-style {
+        dt {
+            display: inline;
+            counter-reset: definitions;
+            & + dt {
+                &:before {
+                    content: ", ";
+                    margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+                }
+            }
+        }
+        dd {
+            display: block;
+            counter-increment: definitions;
+            &:before {
+                content: counter(definitions, decimal) ". ";
+            }
+        }
+    }
+}
+
+
+// ==========================================================================
+// $Ampersand fontface
+// ==========================================================================
+
+@font-face {
+    font-family: 'Ampersand';
+    src: $amp-font;
+    unicode-range: U+26;
+}
+//fallback for unicode range
+@font-face {
+    /* Ampersand fallback font */
+    font-family: 'Ampersand';
+    src: local('Georgia');
+    unicode-range: U+270C;
+}
+
+
+// ==========================================================================
+// $Ampersand
+// ==========================================================================
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}
+
+
+
+// ==========================================================================
+// $Body Type Base
+// ==========================================================================
+
+// Reverse Variable Arguments
+body {
+    @include body-copy($font-properties...);
+    @include font-size-adjust(1);
+    color: #444;
+}
+
+
+// ==========================================================================
+// $Headings
+// ==========================================================================
+
+h1 {
+    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+}
+h2 {
+    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
+}
+h3 {
+    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+}
+h4 {
+    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+h5 {
+    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+h6 {
+    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+
+// ==========================================================================
+// $Paragraphs
+// ==========================================================================
+
+p {
+    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: break-word; // other option is normal
+    //Ala Trent Walton
+    @include css-hyphens(auto);
+    //siblings indentation
+    & + p {
+        //Indenting
+        @include txt-indent($indent-val);
+    }
+}
+
+
+// ==========================================================================
+// $Dropcaps
+// ==========================================================================
+
+@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
+    float: $float;
+    margin: $margin;
+    padding: $padding;
+    font-family: $font;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    background: $bg;
+    color: $color;
+}
+
+.drop-cap:first-letter {
+    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+}
+
+
+// ==========================================================================
+// $Small Caps
+// ==========================================================================
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}
+
+
+// ==========================================================================
+// $Color
+// ==========================================================================
+
+h1,h2,h3,h4,h5,h6 { color: #222; }
+
+
+// ==========================================================================
+// $Definition Lists
+// ==========================================================================
+
+.lining {
+    @include definition-list-style(lining);
+}
+
+.dictionary-style {
+    @include definition-list-style(dictionary-style);
+}
