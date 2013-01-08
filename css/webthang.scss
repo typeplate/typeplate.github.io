@@ -1,7 +1,27 @@
-// ==========================================================================
+/*!
+ * web-thang v1.0
+ ============================================================
+ *    url: https://github.com/zakkain/web-thang
+ *
+ *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *    license: this work is in the public domain
+ *    http://creativecommons.org/publicdomain/zero/1.0
+ *
+ *    elements of this stylesheet were first published by:
+ *    Paul Irish, Divya Manian, Nicolas Gallagher,
+ *    Mathias Bynens, Shi Chuan, Harry Roberts,
+ *    Lea Verou, Joni Korpi, Tim Brown, and many others.
+ *
+ *    this stylesheet was written with the utmost care and
+ *    dedication given to proper attribution and sourcing.
+ ============================================================
+*/
+
+
 // $Variables
 // ==========================================================================
 
+// general type styling
 $weight: normal;
 $line-height: 1.5;
 $font-size: 100%;
@@ -9,10 +29,7 @@ $font-base: 16;
 $font-family: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
-//ampersand
-$amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
-
-//headings
+//typographic scale
 $heading1:   60;
 $heading2:   48;
 $heading3:   36;
@@ -30,8 +47,15 @@ $amp-font-name: Ampersand;
 $amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
 $amp-font-fallback: local('Georgia');
 
+// stats tabs
+$stats-font-size: 1.5rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.1875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;
 
-// ==========================================================================
+
 // $Font-Face
 // ==========================================================================
 
@@ -47,27 +71,31 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// ==========================================================================
-// $Mixins
+// $Functions
 // ==========================================================================
 
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}/#{$line-height} $font-family;
-}
-
+// modular scale calculator
 //http://thesassway.com/projects/modular-scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
 
+// $Mixins
+// ==========================================================================
+
+// body copy
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}/#{$line-height} $font-family;
+}
+// modular scale
 @mixin modular-scale($scale, $base, $value) {
   font-size: calc-modular-scale($scale, $base, $value);
 }
-
+// text indent
 @mixin txt-indent($indent) {
     text-indent: $indent;
 }
-
+// hyphens
 //http://trentwalton.com/2011/09/07/css-hyphenation/
 @mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
@@ -75,23 +103,29 @@ $amp-font-fallback: local('Georgia');
     -ms-hyphens: $val; // IE10
     hyphens: $val; // standard
 };
-
+// small caps
 @mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
     text-transform: lowercase;
     color: $color;
 }
-
+// font size adjust
 @mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
 }
-
+// ampersand
 @mixin ampersand($amp-font-family...) {
     font-family: $amp-font-family;
 }
-
+// cite
+@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
+}
+// definition lists
 @mixin definition-list-style($style) {
     // lining style
     @if $style == lining {
@@ -142,25 +176,6 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// ==========================================================================
-// $Ampersand fontface
-// ==========================================================================
-
-@font-face {
-    font-family: 'Ampersand';
-    src: $amp-font;
-    unicode-range: U+26;
-}
-//fallback for unicode range
-@font-face {
-    /* Ampersand fallback font */
-    font-family: 'Ampersand';
-    src: local('Georgia');
-    unicode-range: U+270C;
-}
-
-
-// ==========================================================================
 // $Ampersand
 // ==========================================================================
 
@@ -168,25 +183,23 @@ $amp-font-fallback: local('Georgia');
     @include ampersand(Ampersand, Arial, sans-serif);
 }
 
-.amp {
+.ampersand {
     @extend %ampersand-placeholder;
 }
 
 
-
-// ==========================================================================
 // $Body Type Base
 // ==========================================================================
 
 // Reverse Variable Arguments
 body {
     @include body-copy($font-properties...);
+    // firefox 17+ only (as of Jan 2013)
     @include font-size-adjust(1);
     color: #444;
 }
 
 
-// ==========================================================================
 // $Headings
 // ==========================================================================
 
@@ -210,7 +223,6 @@ h6 {
 }
 
 
-// ==========================================================================
 // $Paragraphs
 // ==========================================================================
 
@@ -222,15 +234,13 @@ p {
     word-wrap: break-word; // other option is normal
     //Ala Trent Walton
     @include css-hyphens(auto);
-    //siblings indentation
+    // paragrpah siblings indentation
     & + p {
-        //Indenting
         @include txt-indent($indent-val);
     }
 }
 
 
-// ==========================================================================
 // $Dropcaps
 // ==========================================================================
 
@@ -250,9 +260,10 @@ p {
 }
 
 
-// ==========================================================================
 // $Small Caps
 // ==========================================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
 
 abbr {
     @include smallcaps(gray, 600);
@@ -262,14 +273,56 @@ abbr {
 }
 
 
-// ==========================================================================
+// $Cite
+// ============================================================
+
+cite {
+    @include cite-style;
+}
+
+
+// $Stats Tab
+// ============================================================
+
+.stats-tabs {
+    li {
+        display: inline-block;
+        margin: $stats-list-margin;
+        padding: $stats-list-padding;
+        border-right: $stats-border-style;
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        a {
+            display: inline-block;
+            font-size: $stats-font-size;
+            font-weight: bold;
+            b {
+                display: block;
+                margin: $stats-item-margin;
+                font-size: $stats-item-font-size;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+
 // $Color
 // ==========================================================================
 
-h1,h2,h3,h4,h5,h6 { color: #222; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+}
 
 
-// ==========================================================================
 // $Definition Lists
 // ==========================================================================
 
