@@ -1,8 +1,2 @@
 temp
 dist
-
-#ignore sass cache
-.sass-cache
-
-#ignore hidden mac files
-.DS_Store

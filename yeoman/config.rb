@@ -17,7 +17,10 @@
 #  nil
 #end
 
-# Project Assets Location
+#import paths
+#add_import_path = "./components/"
+
+#Project Assets Location
 css_dir = "temp/styles"
 sass_dir = "app/styles"
 images_dir = "app/images"
@@ -27,8 +30,8 @@ javascripts_dir = "temp/scripts"
 fonts_dir = "fonts"
 
 # Development
-output_style = :expanded
-environment = :development
+#output_style = :expanded
+#environment = :development
 
 # Production
 #output_style = :compressed
@@ -46,7 +49,7 @@ color_output = false
 # Sass Source Mapping
 # Make sure you’re running at least Chrome 24
 # http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector
-sass_options = { :debug_info => true }
+# sass_options = { :debug_info => true }
 
 # Sass Sleuth
 # http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers
