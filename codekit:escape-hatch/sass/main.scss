@@ -17,6 +17,24 @@
  ============================================================
 */
 
+// $Compass
+// ============================================================
+
+@import "compass";
+
+// $Imports
+// ============================================================
+
+//https://groups.google.com/forum/?hl=en&fromgroups=#!topic/yeoman-dev/RM_cSZ_LK5g
+//http://anthonyshort.me/2012/10/using-bower-with-sass-and-compass
+//This is the line I cannot get Yeoman to import
+//so I just dragged the file in myself manually WTF!
+@import "normalize";
+// Prism code highlighting
+@import "prism";
+// icon fonts
+@import "icons";
+
 
 // $Current Pattern Libraries
 // ============================================================
@@ -41,46 +59,14 @@
 
 // $Resources
 // ============================================================
-// http://blog.typekit.com/2010/10/15/type-rendering-operating-systems
+
 // http://stylemanual.org
 // http://ui-patterns.com
 // http://www.kaikkonendesign.fi/typography
 // http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
 // http://webdesignerwall.com/tutorials/using-html-symbol-entities
 
-
-// $Compass
-// ============================================================
-
-@import "compass";
-
-
-// $Normalize Sass Bower Package
-// ============================================================
-
-@import "../components/normalize.scss/normalize.scss";
-
-
-// $Prism
-// ============================================================
-
-// Prism code highlighting
-@import "prism";
-
-
-// $Icons
-// ============================================================
-
-@import "icons";
-
-
-// $Globals
-// ============================================================
-
-a { text-decoration: none; }
-
-
-// $Code Blocks
+// $Demo Page Styling
 // ============================================================
 
 .web-thang-code-block {
@@ -91,8 +77,8 @@ a { text-decoration: none; }
         position: absolute;
         top: 0;
         right: 0;
-        background: orange;
-        color: #222;
+        background: rgba(0,0,0,0.50);
+        color: #EFEFEF;
     }
 }
 
@@ -113,6 +99,13 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 
 body {
     @include body-copy($font-properties...);
+}
+
+
+// $Demo Styles
+// ============================================================
+
+body {
     max-width: 40em;
     margin: 0 auto;
     width: 90vw;
@@ -185,7 +178,6 @@ h1.georgia {
 
 // $Typographic scale
 // ============================================================
-// 72,60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
 // http://thesassway.com/projects/modular-scale
 
 @function calc-modular-scale($scale, $base, $value) {
@@ -196,18 +188,17 @@ h1.georgia {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$heading1:   72;
-$heading2:   60;
-$heading3:   48;
-$heading4:   36;
-$heading5:   24;
-$heading6:   21;
-$paragraphs: 18;
+$heading1:   60;
+$heading2:   48;
+$heading3:   36;
+$heading4:   24;
+$heading5:   21;
+$heading6:   18;
+$paragraphs: 16;
 $type-scale-unit-value: rem;
 
 h1 {
     @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
-    line-height: 1.08333333333333;
 }
 
 h2 {
@@ -236,32 +227,6 @@ p {
 }
 
 
-// $Typekit
-// ============================================================
-// FF Meta Serif Web Pro
-// The most influential sans serif of the digital revolution (FF Meta)
-// now has a serif companion. It took three years and three designers
-// to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
-// Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
-
-body {
-    font-weight: 400;
-    .wf-loading & {
-        font-family: serif;
-        visibility: hidden;
-    }
-    .wf-active & {
-        font-family: "ff-meta-serif-web-pro",serif;
-        font-weight: 400;
-        visibility: visible;
-    }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-}
-
-
 // $Color
 // ============================================================
 
@@ -271,7 +236,8 @@ h3,
 h4,
 h5,
 h6 {
-    color: #222;
+    //color: #222;
+    color: red;
 }
 
 

@@ -55,11 +55,10 @@
 @import "compass";
 
 
-// $Normalize
+// $Normalize Sass Bower Package
 // ============================================================
-//This is the line I cannot get Yeoman to import
-//https://github.com/zakkain/web-thang/issues/7
-//@import "../components/normalize.scss/normalize.scss";
+
+@import "../components/normalize.scss/normalize.scss";
 
 
 // $Prism
@@ -186,6 +185,7 @@ h1.georgia {
 
 // $Typographic scale
 // ============================================================
+// 72,60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
 // http://thesassway.com/projects/modular-scale
 
 @function calc-modular-scale($scale, $base, $value) {
@@ -196,12 +196,12 @@ h1.georgia {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$heading1:   60;
-$heading2:   48;
-$heading3:   36;
-$heading4:   24;
-$heading5:   21;
-$heading6:   18;
+$heading1:   72;
+$heading2:   60;
+$heading3:   48;
+$heading4:   36;
+$heading5:   24;
+$heading6:   21;
 $paragraphs: 18;
 $type-scale-unit-value: rem;
 
