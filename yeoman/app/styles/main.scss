@@ -92,8 +92,8 @@ a { text-decoration: none; }
         position: absolute;
         top: 0;
         right: 0;
-        background: rgba(0,0,0,0.50);
-        color: #EFEFEF;
+        background: orange;
+        color: #222;
     }
 }
 
@@ -202,7 +202,7 @@ $heading3:   36;
 $heading4:   24;
 $heading5:   21;
 $heading6:   18;
-$paragraphs: 16;
+$paragraphs: 18;
 $type-scale-unit-value: rem;
 
 h1 {
