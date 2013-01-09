@@ -41,7 +41,7 @@
 
 // $Resources
 // ============================================================
-
+// http://blog.typekit.com/2010/10/15/type-rendering-operating-systems
 // http://stylemanual.org
 // http://ui-patterns.com
 // http://www.kaikkonendesign.fi/typography
@@ -75,10 +75,14 @@
 @import "icons";
 
 
-// $Demo Page Styling
+// $Globals
 // ============================================================
 
 a { text-decoration: none; }
+
+
+// $Code Blocks
+// ============================================================
 
 .web-thang-code-block {
     position: relative;
@@ -229,6 +233,32 @@ h6 {
 
 p {
     @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
+}
+
+
+// $Typekit
+// ============================================================
+// FF Meta Serif Web Pro
+// The most influential sans serif of the digital revolution (FF Meta)
+// now has a serif companion. It took three years and three designers
+// to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
+// Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
+
+body {
+    font-weight: 400;
+    .wf-loading & {
+        font-family: serif;
+        visibility: hidden;
+    }
+    .wf-active & {
+        font-family: "ff-meta-serif-web-pro",serif;
+        font-weight: 400;
+        visibility: visible;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
 
 
