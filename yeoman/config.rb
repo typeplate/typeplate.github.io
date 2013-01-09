@@ -1,9 +1,10 @@
 # Set this to the root of your project when deployed:
 #http_path = "http://url.com/"
+http_path = "/"
 
 # Set the images directory relative to your http_path or change
 # the location of the images themselves using http_images_path:
-#http_images_dir = ""
+http_images_dir = "images"
 
 # http://compass-style.org/reference/compass/helpers/urls/#stylesheet-url
 # http://chriseppstein.github.com/blog/2010/05/17/where-are-your-images
@@ -23,7 +24,8 @@
 #Project Assets Location
 css_dir = "temp/styles"
 sass_dir = "app/styles"
-images_dir = "app/images"
+#images_dir = "app/images"
+images_dir = "images"
 javascripts_dir = "temp/scripts"
 
 #Projects Font Directory
@@ -38,7 +40,7 @@ fonts_dir = "fonts"
 #environment = :production
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
-relative_assets = true
+relative_assets = false
 
 # Enable or disable line comments
 line_comments = true
@@ -53,9 +55,9 @@ color_output = false
 
 # Sass Sleuth
 # http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers
-if environment != :production
-    sass_options = {:debug_info => true}
-end
+#if environment != :production
+#    sass_options = {:debug_info => true}
+#end
 
 # Add support for repeating linear gradients
 # https://github.com/chriseppstein/compass/issues/401
