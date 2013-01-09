@@ -18,32 +18,6 @@
 */
 
 
-// $Compass
-// ============================================================
-
-@import "compass";
-
-
-// $Normalize
-// ============================================================
-//This is the line I cannot get Yeoman to import
-//https://github.com/zakkain/web-thang/issues/7
-//@import "../components/normalize.scss/normalize.scss";
-
-
-// $Prism
-// ============================================================
-
-// Prism code highlighting
-@import "prism";
-
-
-// $Icons
-// ============================================================
-
-@import "icons";
-
-
 // $Current Pattern Libraries
 // ============================================================
 
@@ -75,9 +49,36 @@
 // http://webdesignerwall.com/tutorials/using-html-symbol-entities
 
 
+// $Compass
+// ============================================================
+
+@import "compass";
+
+
+// $Normalize
+// ============================================================
+//This is the line I cannot get Yeoman to import
+//https://github.com/zakkain/web-thang/issues/7
+//@import "../components/normalize.scss/normalize.scss";
+
+
+// $Prism
+// ============================================================
+
+// Prism code highlighting
+@import "prism";
+
+
+// $Icons
+// ============================================================
+
+@import "icons";
+
 
 // $Demo Page Styling
 // ============================================================
+
+a { text-decoration: none; }
 
 .web-thang-code-block {
     position: relative;
@@ -109,13 +110,6 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 
 body {
     @include body-copy($font-properties...);
-}
-
-
-// $Demo Styles
-// ============================================================
-
-body {
     max-width: 40em;
     margin: 0 auto;
     width: 90vw;
@@ -209,6 +203,7 @@ $type-scale-unit-value: rem;
 
 h1 {
     @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    line-height: 1.08333333333333;
 }
 
 h2 {

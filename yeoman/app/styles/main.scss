@@ -78,6 +78,8 @@
 // $Demo Page Styling
 // ============================================================
 
+a { text-decoration: none; }
+
 .web-thang-code-block {
     position: relative;
     figcaption {
@@ -108,13 +110,6 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 
 body {
     @include body-copy($font-properties...);
-}
-
-
-// $Demo Styles
-// ============================================================
-
-body {
     max-width: 40em;
     margin: 0 auto;
     width: 90vw;
@@ -208,6 +203,7 @@ $type-scale-unit-value: rem;
 
 h1 {
     @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    line-height: 1.08333333333333;
 }
 
 h2 {
