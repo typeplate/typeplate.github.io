@@ -18,21 +18,29 @@
 */
 
 
-// $Imports
+// $Compass
 // ============================================================
 
-//This is the line I cannot get Yeoman to import
-//so I just dragged the file in myself manually WTF!
-//@import "../components/normalize.scss/normalize.scss";
-@import "normalize";
-//@import "components/normalize.css-with-sass-or-compass/normalize.scss";
-
 @import "compass";
+
+
+// $Normalize
+// ============================================================
+//This is the line I cannot get Yeoman to import
+//https://github.com/zakkain/web-thang/issues/7
+//@import "../components/normalize.scss/normalize.scss";
+
+
+// $Prism
+// ============================================================
 
 // Prism code highlighting
 @import "prism";
 
-// icon fonts
+
+// $Icons
+// ============================================================
+
 @import "icons";
 
 

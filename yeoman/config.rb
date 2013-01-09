@@ -18,7 +18,7 @@
 #end
 
 #import paths
-#add_import_path = "./components/"
+#add_import_path = "app/components"
 
 #Project Assets Location
 css_dir = "temp/styles"
