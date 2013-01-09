@@ -1,0 +1,519 @@
+/*!
+ * web-thang v1.0
+ ============================================================
+ *    url: https://github.com/zakkain/web-thang
+ *
+ *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *    license: this work is in the public domain
+ *    http://creativecommons.org/publicdomain/zero/1.0
+ *
+ *    elements of this stylesheet were first published by:
+ *    Paul Irish, Divya Manian, Nicolas Gallagher,
+ *    Mathias Bynens, Shi Chuan, Harry Roberts,
+ *    Lea Verou, Joni Korpi, Tim Brown, and many others.
+ *
+ *    this stylesheet was written with the utmost care and
+ *    dedication given to proper attribution and sourcing.
+ ============================================================
+*/
+
+// $Compass
+// ============================================================
+
+@import "compass";
+
+// $Imports
+// ============================================================
+
+//https://groups.google.com/forum/?hl=en&fromgroups=#!topic/yeoman-dev/RM_cSZ_LK5g
+//http://anthonyshort.me/2012/10/using-bower-with-sass-and-compass
+//This is the line I cannot get Yeoman to import
+//so I just dragged the file in myself manually WTF!
+@import "normalize";
+// Prism code highlighting
+@import "prism";
+// icon fonts
+@import "icons";
+
+
+// $Current Pattern Libraries
+// ============================================================
+
+// REUZE ME
+// http://reuze.me
+// PEARS
+// http://pea.rs
+// INUIT
+// http://inuitcss.com
+// THIS IS RESPONSIVE
+// http://bradfrost.github.com/this-is-responsive/
+// WebCraft
+// https://github.com/zakkain/webcraft
+
+
+// $W3C Specs
+// ============================================================
+
+// http://dev.w3.org/csswg/css3-fonts
+
+
+// $Resources
+// ============================================================
+
+// http://stylemanual.org
+// http://ui-patterns.com
+// http://www.kaikkonendesign.fi/typography
+// http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
+// http://webdesignerwall.com/tutorials/using-html-symbol-entities
+
+// $Demo Page Styling
+// ============================================================
+
+.web-thang-code-block {
+    position: relative;
+    figcaption {
+        border-radius: 0 6px 0 0;
+        padding: 0 .5em 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(0,0,0,0.50);
+        color: #EFEFEF;
+    }
+}
+
+
+// $Body Type Base
+// ============================================================
+
+$weight: normal;
+$line-height: 1.5;
+$font-size: 100%;
+$font-base: 16;
+$font-family: sans-serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
+
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}/#{$line-height} $font-family;
+}
+
+body {
+    @include body-copy($font-properties...);
+}
+
+
+// $Demo Styles
+// ============================================================
+
+body {
+    max-width: 40em;
+    margin: 0 auto;
+    width: 90vw;
+}
+
+// title
+#title {
+    font-size: 48px;
+}
+
+// ampersands
+.ampersands {
+    h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+//icon demo font-size
+.icons {
+    font-size: 3em;
+    .fs1 {
+        display: inline-block;
+        &:before {
+            padding-right: .25em;
+            color: gray;
+        }
+    }
+}
+
+
+// $Word Wrap
+// ============================================================
+
+body {
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: break-word;
+}
+
+
+// $Font Size Adjust
+// ============================================================
+// correct x-height for fallback fonts
+
+@mixin font-size-adjust($adjust-value) {
+    // firefox 17+ only (as of Jan 2013)
+    font-size-adjust: $adjust-value;
+}
+
+body {
+    @include font-size-adjust(1);
+}
+
+h1.helvetica,
+h1.georgia {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: .25em;
+    font-size: 9em;
+}
+h1.helvetica {
+    font-family: Helvetica;
+}
+h1.georgia {
+    font-family: Georgia;
+}
+
+
+// $Typographic scale
+// ============================================================
+// http://thesassway.com/projects/modular-scale
+
+@function calc-modular-scale($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+
+@mixin modular-scale($scale, $base, $value) {
+  font-size: calc-modular-scale($scale, $base, $value);
+}
+
+$heading1:   60;
+$heading2:   48;
+$heading3:   36;
+$heading4:   24;
+$heading5:   21;
+$heading6:   18;
+$paragraphs: 16;
+$type-scale-unit-value: rem;
+
+h1 {
+    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+}
+
+h2 {
+    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
+    line-height: 1.08333333333333;
+}
+
+h3 {
+    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+}
+
+h4 {
+    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+h5 {
+    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+h6 {
+    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+p {
+    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
+}
+
+
+// $Color
+// ============================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    //color: #222;
+    color: red;
+}
+
+
+// $Small Caps
+// ============================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
+
+@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}
+
+
+// $Unicode Ampersand
+// ============================================================
+// targeting ampersands through unicode-range
+// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
+// http://nimbupani.com/jscamp-css-next.html
+
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+@font-face {
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
+    unicode-range: U+26;
+}
+@font-face {
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
+    unicode-range: U+270C;
+}
+
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}
+
+
+// $Hyphens
+// ============================================================
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+$indent-val: 1.5em;
+
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+
+@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val; // standard
+};
+
+body {
+    //Ala Trent Walton
+    @include css-hyphens(auto);
+}
+
+
+// $Indenting
+// ============================================================
+
+p {
+    & + p {
+        @include txt-indent($indent-val);
+    }
+}
+
+
+// $Pull Quotes
+// ============================================================
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
+
+.entry {
+    position: relative;
+    padding-right: 50%;
+    .pull-quote {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+    }
+}
+
+.bqstart {
+    float: left;
+    height: 45px;
+    margin-top: -50px;
+    //padding-top: 45px;
+    margin-bottom: 50px;
+    font-size: 700%;
+    color: red;
+}
+
+.bqend {
+    float: right;
+    height: 25px;
+    margin-top: -50px;
+    padding-top: 15px;
+    font-size: 700%;
+    color: red;
+}
+
+
+// $Blockquotes
+// ============================================================
+
+@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
+}
+
+cite {
+    @include cite-style;
+}
+
+
+// $Code Blocks
+// ============================================================
+// https://developer.mozilla.org/en-US/docs/CSS/white-space
+
+pre code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+}
+
+pre {
+    word-wrap: auto;      // IE 5.5-7
+    white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+    white-space: pre-wrap;      // current browsers
+}
+
+code {
+    white-space: pre;
+    font-family: monospace;
+}
+
+
+// $Drop Cap
+// ============================================================
+
+@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
+    float: $float;
+    margin: $margin;
+    padding: $padding;
+    font-family: $font;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    background: $bg;
+    color: $color;
+}
+
+.drop-cap:first-letter {
+    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+}
+
+
+// $Stats Tab
+// ============================================================
+
+$stats-font-size: 1.5rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.1875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;
+
+.stats-tabs {
+    li {
+        display: inline-block;
+        margin: $stats-list-margin;
+        padding: $stats-list-padding;
+        border-right: $stats-border-style;
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        a {
+            display: inline-block;
+            font-size: $stats-font-size;
+            font-weight: bold;
+            b {
+                display: block;
+                margin: $stats-item-margin;
+                font-size: $stats-item-font-size;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+
+// $Definition Lists
+// ============================================================
+// lining
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+//
+// dictionary-style
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+
+@mixin definition-list-style($style) {
+    // lining style
+    @if $style == lining {
+        dt, dd {
+            display: inline;
+            margin: 0;
+        }
+        dt, dd {
+            & + dt {
+                &:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+            }
+        }
+        dd {
+            & + dd {
+                &:before {
+                    content: ", ";
+                }
+            }
+            &:before {
+                    content: ": ";
+                    margin-left: -0.2rem; // removes extra space between the dt and the colon
+            }
+        }
+    }
+    // dictionary-style
+    @if $style == dictionary-style {
+        dt {
+            display: inline;
+            counter-reset: definitions;
+            & + dt {
+                &:before {
+                    content: ", ";
+                    margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+                }
+            }
+        }
+        dd {
+            display: block;
+            counter-increment: definitions;
+            &:before {
+                content: counter(definitions, decimal) ". ";
+            }
+        }
+    }
+}
+
+.lining {
+    @include definition-list-style(lining);
+}
+
+.dictionary-style {
+    @include definition-list-style(dictionary-style);
+}
