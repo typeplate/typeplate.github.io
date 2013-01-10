@@ -22,15 +22,15 @@
 // ============================================================
 
 // REUZE ME
-// http://reuze.me
+    // http://reuze.me
 // PEARS
-// http://pea.rs
+    // http://pea.rs
 // INUIT
-// http://inuitcss.com
+    // http://inuitcss.com
 // THIS IS RESPONSIVE
-// http://bradfrost.github.com/this-is-responsive/
+    // http://bradfrost.github.com/this-is-responsive/
 // WebCraft
-// https://github.com/zakkain/webcraft
+    // https://github.com/zakkain/webcraft
 
 
 // $W3C Specs
@@ -61,6 +61,12 @@
 @import "../components/normalize-css/normalize.css";
 
 
+// $Mixins
+// ============================================================
+
+@import "mixins";
+
+
 // $Prism
 // ============================================================
 
@@ -74,118 +80,48 @@
 @import "icons";
 
 
+// $Site Specific
+// ============================================================
+
+@import "site";
+
+
 // $Globals
 // ============================================================
 
 a { text-decoration: none; }
 
 
-// $Code Blocks
-// ============================================================
-
-.web-thang-code-block {
-    position: relative;
-    figcaption {
-        border-radius: 0 6px 0 0;
-        padding: 0 .5em 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: orange;
-        color: #222;
-    }
-}
-
-
-// $Body Type Base
+// $Base Type
 // ============================================================
 
 $weight: normal;
 $line-height: 1.5;
 $font-size: 100%;
 $font-base: 16;
-$font-family: sans-serif;
+$font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
    font: $weight #{$font-size}/#{$line-height} $font-family;
 }
 
-body {
+html {
     @include body-copy($font-properties...);
-    max-width: 40em;
-    margin: 0 auto;
+}
+
+body {
     width: 90vw;
-}
-
-// title
-#title {
-    font-size: 48px;
-}
-
-// ampersands
-.ampersands {
-    h2 {
-        font-size: 2em;
-        text-align: center;
-    }
-}
-
-//icon demo font-size
-.icons {
-    font-size: 3em;
-    .fs1 {
-        display: inline-block;
-        &:before {
-            padding-right: .25em;
-            color: gray;
-        }
-    }
-}
-
-
-// $Word Wrap
-// ============================================================
-
-body {
-    // normal: Indicates that lines may only break at normal word break points.
-    // break-word : Indicates that normally unbreakable words may be broken at ...
-    // arbitrary points if there are no otherwise acceptable break points in the line.
-    word-wrap: break-word;
-}
-
-
-// $Font Size Adjust
-// ============================================================
-// correct x-height for fallback fonts
-
-@mixin font-size-adjust($adjust-value) {
-    // firefox 17+ only (as of Jan 2013)
-    font-size-adjust: $adjust-value;
-}
-
-body {
-    @include font-size-adjust(1);
-}
-
-h1.helvetica,
-h1.georgia {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: .25em;
-    font-size: 9em;
-}
-h1.helvetica {
-    font-family: Helvetica;
-}
-h1.georgia {
-    font-family: Georgia;
+    max-width: 34em;
+    margin: 0 auto;
+    @include word-wrap(break-word);
+    @include font-size-adjust(0.48);
 }
 
 
 // $Typographic scale
 // ============================================================
-// 72,60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
+// 72, 60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
 // http://thesassway.com/projects/modular-scale
 
 @function calc-modular-scale($scale, $base, $value) {
@@ -233,32 +169,6 @@ h6 {
 
 p {
     @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
-}
-
-
-// $Typekit
-// ============================================================
-// FF Meta Serif Web Pro
-// The most influential sans serif of the digital revolution (FF Meta)
-// now has a serif companion. It took three years and three designers
-// to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
-// Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
-
-body {
-    font-weight: 400;
-    .wf-loading & {
-        font-family: serif;
-        visibility: hidden;
-    }
-    .wf-active & {
-        font-family: "ff-meta-serif-web-pro",serif;
-        font-weight: 400;
-        visibility: visible;
-    }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
 }
 
 
