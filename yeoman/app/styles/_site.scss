@@ -1,3 +1,10 @@
+// $Globals
+// ============================================================
+
+a { text-decoration: none; }
+
+
+
 // ampersand demo
 .ampersands {
     h2 {
@@ -18,14 +25,16 @@
     }
 }
 
+.example {
+    text-align: center;
+}
 
 // ampersand demo
 h1.helvetica,
 h1.georgia {
     display: inline-block;
-    margin-top: 0;
-    margin-bottom: .25em;
     font-size: 9em;
+    line-height: 1;
 }
 h1.helvetica {
     font-family: Helvetica;
@@ -34,6 +43,17 @@ h1.georgia {
     font-family: Georgia;
 }
 
+// $Color
+// ============================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+}
 
 
 // $Typekit

@@ -21,7 +21,7 @@
         <!--banner-->
         <header class="header" role="banner">
             <hgroup>
-                <h1 id="title"><a href="/" rel="me">web&ndash;thang</a></h1>
+                <h1 id="title" class="giga"><a href="/" rel="me">web&ndash;thang</a></h1>
             </hgroup>
             <nav role="navigation">
                 <ul>
@@ -32,14 +32,15 @@
         </header>
 
         <figure class="hero">
-            <p>The problem with most frameworks is that they make decisions on how to organize, structure and design a site, but pattern libraries are similarly too tied up in markup matching their specific style and design&hellip;What we aim for is &ndash; a thing that doesn&rsquo;t do that. web&ndash;thang is a "typographic boilerplate", where we don&rsquo;t make too many design choices, but we do set out patterns for proper markup and "pre&ndash;designed" styles. Something really stripped&ndash;down that&rsquo;s concerned with the technical and appropriate implementations of design patterns &ndash;not how they look.</p>
+            <p>The problem with most frameworks is that they make decisions on how to organize, structure and design a site, but pattern libraries are similarly too tied up in markup matching their specific style and design&hellip;What we aim for is &ndash; a thing that doesn&rsquo;t do that.</p>
+            <p>web–thang is a "typographic boilerplate", where we don&rsquo;t make too many design choices, but we do set out patterns for proper markup and "pre&ndash;designed" styles. Something really stripped&ndash;down that&rsquo;s concerned with the technical and appropriate implementations of design patterns &ndash;not how they look.</p>
             <button class="btn"><a href="/download/webthang.scss" rel="bookmark">Download The Files</a></button>
         </figure>
 
         <!-- base typography standardization -->
         <section class="base-type">
             <header>
-                <h1>Base Type</h1>
+                <h1 class="mega">Base Type</h1>
             </header>
             <p>For our base we use the following font settings on our <code>body</code> element to standardize the typographic scale for us in a consistent manner without the dependency of a library or reset style sheet.</p>
 <figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
@@ -64,8 +65,10 @@ body {
                 <h1>Font Size Adjust</h1>
             </header>
             <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x&ndash;height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
-            <h1 class="helvetica">x</h1>
-            <h1 class="georgia">x</h1>
+            <figure class="example">
+                <h1 class="helvetica">x</h1>
+                <h1 class="georgia">x</h1>
+            </figure>
             <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
@@ -83,12 +86,14 @@ body {
             </header>
             <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, though, as the size progression might look inconsistent. Use a modular scale that calculates those sizes from a ratio. There’s an excellent calculator for this at modularscale.com.</p>
 
-            <h1>Hello World</h1>
-            <h2>Hello World</h2>
-            <h3>Hello World</h3>
-            <h4>Hello World</h4>
-            <h5>Hello World</h5>
-            <h6>Hello World</h6>
+            <h1 class="giga">Heading Giga</h1>
+            <h1 class="mega">Heading Mega</h1>
+            <h1 class="alpha">Heading Alpha</h1>
+            <h2 class="beta">Heading Beta</h2>
+            <h3 class="gamma">Heading Gamma</h3>
+            <h4 class="delta">Heading Delta</h4>
+            <h5 class="epsilon">Heading Epsilon</h5>
+            <h6 class="zeta">Heading Zeta</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos distinctio earum ea numquam placeat expedita praesentium in. Amet cupiditate facere praesentium recusandae consequuntur molestiae repellat voluptate tempora voluptas unde.</p>
             <figure class="web-thang-code-block"><pre><code class="language-css">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {

@@ -89,21 +89,20 @@
 // $Globals
 // ============================================================
 
-a { text-decoration: none; }
 
 
 // $Base Type
 // ============================================================
 
 $weight: normal;
-$line-height: 1.5;
-$font-size: 100%;
-$font-base: 16;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}/#{$line-height} $font-family;
+   font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
 html {
@@ -116,8 +115,8 @@ body {
     margin: 0 auto;
     @include word-wrap(break-word);
     @include font-size-adjust(0.48);
+    @include css-hyphens(auto);
 }
-
 
 // $Typographic scale
 // ============================================================
@@ -132,142 +131,85 @@ body {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$heading1:   72;
-$heading2:   60;
-$heading3:   48;
-$heading4:   36;
-$heading5:   24;
-$heading6:   21;
-$paragraphs: 18;
+$giga:      90; // 90 = 18 × 5
+$mega:      72; // 72 = 18 × 4
+$alpha:     60; // 60 = 18 × 3.3333
+$beta:      48; // 72 = 18 × 2.6667
+$gamma:     36; // 72 = 18 × 2
+$delta:     24; // 72 = 18 × 1.3333
+$epsilon:   21; // 72 = 18 × 1.1667
+$zeta:      18; // 72 = 18 × 1
 $type-scale-unit-value: rem;
 
-h1 {
-    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
-    line-height: 1.08333333333333;
+
+%rhythm {
+    margin-top: 0;
+    margin-bottom: $line-height * 1rem;
 }
 
-h2 {
-    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
-    line-height: 1.08333333333333;
+%hN {
+    padding: ($line-height * 1rem) 0;
+    line-height: 1;
+    margin: 0;
+    & + %hN {
+        padding-top: 0;
+    }
 }
 
-h3 {
-    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma,
+.delta, .epsilon, .zeta {
+    @extend %hN;
 }
 
-h4 {
-    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}'); //2.25rem
 }
 
-h5 {
-    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}'); //2.25rem
 }
 
-h6 {
-    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+h1, .alpha {
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}'); //2.25rem
 }
 
-p {
-    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
+h2, .beta {
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}'); //1.5rem
+}
+
+h3, .gamma {
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+}
+
+h4, .delta {
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+h5, .epsilon {
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+}
+
+h6, .zeta {
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}'); //0.875rem
 }
 
 
 // $Color
 // ============================================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #222;
-}
-
-
-// $Small Caps
-// ============================================================
-// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
-// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
-
-@mixin smallcaps($color, $font-weight) {
-    font-variant: small-caps;
-    font-weight: $font-weight;
-    text-transform: lowercase;
-    color: $color;
-}
-
-abbr {
-    @include smallcaps(gray, 600);
-    &:hover {
-        cursor: help;
-    }
-}
-
-
-// $Unicode Ampersand
-// ============================================================
-// targeting ampersands through unicode-range
-// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
-// http://nimbupani.com/jscamp-css-next.html
-
-$amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
-$amp-font-fallback: local('Georgia');
-
-@font-face {
-    font-family: '#{$amp-font-name}';
-    src: $amp-font-source;
-    unicode-range: U+26;
-}
-@font-face {
-    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
-    src: $amp-font-fallback;
-    unicode-range: U+270C;
-}
-
-@mixin ampersand($amp-font-family...) {
-    font-family: $amp-font-family;
-}
-
-%ampersand-placeholder {
-    @include ampersand(Ampersand, Arial, sans-serif);
-}
-
-.amp {
-    @extend %ampersand-placeholder;
-}
-
-
-// $Hyphens
-// ============================================================
-//http://trentwalton.com/2011/09/07/css-hyphenation
-
-$indent-val: 1.5em;
-
-@mixin txt-indent($indent) {
-    text-indent: $indent;
-}
-
-@mixin css-hyphens($val) {
-    -webkit-hyphens: $val; // Safari 6
-    -moz-hyphens: $val; // FF19
-    -ms-hyphens: $val; // IE10
-    hyphens: $val; // standard
-};
-
-body {
-    //Ala Trent Walton
-    @include css-hyphens(auto);
-}
 
 
 // $Indenting
 // ============================================================
 
 p {
-    & + p {
+    // reset top margin, and set bottom margin equal to one unit of line-height
+    @extend %rhythm;
+    & + p:not(.hN) {
         @include txt-indent($indent-val);
+        // since we don't want indents and paragraph breaks, fake removing the bottom margin on the previous paragraph
+        margin-top: $line-height * -1rem;
     }
 }
 

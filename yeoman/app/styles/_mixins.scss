@@ -17,3 +17,75 @@
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
 }
+
+
+// $Small Caps
+// ============================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
+
+@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}
+
+
+// $Unicode Ampersand
+// ============================================================
+// targeting ampersands through unicode-range
+// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
+// http://nimbupani.com/jscamp-css-next.html
+
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+@font-face {
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
+    unicode-range: U+26;
+}
+@font-face {
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
+    unicode-range: U+270C;
+}
+
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}
+
+
+// $Hyphens
+// ============================================================
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+$indent-val: 1.5em;
+
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+
+@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val; // standard
+};
