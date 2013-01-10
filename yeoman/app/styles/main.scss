@@ -147,8 +147,12 @@ $type-scale-unit-value: rem;
     margin-bottom: $line-height * 1rem;
 }
 
+// $Header Styles
+// ============================================================
 %hN {
-    padding: ($line-height * 1rem) 0;
+    // don't use shorthand to avoid spoiling left/right padding on things like buttons
+    padding-top: $line-height * 1rem;
+    padding-bottom: $line-height * 1rem;
     line-height: 1;
     margin: 0;
     & + %hN {
@@ -163,35 +167,35 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .giga {
-    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
 }
 
 .mega {
-    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
 }
 
 h1, .alpha {
-    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
 
 h2, .beta {
-    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}'); //1.5rem
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
 
 h3, .gamma {
-    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
 
 h4, .delta {
-    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
 }
 
 h5, .epsilon {
-    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
 }
 
 h6, .zeta {
-    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }
 
 

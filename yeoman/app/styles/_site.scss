@@ -80,3 +80,33 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
+
+
+// $Buttons
+// ============================================================
+// via inuit.css by @csswizardry (Harry Roberts)
+
+.btn {
+    font:inherit;
+    cursor:pointer;
+    border:none;
+    display:inline-block;
+    margin: 0;
+    line-height:1;
+    // padding in ems so we can change the size of a button by altering its `font-size`.
+    padding:0.5em;
+}
+    .btn,
+    .btn:hover {
+        text-decoration:none;
+    }
+
+.btn-full {
+    display:block;
+    text-align:center;
+    // The following is so that `.btn-full` works properly on `input`s as well as `a`s.
+    padding-right:0;
+    padding-left: 0;
+    width:100%;
+}
+
