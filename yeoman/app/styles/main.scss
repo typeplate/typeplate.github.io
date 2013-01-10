@@ -107,6 +107,7 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 }
 
 html {
+    //http://filamentgroup.com/lab/how_we_learned_to_leave_body_font_size_alone
     @include body-copy($font-properties...);
 }
 
@@ -143,12 +144,12 @@ $type-scale-unit-value: rem;
 
 h1 {
     @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
-    line-height: 1.08333333333333;
+    //line-height: 1.08333333333333;
 }
 
 h2 {
     @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
-    line-height: 1.08333333333333;
+    //line-height: 1.08333333333333;
 }
 
 h3 {

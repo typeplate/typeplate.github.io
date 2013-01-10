@@ -14,7 +14,7 @@
         var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
         })();
         </script>
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="/styles/main.css">
         <script src="scripts/vendor/modernizr.min.js"></script>
     </head>
     <body>
@@ -41,18 +41,19 @@
             <header>
                 <h1>Base Type</h1>
             </header>
-            <p>For our base we use the following font settings on our <code>body</code> element to standardize the typographic scale for us in a consistent manner without the dependency of a library or reset style sheet.</p>
+            <p>For our base font settings we use the following properties on our <code>body</code> element to standardize the typographic scale for us in a consistent manner. We go the variable route so we can reuse these setting later</p>
 <figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
-$lineheight: 1.5;
-$fontsize: 100%;
-$font-family: sans-serif;
-$font-properties: $weight, $lineheight, $fontsize, $font-family;
+$line-height: 1.5;
+$font-size: 100%;
+$font-base: 16;
+$font-family: serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
 
-@mixin body-copy($weight, $lineheight, $fontsize, $font-family...) {
-   font: $weight #{$fontsize}/#{$lineheight} $font-family;
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}/#{$line-height} $font-family;
 }
 
-body {
+html {
     @include body-copy($font-properties...);
 }</code></pre><figcaption>Sass</figcaption>
 </figure>
@@ -106,7 +107,7 @@ $heading4:   36;
 $heading5:   24;
 $heading6:   21;
 $paragraphs: 18;
-$type-scale-unit-value: rem;
+$type-scale-unit-value: em;
 
 h1 {
     @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}');
