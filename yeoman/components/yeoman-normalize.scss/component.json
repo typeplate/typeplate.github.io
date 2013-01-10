@@ -1,25 +1,31 @@
 {
-  "name": "normalize.scss",
-  "version": "2.0.1",
-  "author": {
-    "name": "Nicolas Gallagher"
-  },
-  "homepage": "http://necolas.github.com/normalize.css/",
+  "name": "yeoman-normalize.scss",
+  "version": "0.0.0",
+  "author": "",
+  "homepage": "https://github.com/grayghostvisuals/yeoman-normalize.scss",
   "styles": [
-    "normalize.css"
+    "_normalize.scss"
+  ],
+  "main": [
+    "_normalize.scss"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/JohnAlbin/normalize.css-with-sass-or-compass.git"
+    "url": "git://github.com/grayghostvisuals/yeoman-normalize.scss"
   },
   "licenses": [
     {
       "type": "MIT",
       "url": "http://opensource.org/licenses/MIT"
+    },
+    {
+      "type": "GPLv2",
+      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
     }
   ],
   "readme": "# normalize.css v2.0.1\n\nNormalize.css is a customisable CSS file that makes browsers render all\nelements more consistently and in line with modern standards. We researched the\ndifferences between default browser styles in order to precisely target only\nthe styles that need normalizing.\n\n[Check out the demo](http://necolas.github.com/normalize.css/2.0.1/test.html)\n\n## What does it do?\n\n* Preserves useful defaults, unlike many CSS resets.\n* Normalizes styles for a wide range of elements.\n* Corrects bugs and common browser inconsistencies.\n* Improves usability with subtle improvements.\n* Explains what code does using detailed comments.\n\n## How to use it\n\nNormalize.css is intended to be used as an alternative to CSS resets.\n\nIt's suggested that you read the `normalize.css` file and consider customising\nit to meet your needs. Alternatively, include the file in your project and\noverride the defaults later in your CSS.\n\nFor more information about how to use it, see the [About normalize.css article](http://nicolasgallagher.com/about-normalize-css/).\n\n## Browser support\n\n* Google Chrome\n* Mozilla Firefox 4+\n* Apple Safari 5+\n* Opera 12+\n* Internet Explorer 8+\n\n## The Compass port of normalize.css\n\nThis project is the Sass/Compass port of normalize.css. It aims to use the best\npartials from Compass to make normalize even easier to integrate with your\nwebsite. It currently utilizes:\n\n* Legacy IE support variables\n* CSS3 Box Sizing mixin\n* Vertical Rhythm mixins\n\nThere are actually other Compass ports as well. Including:\n\n* https://github.com/waynegraham/compass-normalize-plugin\n* https://github.com/ksmandersen/compass-normalize\n* https://github.com/hail2u/normalize.scss\n* https://github.com/kristerkari/normalize.scss\n\nSome of the above projects make normalize into a Sass partial. That makes them impossible to use in the recommended way: copy the file into your website and customize for your needs.\n\n## Contribute\n\nPlease read my [issue\nguidelines](https://github.com/necolas/issue-guidelines).\n\n## Acknowledgements\n\nNormalize.css is a project by [Nicolas Gallagher](http://github.com/necolas)\nand [Jonathan Neal](http://github.com/jonathantneal).\n\nThis Compass port is a project by [John Albin Wilkins](http://john.albin.net).\n",
   "readmeFilename": "README.md",
-  "_id": "normalize-css@2.0.1",
-  "description": "Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards. We researched the differences between default browser styles in order to precisely target only the styles that need normalizing."
+  "_id": "yeoman-normalize.scss@2.0.1+build.2",
+  "description": "Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards. We researched the differences between default browser styles in order to precisely target only the styles that need normalizing.",
+  "commit": "cba00aa37cfa910ce60c0bfa80df607e97c5257d"
 }
