@@ -51,10 +51,16 @@ $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: serif;
+$font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
+$serif-boolean: true !default;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}%/#{$line-height} $font-family;
+    @if $serif-boolean {
+        font: $weight #{$font-size}%/#{$line-height} $font-family;
+    }@else {
+        font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
+    }
 }
 
 html {
@@ -244,17 +250,35 @@ p {
                 <b class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</b> <b class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</b>
             </div>
             <p>So you've got a few icon fonts floating around, but don't wanna change all the reference links for the icon files and especially the multitude of file types needed to include like EOT, TTF, SVG, &amp; WOFF. With so many URLs to change it can be extremely tedious, but not anymore as it can be done in one spot using a Sass loop and the compass <code class="language-sass">@include font-face</code> helper function. This will require a bit of configuration on your part depending on your project and workflow settings.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">$fonts: (icon-font-name, another-icon-font-name);
-@each $font in $fonts {
-    @include font-face( $font,
-        font-files(
-            '#{$font}/#{$font}.woff',
-            '#{$font}/#{$font}.ttf',
-            '#{$font}/#{$font}.svg', svg
-        ),
-        '#{$font}/#{$font}.eot'
-    )
-}</code></pre><figcaption>Sass</figcaption>
+            <figure class="web-thang-code-block"><pre><code class="language-sass">// ICON FONTS
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory"
+//
+// $icon-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $icon-fonts: null;
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null;
+@if ($icon-fonts != null) {
+    @each $font in $icon-fonts {
+        @include font-face( $font,
+            font-files(
+                '#{$font}/#{$font}.woff',
+                '#{$font}/#{$font}.ttf',
+                '#{$font}/#{$font}.svg', svg
+            ),
+            '#{$font}/#{$font}.eot'
+        )
+    }
+}
+//Your custom override
+$icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
             </figure>
 
             <figure class="web-thang-code-block"><pre><code class="language-css">@font-face {

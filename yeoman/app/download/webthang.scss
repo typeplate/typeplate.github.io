@@ -49,7 +49,7 @@ $type-scale-unit-value: em;
 $indent-val: 1.5em;
 
 
-// $ F o n t - F a c e
+// $ A m p e r s a n d    @font-face
 // ==========================================================================
 
 @font-face {
@@ -64,7 +64,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ I c o n  F o n t  H e l p e r
+// $ I c o n    F o n t    H e l p e r
 // ============================================================
 // Using Sass's @each loop to automatically generate code for web fonts
 
@@ -86,7 +86,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ M o d u l a r  S c a l e
+// $ M o d u l a r    S c a l e
 // ==========================================================================
 //http://thesassway.com/projects/modular-scale
 
@@ -94,18 +94,18 @@ $indent-val: 1.5em;
     @return ($scale/$base)#{$value};
 }
 @mixin modular-scale($scale, $base, $value) {
-  font-size: calc-modular-scale($scale, $base, $value);
+    font-size: calc-modular-scale($scale, $base, $value);
 }
 
 
-// $ B o d y  C o p y  M i x i n
+// $ B o d y    C o p y    M i x i n
 // ==========================================================================
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}%/#{$line-height} $font-family;
+    font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
-// $ T e x t  I n d e n t  M i x i n
+// $ T e x t - I n d e n t    M i x i n
 // ==========================================================================
 
 @mixin txt-indent($indent) {
@@ -113,7 +113,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ H y p h e n  M i x i n
+// $ H y p h e n    M i x i n
 // ==========================================================================
 //http://trentwalton.com/2011/09/07/css-hyphenation
 
@@ -125,7 +125,7 @@ $indent-val: 1.5em;
 };
 
 
-// $ S m a l l  C a p s  M i x i n
+// $ S m a l l c a p s    M i x i n
 // ==========================================================================
 // http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
 // ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
@@ -138,7 +138,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ F o n t - S i z e  A d j u s t  M i x i n
+// $ F o n t - S i z e  - A d j u s t    M i x i n
 // ==========================================================================
 // correct x-height for fallback fonts
 
@@ -148,7 +148,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ A m p e r s a n d  M i x i n
+// $ A m p e r s a n d    M i x i n
 // ==========================================================================
 
 @mixin ampersand($amp-font-family...) {
@@ -156,7 +156,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ W o r d  W r a p
+// $ W o r d    W r a p    M i x i n
 // ============================================================
 
 @mixin word-wrap($wrap-value) {
@@ -167,7 +167,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ D e f i n i t i o n  L i s t  M i x i n
+// $ D e f i n i t i o n    L i s t    M i x i n
 // ==========================================================================
 
 @mixin definition-list-style($style) {
@@ -220,7 +220,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ U N I C O D E - R A N G E  A m p e r s a n d
+// $ U N I C O D E - R A N G E    A m p e r s a n d
 // ==========================================================================
 
 @font-face {
@@ -237,7 +237,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ A m p e r s a n d  C l a s s  H e l p e r
+// $ A m p e r s a n d    H e l p e r    C l a s s
 // ==========================================================================
 
 %ampersand-placeholder {
@@ -261,6 +261,9 @@ body {
     @include css-hyphens(auto);
     //proper x-height for fallbacks
     @include font-size-adjust(0.48);
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
     @include word-wrap(break-word);
     color: #444;
 }
@@ -306,14 +309,8 @@ h6 {
 // ==========================================================================
 
 p {
-    // normal: Indicates that lines may only break at normal word break points.
-    // break-word : Indicates that normally unbreakable words may be broken at ...
-    // arbitrary points if there are no otherwise acceptable break points in the line.
-    word-wrap: break-word; // other option is normal
-    //siblings indentation
     & + p {
-        //Indenting
-        @include txt-indent($indent-val);
+        @include txt-indent($indent-val); //siblings indentation
     }
 }
 
@@ -338,7 +335,7 @@ p {
 }
 
 
-// $ S m a l l  C a p s
+// $ S m a l l c a p s
 // ==========================================================================
 
 abbr {
@@ -355,7 +352,7 @@ abbr {
 h1, h2, h3, h4, h5, h6 { color: #222; }
 
 
-// $ D e f i n i t i o n  L i s t s
+// $ D e f i n i t i o n    L i s t s
 // ==========================================================================
 
 .lining {

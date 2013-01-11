@@ -1,3 +1,12 @@
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+    @if $serif-boolean {
+        font: $weight #{$font-size}%/#{$line-height} $font-family;
+    }@else {
+        font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
+    }
+}
+
+
 // $Word Wrap
 // ============================================================
 

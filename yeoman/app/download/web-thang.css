@@ -72,9 +72,6 @@ h6 {
   font-size: 1em;
 }
 
-p {
-  word-wrap: break-word;
-}
 p + p {
   text-indent: 1.5em;
 }

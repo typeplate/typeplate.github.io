@@ -100,9 +100,7 @@
 // $Base Type
 // ============================================================
 
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}%/#{$line-height} $font-family;
-}
+$serif-boolean: false;
 
 html {
     @include body-copy($font-properties...);
@@ -117,6 +115,7 @@ body {
     @include css-hyphens(auto);
 }
 
+
 // $Typographic scale
 // ============================================================
 // 72, 60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
@@ -127,7 +126,7 @@ body {
 }
 
 @mixin modular-scale($scale, $base, $value) {
-  font-size: calc-modular-scale($scale, $base, $value);
+    font-size: calc-modular-scale($scale, $base, $value);
 }
 
 
@@ -147,8 +146,10 @@ $type-scale-unit-value: rem;
     margin-bottom: $line-height * 1rem;
 }
 
+
 // $Header Styles
 // ============================================================
+
 %hN {
     text-rendering: optimizeLegibility;
     // don't use shorthand to avoid spoiling left/right padding on things like buttons
