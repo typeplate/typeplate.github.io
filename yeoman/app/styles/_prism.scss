@@ -1,8 +1,11 @@
+@import "vars";
+
 /**
  * prism.js Dark theme for JavaScript, CSS and HTML
  * Based on the slides of the talk “/Reg(exp){2}lained/”
  * @author Lea Verou
  */
+
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -34,7 +37,6 @@ pre[class*="language-"] {
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
-    border: .3em solid hsl(30,20%,40%);
     border-radius: .5em;
     box-shadow: 1px 1px .5em black inset;
 }
@@ -42,13 +44,13 @@ pre[class*="language-"] {
 .web-thang-code-block {
     position: relative;
     figcaption {
-        border-radius: 0;
-        padding: 0.5em 0;
+        border-radius: 0 0 0.5em 0.5em;
+        padding: 0.25em 0.5em;
         position: absolute;
         top: 0;
-        right: 0;
-        background: orange;
-        color: #222;
+        right: 2%;
+        background: $rust;
+        color: #cobalt-deep;
     }
 }
 
@@ -108,6 +110,7 @@ pre[class*="language-"] {
 .token.important,
 .token.variable  {
     color: #e90;
+    color: lighten($rust, 5%);
 }
 
 .token.important,

@@ -21,8 +21,7 @@ body {
 }
 
 .giga {
-    line-height: 2;
-    margin-bottom: 0;
+    padding: 0.5em 0;
 }
 
 
@@ -111,10 +110,11 @@ nav[role="navigation"] {
     cursor:pointer;
     border:none;
     display:inline-block;
+    vertical-align: middle;
     margin: 0;
     line-height:1;
     // padding in ems so we can change the size of a button by altering its `font-size`.
-    padding: 0.5em 0.75em;
+    padding: 0.5em 0.5em;
     // remove inline-block spacing bug
     letter-spacing: normal;
 }
@@ -135,13 +135,31 @@ nav[role="navigation"] {
 .btn-box {
     margin-top: 0;
     margin-bottom: $line-height * 1rem;
-    background-color: $crimson-light;
     border-radius: 0.25em;
-    margin-right: 1em;
+    margin-right: 1rem;
     color: $cobalt-deep;
+    background-color: $rust;
+
+    -webkit-transition: all 0.132s ease;
+    -moz-transition: all 0.132s ease;
+    -o-transition: all 0.132s ease;
+    -ms-transition: all 0.132s ease;
+    transition: all 0.132s ease;
+    
     &:hover {
-        background-color: $crimson;
-    }
+    background-color: $rust-deep;
+    color: #fafafa;
+    -webkit-transform: translateY(-0.5rem);
+    -moz-transform: translateY(-0.5rem);
+    -o-transform: translateY(-0.5rem);
+    -ms-transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem);
+}
+
+}
+.btn-action {
+    // background-color: $crimson-light;
+    position: relative;
 }
 
 // $Letterpress
@@ -151,6 +169,6 @@ nav[role="navigation"] {
     font-style: italic;
     text-align: center;
     text-rendering: optimizeLegibility;
-    color: $cobalt-light;
+    color: $cobalt-fade;
     text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
 }
