@@ -7,7 +7,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
     color: white;
-    text-shadow: 0 -.1em .2em black;
+    // text-shadow: 0 -.1em .2em black;
     font-family: Consolas, Monaco, 'Andale Mono', monospace;
     direction: ltr;
     text-align: left;
@@ -26,7 +26,7 @@ pre[class*="language-"] {
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-    background: hsl(30,20%,25%);
+    background-color: hsl(207, 89%, 7%);
 }
 
 /* Code blocks */
@@ -37,6 +37,19 @@ pre[class*="language-"] {
     border: .3em solid hsl(30,20%,40%);
     border-radius: .5em;
     box-shadow: 1px 1px .5em black inset;
+}
+
+.web-thang-code-block {
+    position: relative;
+    figcaption {
+        border-radius: 0;
+        padding: 0.5em 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: orange;
+        color: #222;
+    }
 }
 
 /* Inline code */

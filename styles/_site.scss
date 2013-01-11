@@ -1,0 +1,112 @@
+// $Globals
+// ============================================================
+
+a { text-decoration: none; }
+
+
+
+// ampersand demo
+.ampersands {
+    h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+//icon demo font-size
+.icons {
+    font-size: 3em;
+    .fs1 {
+        display: inline-block;
+        &:before {
+            padding-right: .25em;
+            color: gray;
+        }
+    }
+}
+
+.example {
+    text-align: center;
+}
+
+// ampersand demo
+h1.helvetica,
+h1.georgia {
+    display: inline-block;
+    font-size: 9em;
+    line-height: 1;
+}
+h1.helvetica {
+    font-family: Helvetica;
+}
+h1.georgia {
+    font-family: Georgia;
+}
+
+// $Color
+// ============================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+}
+
+
+// $Typekit
+// ============================================================
+// FF Meta Serif Web Pro
+// The most influential sans serif of the digital revolution (FF Meta)
+// now has a serif companion. It took three years and three designers
+// to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
+// Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
+
+body {
+    font-weight: 400;
+    .wf-loading & {
+        font-family: serif;
+        visibility: hidden;
+    }
+    .wf-active & {
+        font-family: "ff-meta-serif-web-pro",serif;
+        font-weight: 400;
+        visibility: visible;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+
+// $Buttons
+// ============================================================
+// via inuit.css by @csswizardry (Harry Roberts)
+
+.btn {
+    font:inherit;
+    cursor:pointer;
+    border:none;
+    display:inline-block;
+    margin: 0;
+    line-height:1;
+    // padding in ems so we can change the size of a button by altering its `font-size`.
+    padding:0.5em;
+}
+    .btn,
+    .btn:hover {
+        text-decoration:none;
+    }
+
+.btn-full {
+    display:block;
+    text-align:center;
+    // The following is so that `.btn-full` works properly on `input`s as well as `a`s.
+    padding-right:0;
+    padding-left: 0;
+    width:100%;
+}
+

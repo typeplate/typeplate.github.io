@@ -3,23 +3,24 @@
 // ==========================================================================
 
 $weight: normal;
-$line-height: 1.5;
-$font-size: 100%;
-$font-base: 16;
-$font-family: serif;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 //ampersand
 $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
 
 //headings
-$heading1:   72;
-$heading2:   60;
-$heading3:   48;
-$heading4:   36;
-$heading5:   24;
-$heading6:   21;
-$paragraphs: 18;
+$giga:      90; // 90 = 18 × 5
+$mega:      72; // 72 = 18 × 4
+$alpha:     60; // 60 = 18 × 3.3333
+$beta:      48; // 72 = 18 × 2.6667
+$gamma:     36; // 72 = 18 × 2
+$delta:     24; // 72 = 18 × 1.3333
+$epsilon:   21; // 72 = 18 × 1.1667
+$zeta:      18; // 72 = 18 × 1
 
 //typscale unit
 $type-scale-unit-value: em;
@@ -49,27 +50,33 @@ $amp-font-fallback: local('Georgia');
 }
 
 
+// $Modular Scale
 // ==========================================================================
-// $Mixins
-// ==========================================================================
-
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}/#{$line-height} $font-family;
-}
-
 //http://thesassway.com/projects/modular-scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
-
 @mixin modular-scale($scale, $base, $value) {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
+
+// $body Copy Mixin
+// ==========================================================================
+
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}%/#{$line-height} $font-family;
+}
+
+// $Text Indent Mixin
+// ==========================================================================
 @mixin txt-indent($indent) {
     text-indent: $indent;
 }
 
+
+// $Hyphen Mixin
+// ==========================================================================
 //http://trentwalton.com/2011/09/07/css-hyphenation/
 @mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
@@ -78,6 +85,9 @@ $amp-font-fallback: local('Georgia');
     hyphens: $val; // standard
 };
 
+
+// $Small Caps Mixin
+// ==========================================================================
 @mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
@@ -85,15 +95,35 @@ $amp-font-fallback: local('Georgia');
     color: $color;
 }
 
+
+// $Font-Size Adjust Mixin
+// ==========================================================================
 @mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
 }
 
+
+// $Ampersand Mixin
+// ==========================================================================
 @mixin ampersand($amp-font-family...) {
     font-family: $amp-font-family;
 }
 
+
+// $Word Wrap
+// ============================================================
+
+@mixin word-wrap($wrap-value) {
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: $wrap-value;
+}
+
+
+// $Definition List Mixin
+// ==========================================================================
 @mixin definition-list-style($style) {
     // lining style
     @if $style == lining {
@@ -144,7 +174,6 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// ==========================================================================
 // $Ampersand fontface
 // ==========================================================================
 
@@ -162,7 +191,6 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// ==========================================================================
 // $Ampersand
 // ==========================================================================
 
@@ -175,40 +203,55 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-
-// ==========================================================================
 // $Body Type Base
 // ==========================================================================
 
+html {
+    @include body-copy($font-properties...);
+}
+
 // Reverse Variable Arguments
 body {
-    @include body-copy($font-properties...);
-    @include font-size-adjust(1);
+    @include css-hyphens(auto);
+    @include font-size-adjust(0.48);
+    @include word-wrap(break-word);
     color: #444;
 }
 
 
-// ==========================================================================
 // $Headings
 // ==========================================================================
 
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+}
+
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+}
+
 h1 {
-    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
+
 h2 {
-    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
+
 h3 {
-    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
+
 h4 {
-    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
 }
+
 h5 {
-    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
 }
+
 h6 {
-    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }
 
 
@@ -217,7 +260,6 @@ h6 {
 // ==========================================================================
 
 p {
-    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
     // normal: Indicates that lines may only break at normal word break points.
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
