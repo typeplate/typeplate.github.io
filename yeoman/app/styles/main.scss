@@ -113,7 +113,7 @@ body {
     max-width: 34em;
     margin: 0 auto;
     @include word-wrap(break-word);
-    @include font-size-adjust(0.48);
+    // @include font-size-adjust(0.48); // this legit does nothing right now, I'm confused.
     @include css-hyphens(auto);
 }
 

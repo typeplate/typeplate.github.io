@@ -141,7 +141,8 @@ h1, h2, h3, h4, h5, h6 {
         height: 1px;
         position: absolute;
         top: 50%;
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0.135, $cobalt-lighter), color-stop(0.135, transparent), color-stop(0.872, transparent), color-stop(0.872, $cobalt-lighter));
+        // background-image: -webkit-gradient(linear, left top, right top, color-stop(0.135, $cobalt-lighter), color-stop(0.135, transparent), color-stop(0.872, transparent), color-stop(0.872, $cobalt-lighter));
+        @include background-image(linear-gradient(left, $cobalt-lighter 11.5%, transparent 13.5%, transparent 87%, $cobalt-lighter 89%));
     }
 }
 
