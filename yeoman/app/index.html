@@ -43,18 +43,19 @@
             <header>
                 <h1 class="mega">Base Type</h1>
             </header>
-            <p>For our base we use the following font settings on our <code>body</code> element to standardize the typographic scale for us in a consistent manner without the dependency of a library or reset style sheet.</p>
+            <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HMTL</code></abbr> element to standardize the typographic scale for us in a consistent manner.</p>
 <figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
-$lineheight: 1.5;
-$fontsize: 100%;
-$font-family: sans-serif;
-$font-properties: $weight, $lineheight, $fontsize, $font-family;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
 
-@mixin body-copy($weight, $lineheight, $fontsize, $font-family...) {
-   font: $weight #{$fontsize}/#{$lineheight} $font-family;
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+   font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
-body {
+html {
     @include body-copy($font-properties...);
 }</code></pre><figcaption>Sass</figcaption>
 </figure>
