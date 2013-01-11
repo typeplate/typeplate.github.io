@@ -24,7 +24,25 @@ body {
     padding: 0.25em 0;
 }
 
+.col-narrow {
+    padding: 0 3em;
+}
 
+.botDivider {
+    border-bottom: 1px solid transparentize($cobalt-deep, 0.75);
+    @extend %rhythm;
+}
+
+.perma-anchor {
+    color: transparentize($mustard, 0.5);
+    font-weight: normal;
+    @extend .gamma;
+    position: relative;
+    top: -0.125em;
+    &:hover {
+        color: $mustard;
+    }
+}
 
 
 // ampersand demo

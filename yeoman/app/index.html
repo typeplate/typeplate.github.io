@@ -21,7 +21,7 @@
     </head>
     <body>
         <!--banner-->
-        <header class="header" role="banner">
+        <header class="header col-narrow botDivider" role="banner">
             <hgroup>
                 <h1 id="title" class="giga"><a href="/" rel="me" class="letterpress">web&ndash;thang</a></h1>
             </hgroup>
@@ -32,18 +32,16 @@
                 <a href="https://github.com/zakkain/web-thang/issues/new" class="btn epsilon btn-box">feedback</a>
                 <a href="#" class="btn epsilon btn-box">blog</a>
             </nav>
-        </header>
-
-
+        
             <p>Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.</p>
             <p><i><b>Web–thang</b></i> is a library of "typographic starter kit"; we don’t make any aesthetic design choices, but we do define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library that’s concerned with the appropriate technical implementations of design patterns—not how they look.</p>
-
-        <hr>
+        
+        </header>
         
         <!-- base typography standardization -->
         <section class="base-type">
             <header>
-                <h1 class="mega">Base Type</h1>
+                <h1 class="beta" id="base-type"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
             </header>
             <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HMTL</code></abbr> element to standardize the typographic scale for us in a consistent manner.</p>
 <figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
