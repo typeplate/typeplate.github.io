@@ -61,6 +61,12 @@
 @import "../components/normalize-css/normalize.css";
 
 
+// $Variables
+// ============================================================
+
+@import "vars";
+
+
 // $Mixins
 // ============================================================
 
@@ -93,13 +99,6 @@
 
 // $Base Type
 // ============================================================
-
-$weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$font-family: Georgia, serif;
-$font-properties: $weight, $line-height, $font-size, $font-family;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
    font: $weight #{$font-size}%/#{$line-height} $font-family;
@@ -150,19 +149,17 @@ $type-scale-unit-value: rem;
 // $Header Styles
 // ============================================================
 %hN {
+    text-rendering: optimizeLegibility;
     // don't use shorthand to avoid spoiling left/right padding on things like buttons
-    padding-top: $line-height * 1rem;
-    padding-bottom: $line-height * 1rem;
+    margin-top: $line-height * 1rem;
+    margin-bottom: $line-height * 1rem;
     line-height: 1;
-    margin: 0;
     & + %hN {
         padding-top: 0;
     }
 }
 
-h1, h2, h3, h4, h5, h6,
-.alpha, .beta, .gamma,
-.delta, .epsilon, .zeta {
+h1, h2, h3, h4, h5, h6 {
     @extend %hN;
 }
 

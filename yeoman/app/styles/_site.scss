@@ -1,7 +1,24 @@
+// $Variables
+// ============================================================
+
+@import "vars";
+
+
+// $Helpers
+// ============================================================
+
+.center {
+    text-align: center;
+}
+
+
 // $Globals
 // ============================================================
 
 a { text-decoration: none; }
+body {
+    background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
+}
 
 
 
@@ -94,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     line-height:1;
     // padding in ems so we can change the size of a button by altering its `font-size`.
-    padding:0.5em;
+    padding: 0.75em;
 }
     .btn,
     .btn:hover {
@@ -110,3 +127,23 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
 }
 
+.btn-box {
+    margin-top: 0;
+    margin-bottom: $line-height * 1rem;   
+    &:hover {
+        background-color: $red;
+    }
+}
+
+
+// $Letterpress
+// ============================================================
+//
+
+.letterpress {
+    font-style: italic;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    color: rgba(94, 140, 186, 0.75);
+    text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
+}
