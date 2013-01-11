@@ -130,7 +130,8 @@ body {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$giga:      90; // 90 = 18 × 5
+
+$giga:      108; // 90 = 18 × 5
 $mega:      72; // 72 = 18 × 4
 $alpha:     60; // 60 = 18 × 3.3333
 $beta:      48; // 72 = 18 × 2.6667

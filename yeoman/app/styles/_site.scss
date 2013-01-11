@@ -22,6 +22,7 @@ body {
 
 .giga {
     line-height: 2;
+    margin-bottom: 0;
 }
 
 
@@ -99,6 +100,11 @@ h1, h2, h3, h4, h5, h6 {
 // $Buttons
 // ============================================================
 // via inuit.css by @csswizardry (Harry Roberts)
+nav[role="navigation"] {
+    // in preparation for inline-block children
+    letter-spacing: -4px;
+    @extend %rhythm;
+}
 
 .btn {
     font:inherit;
@@ -108,7 +114,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     line-height:1;
     // padding in ems so we can change the size of a button by altering its `font-size`.
-    padding: 0.75em;
+    padding: 0.5em 0.75em;
+    // remove inline-block spacing bug
+    letter-spacing: normal;
 }
     .btn,
     .btn:hover {
@@ -126,23 +134,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-box {
     margin-top: 0;
-    margin-bottom: $line-height * 1rem;   
+    margin-bottom: $line-height * 1rem;
+    background-color: $crimson-light;
+    border-radius: 0.25em; 
+    margin-right: 1em;
+    color: $cobalt-deep;
     &:hover {
-        background-color: $red;
-    }
-}
-
-
-.header hgroup {
-    position: relative;
-    &:after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        position: absolute;
-        top: 50%;
-        // background-image: -webkit-gradient(linear, left top, right top, color-stop(0.135, $cobalt-lighter), color-stop(0.135, transparent), color-stop(0.872, transparent), color-stop(0.872, $cobalt-lighter));
-        @include background-image(linear-gradient(left, $cobalt-lighter 11.5%, transparent 13.5%, transparent 87%, $cobalt-lighter 89%));
+        background-color: $crimson;
     }
 }
 
