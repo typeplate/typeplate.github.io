@@ -1,5 +1,5 @@
 // ==========================================================================
-// $Variables
+// $ V a r i a b l e s
 // ==========================================================================
 
 $weight: normal;
@@ -9,10 +9,30 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
-//ampersand
+// AMPERSAND
 $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+// ICON FONTS
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory"
+//
+// $icon-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $icon-fonts: null;
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null;
 
-//headings
+//AMPERSAND @font-face VALUES
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+//TYPE SCALE
 $giga:      90; // 90 = 18 × 5
 $mega:      72; // 72 = 18 × 4
 $alpha:     60; // 60 = 18 × 3.3333
@@ -25,17 +45,11 @@ $zeta:      18; // 72 = 18 × 1
 //typscale unit
 $type-scale-unit-value: em;
 
-//paragraphs indent
+//paragraph text indent amount
 $indent-val: 1.5em;
 
-//ampersand @font-face declarations
-$amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
-$amp-font-fallback: local('Georgia');
 
-
-// ==========================================================================
-// $Font-Face
+// $ F o n t - F a c e
 // ==========================================================================
 
 @font-face {
@@ -50,9 +64,32 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $Modular Scale
+// $ I c o n  F o n t  H e l p e r
+// ============================================================
+// Using Sass's @each loop to automatically generate code for web fonts
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+//https://gist.github.com/4469518
+
+@if ($icon-fonts != null) {
+    @each $font in $icon-fonts {
+        @include font-face( $font,
+            font-files(
+                '#{$font}/#{$font}.woff',
+                '#{$font}/#{$font}.ttf',
+                '#{$font}/#{$font}.svg', svg
+            ),
+            '#{$font}/#{$font}.eot'
+        )
+    }
+}
+
+
+// $ M o d u l a r  S c a l e
 // ==========================================================================
 //http://thesassway.com/projects/modular-scale
+
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
@@ -61,23 +98,25 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $body Copy Mixin
+// $ B o d y  C o p y  M i x i n
 // ==========================================================================
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
    font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
-// $Text Indent Mixin
+// $ T e x t  I n d e n t  M i x i n
 // ==========================================================================
+
 @mixin txt-indent($indent) {
     text-indent: $indent;
 }
 
 
-// $Hyphen Mixin
+// $ H y p h e n  M i x i n
 // ==========================================================================
-//http://trentwalton.com/2011/09/07/css-hyphenation/
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
 @mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
@@ -86,8 +125,11 @@ $amp-font-fallback: local('Georgia');
 };
 
 
-// $Small Caps Mixin
+// $ S m a l l  C a p s  M i x i n
 // ==========================================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
+
 @mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
@@ -96,22 +138,25 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $Font-Size Adjust Mixin
+// $ F o n t - S i z e  A d j u s t  M i x i n
 // ==========================================================================
+// correct x-height for fallback fonts
+
 @mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
 }
 
 
-// $Ampersand Mixin
+// $ A m p e r s a n d  M i x i n
 // ==========================================================================
+
 @mixin ampersand($amp-font-family...) {
     font-family: $amp-font-family;
 }
 
 
-// $Word Wrap
+// $ W o r d  W r a p
 // ============================================================
 
 @mixin word-wrap($wrap-value) {
@@ -122,8 +167,9 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $Definition List Mixin
+// $ D e f i n i t i o n  L i s t  M i x i n
 // ==========================================================================
+
 @mixin definition-list-style($style) {
     // lining style
     @if $style == lining {
@@ -147,7 +193,7 @@ $amp-font-fallback: local('Georgia');
             }
             &:before {
                     content: ": ";
-                    margin-left: -0.2rem; // removes extra space between the dt and the colon
+                    margin-left: -0.2rem; //removes extra space between the dt and the colon
             }
         }
     }
@@ -159,7 +205,7 @@ $amp-font-fallback: local('Georgia');
             & + dt {
                 &:before {
                     content: ", ";
-                    margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+                    margin-left: -0.2rem; // removes extra space between the dt and the comma
                 }
             }
         }
@@ -174,7 +220,7 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $Ampersand fontface
+// $ U N I C O D E - R A N G E  A m p e r s a n d
 // ==========================================================================
 
 @font-face {
@@ -184,14 +230,14 @@ $amp-font-fallback: local('Georgia');
 }
 //fallback for unicode range
 @font-face {
-    /* Ampersand fallback font */
+    // Ampersand fallback font
     font-family: 'Ampersand';
     src: local('Georgia');
     unicode-range: U+270C;
 }
 
 
-// $Ampersand
+// $ A m p e r s a n d  C l a s s  H e l p e r
 // ==========================================================================
 
 %ampersand-placeholder {
@@ -203,23 +249,24 @@ $amp-font-fallback: local('Georgia');
 }
 
 
-// $Body Type Base
+// $ G l o b a l s
 // ==========================================================================
 
 html {
     @include body-copy($font-properties...);
 }
 
-// Reverse Variable Arguments
 body {
+    //Ala Trent Walton
     @include css-hyphens(auto);
+    //proper x-height for fallbacks
     @include font-size-adjust(0.48);
     @include word-wrap(break-word);
     color: #444;
 }
 
 
-// $Headings
+// $ H e a d i n g s
 // ==========================================================================
 
 .giga {
@@ -255,8 +302,7 @@ h6 {
 }
 
 
-// ==========================================================================
-// $Paragraphs
+// $ P a r a g r a p h s
 // ==========================================================================
 
 p {
@@ -264,8 +310,6 @@ p {
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: break-word; // other option is normal
-    //Ala Trent Walton
-    @include css-hyphens(auto);
     //siblings indentation
     & + p {
         //Indenting
@@ -274,8 +318,7 @@ p {
 }
 
 
-// ==========================================================================
-// $Dropcaps
+// $ D r o p c a p s
 // ==========================================================================
 
 @mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
@@ -289,13 +332,13 @@ p {
     color: $color;
 }
 
+// drop cap helper class
 .drop-cap:first-letter {
     @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }
 
 
-// ==========================================================================
-// $Small Caps
+// $ S m a l l  C a p s
 // ==========================================================================
 
 abbr {
@@ -306,15 +349,13 @@ abbr {
 }
 
 
-// ==========================================================================
-// $Color
+// $ C o l o r
 // ==========================================================================
 
-h1,h2,h3,h4,h5,h6 { color: #222; }
+h1, h2, h3, h4, h5, h6 { color: #222; }
 
 
-// ==========================================================================
-// $Definition Lists
+// $ D e f i n i t i o n  L i s t s
 // ==========================================================================
 
 .lining {

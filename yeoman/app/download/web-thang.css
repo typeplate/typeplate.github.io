@@ -17,7 +17,6 @@
 }
 
 @font-face {
-  /* Ampersand fallback font */
   font-family: 'Ampersand';
   src: local("Georgia");
   unicode-range: U+270C;
@@ -75,10 +74,6 @@ h6 {
 
 p {
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 p + p {
   text-indent: 1.5em;
@@ -131,7 +126,6 @@ h1, h2, h3, h4, h5, h6 {
 .dictionary-style dt + dt:before {
   content: ", ";
   margin-left: -0.2rem;
-  /* removes extra space between the dt and the comma */
 }
 .dictionary-style dd {
   display: block;
