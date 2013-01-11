@@ -5,9 +5,9 @@
 // @include font-face() is a compass function so it will require compass
 // based on this gist by Chris Van Patten
 //https://gist.github.com/4469518
-$fonts: (icomoon);
+$icon-fonts: (icomoon);
 
-@each $font in $fonts {
+@each $font in $icon-fonts {
     @include font-face( $font,
         font-files(
             '#{$font}/#{$font}.woff',
