@@ -12,9 +12,13 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 // $Color
 // ============================================================
 
-$crimson: hsl(358, 80%, 55%);
-$crimson-light: transparentize($crimson, 0.1); // makes it's alpha 0.5
 
-$cobalt: hsl(210, 85%, 15%);
-$cobalt-light: transparentize($cobalt, 0.2); // makes it's alpha 0.8
+$rust: hsl(10, 70%, 50%);
+$rust-deep: saturate(darken($rust, 25%), 25%);
+
+$mustard: hsl(37, 73%, 50%);
+$mustard-deep: saturate(darken($mustard, 15%), 25%);
+
+$cobalt: hsl(210, 100%, 16%);
+$cobalt-fade: transparentize($cobalt, 0.2); // makes it's alpha 0.8
 $cobalt-deep: darken($cobalt, 38%);
