@@ -4,11 +4,21 @@
 @import "vars";
 
 
+// $Helpers
+// ============================================================
+
+.center {
+    text-align: center;
+}
+
 
 // $Globals
 // ============================================================
 
 a { text-decoration: none; }
+body {
+    background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
+}
 
 
 
@@ -123,4 +133,17 @@ h1, h2, h3, h4, h5, h6 {
     &:hover {
         background-color: $red;
     }
+}
+
+
+// $Letterpress
+// ============================================================
+//
+
+.letterpress {
+    font-style: italic;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    color: rgba(94, 140, 186, 0.75);
+    text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
 }

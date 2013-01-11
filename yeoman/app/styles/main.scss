@@ -149,6 +149,7 @@ $type-scale-unit-value: rem;
 // $Header Styles
 // ============================================================
 %hN {
+    text-rendering: optimizeLegibility;
     // don't use shorthand to avoid spoiling left/right padding on things like buttons
     margin-top: $line-height * 1rem;
     margin-bottom: $line-height * 1rem;
@@ -160,9 +161,6 @@ $type-scale-unit-value: rem;
 
 h1, h2, h3, h4, h5, h6 {
     @extend %hN;
-    & > a:visited {
-        color: #222;
-    }
 }
 
 .giga {
