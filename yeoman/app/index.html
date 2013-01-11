@@ -43,7 +43,7 @@
             <header>
                 <h1 class="beta" id="base-type"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
             </header>
-            <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale for us in a consistent manner.</p>
+            <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale for us in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recomendations of Mr. Eric Myer himself</a>.</p>
 <figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
@@ -431,7 +431,7 @@ $amp-font-fallback: local('Georgia');
 }
 
 .drop-cap:first-letter {
-    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+    @include dropcap(left, ''ff-meta-serif-web-pro', Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
