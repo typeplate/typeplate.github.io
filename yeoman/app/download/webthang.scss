@@ -6,21 +6,23 @@ $weight: normal;
 $line-height: 1.5;
 $font-size: 100%;
 $font-base: 16;
-$font-family: sans-serif;
+$font-family: serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 //ampersand
 $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
 
 //headings
-$heading1:   60;
-$heading2:   48;
-$heading3:   36;
-$heading4:   24;
-$heading5:   21;
-$heading6:   18;
-$paragraphs: 16;
-$type-scale-unit-value: rem;
+$heading1:   72;
+$heading2:   60;
+$heading3:   48;
+$heading4:   36;
+$heading5:   24;
+$heading6:   21;
+$paragraphs: 18;
+
+//typscale unit
+$type-scale-unit-value: em;
 
 //paragraphs indent
 $indent-val: 1.5em;
