@@ -22,15 +22,15 @@
 // ============================================================
 
 // REUZE ME
-// http://reuze.me
+    // http://reuze.me
 // PEARS
-// http://pea.rs
+    // http://pea.rs
 // INUIT
-// http://inuitcss.com
+    // http://inuitcss.com
 // THIS IS RESPONSIVE
-// http://bradfrost.github.com/this-is-responsive/
+    // http://bradfrost.github.com/this-is-responsive/
 // WebCraft
-// https://github.com/zakkain/webcraft
+    // https://github.com/zakkain/webcraft
 
 
 // $W3C Specs
@@ -61,6 +61,12 @@
 @import "../components/normalize-css/normalize.css";
 
 
+// $Mixins
+// ============================================================
+
+@import "mixins";
+
+
 // $Prism
 // ============================================================
 
@@ -74,118 +80,47 @@
 @import "icons";
 
 
+// $Site Specific
+// ============================================================
+
+@import "site";
+
+
 // $Globals
 // ============================================================
 
-a { text-decoration: none; }
 
 
-// $Code Blocks
-// ============================================================
-
-.web-thang-code-block {
-    position: relative;
-    figcaption {
-        border-radius: 0 6px 0 0;
-        padding: 0 .5em 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: orange;
-        color: #222;
-    }
-}
-
-
-// $Body Type Base
+// $Base Type
 // ============================================================
 
 $weight: normal;
-$line-height: 1.5;
-$font-size: 100%;
-$font-base: 16;
-$font-family: sans-serif;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
 @mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}/#{$line-height} $font-family;
+   font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
-body {
+html {
     @include body-copy($font-properties...);
-    max-width: 40em;
-    margin: 0 auto;
+}
+
+body {
     width: 90vw;
+    max-width: 34em;
+    margin: 0 auto;
+    @include word-wrap(break-word);
+    @include font-size-adjust(0.48);
+    @include css-hyphens(auto);
 }
-
-// title
-#title {
-    font-size: 48px;
-}
-
-// ampersands
-.ampersands {
-    h2 {
-        font-size: 2em;
-        text-align: center;
-    }
-}
-
-//icon demo font-size
-.icons {
-    font-size: 3em;
-    .fs1 {
-        display: inline-block;
-        &:before {
-            padding-right: .25em;
-            color: gray;
-        }
-    }
-}
-
-
-// $Word Wrap
-// ============================================================
-
-body {
-    // normal: Indicates that lines may only break at normal word break points.
-    // break-word : Indicates that normally unbreakable words may be broken at ...
-    // arbitrary points if there are no otherwise acceptable break points in the line.
-    word-wrap: break-word;
-}
-
-
-// $Font Size Adjust
-// ============================================================
-// correct x-height for fallback fonts
-
-@mixin font-size-adjust($adjust-value) {
-    // firefox 17+ only (as of Jan 2013)
-    font-size-adjust: $adjust-value;
-}
-
-body {
-    @include font-size-adjust(1);
-}
-
-h1.helvetica,
-h1.georgia {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: .25em;
-    font-size: 9em;
-}
-h1.helvetica {
-    font-family: Helvetica;
-}
-h1.georgia {
-    font-family: Georgia;
-}
-
 
 // $Typographic scale
 // ============================================================
-// 72,60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
+// 72, 60, 48, 36, 24, 21, 18, 16, 14, 12, 11, 10, 9, 8, 7, 6
 // http://thesassway.com/projects/modular-scale
 
 @function calc-modular-scale($scale, $base, $value) {
@@ -196,168 +131,89 @@ h1.georgia {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$heading1:   72;
-$heading2:   60;
-$heading3:   48;
-$heading4:   36;
-$heading5:   24;
-$heading6:   21;
-$paragraphs: 18;
+$giga:      90; // 90 = 18 × 5
+$mega:      72; // 72 = 18 × 4
+$alpha:     60; // 60 = 18 × 3.3333
+$beta:      48; // 72 = 18 × 2.6667
+$gamma:     36; // 72 = 18 × 2
+$delta:     24; // 72 = 18 × 1.3333
+$epsilon:   21; // 72 = 18 × 1.1667
+$zeta:      18; // 72 = 18 × 1
 $type-scale-unit-value: rem;
 
-h1 {
-    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}'); //2.25rem
-    line-height: 1.08333333333333;
+
+%rhythm {
+    margin-top: 0;
+    margin-bottom: $line-height * 1rem;
 }
 
-h2 {
-    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}'); //1.5rem
-    line-height: 1.08333333333333;
-}
-
-h3 {
-    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}'); //1.125rem
-}
-
-h4 {
-    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}'); //0.875rem
-}
-
-h5 {
-    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}'); //0.875rem
-}
-
-h6 {
-    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}'); //0.875rem
-}
-
-p {
-    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}'); //1rem
-}
-
-
-// $Typekit
+// $Header Styles
 // ============================================================
-// FF Meta Serif Web Pro
-// The most influential sans serif of the digital revolution (FF Meta)
-// now has a serif companion. It took three years and three designers
-// to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
-// Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
-
-body {
-    font-weight: 400;
-    .wf-loading & {
-        font-family: serif;
-        visibility: hidden;
-    }
-    .wf-active & {
-        font-family: "ff-meta-serif-web-pro",serif;
-        font-weight: 400;
-        visibility: visible;
+%hN {
+    // don't use shorthand to avoid spoiling left/right padding on things like buttons
+    padding-top: $line-height * 1rem;
+    padding-bottom: $line-height * 1rem;
+    line-height: 1;
+    margin: 0;
+    & + %hN {
+        padding-top: 0;
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma,
+.delta, .epsilon, .zeta {
+    @extend %hN;
+}
+
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+}
+
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+}
+
+h1, .alpha {
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
+}
+
+h2, .beta {
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h3, .gamma {
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
+}
+
+h4, .delta {
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h5, .epsilon {
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
+}
+
+h6, .zeta {
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }
 
 
 // $Color
 // ============================================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #222;
-}
-
-
-// $Small Caps
-// ============================================================
-// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
-// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
-
-@mixin smallcaps($color, $font-weight) {
-    font-variant: small-caps;
-    font-weight: $font-weight;
-    text-transform: lowercase;
-    color: $color;
-}
-
-abbr {
-    @include smallcaps(gray, 600);
-    &:hover {
-        cursor: help;
-    }
-}
-
-
-// $Unicode Ampersand
-// ============================================================
-// targeting ampersands through unicode-range
-// http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range
-// http://nimbupani.com/jscamp-css-next.html
-
-$amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
-$amp-font-fallback: local('Georgia');
-
-@font-face {
-    font-family: '#{$amp-font-name}';
-    src: $amp-font-source;
-    unicode-range: U+26;
-}
-@font-face {
-    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
-    src: $amp-font-fallback;
-    unicode-range: U+270C;
-}
-
-@mixin ampersand($amp-font-family...) {
-    font-family: $amp-font-family;
-}
-
-%ampersand-placeholder {
-    @include ampersand(Ampersand, Arial, sans-serif);
-}
-
-.amp {
-    @extend %ampersand-placeholder;
-}
-
-
-// $Hyphens
-// ============================================================
-//http://trentwalton.com/2011/09/07/css-hyphenation
-
-$indent-val: 1.5em;
-
-@mixin txt-indent($indent) {
-    text-indent: $indent;
-}
-
-@mixin css-hyphens($val) {
-    -webkit-hyphens: $val; // Safari 6
-    -moz-hyphens: $val; // FF19
-    -ms-hyphens: $val; // IE10
-    hyphens: $val; // standard
-};
-
-body {
-    //Ala Trent Walton
-    @include css-hyphens(auto);
-}
 
 
 // $Indenting
 // ============================================================
 
 p {
-    & + p {
+    // reset top margin, and set bottom margin equal to one unit of line-height
+    @extend %rhythm;
+    & + p:not(.hN) {
         @include txt-indent($indent-val);
+        // since we don't want indents and paragraph breaks, fake removing the bottom margin on the previous paragraph
+        margin-top: $line-height * -1rem;
     }
 }
 
