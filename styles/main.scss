@@ -1,5 +1,5 @@
 /*!
- * web-thang v1.0
+ * TypePlate v1.0
  ============================================================
  *    url: https://github.com/zakkain/web-thang
  *
@@ -47,6 +47,7 @@
 // http://www.kaikkonendesign.fi/typography
 // http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
 // http://webdesignerwall.com/tutorials/using-html-symbol-entities
+// http://spiffingcss.com
 
 
 // $Compass
@@ -59,6 +60,12 @@
 // ============================================================
 
 @import "../components/normalize-css/normalize.css";
+
+
+// $Variables
+// ============================================================
+
+@import "vars";
 
 
 // $Mixins
@@ -94,29 +101,21 @@
 // $Base Type
 // ============================================================
 
-$weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$font-family: Georgia, serif;
-$font-properties: $weight, $line-height, $font-size, $font-family;
-
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
-   font: $weight #{$font-size}%/#{$line-height} $font-family;
-}
+$serif-boolean: false;
 
 html {
     @include body-copy($font-properties...);
 }
 
 body {
-    width: 90vw;
-    max-width: 34em;
+    width: 90%;
+    max-width: 40em;
     margin: 0 auto;
     @include word-wrap(break-word);
-    @include font-size-adjust(0.48);
+    // @include font-size-adjust(0.48); // this legit does nothing right now, I'm confused.
     @include css-hyphens(auto);
 }
+
 
 // $Typographic scale
 // ============================================================
@@ -128,9 +127,11 @@ body {
 }
 
 @mixin modular-scale($scale, $base, $value) {
-  font-size: calc-modular-scale($scale, $base, $value);
+    font-size: calc-modular-scale($scale, $base, $value);
 }
 
+
+$tera:      117; // 117 = 18 × 6.5
 $giga:      90; // 90 = 18 × 5
 $mega:      72; // 72 = 18 × 4
 $alpha:     60; // 60 = 18 × 3.3333
@@ -147,23 +148,27 @@ $type-scale-unit-value: rem;
     margin-bottom: $line-height * 1rem;
 }
 
+
 // $Header Styles
 // ============================================================
+
 %hN {
+    text-rendering: optimizeLegibility;
     // don't use shorthand to avoid spoiling left/right padding on things like buttons
-    padding-top: $line-height * 1rem;
-    padding-bottom: $line-height * 1rem;
+    margin-top: $line-height * 1rem;
+    margin-bottom: $line-height * 1rem;
     line-height: 1;
-    margin: 0;
     & + %hN {
         padding-top: 0;
     }
 }
 
-h1, h2, h3, h4, h5, h6,
-.alpha, .beta, .gamma,
-.delta, .epsilon, .zeta {
+h1, h2, h3, h4, h5, h6 {
     @extend %hN;
+}
+
+.tera {
+    @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
 }
 
 .giga {
@@ -197,11 +202,6 @@ h5, .epsilon {
 h6, .zeta {
     @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }
-
-
-// $Color
-// ============================================================
-
 
 
 // $Indenting
@@ -303,7 +303,8 @@ code {
 }
 
 .drop-cap:first-letter {
-    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+    border-radius: 4px;
+    @include dropcap(left, ''ff-meta-serif-web-pro', Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }
 
 

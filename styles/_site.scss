@@ -1,7 +1,62 @@
-// $Globals
+// $Variables
+// ============================================================
+
+@import "vars";
+
+
+// $Helpers
+// ============================================================
+
+.center {
+    text-align: center;
+}
+
+
+// $Basic Site Stuff
 // ============================================================
 
 a { text-decoration: none; }
+body {
+    //we'll come back to this but for now just type and layout. the color is distracting me from everything else.
+    //lets do color after layout, type and content are taken care of.
+    // agreed! - zak
+    //background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
+}
+
+.tera {
+    padding: 0.25em 0;
+}
+
+.col-narrow {
+    padding: 0 3em;
+}
+
+.botDivider {
+    border-bottom: 1px solid transparentize($cobalt-deep, 0.75);
+    @extend %rhythm;
+}
+
+.perma-anchor {
+    // color: transparentize($mustard, 0.5);
+    color: #444;
+    font-weight: normal;
+    @extend .gamma;
+    position: relative;
+    top: -0.125em;
+    &:hover {
+        color: $mustard;
+    }
+}
+
+// for now, since font-variant: small-caps is fucking up
+abbr {
+    font-variant: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $rust;
+}
+
+// ============================================================
 
 
 
@@ -46,14 +101,6 @@ h1.georgia {
 // $Color
 // ============================================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #222;
-}
 
 
 // $Typekit
@@ -66,14 +113,22 @@ h6 {
 
 body {
     font-weight: 400;
+    //gives font loading a little class
+    @include transition(.123s opacity ease-in-out);
+    //Typekit Active FOUT Loading
     .wf-loading & {
         font-family: serif;
+        //Opacity Fallback
         visibility: hidden;
+        opacity: 0;
     }
+    //Typekit Active FOUT Loading
     .wf-active & {
         font-family: "ff-meta-serif-web-pro",serif;
         font-weight: 400;
+        //Opacity Fallback
         visibility: visible;
+        opacity: 1;
     }
 }
 
@@ -85,16 +140,24 @@ h1, h2, h3, h4, h5, h6 {
 // $Buttons
 // ============================================================
 // via inuit.css by @csswizardry (Harry Roberts)
+nav[role="navigation"] {
+    // in preparation for inline-block children
+    letter-spacing: -4px;
+    @extend %rhythm;
+}
 
 .btn {
     font:inherit;
     cursor:pointer;
     border:none;
     display:inline-block;
+    vertical-align: middle;
     margin: 0;
     line-height:1;
     // padding in ems so we can change the size of a button by altering its `font-size`.
-    padding:0.5em;
+    padding: 0.5em 0.5em;
+    // remove inline-block spacing bug
+    letter-spacing: normal;
 }
     .btn,
     .btn:hover {
@@ -110,3 +173,48 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
 }
 
+.btn-box {
+    margin-top: 0;
+    margin-bottom: $line-height * 1rem;
+    border-radius: 0.25em;
+    margin-right: 1rem;
+    //color: $cobalt-deep;
+    //background: $rust;
+    //
+    //colorless
+    color: #EFEFEF;
+    background: gray;
+
+    //@include transition(0.132s all ease);
+    @include transition($transition-1:0.132s background ease, $transition-2: 0.132s background ease);
+
+    &:hover {
+        // background: $rust-deep;
+        // color: #fafafa;
+        //
+        //colorless
+        color: #EFEFEF;
+        background: lighten(gray, 5%);
+        // We'll do this with @keyframes which should be a little smoother
+        //@include transform(translateY(-0.5rem));
+    }
+
+}
+.btn-action {
+    // background-color: $crimson-light;
+    position: relative;
+}
+
+// $Letterpress
+// ============================================================
+
+.letterpress {
+    font-style: italic;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
+    //color
+    //color: $cobalt-fade;
+    //colorless
+    color: darken(gray, 20%);
+}

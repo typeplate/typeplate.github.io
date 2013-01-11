@@ -1,0 +1,383 @@
+/*!
+ * TypePlate v1.0
+ ============================================================
+ *    url: https://github.com/zakkain/web-thang
+ *
+ *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *    license: this work is in the public domain
+ *    http://creativecommons.org/publicdomain/zero/1.0
+ *
+ *    elements of this stylesheet were first published by:
+ *    Paul Irish, Divya Manian, Nicolas Gallagher,
+ *    Mathias Bynens, Shi Chuan, Harry Roberts,
+ *    Lea Verou, Joni Korpi, Tim Brown, and many others.
+ *
+ *    this stylesheet was written with the utmost care and
+ *    dedication given to proper attribution and sourcing.
+ ============================================================
+*/
+
+
+// $ V a r i a b l e s
+// ==========================================================================
+
+$weight: normal;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: Georgia, serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
+
+// AMPERSAND
+$amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
+// ICON FONTS
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory"
+//
+// $icon-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $icon-fonts: null;
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null;
+
+//AMPERSAND @font-face VALUES
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+//TYPE SCALE
+$giga:      90; // 90 = 18 × 5
+$mega:      72; // 72 = 18 × 4
+$alpha:     60; // 60 = 18 × 3.3333
+$beta:      48; // 72 = 18 × 2.6667
+$gamma:     36; // 72 = 18 × 2
+$delta:     24; // 72 = 18 × 1.3333
+$epsilon:   21; // 72 = 18 × 1.1667
+$zeta:      18; // 72 = 18 × 1
+
+//typscale unit
+$type-scale-unit-value: em;
+
+//paragraph text indent amount
+$indent-val: 1.5em;
+
+
+// $ A m p e r s a n d    @font-face
+// ==========================================================================
+
+@font-face {
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
+    unicode-range: U+26;
+}
+@font-face {
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
+    unicode-range: U+270C;
+}
+
+
+// $ I c o n    F o n t    H e l p e r
+// ============================================================
+// Using Sass's @each loop to automatically generate code for web fonts
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+//https://gist.github.com/4469518
+
+@if ($icon-fonts != null) {
+    @each $font in $icon-fonts {
+        @include font-face( $font,
+            font-files(
+                '#{$font}/#{$font}.woff',
+                '#{$font}/#{$font}.ttf',
+                '#{$font}/#{$font}.svg', svg
+            ),
+            '#{$font}/#{$font}.eot'
+        )
+    }
+}
+
+
+// $ M o d u l a r    S c a l e
+// ==========================================================================
+//http://thesassway.com/projects/modular-scale
+
+@function calc-modular-scale($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+@mixin modular-scale($scale, $base, $value) {
+    font-size: calc-modular-scale($scale, $base, $value);
+}
+
+
+// $ B o d y    C o p y    M i x i n
+// ==========================================================================
+
+@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+    font: $weight #{$font-size}%/#{$line-height} $font-family;
+}
+
+// $ T e x t - I n d e n t    M i x i n
+// ==========================================================================
+
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+
+
+// $ H y p h e n    M i x i n
+// ==========================================================================
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val; // standard
+};
+
+
+// $ S m a l l c a p s    M i x i n
+// ==========================================================================
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
+
+@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+
+// $ F o n t - S i z e  - A d j u s t    M i x i n
+// ==========================================================================
+// correct x-height for fallback fonts
+
+@mixin font-size-adjust($adjust-value) {
+    // firefox 17+ only (as of Jan 2013)
+    font-size-adjust: $adjust-value;
+}
+
+
+// $ A m p e r s a n d    M i x i n
+// ==========================================================================
+
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+
+// $ W o r d    W r a p    M i x i n
+// ============================================================
+
+@mixin word-wrap($wrap-value) {
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: $wrap-value;
+}
+
+
+// $ D e f i n i t i o n    L i s t    M i x i n
+// ==========================================================================
+
+@mixin definition-list-style($style) {
+    // lining style
+    @if $style == lining {
+        dt, dd {
+            display: inline;
+            margin: 0;
+        }
+        dt, dd {
+            & + dt {
+                &:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+            }
+        }
+        dd {
+            & + dd {
+                &:before {
+                    content: ", ";
+                }
+            }
+            &:before {
+                    content: ": ";
+                    margin-left: -0.2rem; //removes extra space between the dt and the colon
+            }
+        }
+    }
+    // dictionary-style
+    @if $style == dictionary-style {
+        dt {
+            display: inline;
+            counter-reset: definitions;
+            & + dt {
+                &:before {
+                    content: ", ";
+                    margin-left: -0.2rem; // removes extra space between the dt and the comma
+                }
+            }
+        }
+        dd {
+            display: block;
+            counter-increment: definitions;
+            &:before {
+                content: counter(definitions, decimal) ". ";
+            }
+        }
+    }
+}
+
+
+// $ U N I C O D E - R A N G E    A m p e r s a n d
+// ==========================================================================
+
+@font-face {
+    font-family: 'Ampersand';
+    src: $amp-font;
+    unicode-range: U+26;
+}
+//fallback for unicode range
+@font-face {
+    // Ampersand fallback font
+    font-family: 'Ampersand';
+    src: local('Georgia');
+    unicode-range: U+270C;
+}
+
+
+// $ A m p e r s a n d    H e l p e r    C l a s s
+// ==========================================================================
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}
+
+
+// $ G l o b a l s
+// ==========================================================================
+
+html {
+    @include body-copy($font-properties...);
+}
+
+body {
+    //Ala Trent Walton
+    @include css-hyphens(auto);
+    //proper x-height for fallbacks
+    @include font-size-adjust(0.48);
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    @include word-wrap(break-word);
+    color: #444;
+}
+
+
+// $ H e a d i n g s
+// ==========================================================================
+
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+}
+
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+}
+
+h1 {
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
+}
+
+h2 {
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h3 {
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
+}
+
+h4 {
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h5 {
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
+}
+
+h6 {
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
+}
+
+
+// $ P a r a g r a p h s
+// ==========================================================================
+
+p {
+    & + p {
+        @include txt-indent($indent-val); //siblings indentation
+    }
+}
+
+
+// $ D r o p c a p s
+// ==========================================================================
+
+@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
+    float: $float;
+    margin: $margin;
+    padding: $padding;
+    font-family: $font;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    background: $bg;
+    color: $color;
+}
+
+// drop cap helper class
+.drop-cap:first-letter {
+    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+}
+
+
+// $ S m a l l c a p s
+// ==========================================================================
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}
+
+
+// $ C o l o r
+// ==========================================================================
+
+h1, h2, h3, h4, h5, h6 { color: #222; }
+
+
+// $ D e f i n i t i o n    L i s t s
+// ==========================================================================
+
+.lining {
+    @include definition-list-style(lining);
+}
+
+.dictionary-style {
+    @include definition-list-style(dictionary-style);
+}
