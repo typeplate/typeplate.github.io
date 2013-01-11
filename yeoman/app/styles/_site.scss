@@ -12,7 +12,7 @@
 }
 
 
-// $Globals
+// $Basic Site Stuff
 // ============================================================
 
 a { text-decoration: none; }
@@ -20,7 +20,7 @@ body {
     background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
 }
 
-.giga {
+.tera {
     padding: 0.25em 0;
 }
 
@@ -43,6 +43,17 @@ body {
         color: $mustard;
     }
 }
+
+// for now, since font-variant: small-caps is fucking up
+abbr {
+    font-variant: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $rust;
+}
+
+// ============================================================
+
 
 
 // ampersand demo

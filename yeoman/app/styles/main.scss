@@ -130,7 +130,8 @@ body {
 }
 
 
-$giga:      108; // 90 = 18 × 5
+$tera:      117; // 117 = 18 × 6.5
+$giga:      90; // 90 = 18 × 5
 $mega:      72; // 72 = 18 × 4
 $alpha:     60; // 60 = 18 × 3.3333
 $beta:      48; // 72 = 18 × 2.6667
@@ -163,6 +164,10 @@ $type-scale-unit-value: rem;
 
 h1, h2, h3, h4, h5, h6 {
     @extend %hN;
+}
+
+.tera {
+    @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
 }
 
 .giga {
