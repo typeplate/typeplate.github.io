@@ -13,3 +13,6 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 // ============================================================
 
 $red: indianred;
+$cobalt: hsl(210, 40%, 55%);
+$cobalt-light: transparentize($cobalt, 0.2); // makes it's alpha 0.8
+$cobalt-lighter: transparentize($cobalt, 0.5); // makes it's alpha 0.5
