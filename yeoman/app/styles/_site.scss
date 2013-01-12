@@ -56,10 +56,6 @@ abbr {
     color: $rust;
 }
 
-// ============================================================
-
-
-
 // ampersand demo
 .ampersands {
     h2 {
@@ -132,6 +128,7 @@ body {
     }
 }
 
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
@@ -159,10 +156,10 @@ nav[role="navigation"] {
     // remove inline-block spacing bug
     letter-spacing: normal;
 }
-    .btn,
-    .btn:hover {
-        text-decoration:none;
-    }
+.btn,
+.btn:hover {
+text-decoration:none;
+}
 
 .btn-full {
     display:block;
@@ -212,7 +209,7 @@ nav[role="navigation"] {
     font-style: italic;
     text-align: center;
     text-rendering: optimizeLegibility;
-text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
+    text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
     //color
     //color: $cobalt-fade;
     //colorless

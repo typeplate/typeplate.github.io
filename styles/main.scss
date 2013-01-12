@@ -1,7 +1,7 @@
 /*!
  * TypePlate v1.0
  ============================================================
- *    url: https://github.com/zakkain/web-thang
+ *    url: https://github.com/TypePlate/typeplate.github.com
  *
  *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
  *    license: this work is in the public domain
@@ -112,7 +112,7 @@ body {
     max-width: 40em;
     margin: 0 auto;
     @include word-wrap(break-word);
-    // @include font-size-adjust(0.48); // this legit does nothing right now, I'm confused.
+    //@include font-size-adjust(0.48);
     @include css-hyphens(auto);
 }
 

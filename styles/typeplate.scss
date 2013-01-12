@@ -1,7 +1,7 @@
 /*!
  * TypePlate v1.0
  ============================================================
- *    url: https://github.com/zakkain/web-thang
+ *    url: https://github.com/TypePlate/typeplate.github.com
  *
  *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
  *    license: this work is in the public domain
@@ -278,8 +278,10 @@ html {
 body {
     //Ala Trent Walton
     @include css-hyphens(auto);
+
     //proper x-height for fallbacks
-    @include font-size-adjust(0.48);
+    //@include font-size-adjust(); // this does NOTHING, Lebowski! NOTHING! (except cause errors)
+
     // normal: Indicates that lines may only break at normal word break points.
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
