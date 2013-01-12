@@ -35,7 +35,7 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  font-size-adjust: 0.48;
+  /* font-size-adjust: 0.48; */
   word-wrap: break-word;
   color: #444;
 }
