@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# Time: Fri Jan 11 2013 19:49:39 GMT-0500 (EST)
+# Time: Fri Jan 11 2013 20:52:38 GMT-0500 (EST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -22,7 +22,7 @@ CACHE MANIFEST
 
 CACHE:
 http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
-http://use.typekit.net/c/d4d632/ff-meta-serif-web-pro:n5:i5:n7:i7.VbN:F:2,VbP:F:2,VbQ:F:2,VbR:F:2/d?3bb2a6e53c9684ffdc9a9bf41b5b2a624b88601564a934ad1670a5b6aac9f93c51ed77318daf1b339e61e4afa2175d05c9b4e58dad753329ef2f3fd4a16bda8e6149881bf0b50acd38c809775f273eaf07a895342d6b81ac9161781f1db3d95721d727c3160cbbf21033be40505016f1fe16b68441090f2e72
+http://use.typekit.net/c/d4d632/ff-meta-serif-web-pro:n5:i5:n7:i7.VbN:F:2,VbP:F:2,VbQ:F:2,VbR:F:2/d?3bb2a6e53c9684ffdc9a9bf3195b2a62d1c54ed00fc5de48ce5f635458d4688c1c3f4feff87d52f01181c0ca82ac51b6b3f4840b0623b0a0f58dc1c08d22b2b4de47bcefef4d24f52025e95e5a810a8d7f27c5aa2f21aeeee8bcc241896841c0302d22f555fe89cf036bc8dadfc6c27c9151cf1148d95194d8fc373d47f552d8238dbae8180f8cfb4f8fef0f4a9c679d14d291cfaf09bad833
 http://use.typekit.net/wxt4lbk.js
 scripts/min/f8958b4a.yeomanbuild-min.js
 styles/4a7a46fa.main.css

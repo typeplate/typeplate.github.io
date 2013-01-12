@@ -127,7 +127,8 @@ module.exports = function( grunt ) {
     // versioning
     rev: {
       js: 'scripts/**/*.js',
-      css: 'styles/**/*.css',
+      //css: 'styles/**/*.css',
+      css: 'styles/main.css',
       img: 'images/**'
     },
 
@@ -140,7 +141,8 @@ module.exports = function( grunt ) {
     // update references in HTML/CSS to revved files
     usemin: {
       html: ['**/*.html'],
-      css: ['**/*.css']
+      //css: ['**/*.css'],
+      css: ['**/main.css']
     },
 
     // HTML minification
