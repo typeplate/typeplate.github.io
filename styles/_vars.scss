@@ -14,7 +14,8 @@ $serif-boolean: true !default;
 // $Color
 // ============================================================
 
-$rust: hsl(10, 70%, 50%);
+//$rust: hsl(10, 70%, 50%);
+$rust: rgba(222, 77, 31, 0.80);
 $rust-deep: saturate(darken($rust, 25%), 25%);
 
 $mustard: hsl(37, 73%, 50%);

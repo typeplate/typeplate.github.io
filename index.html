@@ -16,7 +16,7 @@
             var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
             })();
         </script>
-        <link rel="stylesheet" href="styles/5390db3e.main.css">
+        <link rel="stylesheet" href="styles/8722c6f9.main.css">
         <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
     </head>
     <body>
@@ -71,7 +71,7 @@ html {
                 <h1>Font Size Adjust</h1>
             </header>
             <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x&ndash;height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
-            <figure class="example">
+            <figure class="font-size-adjust-demo">
                 <h1 class="helvetica">x</h1>
                 <h1 class="georgia">x</h1>
             </figure>

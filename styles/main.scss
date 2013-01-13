@@ -96,18 +96,15 @@
 // $Base Type
 // ============================================================
 
-$serif-boolean: false;
+$serif-boolean: true;
 
 html {
     @include body-copy($font-properties...);
 }
 
 body {
-    width: 90%;
-    max-width: 40em;
-    margin: 0 auto;
     @include word-wrap(break-word);
-    //@include font-size-adjust(0.48);
+    @include font-size-adjust(1);
     @include css-hyphens(auto);
 }
 
@@ -125,7 +122,6 @@ body {
     font-size: calc-modular-scale($scale, $base, $value);
 }
 
-
 $tera:      117; // 117 = 18 × 6.5
 $giga:      90; //  90  = 18 × 5
 $mega:      72; //  72  = 18 × 4
@@ -138,25 +134,8 @@ $zeta:      18; //  18  = 18 × 1
 $type-scale-unit-value: rem;
 
 
-%rhythm {
-    margin-top: 0;
-    margin-bottom: $line-height * 1rem;
-}
-
-
 // $Header Styles
 // ============================================================
-
-%hN {
-    text-rendering: optimizeLegibility;
-    // don't use shorthand to avoid spoiling left/right padding on things like buttons
-    margin-top: $line-height * 1rem;
-    margin-bottom: $line-height * 1rem;
-    line-height: 1;
-    & + %hN {
-        padding-top: 0;
-    }
-}
 
 h1, h2, h3, h4, h5, h6 {
     @extend %hN;
@@ -298,7 +277,7 @@ code {
 }
 
 .drop-cap:first-letter {
-    border-radius: 4px;
+    border-radius: 6px;
     @include dropcap(left, ''ff-meta-serif-web-pro', Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }
 
