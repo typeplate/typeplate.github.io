@@ -23,7 +23,7 @@
         <!--banner-->
         <header class="header col-narrow botDivider" role="banner">
             <hgroup>
-                <h1 id="title" class="tera"><a href="/" rel="me" class="letterpress">TypePlate</a></h1>
+                <h1 id="logo" class="tera"><a href="/" rel="me" class="letterpress">TypePlate</a></h1>
             </hgroup>
             <nav role="navigation">
                 <a href="/styles/typeplate.scss" rel="bookmark" class="btn gamma btn-box btn-action" data-version="0.1">download</a>
@@ -42,7 +42,7 @@
                 <h1 class="beta" id="base-type"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
             </header>
             <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale for us in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recomendations of Mr. Eric Myer himself</a>.</p>
-<figure class="web-thang-code-block"><pre><code class="language-sass">$weight: normal;
+<figure class="typeplate-code-block"><pre><code class="language-sass">$weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
@@ -75,7 +75,7 @@ html {
                 <h1 class="helvetica">x</h1>
                 <h1 class="georgia">x</h1>
             </figure>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin font-size-adjust($adjust-value) {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin font-size-adjust($adjust-value) {
     // firefox 17+ only (as of Jan 2013)
     font-size-adjust: $adjust-value;
 }
@@ -101,7 +101,7 @@ body {
             <h5 class="epsilon">Heading Epsilon</h5>
             <h6 class="zeta">Heading Zeta</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos distinctio earum ea numquam placeat expedita praesentium in. Amet cupiditate facere praesentium recusandae consequuntur molestiae repellat voluptate tempora voluptas unde.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-css">// $Typographic scale
+            <figure class="typeplate-code-block"><pre><code class="language-css">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
@@ -156,7 +156,7 @@ p {
             </header>
             <p><code>monospace</code> fonts just like you like for all your code block dreams!</p>
             <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">pre code {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">pre code {
     word-wrap: normal;
     //https://developer.mozilla.org/en-US/docs/CSS/white-space
     white-space: pre-wrap;
@@ -183,9 +183,9 @@ code {
                 <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content.</p>
                 <p>True small capitals are now possible on the web.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
-                <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
+                <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
                 </figure>
-                <figure class="web-thang-code-block"><pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
+                <figure class="typeplate-code-block"><pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
     text-transform: lowercase;
@@ -213,7 +213,7 @@ abbr {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">//paragraph siblings indent
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//paragraph siblings indent
 $indent-val: 1.5em;
 @mixin txt-indent($indent) {
     text-indent: $indent;
@@ -228,7 +228,7 @@ p {
             <!-- Word Wrapping -->
             <h2>Word Wrap</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">body {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">body {
     // normal: Indicates that lines may only break at normal word break points.
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
@@ -246,7 +246,7 @@ p {
                 <b class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</b> <b class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</b>
             </div>
             <p>So you've got a few icon fonts floating around, but don't wanna change all the reference links for the icon files and especially the multitude of file types needed to include like EOT, TTF, SVG, &amp; WOFF. With so many URLs to change it can be extremely tedious, but not anymore as it can be done in one spot using a Sass loop and the compass <code class="language-sass">@include font-face</code> helper function. This will require a bit of configuration on your part depending on your project and workflow settings.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">// ICON FONTS
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// ICON FONTS
 // In order to set you must have the following...
 // 1. A Compass @import rule (i.e. @import "compass") before
 // this stylesheet or from within webthang.scss.
@@ -277,7 +277,7 @@ $icon-fonts: null;
 $icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
             </figure>
 
-            <figure class="web-thang-code-block"><pre><code class="language-css">@font-face {
+            <figure class="typeplate-code-block"><pre><code class="language-css">@font-face {
   font-family: "icon-font-name";
   src: url('//fonts/icon-font-name/icon-font-name.eot');
   src: url('//fonts/icon-font-name/icon-font-name.eot?#iefix') format('eot'), url('//fonts/icon-font-name/icon-font-name.woff') format('woff'), url('//fonts/icon-font-name/icon-font-name.ttf') format('truetype'), url('//fonts/icon-font-name/icon-font-name.svg') format('svg');
@@ -299,7 +299,7 @@ $icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
             <p>Small print The small element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements.</p>
 
             <small>Copyright © 1922-2011 Acme Corporation. All Rights Reserved.</small>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;small&gt;Copyright &amp;copy; 2012 All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;small&gt;Copyright &amp;copy; 2012 All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
         </section>
 
         <!-- foot note -->
@@ -315,7 +315,7 @@ $icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
                     </ol>
                 </footer>
             </article>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;article&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;article&gt;
     &lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
     &lt;footer class=&quot;foot-note&quot;&gt;
         &lt;ol&gt;
@@ -332,7 +332,7 @@ $icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
                 <h1>CSS Hyphenation</h1>
             </header>
             <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin css-hyphens($val) {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
     -ms-hyphens: $val; // IE10
@@ -366,7 +366,7 @@ body {
         <section class="color">
             <h1>Color</h1>
             <p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
-            <figure class="web-thang-code-block"><pre><code class="language-css">//color
+            <figure class="typeplate-code-block"><pre><code class="language-css">//color
 body { color: #444; }
 h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>Sass</figcaption>
 </figure>
@@ -379,7 +379,7 @@ h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>Sass</figcaption>
             </header>
             <p>With the <code>unicode&ndash;range</code> property we can avoid using verbose markup and only target the charcters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
             <h2 class="amp">Amper &amp; Sands</h2>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">//Unicode Ampersand
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//Unicode Ampersand
 $amp-font-name: Ampersand;
 $amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
 $amp-font-fallback: local('Georgia');
@@ -414,9 +414,9 @@ $amp-font-fallback: local('Georgia');
             <h1>Drop Caps</h1>
             <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre><figcaption>HTML</figcaption>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre><figcaption>HTML</figcaption>
             </figure>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">// Dropcaps
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// Dropcaps
 @mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
     float: $float;
     margin: $margin;
@@ -467,7 +467,7 @@ $amp-font-fallback: local('Georgia');
                     <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
                 </cite>
             </blockquote>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
     &lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
     &lt;cite&gt;
         &lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
@@ -482,7 +482,7 @@ $amp-font-fallback: local('Georgia');
                 <h1>Fractions</h1>
             </header>
             <p>&frac12; or &frac34;</p>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;!-- Character Entity --&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;!-- Character Entity --&gt;
 &amp;frac12;
 &amp;frac11;</code></pre><figcaption>HTML</figcaption>
             </figure>
@@ -507,7 +507,7 @@ $amp-font-fallback: local('Georgia');
                     </blockquote>
                 </aside>
             </article>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
     &lt;aside class=&quot;pull-quote&quot;&gt;
         &lt;blockquote&gt;
@@ -516,7 +516,7 @@ $amp-font-fallback: local('Georgia');
     &lt;/aside&gt;
 &lt;/article&gt;</code></pre><figcaption>HTML</figcaption>
 </figure>
-<figure class="web-thang-code-block"><pre><code class="language-sass">.entry {
+<figure class="typeplate-code-block"><pre><code class="language-sass">.entry {
     position: relative;
     padding-right: 50%;
     .pull-quote {
@@ -572,12 +572,12 @@ $amp-font-fallback: local('Georgia');
                 <li><a href="#">456 <b>Ukes</b></a></li>
                 <li><a href="#">26 <b>Bass Guitar</b></a></li>
             </ul>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
 &lt;ul class=&quot;stats-tabs&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre><figcaption>HTML</figcaption>
 </figure>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">//Stats Tabs Variables
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//Stats Tabs Variables
 $stats-font-size: 1.125rem;
 $stats-list-margin: 0 0.625rem 0 0;
 $stats-list-padding: 0 0.625rem 0 0;
@@ -635,7 +635,7 @@ $stats-border-style: 0.125rem solid #ccc;
                     <dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
             </dl>
 
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;dl&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl&gt;
     &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
     &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
@@ -653,13 +653,13 @@ $stats-border-style: 0.125rem solid #ccc;
                 <dt><b>Other Defined Term</b></dt>
                     <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
             </dl>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;dl&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl&gt;
     &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
     &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
             </figure>
 
-            <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
     // lining style
     @if $style == lining {
         dt, dd {
@@ -705,7 +705,7 @@ dl {
                 <dt><b>Other Defined Term</b></dt>
                     <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
             </dl>
-            <figure class="web-thang-code-block"><pre><code class="language-markup">&lt;dl&gt;
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl&gt;
     &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
         &lt;dd&gt;&lt;/dd&gt;
     &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
@@ -716,7 +716,7 @@ dl {
         &lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
             </figure>
-            <figure class="web-thang-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
     // dictionary-style
     @if $style == dictionary-style {
         dt {
@@ -744,6 +744,11 @@ dl {
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
+
+        <footer role="contentinfo">
+            <p><small>Copyright &copy;2013. TypePlate is a <a href="https://github.com/grayghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint™
+Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></small></p>
+        </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
