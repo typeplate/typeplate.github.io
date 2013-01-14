@@ -17,7 +17,7 @@
         </script>
 
         <!-- normalize -->
-        <link rel="stylesheet" href="components/normalize-css/normalize.css">
+        <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
         <!-- TypePlate -->
         <link rel="stylesheet" href="styles/ef9eca7e.typeplate.css">
         <style>
@@ -90,10 +90,10 @@
               margin-right: 1rem;
               color: #EFEFEF;
               background: gray;
-              -webkit-transition: 0.132s background ease,;
+              -webkit-transition: 0.132s background ease;
               -moz-transition: 0.132s background ease;
-              -o-transition: 0.132s background ease,;
-              transition: 0.132s background ease,;
+              -o-transition: 0.132s background ease;
+              transition: 0.132s background ease;
             }
             .btn-box:hover {
               color: #EFEFEF;
@@ -105,6 +105,11 @@
             }
             .btn.epsilon {
                 font-size: 1.16666666666667em;
+            }
+            #normalize-form {
+                position: fixed;
+                top: 40px;
+                left: 40px;
             }
         </style>
     </head>
@@ -121,6 +126,14 @@
                 <a href="https://github.com/TypePlate/typeplate.github.com/issues" class="btn epsilon btn-box">feedback</a>
             </nav>
         </header>
+
+        <form action="/" method="post" id="normalize-form" role="form">
+            <label for="normalize-on">Normalize On</label>
+            <input type="radio" name="normalize-state" id="normalize-on" value="normalize-on" checked>
+            <label for="normalize-off">Normalize Off</label>
+            <input type="radio" name="normalize-state" id="normalize-off" value="normalize-off">
+        </form>
+
         <section>
             <!-- Word Wrapping -->
             <h2>§ Word Wrap</h2>
@@ -332,5 +345,23 @@
             <p><small>Copyright &copy;2013. TypePlate is a<a href="https://github.com/grayghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint™
 Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></small></p>
         </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
+        <script>
+            $(document).ready(function() {
+                //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
+                //normalize link element
+                var normalizeCss = $("#normalize-css");
+                //radio button click event
+                $('#normalize-form input[type="radio"]').on('click', function(e) {
+                    var inputCheck = $('#normalize-off').is(':checked');
+                    if(inputCheck) {
+                        $("#normalize-css").attr("href", "");
+                    }else {
+                        $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

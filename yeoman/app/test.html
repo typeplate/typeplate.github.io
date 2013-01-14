@@ -17,7 +17,7 @@
         </script>
 
         <!-- normalize -->
-        <link rel="stylesheet" href="components/normalize-css/normalize.css">
+        <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
         <!-- TypePlate -->
         <link rel="stylesheet" href="styles/typeplate.css">
         <style>
@@ -128,10 +128,10 @@
         </header>
 
         <form action="/" method="post" id="normalize-form" role="form">
-            <label for="">Normalize On</label>
-            <input type="radio" name="normalize-state" value="normalize-on">
-            <label for="">Normalize Off</label>
-            <input type="radio" name="normalize-state" value="normalize-off">
+            <label for="normalize-on">Normalize On</label>
+            <input type="radio" name="normalize-state" id="normalize-on" value="normalize-on" checked>
+            <label for="normalize-off">Normalize Off</label>
+            <input type="radio" name="normalize-state" id="normalize-off" value="normalize-off">
         </form>
 
         <section>
@@ -348,7 +348,20 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></s
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
         <script>
-            $(document).ready(function() {});
+            $(document).ready(function() {
+                //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
+                //normalize link element
+                var normalizeCss = $("#normalize-css");
+                //radio button click event
+                $('#normalize-form input[type="radio"]').on('click', function(e) {
+                    var inputCheck = $('#normalize-off').is(':checked');
+                    if(inputCheck) {
+                        $("#normalize-css").attr("href", "");
+                    }else {
+                        $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
+                    }
+                });
+            });
         </script>
     </body>
 </html>
