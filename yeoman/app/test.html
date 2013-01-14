@@ -106,6 +106,11 @@
             .btn.epsilon {
                 font-size: 1.16666666666667em;
             }
+            #demo-checkboxes {
+                position: fixed;
+                top: 40px;
+                left: 40px;
+            }
         </style>
     </head>
     <body>
@@ -121,6 +126,12 @@
                 <a href="https://github.com/TypePlate/typeplate.github.com/issues" class="btn epsilon btn-box">feedback</a>
             </nav>
         </header>
+
+        <form action="" id="demo-checkboxes">
+            <label for="switch"><input name="switch" id="switch" type="radio" checked> w/Normalize</label>
+            <label for="switch"><input name="switch" id="switch" type="radio"> w/out Normalize</label>
+        </form>
+
         <section>
             <!-- Word Wrapping -->
             <h2>§ Word Wrap</h2>
@@ -332,5 +343,7 @@
             <p><small>Copyright &copy;2013. TypePlate is a<a href="https://github.com/grayghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint™
 Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></small></p>
         </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
     </body>
 </html>

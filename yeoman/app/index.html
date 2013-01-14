@@ -23,7 +23,9 @@
         <!--banner-->
         <header class="header col-narrow botDivider" role="banner">
             <hgroup>
-                <h1 id="logo" class="tera"><a href="/" rel="me" class="letterpress">TypePlate</a></h1>
+                <h1 id="logo" class="tera">
+                    <a href="/" rel="me" class="letterpress">TypePlate</a>
+                </h1>
             </hgroup>
             <nav role="navigation">
                 <a href="/styles/typeplate.scss" rel="bookmark" class="btn gamma btn-box btn-action" data-version="0.1">download</a>
@@ -39,10 +41,12 @@
         <!-- base typography standardization -->
         <section class="base-type">
             <header>
-                <h1 class="beta" id="base-type"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
+                <h1 class="beta" id="base-type">
+                    <a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type
+                </h1>
             </header>
             <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale for us in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recomendations of Mr. Eric Myer himself</a>.</p>
-<figure class="typeplate-code-block"><pre><code class="language-sass">$weight: normal;
+            <figure class="typeplate-code-block"><pre><code class="language-sass">$weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
@@ -62,7 +66,7 @@ $serif-boolean: true !default;
 html {
     @include body-copy($font-properties...);
 }</code></pre><figcaption>Sass</figcaption>
-</figure>
+            </figure>
         </section>
 
         <!-- font-size adjust -->
