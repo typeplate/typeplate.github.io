@@ -90,10 +90,10 @@
               margin-right: 1rem;
               color: #EFEFEF;
               background: gray;
-              -webkit-transition: 0.132s background ease,;
+              -webkit-transition: 0.132s background ease;
               -moz-transition: 0.132s background ease;
-              -o-transition: 0.132s background ease,;
-              transition: 0.132s background ease,;
+              -o-transition: 0.132s background ease;
+              transition: 0.132s background ease;
             }
             .btn-box:hover {
               color: #EFEFEF;
@@ -106,7 +106,7 @@
             .btn.epsilon {
                 font-size: 1.16666666666667em;
             }
-            #demo-checkboxes {
+            #normalize-form {
                 position: fixed;
                 top: 40px;
                 left: 40px;
@@ -127,9 +127,11 @@
             </nav>
         </header>
 
-        <form action="" id="demo-checkboxes">
-            <label for="switch"><input name="switch" id="switch" type="radio" checked> w/Normalize</label>
-            <label for="switch"><input name="switch" id="switch" type="radio"> w/out Normalize</label>
+        <form action="/" method="post" id="normalize-form" role="form">
+            <label for="">Normalize On</label>
+            <input type="radio" name="normalize-state" value="normalize-on">
+            <label for="">Normalize Off</label>
+            <input type="radio" name="normalize-state" value="normalize-off">
         </form>
 
         <section>
@@ -345,5 +347,8 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></s
         </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+        <script>
+            $(document).ready(function() {});
+        </script>
     </body>
 </html>
