@@ -19,7 +19,7 @@
         <!-- normalize -->
         <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
         <!-- TypePlate -->
-        <link rel="stylesheet" href="styles/4cb667e0.typeplate.css">
+        <link rel="stylesheet" id="typeplate-css" href="styles/4cb667e0.typeplate.css">
         <style>
             body {
                 margin: 0 auto;
@@ -106,10 +106,16 @@
             .btn.epsilon {
                 font-size: 1.16666666666667em;
             }
-            #normalize-form {
+            #normalize-form,
+            #typeplate-form {
                 position: fixed;
-                top: 40px;
                 left: 40px;
+            }
+            #normalize-form {
+                top: 40px;
+            }
+            #typeplate-form {
+                top: 80px;
             }
         </style>
     </head>
@@ -127,12 +133,20 @@
             </nav>
         </header>
 
+        <!-- Demo Radio Buttons -->
         <form action="/" method="post" id="normalize-form" role="form">
             <label for="normalize-on">Normalize On</label>
             <input type="radio" name="normalize-state" id="normalize-on" value="normalize-on" checked>
             <label for="normalize-off">Normalize Off</label>
             <input type="radio" name="normalize-state" id="normalize-off" value="normalize-off">
         </form>
+        <form action="/" method="post" id="typeplate-form" role="form">
+            <label for="typeplate-on">TypePlate On</label>
+            <input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
+            <label for="typeplate-off">TypePlate Off</label>
+            <input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
+        </form>
+        <!-- /end Demo Radio Buttons -->
 
         <section>
             <!-- Word Wrapping -->
@@ -359,20 +373,33 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></s
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
         <script>
+            // yeah it's messy I know! geesh gimme a break...I'm cleaning it up still!
             $(document).ready(function() {
                 //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
                 //normalize link element
+                //Normalize CSS
                 var normalizeCss = $("#normalize-css");
                 //radio button click event
                 $('#normalize-form input[type="radio"]').on('click', function(e) {
                     var inputCheck = $('#normalize-off').is(':checked');
                     if(inputCheck) {
-                        $("#normalize-css").attr("href", "blank.css");
+                        $("#normalize-css").attr("href", "");
                     }else {
                         $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
                     }
                 });
-            });
+                //TypePlate CSS
+                var typleplateCss = $("#typeplate-css");
+                //radio button click event
+                $('#typeplate-form input[type="radio"]').on('click', function(e) {
+                    var inputCheck = $('#typeplate-off').is(':checked');
+                    if(inputCheck) {
+                        $("#typeplate-css").attr("href", "");
+                    }else {
+                        $("#typeplate-css").attr("href", "styles/typeplate.css");
+                    }
+                });
+            }); //end document.ready
         </script>
     </body>
 </html>
