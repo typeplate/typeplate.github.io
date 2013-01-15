@@ -1,0 +1,225 @@
+/*
+ * TypePlate v1.0
+ ============================================================
+ *    url: https://github.com/TypePlate/typeplate.github.com
+ *
+ *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *    license: this work is in the public domain
+ *    http://creativecommons.org/publicdomain/zero/1.0
+ *
+ *    elements of this stylesheet were first published by:
+ *    Paul Irish, Divya Manian, Nicolas Gallagher,
+ *    Mathias Bynens, Shi Chuan, Harry Roberts,
+ *    Lea Verou, Joni Korpi, Tim Brown, and many others.
+ *
+ *    this stylesheet was written with the utmost care and
+ *    dedication given to proper attribution and sourcing.
+ ============================================================
+*/
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+26;
+}
+
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C;
+}
+
+@font-face {
+  font-family: 'Ampersand';
+  src: local("Georgia"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+26;
+}
+
+@font-face {
+  font-family: 'Ampersand';
+  src: local("Georgia");
+  unicode-range: U+270C;
+}
+
+/* line 275, ../../app/styles/typeplate.scss */
+.amp {
+  font-family: Ampersand, Arial, sans-serif;
+}
+
+/* line 287, ../../app/styles/typeplate.scss */
+html {
+  font: normal 112.5%/1.65 Georgia, serif;
+}
+
+/* line 291, ../../app/styles/typeplate.scss */
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  color: #444;
+}
+
+/* line 309, ../../app/styles/typeplate.scss */
+pre code {
+  word-wrap: normal;
+  white-space: pre-wrap;
+}
+
+/* line 314, ../../app/styles/typeplate.scss */
+pre {
+  word-wrap: auto;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+/* line 320, ../../app/styles/typeplate.scss */
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+/* line 329, ../../app/styles/typeplate.scss */
+.tera {
+  font-size: 6.5em;
+}
+
+/* line 333, ../../app/styles/typeplate.scss */
+.giga {
+  font-size: 5em;
+}
+
+/* line 337, ../../app/styles/typeplate.scss */
+.mega {
+  font-size: 4em;
+}
+
+/* line 341, ../../app/styles/typeplate.scss */
+h1, .alpha {
+  font-size: 3.33333em;
+}
+
+/* line 345, ../../app/styles/typeplate.scss */
+h2, .beta {
+  font-size: 2.66667em;
+}
+
+/* line 349, ../../app/styles/typeplate.scss */
+h3, .gamma {
+  font-size: 2em;
+}
+
+/* line 353, ../../app/styles/typeplate.scss */
+h4, .delta {
+  font-size: 1.33333em;
+}
+
+/* line 357, ../../app/styles/typeplate.scss */
+h5, .epsilon {
+  font-size: 1.16667em;
+}
+
+/* line 361, ../../app/styles/typeplate.scss */
+h6, .zeta {
+  font-size: 1em;
+}
+
+/* line 370, ../../app/styles/typeplate.scss */
+p + p {
+  text-indent: 1.5em;
+}
+
+/* line 391, ../../app/styles/typeplate.scss */
+.drop-cap:first-letter {
+  float: left;
+  margin: 0 0.5em auto 0;
+  padding: 0 0.5em 0;
+  font-family: "Georgia, sans-serif";
+  font-size: 4em;
+  background: gray;
+  color: white;
+}
+
+/* line 399, ../../app/styles/typeplate.scss */
+abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+/* line 401, ../../app/styles/typeplate.scss */
+abbr:hover {
+  cursor: help;
+}
+
+/* line 410, ../../app/styles/typeplate.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #222222;
+}
+
+/* line 208, ../../app/styles/typeplate.scss */
+.lining dt, .lining dd {
+  display: inline;
+  margin: 0;
+}
+/* line 214, ../../app/styles/typeplate.scss */
+.lining dt + dt:before, .lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+/* line 222, ../../app/styles/typeplate.scss */
+.lining dd + dd:before {
+  content: ", ";
+}
+/* line 226, ../../app/styles/typeplate.scss */
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/* line 234, ../../app/styles/typeplate.scss */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+/* line 238, ../../app/styles/typeplate.scss */
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+/* line 244, ../../app/styles/typeplate.scss */
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+/* line 247, ../../app/styles/typeplate.scss */
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+/* line 429, ../../app/styles/typeplate.scss */
+.stats-tabs li {
+  display: inline-block;
+  margin: 0 0.625rem 0 0;
+  padding: 0 0.625rem 0 0;
+  border-right: 0.125rem solid #cccccc;
+}
+/* line 434, ../../app/styles/typeplate.scss */
+.stats-tabs li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+/* line 439, ../../app/styles/typeplate.scss */
+.stats-tabs li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* line 443, ../../app/styles/typeplate.scss */
+.stats-tabs li a b {
+  display: block;
+  margin: 0.125rem 0 0 0;
+  font-size: 0.1875rem;
+  font-weight: normal;
+}

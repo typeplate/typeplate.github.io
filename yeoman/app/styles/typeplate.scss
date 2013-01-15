@@ -21,6 +21,7 @@
 // $ V a r i a b l e s
 // ==========================================================================
 
+//BASE TYPE
 $weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
@@ -28,7 +29,10 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: Georgia, serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
-// AMPERSAND
+//COLOR
+$heading-color: #222;
+
+//AMPERSAND
 $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
 // ICON FONTS
 // In order to set you must have the following...
@@ -52,20 +56,29 @@ $amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
 $amp-font-fallback: local('Georgia');
 
 //TYPE SCALE
-$giga:      90; // 90 = 18 × 5
-$mega:      72; // 72 = 18 × 4
-$alpha:     60; // 60 = 18 × 3.3333
-$beta:      48; // 72 = 18 × 2.6667
-$gamma:     36; // 72 = 18 × 2
-$delta:     24; // 72 = 18 × 1.3333
-$epsilon:   21; // 72 = 18 × 1.1667
-$zeta:      18; // 72 = 18 × 1
+$tera:      117; // 117 = 18 × 6.5
+$giga:      90; //  90  = 18 × 5
+$mega:      72; //  72  = 18 × 4
+$alpha:     60; //  60  = 18 × 3.3333
+$beta:      48; //  48  = 18 × 2.6667
+$gamma:     36; //  36  = 18 × 2
+$delta:     24; //  24  = 18 × 1.3333
+$epsilon:   21; //  21  = 18 × 1.1667
+$zeta:      18; //  18  = 18 × 1
 
 //typscale unit
 $type-scale-unit-value: em;
 
 //paragraph text indent amount
 $indent-val: 1.5em;
+
+// $stats tab
+$stats-font-size: 1.5rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.1875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;
 
 
 // $ A m p e r s a n d    @font-face
@@ -120,7 +133,7 @@ $indent-val: 1.5em;
 // $ B o d y    C o p y    M i x i n
 // ==========================================================================
 
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+@mixin base-type($weight, $line-height, $font-size, $font-family...) {
     font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
 
@@ -256,7 +269,7 @@ $indent-val: 1.5em;
 }
 
 
-// $ A m p e r s a n d    H e l p e r    C l a s s
+// $ A m p e r s a n d    H e l p e r
 // ==========================================================================
 
 %ampersand-placeholder {
@@ -272,7 +285,7 @@ $indent-val: 1.5em;
 // ==========================================================================
 
 html {
-    @include body-copy($font-properties...);
+    @include base-type($font-properties...);
 }
 
 body {
@@ -290,8 +303,32 @@ body {
 }
 
 
+// $ C o d e b l o c k s
+// ==========================================================================
+
+pre code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+}
+
+pre {
+    word-wrap: auto;      // IE 5.5-7
+    white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+    white-space: pre-wrap;      // current browsers
+}
+
+code {
+    white-space: pre;
+    font-family: monospace;
+}
+
+
 // $ H e a d i n g s
 // ==========================================================================
+
+.tera {
+    @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
+}
 
 .giga {
     @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
@@ -301,27 +338,27 @@ body {
     @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
 }
 
-h1 {
+h1, .alpha {
     @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
 
-h2 {
+h2, .beta {
     @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
 
-h3 {
+h3, .gamma {
     @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
 
-h4 {
+h4, .delta {
     @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
 }
 
-h5 {
+h5, .epsilon {
     @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
 }
 
-h6 {
+h6, .zeta {
     @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }
 
@@ -370,7 +407,7 @@ abbr {
 // $ C o l o r
 // ==========================================================================
 
-h1, h2, h3, h4, h5, h6 { color: #222; }
+h1, h2, h3, h4, h5, h6 { color: $heading-color; }
 
 
 // $ D e f i n i t i o n    L i s t s
@@ -382,4 +419,33 @@ h1, h2, h3, h4, h5, h6 { color: #222; }
 
 .dictionary-style {
     @include definition-list-style(dictionary-style);
+}
+
+
+// $S t a t s    T a b
+// ============================================================
+
+.stats-tabs {
+    li {
+        display: inline-block;
+        margin: $stats-list-margin;
+        padding: $stats-list-padding;
+        border-right: $stats-border-style;
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        a {
+            display: inline-block;
+            font-size: $stats-font-size;
+            font-weight: bold;
+            b {
+                display: block;
+                margin: $stats-item-margin;
+                font-size: $stats-item-font-size;
+                font-weight: normal;
+            }
+        }
+    }
 }

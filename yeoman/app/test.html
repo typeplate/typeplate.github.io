@@ -209,35 +209,35 @@
         <address>Address: somewhere, world</address>
 
         <p>
-        The <a href="#">a element</a> example<br>
-        The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br>
-        The <b>b element</b> example<br>
-        The <cite>cite element</cite> example<br>
-        The <code>code element</code> example<br>
-        The <del>del element</del> example<br>
-        The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br>
-        The <em>em element</em> example<br>
-        The <i>i element</i> example<br>
-        The img element <img src="http://lorempixel.com/16/16" alt=""> example<br>
-        The <ins>ins element</ins> example<br>
-        The <kbd>kbd element</kbd> example<br>
-        The <mark>mark element</mark> example<br>
-        The <q>q element <q>inside</q> a q element</q> example<br>
-        The <s>s element</s> example<br>
-        The <samp>samp element</samp> example<br>
-        The <small>small element</small> example<br>
-        The <span>span element</span> example<br>
-        The <strong>strong element</strong> example<br>
-        The <sub>sub element</sub> example<br>
-        The <sup>sup element</sup> example<br>
-        The <u>u element</u> example<br>
-        The <var>var element</var> example
+            The <a href="#">a element</a> example<br>
+            The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br>
+            The <b>b element</b> example<br>
+            The <cite>cite element</cite> example<br>
+            The <code>code element</code> example<br>
+            The <del>del element</del> example<br>
+            The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br>
+            The <em>em element</em> example<br>
+            The <i>i element</i> example<br>
+            The img element <img src="http://lorempixel.com/16/16" alt=""> example<br>
+            The <ins>ins element</ins> example<br>
+            The <kbd>kbd element</kbd> example<br>
+            The <mark>mark element</mark> example<br>
+            The <q>q element <q>inside</q> a q element</q> example<br>
+            The <s>s element</s> example<br>
+            The <samp>samp element</samp> example<br>
+            The <small>small element</small> example<br>
+            The <span>span element</span> example<br>
+            The <strong>strong element</strong> example<br>
+            The <sub>sub element</sub> example<br>
+            The <sup>sup element</sup> example<br>
+            The <u>u element</u> example<br>
+            The <var>var element</var> example
         </p>
 
         <h1>§ Grouping content</h1>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
 
-        <h3>§ Pre</h3>
+        <h3>Pre</h3>
         <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
         <pre><code>&lt;html>
     &lt;head>
@@ -247,7 +247,18 @@
     &lt;/body>
 &lt;/html></code></pre>
 
-        <h3>§ Blockquotes</h3>
+        <!-- Stats Tabs -->
+        <h3>Stats Tabs</h3>
+        <ul class="stats-tabs">
+            <li><a href="#">1,234 <b>Stratocasters</b></a></li>
+            <li><a href="#">567 <b>Acoustic</b></a></li>
+            <li><a href="#">23,456 <b>Banjo</b></a></li>
+            <li><a href="#">3,456 <b>Dulcimer</b></a></li>
+            <li><a href="#">456 <b>Ukes</b></a></li>
+            <li><a href="#">26 <b>Bass Guitar</b></a></li>
+        </ul>
+
+        <h3>Blockquotes</h3>
         <h4>Default</h4>
         <blockquote>
             <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
@@ -260,7 +271,7 @@
             </cite>
         </blockquote>
 
-        <h3>§ Ordered list</h3>
+        <h3>Ordered list</h3>
         <ol>
             <li>list item 1</li>
             <li>list item 1
@@ -280,7 +291,7 @@
             <li>list item 1</li>
         </ol>
 
-        <h3>§ Unordered list</h3>
+        <h3>Unordered list</h3>
         <ul>
             <li>list item 1</li>
             <li>list item 1
@@ -300,7 +311,7 @@
             <li>list item 1</li>
         </ul>
 
-        <h3>§ Definition lists</h3>
+        <h3>Definition lists</h3>
         <h4>Default</h4>
         <dl>
             <dt>Description name</dt>
@@ -335,7 +346,7 @@
             <dd>Description value</dd>
         </dl>
 
-        <h3>§ figure</h3>
+        <h3>figure</h3>
         <figure>
             <img src="http://lorempixel.com/400/200" alt="">
             <figcaption>Figcaption content</figcaption>
@@ -356,7 +367,7 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></s
                 $('#normalize-form input[type="radio"]').on('click', function(e) {
                     var inputCheck = $('#normalize-off').is(':checked');
                     if(inputCheck) {
-                        $("#normalize-css").attr("href", "");
+                        $("#normalize-css").attr("href", "blank.css");
                     }else {
                         $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
                     }

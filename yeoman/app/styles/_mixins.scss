@@ -1,4 +1,4 @@
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+@mixin base-type($weight, $line-height, $font-size, $font-family...) {
     @if $serif-boolean {
         font: $weight #{$font-size}%/#{$line-height} $font-family;
     }@else {

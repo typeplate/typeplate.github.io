@@ -52,9 +52,11 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
+//the serif/sans-serif var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss"; reference.
 $serif-boolean: true !default;
 
-@mixin body-copy($weight, $line-height, $font-size, $font-family...) {
+@mixin base-type($weight, $line-height, $font-size, $font-family...) {
     @if $serif-boolean {
         font: $weight #{$font-size}%/#{$line-height} $font-family;
     }@else {
@@ -63,7 +65,7 @@ $serif-boolean: true !default;
 }
 
 html {
-    @include body-copy($font-properties...);
+    @include base-type($font-properties...);
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
@@ -93,7 +95,11 @@ body {
             <header>
                 <h1>Typographic Scale</h1>
             </header>
-            <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, though, as the size progression might look inconsistent. Use a modular scale that calculates those sizes from a ratio. There’s an excellent calculator for this at modularscale.com.</p>
+            <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes as the size progression might look inconsistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+            <blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
+                By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.
+                <cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite>
+            </blockquote>
 
             <h1 class="giga">Heading Giga</h1>
             <h1 class="mega">Heading Mega</h1>
@@ -103,8 +109,7 @@ body {
             <h4 class="delta">Heading Delta</h4>
             <h5 class="epsilon">Heading Epsilon</h5>
             <h6 class="zeta">Heading Zeta</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos distinctio earum ea numquam placeat expedita praesentium in. Amet cupiditate facere praesentium recusandae consequuntur molestiae repellat voluptate tempora voluptas unde.</p>
-            <figure class="typeplate-code-block"><pre><code class="language-css">// $Typographic scale
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
@@ -113,41 +118,54 @@ body {
   font-size: calc-modular-scale($scale, $base, $value);
 }
 
-$heading1:   72;
-$heading2:   60;
-$heading3:   48;
-$heading4:   36;
-$heading5:   24;
-$heading6:   21;
-$paragraphs: 18;
-$type-scale-unit-value: rem;
+//TYPE SCALE
+$tera:      117; // 117 = 18 × 6.5
+$giga:      90; //  90  = 18 × 5
+$mega:      72; //  72  = 18 × 4
+$alpha:     60; //  60  = 18 × 3.3333
+$beta:      48; //  48  = 18 × 2.6667
+$gamma:     36; //  36  = 18 × 2
+$delta:     24; //  24  = 18 × 1.3333
+$epsilon:   21; //  21  = 18 × 1.1667
+$zeta:      18; //  18  = 18 × 1
 
-h1 {
-    @include modular-scale($heading1, $font-base, '#{$type-scale-unit-value}');
+//typscale unit
+$type-scale-unit-value: em;
+
+.tera {
+    @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
 }
 
-h2 {
-    @include modular-scale($heading2, $font-base, '#{$type-scale-unit-value}');
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
 }
 
-h3 {
-    @include modular-scale($heading3, $font-base, '#{$type-scale-unit-value}');
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
 }
 
-h4 {
-    @include modular-scale($heading4, $font-base, '#{$type-scale-unit-value}');
+h1, .alpha {
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
 
-h5 {
-    @include modular-scale($heading5, $font-base, '#{$type-scale-unit-value}');
+h2, .beta {
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
 
-h6 {
-    @include modular-scale($heading6, $font-base, '#{$type-scale-unit-value}');
+h3, .gamma {
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
 
-p {
-    @include modular-scale($paragraphs, $font-base, '#{$type-scale-unit-value}');
+h4, .delta {
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h5, .epsilon {
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
+}
+
+h6, .zeta {
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
@@ -157,18 +175,22 @@ p {
             <header>
                 <h1>Code Blocks</h1>
             </header>
-            <p><code>monospace</code> fonts just like you like for all your code block dreams!</p>
+            <p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
             <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
+<pre><code>h1 {
+    background: red; color:
+    blue; padding: 1em;
+    margin: 3em; border: 2px solid black
+}</code></pre>
             <figure class="typeplate-code-block"><pre><code class="language-sass">pre code {
     word-wrap: normal;
-    //https://developer.mozilla.org/en-US/docs/CSS/white-space
     white-space: pre-wrap;
 }
 
 pre {
-    word-wrap: break-word;      /* IE 5.5-7 */
-    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-    white-space: pre-wrap;      /* current browsers */
+    word-wrap: auto;      // IE 5.5-7
+    white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+    white-space: pre-wrap;      // current browsers
 }
 
 code {
@@ -228,7 +250,7 @@ p {
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
 
-            <!-- Word Wrapping -->
+            <!-- Word Wrap -->
             <h2>Word Wrap</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
             <figure class="typeplate-code-block"><pre><code class="language-sass">body {

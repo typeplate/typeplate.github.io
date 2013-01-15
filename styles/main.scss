@@ -99,7 +99,7 @@
 $serif-boolean: true;
 
 html {
-    @include body-copy($font-properties...);
+    @include base-type($font-properties...);
 }
 
 body {
