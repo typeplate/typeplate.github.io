@@ -70,13 +70,19 @@ You must run the command ``yeoman server`` from ``yeoman > app`` directory of Ty
     <FATAL> Unable to find Gruntfile. Do you need any --help? </FATAL>
 
 ###Production Build
-when you're ready to build the produciton version of TypePlate's codebase you'll need to run the following command from your ``app`` directory mentioned previously.
+When you're ready to build the produciton version of TypePlate's codebase you'll need to run the following command from your ``app`` directory mentioned previously.
 
     yeoman build
 
 Yeoman will now place your production built ready files into a temp directory called ``dist`` and will now be viewable by running the following command from your terminal.
 
     yeoman server:dist
+
+If you feel the build files from your ``yeoman:dist`` preview are satisfactory it's time to make one final adjustment to move our production ready site into the root directory of TypePlate. ``cd`` back into the root directory of TypePlate and use our custom ``rake`` build command.
+
+    rake build
+
+This command will copy the contents of the ``dist`` directory and place all our production site files within the root of this project. Bingo bango, easy peezy, 123. Now go drink a beer and file a pull request for your awesome changes.
 
 
 
