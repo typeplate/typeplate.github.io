@@ -6,7 +6,7 @@ Frameworks make decisions for you about how to organize, structure and design a 
 
 ##Local Development and Contributing
 
-###Ensuring Latest Ruby Install for RVM Users
+###&sect; Ensuring Latest Ruby Install for RVM Users
 **``.rvmc``**
 
 Since things like Compass, Sass are Ruby Gems you'll need to have Ruby installed. Ruby is just a language and the Gems are little packages containing applications. RVM is a ruby version manager that allows users to independently manage Gems and Gemsets via the bash command ``rvm use gemset $GEM_NAME``. When navigating into the ``yeoman`` directory of this project you'll see the ``.rvmc`` file at work with this message &ndash;Have no fear and just make sure to follow the directions and type 'y' to proceed or you may type 'v' as seen below to view the contents. Bottom line&hellip;we just wanna make sure you're using the latest version of Ruby.
@@ -50,12 +50,12 @@ Since things like Compass, Sass are Ruby Gems you'll need to have Ruby installed
     y[es], n[o], v[iew], c[ancel]> y
     Using /Users/GrayGhost/.rvm/gems/ruby-1.9.3-p362
 
-###Yeoman
+###&sect; Yeoman
 We use Yeoman for this project. If you don't know what Yeoman is then you're gonna have to learn a little bit about it. We suggest [yeoman.io](http://yeoman.io) to read up on what it is and a little how to use it or feel free to check out [Yeoman on github](https://github.com/yeoman/yeoman). You can install Yeoman by running the audit script to see what you need in place.
 
     curl -L get.yeoman.io | bash
 
-###Dependencies
+###&sect; Dependencies
 We use [Bundler](http://gembundler.com/#getting-started) and think it's pretty neato. Bundler maintains a consistent environment for ruby applications. It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions) that it needs to run. Getting started with bundler is easy! Open a terminal window and type the following:
 
     gem install bundler
@@ -74,12 +74,12 @@ If ``bundle install`` isn't your cup of tea then your dependencies can also be i
 
 you can always check if they're installed by running the bash command ``gem list`` which should list all your gems installed.
 
-###Local Server
+###&sect; Local Server
 You must run the command ``yeoman server`` from ``yeoman > app`` directory of TypePlate or else you'll see a pretty message like this.
 
     <FATAL> Unable to find Gruntfile. Do you need any --help? </FATAL>
 
-###Production Build
+###&sect; Production Build
 When you're ready to build the produciton version of TypePlate's codebase you'll need to run the following command from your ``app`` directory mentioned previously.
 
     yeoman build
