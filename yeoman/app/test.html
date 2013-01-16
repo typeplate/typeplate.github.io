@@ -106,29 +106,35 @@
             .btn.epsilon {
                 font-size: 1.16666666666667em;
             }
-            /*on off radio buttons*/
-            #normalize-form,
-            #typeplate-form {
+            #radio-form-wrap {
+                padding: 1em;
                 position: fixed;
-                left: 40px;
+                top: 0;
+                left: 0;
+                width: 300px;
+                font-size: 100%;
+                background: #808080;
+                color: #efeeed;
             }
+            /*on off radio buttons*/
             #normalize-form {
-                top: 40px;
+                display: block;
             }
             #typeplate-form {
-                top: 80px;
+                display: block;
             }
             /* dropcap example: compiled Sass to keep the actual downloadable project stylesheet clean as it should be used */
             .drop-cap:first-letter {
                 float: left;
-                margin: 0 0.5em auto 0;
-                padding: 0 0.5em 0;
+                margin: auto 0.5em auto auto;
+                padding: 0.5em;
                 font-size: 4em;
-                line-height: inherit;
+                line-height: 1;
                 text-indent: 0;
                 background: #333333;
                 color: white;
             }
+
             input[type="radio"] {
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
@@ -136,7 +142,11 @@
                 display: inline-block;
                 font-size: 100%;
                 line-height: normal;
-                padding: 0;
+                padding: 5px;
+            }
+
+            input[type="radio"]:hover {
+                cursor: pointer;
             }
             img {
                 max-width: 100%;
@@ -157,20 +167,24 @@
             </nav>
         </header>
 
-        <!-- Demo Radio Buttons -->
-        <form action="/" method="post" id="normalize-form" role="form">
-            <label for="normalize-on">Normalize On</label>
-            <input type="radio" name="normalize-state" id="normalize-on" value="normalize-on" checked>
-            <label for="normalize-off">Normalize Off</label>
-            <input type="radio" name="normalize-state" id="normalize-off" value="normalize-off">
-        </form>
-        <form action="/" method="post" id="typeplate-form" role="form">
-            <label for="typeplate-on">TypePlate On</label>
-            <input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
-            <label for="typeplate-off">TypePlate Off</label>
-            <input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
-        </form>
-        <!-- /end Demo Radio Buttons -->
+        <div id="radio-form-wrap">
+            <!-- Normalize Radio Toggle -->
+            <form action="/" method="post" id="normalize-form" role="form">
+                    <label for="normalize-on">Normalize On</label>
+                    <input type="radio" name="normalize-state" id="normalize-on" value="normalize on" checked>
+                    <label for="normalize-off">Normalize Off</label>
+                    <input type="radio" name="normalize-state" id="normalize-off" value="normalize off">
+            </form>
+
+            <!-- TypePlate Radio Toggle -->
+            <form action="/" method="post" id="typeplate-form" role="form">
+                <label for="typeplate-on">TypePlate On</label>
+                <input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
+                <label for="typeplate-off">TypePlate Off</label>
+                <input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
+            </form>
+            <!-- /end Demo Radio Buttons -->
+        </div>
 
         <section>
             <!-- Word Wrapping -->
@@ -400,27 +414,28 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></s
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
         <script>
-            // yeah it's messy I know! geesh gimme a break...I'm cleaning it up still!
             $(document).ready(function() {
+                //Normalize States
                 //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
-                //normalize link element
-                //Normalize CSS
-                var normalizeCss = $("#normalize-css");
-                //radio button click event
+                var normalizeCss        = $("#normalize-css"),
+                    typleplateCss       = $("#typeplate-css");
+
+                //Normalize Radio Button
                 $('#normalize-form input[type="radio"]').on('click', function(e) {
-                    var inputCheck = $('#normalize-off').is(':checked');
-                    if(inputCheck) {
+                    //radio button checked state
+                    var normalizeOffCheck   = $('#normalize-off').is(':checked');
+                    if(normalizeOffCheck) {
                         $("#normalize-css").attr("href", "");
                     }else {
                         $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
                     }
                 });
-                //TypePlate CSS
-                var typleplateCss = $("#typeplate-css");
-                //radio button click event
+
+                //TypePlate Radio Button
                 $('#typeplate-form input[type="radio"]').on('click', function(e) {
-                    var inputCheck = $('#typeplate-off').is(':checked');
-                    if(inputCheck) {
+                    //radio button checked state
+                    var typePlateOffCheck   = $('#typeplate-off').is(':checked');
+                    if(typePlateOffCheck) {
                         $("#typeplate-css").attr("href", "");
                     }else {
                         $("#typeplate-css").attr("href", "styles/typeplate.css");

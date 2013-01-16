@@ -15,7 +15,7 @@
             var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
             })();
         </script>
-        <link rel="stylesheet" href="styles/37dfa712.main.css">
+        <link rel="stylesheet" href="styles/20d392a5.main.css">
         <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
     </head>
     <body>
@@ -380,10 +380,16 @@ body {
             </header>
 
             <figure>
-                <p>A figure of something</p>
+                <img src="http://designingfortheweb.co.uk/book/images/typography-anatomy_b.gif" alt="">
                 <figcaption>
-                    <small>something about the figure</small>
+                    <small><strong>Anatomy</strong>: An excerpt from Mark Boulton's book <cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite></small>
                 </figcaption>
+            </figure>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;figure&gt;
+    &lt;figcaption&gt;
+        &lt;small&gt;&lt;/small&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre><figcaption>Markup</figcaption>
             </figure>
         </section>
 
@@ -446,15 +452,17 @@ $amp-font-fallback: local('Georgia');
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why just make that separately in your deleration.
-@mixin dropcap($float: none, $font-size: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: transparent) {
-    float: $float;
-    margin: $margin;
-    padding: $padding;
-    font-size: $font-size;
-    line-height: $lineHeight;
-    text-indent: $text-indent;
-    background: $bg;
-    color: $color;
+@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+    &:first-letter {
+        float: $float;
+        margin: $margin;
+        padding: $padding;
+        font-size: $font-size;
+        line-height: $lineHeight;
+        text-indent: $text-indent;
+        background: $bg;
+        color: $color;
+    }
 }
 
 // This selector class is not included in the actual stylsheet. We leave it for you to decide
@@ -462,29 +470,11 @@ $amp-font-fallback: local('Georgia');
 // our chosen class selector purely for demo purposes.
 // This @include can be used anywhere you'd like but must be subsequent to
 // this style sheet (typeplate.scss).
-.drop-cap:first-letter {
-    @include dropcap($margin: 0 .5em auto 0, $padding: 0 .5em 0, $color: #fff, $bg: #333);
+.drop-cap {
+    @include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>
-
-        <!-- Primes and Double Primes Typography -->
-        <h1>Primes &amp; Double Primes</h1>
-        <p>4<sup>&prime;</sup>3<sup>&Prime;</sup></p>
-        <p>Use primes and double primes for measurement</p>
-
-        <!-- Primes and Double Primes -->
-        <p>&Prime;Someone somewhere sometime is saying something super important&Prime;</p>
-        <p>&Prime;So I told him to, &prime;bugger off.&prime;&Prime;</p>
-
-        <!-- Quotes -->
-        <h1>Quotes</h1>
-        <h3>&ldquo;Hello&rdquo;</h3>
-        <p>Most common typography mistakes found on the internet are probably the misuses of apostrophe and quotation marks. We often misuse the prime symbol ( ' ) as the apostrophe ( ’ ) and the double prime ( " ) as the quotation marks ( “ ” ).</p>
-
-        <!-- Apostrophes -->
-        <h1>Apostrophes</h1>
-        <p>We&rsquo;ll get right back to you. It&rsquo;s gonna be just fine.</p>
 
         <!-- Blockquotes -->
         <!-- http://html5doctor.com/blockquote-q-cite -->
@@ -507,18 +497,6 @@ $amp-font-fallback: local('Georgia');
         &lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
     &lt;/cite&gt;
 &lt;/blockquote&gt;</code></pre><figcaption>HTML</figcaption>
-            </figure>
-        </section>
-
-        <!-- Fractions -->
-        <section class="fractions">
-            <header>
-                <h1>Fractions</h1>
-            </header>
-            <p>&frac12; or &frac34;</p>
-            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;!-- Character Entity --&gt;
-&amp;frac12;
-&amp;frac11;</code></pre><figcaption>HTML</figcaption>
             </figure>
         </section>
 
@@ -580,16 +558,6 @@ $amp-font-fallback: local('Georgia');
     color: red;
 }</code></pre><figcaption>Sass</figcaption>
 </figure>
-        </section>
-
-        <!-- Temperature -->
-        <section class="temp">
-            <header>
-                <h1>Temperature</h1>
-            </header>
-            <p>Current Weather is 29&deg;F</p>
-            <pre><code class="language-markup">&lt;!-- Character Entity --&gt;
-&amp;deg;</code></pre>
         </section>
 
         <!-- Stats -->

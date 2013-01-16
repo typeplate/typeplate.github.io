@@ -7,13 +7,15 @@
 // $Global Elements
 // ============================================================
 
-a { text-decoration: none; }
-
 body {
     width: 90%;
     max-width: 40em;
     margin: 0 auto;
     background: image-url("subtle_grunge.png") top left repeat;
+}
+
+a {
+    text-decoration: none;
 }
 
 // for now, since font-variant: small-caps is fucking up
@@ -24,6 +26,9 @@ abbr {
     color: $rust;
 }
 
+img {
+    max-width: 100%;
+}
 
 // $What Are These?
 // ============================================================
