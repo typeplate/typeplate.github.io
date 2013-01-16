@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>TypePlate &raquo; A Typographic Boilerplate</title>
+        <title>TypePlate &raquo; A typographic Sass template encouraging great type on the Web</title>
         <meta name="description" content="a typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
         <meta name="viewport" content="width=device-width">
         <script>
@@ -15,7 +15,7 @@
             var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
             })();
         </script>
-        <link rel="stylesheet" href="styles/8722c6f9.main.css">
+        <link rel="stylesheet" href="styles/37dfa712.main.css">
         <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
     </head>
     <body>
@@ -437,24 +437,33 @@ $amp-font-fallback: local('Georgia');
         <!-- Drop Caps -->
         <section class="dc">
             <h1>Drop Caps</h1>
+            <p>A Drop Cap is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
             <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
             <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre><figcaption>HTML</figcaption>
             </figure>
-            <figure class="typeplate-code-block"><pre><code class="language-sass">// Dropcaps
-@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// Include your '@include dropcap()' mixin and pass the following
+// arguments below. Feel free to pass in arguments we've provided.
+// At this time you cannot pass in font-family arguments but you're gonna
+// change that anyway so why just make that separately in your deleration.
+@mixin dropcap($float: none, $font-size: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: transparent) {
     float: $float;
     margin: $margin;
     padding: $padding;
-    font-family: $font;
-    font-size: $fontSize;
+    font-size: $font-size;
     line-height: $lineHeight;
+    text-indent: $text-indent;
     background: $bg;
     color: $color;
 }
 
+// This selector class is not included in the actual stylsheet. We leave it for you to decide
+// when to use it. We only provide you with the @mixin. This is just an example of
+// our chosen class selector purely for demo purposes.
+// This @include can be used anywhere you'd like but must be subsequent to
+// this style sheet (typeplate.scss).
 .drop-cap:first-letter {
-    @include dropcap(left, ''ff-meta-serif-web-pro', Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
+    @include dropcap($margin: 0 .5em auto 0, $padding: 0 .5em 0, $color: #fff, $bg: #333);
 }</code></pre><figcaption>Sass</figcaption>
             </figure>
         </section>

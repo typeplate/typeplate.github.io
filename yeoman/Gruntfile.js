@@ -64,7 +64,7 @@ module.exports = function( grunt ) {
                 'app/*.html',
                 'app/styles/**/*.css',
                 'app/scripts/**/*.js',
-                'app/images/**/*'
+                //'app/images/**/*'
             ],
             tasks: 'reload'
         }
@@ -131,8 +131,9 @@ module.exports = function( grunt ) {
     rev: {
         js: 'scripts/**/*.js',
         //css: 'styles/**/*.css',
-        css: ['styles/main.css', 'styles/typeplate.css'],
-        img: 'images/**'
+        //css: ['styles/main.css', 'styles/typeplate.css'] //TypePlate's toggle demo won't come back once they are removed upon user click because of the version rev
+        css: ['styles/main.css']
+        //img: 'images/**'
     },
 
     // usemin handler should point to the file containing
@@ -155,7 +156,8 @@ module.exports = function( grunt ) {
 
     // Optimizes JPGs and PNGs (with jpegtran & optipng)
     img: {
-        dist: '<config:rev.img>'
+        //dist: '<config:rev.img>'
+        dist: ''
     },
 
     // rjs configuration. You don't necessarily need to specify the typical

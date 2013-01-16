@@ -269,11 +269,11 @@ code {
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why just make that separately in your deleration.
-@mixin dropcap($float: none, $fontSize: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: null) {
+@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: transparent) {
     float: $float;
     margin: $margin;
     padding: $padding;
-    font-size: $fontSize;
+    font-size: $font-size;
     line-height: $lineHeight;
     text-indent: $text-indent;
     background: $bg;
@@ -284,7 +284,7 @@ code {
 // when to use it. We only provide you with the @mixin. This is just an example of
 // our chosen class selector purely for demo purposes.
 .drop-cap:first-letter {
-    @include dropcap(left, 4em, 0, 0 .5em auto 0, 0 .5em 0, #fff, #DDD);
+    @include dropcap($margin: 0 .5em auto 0, $padding: 0 .5em 0, $color: #fff, $bg: #333);
 }
 
 

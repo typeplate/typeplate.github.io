@@ -13,10 +13,7 @@ body {
     width: 90%;
     max-width: 40em;
     margin: 0 auto;
-    //we'll come back to this but for now just type and layout. the color is distracting me from everything else.
-    //lets do color after layout, type and content are taken care of.
-    // agreed! - zak
-    //background-image: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/subtle_grunge.png);
+    background: image-url("subtle_grunge.png") top left repeat;
 }
 
 // for now, since font-variant: small-caps is fucking up
