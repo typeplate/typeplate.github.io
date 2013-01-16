@@ -104,7 +104,6 @@ html {
 
 body {
     @include word-wrap(break-word);
-    @include font-size-adjust(1);
     @include css-hyphens(auto);
 }
 
