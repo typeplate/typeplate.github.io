@@ -163,7 +163,7 @@ $stats-border-style: 0.125rem solid #ccc;
 // ISSUE#1 : https://github.com/zakkain/web-thang/issues/1
 
 @mixin smallcaps($color, $font-weight) {
-    font-variant: small-caps;
+    font-variant: small-caps; // depends on the font family. some don't support small caps or don't provide them with their web font.
     font-weight: $font-weight;
     text-transform: lowercase;
     color: $color;
@@ -197,6 +197,29 @@ $stats-border-style: 0.125rem solid #ccc;
     // arbitrary points if there are no otherwise acceptable break points in the line.
     word-wrap: $wrap-value;
 }
+
+
+// $ D r o p c a p s    M i x i n
+// ==========================================================================
+
+// Include your '@include dropcap()' mixin and pass the following
+// arguments below. Feel free to pass in arguments we've provided.
+// At this time you cannot pass in font-family arguments but you're gonna
+// change that anyway so why just make that separately in your deleration.
+@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: transparent) {
+    float: $float;
+    margin: $margin;
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $lineHeight;
+    text-indent: $text-indent;
+    background: $bg;
+    color: $color;
+}
+
+// This @include can be used anywhere you'd like but must be subsequent to
+// this style sheet(typeplate.scss).
+// @include dropcap();
 
 
 // $ D e f i n i t i o n    L i s t    M i x i n
@@ -370,26 +393,6 @@ p {
     & + p {
         @include txt-indent($indent-val); //siblings indentation
     }
-}
-
-
-// $ D r o p c a p s
-// ==========================================================================
-
-@mixin dropcap($float, $font, $fontSize, $margin, $padding, $color: null, $lineHeight: null, $bg: null) {
-    float: $float;
-    margin: $margin;
-    padding: $padding;
-    font-family: $font;
-    font-size: $fontSize;
-    line-height: $lineHeight;
-    background: $bg;
-    color: $color;
-}
-
-// drop cap helper class
-.drop-cap:first-letter {
-    @include dropcap(left, 'Georgia, sans-serif', 4em, 0 .5em auto 0, 0 .5em 0, $color: white, $bg:gray);
 }
 
 
