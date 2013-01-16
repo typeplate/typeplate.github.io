@@ -4,7 +4,21 @@
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.
 **TypePlate** is a "typographic starter kit". We don’t make aesthetic design choices, but define **proper markup with extensible styling** for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.
 
-##Local Development and Contributing
+##Contributing Guidelines
+###&sect; Pull Requests
+When contributing (by the way you're awesome for that so thanks) please keep your commits small and targeted when you're prepared for filing a Pull Request. We'd prefer not seeing Pull Requests that contain 20 commits in multiple spots. Keep it small and it will make things simpler and much cleaner in the long run.
+
+###&sect; Feature Branches
+If you're making a new feature for TypePlate then make sure you name your branch as follows:
+
+    feature/your_feature_name
+
+###&sect; Patches
+If you're making a quick patch for TypePlate (like a spelling mistake for example) then make sure you name your branch as follows:
+
+    patch/your_patch_name
+
+##Local Development
 
 ###&sect; Ensuring Latest Ruby Install for RVM Users
 **``.rvmc``**
