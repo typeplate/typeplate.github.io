@@ -1,0 +1,10 @@
+source :rubygems
+
+gem "bundler", ">=1.2.3"
+gem "chunky_png", ">=1.2.7"
+gem "compass", ">=0.12.2"
+gem "fssm", ">=0.2.9"
+gem "rake", ">=10.0.3"
+gem "rubygems-bundler", ">=1.1.0"
+gem "rvm", ">=1.11.3.5"
+gem "sass", ">=3.2.5"

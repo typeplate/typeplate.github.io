@@ -51,14 +51,24 @@ Since things like Compass, Sass are Ruby Gems you'll need to have Ruby installed
     Using /Users/GrayGhost/.rvm/gems/ruby-1.9.3-p362
 
 ###Yeoman
-We use Yeoman for this project. If you don't know what Yeoman is then you're gonna have to learn a little bit about it. We suggest [yeoman.io](http://yeoman.io) to read up on what it is and a little how to use it or feel free to check out [Yeoman on github](https://github.com/yeoman/yeoman). You can install Yeoman by running the audit script to see what you need in place:
+We use Yeoman for this project. If you don't know what Yeoman is then you're gonna have to learn a little bit about it. We suggest [yeoman.io](http://yeoman.io) to read up on what it is and a little how to use it or feel free to check out [Yeoman on github](https://github.com/yeoman/yeoman). You can install Yeoman by running the audit script to see what you need in place.
 
     curl -L get.yeoman.io | bash
 
 ###Dependencies
+We use [Bundler](http://gembundler.com/#getting-started) and think it's pretty neato. Bundler maintains a consistent environment for ruby applications. It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions) that it needs to run. Getting started with bundler is easy! Open a terminal window and type the following:
+
+    gem install bundler
+
+Once you've installed bundler then you can run the following command which will install all the required gems for this project:
+
+    bundle install
+
+**NOTE:** RVM savvy users can also run ``rvm gemset create $GEMSET_NAME`` and then ``rvm gemset use $GEM_NAME`` to make and run a personal gemset before running the ``bundle install`` command.
+
 **Stylesheets** : Sass &amp; Compass
 
-These dependencies can be installed by executing the following bash command
+If ``bundle install`` isn't your cup of tea then your dependencies can also be installed by executing the following bash command
 
     gem install compass
 
