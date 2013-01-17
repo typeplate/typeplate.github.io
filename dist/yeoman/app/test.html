@@ -1,0 +1,447 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>TypePlate &raquo; A Typographic Demo</title>
+        <meta name="description" content="The web-thang demo: A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
+        <meta name="viewport" content="width=device-width">
+        <script>
+            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+            })();
+        </script>
+
+        <!-- normalize -->
+        <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
+        <!-- TypePlate -->
+        <link rel="stylesheet" id="typeplate-css" href="styles/typeplate.css">
+        <style>
+            body {
+                margin: 0 auto;
+                max-width: 30em;
+            }
+            /*Logo*/
+            #logo {
+              font-weight: 700;
+              -webkit-transition: 0.123s opacity ease-in-out;
+              -moz-transition: 0.123s opacity ease-in-out;
+              -o-transition: 0.123s opacity ease-in-out;
+              transition: 0.123s opacity ease-in-out;
+            }
+            #logo b {
+                display: block;
+                font-size: .375em;
+            }
+            /*Typekit*/
+            .wf-loading #logo,
+            .wf-loading nav[role="navigation"] {
+              font-family: serif;
+              visibility: hidden;
+              opacity: 0;
+            }
+            .wf-active #logo,
+            .wf-active nav[role="navigation"] {
+              font-family: "ff-meta-serif-web-pro",serif;
+              visibility: visible;
+              opacity: 1;
+            }
+            .wf-active #logo {
+              font-weight: 700;
+            }
+            .wf-active nav[role="navigation"] {
+              font-weight: 400;
+            }
+            /*Navigation*/
+            nav[role="navigation"] {
+              letter-spacing: -4px;
+            }
+            /*Nav Buttons*/
+            .btn {
+              font: inherit;
+              cursor: pointer;
+              border: none;
+              display: inline-block;
+              vertical-align: middle;
+              margin: 0;
+              line-height: 1;
+              padding: 0.5em 0.5em;
+              letter-spacing: normal;
+            }
+            .btn,
+            .btn:hover {
+              text-decoration: none;
+            }
+            .btn-full {
+              display: block;
+              text-align: center;
+              padding-right: 0;
+              padding-left: 0;
+              width: 100%;
+            }
+            .btn-box {
+              margin-top: 0;
+              margin-bottom: 1.5rem;
+              border-radius: 0.25em;
+              margin-right: 1rem;
+              color: #EFEFEF;
+              background: gray;
+              -webkit-transition: 0.132s background ease;
+              -moz-transition: 0.132s background ease;
+              -o-transition: 0.132s background ease;
+              transition: 0.132s background ease;
+            }
+            .btn-box:hover {
+              color: #EFEFEF;
+              background: #8d8d8d;
+            }
+            .btn-action {
+              position: relative;
+              font-size: 2em;
+            }
+            .btn.epsilon {
+                font-size: 1.16666666666667em;
+            }
+            #radio-form-wrap {
+                padding: 1em;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 300px;
+                font-size: 100%;
+                background: #808080;
+                color: #efeeed;
+            }
+            /*on off radio buttons*/
+            #normalize-form {
+                display: block;
+            }
+            #typeplate-form {
+                display: block;
+            }
+            /* dropcap example: compiled Sass to keep the actual downloadable project stylesheet clean as it should be used */
+            .drop-cap:first-letter {
+                float: left;
+                margin: auto 0.5em auto auto;
+                padding: 0.5em;
+                font-size: 4em;
+                line-height: 1;
+                text-indent: 0;
+                background: #333333;
+                color: white;
+            }
+
+            input[type="radio"] {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: inline-block;
+                font-size: 100%;
+                line-height: normal;
+                padding: 5px;
+            }
+
+            input[type="radio"]:hover {
+                cursor: pointer;
+            }
+            img {
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <!--banner-->
+        <header class="header" role="banner">
+            <hgroup>
+                <h1 id="logo" class="giga"><a href="/" rel="me">TypePlate</a><b> A Typographic Demo <iframe src="http://ghbtns.com/github-btn.html?user=typeplate&repo=typeplate.github.com&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe></b></h1>
+            </hgroup>
+            <nav role="navigation">
+                <a href="/styles/typeplate.scss" rel="bookmark" class="btn btn-box btn-action" data-version="0.1">download</a>
+                <a href="/test.html" class="btn epsilon btn-box">demo</a>
+                <a href="https://github.com/TypePlate/typeplate.github.com/tree/master/yeoman/app" class="btn epsilon btn-box">source</a>
+                <a href="https://github.com/TypePlate/typeplate.github.com/issues" class="btn epsilon btn-box">feedback</a>
+            </nav>
+        </header>
+
+        <div id="radio-form-wrap">
+            <!-- Normalize Radio Toggle -->
+            <form action="/" method="post" id="normalize-form" role="form">
+                    <label for="normalize-on">Normalize On</label>
+                    <input type="radio" name="normalize-state" id="normalize-on" value="normalize on" checked>
+                    <label for="normalize-off">Normalize Off</label>
+                    <input type="radio" name="normalize-state" id="normalize-off" value="normalize off">
+            </form>
+
+            <!-- TypePlate Radio Toggle -->
+            <form action="/" method="post" id="typeplate-form" role="form">
+                <label for="typeplate-on">TypePlate On</label>
+                <input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
+                <label for="typeplate-off">TypePlate Off</label>
+                <input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
+            </form>
+            <!-- /end Demo Radio Buttons -->
+        </div>
+
+        <section>
+            <!-- Word Wrapping -->
+            <h2>§ Word Wrap</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
+        </section>
+
+        <section>
+            <h2>§ Typographic scale</h2>
+            <figure>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+                <figcaption><small>headings w/out classes</small></figcaption>
+            </figure>
+            <figure>
+                <h1 class="giga">Heading Giga</h1>
+                <h1 class="mega">Heading Mega</h1>
+                <h1 class="alpha">Heading Alpha</h1>
+                <h2 class="beta">Heading Beta</h2>
+                <h3 class="gamma">Heading Gamma</h3>
+                <h4 class="delta">Heading Delta</h4>
+                <h5 class="epsilon">Heading Epsilon</h5>
+                <h6 class="zeta">Heading Zeta</h6>
+                <figcaption><small>headings w/ semantic classes</small></figcaption>
+            </figure>
+        </section>
+
+        <h1>§ Small Caps</h1>
+        <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content.</p>
+        <p>True small capitals are now possible on the web.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
+
+        <section>
+            <h1>Heading 1 (in section)</h1>
+            <h2>Heading 2 (in section)</h2>
+            <h3>Heading 3 (in section)</h3>
+            <h4>Heading 4 (in section)</h4>
+            <h5>Heading 5 (in section)</h5>
+            <h6>Heading 6 (in section)</h6>
+        </section>
+
+        <article>
+            <h1>Heading 1 (in article)</h1>
+            <h2>Heading 2 (in article)</h2>
+            <h3>Heading 3 (in article)</h3>
+            <h4>Heading 4 (in article)</h4>
+            <h5>Heading 5 (in article)</h5>
+            <h6>Heading 6 (in article)</h6>
+        </article>
+
+        <header>
+            <hgroup>
+                <h1>Heading 1 (in hgroup)</h1>
+                <h2>Heading 2 (in hgroup)</h2>
+            </hgroup>
+            <nav>
+                <ul>
+                    <li><a href="#">navigation item #1</a></li>
+                    <li><a href="#">navigation item #2</a></li>
+                    <li><a href="#">navigation item #3</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>§ Text-level semantics</h1>
+        <p hidden>This should be hidden in all browsers, apart from IE6</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+
+        <address>Address: somewhere, world</address>
+
+        <p>
+            The <a href="#">a element</a> example<br>
+            The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br>
+            The <b>b element</b> example<br>
+            The <cite>cite element</cite> example<br>
+            The <code>code element</code> example<br>
+            The <del>del element</del> example<br>
+            The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br>
+            The <em>em element</em> example<br>
+            The <i>i element</i> example<br>
+            The img element <img src="http://lorempixel.com/16/16" alt=""> example<br>
+            The <ins>ins element</ins> example<br>
+            The <kbd>kbd element</kbd> example<br>
+            The <mark>mark element</mark> example<br>
+            The <q>q element <q>inside</q> a q element</q> example<br>
+            The <s>s element</s> example<br>
+            The <samp>samp element</samp> example<br>
+            The <small>small element</small> example<br>
+            The <span>span element</span> example<br>
+            The <strong>strong element</strong> example<br>
+            The <sub>sub element</sub> example<br>
+            The <sup>sup element</sup> example<br>
+            The <u>u element</u> example<br>
+            The <var>var element</var> example
+        </p>
+
+        <h1>§ Ornamentals</h1>
+        <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+
+        <h1>§ Grouping content</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+
+        <h3>Pre</h3>
+        <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
+        <pre><code>&lt;html>
+    &lt;head>
+    &lt;/head>
+    &lt;body>
+        &lt;div class="main"> &lt;div>
+    &lt;/body>
+&lt;/html></code></pre>
+
+        <!-- Stats Tabs -->
+        <h3>Stats Tabs</h3>
+        <ul class="stats-tabs">
+            <li><a href="#">1,234 <b>Stratocasters</b></a></li>
+            <li><a href="#">567 <b>Acoustic</b></a></li>
+            <li><a href="#">23,456 <b>Banjo</b></a></li>
+            <li><a href="#">3,456 <b>Dulcimer</b></a></li>
+            <li><a href="#">456 <b>Ukes</b></a></li>
+            <li><a href="#">26 <b>Bass Guitar</b></a></li>
+        </ul>
+
+        <h3>Blockquotes</h3>
+        <h4>Default</h4>
+        <blockquote>
+            <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
+        </blockquote>
+        <h4>Author Cited</h4>
+        <blockquote cite="http://where-i-got-my-info-from.com">
+            <p>&Prime;Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web&Prime;</p>
+            <cite>
+                <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
+            </cite>
+        </blockquote>
+
+        <h3>Ordered list</h3>
+        <ol>
+            <li>list item 1</li>
+            <li>list item 1
+                <ol>
+                    <li>list item 2</li>
+                    <li>list item 2
+                        <ol>
+                            <li>list item 3</li>
+                            <li>list item 3</li>
+                        </ol>
+                    </li>
+                    <li>list item 2</li>
+                    <li>list item 2</li>
+                </ol>
+            </li>
+            <li>list item 1</li>
+            <li>list item 1</li>
+        </ol>
+
+        <h3>Unordered list</h3>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 1
+                <ul>
+                    <li>list item 2</li>
+                    <li>list item 2
+                        <ul>
+                            <li>list item 3</li>
+                            <li>list item 3</li>
+                        </ul>
+                    </li>
+                    <li>list item 2</li>
+                    <li>list item 2</li>
+                </ul>
+            </li>
+            <li>list item 1</li>
+            <li>list item 1</li>
+        </ul>
+
+        <h3>Definition lists</h3>
+        <h4>Default</h4>
+        <dl>
+            <dt>Description name</dt>
+            <dd>Description value</dd>
+            <dt>Description name</dt>
+            <dd>Description value</dd>
+            <dd>Description value</dd>
+            <dt>Description name</dt>
+            <dt>Description name</dt>
+            <dd>Description value</dd>
+        </dl>
+        <h4>Lining Style</h4>
+        <dl class="lining">
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+            <dd>Description value</dd>
+            <dt><b>Description name</b></dt>
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+        </dl>
+        <h4>Dictionary Style</h4>
+        <dl class="dictionary-style">
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+            <dd>Description value</dd>
+            <dt><b>Description name</b></dt>
+            <dt><b>Description name</b></dt>
+            <dd>Description value</dd>
+        </dl>
+
+        <h3>figure</h3>
+        <figure>
+            <img src="http://lorempixel.com/400/200" alt="">
+            <figcaption>Figcaption content</figcaption>
+        </figure>
+
+        <footer role="contentinfo">
+            <p><small>Copyright &copy;2013. TypePlate is a<a href="https://github.com/grayghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint™
+Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a></small></p>
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+        <script>
+            $(document).ready(function() {
+                //Normalize States
+                //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
+                var normalizeCss        = $("#normalize-css"),
+                    typleplateCss       = $("#typeplate-css");
+
+                //Normalize Radio Button
+                $('#normalize-form input[type="radio"]').on('click', function(e) {
+                    //radio button checked state
+                    var normalizeOffCheck   = $('#normalize-off').is(':checked');
+                    if(normalizeOffCheck) {
+                        $("#normalize-css").attr("href", "");
+                    }else {
+                        $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
+                    }
+                });
+
+                //TypePlate Radio Button
+                $('#typeplate-form input[type="radio"]').on('click', function(e) {
+                    //radio button checked state
+                    var typePlateOffCheck   = $('#typeplate-off').is(':checked');
+                    if(typePlateOffCheck) {
+                        $("#typeplate-css").attr("href", "");
+                    }else {
+                        $("#typeplate-css").attr("href", "styles/typeplate.css");
+                    }
+                });
+            }); //end document.ready
+        </script>
+    </body>
+</html>

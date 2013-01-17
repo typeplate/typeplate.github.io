@@ -1,0 +1,14 @@
+# These dirs are ignored as they're
+# part of the build/production process
+temp
+dist
+
+#Hidden Mac dir Files
+.DS_Store
+
+# Sass Cache dir
+.sass-cache
+
+# this generates upon running yeoman server
+# and is annoying 
+npm-debug.log

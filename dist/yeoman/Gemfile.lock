@@ -1,0 +1,26 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    chunky_png (1.2.7)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    fssm (0.2.9)
+    rake (10.0.3)
+    rubygems-bundler (1.1.0)
+    rvm (1.11.3.5)
+    sass (3.2.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.2.3)
+  chunky_png (>= 1.2.7)
+  compass (>= 0.12.2)
+  fssm (>= 0.2.9)
+  rake (>= 10.0.3)
+  rubygems-bundler (>= 1.1.0)
+  rvm (>= 1.11.3.5)
+  sass (>= 3.2.5)
