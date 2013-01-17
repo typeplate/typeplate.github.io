@@ -43,6 +43,11 @@ pre[class*="language-"] {
 
 .typeplate-code-block {
     border-radius: 6px;
+    //there was no margin so I put one in
+    //seems someone took it out? I don't
+    //like the code blocks pressed against
+    //one another. They need breathing room.
+    margin: 0 0 1.5em;
     position: relative;
     figcaption {
         border-radius: 0 0 6px 6px;
