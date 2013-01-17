@@ -25,6 +25,10 @@ If you're making a quick patch for TypePlate (like a spelling mistake for exampl
 
 Since things like Compass, Sass are Ruby Gems you'll need to have Ruby installed. Ruby is just a language and the Gems are little packages containing applications. RVM is a ruby version manager that allows users to independently manage Gems and Gemsets via the bash command ``rvm use gemset $GEM_NAME``. When navigating into the ``yeoman`` directory of this project you'll see the ``.rvmc`` file at work with this message &ndash;Have no fear and just make sure to follow the directions and type 'y' to proceed or you may type 'v' as seen below to view the contents. Bottom line&hellip;we just wanna make sure you're using the latest version of Ruby.
 
+**NOTE:**
+
+Whenever you ``cd`` into the ``yeoman`` directory for the first time **RVM** will always default any Gemsets in use. This requires **RVM** users to execute the command ``rvm gemset use $GEMSET_NAME`` before you can execute ``yeoman server``.
+
     ==============================================================================
     = NOTICE                                                                     =
     ==============================================================================
