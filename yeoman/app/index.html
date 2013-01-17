@@ -37,10 +37,24 @@
             <p><i><b>TypePlate</b></i> is a "typographic starter kit". We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
         </header>
 
-        <!-- base typography standardization -->
-        <section class="base-type">
+        <!-- table of contents -->
+        <section class="toc botDivider" id="table-of-contents">
             <header>
-                <h1 class="beta" id="base-type">
+                <h1 class="beta center capsify">Table of Contents</h1>
+            </header>
+            <ol>
+                <li><a href="#base-type">Base Type</a></li>
+                <li><a href="#font-size-adjust">Font-Size Adjust</a></li>
+                <li><a href="#typographic-scale">Typographic Scale</a></li>
+                <li><a href="#code-blocks">Code Blocks</a></li>
+                <li><a href="#small-caps">Small-Caps</a></li>
+            </ol>
+        </section>
+
+        <!-- base typography standardization -->
+        <section class="base-type botDivider" id="base-type">
+            <header>
+                <h1 class="gamma">
                     <a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type
                 </h1>
             </header>
@@ -71,11 +85,13 @@ html {
         </section>
 
         <!-- font-size adjust -->
-        <section class="fsa">
+        <section class="fsa botDivider" id="font-size-adjust">
             <header>
-                <h1>Font Size Adjust</h1>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#font-size-adjust">§</a> 1.2 Font-Size Adjust
+                </h1>
             </header>
-            <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x&ndash;height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
+            <p>Using <code>font-size-adjust</code> on our body element we help to maintain a consistent x-height across our fallback fonts. This is currently not implemented across browsers, but due to become a standard very soon. In essence, you're preparing to become future friendly with your type. It was pulled from CSS2.1, but brought back to life in the CSS Fonts Module Level 3.</p>
             <figure class="font-size-adjust-demo">
                 <h1 class="helvetica">x</h1>
                 <h1 class="georgia">x</h1>
@@ -91,13 +107,16 @@ body {
             </figure>
         </section>
 
-        <section class="typographic-scale">
+        <!-- typographic scale -->
+        <section class="typographic-scale" id="typographic-scape">
             <header>
-                <h1>Typographic Scale</h1>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#base-type">§</a> 1.3 Typographic Scale
+                </h1>
             </header>
-            <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes as the size progression might look inconsistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+            <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
             <blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
-                By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.
+                <p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
                 <cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite>
             </blockquote>
 
