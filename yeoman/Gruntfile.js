@@ -157,7 +157,7 @@ module.exports = function( grunt ) {
     // Optimizes JPGs and PNGs (with jpegtran & optipng)
     img: {
         //dist: '<config:rev.img>'
-        dist: ''
+        dist: 'images'
     },
 
     // rjs configuration. You don't necessarily need to specify the typical
@@ -177,18 +177,10 @@ module.exports = function( grunt ) {
 
     concat: {
         dist: ''
-        //dist: {
-            //src: ['scripts/plugins.js', 'scripts/main.js'],
-            //dest: 'scripts/built.js'
-        //}
     },
 
     min: {
         dist: ''
-        //dist: {
-            //src: ['scripts/built.js'],
-            //dest: 'scripts/min/built.min.js'
-        //}
     }
     });
 

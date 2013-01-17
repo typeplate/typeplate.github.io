@@ -41,7 +41,7 @@ fonts_dir = "fonts"
 #environment = :production
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
-relative_assets = true
+relative_assets = false
 
 # Enable or disable line comments
 line_comments = false

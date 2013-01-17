@@ -1,7 +1,8 @@
 # These dirs are ignored as they're
 # part of the build/production process
 temp
-dist
+#removed for subtree testing
+#dist
 
 #Hidden Mac dir Files
 .DS_Store
@@ -10,5 +11,5 @@ dist
 .sass-cache
 
 # this generates upon running yeoman server
-# and is annoying 
+# and is annoying
 npm-debug.log
