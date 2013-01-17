@@ -6,6 +6,9 @@
 #
 # Other Suggestions:
 # symlink or submodule. symlink would not work because yeoman deletes the 'dist' directory
+#
+# Yeoman Issue Tracker Topic
+# https://github.com/yeoman/yeoman/issues/850
 task :build do
   Dir.chdir('yeoman') { `yeoman build` }
   Dir.glob('yeoman/dist/*') { |f| FileUtils.cp_r(f, '.', verbose: true) if f != "yeoman/dist/codekit" }
