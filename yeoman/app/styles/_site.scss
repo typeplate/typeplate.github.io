@@ -62,6 +62,16 @@ img {
     }
 }
 
+// $no-js Code Block Styles
+// ============================================================
+.typeplate-code-block {
+    background: hsl(207, 89%, 7%);
+    padding: 0.5em $line-height * 1rem;
+    code {
+        color: #dfdfdf;
+    }
+}
+
 
 // $Ampersand Demo
 // ============================================================
