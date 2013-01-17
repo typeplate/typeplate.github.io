@@ -1,2 +1,0 @@
-# Guarantee correct Ruby compatibility, for RVM users.
-rvm use 1.9.3
