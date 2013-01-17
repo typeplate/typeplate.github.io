@@ -175,12 +175,8 @@ module.exports = function( grunt ) {
         name: 'main'
     },
 
-    // While Yeoman handles concat/min when using
-    // usemin blocks, you can still use them manually
     concat: {
         dist: ''
-        //since we're using comments wrapped around scripts
-        //in our markup so we don't need to do any of this
         //dist: {
             //src: ['scripts/plugins.js', 'scripts/main.js'],
             //dest: 'scripts/built.js'
@@ -189,8 +185,6 @@ module.exports = function( grunt ) {
 
     min: {
         dist: ''
-        //since we're using comments wrapped around scripts
-        //in our markup so we don't need to do any of this
         //dist: {
             //src: ['scripts/built.js'],
             //dest: 'scripts/min/built.min.js'

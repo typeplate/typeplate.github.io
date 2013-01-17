@@ -86,6 +86,7 @@ blockquote {
     }
     cite {
         font-style: normal;
+        @extend %cite;
         &:before {
             content:"—";
         }

@@ -226,7 +226,7 @@ p {
 }
 
 
-// $Blockquotes
+// $Blockquote Cites
 // ============================================================
 
 @mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
@@ -235,7 +235,7 @@ p {
     text-align: $text-align;
 }
 
-cite {
+%cite {
     @include cite-style;
 }
 
@@ -360,6 +360,7 @@ $stats-border-style: 0.125rem solid #ccc;
             }
         }
     }
+
     // dictionary-style
     @if $style == dictionary-style {
         dt {

@@ -76,7 +76,7 @@ $indent-val: 1.5em;
 $stats-font-size: 1.5rem;
 $stats-list-margin: 0 0.625rem 0 0;
 $stats-list-padding: 0 0.625rem 0 0;
-$stats-item-font-size: 0.1875rem;
+$stats-item-font-size: 0.875rem;
 $stats-item-margin: 0.125rem 0 0 0;
 $stats-border-style: 0.125rem solid #ccc;
 
@@ -103,7 +103,6 @@ $stats-border-style: 0.125rem solid #ccc;
 // @include font-face() is a compass function so it will require compass
 // based on this gist by Chris Van Patten
 //https://gist.github.com/4469518
-
 @if ($icon-fonts != null) {
     @each $font in $icon-fonts {
         @include font-face( $font,
@@ -136,6 +135,7 @@ $stats-border-style: 0.125rem solid #ccc;
 @mixin base-type($weight, $line-height, $font-size, $font-family...) {
     font: $weight #{$font-size}%/#{$line-height} $font-family;
 }
+
 
 // $ T e x t - I n d e n t    M i x i n
 // ==========================================================================
@@ -429,6 +429,7 @@ h1, h2, h3, h4, h5, h6 { color: $heading-color; }
 // ============================================================
 
 .stats-tabs {
+    padding: 0;
     li {
         display: inline-block;
         margin: $stats-list-margin;
