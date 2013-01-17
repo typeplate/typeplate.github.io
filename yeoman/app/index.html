@@ -357,6 +357,10 @@ $icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
                 <h1>CSS Hyphenation</h1>
             </header>
             <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts.</p>
+            <blockquote cite="http://nicewebtype.com/notes/2013/01/16/where-to-avoid-css-hyphenation">
+                Since hyphens is an inherited property, it isn’t sufficient to set it for a limited number of elements and assume you’re done. You have to make sure you’ve turned it off for the elements that shouldn’t be hyphenated.
+                <cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite>
+            </blockquote>
             <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin css-hyphens($val) {
     -webkit-hyphens: $val; // Safari 6
     -moz-hyphens: $val; // FF19
