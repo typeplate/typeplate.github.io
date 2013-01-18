@@ -1,7 +1,6 @@
 # These dirs are ignored as they're
 # part of the build/production process
 temp
-#removed for subtree testing
 dist
 
 #Hidden Mac dir Files
