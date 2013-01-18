@@ -182,13 +182,11 @@ h6, .zeta {
 p {
     // reset top margin, and set bottom margin equal to one unit of line-height
     @extend %rhythm;
-    & + p:not(.hN) {
+    & + p:not(.no-indent) {
         @include txt-indent($indent-val);
-        // since we don't want indents and paragraph breaks, fake removing the bottom margin on the previous paragraph
         margin-top: $line-height * -0.5rem;
     }
 }
-
 
 // $Pull Quotes
 // ============================================================

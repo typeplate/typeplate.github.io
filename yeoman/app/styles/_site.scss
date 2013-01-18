@@ -120,6 +120,15 @@ blockquote {
 }
 
 
+// $Typographic Scale Demo
+// ============================================================
+// this is a peculiar instance because we're stacking lots of titles atop one another
+// so we manually nix the normal amount of margin below titles
+.typographic-scale .no-indent {
+    margin: 0;
+}
+
+
 // $Ampersand Demo
 // ============================================================
 
@@ -313,7 +322,6 @@ nav[role="navigation"] {
     margin-bottom: $line-height * 1rem;
     line-height: 1;
     & + %hN {
-        padding-top: 0;
+        margin: 0;
     }
 }
-
