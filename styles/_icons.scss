@@ -1,0 +1,51 @@
+// $Icon Font Helper
+// ============================================================
+// Using Sass's @each loop to automatically generate code for web fonts
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+//https://gist.github.com/4469518
+$icon-fonts: (icomoon);
+
+@each $font in $icon-fonts {
+    @include font-face( $font,
+        font-files(
+            '#{$font}/#{$font}.woff',
+            '#{$font}/#{$font}.ttf',
+            '#{$font}/#{$font}.svg', svg
+        ),
+        '#{$font}/#{$font}.eot'
+    )
+}
+
+
+// $IcoMoon
+// ============================================================
+
+// Use the following CSS code if you want to use data attributes for inserting your icons
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+// Use the following CSS code if you want to have a class per icon
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: 'icomoon';
+    font-style: normal;
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.icon-menu:before {
+    content: "\e001";
+}
+.icon-settings:before {
+    content: "\e000";
+}

@@ -1,0 +1,776 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <script>
+            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 1000};
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+            })();
+        </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>TypePlate &raquo; A typographic Sass template encouraging great type on the Web</title>
+        <meta name="description" content="a typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/f1387c0d.main.css">
+        <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
+    </head>
+    <body>
+
+        <!-- $banner -->
+        <header class="header col-narrow botDivider" role="banner">
+            <hgroup>
+                <h1 id="logo" class="tera">
+                    <a href="/" rel="me" class="letterpress">TypePlate</a>
+                </h1>
+            </hgroup>
+            <nav role="navigation">
+                <a href="/styles/typeplate.scss" rel="bookmark" class="btn gamma btn-box btn-action" data-version="0.1">download</a>
+                <a href="/./test.html" class="btn epsilon btn-box">demo</a>
+                <a href="https://github.com/TypePlate/typeplate.github.com/tree/master/yeoman/app" class="btn epsilon btn-box">source</a>
+                <a href="https://github.com/TypePlate/typeplate.github.com/issues" class="btn epsilon btn-box">feedback</a>
+            </nav>
+
+            <p>Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.</p>
+            <p><i><b>TypePlate</b></i> is a "typographic starter kit". We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+        </header>
+
+        <!-- $table of contents -->
+        <section class="toc botDivider" id="table-of-contents">
+            <header>
+                <h1 class="beta center capsify">Table of Contents</h1>
+            </header>
+            <ol>
+                <li><a href="#base-type">Base Type</a></li>
+                <li><a href="#typographic-scale">Typographic Scale</a></li>
+                <li><a href="#code-blocks">Code Blocks</a></li>
+                <li><a href="#small-caps">Small-Caps</a></li>
+            </ol>
+        </section>
+
+        <!-- $base typography -->
+        <section class="base-type botDivider" id="base-type">
+            <header>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type
+                </h1>
+            </header>
+            <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Myer himself</a>.</p>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">$weight: normal;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-family: serif;
+$font-family-sans: sans-serif;
+$font-properties: $weight, $line-height, $font-size, $font-family;
+//the serif/sans-serif var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss"; reference.
+$serif-boolean: true !default;
+
+@mixin base-type($weight, $line-height, $font-size, $font-family...) {
+    @if $serif-boolean {
+        font: $weight #{$font-size}%/#{$line-height} $font-family;
+    }@else {
+        font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
+    }
+}
+
+html {
+    @include base-type($font-properties...);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- $typographic scale -->
+        <section class="typographic-scale" id="typographic-scape">
+            <header>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#base-type">§</a> 1.3 Typographic Scale
+                </h1>
+            </header>
+            <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+            <blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
+                <p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
+                <cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite>
+            </blockquote>
+
+            <h1 class="giga">Heading Giga</h1>
+            <h1 class="mega">Heading Mega</h1>
+            <h1 class="alpha">Heading Alpha</h1>
+            <h2 class="beta">Heading Beta</h2>
+            <h3 class="gamma">Heading Gamma</h3>
+            <h4 class="delta">Heading Delta</h4>
+            <h5 class="epsilon">Heading Epsilon</h5>
+            <h6 class="zeta">Heading Zeta</h6>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
+&lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
+&lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
+&lt;h2 class=&quot;beta&quot;&gt;Heading Beta&lt;/h2&gt;
+&lt;h3 class=&quot;gamma&quot;&gt;Heading Gamma&lt;/h3&gt;
+&lt;h4 class=&quot;delta&quot;&gt;Heading Delta&lt;/h4&gt;
+&lt;h5 class=&quot;epsilon&quot;&gt;Heading Epsilon&lt;/h5&gt;
+&lt;h6 class=&quot;zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// $Typographic scale
+@function calc-modular-scale($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+
+@mixin modular-scale($scale, $base, $value) {
+  font-size: calc-modular-scale($scale, $base, $value);
+}
+
+//TYPE SCALE
+$tera:      117; // 117 = 18 × 6.5
+$giga:      90; //  90  = 18 × 5
+$mega:      72; //  72  = 18 × 4
+$alpha:     60; //  60  = 18 × 3.3333
+$beta:      48; //  48  = 18 × 2.6667
+$gamma:     36; //  36  = 18 × 2
+$delta:     24; //  24  = 18 × 1.3333
+$epsilon:   21; //  21  = 18 × 1.1667
+$zeta:      18; //  18  = 18 × 1
+
+//typscale unit
+$type-scale-unit-value: em;
+
+.tera {
+    @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
+}
+
+.giga {
+    @include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+}
+
+.mega {
+    @include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+}
+
+h1, .alpha {
+    @include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
+}
+
+h2, .beta {
+    @include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h3, .gamma {
+    @include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
+}
+
+h4, .delta {
+    @include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
+}
+
+h5, .epsilon {
+    @include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
+}
+
+h6, .zeta {
+    @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- $code blocks -->
+        <section class="code-blocks">
+            <header>
+                <h1>Code Blocks</h1>
+            </header>
+            <p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
+            <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
+<pre><code>h1 {
+    background: red; color:
+    blue; padding: 1em;
+    margin: 3em; border: 2px solid black
+}</code></pre>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">pre code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+}
+
+pre {
+    word-wrap: auto;      // IE 5.5-7
+    white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+    white-space: pre-wrap;      // current browsers
+}
+
+code {
+    white-space: pre;
+    font-family: monospace;
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- $small caps -->
+        <section class="small-caps">
+            <header>
+                <h1>Small Caps</h1>
+            </header>
+                <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
+                <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
+                </figure>
+                <figure class="typeplate-code-block"><pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+abbr {
+    @include smallcaps(gray, 600);
+    &:hover {
+        cursor: help;
+    }
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- paragraph indenting -->
+        <section class="paragraph-formatting">
+            <header>
+                <h1>Paragraphs</h1>
+            </header>
+            <h2>Indenting</h2>
+            <p>The common way of styling paragraphs is handling them as blocks with margins on top and bottom, which is what browsers do by default. If you want to stand out, use indented paragraphs. It's pretty easy to establish with the mixin we've provided.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//paragraph siblings indent
+$indent-val: 1.5em;
+@mixin txt-indent($indent) {
+    text-indent: $indent;
+}
+p {
+    & + p {
+        @include txt-indent($indent-val);
+    }
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+
+            <!-- Word Wrap -->
+            <h2>Word Wrap</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">body {
+    // normal: Indicates that lines may only break at normal word break points.
+    // break-word : Indicates that normally unbreakable words may be broken at ...
+    // arbitrary points if there are no otherwise acceptable break points in the line.
+    word-wrap: break-word;
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- icon helper -->
+        <section class="icon-helper">
+            <header>
+                <h1>Icon Font Helper</h1>
+            </header>
+            <div class="icons">
+                <b class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</b> <b class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</b>
+            </div>
+            <p>So you've got a few icon fonts floating around, but don't wanna change all the reference links for the icon files and especially the multitude of file types needed to include like EOT, TTF, SVG, &amp; WOFF. With so many URLs to change it can be extremely tedious, but not anymore as it can be done in one spot using a Sass loop and the compass <code class="language-sass">@include font-face</code> helper function. This will require a bit of configuration on your part depending on your project and workflow settings.</p>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// ICON FONTS
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory"
+//
+// $icon-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $icon-fonts: null;
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null;
+@if ($icon-fonts != null) {
+    @each $font in $icon-fonts {
+        @include font-face( $font,
+            font-files(
+                '#{$font}/#{$font}.woff',
+                '#{$font}/#{$font}.ttf',
+                '#{$font}/#{$font}.svg', svg
+            ),
+            '#{$font}/#{$font}.eot'
+        )
+    }
+}
+//Your custom override
+$icon-fonts: (icon-font-name);</code></pre><figcaption>Sass</figcaption>
+            </figure>
+
+            <figure class="typeplate-code-block"><pre><code class="language-css">@font-face {
+  font-family: "icon-font-name";
+  src: url('//fonts/icon-font-name/icon-font-name.eot');
+  src: url('//fonts/icon-font-name/icon-font-name.eot?#iefix') format('eot'), url('//fonts/icon-font-name/icon-font-name.woff') format('woff'), url('//fonts/icon-font-name/icon-font-name.ttf') format('truetype'), url('//fonts/icon-font-name/icon-font-name.svg') format('svg');
+}
+
+@font-face {
+  font-family: "another-icon-font-name";
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot');
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot?#iefix') format('eot'), url('//fonts/another-icon-font-name/another-icon-font-name.woff') format('woff'), url('//fonts/another-icon-font-name/another-icon-font-name.ttf') format('truetype'), url('//fonts/another-icon-font-name/another-icon-font-name.svg') format('svg');
+}</code></pre><figcaption>CSS output</figcaption>
+            </figure>
+        </section>
+
+        <!-- $Small Print -->
+        <section class="copyright">
+            <header>
+                <h1>Small Print</h1>
+            </header>
+            <p>Small print The small element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements.</p>
+
+            <small>Copyright © 1922-2011 Acme Corporation. All Rights Reserved.</small>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;small&gt;Copyright &amp;copy; 2012 All Rights Reserved.&lt;/small&gt;</code></pre><figcaption>HTML</figcaption></figure>
+        </section>
+
+        <!-- $foot note -->
+        <section class="fn">
+            <header>
+                <h1>Foot Notes</h1>
+            </header>
+            <article>
+                <p>The sites we’ve built to display on a desktop, smartphone, or a tablet today could be on a TV Screen, coffee table display, or mega space yacht projection system tomorrow. Do yourself a favor and heed the advice of the Dao: A fully-scalable web<sup><a href="#fn-item1" id="fn-return">1</a></sup></p>
+                <footer class="foot-note">
+                    <ol>
+                        <li id="fn-item1">Style sheets that use relative units can more easily scale from one output environment to another. Most of the time I use em and rem. <a href="#fn-return">↩</a></li>
+                    </ol>
+                </footer>
+            </article>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;article&gt;
+    &lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    &lt;footer class=&quot;foot-note&quot;&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre><figcaption>Markup</figcaption>
+            </figure>
+        </section>
+
+        <!-- $Hyphens -->
+        <section class="hyphenate">
+            <header>
+                <h1>CSS Hyphenation</h1>
+            </header>
+            <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts. <a href="http://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063" rel="external">Robert Bringhurst</a> recommends for us to leave at least two characters behind and take at least three forward.</p>
+            <blockquote cite="http://nicewebtype.com/notes/2013/01/16/where-to-avoid-css-hyphenation">
+                Since hyphens is an inherited property, it isn’t sufficient to set it for a limited number of elements and assume you’re done. You have to make sure you’ve turned it off for the elements that shouldn’t be hyphenated.
+                <cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite>
+            </blockquote>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin css-hyphens($val) {
+    -webkit-hyphens: $val; // Safari 6
+    -moz-hyphens: $val; // FF19
+    -ms-hyphens: $val; // IE10
+    hyphens: $val;
+};
+
+body {
+    //Ala Trent Walton
+    //http://trentwalton.com/2011/09/07/css-hyphenation
+    @include css-hyphens(auto);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- Figures -->
+        <!-- [1/6/13 7:09:04 PM] Zak Kain: I think what's missing here is the html markup component, for the more complex sections (like figure). Setting some baseline CSS for figure is difficult without being too restrictive in styling, but you can offer markup patterns for "how to do a proper figure with caption, citation etc". Same goes for blockquotes (which I have a lot of work on actually, I'll pull-request you when this is live) -->
+        <section>
+            <header>
+                <h1>Figures</h1>
+            </header>
+
+            <figure>
+                <img src="http://designingfortheweb.co.uk/book/images/typography-anatomy_b.gif" alt="">
+                <figcaption>
+                    <small><strong>Anatomy</strong>: An excerpt from Mark Boulton's book <cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite></small>
+                </figcaption>
+            </figure>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;figure&gt;
+    &lt;figcaption&gt;
+        &lt;small&gt;&lt;/small&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre><figcaption>Markup</figcaption>
+            </figure>
+        </section>
+
+        <!-- Color -->
+        <section class="color">
+            <h1>Color</h1>
+            <p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
+            <figure class="typeplate-code-block"><pre><code class="language-css">//color
+body { color: #444; }
+h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre><figcaption>Sass</figcaption>
+</figure>
+        </section>
+
+        <!-- Ampersands -->
+        <section class="ampersands">
+            <header>
+                <h1>Unicode Ampersands</h1>
+            </header>
+            <p>With the <code>unicode&ndash;range</code> property we can avoid using verbose markup and only target the charcters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
+            <h2 class="amp">Amper &amp; Sands</h2>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//Unicode Ampersand
+$amp-font-name: Ampersand;
+$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-fallback: local('Georgia');
+
+@font-face {
+    font-family: '#{$amp-font-name}';
+    src: $amp-font-source;
+    unicode-range: U+26;
+}
+@font-face {
+    font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
+    src: $amp-font-fallback;
+    unicode-range: U+270C;
+}
+
+@mixin ampersand($amp-font-family...) {
+    font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- Drop Caps -->
+        <section class="dc">
+            <h1>Drop Caps</h1>
+            <p>A Drop Cap is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
+            <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">// Include your '@include dropcap()' mixin and pass the following
+// arguments below. Feel free to pass in arguments we've provided.
+// At this time you cannot pass in font-family arguments but you're gonna
+// change that anyway so why just make that separately in your deleration.
+@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+    &:first-letter {
+        float: $float;
+        margin: $margin;
+        padding: $padding;
+        font-size: $font-size;
+        line-height: $lineHeight;
+        text-indent: $text-indent;
+        background: $bg;
+        color: $color;
+    }
+}
+
+// This selector class is not included in the actual stylsheet. We leave it for you to decide
+// when to use it. We only provide you with the @mixin. This is just an example of
+// our chosen class selector purely for demo purposes.
+// This @include can be used anywhere you'd like but must be subsequent to
+// this style sheet (typeplate.scss).
+.drop-cap {
+    @include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <!-- Blockquotes -->
+        <!-- http://html5doctor.com/blockquote-q-cite -->
+        <section class="blockquotes">
+            <header>
+                <h1>Blockquotes</h1>
+            </header>
+
+            <p>The blockquote element represents a section that is being quoted from another source.</p>
+
+            <blockquote cite="http://where-i-got-my-info-from.com">
+                <p>&Prime;Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web&Prime;</p>
+                <cite>
+                    <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
+                </cite>
+            </blockquote>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
+    &lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
+    &lt;cite&gt;
+        &lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+    &lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+        </section>
+
+        <!-- Pull Quotes -->
+        <!-- http://24ways.org/2005/swooshy-curly-quotes-without-images -->
+        <!-- http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/ -->
+        <section class="pq">
+            <header>
+                <h1>Pull Quotes</h1>
+            </header>
+            <p>Pull Quotes are tricky, but with this little ditty they're not so difficult or tedious anymore.</p>
+            <article class="entry">
+                <header>
+                    <h1>Article Heading</h1>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. "Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus." lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?</p>
+                <aside class="pull-quote">
+                    <blockquote>
+                        <span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
+                    </blockquote>
+                </aside>
+            </article>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
+    &lt;aside class=&quot;pull-quote&quot;&gt;
+        &lt;blockquote&gt;
+            &lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
+        &lt;/blockquote&gt;
+    &lt;/aside&gt;
+&lt;/article&gt;</code></pre><figcaption>HTML</figcaption>
+</figure>
+<figure class="typeplate-code-block"><pre><code class="language-sass">.entry {
+    position: relative;
+    padding-right: 50%;
+    .pull-quote {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+    }
+}
+
+.bqstart {
+    float: left;
+    height: 45px;
+    margin-top: -50px;
+    //padding-top: 45px;
+    margin-bottom: 50px;
+    font-size: 700%;
+    color: red;
+}
+
+.bqend {
+    float: right;
+    height: 25px;
+    margin-top: -50px;
+    padding-top: 15px;
+    font-size: 700%;
+    color: red;
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <header>
+                <h1>Stats Tabs Ala <a href="http://pea.rs" rel="external">Pears</a></h1>
+            </header>
+            <!-- Stats Tabs -->
+            <ul class="stats-tabs">
+                <li><a href="#">1,234 <b>Stratocasters</b></a></li>
+                <li><a href="#">567 <b>Acoustic</b></a></li>
+                <li><a href="#">23,456 <b>Banjo</b></a></li>
+                <li><a href="#">3,456 <b>Dulcimer</b></a></li>
+                <li><a href="#">456 <b>Ukes</b></a></li>
+                <li><a href="#">26 <b>Bass Guitar</b></a></li>
+            </ul>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
+&lt;ul class=&quot;stats-tabs&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><figcaption>HTML</figcaption>
+</figure>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">//Stats Tabs Variables
+$stats-font-size: 1.125rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.1875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;
+// Stats Tabs Styles
+.stats-tabs {
+    // use this if you go the float route for IE7 support
+    //oveflow: auto;
+    li {
+        //use a float instead of display: inline block for IE7
+        //float: left;
+        display: inline-block;
+        margin: $stats-list-margin;
+        padding: $stats-list-padding;
+        border-right: $stats-border-style;
+        &:last-child {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        a {
+            //float: left;
+            display: inline-block;
+            font-size: $stats-font-size;
+            font-weight: bold;
+            span {
+                display: block;
+                margin: $stats-item-margin;
+                font-size: $stats-item-font-size;
+                font-weight: normal;
+            }
+        }
+    }
+}</code></pre><figcaption>Sass</figcaption>
+</figure>
+        </section>
+
+        <section class="definition-lists">
+            <header>
+                <h1>Definition Lists</h1>
+            </header>
+
+            <p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
+
+            <p>Primer offers different styles for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
+
+            <h2>Default</h2>
+            <dl>
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd>And it gets a definition too, which is this line</dd>
+                    <dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
+            </dl>
+
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+
+            <h2>Lining</h2>
+            <p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
+            <dl class="lining">
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd class="micro">And it gets a definition too, which is this line</dd>
+                    <dd class="micro"> this is a 2<sup>nd</sup> definition for a single term.</dd>
+                <dt><b>Term</b></dt>
+                <dt><b>Other Defined Term</b></dt>
+                    <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+            </dl>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl class="lining"&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
+    // lining style
+    @if $style == lining {
+        dt, dd {
+            display: inline;
+            margin: 0;
+        }
+        dt, dd {
+            & + dt {
+                &:before {
+                    content: "\A";
+                    white-space: pre;
+                }
+            }
+        }
+        dd {
+            & + dd {
+                &:before {
+                    content: ", ";
+                }
+            }
+            &:before {
+                    content: ": ";
+                    margin-left: -0.2rem; // removes extra space between the dt and the colon
+            }
+        }
+    }
+}
+
+dl {
+  @include definition-list-style(lining);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+
+            <h2>Dictionary-Style</h2>
+            <p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
+            <dl class="dictionary-style">
+                <dt><b>This is a term</b></dt>
+                    <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+                <dt><b>Another Term</b></dt>
+                    <dd>And it gets a definition too, which is this line</dd>
+                    <dd> this is a 2<sup>nd</sup> definition for a single term.</dd>
+                <dt><b>Term</b></dt>
+                <dt><b>Other Defined Term</b></dt>
+                    <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+            </dl>
+            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre><figcaption>HTML</figcaption>
+            </figure>
+            <figure class="typeplate-code-block"><pre><code class="language-sass">@mixin definition-list-style($style) {
+    // dictionary-style
+    @if $style == dictionary-style {
+        dt {
+            display: inline;
+            counter-reset: definitions;
+            & + dt {
+                &:before {
+                    content: ", ";
+                    margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+                }
+            }
+        }
+        dd {
+            display: block;
+            counter-increment: definitions;
+            &:before {
+                content: counter(definitions, decimal) ". ";
+            }
+        }
+    }
+}
+
+dl {
+    @include definition-list-style(dictionary-style);
+}</code></pre><figcaption>Sass</figcaption>
+            </figure>
+        </section>
+
+        <footer role="contentinfo">
+            <p><small>Copyright &copy;2013. TypePlate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup>
+Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>. Additional contributions by <a href="https://twitter.com/andyunleash">@andyunleash</a> and <a href="https://twitter.com/ChrisJeane">@ChrisJeane</a></small></p>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
+
+        <!-- http://net.tutsplus.com/tutorials/tools-and-tips/say-yo-to-yeoman -->
+        <script src="scripts/min/f8958b4a.yeomanbuild-min.js"></script>
+
+        <script>
+            // var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            // s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
