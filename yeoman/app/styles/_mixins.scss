@@ -40,13 +40,6 @@
     color: $color;
 }
 
-abbr {
-    @include smallcaps(gray, 600);
-    &:hover {
-        cursor: help;
-    }
-}
-
 
 // $Unicode Ampersand
 // ============================================================

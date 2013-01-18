@@ -12,13 +12,19 @@ a {
     text-decoration: none;
 }
 
-// for now, since font-variant: small-caps is fucking up
+a, a:visited {
+    color: #212121;
+}
+
 abbr {
-    //font-variant: small-caps;
+    // @include smallcaps(gray, 600);
+    // ff-meta-serif has no real small caps, so we fake it
     font-variant: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: $rust;
+    &:hover {
+        cursor: help;
+    }
 }
 
 img {
