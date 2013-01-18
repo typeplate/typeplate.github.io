@@ -42,7 +42,7 @@ pre[class*="language-"] {
 }
 
 .typeplate-code-block {
-    border-radius: 6px;
+    border-radius: 2px;
     //there was no margin so I put one in
     //seems someone took it out? I don't
     //like the code blocks pressed against
@@ -50,7 +50,7 @@ pre[class*="language-"] {
     margin: 0 0 1.5em;
     position: relative;
     figcaption {
-        border-radius: 0 0 6px 6px;
+        border-radius: 0 0 4px 4px;// multiple of 2 which is the charcter of meta-serif
         padding: 0.25em 0.5em;
         position: absolute;
         top: 0;

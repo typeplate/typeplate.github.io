@@ -102,6 +102,29 @@ blockquote {
 }
 
 
+// $Font-Size Adjust Demo
+// ============================================================
+
+.fsa {
+    position: relative;
+    opacity: 0.20;
+    &:after {
+        border-radius: 6px;
+        content: "COMING SOON";
+        display: block;
+        width: 100%;
+        height: 3em;
+        font-size: 3em;
+        line-height: 3;
+        position: absolute;
+        top: 32%;
+        background: rgba(250, 0, 0, 0.80);
+        color: #EFEFEF;
+        text-align: center;
+    }
+}
+
+
 // $Ampersand Demo
 // ============================================================
 
@@ -180,7 +203,6 @@ body {
     }
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
@@ -201,30 +223,31 @@ nav[role="navigation"] {
 
 // via inuit.css by @csswizardry (Harry Roberts)
 .btn {
-    font:inherit;
-    cursor:pointer;
-    border:none;
-    display:inline-block;
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
     vertical-align: middle;
     margin: 0;
-    line-height:1;
+    line-height: 1;
     // padding in ems so we can change the size of a button by altering its `font-size`.
     padding: 0.5em 0.5em;
     // remove inline-block spacing bug
     letter-spacing: normal;
 }
+
 .btn,
 .btn:hover {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .btn-full {
-    display:block;
-    text-align:center;
+    display: block;
+    text-align: center;
     // The following is so that `.btn-full` works properly on `input`s as well as `a`s.
-    padding-right:0;
+    padding-right: 0;
     padding-left: 0;
-    width:100%;
+    width: 100%;
 }
 
 .btn-box {
@@ -232,29 +255,17 @@ nav[role="navigation"] {
     margin-bottom: $line-height * 1rem;
     border-radius: 6px;
     margin-right: 1rem;
-    //color: $cobalt-deep;
-    //background: $rust;
-    //
-    //colorless
-    color: #EFEFEF;
-    background: gray;
-    @include transition(0.132s background ease);
+    background: $rust-deep;
+    color: #fafafa;
+
+    @include transition(0.132s all ease);
     &:hover {
-        // background: $rust-deep;
-        // color: #fafafa;
-        //
-        //colorless
-        color: #EFEFEF;
-        background: lighten(gray, 5%);
-        // We'll do this with @keyframes which should be a little smoother
-        //@include transform(translateY(-0.5rem));
+        background: $rust;
+        color: $cobalt-deep;
     }
 }
 
-.btn-action {
-    // background-color: $crimson-light;
-    position: relative;
-}
+//.btn-action {}
 
 
 // $Letterpress
@@ -265,9 +276,6 @@ nav[role="navigation"] {
     text-align: center;
     text-rendering: optimizeLegibility;
     text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
-    //color
-    //color: $cobalt-fade;
-    //colorless
     color: darken(gray, 20%);
 }
 
@@ -291,7 +299,7 @@ nav[role="navigation"] {
 
 // generic bottom rule class
 .botDivider {
-    border-bottom: 1px solid transparentize($cobalt-deep, 0.75);
+    border-bottom: 8px solid transparentize($cobalt-deep, 0.75);// An 8px thickness is based on the thickness of meta-serif stems which are 16px -OR- a multiple of it.
 }
 
 //control our vertical rhythm
