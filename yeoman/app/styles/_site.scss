@@ -261,7 +261,7 @@ nav[role="navigation"] {
 
 // generic bottom rule class
 .botDivider {
-    border-bottom: 8px solid transparentize($cobalt-deep, 0.75);// An 8px thickness is based on the thickness of meta-serif stems which are 16px -OR- a multiple of it.
+    border-bottom: 0.5rem solid transparentize($cobalt-deep, 0.75);// An 8px thickness is based on the thickness of meta-serif stems which are 16px -OR- a multiple of it.
 }
 
 //control our vertical rhythm
