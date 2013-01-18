@@ -38,17 +38,24 @@ section {
     counter-reset: item;
 }
 .toc li {
-    @extend .epsilon;
-    line-height: 2;
+    @extend .zeta;
     display: block;
 }
+
 .toc ol li:before {
     counter-increment: item;
-    content: "1." counter(item) " – ";
     color: #444;
     font-style: normal;
     font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
+
+// epic loop wizardy!
+@for $i from 1 through 4 {
+    .toc ol:nth-of-type(#{$i}) li:before {
+        content: "#{$i}." counter(item) " – ";
+    }
+}
+
 
 
 // $What Are These?
