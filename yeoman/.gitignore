@@ -2,7 +2,7 @@
 # part of the build/production process
 temp
 #removed for subtree testing
-#dist
+dist
 
 #Hidden Mac dir Files
 .DS_Store
