@@ -38,17 +38,16 @@ section {
     counter-reset: item;
 }
 .toc li {
-    @extend .delta;
+    @extend .epsilon;
     line-height: 2;
     display: block;
-    font-style: italic;
 }
 .toc ol li:before {
     counter-increment: item;
-    content: "1." counter(item) " — ";
+    content: "1." counter(item) " – ";
     color: #444;
-    font-weight: 700;
     font-style: normal;
+    font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
 
 
@@ -168,6 +167,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
+
+// $Cassannet
+// ============================================================
+@font-face {
+  font-family: 'Cassannet';
+  src: url('../fonts/cassannet/cassannet.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/cassannet/cassannet.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/cassannet/cassannet.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+// @font-face {
+//   font-family: 'Cassannet Bold';
+//   src: url('../fonts/cassannet-bold/cassannet-bold.eot'); /* IE9 Compat Modes */
+//   src: url('../fonts/cassannet-bold/cassannet-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('../fonts/cassannet-bold/cassannet-bold.woff') format('woff'), /* Modern Browsers */
+//        url('../fonts/cassannet-bold/cassannet-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+//        url('../fonts/cassannet-bold/cassannet-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 
 // $Navigation
