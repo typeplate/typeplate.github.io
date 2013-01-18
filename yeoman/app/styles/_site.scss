@@ -38,11 +38,17 @@ section {
     counter-reset: item;
 }
 .toc li {
-    display: block
+    @extend .delta;
+    line-height: 2;
+    display: block;
+    font-style: italic;
 }
 .toc ol li:before {
     counter-increment: item;
-    content: "1." counter(item) " ";
+    content: "1." counter(item) " — ";
+    color: #444;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
