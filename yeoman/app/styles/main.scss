@@ -186,7 +186,7 @@ p {
     & + p:not(.hN) {
         @include txt-indent($indent-val);
         // since we don't want indents and paragraph breaks, fake removing the bottom margin on the previous paragraph
-        margin-top: $line-height * -1rem;
+        margin-top: $line-height * -0.5rem;
     }
 }
 

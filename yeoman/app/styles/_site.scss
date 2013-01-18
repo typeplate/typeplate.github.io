@@ -37,8 +37,16 @@ section {
 // $Table of Contents
 // ============================================================
 
-.toc > ol {
-    list-style-type: decimal;
+.toc ol { 
+    list-style: decimal !important; 
+    counter-reset: item; 
+}
+.toc li { 
+    display: block
+}
+.toc ol li:before {
+    counter-increment: item;
+    content: "1." counter(item) " ";
 }
 
 
