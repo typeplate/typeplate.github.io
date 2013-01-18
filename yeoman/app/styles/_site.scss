@@ -1,9 +1,3 @@
-// $Variables
-// ============================================================
-
-@import "vars";
-
-
 // $Global Elements
 // ============================================================
 
@@ -20,6 +14,7 @@ a {
 
 // for now, since font-variant: small-caps is fucking up
 abbr {
+    //font-variant: small-caps;
     font-variant: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -34,14 +29,15 @@ section {
     padding: $line-height * 0.5em 0 $line-height * 1em;
 }
 
+
 // $Table of Contents
 // ============================================================
 
-.toc ol { 
-    list-style: decimal !important; 
-    counter-reset: item; 
+.toc ol {
+    list-style: decimal !important;
+    counter-reset: item;
 }
-.toc li { 
+.toc li {
     display: block
 }
 .toc ol li:before {
@@ -56,6 +52,7 @@ section {
 .tera {
     padding: 0.25em 0;
 }
+
 
 // $Permalink Anchor
 // ============================================================
@@ -72,8 +69,10 @@ section {
     }
 }
 
+
 // $no-js Code Block Styles
 // ============================================================
+
 .typeplate-code-block pre {
     background: hsl(207, 89%, 7%);
     padding: $line-height * 1rem;
@@ -81,6 +80,7 @@ section {
         color: #dfdfdf;
     }
 }
+
 
 // $Blockquotes -> .extract class
 // ============================================================
@@ -98,29 +98,6 @@ blockquote {
         &:before {
             content:"—";
         }
-    }
-}
-
-
-// $Font-Size Adjust Demo
-// ============================================================
-
-.fsa {
-    position: relative;
-    opacity: 0.20;
-    &:after {
-        border-radius: 6px;
-        content: "COMING SOON";
-        display: block;
-        width: 100%;
-        height: 3em;
-        font-size: 3em;
-        line-height: 3;
-        position: absolute;
-        top: 32%;
-        background: rgba(250, 0, 0, 0.80);
-        color: #EFEFEF;
-        text-align: center;
     }
 }
 
@@ -148,27 +125,6 @@ blockquote {
             color: gray;
         }
     }
-}
-
-
-// $Font-Size-Adjust Demo
-// ============================================================
-
-.font-size-adjust-demo {
-    text-align: center;
-}
-.helvetica,
-.georgia {
-    display: inline-block;
-    font-size: 9em;
-    line-height: 1;
-    margin-top: -1rem;
-}
-.helvetica {
-    font-family: Verdana;
-}
-.georgia {
-    font-family: Helvetica;
 }
 
 
@@ -255,13 +211,13 @@ nav[role="navigation"] {
     margin-bottom: $line-height * 1rem;
     border-radius: 6px;
     margin-right: 1rem;
-    background: $rust-deep;
+    background: gray;
     color: #fafafa;
 
     @include transition(0.132s all ease);
     &:hover {
-        background: $rust;
-        color: $cobalt-deep;
+        background: lighten(gray, 5%);
+        color: #fafafa;
     }
 }
 

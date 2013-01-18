@@ -115,5 +115,5 @@ This command will copy the contents of the ``dist`` directory and place all our 
 
 
 ###©credits
-TypePlate &copy;2013 &bull; A [@grayghostvisuals](https://github.com/grayghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
-Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan). Additional contributions by [@andyunleashed](https://github.com/andyunleashed) and [@chrisjeane](https://github.com/chrisjeane)
+TypePlate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
+Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan). Additional contributions by [@andyunleash](https://twitter.com/andyunleash) and [@chrisjeane](https://twitter.com/ChrisJeane)

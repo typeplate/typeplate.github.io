@@ -97,7 +97,6 @@
 // ============================================================
 
 $serif-boolean: true;
-
 html {
     @include base-type($font-properties...);
 }
@@ -263,23 +262,6 @@ code {
 
 // $Drop Cap
 // ============================================================
-
-// Include your '@include dropcap()' mixin and pass the following
-// arguments below. Feel free to pass in arguments we've provided.
-// At this time you cannot pass in font-family arguments but you're gonna
-// change that anyway so why just make that separately in your deleration.
-@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
-    &:first-letter {
-        float: $float;
-        margin: $margin;
-        padding: $padding;
-        font-size: $font-size;
-        line-height: $lineHeight;
-        text-indent: $text-indent;
-        background: $bg;
-        color: $color;
-    }
-}
 
 // This selector class is not included in the actual stylsheet. We leave it for you to decide
 // when to use it. We only provide you with the @mixin. This is just an example of
