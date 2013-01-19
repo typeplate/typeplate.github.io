@@ -48,7 +48,7 @@
 // http://nimbupani.com/jscamp-css-next.html
 
 $amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-source: local('Palatino'), local('Baskerville'), local('Book Antiqua');
 $amp-font-fallback: local('Georgia');
 
 @font-face {
@@ -67,7 +67,7 @@ $amp-font-fallback: local('Georgia');
 }
 
 %ampersand-placeholder {
-    @include ampersand(Ampersand, Arial, sans-serif);
+    @include ampersand(Ampersand, sans-serif);
 }
 
 .amp {
@@ -100,12 +100,13 @@ $indent-val: 1.5em;
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why just make that separately in your deleration.
-@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+@mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
     &:first-letter {
         float: $float;
         margin: $margin;
         padding: $padding;
         font-size: $font-size;
+        font-family: $font-family;
         line-height: $lineHeight;
         text-indent: $text-indent;
         background: $bg;

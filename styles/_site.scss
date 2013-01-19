@@ -6,6 +6,7 @@ body {
     max-width: 40em;
     margin: 0 auto;
     background: image-url("subtle_grunge.png") top left repeat;
+    color: #212121;
 }
 
 a {
@@ -14,6 +15,14 @@ a {
 
 a, a:visited {
     color: #212121;
+}
+
+p code, .example code {
+    // some bug with monospace things causes <code> elements to not inherit the font-size of the <html> element
+    // <code> elements inside <pre> DO inherit the proper size, for some reason, so we scope this style to the elements we need
+    font-size: 1.125em;
+    // so code doesn't wrap onto a second line in the middle of a piece of a word
+    word-wrap: normal;
 }
 
 abbr {
@@ -25,6 +34,14 @@ abbr {
     &:hover {
         cursor: help;
     }
+}
+
+dl {
+    margin-top: 0;
+}
+
+small {
+    font-size: 65%;
 }
 
 img {
@@ -63,14 +80,36 @@ section {
 }
 
 
-
-// $What Are These?
+// $Example Figures
 // ============================================================
 
-.tera {
-    padding: 0.25em 0;
+.example {
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+    padding: $line-height * 1rem $line-height * 1rem 0;
+    margin: $line-height * 1.5rem 0 $line-height * 1rem;
+    border-radius: 0.333333em;
+    &:before {
+        content: "example:";
+        @extend .epsilon;
+        display: block;
+        font-family: "Cassannet", sans-serif;
+        background: none;
+        line-height: 0;
+        position: relative;
+        color: #212121;
+        top: -2.125em;
+        left: -1.65rem;
+    }
 }
-
+.example > pre {
+    margin-top: 0;
+    overflow: auto;
+    white-space: pre;
+    word-spacing: normal;
+    word-wrap: normal;
+}
 
 // $Permalink Anchor
 // ============================================================
@@ -92,10 +131,12 @@ section {
 // ============================================================
 
 .typeplate-code-block pre {
-    background: hsl(207, 89%, 7%);
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
     padding: $line-height * 1rem;
     code {
-        color: #dfdfdf;
+        color: #444;
     }
 }
 
@@ -120,13 +161,32 @@ blockquote {
 }
 
 
+// $Typographic Scale Demo
+// ============================================================
+
+// this is a peculiar instance because we're stacking lots of titles atop one another
+// so we manually nix the normal amount of margin below titles
+.typographic-scale .no-indent {
+    margin: 0;
+}
+
+
 // $Ampersand Demo
 // ============================================================
 
-.ampersands {
-    h2 {
-        font-size: 2em;
-        text-align: center;
+.amp {
+    text-align: center;
+}
+
+// $Figure Demo
+// ============================================================
+
+.example-figcaption {
+    font-style: italic;
+    font-size: 0.85em;
+    @extend %rhythm;
+    strong {
+        font-style: normal;
     }
 }
 
@@ -135,7 +195,7 @@ blockquote {
 // ============================================================
 
 .icons {
-    font-size: 3em;
+    @extend .beta;
     .fs1 {
         display: inline-block;
         &:before {
@@ -277,6 +337,15 @@ nav[role="navigation"] {
     color: darken(gray, 20%);
 }
 
+// $Footer
+// ============================================================
+
+.site-footer {
+    margin-top: 3em;
+    font-size: 75%;
+}
+
+
 
 // $Helpers
 // ============================================================
@@ -314,6 +383,6 @@ nav[role="navigation"] {
     margin-bottom: $line-height * 1rem;
     line-height: 1;
     & + %hN {
-        padding-top: 0;
+        margin: 0;
     }
 }

@@ -182,9 +182,8 @@ h6, .zeta {
 p {
     // reset top margin, and set bottom margin equal to one unit of line-height
     @extend %rhythm;
-    & + p:not(.hN) {
+    & + p:not(.no-indent) {
         @include txt-indent($indent-val);
-        // since we don't want indents and paragraph breaks, fake removing the bottom margin on the previous paragraph
         margin-top: $line-height * -0.5rem;
     }
 }
@@ -267,7 +266,8 @@ code {
 // when to use it. We only provide you with the @mixin. This is just an example of
 // our chosen class selector purely for demo purposes.
 .drop-cap {
-    @include dropcap($margin: auto .5em auto auto, $padding: .5em, $color: #fff, $bg: #333);
+    // @include dropcap($margin: auto .5em auto auto, $padding: .5em, $color: #fff, $bg: #333);
+    @include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
 }
 
 
