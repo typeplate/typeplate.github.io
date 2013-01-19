@@ -4,18 +4,16 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-        <title>TypePlate &raquo; A Typographic Demo</title>
-        <meta name="description" content="The web-thang demo: A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
-        <meta name="viewport" content="width=device-width">
         <script>
-            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
+            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 1000};
             var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
             })();
         </script>
-
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>TypePlate &raquo; A Typographic Demo</title>
+        <meta name="description" content="The web-thang demo: A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
+        <meta name="viewport" content="width=device-width">
         <!-- normalize -->
         <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
         <!-- TypePlate -->
@@ -26,46 +24,77 @@
                 max-width: 34em;
                 background: url(/images/subtle_grunge.png) top left repeat;
             }
-            /*Logo*/
-            #logo {
-                font-style: italic;
-                font-size: 6.5rem;
-                font-weight: 700;
-                -webkit-transition: 0.123s opacity ease-in-out;
-                -moz-transition: 0.123s opacity ease-in-out;
-                -o-transition: 0.123s opacity ease-in-out;
-                transition: 0.123s opacity ease-in-out;
+
+            img {
+                max-width: 100%;
             }
-            #logo a {
-                color: #333;
-            }
-            #logo b {
-                display: block;
-                font-size: .375em;
-            }
+
             /*Typekit*/
-            .wf-loading #logo,
             .wf-loading nav[role="navigation"] {
                 font-family: serif;
                 visibility: hidden;
                 opacity: 0;
             }
-            .wf-active #logo,
-            .wf-active nav[role="navigation"] {
+            .wf-active nav[role="navigation"],
+            .wf-inactive nav[role="navigation"] {
                 font-family: "ff-meta-serif-web-pro",serif;
+                font-weight: 400;
                 visibility: visible;
                 opacity: 1;
             }
-            .wf-active #logo {
+
+            /*Logo*/
+            #logo {
+                margin: .25em 0 .25em;
+                font-style: italic;
+                font-size: 6.5rem; /* 18px * 6.5em = 117em */
                 font-weight: 700;
+                line-height: 1.3; /* 117px / 90px = 1.3  */
             }
-            .wf-active nav[role="navigation"] {
-                font-weight: 400;
+            #logo-badge {
+                display: inline-block;
+                font-size: .375em;
+                text-indent: -999em;
+                background: url(/images/logo.png) 50% 0% no-repeat;
+                background-size: 4.5em;
+                width: 100%;
+                height: 4.5em;
+                /*-webkit-transition: 0.2s -webkit-filter ease-in-out;
+                -webkit-filter: invert(1);*/
+                -webkit-transform: rotateY(360deg);
+                -webkit-animation: letter-spin 1s infinite;
+                -moz-transform: rotateY(360deg);
+                -moz-animation: letter-spin 1s infinite;
             }
+            /*Just Messin'*/
+            @-webkit-keyframes letter-spin {
+                0%   {
+                    -webkit-transform: rotateY(0deg);
+                    -webkit-transform-origin: center center;
+                }
+                100% {
+                    -webkit-transform: rotateY(360deg);
+                }
+            }
+            @-moz-keyframes letter-spin {
+                0%   {
+                    -moz-transform: rotateY(0deg);
+                    -moz-transform-origin: center center;
+                }
+                100% {
+                    -moz-transform: rotateY(360deg);
+                }
+            }
+
             /*Navigation*/
             nav[role="navigation"] {
                 letter-spacing: -4px;
+                -webkit-transition: .123s all ease-in-out;
+                -moz-transition: .123s all ease-in-out;
+                -o-transition: .123s all ease-in-out;
+                transition: .123s all ease-in-out;
             }
+
             /*Nav Buttons*/
             .btn {
                 font: inherit;
@@ -112,10 +141,11 @@
             .btn.epsilon {
                 font-size: 1.16666666666667em;
             }
-            #radio-form-wrap {
+
+            #typeplate-widgets-wrap {
                 border-bottom: 8px solid rgb(213, 204, 204);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.56);
-                padding: 1em;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.56), inset 0 2px 2px rgba(255, 255, 255, 0.4);
+                padding: .5em;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -125,6 +155,11 @@
                 background: gray;
                 color: #EFEFEF;
             }
+            #typeplate-widgets-wrap iframe {
+                position: absolute;
+                top: 1.5em;
+                right: .5em;
+            }
             /*on off radio buttons*/
             #normalize-form {
                 display: block;
@@ -132,18 +167,6 @@
             #typeplate-form {
                 display: block;
             }
-            /* dropcap example: compiled Sass to keep the actual downloadable project stylesheet clean as it should be used */
-            .drop-cap:first-letter {
-                float: left;
-                margin: auto 0.5em auto auto;
-                padding: 0.5em;
-                font-size: 4em;
-                line-height: 1;
-                text-indent: 0;
-                background: #333333;
-                color: white;
-            }
-
             input[type="radio"] {
                 -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
@@ -157,8 +180,16 @@
             input[type="radio"]:hover {
                 cursor: pointer;
             }
-            img {
-                max-width: 100%;
+            /* dropcap example: compiled Sass to keep the actual downloadable project stylesheet clean as it should be used */
+            .drop-cap:first-letter {
+                float: left;
+                margin: auto 0.5em auto auto;
+                padding: 0.5em;
+                font-size: 4em;
+                line-height: 1;
+                text-indent: 0;
+                background: #333333;
+                color: white;
             }
         </style>
     </head>
@@ -166,7 +197,7 @@
         <!--banner-->
         <header class="header" role="banner">
             <hgroup>
-                <h1 id="logo" class="giga"><a href="/" rel="me">TypePlate</a><b> A Typographic Demo <iframe src="http://ghbtns.com/github-btn.html?user=typeplate&repo=typeplate.github.com&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe></b></h1>
+                <h1 id="logo" class="giga"><a href="/" id="logo-badge" rel="me">TypePlate</a></h1>
             </hgroup>
             <nav role="navigation">
                 <a href="/styles/typeplate.scss" rel="bookmark" class="btn btn-box btn-action" data-version="0.1">download</a>
@@ -176,7 +207,7 @@
             </nav>
         </header>
 
-        <div id="radio-form-wrap">
+        <div id="typeplate-widgets-wrap">
             <!-- Normalize Radio Toggle -->
             <form action="/" method="post" id="normalize-form" role="form">
                     <label for="normalize-on">Normalize On</label>
@@ -184,7 +215,6 @@
                     <label for="normalize-off">Normalize Off</label>
                     <input type="radio" name="normalize-state" id="normalize-off" value="normalize off">
             </form>
-
             <!-- TypePlate Radio Toggle -->
             <form action="/" method="post" id="typeplate-form" role="form">
                 <label for="typeplate-on">TypePlate On</label>
@@ -193,16 +223,12 @@
                 <input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
             </form>
             <!-- /end Demo Radio Buttons -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=typeplate&repo=typeplate.github.com&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
         </div>
-
+        <h2>§ Base Type</h2>
+        <!-- $Typographic Scale -->
         <section>
-            <!-- Word Wrapping -->
-            <h2>§ Word Wrap</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
-        </section>
-
-        <section>
-            <h2>§ Typographic scale</h2>
+            <h2>Typographic scale</h2>
             <figure>
                 <h1>Heading 1</h1>
                 <h2>Heading 2</h2>
@@ -225,11 +251,52 @@
             </figure>
         </section>
 
-        <h1>§ Small Caps</h1>
-        <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
+        <!-- $Color -->
+        <section>
+            <h2>Color</h2>
+            <p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
+            <h2>Titles #222</h2>
+            <p>Body Text #444</p>
+        </section>
+
+        <!-- Word Wrap -->
+        <section>
+            <h2>Word Wrap</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
+        </section>
+
+        <!-- Paragraphs -->
+
+        <!-- Indenting -->
+        <h1>§ Paragraphs</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+
+        <!-- Hyphentation -->
+        <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts. <a href="http://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063" rel="external">Robert Bringhurst</a> recommends for us to leave at least two characters behind and take at least three forward.</p>
+
+        <!-- Detailing -->
+        <h1>§ Detailing</h1>
+
+        <!-- Small Caps -->
+        <h1>Small Caps</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium <abbr title="hyper text pre processor">PHP</abbr>  accusamus dolor provident error consectetur <abbr title="web open font format">WOFF</abbr> quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
+
+        <h2>Drop Cap</h2>
+        <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
+
+        <!-- $Small Print -->
+        <h2>Small Print</h2>
+        <p>Small print The small element is used to represent disclaimers, caveats, legal restrictions, or copyrights (commonly referred to as ‘small print’). It can also be used for attributions or satisfying licensing requirements.</p>
+        <small>Copyright © 1922-2011 Acme Corporation. All Rights Reserved.</small>
 
         <section>
+            <header>
+                <hgroup>
+                    <h1>Heading 1 (in hgroup)</h1>
+                    <h2>Heading 2 (in hgroup)</h2>
+                </hgroup>
+            </header>
             <h1>Heading 1 (in section)</h1>
             <h2>Heading 2 (in section)</h2>
             <h3>Heading 3 (in section)</h3>
@@ -247,53 +314,7 @@
             <h6>Heading 6 (in article)</h6>
         </article>
 
-        <header>
-            <hgroup>
-                <h1>Heading 1 (in hgroup)</h1>
-                <h2>Heading 2 (in hgroup)</h2>
-            </hgroup>
-        </header>
-
-        <h1>§ Paragraphs</h1>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
-
-        <h1>§ Ornamentals</h1>
-        <p class="drop-cap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.</p>
-
-        <h1>§ Grouping content</h1>
-        <h3>Pre&ndash;formatted Text</h3>
-        <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
-        <pre><code>&lt;html>
-    &lt;head>
-    &lt;/head>
-    &lt;body>
-        &lt;div class="main"> &lt;div>
-    &lt;/body>
-&lt;/html></code></pre>
-
-        <!-- Stats Tabs -->
-        <h3>Stats Tabs</h3>
-        <ul class="stats-tabs">
-            <li><a href="#">1,234 <b>Stratocasters</b></a></li>
-            <li><a href="#">567 <b>Acoustic</b></a></li>
-            <li><a href="#">23,456 <b>Banjo</b></a></li>
-            <li><a href="#">3,456 <b>Dulcimer</b></a></li>
-            <li><a href="#">456 <b>Ukes</b></a></li>
-        </ul>
-
-        <h3>Blockquotes</h3>
-        <h4>Default</h4>
-        <blockquote>
-            <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
-        </blockquote>
-        <h4>Author Cited</h4>
-        <blockquote cite="http://where-i-got-my-info-from.com">
-            <p>&Prime;Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web&Prime;</p>
-            <cite>
-                <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
-            </cite>
-        </blockquote>
+        <h1>§ Pattern Modules</h1>
 
         <h3>Definition lists</h3>
         <h4>Default</h4>
@@ -329,6 +350,40 @@
             <dt><b>Description name</b></dt>
             <dd>Description value</dd>
         </dl>
+
+        <!-- Code Blocks -->
+        <h3>Code Blocks</h3>
+        <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
+        <pre><code>&lt;html>
+    &lt;head>
+    &lt;/head>
+    &lt;body>
+        &lt;div class="main"> &lt;div>
+    &lt;/body>
+&lt;/html></code></pre>
+
+        <!-- Stats Tabs -->
+        <h3>Stats Tabs</h3>
+        <ul class="stats-tabs">
+            <li><a href="#">1,234 <b>Stratocasters</b></a></li>
+            <li><a href="#">567 <b>Acoustic</b></a></li>
+            <li><a href="#">23,456 <b>Banjo</b></a></li>
+            <li><a href="#">3,456 <b>Dulcimer</b></a></li>
+            <li><a href="#">456 <b>Ukes</b></a></li>
+        </ul>
+
+        <h3>Blockquotes</h3>
+        <h4>Default</h4>
+        <blockquote>
+            <p>Some sort of famous witty quote marked up with a &lt;blockquote> and a child &lt;p> element.</p>
+        </blockquote>
+        <h4>Author Cited</h4>
+        <blockquote cite="http://where-i-got-my-info-from.com">
+            <p>&Prime;Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web&Prime;</p>
+            <cite>
+                <small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
+            </cite>
+        </blockquote>
 
         <h3>Figure</h3>
         <figure>

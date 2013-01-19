@@ -12,13 +12,19 @@ a {
     text-decoration: none;
 }
 
-// for now, since font-variant: small-caps is fucking up
+a, a:visited {
+    color: #212121;
+}
+
 abbr {
-    //font-variant: small-caps;
+    // @include smallcaps(gray, 600);
+    // ff-meta-serif has no real small caps, so we fake it
     font-variant: normal;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: $rust;
+    &:hover {
+        cursor: help;
+    }
 }
 
 img {
@@ -38,12 +44,24 @@ section {
     counter-reset: item;
 }
 .toc li {
-    display: block
+    @extend .zeta;
+    display: block;
 }
+
 .toc ol li:before {
     counter-increment: item;
-    content: "1." counter(item) " ";
+    color: #444;
+    font-style: normal;
+    font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
+
+// epic loop wizardy!
+@for $i from 1 through 4 {
+    .toc ol:nth-of-type(#{$i}) li:before {
+        content: "#{$i}." counter(item) " – ";
+    }
+}
+
 
 
 // $What Are These?
@@ -141,7 +159,7 @@ blockquote {
 body {
     font-weight: 400;
     //gives font loading a little class
-    @include transition(.0123s opacity ease-in-out);
+    @include transition(.00123s opacity ease-in-out);
     //Typekit Active FOUT Loading
     .wf-loading & {
         font-family: serif;
@@ -150,7 +168,8 @@ body {
         opacity: 0;
     }
     //Typekit Active FOUT Loading
-    .wf-active & {
+    .wf-active &,
+    .wf-inactive & {
         font-family: "ff-meta-serif-web-pro",serif;
         font-weight: 400;
         //Opacity Fallback
@@ -162,6 +181,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
+
+// $Cassannet
+// ============================================================
+@font-face {
+  font-family: 'Cassannet';
+  src: url('../fonts/cassannet/cassannet.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/cassannet/cassannet.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/cassannet/cassannet.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+// @font-face {
+//   font-family: 'Cassannet Bold';
+//   src: url('../fonts/cassannet-bold/cassannet-bold.eot'); /* IE9 Compat Modes */
+//   src: url('../fonts/cassannet-bold/cassannet-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('../fonts/cassannet-bold/cassannet-bold.woff') format('woff'), /* Modern Browsers */
+//        url('../fonts/cassannet-bold/cassannet-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+//        url('../fonts/cassannet-bold/cassannet-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 
 // $Navigation
@@ -255,7 +297,7 @@ nav[role="navigation"] {
 
 // generic bottom rule class
 .botDivider {
-    border-bottom: 8px solid transparentize($cobalt-deep, 0.75);// An 8px thickness is based on the thickness of meta-serif stems which are 16px -OR- a multiple of it.
+    border-bottom: 0.44444444rem solid transparentize($cobalt-deep, 0.75);// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 }
 
 //control our vertical rhythm
@@ -275,4 +317,3 @@ nav[role="navigation"] {
         padding-top: 0;
     }
 }
-

@@ -4,18 +4,18 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
+        <script>
+            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 1000};
+            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+            })();
+        </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
         <title>TypePlate &raquo; A typographic Sass template encouraging great type on the Web</title>
         <meta name="description" content="a typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
         <meta name="viewport" content="width=device-width">
-        <script>
-            (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
-            var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-            })();
-        </script>
-        <link rel="stylesheet" href="styles/b4908c1c.main.css">
+        <link rel="stylesheet" href="styles/93acbaf9.main.css">
         <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
     </head>
     <body>
@@ -41,13 +41,37 @@
         <!-- $table of contents -->
         <section class="toc botDivider" id="table-of-contents">
             <header>
-                <h1 class="beta center capsify">Table of Contents</h1>
+                <h1 class="delta center capsify">Table of Contents</h1>
             </header>
+            <!-- 1. Base Type -->
             <ol>
                 <li><a href="#base-type">Base Type</a></li>
                 <li><a href="#typographic-scale">Typographic Scale</a></li>
+                <li><a href="#color">Color</a></li>
+                <li><a href="#word-wrap">Wordwrap</a></li>
+            </ol>
+            <!-- 2. Paragraphs -->
+            <ol>
+                <li><a href="#indenting">Indenting</a></li>
+                <li><a href="#hyphenation">Hyphenation</a></li>
+            </ol>
+            <!-- 3. Detailing -->
+            <ol>
+                <li><a href="#small-caps">Small Capitals</a></li>
+                <li><a href="#drop-caps">Drop Capitals</a></li>
+                <li><a href="#unicode-ampersands">Unicode Ampersands</a></li>
+                <li><a href="#small-print">Small Print</a></li>
+            </ol>
+            <!-- 4. Pattern Modules -->
+            <ol>
+                <li><a href="#definition-lists">Definition Lists</a></li>
                 <li><a href="#code-blocks">Code Blocks</a></li>
-                <li><a href="#small-caps">Small-Caps</a></li>
+                <li><a href="#icon-font-helper">Icon Font Helper</a></li>
+                <li><a href="#stats-tabs">Stats Tabs</a></li>
+                <li><a href="#figures">Figures</a></li>
+                <li><a href="#pull-quotes">Pull Quotes</a></li>
+                <li><a href="#block-quotes">Block Quotes</a></li>
+                <li><a href="#footnotes">Footnotes</a></li>
             </ol>
         </section>
 
@@ -85,10 +109,10 @@ html {
         </section>
 
         <!-- $typographic scale -->
-        <section class="typographic-scale" id="typographic-scape">
+        <section class="typographic-scale" id="typographic-scale">
             <header>
                 <h1 class="gamma">
-                    <a class="perma-anchor" href="#base-type">§</a> 1.3 Typographic Scale
+                    <a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale
                 </h1>
             </header>
             <p>Establish clearly distinguishable heading levels with font size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
@@ -176,9 +200,11 @@ h6, .zeta {
         </section>
 
         <!-- $code blocks -->
-        <section class="code-blocks">
+        <section class="code-blocks" id="code-blocks">
             <header>
-                <h1>Code Blocks</h1>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#code-blocks">§</a> 1.3 Code Blocks
+                </h1>
             </header>
             <p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
             <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
@@ -206,9 +232,11 @@ code {
         </section>
 
         <!-- $small caps -->
-        <section class="small-caps">
+        <section class="small-caps" id="small-caps">
             <header>
-                <h1>Small Caps</h1>
+                <h1 class="gamma">
+                    <a class="perma-anchor" href="#small-caps">§</a> 1.4 Small-Caps
+                </h1>
             </header>
                 <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>

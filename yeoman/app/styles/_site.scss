@@ -168,7 +168,7 @@ blockquote {
 body {
     font-weight: 400;
     //gives font loading a little class
-    @include transition(.0123s opacity ease-in-out);
+    @include transition(.00123s opacity ease-in-out);
     //Typekit Active FOUT Loading
     .wf-loading & {
         font-family: serif;
@@ -177,7 +177,8 @@ body {
         opacity: 0;
     }
     //Typekit Active FOUT Loading
-    .wf-active & {
+    .wf-active &,
+    .wf-inactive & {
         font-family: "ff-meta-serif-web-pro",serif;
         font-weight: 400;
         //Opacity Fallback
