@@ -63,6 +63,30 @@ section {
 }
 
 
+// $Example Figures
+// ============================================================
+
+.example {
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+    padding: $line-height * 1rem;
+    margin: $line-height * 1rem 0;
+    border-radius: 0.333333em;
+    &:before {
+        content: "example:";
+        @extend .epsilon;
+        display: block;
+        font-family: "Cassannet", sans-serif;
+        background: none;
+        line-height: 0;
+        position: relative;
+        color: #212121;
+        top: -2em;
+        left: -1.65rem;
+    }
+}
+pre code {tab-size: 4;}
 
 // $What Are These?
 // ============================================================
@@ -92,10 +116,12 @@ section {
 // ============================================================
 
 .typeplate-code-block pre {
-    background: hsl(207, 89%, 7%);
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.15);
+    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
     padding: $line-height * 1rem;
     code {
-        color: #dfdfdf;
+        color: #444;
     }
 }
 
@@ -122,6 +148,7 @@ blockquote {
 
 // $Typographic Scale Demo
 // ============================================================
+
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
 .typographic-scale .no-indent {

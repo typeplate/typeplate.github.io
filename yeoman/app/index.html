@@ -83,7 +83,8 @@
                 </h1>
             </header>
             <p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Myer himself</a>.</p>
-            <figure class="typeplate-code-block"><pre><code class="language-sass">$weight: normal;
+            <figure class="typeplate-code-block"><figcaption>Sass</figcaption>
+<pre><code class="language-sass">$weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
@@ -104,7 +105,7 @@ $serif-boolean: true !default;
 
 html {
     @include base-type($font-properties...);
-}</code></pre><figcaption>Sass</figcaption>
+}</code></pre>
             </figure>
         </section>
 
@@ -121,24 +122,28 @@ html {
                 <cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite>
             </blockquote>
 
-            <p class="giga no-indent">Heading Giga</p>
-            <p class="mega no-indent">Heading Mega</p>
-            <p class="alpha no-indent">Heading Alpha</p>
-            <p class="beta no-indent">Heading Beta</p>
-            <p class="gamma no-indent">Heading Gamma</p>
-            <p class="delta no-indent">Heading Delta</p>
-            <p class="epsilon no-indent">Heading Epsilon</p>
-            <p class="zeta no-indent">Heading Zeta</p>
-            <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
+            <figure class="example">
+                <p class="giga no-indent">Heading Giga</p>
+                <p class="mega no-indent">Heading Mega</p>
+                <p class="alpha no-indent">Heading Alpha</p>
+                <p class="beta no-indent">Heading Beta</p>
+                <p class="gamma no-indent">Heading Gamma</p>
+                <p class="delta no-indent">Heading Delta</p>
+                <p class="epsilon no-indent">Heading Epsilon</p>
+                <p class="zeta no-indent">Heading Zeta</p>
+            </figure>
+            <figure class="typeplate-code-block"><figcaption>HTML</figcaption>
+<pre><code class="language-markup">&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
 &lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
 &lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
 &lt;h2 class=&quot;beta&quot;&gt;Heading Beta&lt;/h2&gt;
 &lt;h3 class=&quot;gamma&quot;&gt;Heading Gamma&lt;/h3&gt;
 &lt;h4 class=&quot;delta&quot;&gt;Heading Delta&lt;/h4&gt;
 &lt;h5 class=&quot;epsilon&quot;&gt;Heading Epsilon&lt;/h5&gt;
-&lt;h6 class=&quot;zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre><figcaption>HTML</figcaption>
+&lt;h6 class=&quot;zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre>
             </figure>
-            <figure class="typeplate-code-block"><pre><code class="language-sass">// $Typographic scale
+            <figure class="typeplate-code-block"><figcaption>Sass</figcaption>
+<pre><code class="language-sass">// $Typographic scale
 @function calc-modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
@@ -195,7 +200,7 @@ h5, .epsilon {
 
 h6, .zeta {
     @include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
-}</code></pre><figcaption>Sass</figcaption>
+}</code></pre>
             </figure>
         </section>
 
@@ -207,13 +212,16 @@ h6, .zeta {
                 </h1>
             </header>
             <p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
-            <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
-<pre><code>h1 {
-    background: red; color:
-    blue; padding: 1em;
-    margin: 3em; border: 2px solid black
-}</code></pre>
-            <figure class="typeplate-code-block"><pre><code class="language-sass">pre code {
+            <figure class="example">
+                <pre><code>h1 { background: red; color: blue; padding: 1em; margin: 3em; border: 2px solid black }</code></pre>
+                <pre><code>h1 {
+                    background: red; color:
+                    blue; padding: 1em;
+                    margin: 3em; border: 2px solid black
+                }</code></pre>
+            </figure>
+            <figure class="typeplate-code-block"><figcaption>Sass</figcaption>
+				<pre><code class="language-sass">pre code {
     word-wrap: normal;
     white-space: pre-wrap;
 }
@@ -227,7 +235,7 @@ pre {
 code {
     white-space: pre;
     font-family: monospace;
-}</code></pre><figcaption>Sass</figcaption>
+}</code></pre>
             </figure>
         </section>
 
@@ -240,9 +248,11 @@ code {
             </header>
                 <p>Small caps help to make abbreviations way easier to read but won't stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
-                <figure class="typeplate-code-block"><pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre><figcaption>HTML</figcaption>
+                <figure class="typeplate-code-block"><figcaption>HTML</figcaption>
+                	<pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HMTL&lt;/abbr&gt;</code></pre>
                 </figure>
-                <figure class="typeplate-code-block"><pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
+                <figure class="typeplate-code-block"><figcaption>Sass</figcaption>
+					<pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
     font-variant: small-caps;
     font-weight: $font-weight;
     text-transform: lowercase;
@@ -254,7 +264,7 @@ abbr {
     &:hover {
         cursor: help;
     }
-}</code></pre><figcaption>Sass</figcaption>
+}</code></pre>
             </figure>
         </section>
 

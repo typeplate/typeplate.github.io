@@ -29,7 +29,7 @@ pre[class*="language-"] {
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-    background-color: hsl(207, 89%, 7%);
+    background-color: hsla(0, 0%, 0%, 0.1);
 }
 
 /* Code blocks */
@@ -37,7 +37,7 @@ pre[class*="language-"] {
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
-    border-radius: 6px;
+    border-radius: 0.333333em;
     box-shadow: 1px 1px .5em black inset;
 }
 
@@ -50,13 +50,14 @@ pre[class*="language-"] {
     margin: 0 0 1.5em;
     position: relative;
     figcaption {
-        border-radius: 0 0 4px 4px;// multiple of 2 which is the charcter of meta-serif
-        padding: 0.25em 0.5em;
-        position: absolute;
-        top: 0;
-        right: 2%;
-        background: $rust;
-        color: #cobalt-deep;
+        @extend .epsilon;
+        font-family: "Cassannet", sans-serif;
+        line-height: 0.5;
+        text-transform: lowercase;
+        color: #212121;
+        &:after {
+            content: ":";
+        }
     }
 }
 
@@ -72,11 +73,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: hsl(30,20%,50%);
+    color: slategray;
 }
 
 .token.punctuation {
-    opacity: .7;
+    color: #999;
 }
 
 .namespace {
@@ -87,13 +88,13 @@ pre[class*="language-"] {
 .token.tag,
 .token.boolean,
 .token.number {
-    color: hsl(350, 40%, 70%);
+    color: #905;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string {
-    color: hsl(75, 70%, 60%);
+    color: #690;
 }
 
 .token.operator,
@@ -101,26 +102,23 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    color: hsl(40, 90%, 60%);
+    color: #a67f59;
+    background: hsla(0,0%,100%,.5);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword,
-.token.function,
-.token.constant  {
-    color: hsl(350, 40%, 70%);
+.token.keyword {
+    color: #07a;
 }
+
 
 .token.regex,
-.token.important,
-.token.variable  {
+.token.important {
     color: #e90;
-    color: lighten($rust, 5%);
 }
 
-.token.important,
-.token.deliminator {
+.token.important {
     font-weight: bold;
 }
 
