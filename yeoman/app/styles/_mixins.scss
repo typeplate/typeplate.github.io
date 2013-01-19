@@ -48,7 +48,7 @@
 // http://nimbupani.com/jscamp-css-next.html
 
 $amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
+$amp-font-source: local('Palatino'), local('Baskerville'), local('Book Antiqua');
 $amp-font-fallback: local('Georgia');
 
 @font-face {
@@ -67,7 +67,7 @@ $amp-font-fallback: local('Georgia');
 }
 
 %ampersand-placeholder {
-    @include ampersand(Ampersand, Arial, sans-serif);
+    @include ampersand(Ampersand, sans-serif);
 }
 
 .amp {
