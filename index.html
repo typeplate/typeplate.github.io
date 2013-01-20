@@ -147,8 +147,13 @@ html {
     @return ($scale/$base)#{$value};
 }
 
+@function pixel-fallback($scale, $base, $unit: px) {
+    @return ($scale/$base) * $base#{$unit};
+}
+
 @mixin modular-scale($scale, $base, $value) {
-  font-size: calc-modular-scale($scale, $base, $value);
+    font-size: pixel-fallback($scale, $base);
+    font-size: calc-modular-scale($scale, $base, $value);
 }
 
 //TYPE SCALE
@@ -163,7 +168,7 @@ $epsilon:   21; //  21  = 18 × 1.1667
 $zeta:      18; //  18  = 18 × 1
 
 //typscale unit
-$type-scale-unit-value: em;
+$type-scale-unit-value: rem;
 
 .tera {
     @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');

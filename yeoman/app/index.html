@@ -143,12 +143,14 @@ html {
         <figure class="typeplate-code-block">
             <figcaption>Sass</figcaption>
             <pre><code class="language-sass">// $Typographic scale
-@function calc-modular-scale($scale, $base, $value) {
+@function modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
 
 @mixin modular-scale($scale, $base, $value) {
-  font-size: calc-modular-scale($scale, $base, $value);
+    // Pixel falback for IE versions &lt;= 8
+    font-size: $scale#{px};
+    font-size: modular-scale($scale, $base, $value);
 }
 
 //TYPE SCALE
