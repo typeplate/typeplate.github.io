@@ -15,7 +15,7 @@
     <title>TypePlate » A typographic Sass template encouraging great type on the Web</title>
     <meta name="description" content="A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles/542cd570.main.css">
+    <link rel="stylesheet" href="styles/5c4053d4.main.css">
     <!--<script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script>-->
 </head>
 <body>
@@ -143,17 +143,14 @@ html {
         <figure class="typeplate-code-block">
             <figcaption>Sass</figcaption>
             <pre><code class="language-sass">// $Typographic scale
-@function calc-modular-scale($scale, $base, $value) {
+@function modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
 }
 
-@function pixel-fallback($scale, $base, $unit: px) {
-    @return ($scale/$base) * $base#{$unit};
-}
-
 @mixin modular-scale($scale, $base, $value) {
-    font-size: pixel-fallback($scale, $base);
-    font-size: calc-modular-scale($scale, $base, $value);
+    // Pixel falback for IE versions &lt;= 8
+    font-size: $scale#{px};
+    font-size: modular-scale($scale, $base, $value);
 }
 
 //TYPE SCALE
@@ -168,7 +165,7 @@ $epsilon:   21; //  21  = 18 × 1.1667
 $zeta:      18; //  18  = 18 × 1
 
 //typscale unit
-$type-scale-unit-value: rem;
+$type-scale-unit-value: em;
 
 .tera {
     @include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');

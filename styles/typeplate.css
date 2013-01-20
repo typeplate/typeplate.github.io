@@ -45,7 +45,7 @@
 }
 
 html {
-  font: normal 112.5%/1.65 Georgia, serif;
+  font: normal 112.5%/1.65 serif;
 }
 
 body {
@@ -74,39 +74,48 @@ code {
 }
 
 .tera {
-  font-size: 6.5em;
+  font-size: 117px;
+  font-size: 6.5rem;
 }
 
 .giga {
-  font-size: 5em;
+  font-size: 90px;
+  font-size: 5rem;
 }
 
 .mega {
-  font-size: 4em;
+  font-size: 72px;
+  font-size: 4rem;
 }
 
 h1, .alpha {
-  font-size: 3.33333em;
+  font-size: 60px;
+  font-size: 3.33333rem;
 }
 
 h2, .beta {
-  font-size: 2.66667em;
+  font-size: 48px;
+  font-size: 2.66667rem;
 }
 
 h3, .gamma {
-  font-size: 2em;
+  font-size: 36px;
+  font-size: 2rem;
 }
 
 h4, .delta {
-  font-size: 1.33333em;
+  font-size: 24px;
+  font-size: 1.33333rem;
 }
 
 h5, .epsilon {
-  font-size: 1.16667em;
+  font-size: 21px;
+  font-size: 1.16667rem;
 }
 
 h6, .zeta {
-  font-size: 1em;
+  font-size: 18px;
+  font-size: 1rem;
 }
 
 p + p {

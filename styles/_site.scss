@@ -84,7 +84,8 @@ section {
 // ============================================================
 
 .example {
-    background-color: hsla(0, 0%, 0%, 0.1);
+    background: #dddddd;
+    background: hsla(0, 0%, 0%, 0.1);
     border: 1px solid hsla(0, 0%, 0%, 0.15);
     box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
     padding: $line-height * 1rem $line-height * 1rem 0;
@@ -111,6 +112,7 @@ section {
     word-wrap: normal;
 }
 
+
 // $Permalink Anchor
 // ============================================================
 
@@ -131,7 +133,8 @@ section {
 // ============================================================
 
 .typeplate-code-block pre {
-    background-color: hsla(0, 0%, 0%, 0.1);
+    background: #dddddd;
+    background: hsla(0, 0%, 0%, 0.1);
     border: 1px solid hsla(0, 0%, 0%, 0.15);
     box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
     padding: $line-height * 1rem;
@@ -178,6 +181,7 @@ blockquote {
     text-align: center;
 }
 
+
 // $Figure Demo
 // ============================================================
 
@@ -219,7 +223,7 @@ blockquote {
 body {
     font-weight: 400;
     //gives font loading a little class
-    @include transition(.00123s opacity ease-in-out);
+    @include transition(.00123s opacity ease-in);
     //Typekit Active FOUT Loading
     .wf-loading & {
         font-family: serif;
@@ -242,28 +246,28 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-// $Cassannet
+
+// $Cassannet @font-face
 // ============================================================
-@font-face {
-  font-family: 'Cassannet';
-  src: url('../fonts/cassannet/cassannet.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/cassannet/cassannet.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/cassannet/cassannet.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg'); /* Legacy iOS */
-  font-weight: normal;
-  font-style: normal;
-}
-// @font-face {
-//   font-family: 'Cassannet Bold';
-//   src: url('../fonts/cassannet-bold/cassannet-bold.eot'); /* IE9 Compat Modes */
-//   src: url('../fonts/cassannet-bold/cassannet-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//        url('../fonts/cassannet-bold/cassannet-bold.woff') format('woff'), /* Modern Browsers */
-//        url('../fonts/cassannet-bold/cassannet-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-//        url('../fonts/cassannet-bold/cassannet-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
-//   font-weight: normal;
-//   font-style: normal;
-// }
+// We use a helper from our compass config for this
+// http://compass-style.org/reference/compass/css3/font_face/
+
+// Cassannet Regular
+@include font-face("Cassannet", font-files(
+    "cassannet/cassannet.eot", ///* IE9 Compat Modes */
+    "cassannet/cassannet.eot?#iefix", // IE6-IE8
+    "cassannet/cassannet.woff", // Modern Browsers
+    "cassannet/cassannet.ttf", // Safari, Android, iOS
+    "cassannet/cassannet.svg#svgFontName" // Legacy iOS
+));
+// Cassannet Bold
+// @include font-face("Cassannet Bold", font-files(
+//     "cassannet/cassannet-bold.eot", ///* IE9 Compat Modes */
+//     "cassannet/cassannet-bold.eot?#iefix", // IE6-IE8
+//     "cassannet/cassannet-bold.woff", // Modern Browsers
+//     "cassannet/cassannet-bold.ttf", // Safari, Android, iOS
+//     "cassannet/cassannet-bold.svg#svgFontName" // Legacy iOS
+// ));
 
 
 // $Navigation
