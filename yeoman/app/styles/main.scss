@@ -148,6 +148,10 @@ $type-scale-unit-value: rem;
 
 h1, h2, h3, h4, h5, h6 {
     @extend %hN;
+    // waddya think?
+    // I liked the text shadow in this dribbble shot and thought it fit us.
+    // http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
+    //text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
 }
 
 .tera {

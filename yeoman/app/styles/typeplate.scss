@@ -48,12 +48,12 @@ $amp-font: local('Georgia'), local('Palatino'), local('Book Antiqua');
 //
 //      fonts_dir = "name-of-your-fonts-directory"
 //
-// $icon-fonts can then be called from another stylesheet either before or after this
+// $web-fonts can then be called from another stylesheet either before or after this
 // very stylesheet you're reading right now. Change at will captain!
-// default: $icon-fonts: null;
-// ex.1) $icon-fonts: (icon-name);
-// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-$icon-fonts: null;
+// default: $web-fonts: null;
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+$web-fonts: null;
 
 //AMPERSAND @font-face VALUES
 $amp-font-name: Ampersand;
@@ -108,8 +108,8 @@ $stats-border-style: 0.125rem solid #ccc;
 // @include font-face() is a compass function so it will require compass
 // based on this gist by Chris Van Patten
 //https://gist.github.com/4469518
-@if ($icon-fonts != null) {
-    @each $font in $icon-fonts {
+@if ($web-fonts != null) {
+    @each $font in $web-fonts {
         @include font-face( $font,
             font-files(
                 '#{$font}/#{$font}.woff',

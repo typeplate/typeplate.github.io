@@ -65,7 +65,7 @@
             <li><a href="#figures">Figures</a></li>
             <li><a href="#block-quotes">Block Quotes</a></li>
             <li><a href="#pull-quotes">Pull Quotes</a></li>
-            <li><a href="#icon-font-helper">Icon Font Helper</a></li>
+            <li><a href="#web-font-helper">Web Font Helper</a></li>
             <li><a href="#stats-tabs">Stats Tabs</a></li>
             <li><a href="#footnotes">Footnotes</a></li>
             <li><a href="#definition-lists">Definition Lists</a></li>
@@ -613,12 +613,12 @@ code {
         </figure>
     </section>
 
-    <!-- #icon-font-helper -->
-    <section class="icon-font-helper botDivider" id="icon-font-helper">
+    <!-- #web-font-helper -->
+    <section class="web-font-helper botDivider" id="web-font-helper">
         <header>
-            <h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Icon Font Helper</h1>
+            <h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Web Font Helper</h1>
         </header>
-        <p>So you have a few icon fonts floating around, but don't want to change all the reference links for the icon files—and especially the multitude of file types needed to include (EOT, TTF, SVG, & WOFF). With so many URLs to change it can be extremely tedious, but not anymore as it can be done in one spot using a Sass loop and the compass <code>@include font-face</code> helper function. This will require a bit of configuration on your part depending on your project and workflow settings.</p>
+        <p>The Web Font Helper is a special tool for those that use custom fonts &amp; icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource locator">URL</abbr>s and file types it can become extremely tedious. By taking advantage of the Web Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific projects and workflows.</p>
 
         <figure class="example icons">
             <p class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</p>
@@ -627,49 +627,46 @@ code {
 
         <figure class="typeplate-code-block">
             <figcaption>Sass</figcaption>
-            <pre><code class="language-sass">// ICON FONTS
+            <pre><code class="language-sass">// Web Fonts Helper
 // In order to set you must have the following...
 // 1. A Compass @import rule (i.e. @import "compass") before
 // this stylesheet or from within webthang.scss.
 // 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
 // 3. Specify within your 'config.rb' file the following line...
 //
-//      fonts_dir = "name-of-your-fonts-directory"
+//      fonts_dir = "name-of-your-fonts-directory" ex.) fonts_dir = "fonts"
 //
-// $icon-fonts can then be called from another stylesheet either before or after this
+// $web-fonts can then be called from another stylesheet either before or after this
 // very stylesheet you're reading right now. Change at will captain!
-// default: $icon-fonts: null;
-// ex.1) $icon-fonts: (icon-name);
-// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-$icon-fonts: null;
-@if ($icon-fonts != null) {
-    @each $font in $icon-fonts {
-        @include font-face( $font,
-            font-files(
-                '#{$font}/#{$font}.woff',
-                '#{$font}/#{$font}.ttf',
-                '#{$font}/#{$font}.svg', svg
-            ),
-            '#{$font}/#{$font}.eot'
-        )
-    }
+// default: $web-fonts: null;
+// ex.1) $web-fonts: (web-font-name);
+// ex.2) $web-fonts: (web-font-name1, web-font-name2, web-font-name3);
+@each $font in $web-fonts {
+    @include font-face( $font,
+        font-files(
+            '#{$font}/#{$font}.woff',
+            '#{$font}/#{$font}.ttf',
+            '#{$font}/#{$font}.svg', svg
+        ),
+        '#{$font}/#{$font}.eot'
+    )
 }
 //Your custom override
-$icon-fonts: (icon-font-name);</code></pre>
+$web-fonts: (web-font-name);</code></pre>
         </figure>
 
         <figure class="typeplate-code-block">
             <figcaption>CSS Output</figcaption>
             <pre><code class="language-css">@font-face {
-  font-family: "icon-font-name";
-  src: url('//fonts/icon-font-name/icon-font-name.eot');
-  src: url('//fonts/icon-font-name/icon-font-name.eot?#iefix') format('eot'), url('//fonts/icon-font-name/icon-font-name.woff') format('woff'), url('//fonts/icon-font-name/icon-font-name.ttf') format('truetype'), url('//fonts/icon-font-name/icon-font-name.svg') format('svg');
+  font-family: "web-font-name";
+  src: url('//fonts/web-font-name/web-font-name.eot');
+  src: url('//fonts/web-font-name/web-font-name.eot?#iefix') format('eot'), url('//fonts/web-font-name/web-font-name.woff') format('woff'), url('//fonts/web-font-name/web-font-name.ttf') format('truetype'), url('//fonts/web-font-name/web-font-name.svg') format('svg');
 }
 
 @font-face {
-  font-family: "another-icon-font-name";
-  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot');
-  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot?#iefix') format('eot'), url('//fonts/another-icon-font-name/another-icon-font-name.woff') format('woff'), url('//fonts/another-icon-font-name/another-icon-font-name.ttf') format('truetype'), url('//fonts/another-icon-font-name/another-icon-font-name.svg') format('svg');
+  font-family: "another-web-font-name";
+  src: url('//fonts/another-web-font-name/another-web-font-name.eot');
+  src: url('//fonts/another-web-font-name/another-web-font-name.eot?#iefix') format('eot'), url('//fonts/another-web-font-name/another-web-font-name.woff') format('woff'), url('//fonts/another-web-font-name/another-web-font-name.ttf') format('truetype'), url('//fonts/another-web-font-name/another-web-font-name.svg') format('svg');
 }</code></pre>
         </figure>
     </section>
