@@ -9,7 +9,6 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: white;
     // text-shadow: 0 -.1em .2em black;
     font-family: Consolas, Monaco, 'Andale Mono', monospace;
     direction: ltr;
@@ -25,11 +24,16 @@ pre[class*="language-"] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    // IE <= 8
+    .lt-ie9 & {
+        color: lighten(#333, 45%);
+    }
 }
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-    background-color: hsla(0, 0%, 0%, 0.1);
+    background: #dddddd;
+    background: hsla(0, 0%, 0%, 0.1);
 }
 
 /* Code blocks */

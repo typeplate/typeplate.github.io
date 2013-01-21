@@ -109,7 +109,7 @@ section {
     overflow: auto;
     white-space: pre;
     word-spacing: normal;
-    word-wrap: normal;
+    @include word-wrap(normal);
 }
 
 
@@ -132,12 +132,14 @@ section {
 // $no-js Code Block Styles
 // ============================================================
 
-.typeplate-code-block pre {
-    background: #dddddd;
-    background: hsla(0, 0%, 0%, 0.1);
-    border: 1px solid hsla(0, 0%, 0%, 0.15);
-    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-    padding: $line-height * 1rem;
+.typeplate-code-block {
+    pre {
+        background: #dddddd;
+        background: hsla(0, 0%, 0%, 0.1);
+        border: 1px solid hsla(0, 0%, 0%, 0.15);
+        box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+        padding: $line-height * 1rem;
+    }
     code {
         color: #444;
     }

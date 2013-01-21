@@ -1,13 +1,26 @@
 // $Icon Font Helper
 // ============================================================
-// Using Sass's @each loop to automatically generate code for web fonts
-
+// Web Fonts Helper
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory" ex.) fonts_dir = "fonts"
+//
+// $web-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $web-fonts: null;
+// ex.1) $web-fonts: (web-font-name);
+// ex.2) $web-fonts: (web-font-name1, web-font-name2, web-font-name3);
+//
 // @include font-face() is a compass function so it will require compass
-// based on this gist by Chris Van Patten
-//https://gist.github.com/4469518
-$icon-fonts: (icomoon);
+// based off a gist by Chris Van Patten https://gist.github.com/4469518
 
-@each $font in $icon-fonts {
+$web-fonts: (icomoon);
+
+@each $font in $web-fonts {
     @include font-face( $font,
         font-files(
             '#{$font}/#{$font}.woff',
