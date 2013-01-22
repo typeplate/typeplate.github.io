@@ -2,7 +2,7 @@
 
 ##About
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.
-**TypePlate** is a "typographic starter kit". We don’t make aesthetic design choices, but define **proper markup with extensible styling** for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.
+**Typeplate** is a "typographic starter kit". We don’t make aesthetic design choices, but define **proper markup with extensible styling** for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.
 
 ##Contributing Guidelines
 ###&sect; Pull Requests
@@ -115,5 +115,5 @@ This command will copy the contents of the ``dist`` directory and place all our 
 
 
 ###©credits
-TypePlate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
+Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
 Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan). Additional contributions by [@andyunleash](https://twitter.com/andyunleash) and [@chrisjeane](https://twitter.com/ChrisJeane)

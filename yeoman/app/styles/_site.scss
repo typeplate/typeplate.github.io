@@ -53,6 +53,21 @@ section {
 }
 
 
+// $Logo
+// ============================================================
+
+#logo {
+    a {
+        display: inline-block;
+        height: 1.5em;
+        width: 100%;
+        text-indent: -999em;
+        background: image-url("logo.png") 50% 50% no-repeat;
+        background-size: 2em;
+    }
+}
+
+
 // $Table of Contents
 // ============================================================
 
@@ -139,6 +154,9 @@ section {
         border: 1px solid hsla(0, 0%, 0%, 0.15);
         box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
         padding: $line-height * 1rem;
+        .no-js & {
+            overflow: auto;
+        }
     }
     code {
         color: #444;
