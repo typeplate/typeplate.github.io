@@ -1,4 +1,4 @@
-#[TypePlate](https://typeplate.com)
+#[Typeplate](https://typeplate.com)
 
 ##About
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.
@@ -9,12 +9,12 @@ Frameworks make decisions for you about how to organize, structure and design a 
 When contributing (by the way you're awesome for that so thanks) please keep your commits small and targeted when you're prepared for filing a Pull Request. We'd prefer not seeing Pull Requests that contain 20 commits in multiple spots. Keep it small and it will make things simpler and much cleaner in the long run.
 
 ###&sect; Feature Branches
-If you're making a new feature for TypePlate then make sure you name your branch as follows:
+If you're making a new feature for Typeplate then make sure you name your branch as follows:
 
     feature/your_feature_name
 
 ###&sect; Patches
-If you're making a quick patch for TypePlate (like a spelling mistake for example) then make sure you name your branch as follows:
+If you're making a quick patch for Typeplate (like a spelling mistake for example) then make sure you name your branch as follows:
 
     patch/your_patch_name
 
@@ -93,12 +93,12 @@ If ``bundle install`` isn't your cup of tea then your dependencies can also be i
 you can always check if they're installed by running the bash command ``gem list`` which should list all your gems installed.
 
 ###&sect; Local Server
-You must run the command ``yeoman server`` from ``yeoman > app`` directory of TypePlate or else you'll see a pretty message like this.
+You must run the command ``yeoman server`` from ``yeoman > app`` directory of Typeplate or else you'll see a pretty message like this.
 
     <FATAL> Unable to find Gruntfile. Do you need any --help? </FATAL>
 
 ###&sect; Production Build
-When you're ready to build the produciton version of TypePlate's codebase you'll need to run the following command from your ``app`` directory mentioned previously.
+When you're ready to build the produciton version of Typeplate's codebase you'll need to run the following command from your ``app`` directory mentioned previously.
 
     yeoman build
 
@@ -106,7 +106,7 @@ Yeoman will now place your production built ready files into a temp directory ca
 
     yeoman server:dist
 
-If you feel the build files from your ``yeoman:dist`` preview are satisfactory it's time to make one final adjustment to move our production ready site into the root directory of TypePlate. ``cd`` back into the root directory of TypePlate and use our custom ``rake`` build command.
+If you feel the build files from your ``yeoman:dist`` preview are satisfactory it's time to make one final adjustment to move our production ready site into the root directory of Typeplate. ``cd`` back into the root directory of Typeplate and use our custom ``rake`` build command.
 
     rake build
 
