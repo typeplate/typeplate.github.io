@@ -56,14 +56,10 @@
 @import "compass";
 
 
-// $Normalize CSS Bower Package
+// $Normalize Sass Bower Package
 // ============================================================
 
-@import "../components/normalize-css/normalize.css";
-
-// Current State as of 1/22/13 : Not Updated WTF! FTW!
-// We'll use the Sass version when bower decides to update itself.
-//@import "../components/normalize.scss/normalize.scss";
+@import "../components/normalize.scss/normalize";
 
 
 // $Variables
