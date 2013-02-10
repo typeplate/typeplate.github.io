@@ -15,14 +15,14 @@
         <meta name="description" content="The web-thang demo: A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
         <meta name="viewport" content="width=device-width">
         <!-- normalize -->
-        <link rel="stylesheet" id="normalize-css" href="components/normalize-css/normalize.css">
+        <link rel="stylesheet" id="normalize-css" href="/components/normalize-css/normalize.css">
         <!-- TypePlate -->
-        <link rel="stylesheet" id="typeplate-css" href="styles/typeplate.css">
+        <link rel="stylesheet" id="typeplate-css" href="/css/typeplate.css">
         <style>
             body {
                 margin: 0 auto;
                 max-width: 34em;
-                background: url(/images/subtle_grunge.png) top left repeat;
+                background: url(../img/subtle_grunge.png) top left repeat;
             }
 
             img {
@@ -53,7 +53,7 @@
                 display: inline-block;
                 font-size: .375em;
                 text-indent: -999em;
-                background: url(/images/logo.png) 50% 0% no-repeat;
+                background: url(../img/logo.png) 50% 0% no-repeat;
                 background-size: 6em;
                 width: 100%;
                 height: 4.5em;
@@ -195,7 +195,7 @@
             </hgroup>
             <nav role="navigation">
                 <a href="/styles/typeplate.scss" rel="bookmark" class="btn btn-box btn-action" data-version="0.1">download</a>
-                <a href="/./test.html" class="btn epsilon btn-box">demo</a>
+                <a href="/test.html" class="btn epsilon btn-box">demo</a>
                 <a href="https://github.com/TypePlate/typeplate.github.com/tree/master/yeoman/app" class="btn epsilon btn-box">source</a>
                 <a href="https://github.com/TypePlate/typeplate.github.com/issues" class="btn epsilon btn-box">feedback</a>
             </nav>
@@ -392,7 +392,7 @@
 Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>. Additional contributions by <a href="https://twitter.com/andyunleash">@andyunleash</a> and <a href="https://twitter.com/ChrisJeane">@ChrisJeane</a></small></p>
         </footer>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
         <script>
             $(document).ready(function() {
                 //Normalize States
@@ -407,7 +407,7 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>. A
                     if(normalizeOffCheck) {
                         $("#normalize-css").attr("href", "");
                     }else {
-                        $("#normalize-css").attr("href", "components/normalize-css/normalize.css");
+                        $("#normalize-css").attr("href", "/components/normalize-css/normalize.css");
                     }
                 });
 
@@ -418,7 +418,7 @@ Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>. A
                     if(typePlateOffCheck) {
                         $("#typeplate-css").attr("href", "");
                     }else {
-                        $("#typeplate-css").attr("href", "styles/typeplate.css");
+                        $("#typeplate-css").attr("href", "/css/typeplate.css");
                     }
                 });
             }); //end document.ready

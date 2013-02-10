@@ -1,7 +1,0 @@
-# Guarantee correct Ruby compatibility, for RVM users.
-# The only way to sync gemsets is to use
-#
-# rvm use 1.9.3@$GEM_NAME
-#
-# See Issue #30 concerning this topic.
-rvm use 1.9.3
