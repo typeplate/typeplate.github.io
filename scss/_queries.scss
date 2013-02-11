@@ -1,0 +1,23 @@
+/**
+ * Media queries via chriscoyier, eg:
+ *
+   `@include breakpoint(baby-bear) { width: 60%; }`
+ *
+ */
+@mixin breakpoint($point) {
+  // @if $point == reverse-super-bear {
+  //   @media (min-width: 1440px) { @content; }
+  // }
+  // @if $point == reverse-papa-bear {
+  //   @media (min-width: 1001px) { @content; }
+  // }
+  @if $point == papa-bear {
+    @media (max-width: 60em) { @content; }
+  }
+  @if $point == mama-bear {
+    @media (max-width: 40em) { @content; }
+  }
+  @if $point == baby-bear {
+    @media (max-width: 30em)  { @content; }
+  }
+}

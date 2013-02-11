@@ -1,8 +1,12 @@
+// import media queries
+@import "queries";
+
+
 // $Global Elements
 // ============================================================
 
 body {
-    width: 90%;
+    width: 92%;
     max-width: 40em;
     margin: 0 auto;
     background: image-url("subtle_grunge.png") top left repeat;
@@ -56,14 +60,84 @@ section {
 // $Logo
 // ============================================================
 
-#logo {
-    a {
-        display: inline-block;
-        height: 1.5em;
-        width: 100%;
-        text-indent: -999em;
-        background: image-url("logo.png") 50% 50% no-repeat;
-        background-size: 2em;
+.logo {
+    display: inline-block;
+    vertical-align: -250%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+    @include breakpoint(mama-bear) {
+        vertical-align: -190%;
+    }
+    @include breakpoint(baby-bear) {
+        display: block;
+        text-align: center;
+    }
+}
+.logo-img{
+    background: image-url("logo.png") 50% no-repeat;
+    width: 14em;
+    background-size: cover;
+    margin: $line-height * 1rem 10em $line-height * 1rem 0;
+ 
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 100%;
+    }
+
+    @include breakpoint(mama-bear) {
+        width: 12em;
+        margin-right: 5em;
+    }
+
+    @include breakpoint(baby-bear) {
+        width: 10em;
+        margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
+    }
+}
+
+
+// $Navigation
+// ============================================================
+
+.header {
+    text-align: center;
+    p, .nav {
+        text-align: left;
+    }
+}
+
+.nav {
+    // in preparation for inline-block children
+    letter-spacing: -4px;
+    @extend %rhythm;
+    display: inline-block;
+    @include breakpoint(baby-bear) {
+        text-align: center;
+        border: 1px solid lightgrey;
+    }
+}
+
+.nav-item {
+    letter-spacing: normal;
+    display: block;
+    @extend .delta;
+    line-height: 2;
+    padding: 0 0.5em 0 0.25em;
+    &:not(:last-of-type) {
+        border-bottom: 1px solid lightgrey;
+    }
+    &:hover, &:focus {
+        color: $rust;
+        background-color: hsla(0, 0%, 100%, 0.75);
+    }
+
+    @include breakpoint(baby-bear) {
+        display: inline;
+        padding: 0.25em 0.25em;
+        &:not(:last-of-type) {
+            border-right: 1px solid lightgrey;
+            border-bottom: 0;
+        }
     }
 }
 
@@ -290,76 +364,6 @@ h1, h2, h3, h4, h5, h6 {
 // ));
 
 
-// $Navigation
-// ============================================================
-
-nav[role="navigation"] {
-    // in preparation for inline-block children
-    letter-spacing: -4px;
-    @extend %rhythm;
-}
-
-
-// $Buttons
-// ============================================================
-
-// via inuit.css by @csswizardry (Harry Roberts)
-.btn {
-    font: inherit;
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-    line-height: 1;
-    // padding in ems so we can change the size of a button by altering its `font-size`.
-    padding: 0.5em 0.5em;
-    // remove inline-block spacing bug
-    letter-spacing: normal;
-}
-
-.btn,
-.btn:hover {
-    text-decoration: none;
-}
-
-.btn-full {
-    display: block;
-    text-align: center;
-    // The following is so that `.btn-full` works properly on `input`s as well as `a`s.
-    padding-right: 0;
-    padding-left: 0;
-    width: 100%;
-}
-
-.btn-box {
-    margin-top: 0;
-    margin-bottom: $line-height * 1rem;
-    border-radius: 6px;
-    margin-right: 1rem;
-    background: gray;
-    color: #fafafa;
-
-    @include transition(0.132s all ease);
-    &:hover {
-        background: lighten(gray, 5%);
-        color: #fafafa;
-    }
-}
-
-//.btn-action {}
-
-
-// $Letterpress
-// ============================================================
-
-.letterpress {
-    font-style: italic;
-    text-align: center;
-    text-rendering: optimizeLegibility;
-    text-shadow: 0 1px 1px hsl(0, 0%, 100%), 0 0 0 hsl(0, 0%, 2%);
-    color: darken(gray, 20%);
-}
 
 // $Footer
 // ============================================================
@@ -383,10 +387,6 @@ nav[role="navigation"] {
     letter-spacing: 0.125rem;
 }
 
-// when narrowing the main body is aesthetically necessary, as currently in the header
-.col-narrow {
-    padding: 0 3em;
-}
 
 // generic bottom rule class
 .botDivider {

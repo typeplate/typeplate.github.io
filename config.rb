@@ -52,7 +52,7 @@ color_output = false
 # Sass Source Mapping
 # Make sure you’re running at least Chrome 24
 # http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector
-# sass_options = { :debug_info => true }
+sass_options = { :debug_info => true }
 
 # Sass Sleuth
 # http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers

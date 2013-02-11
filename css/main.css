@@ -24,6 +24,7 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\0000363}}
 article,
 aside,
 details,
@@ -42,6 +43,7 @@ summary {
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\0000373}}
 audio,
 canvas,
 video {
@@ -54,6 +56,7 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\0000386}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -63,6 +66,7 @@ audio:not([controls]) {
  * Address styling not present in IE 7/8/9.
  * Known issue: no IE 6 support.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\0000396}}
 [hidden] {
   display: none;
 }
@@ -77,6 +81,7 @@ audio:not([controls]) {
  * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
  *    `em` units.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003112}}
 html {
   font-family: sans-serif;
   /* 1 */
@@ -94,6 +99,7 @@ html {
  * Address `font-family` inconsistency between `textarea` and other form
  * elements in IE 6/7.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003130}}
 button,
 input,
 select,
@@ -104,6 +110,7 @@ textarea {
 /**
  * Remove default margin.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003139}}
 body {
   margin: 0;
 }
@@ -114,6 +121,7 @@ body {
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003151}}
 a:focus {
   outline: thin dotted;
 }
@@ -121,6 +129,7 @@ a:focus {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003160}}
 a:active,
 a:hover {
   outline: 0;
@@ -132,11 +141,13 @@ a:hover {
 /**
  * Set 1 unit of vertical rhythm on the top and bottom margin.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003173}}
 p,
 pre {
   margin: 1.5em 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003177}}
 blockquote {
   /* Set 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 1.5em 40px;
@@ -146,6 +157,7 @@ blockquote {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003187}}
 h1 {
   /* Set the font-size and line-height while keeping a proper vertical rhythm. */
   font-size: 2em;
@@ -155,6 +167,7 @@ h1 {
   margin-bottom: 0.75em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003196}}
 h2 {
   font-size: 1.5em;
   line-height: 2em;
@@ -162,6 +175,7 @@ h2 {
   margin-bottom: 1em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003202}}
 h3 {
   font-size: 1.17em;
   line-height: 1.28205em;
@@ -169,6 +183,7 @@ h3 {
   margin-bottom: 1.28205em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003208}}
 h4 {
   font-size: 1em;
   line-height: 1.5em;
@@ -176,6 +191,7 @@ h4 {
   margin-bottom: 1.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003214}}
 h5 {
   font-size: 0.83em;
   line-height: 1.80723em;
@@ -183,6 +199,7 @@ h5 {
   margin-bottom: 1.80723em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003220}}
 h6 {
   font-size: 0.67em;
   line-height: 2.23881em;
@@ -193,6 +210,7 @@ h6 {
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003230}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -200,6 +218,7 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003239}}
 b,
 strong {
   font-weight: bold;
@@ -208,6 +227,7 @@ strong {
 /**
  * Address styling not present in Safari 5 and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003247}}
 dfn {
   font-style: italic;
 }
@@ -216,6 +236,7 @@ dfn {
  * Address differences between Firefox and other browsers.
  * Known issue: no IE 6/7 normalization.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003256}}
 hr {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -226,6 +247,7 @@ hr {
 /**
  * Address styling not present in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003265}}
 mark {
   background: #ff0;
   color: #000;
@@ -234,12 +256,13 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003277}}
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -247,6 +270,7 @@ samp {
 /**
  * Improve readability of pre-formatted text in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003289}}
 pre {
   white-space: pre-wrap;
 }
@@ -254,6 +278,7 @@ pre {
 /**
  * Set consistent quote types.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003297}}
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -261,6 +286,7 @@ q {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003305}}
 small {
   font-size: 80%;
 }
@@ -268,6 +294,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003314}}
 sub,
 sup {
   font-size: 75%;
@@ -276,10 +303,12 @@ sup {
   vertical-align: baseline;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003321}}
 sup {
   top: -0.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003325}}
 sub {
   bottom: -0.25em;
 }
@@ -290,6 +319,7 @@ sub {
 /**
  * Set 1 unit of vertical rhythm and a consistent indentation.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003340}}
 dl,
 menu,
 ol,
@@ -298,10 +328,12 @@ ul {
   padding: 0 0 0 40px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003345}}
 dl {
   padding: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003349}}
 dd {
   margin: 0 0 0 40px;
 }
@@ -309,6 +341,7 @@ dd {
 /**
  * Correct list images handled incorrectly in IE 7.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003359}}
 nav ul,
 nav ol {
   list-style: none;
@@ -321,6 +354,7 @@ nav ol {
 /**
  * Remove border when inside `a` element in IE 8/9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003373}}
 img {
   border: 0;
   /* Improve image quality when scaled in IE 7. */
@@ -330,6 +364,7 @@ img {
 /**
  * Correct overflow displayed oddly in IE 9.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003385}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -340,6 +375,7 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari 5.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003397}}
 figure {
   margin: 0;
 }
@@ -350,6 +386,7 @@ figure {
 /**
  * Correct margin displayed oddly in IE 6/7.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003410}}
 form {
   margin: 0;
 }
@@ -357,6 +394,7 @@ form {
 /**
  * Define consistent border, margin, and padding.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003419}}
 fieldset {
   border-color: #c0c0c0;
   margin: 0 2px;
@@ -380,6 +418,7 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003435}}
 legend {
   border: 0;
   /* 1 */
@@ -395,6 +434,7 @@ legend {
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  * 4. Improve appearance and consistency with IE 6/7.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003453}}
 button,
 input,
 select,
@@ -415,6 +455,7 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003469}}
 button,
 input {
   line-height: normal;
@@ -426,6 +467,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003481}}
 button,
 select {
   text-transform: none;
@@ -440,6 +482,7 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003498}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -455,6 +498,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003511}}
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -466,6 +510,7 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003523}}
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
@@ -485,6 +530,7 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003538}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -498,6 +544,7 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003549}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -506,6 +553,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003558}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -516,6 +564,7 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 8/9.
  * 2. Improve readability and alignment in all browsers.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003568}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -529,6 +578,7 @@ textarea {
 /**
  * Remove most spacing between table cells.
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/components\/normalize\.scss\/_normalize\.scss}line{font-family:\00003581}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -546,6 +596,7 @@ table {
   unicode-range: U+270C;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_mixins\.scss}line{font-family:\0000369}}
 .amp {
   font-family: Ampersand, sans-serif;
 }
@@ -555,9 +606,10 @@ table {
  * Based on the slides of the talk “/Reg(exp){2}lained/”
  * @author Lea Verou
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000311}}
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: Consolas, Monaco, "Andale Mono", monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -570,11 +622,13 @@ pre[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000328}}
 .lt-ie9 code[class*="language-"], .lt-ie9
 pre[class*="language-"] {
   color: #a6a6a6;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000334}}
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
   background: #dddddd;
@@ -582,37 +636,43 @@ pre[class*="language-"],
 }
 
 /* Code blocks */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000340}}
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: .5em 0;
   overflow: auto;
   border-radius: 0.333333em;
-  box-shadow: 1px 1px 0.5em black inset;
+  box-shadow: 1px 1px .5em black inset;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000348}}
 .typeplate-code-block {
   border-radius: 2px;
   margin: 0 0 1.5em;
   position: relative;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000356}}
 .typeplate-code-block figcaption {
   font-family: "Cassannet", sans-serif;
   line-height: 0.5;
   text-transform: lowercase;
   color: #212121;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000362}}
 .typeplate-code-block figcaption:after {
   content: ":";
 }
 
 /* Inline code */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000369}}
 :not(pre) > code[class*="language-"] {
-  padding: 0.15em 0.2em 0.05em;
+  padding: .15em .2em .05em;
   border-radius: .3em;
   border: 0.13em solid #7a6652;
   box-shadow: 1px 1px 0.3em -0.1em black inset;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000379}}
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -620,14 +680,17 @@ pre[class*="language-"] {
   color: slategray;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000383}}
 .token.punctuation {
   color: #999;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000387}}
 .namespace {
   opacity: .7;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\0000394}}
 .token.property,
 .token.tag,
 .token.boolean,
@@ -635,12 +698,14 @@ pre[class*="language-"] {
   color: #905;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003100}}
 .token.selector,
 .token.attr-name,
 .token.string {
   color: #690;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003108}}
 .token.operator,
 .token.entity,
 .token.url,
@@ -649,21 +714,25 @@ pre[class*="language-"] {
   color: #a67f59;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003114}}
 .token.atrule,
 .token.attr-value,
 .token.keyword {
   color: #07a;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003120}}
 .token.regex,
 .token.important {
   color: #e90;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003124}}
 .token.important {
   font-weight: bold;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_prism\.scss}line{font-family:\00003128}}
 .token.entity {
   cursor: help;
 }
@@ -674,6 +743,7 @@ pre[class*="language-"] {
   src: url('../fonts/icomoon/icomoon.eot?#iefix') format('eot'), url('../fonts/icomoon/icomoon.woff') format('woff'), url('../fonts/icomoon/icomoon.ttf') format('truetype'), url('../fonts/icomoon/icomoon.svg') format('svg');
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_icons\.scss}line{font-family:\0000339}}
 [data-icon]:before {
   font-family: 'icomoon';
   content: attr(data-icon);
@@ -684,6 +754,7 @@ pre[class*="language-"] {
   font-smoothing: antialiased;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_icons\.scss}line{font-family:\0000349}}
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: 'icomoon';
   font-style: normal;
@@ -694,78 +765,189 @@ pre[class*="language-"] {
   font-smoothing: antialiased;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_icons\.scss}line{font-family:\0000359}}
 .icon-menu:before {
   content: "\e001";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_icons\.scss}line{font-family:\0000362}}
 .icon-settings:before {
   content: "\e000";
 }
 
+/**
+ * Media queries via chriscoyier, eg:
+ *
+   `@include breakpoint(baby-bear) { width: 60%; }`
+ *
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\000038}}
 body {
-  width: 90%;
+  width: 92%;
   max-width: 40em;
   margin: 0 auto;
-  background: url('../img/subtle_grunge.png?1358472390') top left repeat;
+  background: url('../img/subtle_grunge.png?1360548631') top left repeat;
   color: #212121;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000316}}
 a {
   text-decoration: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000320}}
 a, a:visited {
   color: #212121;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000324}}
 p code, .example code {
   font-size: 1.125em;
   word-wrap: normal;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000332}}
 abbr {
   font-variant: normal;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000338}}
 abbr:hover {
   cursor: help;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000343}}
 dl {
   margin-top: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000347}}
 small {
   font-size: 65%;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000351}}
 img {
   max-width: 100%;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000355}}
 section {
   padding: 0.825em 0 1.65em;
 }
 
-#logo a {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000363}}
+.logo {
   display: inline-block;
-  height: 1.5em;
-  width: 100%;
-  text-indent: -999em;
-  background: url('../img/logo.png?1358799200') 50% 50% no-repeat;
-  background-size: 2em;
+  vertical-align: -250%;
+}
+@media (max-width: 40em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000363}}
+  .logo {
+    vertical-align: -190%;
+  }
+}
+@media (max-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000363}}
+  .logo {
+    display: block;
+    text-align: center;
+  }
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000374}}
+.logo-img {
+  background: url('../img/logo.png?1360548631') 50% no-repeat;
+  width: 14em;
+  background-size: cover;
+  margin: 1.65rem 10em 1.65rem 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000380}}
+.logo-img:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+@media (max-width: 40em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000374}}
+  .logo-img {
+    width: 12em;
+    margin-right: 5em;
+  }
+}
+@media (max-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\0000374}}
+  .logo-img {
+    width: 10em;
+    margin: 0.825rem 0 0.825rem 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003102}}
+.header {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003104}}
+.header p, .header .nav {
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003109}}
+.nav {
+  letter-spacing: -4px;
+  display: inline-block;
+}
+@media (max-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003109}}
+  .nav {
+    text-align: center;
+    border: 1px solid lightgrey;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003120}}
+.nav-item {
+  letter-spacing: normal;
+  display: block;
+  line-height: 2;
+  padding: 0 0.5em 0 0.25em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003126}}
+.nav-item:not(:last-of-type) {
+  border-bottom: 1px solid lightgrey;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003129}}
+.nav-item:hover, .nav-item:focus {
+  color: #d94426;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+@media (max-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003120}}
+  .nav-item {
+    display: inline;
+    padding: 0.25em 0.25em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003137}}
+  .nav-item:not(:last-of-type) {
+    border-right: 1px solid lightgrey;
+    border-bottom: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003148}}
 .toc ol {
   list-style: decimal !important;
   counter-reset: item;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003152}}
 .toc li {
   display: block;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003157}}
 .toc ol li:before {
   counter-increment: item;
   color: #444;
@@ -773,22 +955,27 @@ section {
   font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003166}}
 .toc ol:nth-of-type(1) li:before {
   content: "1." counter(item) " – ";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003166}}
 .toc ol:nth-of-type(2) li:before {
   content: "2." counter(item) " – ";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003166}}
 .toc ol:nth-of-type(3) li:before {
   content: "3." counter(item) " – ";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003166}}
 .toc ol:nth-of-type(4) li:before {
   content: "4." counter(item) " – ";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003175}}
 .example {
   background: #dddddd;
   background: rgba(0, 0, 0, 0.1);
@@ -798,6 +985,7 @@ section {
   margin: 2.475rem 0 1.65rem;
   border-radius: 0.333333em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003183}}
 .example:before {
   content: "example:";
   display: block;
@@ -810,6 +998,7 @@ section {
   left: -1.65rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003196}}
 .example > pre {
   margin-top: 0;
   overflow: auto;
@@ -818,16 +1007,19 @@ section {
   word-wrap: normal;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003208}}
 .perma-anchor {
   color: #444;
   font-weight: normal;
   position: relative;
   top: -0.125em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003215}}
 .perma-anchor:hover {
   color: #dd9522;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003225}}
 .typeplate-code-block pre {
   background: #dddddd;
   background: rgba(0, 0, 0, 0.1);
@@ -835,45 +1027,57 @@ section {
   box-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
   padding: 1.65rem;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003231}}
 .no-js .typeplate-code-block pre {
   overflow: auto;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003235}}
 .typeplate-code-block code {
   color: #444;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003244}}
 blockquote {
   font-style: italic;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003248}}
 blockquote p:last-of-type {
   margin-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003251}}
 blockquote cite {
   font-style: normal;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003254}}
 blockquote cite:before {
   content: "—";
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003266}}
 .typographic-scale .no-indent {
   margin: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003274}}
 .amp {
   text-align: center;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003282}}
 .example-figcaption {
   font-style: italic;
   font-size: 0.85em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003286}}
 .example-figcaption strong {
   font-style: normal;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003297}}
 .icons .fs1 {
   display: inline-block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003299}}
 .icons .fs1:before {
   padding-right: .25em;
   color: gray;
@@ -886,6 +1090,7 @@ blockquote cite:before {
  * to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
  * Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003317}}
 body {
   font-weight: 400;
   -webkit-transition: 0.00123s opacity ease-in;
@@ -893,11 +1098,13 @@ body {
   -o-transition: 0.00123s opacity ease-in;
   transition: 0.00123s opacity ease-in;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003322}}
 .wf-loading body {
   font-family: serif;
   visibility: hidden;
   opacity: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003330}}
 .wf-active body, .wf-inactive body {
   font-family: "ff-meta-serif-web-pro",serif;
   font-weight: 400;
@@ -905,6 +1112,7 @@ body {
   opacity: 1;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003339}}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
@@ -914,101 +1122,52 @@ h1, h2, h3, h4, h5, h6 {
   src: url('../fonts/cassannet/cassannet.eot') format('embedded-opentype'), url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), url('../fonts/cassannet/cassannet.woff') format('woff'), url('../fonts/cassannet/cassannet.ttf') format('truetype'), url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg');
 }
 
-nav[role="navigation"] {
-  letter-spacing: -4px;
-}
-
-.btn {
-  font: inherit;
-  cursor: pointer;
-  border: none;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-  line-height: 1;
-  padding: 0.5em 0.5em;
-  letter-spacing: normal;
-}
-
-.btn,
-.btn:hover {
-  text-decoration: none;
-}
-
-.btn-full {
-  display: block;
-  text-align: center;
-  padding-right: 0;
-  padding-left: 0;
-  width: 100%;
-}
-
-.btn-box {
-  margin-top: 0;
-  margin-bottom: 1.65rem;
-  border-radius: 6px;
-  margin-right: 1rem;
-  background: gray;
-  color: #fafafa;
-  -webkit-transition: 0.132s all ease;
-  -moz-transition: 0.132s all ease;
-  -o-transition: 0.132s all ease;
-  transition: 0.132s all ease;
-}
-.btn-box:hover {
-  background: #8d8d8d;
-  color: #fafafa;
-}
-
-.letterpress {
-  font-style: italic;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  text-shadow: 0 1px 1px white, 0 0 0 #050505;
-  color: #4d4d4d;
-}
-
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003371}}
 .site-footer {
   margin-top: 3em;
   font-size: 75%;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003381}}
 .center {
   text-align: center;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003385}}
 .capsify {
   text-transform: uppercase;
   letter-spacing: 0.125rem;
 }
 
-.col-narrow {
-  padding: 0 3em;
-}
-
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003392}}
 .botDivider {
   border-bottom: 0.44444rem solid rgba(0, 0, 0, 0.25);
 }
 
-.example-figcaption, nav[role="navigation"], p {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003397}}
+.nav, .example-figcaption, p {
   margin-top: 0;
   margin-bottom: 1.65rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003403}}
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   margin-top: 1.65rem;
   margin-bottom: 1.65rem;
   line-height: 1;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_site\.scss}line{font-family:\00003409}}
 h1 + h1, h2 + h1, h3 + h1, h4 + h1, h5 + h1, h6 + h1, h1 + h2, h2 + h2, h3 + h2, h4 + h2, h5 + h2, h6 + h2, h1 + h3, h2 + h3, h3 + h3, h4 + h3, h5 + h3, h6 + h3, h1 + h4, h2 + h4, h3 + h4, h4 + h4, h5 + h4, h6 + h4, h1 + h5, h2 + h5, h3 + h5, h4 + h5, h5 + h5, h6 + h5, h1 + h6, h2 + h6, h3 + h6, h4 + h6, h5 + h6, h6 + h6 {
   margin: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003100}}
 html {
   font: normal 112.5%/1.65 serif;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003104}}
 body {
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -1017,60 +1176,72 @@ body {
   hyphens: auto;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003157}}
 .tera {
   font-size: 117px;
   font-size: 6.5rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003161}}
 .giga {
   font-size: 90px;
   font-size: 5rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003165}}
 .mega {
   font-size: 72px;
   font-size: 4rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003169}}
 h1, .alpha {
   font-size: 60px;
   font-size: 3.33333rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003173}}
 h2, .beta, .icons {
   font-size: 48px;
   font-size: 2.66667rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003177}}
 h3, .gamma, .perma-anchor {
   font-size: 36px;
   font-size: 2rem;
 }
 
-h4, .delta {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003181}}
+h4, .delta, .nav-item {
   font-size: 24px;
   font-size: 1.33333rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003185}}
 h5, .epsilon, .typeplate-code-block figcaption, .example:before, blockquote {
   font-size: 21px;
   font-size: 1.16667rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003189}}
 h6, .zeta, .toc li {
   font-size: 18px;
   font-size: 1rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003200}}
 p + p:not(.no-indent) {
   text-indent: 1.5em;
   margin-top: -0.825rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003211}}
 .entry {
   position: relative;
   padding-right: 50%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003214}}
 .entry .pull-quote {
   position: absolute;
   top: 0;
@@ -1078,6 +1249,7 @@ p + p:not(.no-indent) {
   width: 45%;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003222}}
 .bqstart {
   float: left;
   height: 45px;
@@ -1087,6 +1259,7 @@ p + p:not(.no-indent) {
   color: red;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003232}}
 .bqend {
   float: right;
   height: 25px;
@@ -1096,28 +1269,33 @@ p + p:not(.no-indent) {
   color: red;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003251}}
 blockquote cite {
   display: block;
   font-size: 0.875em;
   text-align: right;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003260}}
 pre code {
   word-wrap: normal;
   white-space: pre-wrap;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003265}}
 pre {
   word-wrap: auto;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003271}}
 code {
   white-space: pre;
   font-family: monospace;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/_mixins\.scss}line{font-family:\00003104}}
 .drop-cap:first-letter {
   float: left;
   margin: 0;
@@ -1130,22 +1308,26 @@ code {
   color: inherit;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003300}}
 .stats-tabs li {
   display: inline-block;
   margin: 0 0.625rem 0 0;
   padding: 0 0.625rem 0 0;
   border-right: 0.125rem solid #cccccc;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003305}}
 .stats-tabs li:last-child {
   margin: 0;
   padding: 0;
   border: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003310}}
 .stats-tabs li a {
   display: inline-block;
   font-size: 1.5rem;
   font-weight: bold;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003314}}
 .stats-tabs li a b {
   display: block;
   margin: 0.125rem 0 0 0;
@@ -1153,35 +1335,43 @@ code {
   font-weight: normal;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003336}}
 .lining dt, .lining dd {
   display: inline;
   margin: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003342}}
 .lining dt + dt:before, .lining dd + dt:before {
   content: "\A";
   white-space: pre;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003350}}
 .lining dd + dd:before {
   content: ", ";
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003354}}
 .lining dd:before {
   content: ": ";
   margin-left: -0.2rem;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003363}}
 .dictionary-style dt {
   display: inline;
   counter-reset: definitions;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003367}}
 .dictionary-style dt + dt:before {
   content: ", ";
   margin-left: -0.2rem;
   /* removes extra space between the dt and the comma */
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003373}}
 .dictionary-style dd {
   display: block;
   counter-increment: definitions;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/zakkain\/Sites\/typeplate\.github\.com\/scss\/main\.scss}line{font-family:\00003376}}
 .dictionary-style dd:before {
   content: counter(definitions, decimal) ". ";
 }
