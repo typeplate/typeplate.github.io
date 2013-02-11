@@ -62,20 +62,24 @@ section {
 
 .logo {
     display: inline-block;
-    vertical-align: -250%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+    vertical-align: -170%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+    margin: $line-height * 1rem 2em $line-height * 1rem 0;
+    
     @include breakpoint(mama-bear) {
         vertical-align: -190%;
+        margin-right: 5em;
     }
+    
     @include breakpoint(baby-bear) {
         display: block;
         text-align: center;
+        margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
     }
 }
 .logo-img{
     background: image-url("logo.png") 50% no-repeat;
     width: 14em;
     background-size: cover;
-    margin: $line-height * 1rem 10em $line-height * 1rem 0;
  
     &:before {
         content: "";
@@ -86,12 +90,10 @@ section {
 
     @include breakpoint(mama-bear) {
         width: 12em;
-        margin-right: 5em;
     }
 
     @include breakpoint(baby-bear) {
         width: 10em;
-        margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
     }
 }
 

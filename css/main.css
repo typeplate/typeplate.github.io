@@ -756,17 +756,20 @@ section {
 
 .logo {
   display: inline-block;
-  vertical-align: -250%;
+  vertical-align: -170%;
+  margin: 1.65rem 2em 1.65rem 0;
 }
 @media (max-width: 40em) {
   .logo {
     vertical-align: -190%;
+    margin-right: 5em;
   }
 }
 @media (max-width: 30em) {
   .logo {
     display: block;
     text-align: center;
+    margin: 0.825rem 0 0.825rem 0;
   }
 }
 
@@ -774,7 +777,6 @@ section {
   background: url('../img/logo.png?1360548631') 50% no-repeat;
   width: 14em;
   background-size: cover;
-  margin: 1.65rem 10em 1.65rem 0;
 }
 .logo-img:before {
   content: "";
@@ -785,13 +787,11 @@ section {
 @media (max-width: 40em) {
   .logo-img {
     width: 12em;
-    margin-right: 5em;
   }
 }
 @media (max-width: 30em) {
   .logo-img {
     width: 10em;
-    margin: 0.825rem 0 0.825rem 0;
   }
 }
 
