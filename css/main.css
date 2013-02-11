@@ -795,11 +795,13 @@ section {
   }
 }
 
-.header {
-  text-align: center;
-}
-.header p, .header .nav {
-  text-align: left;
+@media (max-width: 30em) {
+  .header {
+    text-align: center;
+  }
+  .header p, .header .nav {
+    text-align: left;
+  }
 }
 
 .nav {

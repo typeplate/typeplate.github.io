@@ -100,9 +100,11 @@ section {
 // ============================================================
 
 .header {
-    text-align: center;
-    p, .nav {
-        text-align: left;
+    @include breakpoint(baby-bear) {
+        text-align: center;
+        p, .nav {
+            text-align: left;
+        }
     }
 }
 
