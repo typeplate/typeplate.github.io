@@ -239,7 +239,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -557,7 +557,7 @@ table {
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -584,10 +584,10 @@ pre[class*="language-"],
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.333333em;
-  box-shadow: 1px 1px .5em black inset;
+  box-shadow: 1px 1px 0.5em black inset;
 }
 
 .typeplate-code-block {
@@ -607,7 +607,7 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: .15em .2em .05em;
+  padding: 0.15em 0.2em 0.05em;
   border-radius: .3em;
   border: 0.13em solid #7a6652;
   box-shadow: 1px 1px 0.3em -0.1em black inset;
@@ -712,7 +712,7 @@ body {
   width: 92%;
   max-width: 40em;
   margin: 0 auto;
-  background: url('../img/subtle_grunge.png?1360548631') top left repeat;
+  background: url('../img/subtle_grunge.png?1358472390') top left repeat;
   color: #212121;
 }
 
@@ -774,7 +774,7 @@ section {
 }
 
 .logo-img {
-  background: url('../img/logo.png?1360548631') 50% no-repeat;
+  background: url('../img/logo.png?1358799200') 50% no-repeat;
   width: 14em;
   background-size: cover;
 }

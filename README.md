@@ -48,4 +48,4 @@ To keep track of our packages and allow for easy updating we use [Bower](#) Pack
 
 ###©credits
 Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
-Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan). Additional contributions by [@andyunleash](https://twitter.com/andyunleash) and [@chrisjeane](https://twitter.com/ChrisJeane)
+Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan).
