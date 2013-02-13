@@ -1,7 +1,7 @@
 /*!
  * Typeplate v1.0
  ============================================================
- *    url: https://github.com/TypePlate/typeplate.github.com
+ *    url: https://github.com/typePlate/typeplate.github.com
  *
  *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
  *    license: this work is in the public domain
@@ -86,7 +86,7 @@ $stats-item-margin: 0.125rem 0 0 0;
 $stats-border-style: 0.125rem solid #ccc;
 
 
-// $ A m p e r s a n d    @font-face
+// $ U N I C O D E - R A N G E    A m p e r s a n d
 // ==========================================================================
 
 @font-face {
@@ -104,10 +104,28 @@ $stats-border-style: 0.125rem solid #ccc;
 // $ I c o n    F o n t    H e l p e r
 // ============================================================
 // Using Sass's @each loop to automatically generate code for web fonts
+// Web Fonts Helper
+// In order to set you must have the following...
+// 1. A Compass @import rule (i.e. @import "compass") before
+// this stylesheet or from within webthang.scss.
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line...
+//
+//      fonts_dir = "name-of-your-fonts-directory" ex.) fonts_dir = "fonts"
+//
+// $web-fonts can then be called from another stylesheet either before or after this
+// very stylesheet you're reading right now. Change at will captain!
+// default: $web-fonts: null;
+// ex.1) $web-fonts: (web-font-name);
+// ex.2) $web-fonts: (web-font-name1, web-font-name2, web-font-name3);
+//
+// @include font-face() is a compass function so it will require compass
+// based off a gist by Chris Van Patten https://gist.github.com/4469518
 
 // @include font-face() is a compass function so it will require compass
 // based on this gist by Chris Van Patten
-//https://gist.github.com/4469518
+// https://gist.github.com/4469518
+//$web-fonts: null;
 @if ($web-fonts != null) {
     @each $font in $web-fonts {
         @include font-face( $font,
@@ -132,7 +150,7 @@ $stats-border-style: 0.125rem solid #ccc;
 
 // $ M o d u l a r    S c a l e
 // ==========================================================================
-//http://thesassway.com/projects/modular-scale
+// http://thesassway.com/projects/modular-scale
 
 @function modular-scale($scale, $base, $value) {
     @return ($scale/$base)#{$value};
@@ -207,6 +225,14 @@ $stats-border-style: 0.125rem solid #ccc;
     font-family: $amp-font-family;
 }
 
+%ampersand-placeholder {
+    @include ampersand(Ampersand, Arial, sans-serif);
+}
+
+.amp {
+    @extend %ampersand-placeholder;
+}
+
 
 // $ W o r d    W r a p    M i x i n
 // ============================================================
@@ -221,29 +247,32 @@ $stats-border-style: 0.125rem solid #ccc;
 
 // $ D r o p c a p s    M i x i n
 // ==========================================================================
-
 // Include your '@include dropcap()' mixin and pass the following
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why just make that separately in your deleration.
-@mixin dropcap($float: left, $font-size: 4em, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: inherit, $bg: transparent) {
-    float: $float;
-    margin: $margin;
-    padding: $padding;
-    font-size: $font-size;
-    line-height: $lineHeight;
-    text-indent: $text-indent;
-    background: $bg;
-    color: $color;
+@mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+    &:first-letter {
+        float: $float;
+        margin: $margin;
+        padding: $padding;
+        font-size: $font-size;
+        font-family: $font-family;
+        line-height: $lineHeight;
+        text-indent: $text-indent;
+        background: $bg;
+        color: $color;
+    }
 }
-
-// This @include can be used anywhere you'd like but must be subsequent to
-// this style sheet(typeplate.scss).
-// @include dropcap();
 
 
 // $ D e f i n i t i o n    L i s t    M i x i n
 // ==========================================================================
+// lining
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+//
+// dictionary-style
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
 
 @mixin definition-list-style($style) {
     // lining style
@@ -295,35 +324,6 @@ $stats-border-style: 0.125rem solid #ccc;
 }
 
 
-// $ U N I C O D E - R A N G E    A m p e r s a n d
-// ==========================================================================
-
-@font-face {
-    font-family: 'Ampersand';
-    src: $amp-font;
-    unicode-range: U+26;
-}
-//fallback for unicode range
-@font-face {
-    // Ampersand fallback font
-    font-family: 'Ampersand';
-    src: local('Georgia');
-    unicode-range: U+270C;
-}
-
-
-// $ A m p e r s a n d    H e l p e r
-// ==========================================================================
-
-%ampersand-placeholder {
-    @include ampersand(Ampersand, Arial, sans-serif);
-}
-
-.amp {
-    @extend %ampersand-placeholder;
-}
-
-
 // $ G l o b a l s
 // ==========================================================================
 
@@ -332,11 +332,11 @@ html {
 }
 
 body {
-    //Ala Trent Walton
+    // Ala Trent Walton
     @include css-hyphens(auto);
 
-    //proper x-height for fallbacks
-    //@include font-size-adjust(); // this does NOTHING, Lebowski! NOTHING! (except cause errors)
+    // proper x-height for fallbacks
+    // @include font-size-adjust(); // this does NOTHING, Lebowski! NOTHING! (except cause errors)
 
     // normal: Indicates that lines may only break at normal word break points.
     // break-word : Indicates that normally unbreakable words may be broken at ...
@@ -355,7 +355,7 @@ pre code {
 }
 
 pre {
-    word-wrap: auto;      // IE 5.5-7
+    word-wrap: auto;            // IE 5.5-7
     white-space: -moz-pre-wrap; // Firefox 1.0-2.0
     white-space: pre-wrap;      // current browsers
 }
@@ -472,4 +472,53 @@ h1, h2, h3, h4, h5, h6 { color: $heading-color; }
             }
         }
     }
+}
+
+
+// $Blockquote Cites
+// ============================================================
+
+@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
+}
+
+%cite {
+    @include cite-style;
+}
+
+
+// $Pull Quotes
+// ============================================================
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
+
+.entry {
+    position: relative;
+    padding-right: 50%;
+    .pull-quote {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+    }
+}
+
+.bqstart {
+    float: left;
+    height: 45px;
+    margin-top: -50px;
+    //padding-top: 45px;
+    margin-bottom: 50px;
+    font-size: 700%;
+    color: red;
+}
+
+.bqend {
+    float: right;
+    height: 25px;
+    margin-top: -50px;
+    padding-top: 15px;
+    font-size: 700%;
+    color: red;
 }

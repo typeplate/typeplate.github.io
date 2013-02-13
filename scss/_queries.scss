@@ -1,9 +1,7 @@
-/**
- * Media queries via chriscoyier, eg:
- *
-   `@include breakpoint(baby-bear) { width: 60%; }`
- *
- */
+
+// $Media queries via chriscoyier
+//===============================================================================
+
 @mixin breakpoint($point) {
   // @if $point == reverse-super-bear {
   //   @media (min-width: 1440px) { @content; }
@@ -20,4 +18,18 @@
   @if $point == baby-bear {
     @media (max-width: 30em)  { @content; }
   }
+}
+
+
+// $Viewport
+//===============================================================================
+
+// http://dev.w3.org/csswg/css-device-adapt/
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+// for IE10 Snap Mode on Metro
+@-ms-viewport {
+    width: device-width;
+}
+@viewport {
+    width: device-width;
 }

@@ -64,12 +64,12 @@ section {
     display: inline-block;
     vertical-align: -170%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
     margin: $line-height * 1rem 2em $line-height * 1rem 0;
-    
+
     @include breakpoint(mama-bear) {
         vertical-align: -190%;
         margin-right: 5em;
     }
-    
+
     @include breakpoint(baby-bear) {
         display: block;
         text-align: center;
@@ -80,7 +80,7 @@ section {
     background: image-url("logo.png") 50% no-repeat;
     width: 14em;
     background-size: cover;
- 
+
     &:before {
         content: "";
         display: block;
@@ -378,7 +378,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 // $Helpers
 // ============================================================
 
@@ -416,15 +415,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-// $Viewport
-//===============================================================================//
+// $Header Styles
+// ============================================================
 
-// http://dev.w3.org/csswg/css-device-adapt/
-// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
-// for IE10 Snap Mode on Metro
-@-ms-viewport {
-    width: device-width;
+h1, h2, h3, h4, h5, h6 {
+    @extend %hN;
+    // waddya think?
+    // I liked the text shadow in this dribbble shot and thought it fit us.
+    // http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
+    //text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
 }
-@viewport {
-    width: device-width;
+
+
+// $Indenting
+// ============================================================
+
+p {
+    // reset top margin, and set bottom margin equal to one unit of line-height
+    @extend %rhythm;
+    & + p:not(.no-indent) {
+        margin-top: $line-height * -0.5rem;
+    }
+}
+
+
+// $Drop Cap
+// ============================================================
+
+// This selector class is not included in the actual stylsheet. We leave it for you to decide
+// when to use it. We only provide you with the @mixin. This is just an example of
+// our chosen class selector purely for demo purposes.
+.drop-cap {
+    @include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
+}
+
+
+// $Definition Lists
+// ============================================================
+
+.lining {
+    @include definition-list-style(lining);
+}
+
+.dictionary-style {
+    @include definition-list-style(dictionary-style);
 }

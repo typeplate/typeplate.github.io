@@ -1,16 +1,3 @@
-// $Base Type
-// ============================================================
-
-$weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$font-family: serif;
-$font-family-sans: sans-serif;
-$font-properties: $weight, $line-height, $font-size, $font-family;
-$serif-boolean: true !default;
-
-
 // $Color
 // ============================================================
 
