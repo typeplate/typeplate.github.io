@@ -1,5 +1,5 @@
-# ![](https://secure.gravatar.com/avatar/55ddbe9c3fb31c952df702c15b8a81d8?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png)
 # [Typeplate](https://typeplate.com)
+<img src="https://secure.gravatar.com/avatar/55ddbe9c3fb31c952df702c15b8a81d8?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png" alt="typeplate" width="200">
 
 ## What is it?
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.
@@ -7,7 +7,7 @@ Frameworks make decisions for you about how to organize, structure and design a 
 
 **Broweser Tested, Developer Approved** : Includes IE7-10
 
-![Browser Logos](https://raw.github.com/paulirish/browser-logos/master/all-desktop.png)
+<img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="300">
 
 ==========================================================
 ### Installation
