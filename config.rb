@@ -69,3 +69,6 @@ Compass::BrowserSupport.add_support("repeating-linear-gradient", "webkit", "moz"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass scss scss && rm -rf sass && mv scss sass
+
+
+output_style = :compressed # by Fire.app 

@@ -13,3 +13,6 @@ publish
 # this generates upon running yeoman server
 # and is annoying
 npm-debug.log
+
+#fire app log file
+fire_app_log.txt
