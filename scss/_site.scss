@@ -414,3 +414,17 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
 }
+
+
+// $Viewport
+//===============================================================================//
+
+// http://dev.w3.org/csswg/css-device-adapt/
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+// for IE10 Snap Mode on Metro
+@-ms-viewport {
+    width: device-width;
+}
+@viewport {
+    width: device-width;
+}
