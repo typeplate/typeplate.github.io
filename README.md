@@ -6,7 +6,7 @@ Frameworks make decisions for you about how to organize, structure and design a 
 
 **Broweser Tested, Developer Approved** : Includes IE7-10
 
-![Browser Logos](https://github.com/paulirish/browser-logos/blob/master/all-desktop.png)
+![Browser Logos](https://raw.github.com/paulirish/browser-logos/master/all-desktop.png)
 
 ==========================================================
 ### Installation
