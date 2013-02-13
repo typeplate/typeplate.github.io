@@ -3,30 +3,41 @@
 
 ## What is it?
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.
-**Typeplate** is a "typographic starter kit". We don’t make aesthetic design choices, but define **proper markup with extensible styling** for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.
+**Typeplate** is a "typographic starter kit". We don’t make aesthetic design choices, but define **proper markup with extensible styling** for common typographic patterns. A stripped&ndash;down Sass library concerned with the appropriate technical implementations of design patterns &ndash;not how they look.
 
 **Broweser Tested, Developer Approved** : Includes IE7-10
 
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="300">
 
+**File Size** 
+
+- Raw ``.scss`` = **13.193 kb**
+- Compressed ``.css`` = **2.806 kb**
+
+## Customizing Typeplate
+This will be the explanation on how to customize typeplate and what the vars can do.
+
 ## Installation
-Based on use cases in a developers workflow we recommend using typeplate just after your reset stylesheet and compass import in order to function as intended.
+Based on use cases for most developers' workflow, we recommend using typeplate just after your reset stylesheet (i.e. [normalize](http://necolas.github.com/normalize.css)) and your compass ``@import`` in order to function as intended.
+
 For example:
 
 	@import "compass";
 	@import "[your_project_path]/reset";
 	@import "[your_project_path]/typeplate";
 	
-    // Custom Author Styles below here
+    // Custom Author Styles
 	// ====================================
-
-
 
 ### Installation via ``.scss @import``
 
 Simply download our ``typeplate.scss`` file and import from your project's ``.scss`` file like so:
 
 	@import "[your_project_path]/typeplate";
+
+### Installation via ``.css``
+
+If the Sass version isn't your cup of tea, we've provided a CSS version. Simple place the contents of ``typeplate.css`` inside your project's stylesheet in the order specified above.
 
 ###Installation via Bower
 
@@ -42,23 +53,22 @@ or you could also just use the css version:
 
 ###&sect; Language Abstractions
 
-- [Compass]()
-- [Sass]()
+- [Compass](http://compass-style.org)
+- [Sass](http://sass-lang.com)
 
 ###&sect; JS Build Tools
 
-- Mac and Windows : [Grunt]()
-- Mac : [Codekit]()
+- Mac and Windows : [Grunt](http://gruntjs.com)
+- Mac : [Codekit](http://incident57.com/codekit)
 
 ###&sect; Sass &amp; Compass Build Tools
 
-- Windows : [fire.app]()
-- Mac : [Codekit]()
+- Windows : [fire.app](http://fireapp.handlino.com)
+- Mac : [Codekit](http://incident57.com/codekit)
 
 ###&sect; Package Management
 
-- [Bower]()
-- [Node](http://nodejs.org) &amp; [npm](https://npmjs.org)
+- [Bower](http://twitter.github.com/bower) (requires [Node](http://nodejs.org) &amp; [npm](https://npmjs.org))
 
 ##Contributing Guidelines
 ###&sect; Pull Requests
@@ -78,19 +88,19 @@ If you're making a quick patch for Typeplate (like a spelling mistake for exampl
 
 **Stylesheets** : ``.scss``
 
-Make sure compass is installed by executing the following bash command from your CLI:
+Make sure compass is installed by executing the following bash command (Mac only) from your CLI:
 
     gem install compass
 
-you can always check if they're installed by running the bash command ``gem list`` which should list all your gems installed.
+You can always check if they're installed by running the bash command (Mac only) ``gem list`` which will list all your gems installed.
 
 **Compiling** : Javascript, Sass and Compass
 
-In order to compile our projects stylesheets and scripts we use [Codekit](#), but we've also taken the time to think about you non&ndash;Mac contributors as well. For this particular scenario we've provided you with [grunt]() which is platform independent Javascript that uses the CLI to compile, concatenate and minify Javascript.
+In order to compile our projects stylesheets and scripts we use [Codekit](http://incident57.com/codekit), but we've also taken the time to think about you non&ndash;Mac contributors as well. For this particular scenario we've provided you with [grunt](http://gruntjs.com) which is platform independent Javascript that uses the CLI to compile, concatenate and minify Javascript.
 
-**Package Management** : Bower
+**Package Management** : [Bower](http://twitter.github.com/bower)
 
-To keep track of our packages and allow for easy updating we use [Bower](#) Package Manager which installs all the projects components in the "components" directory. In order to install bower you must first have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
+To keep track of our packages and allow for easy updating we use [Bower](http://twitter.github.com/bower) Package Manager which installs all components in the "components" directory of this project. In order to install bower you must first have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
 
 	npm install bower -g
 
