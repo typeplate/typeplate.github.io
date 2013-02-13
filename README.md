@@ -9,8 +9,7 @@ Frameworks make decisions for you about how to organize, structure and design a 
 
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="300">
 
-==========================================================
-### Installation
+## Installation
 Based on use cases in a developers workflow we recommend using typeplate just after your reset stylesheet and compass import in order to function as intended.
 For example:
 
@@ -39,9 +38,7 @@ or you could also just use the css version:
 
 	@import "[root_project_path]/components/typeplate-css/typeplate.css";
 
-==========================================================
-
-### Birds eye view of our project stack
+## Birds eye view of our project stack
 
 ###&sect; Language Abstractions
 
@@ -63,8 +60,6 @@ or you could also just use the css version:
 - [Bower]()
 - [Node](http://nodejs.org) &amp; [npm](https://npmjs.org)
 
-==========================================================
-
 ##Contributing Guidelines
 ###&sect; Pull Requests
 When contributing (by the way you're awesome for that so thanks) please keep your commits small and targeted when you're prepared for filing a Pull Request. We'd prefer not seeing Pull Requests that contain 20 commits in multiple spots. Keep it small and it will make things simpler and much cleaner in the long run.
@@ -78,8 +73,6 @@ If you're making a new feature for Typeplate then make sure you name your branch
 If you're making a quick patch for Typeplate (like a spelling mistake for example) then make sure you name your branch as follows:
 
     patch/your_patch_name
-
-==========================================================
 
 ##Local Development
 
@@ -100,8 +93,6 @@ In order to compile our projects stylesheets and scripts we use [Codekit](#), bu
 To keep track of our packages and allow for easy updating we use [Bower](#) Package Manager which installs all the projects components in the "components" directory. In order to install bower you must first have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
 
 	npm install bower -g
-
-==========================================================
 
 ######©credits
 Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
