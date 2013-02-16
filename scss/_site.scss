@@ -6,54 +6,55 @@
 // ============================================================
 
 body {
-    width: 92%;
-    max-width: 40em;
-    margin: 0 auto;
-    background: image-url("subtle_grunge.png") top left repeat;
-    color: #212121;
+	width: 92%;
+	max-width: 40em;
+	margin: 0 auto;
+	background: image-url("subtle_grunge.png") top left repeat;
+	color: #212121;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 a, a:visited {
-    color: #212121;
+	color: #212121;
 }
 
-p code, .example code {
-    // some bug with monospace things causes <code> elements to not inherit the font-size of the <html> element
-    // <code> elements inside <pre> DO inherit the proper size, for some reason, so we scope this style to the elements we need
-    font-size: 1.125em;
-    // so code doesn't wrap onto a second line in the middle of a piece of a word
-    word-wrap: normal;
+p code,
+.example code {
+	// some bug with monospace things causes <code> elements to not inherit the font-size of the <html> element
+	// <code> elements inside <pre> DO inherit the proper size, for some reason, so we scope this style to the elements we need
+	font-size: 1.125em;
+	// so code doesn't wrap onto a second line in the middle of a piece of a word
+	word-wrap: normal;
 }
 
 abbr {
-    // @include smallcaps(gray, 600);
-    // ff-meta-serif has no real small caps, so we fake it
-    font-variant: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    &:hover {
-        cursor: help;
-    }
+	// @include smallcaps(gray, 600);
+	// ff-meta-serif has no real small caps, so we fake it
+	font-variant: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	&:hover {
+		cursor: help;
+	}
 }
 
 dl {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 small {
-    font-size: 65%;
+	font-size: 65%;
 }
 
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 section {
-    padding: $line-height * 0.5em 0 $line-height * 1em;
+	padding: $line-height * 0.5em 0 $line-height * 1em;
 }
 
 
@@ -61,40 +62,40 @@ section {
 // ============================================================
 
 .logo {
-    display: inline-block;
-    vertical-align: -170%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
-    margin: $line-height * 1rem 2em $line-height * 1rem 0;
-
-    @include breakpoint(mama-bear) {
-        vertical-align: -190%;
-        margin-right: 5em;
-    }
-
-    @include breakpoint(baby-bear) {
-        display: block;
-        text-align: center;
-        margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
-    }
+	display: inline-block;
+	vertical-align: -170%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	margin: $line-height * 1rem 2em $line-height * 1rem 0;
+	// mama bear breakpoint
+	@include breakpoint(mama-bear) {
+		vertical-align: -190%;
+		margin-right: 5em;
+	}
+	// baby bear breakpoint
+	@include breakpoint(baby-bear) {
+		display: block;
+		text-align: center;
+		margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
+	}
 }
 .logo-img{
-    background: image-url("logo.png") 50% no-repeat;
-    width: 14em;
-    background-size: cover;
+	background: image-url("logo.png") 50% no-repeat;
+	width: 14em;
+	background-size: cover;
 
-    &:before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 100%;
-    }
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+	}
 
-    @include breakpoint(mama-bear) {
-        width: 12em;
-    }
+	@include breakpoint(mama-bear) {
+		width: 12em;
+	}
 
-    @include breakpoint(baby-bear) {
-        width: 10em;
-    }
+	@include breakpoint(baby-bear) {
+		width: 10em;
+	}
 }
 
 
@@ -102,47 +103,47 @@ section {
 // ============================================================
 
 .header {
-    @include breakpoint(baby-bear) {
-        text-align: center;
-        p, .nav {
-            text-align: left;
-        }
-    }
+	@include breakpoint(baby-bear) {
+		text-align: center;
+		p, .nav {
+			text-align: left;
+		}
+	}
 }
 
 .nav {
-    // in preparation for inline-block children
-    letter-spacing: -4px;
-    @extend %rhythm;
-    display: inline-block;
-    @include breakpoint(baby-bear) {
-        text-align: center;
-        border: 1px solid lightgrey;
-    }
+	// in preparation for inline-block children
+	letter-spacing: -4px;
+	@extend %rhythm;
+	display: inline-block;
+	@include breakpoint(baby-bear) {
+		text-align: center;
+		border: 1px solid lightgrey;
+	}
 }
 
 .nav-item {
-    letter-spacing: normal;
-    display: block;
-    @extend .delta;
-    line-height: 2;
-    padding: 0 0.5em 0 0.25em;
-    &:not(:last-of-type) {
-        border-bottom: 1px solid lightgrey;
-    }
-    &:hover, &:focus {
-        color: $rust;
-        background-color: hsla(0, 0%, 100%, 0.75);
-    }
+	letter-spacing: normal;
+	display: block;
+	@extend .delta;
+	line-height: 2;
+	padding: 0 0.5em 0 0.25em;
+	&:not(:last-of-type) {
+		border-bottom: 1px solid lightgrey;
+	}
+	&:hover, &:focus {
+		color: $rust;
+		background-color: hsla(0, 0%, 100%, 0.75);
+	}
 
-    @include breakpoint(baby-bear) {
-        display: inline;
-        padding: 0.25em 0.25em;
-        &:not(:last-of-type) {
-            border-right: 1px solid lightgrey;
-            border-bottom: 0;
-        }
-    }
+	@include breakpoint(baby-bear) {
+		display: inline;
+		padding: 0.25em 0.25em;
+		&:not(:last-of-type) {
+			border-right: 1px solid lightgrey;
+			border-bottom: 0;
+		}
+	}
 }
 
 
@@ -150,26 +151,26 @@ section {
 // ============================================================
 
 .toc ol {
-    list-style: decimal !important;
-    counter-reset: item;
+	list-style: decimal !important;
+	counter-reset: item;
 }
 .toc li {
-    @extend .zeta;
-    display: block;
+	@extend .zeta;
+	display: block;
 }
 
 .toc ol li:before {
-    counter-increment: item;
-    color: #444;
-    font-style: normal;
-    font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
+	counter-increment: item;
+	color: #444;
+	font-style: normal;
+	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
 
 // epic loop wizardy!
 @for $i from 1 through 4 {
-    .toc ol:nth-of-type(#{$i}) li:before {
-        content: "#{$i}." counter(item) " – ";
-    }
+	.toc ol:nth-of-type(#{$i}) li:before {
+		content: "#{$i}." counter(item) " – ";
+	}
 }
 
 
@@ -177,32 +178,32 @@ section {
 // ============================================================
 
 .example {
-    background: #dddddd;
-    background: hsla(0, 0%, 0%, 0.1);
-    border: 1px solid hsla(0, 0%, 0%, 0.15);
-    box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-    padding: $line-height * 1rem $line-height * 1rem 0;
-    margin: $line-height * 1.5rem 0 $line-height * 1rem;
-    border-radius: 0.333333em;
-    &:before {
-        content: "example:";
-        @extend .epsilon;
-        display: block;
-        font-family: "Cassannet", sans-serif;
-        background: none;
-        line-height: 0;
-        position: relative;
-        color: #212121;
-        top: -2.125em;
-        left: -1.65rem;
-    }
+	background: #dddddd;
+	background: hsla(0, 0%, 0%, 0.1);
+	border: 1px solid hsla(0, 0%, 0%, 0.15);
+	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+	padding: $line-height * 1rem $line-height * 1rem 0;
+	margin: $line-height * 1.5rem 0 $line-height * 1rem;
+	border-radius: 0.333333em;
+	&:before {
+		content: "example:";
+		@extend .epsilon;
+		display: block;
+		font-family: "Cassannet", sans-serif;
+		background: none;
+		line-height: 0;
+		position: relative;
+		color: #212121;
+		top: -2.125em;
+		left: -1.65rem;
+	}
 }
 .example > pre {
-    margin-top: 0;
-    overflow: auto;
-    white-space: pre;
-    word-spacing: normal;
-    @include word-wrap(normal);
+	margin-top: 0;
+	overflow: auto;
+	white-space: pre;
+	word-spacing: normal;
+	@include word-wrap(normal);
 }
 
 
@@ -210,15 +211,15 @@ section {
 // ============================================================
 
 .perma-anchor {
-    // color: transparentize($mustard, 0.5);
-    color: #444;
-    font-weight: normal;
-    @extend .gamma;
-    position: relative;
-    top: -0.125em;
-    &:hover {
-        color: $mustard;
-    }
+	// color: transparentize($mustard, 0.5);
+	color: #444;
+	font-weight: normal;
+	@extend .gamma;
+	position: relative;
+	top: -0.125em;
+	&:hover {
+		color: $mustard;
+	}
 }
 
 
@@ -226,19 +227,19 @@ section {
 // ============================================================
 
 .typeplate-code-block {
-    pre {
-        background: #dddddd;
-        background: hsla(0, 0%, 0%, 0.1);
-        border: 1px solid hsla(0, 0%, 0%, 0.15);
-        box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-        padding: $line-height * 1rem;
-        .no-js & {
-            overflow: auto;
-        }
-    }
-    code {
-        color: #444;
-    }
+	pre {
+		background: #dddddd;
+		background: hsla(0, 0%, 0%, 0.1);
+		border: 1px solid hsla(0, 0%, 0%, 0.15);
+		box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
+		padding: $line-height * 1rem;
+		.no-js & {
+			overflow: auto;
+		}
+	}
+	code {
+		color: #444;
+	}
 }
 
 
@@ -246,19 +247,19 @@ section {
 // ============================================================
 
 blockquote {
-    font-style: italic;
-    @extend .epsilon;
-    // so there's no extra line separating the quote and the citation
-    p:last-of-type {
-        margin-bottom: 0;
-    }
-    cite {
-        font-style: normal;
-        @extend %cite;
-        &:before {
-            content:"—";
-        }
-    }
+	font-style: italic;
+	@extend .epsilon;
+	// so there's no extra line separating the quote and the citation
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+	cite {
+		font-style: normal;
+		@extend %cite;
+		&:before {
+			content:"—";
+		}
+	}
 }
 
 
@@ -268,7 +269,7 @@ blockquote {
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
 .typographic-scale .no-indent {
-    margin: 0;
+	margin: 0;
 }
 
 
@@ -276,7 +277,7 @@ blockquote {
 // ============================================================
 
 .amp {
-    text-align: center;
+	text-align: center;
 }
 
 
@@ -284,12 +285,12 @@ blockquote {
 // ============================================================
 
 .example-figcaption {
-    font-style: italic;
-    font-size: 0.85em;
-    @extend %rhythm;
-    strong {
-        font-style: normal;
-    }
+	font-style: italic;
+	font-size: 0.85em;
+	@extend %rhythm;
+	strong {
+		font-style: normal;
+	}
 }
 
 
@@ -297,14 +298,14 @@ blockquote {
 // ============================================================
 
 .icons {
-    @extend .beta;
-    .fs1 {
-        display: inline-block;
-        &:before {
-            padding-right: .25em;
-            color: gray;
-        }
-    }
+	@extend .beta;
+	.fs1 {
+		display: inline-block;
+		&:before {
+			padding-right: .25em;
+			color: gray;
+		}
+	}
 }
 
 
@@ -319,29 +320,22 @@ blockquote {
  */
 
 body {
-    font-weight: 400;
-    //gives font loading a little class
-    @include transition(.00123s opacity ease-in);
-    //Typekit Active FOUT Loading
-    .wf-loading & {
-        font-family: serif;
-        //Opacity Fallback
-        visibility: hidden;
-        opacity: 0;
-    }
-    //Typekit Active FOUT Loading
-    .wf-active &,
-    .wf-inactive & {
-        font-family: "ff-meta-serif-web-pro",serif;
-        font-weight: 400;
-        //Opacity Fallback
-        visibility: visible;
-        opacity: 1;
-    }
+	font-weight: 400;
+	.wf-loading & {
+		//Typekit Active FOUT Loading
+		font-family: serif;
+		visibility: hidden;
+	}
+	.wf-active &,
+	.wf-inactive & {
+		font-family: "ff-meta-serif-web-pro",serif;
+		font-weight: 400;
+		visibility: visible;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 
@@ -352,11 +346,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // Cassannet Regular
 @include font-face("Cassannet", font-files(
-    "cassannet/cassannet.eot", ///* IE9 Compat Modes */
-    "cassannet/cassannet.eot?#iefix", // IE6-IE8
-    "cassannet/cassannet.woff", // Modern Browsers
-    "cassannet/cassannet.ttf", // Safari, Android, iOS
-    "cassannet/cassannet.svg#svgFontName" // Legacy iOS
+	"cassannet/cassannet.eot", ///* IE9 Compat Modes */
+	"cassannet/cassannet.eot?#iefix", // IE6-IE8
+	"cassannet/cassannet.woff", // Modern Browsers
+	"cassannet/cassannet.ttf", // Safari, Android, iOS
+	"cassannet/cassannet.svg#svgFontName" // Legacy iOS
 ));
 // Cassannet Bold
 // @include font-face("Cassannet Bold", font-files(
@@ -373,8 +367,8 @@ h1, h2, h3, h4, h5, h6 {
 // ============================================================
 
 .site-footer {
-    margin-top: 3em;
-    font-size: 75%;
+	margin-top: 3em;
+	font-size: 75%;
 }
 
 
@@ -382,36 +376,36 @@ h1, h2, h3, h4, h5, h6 {
 // ============================================================
 
 .center {
-    text-align: center;
+	text-align: center;
 }
 
 .capsify {
-    text-transform: uppercase;
-    letter-spacing: 0.125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
 }
 
 
 // generic bottom rule class
 .botDivider {
-    border-bottom: 0.44444444rem solid transparentize($cobalt-deep, 0.75);// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: 0.44444444rem solid transparentize($cobalt-deep, 0.75);// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 }
 
 //control our vertical rhythm
 %rhythm {
-    margin-top: 0;
-    margin-bottom: $line-height * 1rem;
+	margin-top: 0;
+	margin-bottom: $line-height * 1rem;
 }
 
 // headings helper ala harry roberts
 %hN {
-    text-rendering: optimizeLegibility;
-    // don't use shorthand to avoid spoiling left/right padding on things like buttons
-    margin-top: $line-height * 1rem;
-    margin-bottom: $line-height * 1rem;
-    line-height: 1;
-    & + %hN {
-        margin: 0;
-    }
+	text-rendering: optimizeLegibility;
+	// don't use shorthand to avoid spoiling left/right padding on things like buttons
+	margin-top: $line-height * 1rem;
+	margin-bottom: $line-height * 1rem;
+	line-height: 1;
+	& + %hN {
+		margin: 0;
+	}
 }
 
 
@@ -419,11 +413,11 @@ h1, h2, h3, h4, h5, h6 {
 // ============================================================
 
 h1, h2, h3, h4, h5, h6 {
-    @extend %hN;
-    // waddya think?
-    // I liked the text shadow in this dribbble shot and thought it fit us.
-    // http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
-    //text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
+	@extend %hN;
+	// waddya think?
+	// I liked the text shadow in this dribbble shot and thought it fit us.
+	// http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
+	//text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
 }
 
 
@@ -431,11 +425,11 @@ h1, h2, h3, h4, h5, h6 {
 // ============================================================
 
 p {
-    // reset top margin, and set bottom margin equal to one unit of line-height
-    @extend %rhythm;
-    & + p:not(.no-indent) {
-        margin-top: $line-height * -0.5rem;
-    }
+	// reset top margin, and set bottom margin equal to one unit of line-height
+	@extend %rhythm;
+	& + p:not(.no-indent) {
+		margin-top: $line-height * -0.5rem;
+	}
 }
 
 
@@ -446,7 +440,7 @@ p {
 // when to use it. We only provide you with the @mixin. This is just an example of
 // our chosen class selector purely for demo purposes.
 .drop-cap {
-    @include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
+	@include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
 }
 
 
@@ -454,9 +448,9 @@ p {
 // ============================================================
 
 .lining {
-    @include definition-list-style(lining);
+	@include definition-list-style(lining);
 }
 
 .dictionary-style {
-    @include definition-list-style(dictionary-style);
+	@include definition-list-style(dictionary-style);
 }

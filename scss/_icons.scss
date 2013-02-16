@@ -1,30 +1,38 @@
 // $IcoMoon
 // ============================================================
 
+$web-fonts: (icomoon);
+
+@if ($web-fonts != null) {
+	@each $font in $web-fonts {
+		@include font-face( $font, font-files( '#{$font}/#{$font}.woff', '#{$font}/#{$font}.ttf', '#{$font}/#{$font}.svg', svg ), '#{$font}/#{$font}.eot' )
+	}
+}
+
 // Use the following CSS code if you want to use data attributes for inserting your icons
 [data-icon]:before {
-    font-family: 'icomoon';
-    content: attr(data-icon);
-    speak: none;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 // Use the following CSS code if you want to have a class per icon
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: 'icomoon';
-    font-style: normal;
-    speak: none;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 .icon-menu:before {
-    content: "\e001";
+	content: "\e001";
 }
 .icon-settings:before {
-    content: "\e000";
+	content: "\e000";
 }

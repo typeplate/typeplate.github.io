@@ -68,36 +68,22 @@
 @import "typeplate";
 
 
-// $Icon Font Helper
-// ============================================================
-// Gotta Come back to this gem for sure. WTF should I do? hmm..
-// Can't call it all by itself. Need another method O_o
-
-$web-fonts: (icomoon);
-
-
 // $Variables
 // ============================================================
 
 @import "vars";
 
 
-// $Mixins
+// $Icons
 // ============================================================
 
-@import "mixins";
+@import "icons";
 
 
 // $Prism
 // ============================================================
 
 @import "prism";
-
-
-// $Icons
-// ============================================================
-
-@import "icons";
 
 
 // $Site Specific
