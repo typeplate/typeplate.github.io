@@ -70,7 +70,7 @@ hr {
 	border: 0;
 	height: 0;
 	padding: 0;
-	border-top: 1px solid $cobalt-fade;
+	border-top: 1px solid grey;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
 	&.fancy {
 		border-bottom: 1px solid $cobalt-fade;
@@ -226,7 +226,7 @@ hr {
 		margin-bottom: 1.65em;
 	}
 
-	background: $white;
+	background: $cobalt-fade;
 	color: $cobalt-deep;
 	&:hover, &:focus {
 		background: $rust;
@@ -246,12 +246,21 @@ hr {
 }
 .social-item {
 	margin-left: 0.825em;
-	padding: 0.825em 1em;
-	background: $cobalt-deep;
-	color: $white;
+	padding: 0 0.825em 0 0;
+	background: $cobalt-fade;
+	color: $cobalt-deep;
 	&:hover, &:focus {
 		background: $rust;
 		color: white;
+	}
+	i {
+		background: $cobalt-deep;
+		color: $white;
+		display: inline-block;
+		padding: 0.65em 0.5em 0.5em 0.825em;
+		margin-right: 0.825em;
+		border-top-left-radius: 0.333333em;
+		border-bottom-left-radius: 0.333333em;
 	}
 }
 

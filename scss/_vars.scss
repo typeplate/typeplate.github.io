@@ -4,7 +4,7 @@
 $rust: hsl(10, 70%, 50%);
 
 $cobalt: hsl(210, 100%, 16%);
-$cobalt-fade: transparentize($cobalt, 0.7); // makes it's alpha 0.3
+$cobalt-fade: hsl(213, 14%, 73%);
 $cobalt-deep: darken($cobalt, 38%);
 
 $white: hsla(0, 0%, 100%, 0.75);
