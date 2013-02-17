@@ -1,14 +1,17 @@
-// import media queries
 @import "queries";
+@import "fontello";
 
 
 // $Global Elements
 // ============================================================
 
+* {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
-	width: 92%;
-	max-width: 40em;
-	margin: 0 auto;
 	background: image-url("subtle_grunge.png") top left repeat;
 	color: #212121;
 }
@@ -57,13 +60,40 @@ section {
 	padding: $line-height * 0.5em 0 $line-height * 1em;
 }
 
+.col-wrap {
+	width: 92%;
+	max-width: 40em;
+	margin: 0 auto;
+}
+
+hr {
+	border: 0;
+	height: 0;
+	padding: 0;
+	border-top: 1px solid $cobalt-fade;
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+	&.fancy {
+		border-bottom: 1px solid $cobalt-fade;
+		margin: 0 0 1.65em;
+		text-align: center;
+		&:after {
+			@extend .delta;
+			background-color: #fcfcfc;
+			color: $cobalt-fade;
+			content: "§";
+			position: relative;
+			top: -0.75em;
+		}
+	}
+}
 
 // $Logo
 // ============================================================
 
 .logo {
-	vertical-align: -260%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $line-height * 1rem;
+	cursor: pointer;
 	// mama bear breakpoint
 	@include breakpoint(mama-bear) {
 		vertical-align: -190%;
@@ -78,7 +108,7 @@ section {
 }
 .logo-img{
 	background: image-url("logo.png") 50% no-repeat;
-	width: 14em;
+	width: 12em;
 	background-size: cover;
 
 	&:before {
@@ -103,6 +133,7 @@ section {
 
 .header {
 	padding-top: 1.65em;
+	background: $white;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		p, .nav {
@@ -112,18 +143,18 @@ section {
 }
 
 .lede {
-	padding-top: $line-height * 0.5rem;
+	padding-top: 0.825em;
+	margin-bottom: 1.65em;
 }
 
 .nav {
-	padding-bottom: 1.65em;
 	// in preparation for inline-block children
 	letter-spacing: -4px;
 	@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
 		text-align: center;
-		border: 1px solid lightgrey;
+		display: block;
 	}
 }
 
@@ -133,21 +164,55 @@ section {
 	@extend .delta;
 	line-height: 2;
 	padding: 0 0.5em 0 0.25em;
-	&:not(:last-of-type) {
-		border-bottom: 1px solid lightgrey;
-	}
 	&:hover, &:focus {
 		color: $rust;
-		background-color: hsla(0, 0%, 100%, 0.75);
+		text-decoration: underline;
+	}
+	&:before {
+		content: "→ ";
 	}
 
 	@include breakpoint(baby-bear) {
 		display: inline;
 		padding: 0.25em 0.25em;
-		&:not(:last-of-type) {
-			border-right: 1px solid lightgrey;
-			border-bottom: 0;
+		&:before {
+			content: "";
 		}
+	}
+}
+
+
+.downloads {
+	background: $cobalt-deep;
+	padding: 1.65em 0;
+	display: block;
+}
+.dl-item {
+	display: inline-block;
+	letter-spacing: normal;
+	padding: $line-height * 0.5rem;
+	border-radius: 0.333333em;
+	font-family: Monaco, Consolas, monospace;
+	text-align: center;
+	font-size: 0.825em;
+
+	width: 31%;
+	margin-right: 3.5%;
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	@include breakpoint(mama-bear) {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 1.65em;
+	}
+
+	background: $white;
+	color: $cobalt-deep;
+	&:hover, &:focus {
+		background: $rust;
+		color: white;
 	}
 }
 
@@ -395,6 +460,9 @@ h1, h2, h3, h4, h5, h6 {
 // generic bottom rule class
 .botDivider {
 	border-bottom: 0.44444444rem solid transparentize($cobalt-deep, 0.75);// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	&.bright {
+		border-bottom-color: $rust;
+	}
 }
 
 //control our vertical rhythm
@@ -435,7 +503,7 @@ p {
 	// reset top margin, and set bottom margin equal to one unit of line-height
 	@extend %rhythm;
 	& + p:not(.no-indent) {
-		margin-top: $line-height * -0.5rem;
+		// margin-top: $line-height * -0.5rem;
 	}
 }
 
