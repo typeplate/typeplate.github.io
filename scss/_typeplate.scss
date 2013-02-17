@@ -26,37 +26,45 @@
 // ==========================================================================
 
 
-// $BASE TYPE
+// $B a s e  T y p e
 // --------------------------------------------------------------------------
 
 $weight: normal;
 $line-height: 1.65;
-$font-size: 112.5;				// percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100);	// converts our percentage to a pixel value
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
 
-//the serif/sans-serif var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss"; reference.
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
 $serif-boolean: true !default;
 
 
-// $COLOR
+// $C o l o r
 // --------------------------------------------------------------------------
 
 $heading-color: #222;
 
 
-// $AMPERSAND @font-face
+// $A M P E R S A N D  @font-face
 // --------------------------------------------------------------------------
 
-$amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
-$amp-font-fallback: local('Georgia');
+$amp-fontface-name: Ampersand;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$amp-fontface-fallback: local('Georgia');
 
 
-// $TYPE SCALE
+// $A M P E R S A N D  e l e m e n t
+// --------------------------------------------------------------------------
+// allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+
+$amp-font-family: Verdana, sans-serif;
+
+
+// $T y p e  S c a l e
 // --------------------------------------------------------------------------
 
 $tera:		117;	//	117	= 18 × 6.5
@@ -105,13 +113,15 @@ $stats-border-style: 0.125rem solid #ccc;
 // --------------------------------------------------------------------------
 
 @font-face {
-	font-family: '#{$amp-font-name}';
-	src: $amp-font-source;
-	unicode-range: U+26;
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-source;
+	unicode-range: U+0026;
 }
+
+// Ampersand fallback font for unicode range
 @font-face {
-	font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
-	src: $amp-font-fallback;
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-fallback;
 	unicode-range: U+270C;
 }
 
@@ -153,8 +163,7 @@ $stats-border-style: 0.125rem solid #ccc;
 // --------------------------------------------------------------------------
 
 @mixin modular-scale($scale, $base, $value) {
-	// Pixel falback for IE versions <= 8
-	font-size: $scale#{px};
+	font-size: $scale#{px}; // Pixel falback for IE versions <= 8
 	font-size: modular-scale($scale, $base, $value);
 }
 
@@ -184,10 +193,11 @@ $stats-border-style: 0.125rem solid #ccc;
 //http://trentwalton.com/2011/09/07/css-hyphenation
 
 @mixin css-hyphens($val) {
-	-webkit-hyphens: $val;	// Safari 6
-	-moz-hyphens: $val;		// FF19
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val;		// Firefox 16 thru 20
 	-ms-hyphens: $val;		// IE10
-	hyphens: $val;			// standard
+	hyphens: $val;			// W3C standard
 };
 
 
@@ -209,10 +219,12 @@ $stats-border-style: 0.125rem solid #ccc;
 
 // $F o n t - S i z e  - A d j u s t
 // --------------------------------------------------------------------------
-// correct x-height for fallback fonts
+// correct x-height for fallback fonts: requires secret formula
+// yet to be discovered. This is still wacky for support. Use
+// wisely grasshopper.
 
 @mixin font-size-adjust($adjust-value) {
-	// firefox 17+ only (as of Jan 2013)
+	// firefox 17+ only (as of Feb. 2013)
 	font-size-adjust: $adjust-value;
 }
 
@@ -225,12 +237,12 @@ $stats-border-style: 0.125rem solid #ccc;
 }
 
 %ampersand-placeholder {
-	@include ampersand(Ampersand, Arial, sans-serif);
+	@include ampersand($amp-fontface-name, $amp-font-family);
 }
 
-.amp {
-	@extend %ampersand-placeholder;
-}
+// Call your ampersand on any element you wish from another stylesheet
+// using this Sass extend we've provided...
+// @extend %ampersand-placeholder;
 
 
 // $W o r d    W r a p
@@ -276,11 +288,13 @@ $stats-border-style: 0.125rem solid #ccc;
 @mixin definition-list-style($style) {
 	// lining style
 	@if $style == lining {
-		dt, dd {
+		dt,
+		dd {
 			display: inline;
 			margin: 0;
 		}
-		dt, dd {
+		dt,
+		dd {
 			& + dt {
 				&:before {
 					content: "\A";
@@ -342,9 +356,6 @@ body {
 	// Ala Trent Walton
 	@include css-hyphens(auto);
 
-	// proper x-height for fallbacks
-	// @include font-size-adjust(); // this does NOTHING, Lebowski! NOTHING! (except cause errors)
-
 	// normal: Indicates that lines may only break at normal word break points.
 	// break-word : Indicates that normally unbreakable words may be broken at ...
 	// arbitrary points if there are no otherwise acceptable break points in the line.
@@ -356,19 +367,27 @@ body {
 // $C o d e b l o c k s
 // --------------------------------------------------------------------------
 
+@mixin white-space($wrap-space) {
+	@if $wrap-space == 'pre-wrap' {
+		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+		white-space: $wrap-space; // current browsers
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
 pre code {
 	@include word-wrap(normal);
-	white-space: pre-wrap;
+	@include white-space(pre-wrap);
 }
 
 pre {
-	@include word-wrap(auto);	// IE 5.5-7
-	white-space: -moz-pre-wrap;	// Firefox 1.0-2.0
-	white-space: pre-wrap;		// current browsers
+	@include word-wrap(auto); // IE 5.5-7
+	@include white-space(pre);
 }
 
 code {
-	white-space: pre;
+	@include white-space(pre);
 	font-family: monospace;
 }
 
@@ -456,10 +475,32 @@ h6 {
 // $ D e f i n i t i o n    L i s t s
 // --------------------------------------------------------------------------
 
+/**
+ * Create lining style definition lists
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
 .lining {
 	@include definition-list-style(lining);
 }
 
+/**
+ * Create dictionary style definition lists
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
 .dictionary-style {
 	@include definition-list-style(dictionary-style);
 }
@@ -468,6 +509,16 @@ h6 {
 // $S t a t s    T a b
 // --------------------------------------------------------------------------
 
+/**
+ * Create Stats Tab styles
+ *
+	<ul class="stats-tabs">
+		<li><a href="#">[value]<b>[name]</b></a></li>
+	</ul>
+ *
+ * Extend this object into your markup.
+ *
+ */
 .stats-tabs {
 	padding: 0;
 	li {
@@ -542,3 +593,20 @@ h6 {
 	font-size: 700%;
 	color: red;
 }
+
+
+// $Figures
+// --------------------------------------------------------------------------
+
+/**
+ * Create Figure styles
+ *
+	<figure>
+		<figcaption>
+			<strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */

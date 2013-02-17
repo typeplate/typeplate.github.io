@@ -1,0 +1,105 @@
+// ==================== Compass
+
+@import "compass";
+
+
+// ==================== Author Styles
+
+body {
+	margin: 6em auto;
+	max-width: 34em;
+	background: url(../img/subtle_grunge.png) top left repeat;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+// ==================== Typekit
+
+.wf-loading body {
+	font-family: serif;
+	visibility: hidden;
+}
+.wf-active body,
+.wf-inactive body {
+	font-family: "ff-meta-serif-web-pro",serif;
+	font-weight: 400;
+	visibility: visible;
+}
+
+// ==================== Typeplate Logo
+
+.logo {
+	margin: .25em 0 .25em;
+	font-style: italic;
+	font-size: 6.5rem; /* 18px * 6.5em = 117em */
+	font-weight: 700;
+	line-height: 1.3; /* 117px / 90px = 1.3  */
+}
+.logo-img {
+	display: inline-block;
+	font-size: .375em;
+	text-indent: -999em;
+	background: url(../img/logo.png) 50% 0% no-repeat;
+	background-size: 6em;
+	width: 100%;
+	height: 4.5em;
+}
+
+
+// ==================== Top Banner Stripe
+
+#typeplate-widgets-wrap {
+	border-bottom: 8px solid rgb(213, 204, 204);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.56), inset 0 2px 2px rgba(255, 255, 255, 0.4);
+	padding: .5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: "ff-meta-serif-web-pro",serif;
+	font-size: 100%;
+	background: gray;
+	color: #EFEFEF;
+	iframe {
+		position: absolute;
+		top: 1.5em;
+		right: .5em;
+	}
+}
+
+
+// ==================== On/Off Radio Buttons
+
+#normalize-form {
+	display: block;
+}
+
+#typeplate-form {
+	display: block;
+}
+
+input[type="radio"] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	font-size: 100%;
+	line-height: normal;
+	padding: 5px;
+}
+input[type="radio"]:hover {
+	cursor: pointer;
+}
+
+
+// ==================== Viewport
+
+@-ms-viewport {
+	width: device-width;
+}
+@viewport {
+	width: device-width;
+}

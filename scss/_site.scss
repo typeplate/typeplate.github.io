@@ -277,6 +277,7 @@ blockquote {
 // ============================================================
 
 .amp {
+	@extend %ampersand-placeholder;
 	text-align: center;
 }
 
