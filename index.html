@@ -379,10 +379,8 @@ abbr {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">// Include your '@include dropcap()' mixin and pass the following
-// arguments below. Feel free to pass in arguments we've provided.
-// At this time you cannot pass in font-family arguments but you're gonna
-// change that anyway so why just make that separately in your deleration.
+			<pre><code class="language-sass">// Use '@include dropcap()' with any selector. Pass in your own custom
+// arguments or feel free to use the arguments we've provided.
 @mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
 	&:first-letter {
 		float: $float;
@@ -397,11 +395,8 @@ abbr {
 	}
 }
 
-// This selector class is not included in the actual stylsheet. We leave it for you to decide
-// when to use it. We only provide you with the @mixin. This is just an example of
-// our chosen class selector purely for demo purposes.
-// This @include can be used anywhere you'd like but must be subsequent to
-// this style sheet (typeplate.scss).
+// Including the @mixin with our .drop-cap class purely for demo purposes.
+// Not included in the actual Typeplate Sass or CSS download.
 .drop-cap {
 	@include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
 }</code></pre>

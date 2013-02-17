@@ -259,10 +259,11 @@ $stats-border-style: 0.125rem solid #ccc;
 
 // $D r o p c a p s
 // --------------------------------------------------------------------------
+
 // Include your '@include dropcap()' mixin and pass the following
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
-// change that anyway so why just make that separately in your deleration.
+// change that anyway so why not just make that separately in your declaration.
 @mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
 	&:first-letter {
 		float: $float;
@@ -276,6 +277,9 @@ $stats-border-style: 0.125rem solid #ccc;
 		color: $color;
 	}
 }
+
+// Use the following Sass @include with any selector you feel necessary.
+// @include dropcap();
 
 
 // $D e f i n i t i o n    L i s t
