@@ -62,9 +62,8 @@ section {
 // ============================================================
 
 .logo {
-	display: inline-block;
-	vertical-align: -170%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
-	margin: $line-height * 1rem 2em $line-height * 1rem 0;
+	vertical-align: -260%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	margin-right: $line-height * 1rem;
 	// mama bear breakpoint
 	@include breakpoint(mama-bear) {
 		vertical-align: -190%;
@@ -74,7 +73,7 @@ section {
 	@include breakpoint(baby-bear) {
 		display: block;
 		text-align: center;
-		margin: $line-height * 0.5rem 0 $line-height * 0.5rem 0;
+		margin-right: 0;
 	}
 }
 .logo-img{
@@ -103,6 +102,7 @@ section {
 // ============================================================
 
 .header {
+	padding-top: 1.65em;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		p, .nav {
@@ -111,7 +111,12 @@ section {
 	}
 }
 
+.lede {
+	padding-top: $line-height * 0.5rem;
+}
+
 .nav {
+	padding-bottom: 1.65em;
 	// in preparation for inline-block children
 	letter-spacing: -4px;
 	@extend %rhythm;
