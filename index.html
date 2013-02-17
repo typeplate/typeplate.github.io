@@ -445,19 +445,25 @@ abbr {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">//Unicode Ampersand
-$amp-font-name: Ampersand;
-$amp-font-source: local('Georgia'), local('Palatino'), local('Book Antiqua');
-$amp-font-fallback: local('Georgia');
+			<pre><code class="language-sass">//Unicode Ampersand @font-face
+$amp-fontface-name: Ampersand;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$amp-fontface-fallback: local('Georgia');
+
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+$amp-font-family: Verdana, sans-serif;
 
 @font-face {
-	font-family: '#{$amp-font-name}';
-	src: $amp-font-source;
-	unicode-range: U+26;
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-source;
+	unicode-range: U+0026;
 }
+
+// Ampersand fallback font for unicode range
 @font-face {
-	font-family: '#{$amp-font-name}'; // Ampersand fallback font for unicode range
-	src: $amp-font-fallback;
+	font-family: '#{$amp-fontface-name}';
+	src: $amp-fontface-fallback;
 	unicode-range: U+270C;
 }
 
@@ -466,9 +472,11 @@ $amp-font-fallback: local('Georgia');
 }
 
 %ampersand-placeholder {
-	@include ampersand(Ampersand, Arial, sans-serif);
+	@include ampersand($amp-fontface-name, $amp-font-family);
 }
 
+// Call your ampersand on any element you wish from another stylesheet
+// using this Sass extend we've provided.
 .amp {
 	@extend %ampersand-placeholder;
 }</code></pre>
@@ -515,8 +523,8 @@ $amp-font-fallback: local('Georgia');
 		</header>
 		<p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
-		<figure class="example">
-			<pre><code>h1 {
+		<figure class="typeplate-code-block">
+			<pre><code class="language-markup">h1 {
 	background: red;
 	color: blue;
 	padding: 1em;
@@ -527,19 +535,27 @@ $amp-font-fallback: local('Georgia');
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-		<pre><code class="language-sass">pre code {
-	word-wrap: normal;
-	white-space: pre-wrap;
+		<pre><code class="language-sass">@mixin white-space($wrap-space) {
+	@if $wrap-space == 'pre-wrap' {
+		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+		white-space: $wrap-space; // current browsers
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
+pre code {
+	@include word-wrap(normal);
+	@include white-space(pre-wrap);
 }
 
 pre {
-	word-wrap: auto;			// IE 5.5-7
-	white-space: -moz-pre-wrap;	// Firefox 1.0-2.0
-	white-space: pre-wrap;		// current browsers
+	@include word-wrap(auto); // IE 5.5-7
+	@include white-space(pre);
 }
 
 code {
-	white-space: pre;
+	@include white-space(pre);
 	font-family: monospace;
 }</code></pre>
 		</figure>
@@ -589,11 +605,24 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
-		&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
-		&lt;cite&gt;
-			&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
-		&lt;/cite&gt;
-		&lt;/blockquote&gt;</code></pre>
+	&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
+	&lt;cite&gt;
+		&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+	&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>Sass</figcaption>
+				<pre><code class="language-sass">@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+	display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
+}
+
+%cite {
+	@include cite-style;
+}</code></pre>
 			</figure>
 		</section>
 
@@ -623,46 +652,46 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
-		&lt;aside class=&quot;pull-quote&quot;&gt;
-			&lt;blockquote&gt;
-				&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
-			&lt;/blockquote&gt;
-		&lt;/aside&gt;
-		&lt;/article&gt;</code></pre>
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
+	&lt;aside class=&quot;pull-quote&quot;&gt;
+		&lt;blockquote&gt;
+			&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
+		&lt;/blockquote&gt;
+	&lt;/aside&gt;
+&lt;/article&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">.entry {
-		position: relative;
-		padding-right: 50%;
-		.pull-quote {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 45%;
-		}
-		}
+	position: relative;
+	padding-right: 50%;
+	.pull-quote {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 45%;
+	}
+}
 
-		.bqstart {
-		float: left;
-		height: 45px;
-		margin-top: -50px;
-		//padding-top: 45px;
-		margin-bottom: 50px;
-		font-size: 700%;
-		color: red;
-		}
+.bqstart {
+	float: left;
+	height: 45px;
+	margin-top: -50px;
+	//padding-top: 45px;
+	margin-bottom: 50px;
+	font-size: 700%;
+	color: red;
+}
 
-		.bqend {
-		float: right;
-		height: 25px;
-		margin-top: -50px;
-		padding-top: 15px;
-		font-size: 700%;
-		color: red;
-		}</code></pre>
+.bqend {
+	float: right;
+	height: 25px;
+	margin-top: -50px;
+	padding-top: 15px;
+	font-size: 700%;
+	color: red;
+}</code></pre>
 			</figure>
 		</section>
 
@@ -686,53 +715,51 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
-		&lt;ul class=&quot;stats-tabs&quot;&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-		&lt;/ul&gt;</code></pre>
+	&lt;ul class=&quot;stats-tabs&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">//Stats Tabs Variables
-		$stats-font-size: 1.125rem;
-		$stats-list-margin: 0 0.625rem 0 0;
-		$stats-list-padding: 0 0.625rem 0 0;
-		$stats-item-font-size: 0.1875rem;
-		$stats-item-margin: 0.125rem 0 0 0;
-		$stats-border-style: 0.125rem solid #ccc;
-		// Stats Tabs Styles
-		.stats-tabs {
-		// use this if you go the float route for IE7 support
-		//oveflow: auto;
-		li {
-			//use a float instead of display: inline block for IE7
+	$stats-font-size: 1.125rem;
+	$stats-list-margin: 0 0.625rem 0 0;
+	$stats-list-padding: 0 0.625rem 0 0;
+	$stats-item-font-size: 0.1875rem;
+	$stats-item-margin: 0.125rem 0 0 0;
+	$stats-border-style: 0.125rem solid #ccc;
+
+	// Stats Tabs Styles
+	.stats-tabs {
+	li {
+		//use a float instead of display: inline block for IE7
+		//float: left;
+		display: inline-block;
+		margin: $stats-list-margin;
+		padding: $stats-list-padding;
+		border-right: $stats-border-style;
+		&:last-child {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		a {
 			//float: left;
 			display: inline-block;
-			margin: $stats-list-margin;
-			padding: $stats-list-padding;
-			border-right: $stats-border-style;
-			&:last-child {
-				margin: 0;
-				padding: 0;
-				border: none;
-			}
-			a {
-				//float: left;
-				display: inline-block;
-				font-size: $stats-font-size;
-				font-weight: bold;
-				span {
-					display: block;
-					margin: $stats-item-margin;
-					font-size: $stats-item-font-size;
-					font-weight: normal;
-				}
+			font-size: $stats-font-size;
+			font-weight: bold;
+			span {
+				display: block;
+				margin: $stats-item-margin;
+				font-size: $stats-item-font-size;
+				font-weight: normal;
 			}
 		}
-		}</code></pre>
+	}
+}</code></pre>
 			</figure>
 		</section>
-
 
 		<!-- #footnotes -->
 		<section class="footnotes botDivider" id="footnotes">
@@ -754,13 +781,13 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;article&gt;
-		&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-		&lt;footer class=&quot;foot-note&quot;&gt;
-			&lt;ol&gt;
-				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
-			&lt;/ol&gt;
-		&lt;/footer&gt;
-		&lt;/article&gt;</code></pre>
+	&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+	&lt;footer class=&quot;foot-note&quot;&gt;
+		&lt;ol&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/footer&gt;
+&lt;/article&gt;</code></pre>
 			</figure>
 		</section>
 
@@ -786,9 +813,9 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;dl&gt;
-		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-		&lt;/dl&gt;</code></pre>
+	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 			</figure>
 
 			<h3 class="delta">b) Inline Definitions</h3>
@@ -810,45 +837,45 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;dl class="lining"&gt;
-		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-		&lt;/dl&gt;</code></pre>
+	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">@mixin definition-list-style($style) {
-		// lining style
-		@if $style == lining {
-			dt, dd {
-				display: inline;
-				margin: 0;
-			}
-			dt, dd {
-				& + dt {
-					&:before {
-						content: "\A";
-						white-space: pre;
-					}
-				}
-			}
-			dd {
-				& + dd {
-					&:before {
-						content: ", ";
-					}
-				}
+	// lining style
+	@if $style == lining {
+		dt, dd {
+			display: inline;
+			margin: 0;
+		}
+		dt, dd {
+			& + dt {
 				&:before {
-						content: ": ";
-						margin-left: -0.2rem; // removes extra space between the dt and the colon
+					content: "\A";
+					white-space: pre;
 				}
 			}
 		}
+		dd {
+			& + dd {
+				&:before {
+					content: ", ";
+				}
+			}
+			&:before {
+					content: ": ";
+					margin-left: -0.2rem; // removes extra space between the dt and the colon
+			}
 		}
+	}
+}
 
-		dl {
-		  @include definition-list-style(lining);
-		}</code></pre>
+	dl {
+	  @include definition-list-style(lining);
+}</code></pre>
 			</figure>
 
 			<h3 class="delta">c) Dictionary-style Definition</h3>
@@ -870,44 +897,44 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
-		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-			&lt;dd&gt;&lt;/dd&gt;
-		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-			&lt;dd&gt;&lt;/dd&gt;
-			&lt;dd&gt;&lt;/dd&gt;
-		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-			&lt;dd&gt;&lt;/dd&gt;
-		&lt;/dl&gt;</code></pre>
+	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">@mixin definition-list-style($style) {
-		// dictionary-style
-		@if $style == dictionary-style {
-			dt {
-				display: inline;
-				counter-reset: definitions;
-				& + dt {
-					&:before {
-						content: ", ";
-						margin-left: -0.2rem; /* removes extra space between the dt and the comma */
-					}
-				}
-			}
-			dd {
-				display: block;
-				counter-increment: definitions;
+	// dictionary-style
+	@if $style == dictionary-style {
+		dt {
+			display: inline;
+			counter-reset: definitions;
+			& + dt {
 				&:before {
-					content: counter(definitions, decimal) ". ";
+					content: ", ";
+					margin-left: -0.2rem; /* removes extra space between the dt and the comma */
 				}
 			}
 		}
+		dd {
+			display: block;
+			counter-increment: definitions;
+			&:before {
+				content: counter(definitions, decimal) ". ";
+			}
 		}
+	}
+}
 
-		dl {
-		@include definition-list-style(dictionary-style);
-		}</code></pre>
+dl {
+	@include definition-list-style(dictionary-style);
+}</code></pre>
 			</figure>
 		</section>
 		<footer role="contentinfo" class="site-footer">

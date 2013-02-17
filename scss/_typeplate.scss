@@ -51,9 +51,9 @@ $amp-fontface-fallback: local('Georgia');
 
 // $A M P E R S A N D  e l e m e n t
 // --------------------------------------------------------------------------
-// allows for our ampersand element to have differing
-// font-family from the ampersand unicode font-family.
 
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
 $amp-font-family: Verdana, sans-serif;
 
 
@@ -553,6 +553,19 @@ h6 {
 
 // $Blockquote Cites
 // --------------------------------------------------------------------------
+/**
+ * Create Figure styles
+ *
+	<blockquote cite="">
+		<p>&Prime;&Prime;</p>
+		<cite>
+			<small><a href=""></a></small>
+		</cite>
+	</blockquote>
+ *
+ * Extend this object into your markup.
+ *
+ */
 
 @mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
 	display: $display;
