@@ -3,73 +3,97 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Typeplate » A typographic Sass template encouraging great type on the Web</title>
 	<script>
 		(function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
 		var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 		})();
 	</script>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title>Typeplate » A typographic Sass template encouraging great type on the Web</title>
+	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<meta name="description" content="A typographic boilerplate, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="./css/main.css">
 	<!--<script src="scripts/vendor/modernizr.min.js"></script>-->
+
 </head>
 <body>
 	<!-- $banner -->
-	<header class="header col-narrow botDivider" role="banner">
-		<!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
-		<a href="." class="logo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img"></a>
+	<header class="header botDivider bright column" role="banner">
+		<div class="col-wrap">
+			<!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
+			<a href="." class="logo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img"></a>
 
-		<nav role="navigation" class="nav">
-			<a href="./demo.html" class="nav-item epsilon">demo</a>
-			<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon">feedback</a>
-			<a href="//github.com/typeplate/typeplate.github.com/blob/master/scss/typeplate.scss" class="nav-item epsilon">source</a>
-		</nav>
+			<nav role="navigation" class="nav">
+				<a href="./demo.html" class="nav-item epsilon">demo</a>
+				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon">instructions</a>
+				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon">feedback</a>
+			</nav>
 
-		<div class="lede">
-			<p>Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.</p>
-			<p><i><b>Typeplate</b></i> is a "typographic starter kit". We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+			<div class="lede">
+				<p>Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.</p>
+				<p><i><b>Typeplate</b></i> is a "typographic starter kit". We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+			</div>
 		</div>
 	</header>
 
-	<!-- $table of contents -->
-	<section class="toc botDivider" id="table-of-contents">
-		<header>
-			<h1 class="delta center capsify">Table of Contents</h1>
-		</header>
-		<!-- 1. Base Type -->
-		<ol>
-			<li><a href="#base-type">Base Type</a></li>
-			<li><a href="#typographic-scale">Typographic Scale</a></li>
-			<li><a href="#color">Color</a></li>
-			<li><a href="#word-wrap">Word-wrap</a></li>
-		</ol>
-		<!-- 2. Paragraphs -->
-		<ol>
-			<li><a href="#indenting">Indenting</a></li>
-			<li><a href="#hyphenation">Hyphenation</a></li>
-		</ol>
-		<!-- 3. Detailing -->
-		<ol>
-			<li><a href="#small-caps">Small Capitals</a></li>
-			<li><a href="#drop-caps">Drop Capitals</a></li>
-			<li><a href="#unicode-ampersands">Unicode Ampersands</a></li>
-			<li><a href="#small-print">Small Print</a></li>
-		</ol>
-		<!-- 4. Pattern Modules -->
-		<ol>
-			<li><a href="#code-blocks">Code Blocks</a></li>
-			<li><a href="#figures">Figures</a></li>
-			<li><a href="#block-quotes">Block Quotes</a></li>
-			<li><a href="#pull-quotes">Pull Quotes</a></li>
-			<li><a href="#stats-tabs">Stats Tabs</a></li>
-			<li><a href="#footnotes">Footnotes</a></li>
-			<li><a href="#definition-lists">Definition Lists</a></li>
-		</ol>
-	</section>
+	<nav class="downloads nav">
+			<div class="col-wrap">
+				<a href="#" class="dl-item">
+					<i class="icon-download"></i>Sass
+					<hr>
+					v1.0 | size: ##kb
+				</a>
+				<a href="#" class="dl-item">
+					<i class="icon-download"></i>Sass w/ Compass
+					<hr>
+					v1.0 | size: ##kb
+				</a>
+				<a href="#" class="dl-item">
+					<i class="icon-download"></i>Bower pkg
+					<hr>
+					v1.0 | size: ##kb
+				</a>
+			</div>
+		</nav>
+
+	<div class="col-wrap">
+		<!-- $table of contents -->
+		<section class="toc botDivider" id="table-of-contents">
+			<header>
+				<h1 class="delta center capsify">Table of Contents</h1>
+			</header>
+			<!-- 1. Base Type -->
+			<ol>
+				<li><a href="#base-type">Base Type</a></li>
+				<li><a href="#typographic-scale">Typographic Scale</a></li>
+				<li><a href="#color">Color</a></li>
+				<li><a href="#word-wrap">Word-wrap</a></li>
+			</ol>
+			<!-- 2. Paragraphs -->
+			<ol>
+				<li><a href="#indenting">Indenting</a></li>
+				<li><a href="#hyphenation">Hyphenation</a></li>
+			</ol>
+			<!-- 3. Detailing -->
+			<ol>
+				<li><a href="#small-caps">Small Capitals</a></li>
+				<li><a href="#drop-caps">Drop Capitals</a></li>
+				<li><a href="#unicode-ampersands">Unicode Ampersands</a></li>
+				<li><a href="#small-print">Small Print</a></li>
+			</ol>
+			<!-- 4. Pattern Modules -->
+			<ol>
+				<li><a href="#code-blocks">Code Blocks</a></li>
+				<li><a href="#figures">Figures</a></li>
+				<li><a href="#block-quotes">Block Quotes</a></li>
+				<li><a href="#pull-quotes">Pull Quotes</a></li>
+				<li><a href="#stats-tabs">Stats Tabs</a></li>
+				<li><a href="#footnotes">Footnotes</a></li>
+				<li><a href="#definition-lists">Definition Lists</a></li>
+			</ol>
+		</section>
 
 	<!-- #base-type -->
 	<section class="base-type botDivider" id="base-type">
@@ -551,339 +575,341 @@ code {
 		<figure class="example">
 			<blockquote cite="http://where-i-got-my-info-from.com">
 				<p>“Embracing the fluid & flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web”</p>
-				<cite>
-					<small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
-				</cite>
-			</blockquote>
-		</figure>
+					<cite>
+						<small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
+					</cite>
+				</blockquote>
+			</figure>
 
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
-	&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
-	&lt;cite&gt;
-		&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
-	&lt;/cite&gt;
-&lt;/blockquote&gt;</code></pre>
-		</figure>
-	</section>
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
+		&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
+		&lt;cite&gt;
+			&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+		&lt;/cite&gt;
+		&lt;/blockquote&gt;</code></pre>
+			</figure>
+		</section>
 
-	<!-- #pull-quotes -->
-	<!-- http://24ways.org/2005/swooshy-curly-quotes-without-images -->
-	<!-- http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/ -->
-	<section class="pull-quotes botDivider" id="pull-quotes">
-		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
-		</header>
-		<p>Pull Quotes are tricky, but with this little ditty they're not so difficult or tedious anymore.</p>
+		<!-- #pull-quotes -->
+		<!-- http://24ways.org/2005/swooshy-curly-quotes-without-images -->
+		<!-- http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/ -->
+		<section class="pull-quotes botDivider" id="pull-quotes">
+			<header>
+				<h1 class="gamma"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
+			</header>
+			<p>Pull Quotes are tricky, but with this little ditty they're not so difficult or tedious anymore.</p>
 
-		<figure class="example">
-			<article class="entry">
-				<header>
-					<h1>Article Heading</h1>
-				</header>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. "Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus." lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?</p>
-				<aside class="pull-quote">
-					<blockquote>
-						<span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
-					</blockquote>
-				</aside>
-			</article>
-		</figure>
+			<figure class="example">
+				<article class="entry">
+					<header>
+						<h1>Article Heading</h1>
+					</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. "Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus." lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?</p>
+					<aside class="pull-quote">
+						<blockquote>
+							<span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
+						</blockquote>
+					</aside>
+				</article>
+			</figure>
 
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
-	&lt;aside class=&quot;pull-quote&quot;&gt;
-		&lt;blockquote&gt;
-			&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
-		&lt;/blockquote&gt;
-	&lt;/aside&gt;
-&lt;/article&gt;</code></pre>
-		</figure>
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
+		&lt;aside class=&quot;pull-quote&quot;&gt;
+			&lt;blockquote&gt;
+				&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
+			&lt;/blockquote&gt;
+		&lt;/aside&gt;
+		&lt;/article&gt;</code></pre>
+			</figure>
 
-		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">.entry {
-	position: relative;
-	padding-right: 50%;
-	.pull-quote {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 45%;
-	}
-}
-
-.bqstart {
-	float: left;
-	height: 45px;
-	margin-top: -50px;
-	//padding-top: 45px;
-	margin-bottom: 50px;
-	font-size: 700%;
-	color: red;
-}
-
-.bqend {
-	float: right;
-	height: 25px;
-	margin-top: -50px;
-	padding-top: 15px;
-	font-size: 700%;
-	color: red;
-}</code></pre>
-		</figure>
-	</section>
-
-	<!-- #stats-tabs -->
-	<section class="stats botDivider" id="stats-tabs">
-		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#stats-tabs">§</a> 4.6 Stats Tabs ala Pears</h1>
-		</header>
-
-		<figure class="example">
-			<ul class="stats-tabs">
-				<li><a href="#">1,234 <b>Stratocasters</b></a></li>
-				<li><a href="#">567 <b>Acoustic</b></a></li>
-				<li><a href="#">23,456 <b>Banjo</b></a></li>
-				<li><a href="#">3,456 <b>Dulcimer</b></a></li>
-				<li><a href="#">456 <b>Ukes</b></a></li>
-				<li><a href="#">26 <b>Bass Guitar</b></a></li>
-			</ul>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
-&lt;ul class=&quot;stats-tabs&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">//Stats Tabs Variables
-$stats-font-size: 1.125rem;
-$stats-list-margin: 0 0.625rem 0 0;
-$stats-list-padding: 0 0.625rem 0 0;
-$stats-item-font-size: 0.1875rem;
-$stats-item-margin: 0.125rem 0 0 0;
-$stats-border-style: 0.125rem solid #ccc;
-// Stats Tabs Styles
-.stats-tabs {
-	// use this if you go the float route for IE7 support
-	//oveflow: auto;
-	li {
-		//use a float instead of display: inline block for IE7
-		//float: left;
-		display: inline-block;
-		margin: $stats-list-margin;
-		padding: $stats-list-padding;
-		border-right: $stats-border-style;
-		&:last-child {
-			margin: 0;
-			padding: 0;
-			border: none;
+			<figure class="typeplate-code-block">
+				<figcaption>Sass</figcaption>
+				<pre><code class="language-sass">.entry {
+		position: relative;
+		padding-right: 50%;
+		.pull-quote {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 45%;
 		}
-		a {
+		}
+
+		.bqstart {
+		float: left;
+		height: 45px;
+		margin-top: -50px;
+		//padding-top: 45px;
+		margin-bottom: 50px;
+		font-size: 700%;
+		color: red;
+		}
+
+		.bqend {
+		float: right;
+		height: 25px;
+		margin-top: -50px;
+		padding-top: 15px;
+		font-size: 700%;
+		color: red;
+		}</code></pre>
+			</figure>
+		</section>
+
+		<!-- #stats-tabs -->
+		<section class="stats botDivider" id="stats-tabs">
+			<header>
+				<h1 class="gamma"><a class="perma-anchor" href="#stats-tabs">§</a> 4.6 Stats Tabs ala Pears</h1>
+			</header>
+
+			<figure class="example">
+				<ul class="stats-tabs">
+					<li><a href="#">1,234 <b>Stratocasters</b></a></li>
+					<li><a href="#">567 <b>Acoustic</b></a></li>
+					<li><a href="#">23,456 <b>Banjo</b></a></li>
+					<li><a href="#">3,456 <b>Dulcimer</b></a></li>
+					<li><a href="#">456 <b>Ukes</b></a></li>
+					<li><a href="#">26 <b>Bass Guitar</b></a></li>
+				</ul>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
+		&lt;ul class=&quot;stats-tabs&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;</code></pre>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>Sass</figcaption>
+				<pre><code class="language-sass">//Stats Tabs Variables
+		$stats-font-size: 1.125rem;
+		$stats-list-margin: 0 0.625rem 0 0;
+		$stats-list-padding: 0 0.625rem 0 0;
+		$stats-item-font-size: 0.1875rem;
+		$stats-item-margin: 0.125rem 0 0 0;
+		$stats-border-style: 0.125rem solid #ccc;
+		// Stats Tabs Styles
+		.stats-tabs {
+		// use this if you go the float route for IE7 support
+		//oveflow: auto;
+		li {
+			//use a float instead of display: inline block for IE7
 			//float: left;
 			display: inline-block;
-			font-size: $stats-font-size;
-			font-weight: bold;
-			span {
+			margin: $stats-list-margin;
+			padding: $stats-list-padding;
+			border-right: $stats-border-style;
+			&:last-child {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			a {
+				//float: left;
+				display: inline-block;
+				font-size: $stats-font-size;
+				font-weight: bold;
+				span {
+					display: block;
+					margin: $stats-item-margin;
+					font-size: $stats-item-font-size;
+					font-weight: normal;
+				}
+			}
+		}
+		}</code></pre>
+			</figure>
+		</section>
+
+
+		<!-- #footnotes -->
+		<section class="footnotes botDivider" id="footnotes">
+			<header>
+				<h1 class="gamma"><a class="perma-anchor" href="#footnotes">§</a> 4.7 Footnotes</h1>
+			</header>
+
+			<figure class="example">
+				<article>
+					<p>The sites we’ve built to display on a desktop, smartphone, or a tablet today could be on a TV Screen, coffee table display, or mega space yacht projection system tomorrow. Do yourself a favor and heed the advice of the Dao: A fully-scalable web<sup><a href="#fn-item1" id="fn-return">1</a></sup></p>
+					<footer class="foot-note">
+						<ol>
+							<li id="fn-item1">Style sheets that use relative units can more easily scale from one output environment to another. Most of the time I use em and rem. <a href="#fn-return">↩</a></li>
+						</ol>
+					</footer>
+				</article>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;article&gt;
+		&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+		&lt;footer class=&quot;foot-note&quot;&gt;
+			&lt;ol&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ol&gt;
+		&lt;/footer&gt;
+		&lt;/article&gt;</code></pre>
+			</figure>
+		</section>
+
+		<!-- #definition-lists -->
+		<section class="definition-lists botDivider" id="definition-lists">
+			<header>
+				<h1 class="gamma"><a class="perma-anchor" href="#definition-lists">§</a> 4.8 Definition Lists</h1>
+			</header>
+			<p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
+			<p>TypePlate offers several different patterns for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
+
+			<h3 class="delta">a) Multi-line Definitions (default)</h3>
+			<figure class="example">
+				<dl>
+					<dt><b>This is a term</b></dt>
+						<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+					<dt><b>Another Term</b></dt>
+						<dd>And it gets a definition too, which is this line</dd>
+						<dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
+				</dl>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;dl&gt;
+		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+		&lt;/dl&gt;</code></pre>
+			</figure>
+
+			<h3 class="delta">b) Inline Definitions</h3>
+			<p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
+
+			<figure class="example">
+				<dl class="lining">
+					<dt><b>This is a term</b></dt>
+						<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+					<dt><b>Another Term</b></dt>
+						<dd class="micro">And it gets a definition too, which is this line</dd>
+						<dd class="micro"> this is a 2<sup>nd</sup> definition for a single term.</dd>
+					<dt><b>Term</b></dt>
+					<dt><b>Other Defined Term</b></dt>
+						<dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+				</dl>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;dl class="lining"&gt;
+		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+		&lt;dd&gt;&lt;/dd&gt;
+		&lt;/dl&gt;</code></pre>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>Sass</figcaption>
+				<pre><code class="language-sass">@mixin definition-list-style($style) {
+		// lining style
+		@if $style == lining {
+			dt, dd {
+				display: inline;
+				margin: 0;
+			}
+			dt, dd {
+				& + dt {
+					&:before {
+						content: "\A";
+						white-space: pre;
+					}
+				}
+			}
+			dd {
+				& + dd {
+					&:before {
+						content: ", ";
+					}
+				}
+				&:before {
+						content: ": ";
+						margin-left: -0.2rem; // removes extra space between the dt and the colon
+				}
+			}
+		}
+		}
+
+		dl {
+		  @include definition-list-style(lining);
+		}</code></pre>
+			</figure>
+
+			<h3 class="delta">c) Dictionary-style Definition</h3>
+			<p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
+
+			<figure class="example">
+				<dl class="dictionary-style">
+					<dt><b>This is a term</b></dt>
+						<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+					<dt><b>Another Term</b></dt>
+						<dd>And it gets a definition too, which is this line</dd>
+						<dd> this is a 2<sup>nd</sup> definition for a single term.</dd>
+					<dt><b>Term</b></dt>
+					<dt><b>Other Defined Term</b></dt>
+						<dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+				</dl>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>HTML</figcaption>
+				<pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
+		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+			&lt;dd&gt;&lt;/dd&gt;
+		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+			&lt;dd&gt;&lt;/dd&gt;
+			&lt;dd&gt;&lt;/dd&gt;
+		&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+			&lt;dd&gt;&lt;/dd&gt;
+		&lt;/dl&gt;</code></pre>
+			</figure>
+
+			<figure class="typeplate-code-block">
+				<figcaption>Sass</figcaption>
+				<pre><code class="language-sass">@mixin definition-list-style($style) {
+		// dictionary-style
+		@if $style == dictionary-style {
+			dt {
+				display: inline;
+				counter-reset: definitions;
+				& + dt {
+					&:before {
+						content: ", ";
+						margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+					}
+				}
+			}
+			dd {
 				display: block;
-				margin: $stats-item-margin;
-				font-size: $stats-item-font-size;
-				font-weight: normal;
-			}
-		}
-	}
-}</code></pre>
-		</figure>
-	</section>
-
-
-	<!-- #footnotes -->
-	<section class="footnotes botDivider" id="footnotes">
-		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#footnotes">§</a> 4.7 Footnotes</h1>
-		</header>
-
-		<figure class="example">
-			<article>
-				<p>The sites we’ve built to display on a desktop, smartphone, or a tablet today could be on a TV Screen, coffee table display, or mega space yacht projection system tomorrow. Do yourself a favor and heed the advice of the Dao: A fully-scalable web<sup><a href="#fn-item1" id="fn-return">1</a></sup></p>
-				<footer class="foot-note">
-					<ol>
-						<li id="fn-item1">Style sheets that use relative units can more easily scale from one output environment to another. Most of the time I use em and rem. <a href="#fn-return">↩</a></li>
-					</ol>
-				</footer>
-			</article>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;article&gt;
-	&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-	&lt;footer class=&quot;foot-note&quot;&gt;
-		&lt;ol&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/footer&gt;
-&lt;/article&gt;</code></pre>
-		</figure>
-	</section>
-
-	<!-- #definition-lists -->
-	<section class="definition-lists botDivider" id="definition-lists">
-		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#definition-lists">§</a> 4.8 Definition Lists</h1>
-		</header>
-		<p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
-		<p>TypePlate offers several different patterns for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
-
-		<h3 class="delta">a) Multi-line Definitions (default)</h3>
-		<figure class="example">
-			<dl>
-				<dt><b>This is a term</b></dt>
-					<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
-				<dt><b>Another Term</b></dt>
-					<dd>And it gets a definition too, which is this line</dd>
-					<dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
-			</dl>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;dl&gt;
-	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-	&lt;dd&gt;&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-		</figure>
-
-		<h3 class="delta">b) Inline Definitions</h3>
-		<p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
-
-		<figure class="example">
-			<dl class="lining">
-				<dt><b>This is a term</b></dt>
-					<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
-				<dt><b>Another Term</b></dt>
-					<dd class="micro">And it gets a definition too, which is this line</dd>
-					<dd class="micro"> this is a 2<sup>nd</sup> definition for a single term.</dd>
-				<dt><b>Term</b></dt>
-				<dt><b>Other Defined Term</b></dt>
-					<dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
-			</dl>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;dl class="lining"&gt;
-	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-	&lt;dd&gt;&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">@mixin definition-list-style($style) {
-	// lining style
-	@if $style == lining {
-		dt, dd {
-			display: inline;
-			margin: 0;
-		}
-		dt, dd {
-			& + dt {
+				counter-increment: definitions;
 				&:before {
-					content: "\A";
-					white-space: pre;
+					content: counter(definitions, decimal) ". ";
 				}
 			}
 		}
-		dd {
-			& + dd {
-				&:before {
-					content: ", ";
-				}
-			}
-			&:before {
-					content: ": ";
-					margin-left: -0.2rem; // removes extra space between the dt and the colon
-			}
 		}
-	}
-}
 
-dl {
-  @include definition-list-style(lining);
-}</code></pre>
-		</figure>
+		dl {
+		@include definition-list-style(dictionary-style);
+		}</code></pre>
+			</figure>
+		</section>
+		<footer role="contentinfo" class="site-footer">
+			<p>Copyright &copy;2013. TypePlate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
+		</footer>
+	</div> <!-- end last col-wrap -->
 
-		<h3 class="delta">c) Dictionary-style Definition</h3>
-		<p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
-
-		<figure class="example">
-			<dl class="dictionary-style">
-				<dt><b>This is a term</b></dt>
-					<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
-				<dt><b>Another Term</b></dt>
-					<dd>And it gets a definition too, which is this line</dd>
-					<dd> this is a 2<sup>nd</sup> definition for a single term.</dd>
-				<dt><b>Term</b></dt>
-				<dt><b>Other Defined Term</b></dt>
-					<dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
-			</dl>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
-	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
-		&lt;dd&gt;&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
-		</figure>
-
-		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">@mixin definition-list-style($style) {
-	// dictionary-style
-	@if $style == dictionary-style {
-		dt {
-			display: inline;
-			counter-reset: definitions;
-			& + dt {
-				&:before {
-					content: ", ";
-					margin-left: -0.2rem; /* removes extra space between the dt and the comma */
-				}
-			}
-		}
-		dd {
-			display: block;
-			counter-increment: definitions;
-			&:before {
-				content: counter(definitions, decimal) ". ";
-			}
-		}
-	}
-}
-
-dl {
-	@include definition-list-style(dictionary-style);
-}</code></pre>
-		</figure>
-	</section>
-	<footer role="contentinfo" class="site-footer">
-		<p><small>Copyright &copy;2013. TypePlate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</small></p>
-	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="/js/minified/main-min.js"></script>
