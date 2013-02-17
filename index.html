@@ -87,8 +87,9 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
-//the serif/sans-serif var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss"; reference.
+
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
 $serif-boolean: true !default;
 
 @mixin base-type($weight, $line-height, $font-size, $font-family...) {
@@ -153,18 +154,18 @@ html {
 }
 
 //TYPE SCALE
-$tera:      117; // 117 = 18 × 6.5
-$giga:      90; //  90  = 18 × 5
-$mega:      72; //  72  = 18 × 4
-$alpha:     60; //  60  = 18 × 3.3333
-$beta:      48; //  48  = 18 × 2.6667
-$gamma:     36; //  36  = 18 × 2
-$delta:     24; //  24  = 18 × 1.3333
-$epsilon:   21; //  21  = 18 × 1.1667
-$zeta:      18; //  18  = 18 × 1
+$tera:		117;	//	117	= 18 × 6.5
+$giga:		90;		//	90  = 18 × 5
+$mega:		72;		//	72  = 18 × 4
+$alpha:		60;		//	60  = 18 × 3.3333
+$beta:		48;		//	48  = 18 × 2.6667
+$gamma:		36;		//	36  = 18 × 2
+$delta:		24;		//	24  = 18 × 1.3333
+$epsilon:	21;		//	21  = 18 × 1.1667
+$zeta:		18;		//	18  = 18 × 1
 
 //typscale unit
-$type-scale-unit-value: em;
+$type-scale-unit-value: rem;
 
 .tera {
 	@include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
@@ -178,27 +179,33 @@ $type-scale-unit-value: em;
 	@include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
 }
 
-h1, .alpha {
+h1,
+.alpha {
 	@include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
 
-h2, .beta {
+h2,
+.beta {
 	@include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
 
-h3, .gamma {
+h3,
+.gamma {
 	@include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
 
-h4, .delta {
+h4,
+.delta {
 	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
 }
 
-h5, .epsilon {
+h5,
+.epsilon {
 	@include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
 }
 
-h6, .zeta {
+h6,
+.zeta {
 	@include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }</code></pre>
 		</figure>
@@ -212,8 +219,8 @@ h6, .zeta {
 		<p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
 
 		<figure class="typeplate-code-block">
-			<figcaption>CSS</figcaption>
-			<pre><code class="language-css">//color
+			<figcaption>Sass</figcaption>
+			<pre><code class="language-sass">//color
 body { color: #444; }
 h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre>
 		</figure>
@@ -227,12 +234,19 @@ h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We'll also be checking a few things like the longest word in the world "Methionylthreonylthreonylglutaminylarginylisoleucine" and other stuff like links that are way long such as <a href="http://google.com" rel="external">"Methionylthreonylthreonylglutaminylarginylisoleucine"</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
 
 		<figure class="typeplate-code-block">
-			<figcaption>CSS</figcaption>
-			<pre><code class="language-sass">body {
+			<figcaption>Sass</figcaption>
+			<pre><code class="language-sass">@mixin word-wrap($wrap-value) {
 	// normal: Indicates that lines may only break at normal word break points.
-	// break-word : Indicates that normally unbreakable words may be broken at …
+	// break-word : Indicates that normally unbreakable words may be broken at ...
 	// arbitrary points if there are no otherwise acceptable break points in the line.
-	word-wrap: break-word;
+	word-wrap: $wrap-value;
+}
+
+body {
+	// normal: Indicates that lines may only break at normal word break points.
+	// break-word : Indicates that normally unbreakable words may be broken at ...
+	// arbitrary points if there are no otherwise acceptable break points in the line.
+	@include word-wrap(break-word);
 }</code></pre>
 		</figure>
 	</section>
@@ -283,10 +297,11 @@ p {
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">@mixin css-hyphens($val) {
-	-webkit-hyphens: $val; // Safari 6
-	-moz-hyphens: $val; // FF19
-	-ms-hyphens: $val; // IE10
-	hyphens: $val;
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val;		// Firefox 16 thru 20
+	-ms-hyphens: $val;		// IE10
+	hyphens: $val;			// W3C standard
 };
 
 body {
@@ -316,6 +331,9 @@ body {
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
+	// depends on the font family.
+	// some font-families don't support small caps
+	// or don't provide them with their web font.
 	font-variant: small-caps;
 	font-weight: $font-weight;
 	text-transform: lowercase;
