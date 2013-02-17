@@ -94,12 +94,12 @@ hr {
 	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $line-height * 1rem;
 	cursor: pointer;
-	// mama bear breakpoint
-	@include breakpoint(mama-bear) {
+
+	@include breakpoint(papa-bear) {
 		vertical-align: -190%;
 		margin-right: 5em;
 	}
-	// baby bear breakpoint
+
 	@include breakpoint(baby-bear) {
 		display: block;
 		text-align: center;
@@ -118,7 +118,7 @@ hr {
 		height: 100%;
 	}
 
-	@include breakpoint(mama-bear) {
+	@include breakpoint(papa-bear) {
 		width: 12em;
 	}
 
@@ -136,7 +136,8 @@ hr {
 	background: $white;
 	@include breakpoint(baby-bear) {
 		text-align: center;
-		p, .nav {
+		padding-top: 0;
+		p {
 			text-align: left;
 		}
 	}
@@ -153,8 +154,9 @@ hr {
 	@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
-		text-align: center;
+		padding-top: 0.825em;
 		display: block;
+		text-align: center;
 	}
 }
 
@@ -173,14 +175,36 @@ hr {
 	}
 
 	@include breakpoint(baby-bear) {
-		display: inline;
-		padding: 0.25em 0.25em;
 		&:before {
 			content: "";
+		}
+
+		border-radius: 0.333333em;
+		display: inline-block;
+		padding: 0.825em;
+		margin-right: 0.5em;
+		font-family: Monaco, Consolas, monospace;
+		font-size: 0.825em;
+		background: $cobalt-deep;
+		color: $white;
+		&:visited {
+			color: $white;
+		}
+		&:hover, &:focus {
+			background: $rust;
+			color: white;
 		}
 	}
 }
 
+.dl-item, .social-item {
+	display: inline-block;
+	letter-spacing: normal;
+	border-radius: 0.333333em;
+	font-family: Monaco, Consolas, monospace;
+	font-size: 0.825em;
+	text-align: center;
+}
 
 .downloads {
 	background: $cobalt-deep;
@@ -188,21 +212,15 @@ hr {
 	display: block;
 }
 .dl-item {
-	display: inline-block;
-	letter-spacing: normal;
 	padding: $line-height * 0.5rem;
-	border-radius: 0.333333em;
-	font-family: Monaco, Consolas, monospace;
-	text-align: center;
-	font-size: 0.825em;
 
 	width: 31%;
-	margin-right: 3.5%;
+	margin-right: 3%;
 	&:last-of-type {
 		margin-right: 0;
 	}
 
-	@include breakpoint(mama-bear) {
+	@include breakpoint(papa-bear) {
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 1.65em;
@@ -210,6 +228,27 @@ hr {
 
 	background: $white;
 	color: $cobalt-deep;
+	&:hover, &:focus {
+		background: $rust;
+		color: white;
+	}
+}
+
+.social-nav {
+	position: absolute;
+	top: 1.65em;
+	right: 1.65em;
+
+	@include breakpoint(mama-bear) {
+		position: static;
+		margin-bottom: 0.825em;
+	}
+}
+.social-item {
+	margin-left: 0.825em;
+	padding: 0.825em 1em;
+	background: $cobalt-deep;
+	color: $white;
 	&:hover, &:focus {
 		background: $rust;
 		color: white;
@@ -281,14 +320,13 @@ hr {
 // ============================================================
 
 .perma-anchor {
-	// color: transparentize($mustard, 0.5);
 	color: #444;
 	font-weight: normal;
 	@extend .gamma;
 	position: relative;
 	top: -0.125em;
-	&:hover {
-		color: $mustard;
+	&:hover, &:focus {
+		color: $rust;
 	}
 }
 
