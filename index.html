@@ -220,9 +220,21 @@ h6,
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">//color
-body { color: #444; }
-h1,h2,h3,h4,h5,h6 { color: #222; }</code></pre>
+			<pre><code class="language-sass">$body-copy-color: #444;
+$heading-color: #222;
+
+body {
+	color: $body-copy-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $heading-color;
+}</code></pre>
 		</figure>
 	</section>
 
