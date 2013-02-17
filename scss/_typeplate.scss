@@ -628,3 +628,23 @@ h6 {
  * Extend this object into your markup.
  *
  */
+
+
+ // $Footnotes
+// --------------------------------------------------------------------------
+
+/**
+ * Create Footnote styles
+ *
+	<article>
+		<p><sup><a href="#"></a></sup></p>
+		<footer class="foot-note">
+			<ol>
+				<li><a href="#">↩</a></li>
+			</ol>
+		</footer>
+	</article>
+ *
+ * Extend this object into your markup.
+ *
+ */
