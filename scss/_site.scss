@@ -223,7 +223,14 @@ hr {
 		margin-right: 0;
 	}
 
+	@include breakpoint(bigass-bear) {
+		font-size: 0.75em;
+		padding: $line-height * 0.35rem;
+	}
+
 	@include breakpoint(papa-bear) {
+		font-size: 1em;
+		padding: $line-height * 0.5rem;
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 1.65em;
