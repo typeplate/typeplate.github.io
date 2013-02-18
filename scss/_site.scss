@@ -154,7 +154,7 @@ hr {
 .nav {
 	// in preparation for inline-block children
 	letter-spacing: -4px;
-	@extend %rhythm;
+	//@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
 		padding-top: 0.825em;
@@ -216,7 +216,6 @@ hr {
 }
 .dl-item {
 	padding: $line-height * 0.5rem;
-
 	width: 31%;
 	margin-right: 3%;
 	&:last-of-type {
@@ -271,6 +270,12 @@ hr {
 // $Table of Contents
 // ============================================================
 
+.toc {
+	border-radius: 0 0 6px 6px;
+	background: white;
+	color: #f0f0f0;
+}
+
 .toc ol {
 	list-style: decimal !important;
 	counter-reset: item;
@@ -282,7 +287,7 @@ hr {
 
 .toc ol li:before {
 	counter-increment: item;
-	color: #444;
+	//color: #444;
 	font-style: normal;
 	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
@@ -291,6 +296,29 @@ hr {
 @for $i from 1 through 4 {
 	.toc ol:nth-of-type(#{$i}) li:before {
 		content: "#{$i}." counter(item) " – ";
+	}
+}
+
+// $TOC Pull Down
+// ============================================================
+
+#table-of-contents h1 {
+	&:hover {
+		cursor: pointer;
+	}
+	&:after {
+		display: block;
+		content: "↓";
+	}
+}
+
+#drawer {
+	height: 0em;
+	overflow: hidden;
+	&.active {
+		background: white;
+		height: auto;
+		overflow: visible;
 	}
 }
 
