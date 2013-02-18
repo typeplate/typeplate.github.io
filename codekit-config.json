@@ -2,6 +2,15 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
+    "\/404.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/404.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/scss\/demo.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -13,17 +22,6 @@
       "outputAbbreviatedPath" : "\/css\/demo.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/logo-sketches\/logo_v1.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
-      "initialSize" : 57630,
-      "fileType" : 8192
     },
     "\/logo-sketches\/logo_v4.png" : {
       "ignoreWasSetByUser" : 0,
@@ -208,14 +206,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/demo.html" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/demo.html",
+      "inputAbbreviatedPath" : "\/config.rb",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "fileType" : 32768
     },
     "\/logo-sketches\/logo_v9.png" : {
       "ignoreWasSetByUser" : 0,
@@ -272,25 +270,26 @@
       "initialSize" : 12762,
       "fileType" : 8192
     },
-    "\/config.rb" : {
+    "\/demo.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
+      "inputAbbreviatedPath" : "\/demo.html",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "fileType" : 2048
     },
-    "\/js\/vendor\/jquery.min.js" : {
-      "ignoreWasSetByUser" : 1,
+    "\/scss\/_site.scss" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/vendor\/minified\/jquery.min-min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/scss\/_site.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_site.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/scss\/_icons.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -316,17 +315,16 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/_site.scss" : {
-      "ignoreWasSetByUser" : 0,
+    "\/js\/vendor\/jquery.min.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_site.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_site.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/vendor\/minified\/jquery.min-min.js",
+      "fileType" : 64
     },
     "\/logo-sketches\/sketches2.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -442,6 +440,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/logo-sketches\/sketches1.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/logo-sketches\/sketches1.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/logo-sketches\/sketches1.jpg",
+      "initialSize" : 1413749,
+      "fileType" : 4096
+    },
     "\/scss\/_fontello.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -454,25 +463,16 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/logo-sketches\/sketches1.jpg" : {
+    "\/logo-sketches\/logo_v1.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/logo-sketches\/sketches1.jpg",
+      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/logo-sketches\/sketches1.jpg",
-      "initialSize" : 1413749,
-      "fileType" : 4096
-    },
-    "\/404.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/404.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
+      "initialSize" : 57630,
+      "fileType" : 8192
     }
   },
   "manualImportLinks" : [

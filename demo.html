@@ -23,20 +23,22 @@
 	</head>
 	<body>
 		<!-- $banner -->
-		<header class="header col-narrow botDivider" role="banner">
-			<!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
-			<a href="." class="logo">
-				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img"></a>
+		<header class="header botDivider bright column" role="banner">
+			<div class="col-wrap">
+				<!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
+				<a href="." class="logo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img"></a>
 
-			<nav role="navigation" class="nav">
-				<a href="./scss/typeplate.scss" rel="bookmark" class="nav-item epsilon" data-version="0.1">download</a>
-				<a href="./demo.html" class="nav-item epsilon">demo</a>
-				<a href="//github.com/typeplate/typeplate.github.com/blob/master/scss/typeplate.scss" class="nav-item epsilon">src</a>
-				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon">feedback</a>
-			</nav>
+				<nav role="navigation" class="nav">
+					<a href="./demo.html" class="nav-item epsilon">demo</a>
+					<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon">instructions</a>
+					<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon">feedback</a>
+				</nav>
 
-			<p>Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don't separate styling and markup, making them tough to use in a truly modular fashion. We weren't satisfied, so we made a thing that doesn’t do that.</p>
-			<p><i><b>Typeplate</b></i> is a "typographic starter kit". We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+				<nav class="social-nav">
+					<a href="//github.com/typeplate/typeplate.github.com" class="social-item"><i class="icon-github"></i>Fork</a>
+					<a href="//twitter.com/typeplate" class="social-item"><i class="icon-twitter"></i>Follow</a>
+				</nav>
+			</div>
 		</header>
 
 		<div id="typeplate-widgets-wrap">
@@ -54,14 +56,12 @@
 				<label for="typeplate-off">Typeplate Off</label>
 				<input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
 			</form>
-			<!-- /end Demo Radio Buttons -->
-			<iframe src="//ghbtns.com/github-btn.html?user=typeplate&repo=typeplate.github.com&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
 		</div>
 		<h2>§ Base Type</h2>
 		<!-- $Typographic Scale -->
 		<section>
 			<h2>Typographic scale</h2>
-			<figure>
+			<figure class="typeplate-code-block">
 				<h1>Heading 1</h1>
 				<h2>Heading 2</h2>
 				<h3>Heading 3</h3>
