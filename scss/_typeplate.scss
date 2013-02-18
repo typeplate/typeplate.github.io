@@ -25,6 +25,7 @@ $weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$measure: $font-base * $line-height;
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
@@ -155,10 +156,22 @@ $stats-border-style: 0.125rem solid #ccc;
 // $M o d u l a r    S c a l e
 // --------------------------------------------------------------------------
 
-@mixin modular-scale($scale, $base, $value) {
-	font-size: $scale#{px}; // Pixel falback for IE versions <= 8
+// $Typographic scale
+@mixin modular-scale($scale, $base, $value, $measure:"") {
+	font-size: $scale#{px};
 	font-size: modular-scale($scale, $base, $value);
+	@if $measure != "" {
+		margin-bottom: measure-margin($scale, $measure, $value);
+	}
 }
+	@function modular-scale($scale, $base, $value) {
+		// divide a given font-size by base font-size & return a relative em value
+		@return ($scale/$base)#{$value};
+	}
+	@function measure-margin($scale, $measure, $value) {
+		// divide 1 unit of measure by given font-size & return a relative em value
+		@return ($measure/$scale)#{$value};
+	}
 
 
 // $B o d y    C o p y
@@ -364,47 +377,24 @@ body {
 // $H e a d i n g s
 // --------------------------------------------------------------------------
 
-.tera {
-	@include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
+@each $size in tera, giga, mega {
+    .#{$size} {
+        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}', $measure);
+    }
 }
 
-.giga {
-	@include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+@each $size in alpha, beta, gamma, delta, epsilon, zeta {
+    .#{$size} {
+        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}');
+    }
 }
 
-.mega {
-	@include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+@each $size in h1, h2, h3, h4, h5, h6 {
+    #{$size} {
+        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}');
+    }
 }
 
-h1,
-.alpha {
-	@include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
-}
-
-h2,
-.beta {
-	@include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
-}
-
-h3,
-.gamma {
-	@include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
-}
-
-h4,
-.delta {
-	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
-}
-
-h5,
-.epsilon {
-	@include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
-}
-
-h6,
-.zeta {
-	@include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
-}
 
 
 // $ P a r a g r a p h s
