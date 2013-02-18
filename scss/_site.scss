@@ -146,6 +146,9 @@ hr {
 .lede {
 	padding-top: 0.825em;
 	margin-bottom: 1.65em;
+	& > p:not(.no-indent) {
+		margin-top: 0;
+	}
 }
 
 .nav {
@@ -344,8 +347,8 @@ hr {
 
 .typeplate-code-block {
 	pre {
-		background: transparentize($cobalt-fade, 0.5);
-		border: 1px solid $cobalt-fade;
+		font-size: 0.825em;
+		background: #021321;
 		box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
 		padding: $line-height * 1rem;
 		.no-js & {
@@ -353,7 +356,7 @@ hr {
 		}
 	}
 	code {
-		color: #444;
+		color: #ddd;
 	}
 }
 
@@ -548,7 +551,7 @@ p {
 	// reset top margin, and set bottom margin equal to one unit of line-height
 	@extend %rhythm;
 	& + p:not(.no-indent) {
-		// margin-top: $line-height * -0.5rem;
+		margin-top: $line-height * -0.5rem;
 	}
 }
 
