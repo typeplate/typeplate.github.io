@@ -1,0 +1,297 @@
+@charset "UTF-8";
+/*
+ * Typeplate v1.0
+ ============================================================
+ *	url: https://github.com/typePlate/typeplate.github.com
+ *
+ *	Authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *	License: This work is in the public domain. Open Source y'all!
+ *	http://creativecommons.org/publicdomain/zero/1.0
+ ============================================================
+*/
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+0026;
+}
+
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C;
+}
+
+/**
+ * Dropcap Sass @include
+ * Use the following Sass @include with any selector you feel necessary.
+ *
+	@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+html {
+  font: normal 112.5%/1.65 serif;
+}
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  color: #444444;
+}
+
+.tera {
+  font-size: 117px;
+  font-size: 117/18rem;
+  margin-bottom: 29.7/117rem;
+}
+
+.giga {
+  font-size: 90px;
+  font-size: 90/18rem;
+  margin-bottom: 29.7/90rem;
+}
+
+.mega {
+  font-size: 72px;
+  font-size: 72/18rem;
+  margin-bottom: 29.7/72rem;
+}
+
+.alpha, h1 {
+  font-size: 60px;
+  font-size: 60/18rem;
+  margin-bottom: 29.7/60rem;
+}
+
+.beta, h2 {
+  font-size: 48px;
+  font-size: 48/18rem;
+  margin-bottom: 29.7/48rem;
+}
+
+.gamma, h3 {
+  font-size: 36px;
+  font-size: 36/18rem;
+  margin-bottom: 29.7/36rem;
+}
+
+.delta, h4 {
+  font-size: 24px;
+  font-size: 24/18rem;
+  margin-bottom: 29.7/24rem;
+}
+
+.epsilon, h5 {
+  font-size: 21px;
+  font-size: 21/18rem;
+  margin-bottom: 29.7/21rem;
+}
+
+.zeta, h6 {
+  font-size: 18px;
+  font-size: 18/18rem;
+  margin-bottom: 29.7/18rem;
+}
+
+p + p {
+  text-indent: 1.5em;
+}
+
+pre code {
+  word-wrap: normal;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+pre {
+  word-wrap: auto;
+  white-space: pre;
+}
+
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+/**
+ * Abbreviations Markup
+ *
+	<abbr title="hyper text markup language">HMTL</abbr>
+ *
+ * Extend this object into your markup.
+ *
+ */
+abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+abbr:hover {
+  cursor: help;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222222;
+}
+
+/**
+ * Lining Definition Style Markup
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.lining dd + dd:before {
+  content: ", ";
+}
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/**
+ * Dictionary Definition Style Markup
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+/**
+ * Stats Tab Markup
+ *
+	<ul class="stats-tabs">
+		<li><a href="#">[value]<b>[name]</b></a></li>
+	</ul>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.stats-tabs {
+  padding: 0;
+}
+.stats-tabs li {
+  display: inline-block;
+  margin: 0 0.625rem 0 0;
+  padding: 0 0.625rem 0 0;
+  border-right: 0.125rem solid #cccccc;
+}
+.stats-tabs li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.stats-tabs li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.stats-tabs li a b {
+  display: block;
+  margin: 0.125rem 0 0 0;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+/**
+ * Blockquote Markup
+ *
+	<blockquote cite="">
+		<p>&Prime;&Prime;</p>
+		<cite>
+			<small><a href=""></a></small>
+		</cite>
+	</blockquote>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Pull Quotes Include: Pass in custom values for arguments you desire, pass in 'null'
+ * for those arguments you do not. For Example:
+ *
+	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+	@include pull-quote(null, 45px, null, 700%, white);
+
+*	Include these classes in your custom stylesheet outside of typeplate.scss
+	.bqstart {
+		@include pull-quote(left,45px, -50px 12px 50px auto, 700%, white);
+	}
+
+	.bqend {
+		@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+	}
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+/**
+ * Figures Markup
+ *
+	<figure>
+		<figcaption>
+			<strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+	<article>
+		<p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+		<footer>
+			<ol class="foot-notes">
+				<li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+			</ol>
+		</footer>
+	</article>
+ *
+ * Extend this object into your markup.
+ *
+ */

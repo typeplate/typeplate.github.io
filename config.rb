@@ -24,9 +24,7 @@ http_images_dir = "img"
 #Project Assets Location
 css_dir = "css"
 sass_dir = "scss"
-#images_dir = "app/images"
 images_dir = "img"
-#javascripts_dir = "temp/scripts"
 javascripts_dir = "js"
 
 #Projects Font Directory
@@ -71,4 +69,4 @@ Compass::BrowserSupport.add_support("repeating-linear-gradient", "webkit", "moz"
 # sass-convert -R --from scss --to sass scss scss && rm -rf sass && mv scss sass
 
 
-output_style = :compressed # by Fire.app 
+output_style = :compressed # by Fire.app

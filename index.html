@@ -16,7 +16,6 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="./css/main.css">
 	<!--<script src="scripts/vendor/modernizr.min.js"></script>-->
-
 </head>
 <body>
 	<!-- $banner -->
@@ -44,25 +43,24 @@
 	</header>
 
 	<nav class="downloads nav">
-			<div class="col-wrap">
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Sass w/ Compass
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Bower pkg
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Unminified CSS
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-			</div>
-		</nav>
-
+		<div class="col-wrap">
+			<a href="./scss/_typeplate.scss" class="dl-item">
+				<i class="icon-download"></i>Sass w/Compass
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+			<a href="#" class="dl-item">
+				<i class="icon-download"></i>Bower pkg
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+			<a href="./css/typeplate_unminified.css" class="dl-item">
+				<i class="icon-download"></i>Unminified CSS
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+		</div>
+	</nav>
 
 	<div class="col-wrap">
 		<!-- $table of contents -->
@@ -212,11 +210,20 @@ $type-scale-unit-value: rem;
 // and the second value is the variable for the size
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
+// associate h1-h6 tags with their appropriate greek heading
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
 	}
-}</code></pre>
+}
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 { @extend .alpha; }
+h2 { @extend .beta; }
+h3 { @extend .gamma; }
+h4 { @extend .delta; }
+h5 { @extend .epsilon; }
+h6 { @extend .zeta; }</code></pre>
 		</figure>
 	</section>
 

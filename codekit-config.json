@@ -2,6 +2,18 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8248",
   "files" : {
+    "\/scss\/demo.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/demo.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/demo.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/404.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -10,17 +22,6 @@
       "inputAbbreviatedPath" : "\/404.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/logo-sketches\/logo_v1.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
-      "initialSize" : 57630,
-      "fileType" : 8192
     },
     "\/logo-sketches\/logo_v4.png" : {
       "ignoreWasSetByUser" : 0,
@@ -44,6 +45,17 @@
       "outputAbbreviatedPath" : "\/js\/minified\/plugins-min.js",
       "fileType" : 64
     },
+    "\/logo-sketches\/logo_v7.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v7.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v7.png",
+      "initialSize" : 76646,
+      "fileType" : 8192
+    },
     "\/img\/subtle_grunge.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -55,16 +67,14 @@
       "initialSize" : 84037,
       "fileType" : 8192
     },
-    "\/logo-sketches\/logo_v7.png" : {
+    "\/css\/typeplate_unminified.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v7.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v7.png",
-      "initialSize" : 76646,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/css\/typeplate_unminified.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/css\/main.css" : {
       "ignoreWasSetByUser" : 0,
@@ -182,18 +192,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 32768
     },
-    "\/scss\/main.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/main.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/main.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/demo.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -202,6 +200,15 @@
       "inputAbbreviatedPath" : "\/demo.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/css\/typeplate.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/typeplate.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/logo-sketches\/logo_v9.png" : {
       "ignoreWasSetByUser" : 0,
@@ -214,14 +221,17 @@
       "initialSize" : 186332,
       "fileType" : 8192
     },
-    "\/css\/typeplate.css" : {
+    "\/scss\/main.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/typeplate.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/scss\/main.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/main.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/scss\/_typeplate.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -235,16 +245,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/main.js" : {
+    "\/scss\/_vars.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/main.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/scss\/_vars.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_vars.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/img\/glyphicons-halflings.png" : {
       "ignoreWasSetByUser" : 0,
@@ -257,17 +268,16 @@
       "initialSize" : 12762,
       "fileType" : 8192
     },
-    "\/scss\/_vars.scss" : {
+    "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_vars.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_vars.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/js\/main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
+      "fileType" : 64
     },
     "\/js\/vendor\/jquery.min.js" : {
       "ignoreWasSetByUser" : 1,
@@ -365,17 +375,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/logo-sketches\/logo_v5.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v5.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v5.png",
-      "initialSize" : 92192,
-      "fileType" : 8192
-    },
     "\/logo-sketches\/TypePlate_T.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -385,6 +384,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/logo-sketches\/TypePlate_T.png",
       "initialSize" : 143638,
+      "fileType" : 8192
+    },
+    "\/logo-sketches\/logo_v5.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v5.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v5.png",
+      "initialSize" : 92192,
       "fileType" : 8192
     },
     "\/img\/logo.png" : {
@@ -453,17 +463,16 @@
       "initialSize" : 1413749,
       "fileType" : 4096
     },
-    "\/scss\/demo.scss" : {
+    "\/logo-sketches\/logo_v1.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/demo.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/demo.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/logo-sketches\/logo_v1.png",
+      "initialSize" : 57630,
+      "fileType" : 8192
     }
   },
   "manualImportLinks" : [
