@@ -205,33 +205,15 @@ $type-scale-unit-value: rem;
 	}
 
 
-// for large heading sizes
-// set their line-height to avoid awkward line-wrapping
-// and set a bottom margin derived from the base measure
-@each $size in tera, giga, mega {
-    .#{$size} {
-        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}', $measure);
-    }
-}
+// make a multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
-// standard headings use a proportional line-height
-h1, .alpha {
-	@include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
-}
-h2. .beta {
-	@include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
-}
-h3, .gamma {
-	@include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
-}
-h4, .delta {
-	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
-}
-h5, .epsilon {
-	@include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
-}
-h6, .zeta {
-	@include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
+@each $size in $sizes {
+    .#{nth($size, 1)} {
+        @include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
+    }
 }</code></pre>
 		</figure>
 	</section>

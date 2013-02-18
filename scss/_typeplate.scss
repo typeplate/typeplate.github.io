@@ -78,6 +78,7 @@ $zeta:		18;		//	18  = 18 × 1
 $type-scale-unit-value: rem;
 
 
+
 // Indentation
 // --------------------------------------------------------------------------
 
@@ -141,7 +142,13 @@ $stats-border-style: 0.125rem solid #ccc;
 // http://thesassway.com/projects/modular-scale
 
 @function modular-scale($scale, $base, $value) {
+	// divide a given font-size by base font-size & return a relative em value
 	@return ($scale/$base)#{$value};
+}
+
+@function measure-margin($scale, $measure, $value) {
+	// divide 1 unit of measure by given font-size & return a relative em value
+	@return ($measure/$scale)#{$value};
 }
 
 
@@ -164,14 +171,6 @@ $stats-border-style: 0.125rem solid #ccc;
 		margin-bottom: measure-margin($scale, $measure, $value);
 	}
 }
-	@function modular-scale($scale, $base, $value) {
-		// divide a given font-size by base font-size & return a relative em value
-		@return ($scale/$base)#{$value};
-	}
-	@function measure-margin($scale, $measure, $value) {
-		// divide 1 unit of measure by given font-size & return a relative em value
-		@return ($measure/$scale)#{$value};
-	}
 
 
 // $B o d y    C o p y
@@ -377,24 +376,16 @@ body {
 // $H e a d i n g s
 // --------------------------------------------------------------------------
 
-@each $size in tera, giga, mega {
-    .#{$size} {
-        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}', $measure);
+// make a multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+@each $size in $sizes {
+    .#{nth($size, 1)} {
+        @include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
     }
 }
-
-@each $size in alpha, beta, gamma, delta, epsilon, zeta {
-    .#{$size} {
-        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}');
-    }
-}
-
-@each $size in h1, h2, h3, h4, h5, h6 {
-    #{$size} {
-        @include modular-scale($size, $font-base, '#{$type-scale-unit-value}');
-    }
-}
-
 
 
 // $ P a r a g r a p h s
