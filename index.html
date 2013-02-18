@@ -32,8 +32,8 @@
 			</nav>
 
 			<nav class="social-nav">
-				<a href="#" class="social-item"><i class="icon-github"></i>Fork</a>
-				<a href="#" class="social-item"><i class="icon-twitter"></i>Follow</a>
+				<a href="//github.com/typeplate/typeplate.github.com" class="social-item"><i class="icon-github"></i>Fork</a>
+				<a href="//twitter.com/typeplate" class="social-item"><i class="icon-twitter"></i>Follow</a>
 			</nav>
 
 			<div class="lede">
@@ -44,24 +44,24 @@
 	</header>
 
 	<nav class="downloads nav">
-			<div class="col-wrap">
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Sass
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Sass w/ Compass
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-				<a href="#" class="dl-item">
-					<i class="icon-download"></i>Bower pkg
-					<hr>
-					v1.0 | size: ##kb
-				</a>
-			</div>
-		</nav>
+		<div class="col-wrap">
+			<a href="#" class="dl-item">
+				<i class="icon-download"></i>Raw CSS
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+			<a href="#" class="dl-item">
+				<i class="icon-download"></i>Sass w/Compass
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+			<a href="#" class="dl-item">
+				<i class="icon-download"></i>Bower pkg
+				<hr>
+				v1.0 | size: ##kb
+			</a>
+		</div>
+	</nav>
 
 	<div class="col-wrap">
 		<!-- $table of contents -->
@@ -195,15 +195,16 @@ $type-scale-unit-value: rem;
 		margin-bottom: measure-margin($scale, $measure, $value);
 	}
 }
-	@function modular-scale($scale, $base, $value) {
-		// divide a given font-size by base font-size & return a relative em value
-		@return ($scale/$base)#{$value};
-	}
-	@function measure-margin($scale, $measure, $value) {
-		// divide 1 unit of measure by given font-size & return a relative em value
-		@return ($measure/$scale)#{$value};
-	}
 
+@function modular-scale($scale, $base, $value) {
+	// divide a given font-size by base font-size & return a relative em value
+	@return ($scale/$base)#{$value};
+}
+
+@function measure-margin($scale, $measure, $value) {
+	// divide 1 unit of measure by given font-size & return a relative em value
+	@return ($measure/$scale)#{$value};
+}
 
 // make a multi-dimensional array, where:
 // the first value is the name of the class
@@ -211,9 +212,9 @@ $type-scale-unit-value: rem;
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
 @each $size in $sizes {
-    .#{nth($size, 1)} {
-        @include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
-    }
+	.#{nth($size, 1)} {
+		@include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
+	}
 }</code></pre>
 		</figure>
 	</section>
@@ -494,7 +495,7 @@ $amp-font-family: Verdana, sans-serif;
 		</figure>
 	</section>
 
-	<!-- $code blocks -->
+	<!-- $Code Blocks -->
 	<section class="code-blocks botDivider" id="code-blocks">
 		<header>
 			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.1 Code Blocks</h1>
@@ -502,6 +503,7 @@ $amp-font-family: Verdana, sans-serif;
 		<p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>"fixed pitch"</i> fonts, contain characters that all have the same character width. 'l', '1' and 'i' are easily distinguished with monospace, '0', 'o' and 'O' are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
 		<figure class="typeplate-code-block">
+			<figcaption>HTML</figcaption>
 			<pre><code class="language-markup">h1 {
 	background: red;
 	color: blue;
@@ -611,64 +613,57 @@ code {
 			<header>
 				<h1 class="gamma"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
 			</header>
-			<p>Pull Quotes are tricky, but with this little ditty they're not so difficult or tedious anymore.</p>
+			<p>Pull Quotes are tricky, but with this little ditty they're not so difficult or tedious anymore. The example is a take and improved upon from the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a></p>
 
 			<figure class="example">
-				<article class="entry">
-					<header>
-						<h1>Article Heading</h1>
-					</header>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. "Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus." lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?</p>
-					<aside class="pull-quote">
-						<blockquote>
-							<span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
-						</blockquote>
-					</aside>
-				</article>
+				<aside class="pull-quote">
+					<blockquote>
+						<span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
+					</blockquote>
+				</aside>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
-				<pre><code class="language-markup">&lt;article class=&quot;entry&quot;&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. &quot;Mollitia explicabo at ad repellat placeat deserunt sed quam facere quod expedita consequatur sequi aliquam vero nemo unde harum quia! Facere necessitatibus.&quot; lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum amet magnam facere in sed quod fugit ut aliquam voluptates cupiditate nisi aliquid obcaecati voluptas est officia iusto veritatis dolores hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eligendi impedit doloribus asperiores iusto iure facilis quaerat ea accusamus molestias quas veniam eum nobis cum quasi alias est dolorum corrupti?&lt;/p&gt;
-	&lt;aside class=&quot;pull-quote&quot;&gt;
-		&lt;blockquote&gt;
-			&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
-		&lt;/blockquote&gt;
-	&lt;/aside&gt;
-&lt;/article&gt;</code></pre>
+				<pre><code class="language-markup">&lt;aside class=&quot;pull-quote&quot;&gt;
+	&lt;blockquote&gt;
+		&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
+	&lt;/blockquote&gt;
+&lt;/aside&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">.entry {
-	position: relative;
-	padding-right: 50%;
-	.pull-quote {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 45%;
+				<pre><code class="language-sass">// Pull Quotes Include: Pass in custom values for arguments
+// you desire, pass in 'null' for those arguments you do not.
+// For example:
+// @include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+// @include pull-quote(null, 45px, null, 700%, white);
+@mixin pull-quote($float, $height, $margin, $fontsize, $color) {
+	@if $float != null {
+		float: $float;
+	}
+	@if $height != null {
+		height: $height;
+	}
+	@if $margin != null {
+		margin: $margin;
+	}
+	@if $fontsize != null {
+		font-size: $fontsize;
+	}
+	@if $color != null {
+		color: $color;
 	}
 }
 
+// Include these classes in your custom stylesheet outside of `typeplate.scss`
 .bqstart {
-	float: left;
-	height: 45px;
-	margin-top: -50px;
-	//padding-top: 45px;
-	margin-bottom: 50px;
-	font-size: 700%;
-	color: red;
+	@include pull-quote(left,45px, -50px 12px 50px auto, 700%, white);
 }
 
 .bqend {
-	float: right;
-	height: 25px;
-	margin-top: -50px;
-	padding-top: 15px;
-	font-size: 700%;
-	color: red;
+	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
 }</code></pre>
 			</figure>
 		</section>
@@ -693,7 +688,7 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
-	&lt;ul class=&quot;stats-tabs&quot;&gt;
+&lt;ul class=&quot;stats-tabs&quot;&gt;
 	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 			</figure>
@@ -701,18 +696,16 @@ code {
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">//Stats Tabs Variables
-	$stats-font-size: 1.125rem;
-	$stats-list-margin: 0 0.625rem 0 0;
-	$stats-list-padding: 0 0.625rem 0 0;
-	$stats-item-font-size: 0.1875rem;
-	$stats-item-margin: 0.125rem 0 0 0;
-	$stats-border-style: 0.125rem solid #ccc;
+$stats-font-size: 1.125rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.1875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;
 
-	// Stats Tabs Styles
-	.stats-tabs {
+// Stats Tabs Styles
+.stats-tabs {
 	li {
-		//use a float instead of display: inline block for IE7
-		//float: left;
 		display: inline-block;
 		margin: $stats-list-margin;
 		padding: $stats-list-padding;
@@ -758,11 +751,12 @@ code {
 
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
-				<pre><code class="language-markup">&lt;article&gt;
-	&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-	&lt;footer class=&quot;foot-note&quot;&gt;
-		&lt;ol&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
+				<pre><code class="language-markup">&lt;!-- Footnote Markup : Replace 'X' with your unique number for each footnote --&gt;
+&lt;article&gt;
+	&lt;p&gt;&lt;sup&gt;&lt;a href=&quot;#fn-itemX&quot; id=&quot;fn-returnX&quot;&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+	&lt;footer&gt;
+		&lt;ol class=&quot;foot-notes&quot;&gt;
+			&lt;li id=&quot;fn-itemX&quot;&gt;&lt;a href=&quot;#fn-returnX&quot;&gt;&#x21a9;&lt;/a&gt;&lt;/li&gt;
 		&lt;/ol&gt;
 	&lt;/footer&gt;
 &lt;/article&gt;</code></pre>

@@ -1,11 +1,11 @@
 /*!
  * Typeplate v1.0
  ============================================================
- *    url: https://github.com/typePlate/typeplate.github.com
+ *	url: https://github.com/typePlate/typeplate.github.com
  *
- *    authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
- *    license: this work is in the public domain
- *    http://creativecommons.org/publicdomain/zero/1.0
+ *	authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
+ *	license: this work is in the public domain
+ *	http://creativecommons.org/publicdomain/zero/1.0
  ============================================================
 */
 
@@ -381,14 +381,12 @@ body {
 // and the second value is the variable for the size
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
+// associate h1-h6 tags with their appropriate greek heading
 @each $size in $sizes {
     .#{nth($size, 1)} {
         @include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
     }
 }
-
-// associate h1-h6 tags with their appropriate greek heading
-
 
 
 // $ P a r a g r a p h s
@@ -396,7 +394,8 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 
 p {
 	& + p {
-		@include txt-indent($indent-val); //siblings indentation
+		//siblings indentation
+		@include txt-indent($indent-val);
 	}
 }
 
@@ -406,8 +405,8 @@ p {
 
 @mixin white-space($wrap-space) {
 	@if $wrap-space == 'pre-wrap' {
-		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
-		white-space: $wrap-space; // current browsers
+		white-space: #{-moz-}$wrap-space;	// Firefox 1.0-2.0
+		white-space: $wrap-space; 			// current browsers
 	} @else {
 		white-space: $wrap-space;
 	}
@@ -433,7 +432,7 @@ code {
 // --------------------------------------------------------------------------
 
 /**
- * Create Abbreviations
+ * Abbreviations Markup
  *
 	<abbr title="hyper text markup language">HMTL</abbr>
  *
@@ -465,7 +464,7 @@ h6 {
 // --------------------------------------------------------------------------
 
 /**
- * Create lining style definition lists
+ * Lining Definition Style Markup
  *
 	<dl class="lining">
 		<dt><b></b></dt>
@@ -480,7 +479,7 @@ h6 {
 }
 
 /**
- * Create dictionary style definition lists
+ * Dictionary Definition Style Markup
  *
 	<dl class="dictionary-style">
 		<dt><b></b></dt>
@@ -499,7 +498,7 @@ h6 {
 // --------------------------------------------------------------------------
 
 /**
- * Create Stats Tab styles
+ * Stats Tab Markup
  *
 	<ul class="stats-tabs">
 		<li><a href="#">[value]<b>[name]</b></a></li>
@@ -538,7 +537,7 @@ h6 {
 // $Blockquote Cites
 // --------------------------------------------------------------------------
 /**
- * Create Figure styles
+ * Blockquote Markup
  *
 	<blockquote cite="">
 		<p>&Prime;&Prime;</p>
@@ -566,34 +565,41 @@ h6 {
 // --------------------------------------------------------------------------
 // http://24ways.org/2005/swooshy-curly-quotes-without-images
 
-.entry {
-	position: relative;
-	padding-right: 50%;
-	.pull-quote {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 45%;
+/**
+ * Pull Quotes Include: Pass in custom values for arguments you desire, pass in 'null'
+ * for those arguments you do not. For Example:
+ *
+	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+	@include pull-quote(null, 45px, null, 700%, white);
+
+*	Include these classes in your custom stylesheet outside of `typeplate.scss`
+	.bqstart {
+		@include pull-quote(left,45px, -50px 12px 50px auto, 700%, white);
 	}
-}
 
-.bqstart {
-	float: left;
-	height: 45px;
-	margin-top: -50px;
-	//padding-top: 45px;
-	margin-bottom: 50px;
-	font-size: 700%;
-	color: red;
-}
-
-.bqend {
-	float: right;
-	height: 25px;
-	margin-top: -50px;
-	padding-top: 15px;
-	font-size: 700%;
-	color: red;
+	.bqend {
+		@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+	}
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+@mixin pull-quote($float, $height, $margin, $fontsize, $color) {
+	@if $float != null {
+		float: $float;
+	}
+	@if $height != null {
+		height: $height;
+	}
+	@if $margin != null {
+		margin: $margin;
+	}
+	@if $fontsize != null {
+		font-size: $fontsize;
+	}
+	@if $color != null {
+		color: $color;
+	}
 }
 
 
@@ -601,7 +607,7 @@ h6 {
 // --------------------------------------------------------------------------
 
 /**
- * Create Figure styles
+ * Figures Markup
  *
 	<figure>
 		<figcaption>
@@ -618,13 +624,13 @@ h6 {
 // --------------------------------------------------------------------------
 
 /**
- * Create Footnote styles
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
  *
 	<article>
-		<p><sup><a href="#"></a></sup></p>
-		<footer class="foot-note">
-			<ol>
-				<li><a href="#">↩</a></li>
+		<p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+		<footer>
+			<ol class="foot-notes">
+				<li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
 			</ol>
 		</footer>
 	</article>

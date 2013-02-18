@@ -577,3 +577,15 @@ p {
 .dictionary-style {
 	@include definition-list-style(dictionary-style);
 }
+
+
+// $Definition Lists
+// ============================================================
+
+.bqstart {
+	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+}
+
+.bqend {
+	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+}
