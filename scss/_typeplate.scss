@@ -388,6 +388,14 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
     }
 }
 
+// associate h1-h6 tags with their appropriate greek heading
+h1 { @extend .alpha; }
+h2 { @extend .beta; }
+h3 { @extend .gamma; }
+h4 { @extend .delta; }
+h5 { @extend .epsilon; }
+h6 { @extend .zeta; }
+
 
 // $ P a r a g r a p h s
 // --------------------------------------------------------------------------
