@@ -296,9 +296,8 @@ hr {
 // ============================================================
 
 .example {
-	background: #dddddd;
-	background: hsla(0, 0%, 0%, 0.1);
-	border: 1px solid hsla(0, 0%, 0%, 0.15);
+	background: transparentize($cobalt-fade, 0.5);
+	border: 1px solid $cobalt-fade;
 	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
 	padding: $line-height * 1rem $line-height * 1rem 0;
 	margin: $line-height * 1.5rem 0 $line-height * 1rem;
@@ -345,9 +344,8 @@ hr {
 
 .typeplate-code-block {
 	pre {
-		background: #dddddd;
-		background: hsla(0, 0%, 0%, 0.1);
-		border: 1px solid hsla(0, 0%, 0%, 0.15);
+		background: transparentize($cobalt-fade, 0.5);
+		border: 1px solid $cobalt-fade;
 		box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
 		padding: $line-height * 1rem;
 		.no-js & {
@@ -506,7 +504,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // generic bottom rule class
 .botDivider {
-	border-bottom: 0.44444444rem solid transparentize($cobalt-deep, 0.75);// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: 0.44444444rem solid $cobalt-fade;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 	&.bright {
 		border-bottom-color: $rust;
 	}

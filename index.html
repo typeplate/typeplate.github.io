@@ -171,18 +171,9 @@ html {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">// $Typographic scale
-@function modular-scale($scale, $base, $value) {
-	@return ($scale/$base)#{$value};
-}
+			<pre><code class="language-sass">$measure: $font-base * $line-height;
 
-@mixin modular-scale($scale, $base, $value) {
-	// Pixel falback for IE versions &lt;= 8
-	font-size: $scale#{px};
-	font-size: modular-scale($scale, $base, $value);
-}
-
-//TYPE SCALE
+// Modular Scale Values
 $tera:		117;	//	117	= 18 × 6.5
 $giga:		90;		//	90  = 18 × 5
 $mega:		72;		//	72  = 18 × 4
@@ -193,48 +184,53 @@ $delta:		24;		//	24  = 18 × 1.3333
 $epsilon:	21;		//	21  = 18 × 1.1667
 $zeta:		18;		//	18  = 18 × 1
 
-//typscale unit
+// typscale unit
 $type-scale-unit-value: rem;
 
+// $Typographic scale
+@mixin modular-scale($scale, $base, $value, $measure:"") {
+	font-size: $scale#{px};
+	font-size: modular-scale($scale, $base, $value);
+	@if $measure != "" {
+		margin-bottom: measure-margin($scale, $measure, $value);
+	}
+}
+	@function modular-scale($scale, $base, $value) {
+		// divide a given font-size by base font-size & return a relative em value
+		@return ($scale/$base)#{$value};
+	}
+	@function measure-margin($scale, $measure, $value) {
+		// divide 1 unit of measure by given font-size & return a relative em value
+		@return ($measure/$scale)#{$value};
+	}
+
+
 .tera {
-	@include modular-scale($tera, $font-base, '#{$type-scale-unit-value}');
+	@include modular-scale($tera, $font-base, '#{$type-scale-unit-value}', $measure);
 }
-
 .giga {
-	@include modular-scale($giga, $font-base, '#{$type-scale-unit-value}');
+	@include modular-scale($giga, $font-base, '#{$type-scale-unit-value}', $measure);
 }
-
 .mega {
-	@include modular-scale($mega, $font-base, '#{$type-scale-unit-value}');
+	@include modular-scale($mega, $font-base, '#{$type-scale-unit-value}', $measure);
 }
 
-h1,
-.alpha {
+h1, .alpha {
 	@include modular-scale($alpha, $font-base, '#{$type-scale-unit-value}');
 }
-
-h2,
-.beta {
+h2. .beta {
 	@include modular-scale($beta, $font-base, '#{$type-scale-unit-value}');
 }
-
-h3,
-.gamma {
+h3, .gamma {
 	@include modular-scale($gamma, $font-base, '#{$type-scale-unit-value}');
 }
-
-h4,
-.delta {
+h4, .delta {
 	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}');
 }
-
-h5,
-.epsilon {
+h5, .epsilon {
 	@include modular-scale($epsilon, $font-base, '#{$type-scale-unit-value}');
 }
-
-h6,
-.zeta {
+h6, .zeta {
 	@include modular-scale($zeta, $font-base, '#{$type-scale-unit-value}');
 }</code></pre>
 		</figure>
