@@ -216,13 +216,21 @@ hr {
 }
 .dl-item {
 	padding: $line-height * 0.5rem;
+
 	width: 31%;
 	margin-right: 3%;
 	&:last-of-type {
 		margin-right: 0;
 	}
 
+	@include breakpoint(bigass-bear) {
+		font-size: 0.75em;
+		padding: $line-height * 0.35rem;
+	}
+
 	@include breakpoint(papa-bear) {
+		font-size: 1em;
+		padding: $line-height * 0.5rem;
 		width: 100%;
 		margin-right: 0;
 		margin-bottom: 1.65em;
@@ -272,7 +280,7 @@ hr {
 
 .toc {
 	border-radius: 0 0 6px 6px;
-	background: white;
+	background: #de4d1f;
 	color: #f0f0f0;
 }
 
@@ -287,7 +295,7 @@ hr {
 
 .toc ol li:before {
 	counter-increment: item;
-	//color: #444;
+	color: #444;
 	font-style: normal;
 	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
@@ -299,6 +307,7 @@ hr {
 	}
 }
 
+
 // $TOC Pull Down
 // ============================================================
 
@@ -307,8 +316,16 @@ hr {
 		cursor: pointer;
 	}
 	&:after {
+		text-align: center;
 		display: block;
 		content: "↓";
+		background: #000000;
+		color: white;
+		width: 2em;
+		height: 2em;
+		line-height: 2.25em;
+		margin: 0 auto;
+		border-radius: 6px;
 	}
 }
 
@@ -316,7 +333,7 @@ hr {
 	height: 0em;
 	overflow: hidden;
 	&.active {
-		background: white;
+		//background: white;
 		height: auto;
 		overflow: visible;
 	}

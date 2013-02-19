@@ -20,4 +20,3 @@ toc.on('click', function() {
 		drawer.addClass('active');
 	}
 });
-

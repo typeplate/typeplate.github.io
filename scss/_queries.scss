@@ -1,11 +1,15 @@
-
 // $Media queries via chriscoyier
 //===============================================================================
 
 @mixin breakpoint($point) {
-	// would be 33em if @media em = html font size, but it doesn't.
+	// @media em should = html font size, but it doesn't.
 	// Gotta go with 16px font size for calculation.
 	// FFFFFFFFUUUUUUUUUU-
+
+	@if $point == bigass-bear {
+	@media (max-width: 48em) { @content; }
+	}
+
 	@if $point == papa-bear {
 	@media (max-width: 41.25em) { @content; }
 	}
