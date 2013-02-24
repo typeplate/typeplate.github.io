@@ -137,7 +137,6 @@ hr {
 .header {
 	padding-top: 1.65em;
 	background: $white image-url("typeplate-press.png") center bottom no-repeat;
-	background-size: 720px 473px;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
@@ -218,6 +217,9 @@ hr {
 	background: $cobalt-deep image-url("asfalt.png") top left repeat;
 	padding: 1.65em 0;
 	display: block;
+	.icon-download {
+		color: $white;
+	}
 }
 .dl-item {
 	padding: $line-height * 0.5rem;
@@ -290,21 +292,18 @@ hr {
 
 .toc {
 	border: 3px solid #afbac4;
-	border-top-color: #f0f0f0;
 	border-radius: 0 0 6px 6px;
 	background: rgba(0, 0, 0, 0.4);
-	// box-shadow: 0 0 3px rgba(133,124,124,0.23),
-	// 			inset 3px -3px 0px #f1eaea,
-	// 			inset -3px 0px 0px #f1eaea,
-	// 			inset 0 6px 4px rgba(0, 0, 0, 0.37);
 	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
 }
 
 .toc ol {
 	list-style: decimal !important;
 	counter-reset: item;
+	padding: 0 40px;
 }
 .toc li {
+	border-bottom: 3px dotted rgba(255, 255, 255, 0.17);
 	@extend .zeta;
 	display: block;
 }
@@ -331,7 +330,10 @@ hr {
 	h1 {
 		margin: 0;
 		padding-top: .5em;
-		color: #fff;
+		color: #606060;
+		.icon-download {
+			color: $white;
+		}
 		&:hover {
 			cursor: pointer;
 		}
