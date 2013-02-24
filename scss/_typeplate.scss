@@ -395,7 +395,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // associate h1-h6 tags with their appropriate greek heading
 @each $size in $sizes {
 	.#{nth($size, 1)} {
-		@include modular-scale(#{nth($size, 2)}, $font-base, '#{$type-scale-unit-value}', $measure);
+		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
 	}
 }
 
