@@ -136,7 +136,8 @@ hr {
 
 .header {
 	padding-top: 1.65em;
-	background: $white;
+	background: $white image-url("typeplate-press.png") center bottom no-repeat;
+	background-size: 720px 473px;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
@@ -203,7 +204,8 @@ hr {
 	}
 }
 
-.dl-item, .social-item {
+.dl-item,
+.social-item {
 	display: inline-block;
 	letter-spacing: normal;
 	border-radius: 0.333333em;
@@ -213,7 +215,7 @@ hr {
 }
 
 .downloads {
-	background: $cobalt-deep;
+	background: $cobalt-deep image-url("asfalt.png") top left repeat;
 	padding: 1.65em 0;
 	display: block;
 }
@@ -254,9 +256,14 @@ hr {
 
 	@include breakpoint(mama-bear) {
 		position: static;
+		margin-top: 0.825em;
 		margin-bottom: 0.825em;
 	}
+	@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
+		text-align: right;
+	}
 }
+
 .social-item {
 	margin-left: 0.825em;
 	padding: 0 0.825em 0 0;
@@ -282,9 +289,15 @@ hr {
 // ============================================================
 
 .toc {
+	border: 3px solid #afbac4;
+	border-top-color: #f0f0f0;
 	border-radius: 0 0 6px 6px;
-	background: #de4d1f;
-	color: #f0f0f0;
+	background: rgba(0, 0, 0, 0.4);
+	// box-shadow: 0 0 3px rgba(133,124,124,0.23),
+	// 			inset 3px -3px 0px #f1eaea,
+	// 			inset -3px 0px 0px #f1eaea,
+	// 			inset 0 6px 4px rgba(0, 0, 0, 0.37);
+	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
 }
 
 .toc ol {
@@ -314,32 +327,29 @@ hr {
 // $TOC Pull Down
 // ============================================================
 
-#table-of-contents h1 {
-	&:hover {
-		cursor: pointer;
+#table-of-contents {
+	h1 {
+		margin: 0;
+		padding-top: .5em;
+		color: #fff;
+		&:hover {
+			cursor: pointer;
+		}
 	}
-	&:after {
+	h2 {
+		color: #6f7070;
 		text-align: center;
-		display: block;
-		content: "↓";
-		background: #000000;
-		color: white;
-		width: 2em;
-		height: 2em;
-		line-height: 2.25em;
-		margin: 0 auto;
-		border-radius: 6px;
+		text-shadow: 0 1px 0px rgba(255,255,255,0.30);
 	}
 }
 
 #drawer {
-	height: 0em;
-	overflow: hidden;
-	&.active {
-		//background: white;
-		height: auto;
-		overflow: visible;
-	}
+	color: white;
+	padding: 1.5em 0;
+}
+
+a[href="#table-of-contents"] {
+	@extend .dl-item;
 }
 
 
@@ -555,7 +565,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // generic bottom rule class
 .botDivider {
-	border-bottom: 0.44444444rem solid $cobalt-fade;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: 0.44444444rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 	&.bright {
 		border-bottom-color: $rust;
 	}
@@ -636,4 +646,38 @@ p {
 
 .bqend {
 	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+}
+
+
+// $Helpers
+// ============================================================
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
 }

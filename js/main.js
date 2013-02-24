@@ -10,13 +10,9 @@ Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|i
 
 
 // Table Of Contents
-var toc = $('#table-of-contents h1');
-var drawer = $('#drawer');
+var toc = $('#table-of-contents h1'),
+	drawer = $('#drawer');
 
 toc.on('click', function() {
-	if(drawer.hasClass('active')) {
-		drawer.removeClass('active');
-	}else {
-		drawer.addClass('active');
-	}
+	drawer.toggleClass('visuallyhidden');
 });
