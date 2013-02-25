@@ -25,15 +25,13 @@ body {
 a {
 	@extend %transition;
 	text-decoration: none;
+	color: #de4d1f;
+	a:visited {
+		color: transparent;
+	}
 	&:hover {
 		text-decoration: underline;
 	}
-}
-
-a,
-a:visited {
-	//color: #212121;
-	color: #de4d1f;
 }
 
 p code,
