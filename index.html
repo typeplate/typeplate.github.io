@@ -209,6 +209,16 @@ $type-scale-unit-value: rem;
 	@return ($measure/$scale)#{$value};
 }
 
+// styles for all headings, in the style of @csswizardry
+%hN {
+	// voodoo to enable ligatures and kerning
+	text-rendering: optimizeLegibility;
+	// this fixes huge spaces when a heading wraps onto two lines
+	line-height: 1;
+
+	margin-top: 0;
+}
+
 // make a multi-dimensional array, where:
 // the first value is the name of the class
 // and the second value is the variable for the size
@@ -222,12 +232,12 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 }
 
 // associate h1-h6 tags with their appropriate greek heading
-h1 { @extend .alpha; }
-h2 { @extend .beta; }
-h3 { @extend .gamma; }
-h4 { @extend .delta; }
-h5 { @extend .epsilon; }
-h6 { @extend .zeta; }</code></pre>
+h1 { @extend .alpha; @extend %hN; }
+h2 { @extend .beta; @extend %hN; }
+h3 { @extend .gamma; @extend %hN; }
+h4 { @extend .delta; @extend %hN; }
+h5 { @extend .epsilon; @extend %hN; }
+h6 { @extend .zeta; @extend %hN; }</code></pre>
 		</figure>
 		<a href="#table-of-contents">back to top</a>
 	</section>
