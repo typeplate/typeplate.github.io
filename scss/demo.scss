@@ -5,20 +5,6 @@
 @import "vars";
 @import "queries";
 
-// $Typekit
-// ============================================================
-
-.wf-loading body {
-	font-family: serif;
-	visibility: hidden;
-}
-.wf-active body,
-.wf-inactive body {
-	font-family: "ff-meta-serif-web-pro",serif;
-	font-weight: 400;
-	visibility: visible;
-}
-
 
 // $Lobal Author Styles
 // ============================================================
