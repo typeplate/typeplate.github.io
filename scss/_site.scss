@@ -335,10 +335,9 @@ hr {
 	padding: 0 40px;
 }
 .toc li {
-	border-bottom: 2px dotted #f6f6f6;
-	border-bottom: 2px dotted rgba(255, 255, 255, 0.88);
-	@extend .zeta;
+	border-bottom: 2px dotted #949494;
 	display: block;
+	@extend .zeta;
 }
 .toc ol li:before {
 	counter-increment: item;
@@ -372,7 +371,6 @@ hr {
 			display: block;
 			font-size: .5em;
 			color: scale-lightness(#EFEFEF, -35%);
-			//color: #e3551c;
 		}
 		&:hover {
 			cursor: pointer;
