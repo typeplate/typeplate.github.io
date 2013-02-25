@@ -118,6 +118,9 @@ img {
 	margin-bottom: 0;
 	color: $rust;
 	text-decoration: none;
+	&:last-child {
+		border-bottom: none;
+	}
 	&:hover,
 	&:focus {
 		text-decoration: none;
@@ -147,47 +150,6 @@ img {
 			background: $rust;
 			color: white;
 		}
-	}
-}
-
-.social-item {
-	display: inline-block;
-	letter-spacing: normal;
-	border-radius: 0.333333em;
-	font-family: Monaco, Consolas, monospace;
-	font-size: 0.825em;
-	text-align: center;
-}
-
-.social-nav {
-	position: fixed;
-	top: 1.25em;
-	right: 1.65em;
-	z-index: 1;
-	// break
-	@include breakpoint(mama-bear) {
-		position: static;
-		margin-bottom: 0.825em;
-	}
-}
-.social-item {
-	margin-left: 0.825em;
-	padding: 0 0.825em 0 0;
-	text-decoration: none;
-	background: $cobalt-fade;
-	color: $cobalt-deep;
-	&:hover, &:focus {
-		background: $rust;
-		color: white;
-	}
-	i {
-		background: $cobalt-deep;
-		color: $white;
-		display: inline-block;
-		padding: 0.65em 0.5em 0.5em 0.825em;
-		margin-right: 0.825em;
-		border-top-left-radius: 0.333333em;
-		border-bottom-left-radius: 0.333333em;
 	}
 }
 

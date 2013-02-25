@@ -1,6 +1,19 @@
 @import "queries";
 @import "fontello";
 
+// So I measured the typographic attributes of meta-serif and came up
+// with the following values.
+//
+// border-radius
+//
+// should be a multiple of 2. meta-serif has a slight softness but not
+// by much if at all on arms and serifs.
+//
+//borders
+//
+// I like to play off the weight of typographic attributes and in our
+// case the stems of glyphs. Borders should be a multiple of 16 or
+// divisible by 16.
 
 // $Compass Extends
 // ============================================================
@@ -461,7 +474,7 @@ a[href="#table-of-contents"] {
 }
 
 
-// $no-js Code Block Styles
+// $Typeplate Code Block Styles
 // ============================================================
 
 .typeplate-code-block {
