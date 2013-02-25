@@ -143,7 +143,7 @@ hr {
 
 .header {
 	padding-top: 1.65em;
-	background: $white image-url("typeplate-press.png") center bottom no-repeat;
+	background: white image-url("typeplate-press.png") center bottom no-repeat;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
@@ -152,7 +152,7 @@ hr {
 		}
 	}
 	.col-wrap {
-		background: rgba(255, 255, 255, 0.40)
+		background: rgba(255, 255, 255, 0.40);
 	}
 }
 
@@ -187,29 +187,31 @@ hr {
 }
 
 .nav-item {
-	border-bottom: 1.5px solid black;
+	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
 	letter-spacing: normal;
 	display: block;
 	@extend .delta;
 	line-height: 2;
 	padding: 0 0.5em 0 0.25em;
 	margin-bottom: 0;
+	color: $rust;
 	&:hover,
 	&:focus {
-		background: #fff;
-		background: $white;
-		color: $rust;
 		text-decoration: none;
+		background: #f7f7f7;
+		color: #000000;
+	}
+	&:last-child {
+		border-bottom: none;
 	}
 	&:before {
 		content: "→ ";
 	}
-
+	// break
 	@include breakpoint(baby-bear) {
 		&:before {
 			content: "";
 		}
-
 		border-radius: 0.333333em;
 		display: inline-block;
 		padding: 0.825em;
@@ -547,6 +549,17 @@ blockquote {
 }
 
 
+// $Stats Tab Demo
+// ============================================================
+
+.stats-tabs {
+	text-align: center;
+	a {
+		color: #000;
+	}
+}
+
+
 // $Typekit
 // ============================================================
 /*!
@@ -715,10 +728,7 @@ p {
 // $Helpers
 // ============================================================
 
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
+//Hide only visually, but have it available for screenreaders: h5bp.com/v
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -730,11 +740,8 @@ p {
     width: 1px;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;

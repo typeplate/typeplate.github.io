@@ -1,13 +1,20 @@
 @charset "UTF-8";
 /*
- * Typeplate v1.0
- ============================================================
- *	url: https://github.com/typePlate/typeplate.github.com
- *
- *	Authors: Zachary Kain (@zakkain) / Dennis Gaebel (@gryghostvisuals)
- *	License: This work is in the public domain. Open Source y'all!
- *	http://creativecommons.org/publicdomain/zero/1.0
- ============================================================
++---------------------------------------------------------------------+
+|        _                               _         _                  |
+|       | |_  _   _  _ __    ___  _ __  | |  __ _ | |_  ___           |
+|       | __|| | | || '_ \  / _ \| '_ \ | | / _ || __|/ _ \          |
+|       | |_ | |_| || |_) ||  __/| |_) || || (_| || |_|  __/          |
+|        \__| \__, || .__/  \___|| .__/ |_| \__,_| \__|\___|          |
+|             |___/ |_|          |_|                                  |
+|                                                                     |
+|                                                                     |
+| URL: https://github.com/typePlate/typeplate.github.com              |
+| AUTHORS: Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals) |
+| LICENSE: this work is in the public domain:                         |
+| http://creativecommons.org/publicdomain/zero/1.0                    |
+|                                                                     |
++---------------------------------------------------------------------+
 */
 @font-face {
   font-family: "Ampersand";
@@ -45,56 +52,56 @@ body {
 
 .tera {
   font-size: 117px;
-  font-size: 117/18rem;
-  margin-bottom: 29.7/117rem;
+  font-size: 6.5rem;
+  margin-bottom: 0.25385rem;
 }
 
 .giga {
   font-size: 90px;
-  font-size: 90/18rem;
-  margin-bottom: 29.7/90rem;
+  font-size: 5rem;
+  margin-bottom: 0.33rem;
 }
 
 .mega {
   font-size: 72px;
-  font-size: 72/18rem;
-  margin-bottom: 29.7/72rem;
+  font-size: 4rem;
+  margin-bottom: 0.4125rem;
 }
 
 .alpha, h1 {
   font-size: 60px;
-  font-size: 60/18rem;
-  margin-bottom: 29.7/60rem;
+  font-size: 3.33333rem;
+  margin-bottom: 0.495rem;
 }
 
 .beta, h2 {
   font-size: 48px;
-  font-size: 48/18rem;
-  margin-bottom: 29.7/48rem;
+  font-size: 2.66667rem;
+  margin-bottom: 0.61875rem;
 }
 
 .gamma, h3 {
   font-size: 36px;
-  font-size: 36/18rem;
-  margin-bottom: 29.7/36rem;
+  font-size: 2rem;
+  margin-bottom: 0.825rem;
 }
 
 .delta, h4 {
   font-size: 24px;
-  font-size: 24/18rem;
-  margin-bottom: 29.7/24rem;
+  font-size: 1.33333rem;
+  margin-bottom: 1.2375rem;
 }
 
 .epsilon, h5 {
   font-size: 21px;
-  font-size: 21/18rem;
-  margin-bottom: 29.7/21rem;
+  font-size: 1.16667rem;
+  margin-bottom: 1.41429rem;
 }
 
 .zeta, h6 {
   font-size: 18px;
-  font-size: 18/18rem;
-  margin-bottom: 29.7/18rem;
+  font-size: 1rem;
+  margin-bottom: 1.65rem;
 }
 
 p + p {
