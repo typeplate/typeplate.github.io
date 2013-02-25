@@ -5,27 +5,6 @@
 @import "vars";
 @import "queries";
 
-
-// $Lobal Author Styles
-// ============================================================
-
-body {
-	margin: 6em auto;
-	max-width: 34em;
-	background: url(../img/subtle_grunge.png) top left repeat;
-}
-
-img {
-	max-width: 100%;
-}
-
-.rule {
-	display: block;
-	text-align: center;
-	color: scale-lightness(#606060, 50%);
-}
-
-
 // $Typekit
 // ============================================================
 
@@ -40,6 +19,50 @@ img {
 	visibility: visible;
 }
 
+
+// $Lobal Author Styles
+// ============================================================
+
+body {
+	margin: 6em auto;
+	max-width: 34em;
+	background: url(../img/subtle_grunge.png) top left repeat;
+	.wf-loading & {
+		font-family: serif;
+		visibility: hidden;
+	}
+	.wf-active &,
+	.wf-inactive & {
+		font-family: "ff-meta-serif-web-pro",serif;
+		font-weight: 400;
+		visibility: visible;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+
+// $Top Banner Stripe
+// ============================================================
+
+#typeplate-widgets-wrap {
+	border-top: 6px solid #606060;
+	box-shadow: 0 4px 4px rgba(0,0,0,0.50);
+	padding: .5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	font-family: "ff-meta-serif-web-pro",serif;
+	font-size: 100%;
+	background: #000;
+	color: #EFEFEF;
+}
+
+
 // $Logo
 // ============================================================
 
@@ -47,12 +70,12 @@ img {
 	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	//margin-right: $line-height * 1rem;
 	cursor: pointer;
-
+	// break
 	@include breakpoint(papa-bear) {
 		vertical-align: -190%;
 		margin-right: 5em;
 	}
-
+	// break
 	@include breakpoint(baby-bear) {
 		display: block;
 		text-align: center;
@@ -82,8 +105,6 @@ img {
 // ============================================================
 
 .header {
-	padding-top: 1.65em;
-	//background: $white;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
@@ -159,24 +180,6 @@ img {
 }
 
 
-// $Top Banner Stripe
-// ============================================================
-
-#typeplate-widgets-wrap {
-	border-top: 6px solid #606060;
-	padding: .5em;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 0;
-	font-family: "ff-meta-serif-web-pro",serif;
-	font-size: 100%;
-	background: #000;
-	color: #EFEFEF;
-}
-
-
 // $On/Off Radio Buttons
 // ============================================================
 
@@ -199,6 +202,16 @@ input[type="radio"] {
 }
 input[type="radio"]:hover {
 	cursor: pointer;
+}
+
+
+// $Rule
+// ============================================================
+
+.rule {
+	display: block;
+	text-align: center;
+	color: scale-lightness(#606060, 50%);
 }
 
 
