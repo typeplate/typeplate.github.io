@@ -109,14 +109,20 @@ img {
 }
 
 .nav-item {
+	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
 	letter-spacing: normal;
 	display: block;
 	@extend .delta;
 	line-height: 2;
 	padding: 0 0.5em 0 0.25em;
-	&:hover, &:focus {
-		color: $rust;
-		text-decoration: underline;
+	margin-bottom: 0;
+	color: $rust;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background: #f7f7f7;
+		color: #000000;
 	}
 	&:before {
 		content: "→ ";
@@ -126,7 +132,6 @@ img {
 		&:before {
 			content: "";
 		}
-
 		border-radius: 0.333333em;
 		display: inline-block;
 		padding: 0.825em;
@@ -159,7 +164,7 @@ img {
 	top: 1.25em;
 	right: 1.65em;
 	z-index: 1;
-
+	// break
 	@include breakpoint(mama-bear) {
 		position: static;
 		margin-bottom: 0.825em;
@@ -168,6 +173,7 @@ img {
 .social-item {
 	margin-left: 0.825em;
 	padding: 0 0.825em 0 0;
+	text-decoration: none;
 	background: $cobalt-fade;
 	color: $cobalt-deep;
 	&:hover, &:focus {
@@ -189,8 +195,7 @@ img {
 // ==================== Top Banner Stripe
 
 #typeplate-widgets-wrap {
-	border-top: 8px solid #e35517;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.56), inset 0 2px 2px rgba(255, 255, 255, 0.4);
+	border-top: 6px solid #606060;
 	padding: .5em;
 	position: fixed;
 	top: 0;
