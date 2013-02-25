@@ -278,6 +278,10 @@ hr {
 		color: white;
 		text-decoration: none;
 	}
+	// filesize line
+	small {
+		font-size: 80%;
+	}
 	// break
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
@@ -342,6 +346,7 @@ hr {
 	background: #d5d5d5;
 	background: rgba(0, 0, 0, 0.1);
 	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
+	@extend %rhythm;
 }
 .toc ol {
 	list-style: decimal !important;
@@ -458,6 +463,27 @@ a[href="#table-of-contents"] {
 	@include word-wrap(normal);
 }
 
+// hotfix for typographic scale example
+.example.scale-example {
+	padding-top: 0;
+}
+
+.example.no-top-pad {
+	padding-top: 0;
+	&:before {
+		top: -0.65em;
+	}
+}
+
+
+// $Section Titles
+// ============================================================
+
+// this is breakpoint baby bear
+.section-title {
+	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+}
+
 
 // $Permalink Anchor
 // ============================================================
@@ -465,7 +491,6 @@ a[href="#table-of-contents"] {
 .perma-anchor {
 	color: #444;
 	font-weight: normal;
-	@extend .gamma;
 	position: relative;
 	top: -0.125em;
 	&:hover, &:focus {
@@ -490,6 +515,9 @@ a[href="#table-of-contents"] {
 	code {
 		color: #ddd;
 	}
+	figcaption {
+		margin-bottom: 0;
+	}
 }
 
 
@@ -510,6 +538,14 @@ blockquote {
 			content:"—";
 		}
 	}
+	// make more readable at narrow widths
+	@include breakpoint(baby-bear) {
+		margin: 1.5em 0.75em;
+
+		cite {
+			text-align: left;
+		}
+	}
 }
 
 
@@ -519,7 +555,7 @@ blockquote {
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
 .typographic-scale .no-indent {
-	margin: 0;
+	// margin: 0;
 	text-indent: 0;
 }
 
@@ -527,8 +563,18 @@ blockquote {
 // $Ampersand Demo
 // ============================================================
 
+.amp-example {
+	padding-top: 0;
+}
+
 .amp {
 	@extend %ampersand-placeholder;
+	padding: 0;
+	line-height: 1;
+	@include breakpoint(baby-bear) {
+		font-size: 2em;
+	}
+	font-size: 3em;
 	text-align: center;
 }
 
@@ -543,6 +589,14 @@ blockquote {
 	strong {
 		font-style: normal;
 	}
+}
+
+
+// $Icon Font Demo
+// ============================================================
+
+.pull-example {
+	padding-bottom: 1em;
 }
 
 
@@ -568,6 +622,11 @@ blockquote {
 	text-align: center;
 	a {
 		color: #000;
+	}
+	li {
+		@include breakpoint(baby-bear) {
+			margin: 0 0 1em;
+		}
 	}
 }
 
@@ -665,30 +724,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: $line-height * 1rem;
 }
 
-// headings helper ala harry roberts
-%hN {
-	text-rendering: optimizeLegibility;
-	// don't use shorthand to avoid spoiling left/right padding on things like buttons
-	margin-top: $line-height * 1rem;
-	margin-bottom: $line-height * 1rem;
-	line-height: 1;
-	& + %hN {
-		margin: 0;
-	}
-}
-
-
-// $Header Styles
-// ============================================================
-
-h1, h2, h3, h4, h5, h6 {
-	@extend %hN;
-	// waddya think?
-	// I liked the text shadow in this dribbble shot and thought it fit us.
-	// http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
-	//text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
-}
-
 
 // $Indenting
 // ============================================================
@@ -729,11 +764,11 @@ p {
 // ============================================================
 
 .bqstart {
-	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, $rust);
 }
 
 .bqend {
-	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+	@include pull-quote(right, 25px, -50px auto auto, 700%, $rust);
 }
 
 
