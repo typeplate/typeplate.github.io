@@ -10,7 +10,7 @@ We've even made sure to support IE7-8 while still supporting all current and maj
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="375">
 
 ## File Size
-Not much goin on here in terms of bulk. As you can see, Typeplate is just a measely 2.806 kb when compressed. That's really, really small.
+Not much goin on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
 - Raw ``.scss`` = **17kb**
 - Compressed ``.css`` = **3kb**
@@ -36,11 +36,11 @@ Simply download our ``typeplate.scss`` file and import from your project's ``.sc
 
 ###&sect; Installation via ``.css``
 
-If the Sass version isn't your cup of tea, we've provided a CSS version. Simply place the contents of ``typeplate.css`` inside your project's stylesheet in the order specified from the example above.
+If the Sass version isn't your cup of tea, we've provided a CSS version. Simply place the contents of ``typeplate-unminified.css`` inside your project's stylesheet in the order specified from the example above.
 
 ###&sect; Installation via Bower
 
-Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the Sass version or ``bower install typeplate`` for the CSS version and watch the magic happen. This is an example of how to include either version in your project:
+Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the Sass version or ``bower install typeplate`` and watch the magic happen. This is an example of how to include either version in your project:
 
 	@import "compass";
 	@import "[your_project_path]/reset";
