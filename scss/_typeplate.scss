@@ -392,7 +392,7 @@ body {
 // and the second value is the variable for the size
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
-// associate h1-h6 tags with their appropriate greek heading
+// for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
