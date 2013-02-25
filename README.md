@@ -40,7 +40,7 @@ If the Sass version isn't your cup of tea, we've provided a CSS version. Simply 
 
 ###&sect; Installation via Bower
 
-Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the Sass version or ``bower install typeplate`` and watch the magic happen. This is an example of how to include either version in your project:
+Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the Sass version and watch the magic happen. This is an example of how to include either version in your project:
 
 	@import "compass";
 	@import "[your_project_path]/reset";
