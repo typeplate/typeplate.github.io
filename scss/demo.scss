@@ -1,12 +1,13 @@
-// ==================== Compass
+// $Imports
+// ============================================================
 
 @import "compass";
 @import "vars";
 @import "queries";
-@import "fontello";
 
 
-// ==================== Author Styles
+// $Lobal Author Styles
+// ============================================================
 
 body {
 	margin: 6em auto;
@@ -18,8 +19,15 @@ img {
 	max-width: 100%;
 }
 
+.rule {
+	display: block;
+	text-align: center;
+	color: scale-lightness(#606060, 50%);
+}
 
-// ==================== Typekit
+
+// $Typekit
+// ============================================================
 
 .wf-loading body {
 	font-family: serif;
@@ -55,18 +63,15 @@ img {
 	background: image-url("logo.png") 50% no-repeat;
 	width: 12em;
 	background-size: cover;
-
 	&:before {
 		content: "";
 		display: block;
 		width: 0;
 		height: 100%;
 	}
-
 	@include breakpoint(papa-bear) {
 		width: 12em;
 	}
-
 	@include breakpoint(baby-bear) {
 		width: 10em;
 	}
@@ -154,7 +159,8 @@ img {
 }
 
 
-// ==================== Top Banner Stripe
+// $Top Banner Stripe
+// ============================================================
 
 #typeplate-widgets-wrap {
 	border-top: 6px solid #606060;
@@ -171,7 +177,8 @@ img {
 }
 
 
-// ==================== On/Off Radio Buttons
+// $On/Off Radio Buttons
+// ============================================================
 
 #normalize-form {
 	display: block;
@@ -195,7 +202,8 @@ input[type="radio"]:hover {
 }
 
 
-// ==================== Viewport
+// $Viewport
+// ============================================================
 
 @-ms-viewport {
 	width: device-width;
