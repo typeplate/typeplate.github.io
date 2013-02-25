@@ -449,6 +449,14 @@ a[href="#table-of-contents"] {
 	@include word-wrap(normal);
 }
 
+// hotfix for typographic scale example
+.example.scale-example {
+	padding-bottom: $line-height * 1rem;
+	.giga {
+		line-height: 1;
+	}
+}
+
 
 // $Permalink Anchor
 // ============================================================
