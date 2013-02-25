@@ -2,13 +2,19 @@
 @import "fontello";
 
 
+// $Compass Extends
+// ============================================================
+
+%transition {
+	@include transition(.3s all ease-in-out);
+}
+
+
 // $Global Elements
 // ============================================================
 
 * {
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 }
 
 body {
@@ -17,14 +23,17 @@ body {
 }
 
 a {
+	@extend %transition;
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}
 }
 
-a, a:visited {
-	color: #212121;
+a,
+a:visited {
+	//color: #212121;
+	color: #de4d1f;
 }
 
 p code,
@@ -144,6 +153,9 @@ hr {
 			text-align: left;
 		}
 	}
+	.col-wrap {
+		background: rgba(255, 255, 255, 0.40)
+	}
 }
 
 .lede {
@@ -163,13 +175,16 @@ hr {
 	letter-spacing: -4px;
 	//@extend %rhythm;
 	display: inline-block;
-	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
-		margin-top: 5em;
-	}
 	@include breakpoint(baby-bear) {
 		padding-top: 0.825em;
 		display: block;
 		text-align: center;
+	}
+}
+
+.nav.nav-primary {
+	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
+		margin-top: 5em;
 	}
 }
 
@@ -208,7 +223,8 @@ hr {
 		&:visited {
 			color: $white;
 		}
-		&:hover, &:focus {
+		&:hover,
+		&:focus {
 			background: $rust;
 			color: white;
 		}
@@ -234,19 +250,28 @@ hr {
 	}
 }
 .dl-item {
+	@extend %transition;
 	padding: $line-height * 0.5rem;
-
 	width: 31%;
 	margin-right: 3%;
+	background: $cobalt-fade;
+	color: $cobalt-deep;
+	// pseudo
 	&:last-of-type {
 		margin-right: 0;
 	}
-
+	&:hover,
+	&:focus {
+		background: $rust;
+		color: white;
+		text-decoration: none;
+	}
+	// break
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
 		padding: $line-height * 0.35rem;
 	}
-
+	// break
 	@include breakpoint(papa-bear) {
 		font-size: 1em;
 		padding: $line-height * 0.5rem;
@@ -254,39 +279,30 @@ hr {
 		margin-right: 0;
 		margin-bottom: 1.65em;
 	}
-
-	background: $cobalt-fade;
-	color: $cobalt-deep;
-	&:hover, &:focus {
-		background: $rust;
-		color: white;
-	}
 }
 
 .social-nav {
 	position: absolute;
 	top: 1.65em;
 	right: 1.65em;
-
+	// break
 	@include breakpoint(mama-bear) {
 		position: static;
 		margin-top: 0.825em;
 		margin-bottom: 0.825em;
 	}
+	// break
 	@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
 		text-align: right;
 	}
 }
 
 .social-item {
+	@extend %transition;
 	margin-left: 0.825em;
 	padding: 0 0.825em 0 0;
 	background: $cobalt-fade;
 	color: $cobalt-deep;
-	&:hover, &:focus {
-		background: $rust;
-		color: white;
-	}
 	i {
 		background: $cobalt-deep;
 		color: $white;
@@ -296,8 +312,14 @@ hr {
 		border-top-left-radius: 0.333333em;
 		border-bottom-left-radius: 0.333333em;
 	}
+	// pseudo
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background: $rust;
+		color: white;
+	}
 }
-
 
 // $Table of Contents
 // ============================================================
@@ -342,9 +364,17 @@ hr {
 	h1 {
 		margin: 0;
 		padding-top: .5em;
+		text-shadow: 0 1px 0px $white;
 		color: #606060;
 		.icon-download {
-			color: $white;
+			color: #929292;
+		}
+		&::after {
+			content: "click for action";
+			display: block;
+			font-size: .5em;
+			color: scale-lightness(#EFEFEF, -35%);
+			//color: #e3551c;
 		}
 		&:hover {
 			cursor: pointer;
@@ -358,9 +388,29 @@ hr {
 }
 
 #drawer {
-	color: white;
 	padding: 1.5em 0;
+	color: white;
+	&::after {
+		border-radius: 80%;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.90), 0 -2px 1px rgba(255,255,255,0.90);
+		content: "{T}";
+		display: block;
+		height: 2.5em;
+		line-height: 2.5;
+		margin: 0 auto;
+		width: 2.5em;
+		@extend .gamma;
+		text-align: center;
+		text-shadow: 0 1px 0px $white;
+		border: 4px solid #949494;
+		background: #000000;
+		color: #fbfbfb;
+	}
 }
+
+
+// $Back to Top
+// ============================================================
 
 a[href="#table-of-contents"] {
 	@extend .dl-item;
@@ -561,6 +611,9 @@ h1, h2, h3, h4, h5, h6 {
 .site-footer {
 	margin-top: 3em;
 	font-size: 75%;
+	a {
+		color: #de4d1f;
+	}
 }
 
 
