@@ -457,6 +457,22 @@ a[href="#table-of-contents"] {
 	}
 }
 
+.example.no-top-pad {
+	padding-top: 0;
+	&:before {
+		top: -0.65em;
+	}
+}
+
+
+// $Section Titles
+// ============================================================
+
+// this is breakpoint baby bear
+.section-title {
+	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+}
+
 
 // $Permalink Anchor
 // ============================================================
@@ -464,7 +480,6 @@ a[href="#table-of-contents"] {
 .perma-anchor {
 	color: #444;
 	font-weight: normal;
-	@extend .gamma;
 	position: relative;
 	top: -0.125em;
 	&:hover, &:focus {
@@ -489,6 +504,9 @@ a[href="#table-of-contents"] {
 	code {
 		color: #ddd;
 	}
+	figcaption {
+		margin-bottom: 0;
+	}
 }
 
 
@@ -509,6 +527,14 @@ blockquote {
 			content:"—";
 		}
 	}
+	// make more readable at narrow widths
+	@include breakpoint(baby-bear) {
+		margin: 1.5em 0.75em;
+
+		cite {
+			text-align: left;
+		}
+	}
 }
 
 
@@ -526,8 +552,18 @@ blockquote {
 // $Ampersand Demo
 // ============================================================
 
+.amp-example {
+	padding-top: 0;
+}
+
 .amp {
 	@extend %ampersand-placeholder;
+	padding: 0;
+	line-height: 1;
+	@include breakpoint(baby-bear) {
+		font-size: 2em;
+	}
+	font-size: 3em;
 	text-align: center;
 }
 
@@ -542,6 +578,14 @@ blockquote {
 	strong {
 		font-style: normal;
 	}
+}
+
+
+// $Icon Font Demo
+// ============================================================
+
+.pull-example {
+	padding-bottom: 1em;
 }
 
 
@@ -567,6 +611,11 @@ blockquote {
 	text-align: center;
 	a {
 		color: #000;
+	}
+	li {
+		@include breakpoint(baby-bear) {
+			margin: 0 0 1em;
+		}
 	}
 }
 
@@ -728,11 +777,11 @@ p {
 // ============================================================
 
 .bqstart {
-	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
+	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, $rust);
 }
 
 .bqend {
-	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+	@include pull-quote(right, 25px, -50px auto auto, 700%, $rust);
 }
 
 
