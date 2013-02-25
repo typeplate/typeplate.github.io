@@ -81,6 +81,7 @@ img {
 
 section {
 	padding: $line-height * 0.5em 0 $line-height * 1em;
+	@extend %rhythm;
 }
 
 .col-wrap {
@@ -482,6 +483,7 @@ a[href="#table-of-contents"] {
 // this is breakpoint baby bear
 .section-title {
 	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+
 }
 
 
@@ -563,13 +565,10 @@ blockquote {
 // $Ampersand Demo
 // ============================================================
 
-.amp-example {
-	padding-top: 0;
-}
-
 .amp {
 	@extend %ampersand-placeholder;
 	padding: 0;
+	margin-top: -0.5em;
 	line-height: 1;
 	@include breakpoint(baby-bear) {
 		font-size: 2em;
