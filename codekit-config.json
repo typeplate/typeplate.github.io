@@ -69,14 +69,16 @@
       "initialSize" : 186332,
       "fileType" : 8192
     },
-    "\/css\/typeplate-unminified.css" : {
+    "\/img\/subtle_grunge.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/typeplate-unminified.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/img\/subtle_grunge.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/subtle_grunge.png",
+      "initialSize" : 84037,
+      "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v1.png" : {
       "ignoreWasSetByUser" : 0,
@@ -89,17 +91,6 @@
       "initialSize" : 57630,
       "fileType" : 8192
     },
-    "\/img\/subtle_grunge.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/subtle_grunge.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/subtle_grunge.png",
-      "initialSize" : 84037,
-      "fileType" : 8192
-    },
     "\/lib\/logo\/drafts\/logo_v5.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -110,6 +101,15 @@
       "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v5.png",
       "initialSize" : 92192,
       "fileType" : 8192
+    },
+    "\/css\/typeplate-unminified.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/typeplate-unminified.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/lib\/logo\/drafts\/sketches1.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -154,6 +154,15 @@
       "outputAbbreviatedPath" : "\/js\/vendor\/minified\/modernizr.min-min.js",
       "fileType" : 64
     },
+    "\/components\/normalize.scss\/test.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/lib\/logo\/drafts\/logo_v8.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -164,15 +173,6 @@
       "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v8.png",
       "initialSize" : 79965,
       "fileType" : 8192
-    },
-    "\/components\/normalize.scss\/test.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/lib\/logo\/drafts\/logo_v4.png" : {
       "ignoreWasSetByUser" : 0,
@@ -196,14 +196,27 @@
       "outputAbbreviatedPath" : "\/js\/minified\/minified\/main-min-min.js",
       "fileType" : 64
     },
-    "\/config.rb" : {
+    "\/favicon.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "inputAbbreviatedPath" : "\/favicon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/favicon.png",
+      "initialSize" : 840,
+      "fileType" : 8192
+    },
+    "\/grunt.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/grunt.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/minified\/grunt-min.js",
+      "fileType" : 64
     },
     "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
@@ -215,17 +228,6 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
       "fileType" : 64
-    },
-    "\/favicon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/favicon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/favicon.png",
-      "initialSize" : 840,
-      "fileType" : 8192
     },
     "\/scss\/main.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -239,14 +241,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/demo.html" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/demo.html",
+      "inputAbbreviatedPath" : "\/config.rb",
       "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "fileType" : 32768
     },
     "\/lib\/avatar\/TypePlate_T.png" : {
       "ignoreWasSetByUser" : 0,
@@ -259,16 +261,14 @@
       "initialSize" : 143638,
       "fileType" : 8192
     },
-    "\/grunt.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/demo.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/grunt.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/minified\/grunt-min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/demo.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/scss\/_typeplate.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -305,17 +305,16 @@
       "initialSize" : 154492,
       "fileType" : 8192
     },
-    "\/scss\/_site.scss" : {
-      "ignoreWasSetByUser" : 0,
+    "\/js\/vendor\/jquery.min.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_site.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_site.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/vendor\/minified\/jquery.min-min.js",
+      "fileType" : 64
     },
     "\/scss\/_icons.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -329,16 +328,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/vendor\/jquery.min.js" : {
-      "ignoreWasSetByUser" : 1,
+    "\/scss\/_site.scss" : {
+      "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/vendor\/jquery.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/vendor\/minified\/jquery.min-min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/scss\/_site.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_site.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/lib\/logo\/drafts\/logo_v3.png" : {
       "ignoreWasSetByUser" : 0,
@@ -465,18 +465,6 @@
       "initialSize" : 662076,
       "fileType" : 8192
     },
-    "\/scss\/_fontello.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_fontello.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_fontello.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/scss\/_queries.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -486,6 +474,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 1,
       "outputAbbreviatedPath" : "\/css\/_queries.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/scss\/_fontello.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/_fontello.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_fontello.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
