@@ -143,16 +143,13 @@ hr {
 
 .header {
 	padding-top: 1.65em;
-	background: white image-url("typeplate-press.png") center bottom no-repeat;
+	background: $white image-url("typeplate-press.png") center bottom no-repeat;
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
 		p {
 			text-align: left;
 		}
-	}
-	.col-wrap {
-		background: rgba(255, 255, 255, 0.40);
 	}
 }
 
