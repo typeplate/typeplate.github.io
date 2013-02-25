@@ -346,6 +346,7 @@ hr {
 	background: #d5d5d5;
 	background: rgba(0, 0, 0, 0.1);
 	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
+	@extend %rhythm;
 }
 .toc ol {
 	list-style: decimal !important;
@@ -464,10 +465,7 @@ a[href="#table-of-contents"] {
 
 // hotfix for typographic scale example
 .example.scale-example {
-	padding-bottom: $line-height * 1rem;
-	.giga {
-		line-height: 1;
-	}
+	padding-top: 0;
 }
 
 .example.no-top-pad {
@@ -557,7 +555,7 @@ blockquote {
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
 .typographic-scale .no-indent {
-	margin: 0;
+	// margin: 0;
 	text-indent: 0;
 }
 
@@ -724,30 +722,6 @@ h1, h2, h3, h4, h5, h6 {
 %rhythm {
 	margin-top: 0;
 	margin-bottom: $line-height * 1rem;
-}
-
-// headings helper ala harry roberts
-%hN {
-	text-rendering: optimizeLegibility;
-	// don't use shorthand to avoid spoiling left/right padding on things like buttons
-	margin-top: $line-height * 1rem;
-	margin-bottom: $line-height * 1rem;
-	line-height: 1;
-	& + %hN {
-		margin: 0;
-	}
-}
-
-
-// $Header Styles
-// ============================================================
-
-h1, h2, h3, h4, h5, h6 {
-	@extend %hN;
-	// waddya think?
-	// I liked the text shadow in this dribbble shot and thought it fit us.
-	// http://dribbble.com/shots/902504-Little-Shop-of-Horrors-Identity?list=following
-	//text-shadow: 1px 2px 1px #fffdfd, 1px 3px 1px #fffdfd, 1px 4px 1px #fffdfd, 1px 5px 1px rgb(133, 132, 132);
 }
 
 

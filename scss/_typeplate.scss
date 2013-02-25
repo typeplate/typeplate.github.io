@@ -387,6 +387,16 @@ body {
 // $H e a d i n g s
 // --------------------------------------------------------------------------
 
+// styles for all headings, in the style of @csswizardry
+%hN {
+	// voodoo to enable ligatures and kerning
+	text-rendering: optimizeLegibility;
+	// this fixes huge spaces when a heading wraps onto two lines
+	line-height: 1;
+
+	margin-top: 0;
+}
+
 // make a multi-dimensional array, where:
 // the first value is the name of the class
 // and the second value is the variable for the size
@@ -396,6 +406,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		@extend %hN;
 	}
 }
 
