@@ -116,7 +116,8 @@ hr {
 		margin-right: 0;
 	}
 }
-.logo-img{
+
+.logo-img {
 	background: image-url("logo.png") 50% no-repeat;
 	width: 12em;
 	background-size: cover;
@@ -144,6 +145,7 @@ hr {
 .header {
 	padding-top: 1.65em;
 	background: $white image-url("typeplate-press.png") center bottom no-repeat;
+	// break
 	@include breakpoint(baby-bear) {
 		text-align: center;
 		padding-top: 0;
