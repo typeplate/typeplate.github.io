@@ -1,4 +1,4 @@
-<a href="//typeplate.com"><img src="./img/logo.png" alt="typeplate" width="300"></a>
+<a href="//typeplate.com"><img src="./img/logo.png" alt="typeplate logo" width="216" height="216"></a>
 ## What is it?
 Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don&rsquo;t separate styling and markup, making them tough to use in a truly modular fashion. We weren&rsquo;t satisfied, so we made a thing that doesn&rsquo;t do that.
 
@@ -12,8 +12,8 @@ We've even made sure to support IE7-8 while still supporting all current and maj
 ## File Size
 Not much goin on here in terms of bulk. As you can see, Typeplate is just a measely 2.806 kb when compressed. That's really, really small.
 
-- Raw ``.scss`` = **16.654 kb**
-- Compressed ``.css`` = **2.806 kb**
+- Raw ``.scss`` = **16.96kb**
+- Compressed ``.css`` = **3kb**
 
 ## Customizing
 This will be the explanation on how to customize typeplate and what the vars can do.
