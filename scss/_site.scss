@@ -265,6 +265,10 @@ hr {
 		color: white;
 		text-decoration: none;
 	}
+	// filesize line
+	small {
+		font-size: 80%;
+	}
 	// break
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
