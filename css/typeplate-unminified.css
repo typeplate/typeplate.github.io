@@ -3,16 +3,17 @@
 +---------------------------------------------------------------------+
 |        _                               _         _                  |
 |       | |_  _   _  _ __    ___  _ __  | |  __ _ | |_  ___           |
-|       | __|| | | || '_ \  / _ \| '_ \ | | / _ || __|/ _ \          |
+|       | __|| | | || '_ \  / _ \| '_ \ | | / _ || __|/ _ \           |
 |       | |_ | |_| || |_) ||  __/| |_) || || (_| || |_|  __/          |
 |        \__| \__, || .__/  \___|| .__/ |_| \__,_| \__|\___|          |
 |             |___/ |_|          |_|                                  |
 |                                                                     |
 |                                                                     |
-| URL: https://github.com/typePlate/typeplate.github.com              |
+| URL: http://typeplate.com                                           |
+| Github: https://github.com/typePlate/typeplate.github.com           |
 | AUTHORS: Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals) |
-| LICENSE: this work is in the public domain:                         |
-| http://creativecommons.org/publicdomain/zero/1.0                    |
+| LICENSE: Creative Commmons                                          |
+| http://creativecommons.org/licenses/by/3.0                          |
 |                                                                     |
 +---------------------------------------------------------------------+
 */
@@ -48,6 +49,12 @@ body {
   hyphens: auto;
   word-wrap: break-word;
   color: #444444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
 }
 
 .tera {
