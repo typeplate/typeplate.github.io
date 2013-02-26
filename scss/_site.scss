@@ -467,6 +467,9 @@ a[href="#table-of-contents"] {
 // hotfix for typographic scale example
 .example.scale-example {
 	padding-top: 0;
+	.giga {
+		margin-top: -0.25em;
+	}
 }
 
 .example.no-top-pad {
