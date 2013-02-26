@@ -154,15 +154,6 @@
       "outputAbbreviatedPath" : "\/js\/vendor\/minified\/modernizr.min-min.js",
       "fileType" : 64
     },
-    "\/components\/normalize.scss\/test.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/lib\/logo\/drafts\/logo_v8.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -185,35 +176,15 @@
       "initialSize" : 266003,
       "fileType" : 8192
     },
-    "\/config.rb" : {
+    "\/js\/minified\/main-min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
-    },
-    "\/favicon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/favicon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/favicon.png",
-      "initialSize" : 840,
-      "fileType" : 8192
-    },
-    "\/grunt.js" : {
-      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/grunt.js",
+      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/minified\/grunt-min.js",
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/minified\/minified\/main-min-min.js",
       "fileType" : 64
     },
     "\/js\/main.js" : {
@@ -226,6 +197,35 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
       "fileType" : 64
+    },
+    "\/favicon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/favicon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/favicon.png",
+      "initialSize" : 840,
+      "fileType" : 8192
+    },
+    "\/config.rb" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
+    },
+    "\/components\/normalize.scss\/test.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/scss\/main.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -259,15 +259,15 @@
       "initialSize" : 143638,
       "fileType" : 8192
     },
-    "\/js\/minified\/main-min.js" : {
-      "ignoreWasSetByUser" : 0,
+    "\/grunt.js" : {
+      "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
+      "inputAbbreviatedPath" : "\/grunt.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/minified\/minified\/main-min-min.js",
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/minified\/grunt-min.js",
       "fileType" : 64
     },
     "\/scss\/_typeplate.scss" : {
@@ -328,15 +328,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/_site.scss" : {
+    "\/components\/normalize.scss\/_normalize.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_site.scss",
+      "inputAbbreviatedPath" : "\/components\/normalize.scss\/_normalize.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_site.css",
+      "outputAbbreviatedPath" : "\/css\/_normalize.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -351,15 +351,15 @@
       "initialSize" : 92549,
       "fileType" : 8192
     },
-    "\/components\/normalize.scss\/_normalize.scss" : {
+    "\/scss\/_site.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/normalize.scss\/_normalize.scss",
+      "inputAbbreviatedPath" : "\/scss\/_site.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_normalize.css",
+      "outputAbbreviatedPath" : "\/css\/_site.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -455,18 +455,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/scss\/_fontello.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_fontello.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/css\/_fontello.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/lib\/logo\/drafts\/logo_v2.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -488,6 +476,18 @@
       "outputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
       "initialSize" : 662076,
       "fileType" : 8192
+    },
+    "\/scss\/_fontello.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/_fontello.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_fontello.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/404.html" : {
       "ignoreWasSetByUser" : 0,

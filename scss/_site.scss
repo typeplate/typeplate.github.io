@@ -483,7 +483,6 @@ a[href="#table-of-contents"] {
 // this is breakpoint baby bear
 .section-title {
 	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
-
 }
 
 
@@ -759,7 +758,7 @@ p {
 }
 
 
-// $Definition Lists
+// $Pull Quotes
 // ============================================================
 
 .bqstart {
