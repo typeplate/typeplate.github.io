@@ -5,12 +5,12 @@ Frameworks make decisions for you about how to organize, structure and design a 
 Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design choices, but define proper markup with extensible styling for common typographic patterns. A stripped&ndash;down Sass library concerned with the appropriate technical implementation of design patterns&ndash;not how they look.
 
 ## Browser Tested, Developer Approved
-We've even made sure to support IE7-8 while still supporting all current and major standards supporting browser makers.
+We've even made sure to support IE7-8 while still supporting all current and major standards supporting browsers.
 
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="375">
 
 ## File Size
-Not much goin on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
+Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
 - Raw ``.scss`` = **17kb**
 - Compressed ``.css`` = **3kb**
@@ -76,10 +76,10 @@ You could also use the CSS version instead (btw&hellip;we don&rsquo;t condone th
 
 ##Contributing Guidelines
 ###&sect; Pull Requests
-When contributing (by the way you're awesome for that so thanks) please keep your commits small and targeted when you're prepared for filing a Pull Request. We'd prefer not seeing Pull Requests that contain 20 commits in multiple spots. Keep it small and it will make things simpler and much cleaner in the long run.
+When contributing (by the way you're awesome for that so thanks) please keep your commits small and targeted when you're prepared to file a Pull Request. We&rsquo;d prefer not seeing Pull Requests that contain 20 commits in multiple spots. Keep it small and it will make things simpler and much cleaner in the long run.
 
 ###&sect; Feature Branches
-If you're making a new feature for Typeplate then make sure you name your branch as follows:
+If you&rsquo;re making a new feature for Typeplate then make sure you name your branch as follows:
 
     feature/your_feature_name
 
@@ -114,6 +114,7 @@ With so many packages to choose from, we recommend a few libraries to use with T
 
 1. [FitText.js](http://fittextjs.com) &ndash; A jQuery plugin for inflating web type
 2. [LETTERING.JS](http://letteringjs.com) &ndash; A jQuery plugin for radical web typography
+3. [MOLTEN LEADING](https://github.com/Wilto/Molten-Leading) &ndash; Slingin&rsquo; Hot Leading
 
 ######©credits
 Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
