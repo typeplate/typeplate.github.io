@@ -280,40 +280,43 @@ h6 {
  * Extend this object into your markup.
  *
  */
+
+
 /**
- * Pull Quotes Include: Pass in custom values for arguments you desire, pass in 'null'
- * for those arguments you do not. For Example:
+ * Pull Quotes Markup
  *
-	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
-	@include pull-quote(null, 45px, null, 700%, white);
-
-*	Include these classes in your custom stylesheet outside of typeplate.scss
-	.bqstart {
-		@include pull-quote(left,45px, -50px 12px 50px auto, 700%, white);
-	}
-
-	.bqend {
-		@include pull-quote(right, 25px, -50px auto auto, 700%, white);
-	}
+	<aside class="pull-quote">
+		<blockquote>
+			<p></p>
+		</blockquote>
+	</aside>
  *
  * Extend this object into your custom stylesheet.
  *
  */
-.bqstart {
-	float: left;
-	height: 45px;
-	margin: -50px 12px 50px auto;
-	font-size: 700%;
-	color: #333333;
+.pull-quote {
+	position: relative;
+	padding: 1em;
+}
+.pull-quote:before,
+.pull-quote:after {
+	height: 1em;
+	opacity: 0.25;
+	position: absolute;
+	font-size: 72px;
+	font-size: 4rem;
+}
+.pull-quote:before {
+	content: '“';
+	top:  0em;
+	left: 0em;
+}
+.pull-quote:after {
+	content: '”';
+	bottom: 0em;
+	right: 0em;
 }
 
-.bqend {
-	float: right;
-	height: 25px;
-	margin: -50px auto auto;
-	font-size: 700%;
-	color: #333333;
-}
 
 /**
  * Figures Markup

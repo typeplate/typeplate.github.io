@@ -758,18 +758,6 @@ p {
 }
 
 
-// $Pull Quotes
-// ============================================================
-
-.bqstart {
-	@include pull-quote(left, 45px, -50px 12px 50px auto, 700%, $rust);
-}
-
-.bqend {
-	@include pull-quote(right, 25px, -50px auto auto, 700%, $rust);
-}
-
-
 // $Helpers
 // ============================================================
 

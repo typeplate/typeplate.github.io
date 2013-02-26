@@ -59,7 +59,7 @@
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/css/typeplate-unminified.css" class="dl-item">
 				<i class="icon-download"></i>Raw CSS
 				<hr>
-				<small>v1.0 | 6.049kb</small>
+				<small>v1.0 | 6.68kb</small>
 			</a>
 		</div>
 	</nav>
@@ -648,57 +648,51 @@ code {
 			<header>
 				<h1 class="gamma section-title"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
 			</header>
-			<p>Pull Quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is a take and improved upon from the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a></p>
+			<p>Pull Quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is an improvement based upon the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a> This particular example depicted takes advantage of psuedo selectors and the <code>&lt;aside&gt;</code> tag.</p>
 
 			<figure class="example no-top-pad pull-example">
 				<aside class="pull-quote">
 					<blockquote>
-						<span class="bqstart">&#8220;</span>Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="bqend">&#8221;</span>
+						<p>Most people who use Helvetica, use it because it's ubiquitous. It's like going to McDonald's instead of thinking about food. Because it's there, it's on every street corner, so let's eat crap because it's on the corner.</p>
 					</blockquote>
 				</aside>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
-				<pre><code class="language-markup">&lt;aside class=&quot;pull-quote&quot;&gt;
+				<pre><code class="language-markup">&lt;aside class=&quot;pull&ndash;quote&quot;&gt;
 	&lt;blockquote&gt;
-		&lt;span class=&quot;bqstart&quot;&gt;&amp;#8220;&lt;/span&gt;Speech marks. Curly quotes. That annoying thing cool people do with their fingers to emphasize a buzzword, shortly before you hit them.Lorem ipsum dolor sit amet, consectetur adipisicing elit&lt;span class=&quot;bqend&quot;&gt;&amp;#8221;&lt;/span&gt;
+		&lt;p&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
 &lt;/aside&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">// Pull Quotes Include: Pass in custom values for arguments
-// you desire, pass in ‘null’ for those arguments you do not.
-// For example:
-// @include pull-quote(left, 45px, -50px 12px 50px auto, 700%, white);
-// @include pull-quote(null, 45px, null, 700%, white);
-@mixin pull-quote($float, $height, $margin, $fontsize, $color) {
-	@if $float != null {
-		float: $float;
+				<pre><code class="language-sass">@mixin pull-quotes($font-size, $opacity) {
+	position: relative;
+	padding: ems($font-size, $font-size);
+	&:before,
+	&:after {
+		height: ems($font-size, $font-size);
+		opacity: $opacity;
+		position: absolute;
+		font-size: $font-size;
 	}
-	@if $height != null {
-		height: $height;
+	&:before {
+		content: '“';
+		top:  0em;
+		left: 0em;
 	}
-	@if $margin != null {
-		margin: $margin;
-	}
-	@if $fontsize != null {
-		font-size: $fontsize;
-	}
-	@if $color != null {
-		color: $color;
+	&:after {
+		content: '”';
+		bottom: 0em;
+		right: 0em;
 	}
 }
 
-// Include these classes in your custom stylesheet outside of `typeplate.scss`
-.bqstart {
-	@include pull-quote(left,45px, -50px 12px 50px auto, 700%, white);
-}
-
-.bqend {
-	@include pull-quote(right, 25px, -50px auto auto, 700%, white);
+.pull-quote {
+	@include pull-quotes(4em, .15);
 }</code></pre>
 			</figure>
 			<a href="#table-of-contents">back to top</a>
