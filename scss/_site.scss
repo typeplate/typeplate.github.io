@@ -461,7 +461,7 @@ a[href="#table-of-contents"] {
 	overflow: auto;
 	white-space: pre;
 	word-spacing: normal;
-	@include word-wrap(normal);
+	@extend %normal-wrap;
 }
 
 // hotfix for typographic scale example

@@ -35,12 +35,9 @@
 }
 
 /**
- * Dropcap Sass @include
- * Use the following Sass @include with any selector you feel necessary.
  *
-	@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
  *
- * Extend this object into your custom stylesheet.
+	Base Type
  *
  */
 html {
@@ -56,7 +53,12 @@ body {
 	color: #444444;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-rendering: optimizeLegibility;
 	line-height: 1;
 	margin-top: 0;
@@ -80,37 +82,43 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.4125rem;
 }
 
-.alpha, h1 {
+h1,
+.alpha {
 	font-size: 60px;
 	font-size: 3.33333rem;
 	margin-bottom: 0.495rem;
 }
 
-.beta, h2 {
+h2,
+.beta {
 	font-size: 48px;
 	font-size: 2.66667rem;
 	margin-bottom: 0.61875rem;
 }
 
-.gamma, h3 {
+h3,
+.gamma {
 	font-size: 36px;
 	font-size: 2rem;
 	margin-bottom: 0.825rem;
 }
 
-.delta, h4 {
+h4,
+.delta {
 	font-size: 24px;
 	font-size: 1.33333rem;
 	margin-bottom: 1.2375rem;
 }
 
-.epsilon, h5 {
+h5,
+.epsilon {
 	font-size: 21px;
 	font-size: 1.16667rem;
 	margin-bottom: 1.41429rem;
 }
 
-.zeta, h6 {
+h6,
+.zeta {
 	font-size: 18px;
 	font-size: 1rem;
 	margin-bottom: 1.65rem;
@@ -127,7 +135,6 @@ pre code {
 }
 
 pre {
-	word-wrap: auto;
 	white-space: pre;
 }
 

@@ -5,16 +5,14 @@ Frameworks make decisions for you about how to organize, structure and design a 
 Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design choices, but define proper markup with extensible styling for common typographic patterns. A stripped&ndash;down Sass library concerned with the appropriate technical implementation of design patterns&ndash;not how they look.
 
 ## Browser Tested, Developer Approved
-We've even made sure to support IE7-8 while still supporting all current and major standards supporting browsers.
-
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" alt="" width="375">
 
 ## File Size
 Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
-- Raw ``.scss`` = **17kb**
-- Compressed ``.css`` = **3kb**
-
+- Raw Sass = **17kb**
+- Compressed CSS = **3kb**
+- Raw CSS Unminified = **6kb**
 
 ## Installation
 Based on use cases for most developers' workflow, we recommend using typeplate just after your reset stylesheet (i.e. [normalize](http://necolas.github.com/normalize.css)) and your compass ``@import`` in order to operate as we've intended, but as you'll see from our <a href="//typeplate.com/demo">demo</a> it isn't necessary.

@@ -59,7 +59,7 @@
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/css/typeplate-unminified.css" class="dl-item">
 				<i class="icon-download"></i>Raw CSS
 				<hr>
-				<small>v1.0 | 6.68kb</small>
+				<small>v1.0 | 6kb</small>
 			</a>
 		</div>
 	</nav>
@@ -280,18 +280,26 @@ h6 {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">@mixin word-wrap($wrap-value) {
-	// normal: Indicates that lines may only break at normal word break points.
-	// break-word : Indicates that normally unbreakable words may be broken at ...
-	// arbitrary points if there are no otherwise acceptable break points in the line.
-	word-wrap: $wrap-value;
+			<pre><code class="language-sass">// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at ...
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+%breakword {
+	word-wrap: breakword;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%auto-wrap {
+	word-wrap: auto;
 }
 
 body {
-	// normal: Indicates that lines may only break at normal word break points.
-	// break-word : Indicates that normally unbreakable words may be broken at ...
-	// arbitrary points if there are no otherwise acceptable break points in the line.
-	@include word-wrap(break-word);
+	@extend %breakword;
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents">back to top</a>
@@ -316,13 +324,10 @@ body {
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">//paragraph siblings indent
 $indent-val: 1.5em;
-@mixin txt-indent($indent) {
-	text-indent: $indent;
-}
 
 p {
 	& + p {
-		@include txt-indent($indent-val);
+		text-indent: $indent-val;
 	}
 }</code></pre>
 		</figure>
@@ -365,7 +370,7 @@ body {
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#small-caps">§</a> 3.1 Small Capitals</h1>
 		</header>
-		<p>Small caps help to make abbreviations way easier to read but won’t stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web, <a href="http://blog.hypsometry.com/articles/true-small-capitals-with-font-face" rel="external">but alas they are still a bitch</a> and will also depend on the type face in use. Definitely check out <a href="//opentypography.org/fontlist.html" rel="external">Open Typography</a> for those type faces and services that provide authentic small caps.</p>
+		<p>Small caps help to make abbreviations way easier to read but won’t stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web, <a href="http://blog.hypsometry.com/articles/true-small-capitals-with-font-face" rel="external">but alas they are still a bitch</a> and will also depend on the type face in use. Definitely check out <a href="//opentypography.org/fontlist.html" rel="external">Open Typography</a> for those typefaces and services that provide authentic small caps.</p>
 
 		<figure class="example no-top-pad">
 			<p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
@@ -549,20 +554,19 @@ $amp-font-family: Verdana, sans-serif;
 			<figcaption>Sass</figcaption>
 		<pre><code class="language-sass">@mixin white-space($wrap-space) {
 	@if $wrap-space == 'pre-wrap' {
-		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
-		white-space: $wrap-space; // current browsers
+		white-space: #{-moz-}$wrap-space;	// Firefox 1.0-2.0
+		white-space: $wrap-space; 			// current browsers
 	} @else {
 		white-space: $wrap-space;
 	}
 }
 
 pre code {
-	@include word-wrap(normal);
+	@extend %normal-wrap;
 	@include white-space(pre-wrap);
 }
 
 pre {
-	@include word-wrap(auto); // IE 5.5-7
 	@include white-space(pre);
 }
 

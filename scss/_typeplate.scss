@@ -80,19 +80,19 @@ $epsilon:	21;		//	21  = 18 × 1.1667
 $zeta:		18;		//	18  = 18 × 1
 
 
-// $Typscale unit
+// $T y p e  S c a l e  U n i t
 // --------------------------------------------------------------------------
 
 $type-scale-unit-value: rem;
 
 
-// Indentation
+// $T e x t  I n d e n t a t i o n
 // --------------------------------------------------------------------------
 
 $indent-val: 1.5em;
 
 
-// $Stats tab
+// $S t a t s  T a b
 // --------------------------------------------------------------------------
 
 $stats-font-size: 1.5rem;
@@ -195,9 +195,9 @@ $stats-border-style: 0.125rem solid #ccc;
 // $T e x t - I n d e n t
 // --------------------------------------------------------------------------
 
-@mixin txt-indent($indent) {
-	text-indent: $indent;
-}
+// @mixin txt-indent($indent) {
+// 	text-indent: $indent;
+// }
 
 
 // $H y p h e n
@@ -257,14 +257,25 @@ $stats-border-style: 0.125rem solid #ccc;
 // @extend %ampersand-placeholder;
 
 
+
 // $W o r d    W r a p
 // --------------------------------------------------------------------------
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
 
-@mixin word-wrap($wrap-value) {
-	// normal: Indicates that lines may only break at normal word break points.
-	// break-word : Indicates that normally unbreakable words may be broken at ...
-	// arbitrary points if there are no otherwise acceptable break points in the line.
-	word-wrap: $wrap-value;
+%breakword {
+	word-wrap: breakword;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%inherit-wrap {
+	word-wrap: auto;
 }
 
 
@@ -381,7 +392,7 @@ body {
 	// normal: Indicates that lines may only break at normal word break points.
 	// break-word : Indicates that normally unbreakable words may be broken at ...
 	// arbitrary points if there are no otherwise acceptable break points in the line.
-	@include word-wrap(break-word);
+	@extend %breakword;
 	color: $body-copy-color;
 }
 
@@ -425,7 +436,7 @@ h6 { @extend .zeta; @extend %hN; }
 p {
 	& + p {
 		//siblings indentation
-		@include txt-indent($indent-val);
+		text-indent: $indent-val;
 	}
 }
 
@@ -443,12 +454,11 @@ p {
 }
 
 pre code {
-	@include word-wrap(normal);
+	@extend %normal-wrap;
 	@include white-space(pre-wrap);
 }
 
 pre {
-	@include word-wrap(auto); // IE 5.5-7
 	@include white-space(pre);
 }
 
