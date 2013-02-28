@@ -69,15 +69,15 @@ $amp-font-family: Verdana, sans-serif;
 // $T y p e  S c a l e
 // --------------------------------------------------------------------------
 
-$tera:		117;	//	117	= 18 × 6.5
-$giga:		90;		//	90  = 18 × 5
-$mega:		72;		//	72  = 18 × 4
-$alpha:		60;		//	60  = 18 × 3.3333
-$beta:		48;		//	48  = 18 × 2.6667
-$gamma:		36;		//	36  = 18 × 2
-$delta:		24;		//	24  = 18 × 1.3333
-$epsilon:	21;		//	21  = 18 × 1.1667
-$zeta:		18;		//	18  = 18 × 1
+$tera: 117;		//	117	= 18 × 6.5
+$giga: 90;		//	90  = 18 × 5
+$mega: 72;		//	72  = 18 × 4
+$alpha: 60;		//	60  = 18 × 3.3333
+$beta: 48;		//	48  = 18 × 2.6667
+$gamma: 36;		//	36  = 18 × 2
+$delta: 24;		//	24  = 18 × 1.3333
+$epsilon: 21;	//	21  = 18 × 1.1667
+$zeta: 18; 		//	18  = 18 × 1
 
 
 // $T y p e  S c a l e  U n i t
@@ -190,14 +190,6 @@ $stats-border-style: 0.125rem solid #ccc;
 		font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
 	}
 }
-
-
-// $T e x t - I n d e n t
-// --------------------------------------------------------------------------
-
-// @mixin txt-indent($indent) {
-// 	text-indent: $indent;
-// }
 
 
 // $H y p h e n
