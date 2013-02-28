@@ -178,20 +178,20 @@ html {
 			<pre><code class="language-sass">$measure: $font-base * $line-height;
 
 // Modular Scale Values
-$tera:		117;	//	117	= 18 × 6.5
-$giga:		90;		//	90  = 18 × 5
-$mega:		72;		//	72  = 18 × 4
-$alpha:		60;		//	60  = 18 × 3.3333
-$beta:		48;		//	48  = 18 × 2.6667
-$gamma:		36;		//	36  = 18 × 2
-$delta:		24;		//	24  = 18 × 1.3333
-$epsilon:	21;		//	21  = 18 × 1.1667
-$zeta:		18;		//	18  = 18 × 1
+$tera: 117;		//	117	= 18 × 6.5
+$giga: 90;		//	90  = 18 × 5
+$mega: 72;		//	72  = 18 × 4
+$alpha: 60;		//	60  = 18 × 3.3333
+$beta: 48;		//	48  = 18 × 2.6667
+$gamma: 36;		//	36  = 18 × 2
+$delta: 24;		//	24  = 18 × 1.3333
+$epsilon: 21;	//	21  = 18 × 1.1667
+$zeta: 18; 		//	18  = 18 × 1
 
 // typscale unit
 $type-scale-unit-value: rem;
 
-// $Typographic scale
+// typographic scale
 @mixin modular-scale($scale, $base, $value, $measure:"") {
 	font-size: $scale#{px};
 	font-size: modular-scale($scale, $base, $value);
@@ -200,13 +200,14 @@ $type-scale-unit-value: rem;
 	}
 }
 
+// modular scale function to return em equivalent
 @function modular-scale($scale, $base, $value) {
 	// divide a given font-size by base font-size & return a relative em value
 	@return ($scale/$base)#{$value};
 }
 
+// divide 1 unit of measure by given font-size & return a relative em value
 @function measure-margin($scale, $measure, $value) {
-	// divide 1 unit of measure by given font-size & return a relative em value
 	@return ($measure/$scale)#{$value};
 }
 
