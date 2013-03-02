@@ -259,7 +259,7 @@ $stats-border-style: 0.125rem solid #ccc;
 // arbitrary points if there are no otherwise acceptable break points in the line.
 
 %breakword {
-	word-wrap: breakword;
+	word-wrap: break-word;
 }
 
 %normal-wrap {
