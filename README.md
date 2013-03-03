@@ -12,7 +12,7 @@ Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just
 
 - Raw Sass = **17kb**
 - Compressed CSS = **3kb**
-- Raw CSS Unminified = **6kb**
+- Raw CSS = **6kb**
 
 ## Installation
 Based on use cases for most developers' workflow, we recommend using typeplate just after your reset stylesheet (i.e. [normalize](http://necolas.github.com/normalize.css)) and your compass ``@import`` in order to operate as we've intended, but as you'll see from our <a href="http://typeplate.com/demo">demo</a> it isn't necessary.
@@ -23,7 +23,7 @@ Example using ``.scss`` syntax:
 	@import "[your_project_path]/reset";
 	@import "[your_project_path]/typeplate";
 
-    // Custom Author Styles
+	// Custom Author Styles
 	// ====================================
 
 ###&sect; Installation via ``.scss @import``
@@ -38,11 +38,15 @@ If the Sass version isn't your cup of tea, we've provided a CSS version. Simply 
 
 ###&sect; Installation via Bower
 
-Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the Sass version and watch the magic happen. This is an example of how to include either version in your project:
+Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the CSS, Sass, LESS and Stylus versions and watch the magic happen. This is an example of how to include either the CSS or Sass version in your project. Refer to our [Bower Repo](https://github.com/typeplate/typeplate-bower) for more details regarding LESS and Stylus.
+
+**Sass**
 
 	@import "compass";
 	@import "[your_project_path]/reset";
 	@import "[root_project_path]/components/typeplate/typeplate";
+
+**CSS**
 
 You could also use the CSS version instead (btw&hellip;we don&rsquo;t condone this method depicted below. In reality you should copy the contents of the CSS file and paste the contents in the top of your projects stylesheet):
 
@@ -79,12 +83,12 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 ###&sect; Feature Branches
 If you&rsquo;re making a new feature for Typeplate then make sure you name your branch as follows:
 
-    feature/your_feature_name
+	feature/your_feature_name
 
 ###&sect; Patches
 If you're making a quick patch for Typeplate (like a spelling mistake for example) then make sure you name your branch as follows:
 
-    patch/your_patch_name
+	patch/your_patch_name
 
 ##Local Development
 
@@ -92,7 +96,7 @@ If you're making a quick patch for Typeplate (like a spelling mistake for exampl
 
 Make sure compass is installed by executing the following bash command (Mac only) from your CLI:
 
-    gem install compass
+	gem install compass
 
 You can always check if they're installed by running the bash command (Mac only) ``gem list`` which will list all your gems installed.
 
