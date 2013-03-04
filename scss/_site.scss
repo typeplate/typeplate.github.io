@@ -558,7 +558,7 @@ blockquote {
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
 .typographic-scale .no-indent {
-	// margin: 0;
+	margin: 0;
 	text-indent: 0;
 }
 
