@@ -358,13 +358,31 @@ p {
 	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
 	-moz-hyphens: $val;		// Firefox 16 thru 20
 	-ms-hyphens: $val;		// IE10
+	-o-hyphens: $val;		// PRESTO...haha LOL
 	hyphens: $val;			// W3C standard
 };
 
 body {
-	//Ala Trent Walton
-	//http://trentwalton.com/2011/09/07/css-hyphenation
+	// Ala Trent Walton
+	// http://trentwalton.com/2011/09/07/css-hyphenation
 	@include css-hyphens(auto);
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+	@include css-hyphens(none);
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents">back to top</a>
