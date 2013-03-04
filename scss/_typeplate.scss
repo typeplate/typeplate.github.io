@@ -427,10 +427,11 @@ h6 { @extend .zeta; @extend %hN; }
 // --------------------------------------------------------------------------
 
 p {
+	margin: 0 0 $indent-val;
 	& + p {
 		//siblings indentation
 		text-indent: $indent-val;
-		margin: 0;
+		margin-top: -$indent-val;
 	}
 }
 
