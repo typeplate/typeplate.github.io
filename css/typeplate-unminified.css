@@ -124,9 +124,12 @@ h6,
 	margin-bottom: 1.65rem;
 }
 
+p {
+	margin: 0 0 1.5em;
+}
 p + p {
 	text-indent: 1.5em;
-	margin: 0;
+	margin-top: -1.5em;
 }
 
 pre code {
