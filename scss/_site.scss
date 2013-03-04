@@ -732,7 +732,7 @@ p {
 	// reset top margin, and set bottom margin equal to one unit of line-height
 	@extend %rhythm;
 	& + p:not(.no-indent) {
-		margin-top: $line-height * -0.5rem;
+		// margin-top: $line-height * -0.5rem;
 	}
 }
 

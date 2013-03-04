@@ -126,6 +126,7 @@ h6,
 
 p + p {
 	text-indent: 1.5em;
+	margin: 0;
 }
 
 pre code {

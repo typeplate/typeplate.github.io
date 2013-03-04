@@ -429,6 +429,7 @@ p {
 	& + p {
 		//siblings indentation
 		text-indent: $indent-val;
+		margin: 0;
 	}
 }
 
