@@ -14,7 +14,7 @@
 	</script>
 	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-	<link rel="stylesheet" href="./css/main.css?1.0">
+	<link rel="stylesheet" href="./css/main.css?1.0.1">
 	<script src="./js/vendor/modernizr.min.js"></script>
 </head>
 <body>
@@ -49,22 +49,22 @@
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/scss/_typeplate.scss" class="dl-item">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.0 | 3kb</small>
+				<small>v1.0.1 | 3kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/less/typeplate.less" class="dl-item">
 				<i class="icon-download"></i>LESS Port
 				<hr>
-				<small>v1.0 | 3kb</small>
+				<small>v1.0.1 | 3kb</small>
 			</a>
-			<a href="https://github.com/typeplate/typeplate-bower" class="dl-item">
-				<i class="icon-download"></i>Bower (Sass)
+			<a href="//raw.github.com/typeplate/typeplate.github.com/master/stylus/typeplate.styl" class="dl-item">
+				<i class="icon-download"></i>Stylus Port
 				<hr>
-				<small>v1.0 | 3kb</small>
+				<small>v1.0.1 | 3kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/css/typeplate-unminified.css" class="dl-item">
 				<i class="icon-download"></i>Raw CSS
 				<hr>
-				<small>v1.0 | 6kb</small>
+				<small>v1.0.1 | 7kb</small>
 			</a>
 		</div>
 	</nav>
@@ -315,7 +315,7 @@ body {
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#indenting">§</a> 2.1 Indenting</h1>
 		</header>
-		<p>The common way of styling paragraphs is handling them as blocks with margins on top and bottom, which is what browsers do by default. If you want to stand out, use indented paragraphs. It’s pretty easy to establish with the mixin we’ve provided.</p>
+		<p>On the web, paragraphs are commonly set in blocks, with top and bottom margins. Historically, paragraphs are set using indentation, which makes it easier to scan long-form text and are (we think) more conducive to readability.</p>
 
 		<figure class="example no-top-pad">
 			<p>I crawled out almost immediately, and crouched, my feet still in the water, under a clump of furze.  The horse lay motionless (his neck was broken, poor brute!) and by the lightning flashes I saw the black bulk of the overturned dog cart and the silhouette of the wheel still spinning slowly.  In another moment the colossal mechanism went striding by me, and passed uphill towards Pyrford.</p>
@@ -333,6 +333,7 @@ $indent-val: 1.5em;
 p {
 	& + p {
 		text-indent: $indent-val;
+		margin-top: -$indent-val;
 	}
 }</code></pre>
 		</figure>

@@ -10,9 +10,9 @@ Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design c
 ## File Size
 Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
-- Raw Sass = **17kb**
-- Compressed CSS = **3kb**
-- Raw CSS = **6kb**
+- Raw Sass, LESS and Stylus = **17kb**
+- Compressed Sass, LESS and Stylus = **3kb**
+- Raw CSS = **7kb**
 
 ## Installation
 Based on use cases for most developers' workflow, we recommend using typeplate just after your reset stylesheet (i.e. [normalize](http://necolas.github.com/normalize.css)) and your compass ``@import`` in order to operate as we've intended, but as you'll see from our <a href="http://typeplate.com/demo">demo</a> it isn't necessary.
