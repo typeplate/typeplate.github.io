@@ -18,6 +18,14 @@
 |                                                                     |
 +---------------------------------------------------------------------+
 */
+
+/**
+ *
+ *
+	Unicode Ampersand
+ *
+ */
+
 @font-face {
 	font-family: "Ampersand";
 	src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
@@ -124,13 +132,52 @@ h6,
 	margin-bottom: 1.65rem;
 }
 
+/**
+ *
+	Hyphens
+ *
+ */
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+	/* Accepted values: [ none | manual | auto ] */
+	-webkit-hyphens: none;	/* Safari 5.1 thru 6, iOS 4.2 thru 6 */
+	-moz-hyphens: none;		/* Firefox 16 thru 20 */
+	-ms-hyphens: none;		/* IE10 */
+	-o-hyphens: none;		/* PRESTO...haha LOL */
+	hyphens: none;			/* W3C standard */
+}
+
+/**
+ *
+	Paragraphs
+ *
+ */
+
 p {
 	margin: 0 0 1.5em;
 }
+
 p + p {
 	text-indent: 1.5em;
 	margin-top: -1.5em;
 }
+
+/**
+ *
+	Code Blocks
+ *
+ */
 
 pre code {
 	word-wrap: normal;
