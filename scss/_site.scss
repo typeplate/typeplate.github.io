@@ -30,6 +30,12 @@
 	@include box-sizing(border-box);
 }
 
+html {
+	@include breakpoint(mama-bear) {
+		font-size: 100%;
+	}
+}
+
 body {
 	background: image-url("subtle_grunge.png") top left repeat;
 	color: #212121;
@@ -466,10 +472,14 @@ a[href="#table-of-contents"] {
 
 // hotfix for typographic scale example
 .example.scale-example {
-	padding: 1.65rem;
-	// .giga {
-	// 	margin-top: -0.25em;
-	// }
+	padding: 1.65em;
+	p {
+		line-height: 1.4;
+		margin: 0;
+	}
+	.giga {
+		margin-top: -0.33em;
+	}
 }
 
 .example.no-top-pad {
@@ -732,9 +742,9 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	// reset top margin, and set bottom margin equal to one unit of line-height
 	@extend %rhythm;
-	& + p:not(.no-indent) {
-		// margin-top: $line-height * -0.5rem;
-	}
+}
+p.no-indent {
+	text-indent: 0;
 }
 
 
