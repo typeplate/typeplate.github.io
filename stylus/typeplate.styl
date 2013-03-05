@@ -9,7 +9,7 @@
 |                                                                     |
 |                                                                     |
 | URL: http://typeplate.com                                           |
-| VERSION: 1.0.0                                                      |
+| VERSION: 1.0.1                                                      |
 | Github: https://github.com/typePlate/typeplate.github.com           |
 | AUTHORS: Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals) |
 | LICENSE: Creative Commmons                                          |
@@ -39,7 +39,7 @@ $font-family-sans = sans-serif
 $font-properties = $weight $line-height $font-size $font-family
 
 //the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss"
+//the var must be placed after your @import "typeplate.styl"
 $serif-boolean = true !default
 
 
@@ -192,6 +192,7 @@ css-hyphens($val)
     -webkit-hyphens: $val  // Safari 5.1 thru 6, iOS 4.2 thru 6
     -moz-hyphens: $val     // Firefox 16 thru 20
     -ms-hyphens: $val      // IE10
+    -o-hyphens: $val       // Opera
     hyphens: $val          // W3C standard
 
 
@@ -398,10 +399,30 @@ h6
 // --------------------------------------------------------------------------
 
 p
+    margin: 0 0 $indent-val
     & + p
         //siblings indentation
         text-indent: $indent-val
+        margin-top: s("-%s", $indent-val);
 
+// $ H y p h e n s
+// --------------------------------------------------------------------------
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp 
+    css-hyphens(none)
 
 // $C o d e b l o c k s
 // --------------------------------------------------------------------------
