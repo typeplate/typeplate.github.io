@@ -30,6 +30,12 @@
 	@include box-sizing(border-box);
 }
 
+html {
+	@include breakpoint(mama-bear) {
+		font-size: 100%;
+	}
+}
+
 body {
 	background: image-url("subtle_grunge.png") top left repeat;
 	color: #212121;
