@@ -176,13 +176,13 @@
 .modular-scale (@scale, @base, @value, @measure:"") when (@measure = "") {
 	font-size: ~"@{scale}px";
 	@font: (@scale/@base) + @value;
-  	font-size: ~"@{font}rem";
+	font-size: ~"@{font}rem";
 }
 .modular-scale (@scale, @base, @value, @measure:"") when not (@measure = "") {
 	font-size: ~"@{scale}px";
-  	@font: (@scale/@base) + @value;
+	@font: (@scale/@base) + @value;
 	font-size: ~"@{font}rem";
-  	@margin: (@measure/@scale) + @value;
+	@margin: (@measure/@scale) + @value;
 	margin-bottom: ~"@{margin}rem";
 }
 
@@ -207,8 +207,9 @@
 	-webkit-hyphens: @val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
 	-moz-hyphens: @val;		// Firefox 16 thru 20
 	-ms-hyphens: @val;		// IE10
+	-o-hyphens: @val;		// PRESTO...haha LOL
 	hyphens: @val;			// W3C standard
-};
+}
 
 
 // $S m a l l c a p s
@@ -431,10 +432,33 @@ h6 { .zeta; 	.hN; }
 // --------------------------------------------------------------------------
 
 p {
+	margin: 0 0 @indent-val;
 	& + p {
 		//siblings indentation
 		text-indent: @indent-val;
+		margin-top: -@indent-val;
 	}
+}
+
+
+// $ H y p h e n s
+// --------------------------------------------------------------------------
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+	.css-hyphens (none);
 }
 
 
