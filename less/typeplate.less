@@ -38,7 +38,7 @@
 @font-family-sans: sans-serif;
 
 //the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss";
+//the var must be placed after your @import "typeplate.less";
 @serif-boolean: true;
 
 
@@ -116,14 +116,14 @@
 @font-face {
 	font-family: "@{amp-fontface-name}";
 	src: @amp-fontface-source;
-	unicode-range: U+0026;
+	unicode-range: ~"U+270C";
 }
 
 // Ampersand fallback font for unicode range
 @font-face {
 	font-family: "@{amp-fontface-name}";
 	src: @amp-fontface-fallback;
-	unicode-range: U+270C;
+	unicode-range: ~"U+270C";
 }
 
 
@@ -309,7 +309,7 @@
 }
 
 .drop-cap {
-  .dropcap;
+	.dropcap;
 }
 
 // $D e f i n i t i o n    L i s t
@@ -320,7 +320,7 @@
 // dictionary-style
 // http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
 
-.definition-list-style (@style) when (@style = "lining") {
+.definition-list-style (@style) when (@style = lining) {
 	dt,
 	dd {
 		display: inline;
@@ -348,7 +348,7 @@
 	}
 }
 // dictionary-style
-.definition-list-style (@style) when (@style = "dictionary-style") {
+.definition-list-style (@style) when (@style = dictionary-style) {
 	dt {
 		display: inline;
 		counter-reset: definitions;
@@ -475,7 +475,7 @@ xmp {
 
 pre code {
 	.normal-wrap;
-	.white-space("pre-wrap");
+	.white-space(pre-wrap);
 }
 
 pre {
@@ -535,7 +535,7 @@ h6 {
  *
  */
 .lining {
-	.definition-list-style("lining");
+	.definition-list-style(lining);
 }
 
 /**
@@ -550,7 +550,7 @@ h6 {
  *
  */
 .dictionary-style {
-	.definition-list-style("dictionary-style");
+	.definition-list-style(dictionary-style);
 }
 
 
