@@ -36,6 +36,19 @@
       "initialSize" : 2012311,
       "fileType" : 8192
     },
+    "\/less\/typeplate.less" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/less\/typeplate.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/typeplate.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
     "\/js\/plugins.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -46,17 +59,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/minified\/plugins-min.js",
       "fileType" : 64
-    },
-    "\/lib\/logo\/drafts\/rough sketch for different typefaces.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
-      "initialSize" : 42078,
-      "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v9.png" : {
       "ignoreWasSetByUser" : 0,
@@ -69,15 +71,15 @@
       "initialSize" : 186332,
       "fileType" : 8192
     },
-    "\/img\/subtle_grunge.png" : {
+    "\/lib\/logo\/drafts\/rough sketch for different typefaces.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/subtle_grunge.png",
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/subtle_grunge.png",
-      "initialSize" : 84037,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
+      "initialSize" : 42078,
       "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v1.png" : {
@@ -89,6 +91,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v1.png",
       "initialSize" : 57630,
+      "fileType" : 8192
+    },
+    "\/img\/subtle_grunge.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/subtle_grunge.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/subtle_grunge.png",
+      "initialSize" : 84037,
       "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v5.png" : {
@@ -110,19 +123,6 @@
       "inputAbbreviatedPath" : "\/css\/typeplate-unminified.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/less\/typeplate.less" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/less\/typeplate.less",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/typeplate.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/lib\/logo\/drafts\/sketches1.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -198,14 +198,16 @@
       "initialSize" : 266003,
       "fileType" : 8192
     },
-    "\/config.rb" : {
+    "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "inputAbbreviatedPath" : "\/js\/main.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
+      "fileType" : 64
     },
     "\/favicon.png" : {
       "ignoreWasSetByUser" : 0,
@@ -229,16 +231,14 @@
       "outputAbbreviatedPath" : "\/minified\/grunt-min.js",
       "fileType" : 64
     },
-    "\/js\/minified\/main-min.js" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/minified\/minified\/main-min-min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
     },
     "\/scss\/main.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -272,15 +272,15 @@
       "initialSize" : 143638,
       "fileType" : 8192
     },
-    "\/js\/main.js" : {
+    "\/js\/minified\/main-min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/main.js",
+      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/minified\/minified\/main-min-min.js",
       "fileType" : 64
     },
     "\/scss\/_typeplate.scss" : {
@@ -480,17 +480,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/img\/asfalt_@2X.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
-      "initialSize" : 662076,
-      "fileType" : 8192
-    },
     "\/scss\/_fontello.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -502,6 +491,17 @@
       "outputAbbreviatedPath" : "\/css\/_fontello.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/img\/asfalt_@2X.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
+      "initialSize" : 662076,
+      "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v2.png" : {
       "ignoreWasSetByUser" : 0,

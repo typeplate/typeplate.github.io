@@ -467,9 +467,9 @@ a[href="#table-of-contents"] {
 // hotfix for typographic scale example
 .example.scale-example {
 	padding: 1.65rem;
-	.giga {
-		margin-top: -0.25em;
-	}
+	// .giga {
+	// 	margin-top: -0.25em;
+	// }
 }
 
 .example.no-top-pad {
@@ -558,10 +558,10 @@ blockquote {
 
 // this is a peculiar instance because we're stacking lots of titles atop one another
 // so we manually nix the normal amount of margin below titles
-.typographic-scale .no-indent {
-	margin: 0;
-	text-indent: 0;
-}
+// .typographic-scale .no-indent {
+// 	margin: 0;
+// 	text-indent: 0;
+// }
 
 
 // $Ampersand Demo
