@@ -415,12 +415,35 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 }
 
 // associate h1-h6 tags with their appropriate greek heading
-h1 { @extend .alpha; @extend %hN; }
-h2 { @extend .beta; @extend %hN; }
-h3 { @extend .gamma; @extend %hN; }
-h4 { @extend .delta; @extend %hN; }
-h5 { @extend .epsilon; @extend %hN; }
-h6 { @extend .zeta; @extend %hN; }
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+ 	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+ 	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+ 	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+ 	@extend %hN;
+}
 
 
 // $ P a r a g r a p h s
