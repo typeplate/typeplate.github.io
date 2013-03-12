@@ -421,32 +421,32 @@ body {
 
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
-	.alpha; 
+	.alpha;
 	.hN;
 }
 
 h2 {
-	.beta; 
+	.beta;
 	.hN;
 }
 
 h3 {
-	.gamma; 
+	.gamma;
 	.hN;
 }
 
 h4 {
-	.delta; 
+	.delta;
 	.hN;
 }
 
 h5 {
-	.epsilon; 
+	.epsilon;
 	.hN;
 }
 
 h6 {
-	.zeta; 
+	.zeta;
 	.hN;
 }
 
@@ -488,25 +488,24 @@ xmp {
 // $C o d e b l o c k s
 // --------------------------------------------------------------------------
 
-.white-space (@wrap-space) when (@wrap-space = 'pre-wrap') {
-	white-space: "-moz-@{wrap-space}";	// Firefox 1.0-2.0
-	white-space: ~"@{wrap-space}"; 		// current browsers
+// White Space Mixins
+.white-space-pre-wrap () {
+	white-space: -moz-pre-wrap; // Firefox 1.0-2.0
+	white-space: pre-wrap;			// Current Browsers
 }
-.white-space (@wrap-space) when not (@wrap-space = 'pre-wrap') {
-	white-space: ~"@{wrap-space}";
+.white-space-pre () {
+	white-space: pre;
 }
 
 pre code {
 	.normal-wrap;
-	.white-space(pre-wrap);
+	.white-space-pre-wrap;
 }
-
 pre {
-	.white-space(pre);
+	.white-space-pre;
 }
-
 code {
-	.white-space(pre);
+	.white-space-pre;
 	font-family: monospace;
 }
 
