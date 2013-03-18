@@ -183,6 +183,7 @@ html {
 			<pre><code class="language-sass">$measure: $font-base * $line-height;
 
 // Modular Scale Values
+// http://typecast.com/blog/contrast-through-scale
 $tera: 117;		//	117	= 18 × 6.5
 $giga: 90;		//	90  = 18 × 5
 $mega: 72;		//	72  = 18 × 4
@@ -238,12 +239,35 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 }
 
 // associate h1-h6 tags with their appropriate greek heading
-h1 { @extend .alpha; @extend %hN; }
-h2 { @extend .beta; @extend %hN; }
-h3 { @extend .gamma; @extend %hN; }
-h4 { @extend .delta; @extend %hN; }
-h5 { @extend .epsilon; @extend %hN; }
-h6 { @extend .zeta; @extend %hN; }</code></pre>
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}</code></pre>
 		</figure>
 		<a href="#table-of-contents">back to top</a>
 	</section>

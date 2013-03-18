@@ -68,6 +68,7 @@ $amp-font-family: Verdana, sans-serif;
 
 // $T y p e  S c a l e
 // --------------------------------------------------------------------------
+// http://typecast.com/blog/contrast-through-scale
 
 $tera: 117;		//	117	= 18 × 6.5
 $giga: 90;		//	90  = 18 × 5
@@ -395,10 +396,8 @@ body {
 
 // styles for all headings, in the style of @csswizardry
 %hN {
-	// voodoo to enable ligatures and kerning
-	text-rendering: optimizeLegibility;
-	// this fixes huge spaces when a heading wraps onto two lines
-	line-height: 1;
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
 	margin-top: 0;
 }
 
@@ -415,12 +414,35 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 }
 
 // associate h1-h6 tags with their appropriate greek heading
-h1 { @extend .alpha; @extend %hN; }
-h2 { @extend .beta; @extend %hN; }
-h3 { @extend .gamma; @extend %hN; }
-h4 { @extend .delta; @extend %hN; }
-h5 { @extend .epsilon; @extend %hN; }
-h6 { @extend .zeta; @extend %hN; }
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}
 
 
 // $ P a r a g r a p h s
