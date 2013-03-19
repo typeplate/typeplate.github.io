@@ -546,6 +546,69 @@ $amp-font-family: Verdana, sans-serif;
 		<a href="#table-of-contents">back to top</a>
 	</section>
 
+
+	<!-- #web-font-helper -->
+	<section class="web-font-helper botDivider" id="web-font-helper">
+		<header>
+			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Icon Font Helper</h1>
+		</header>
+		<p>The Web Font Helper is a special tool for those that use custom fonts &amp; icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource locator">URL</abbr>s and file types it can become extremely tedious. By taking advantage of the Web Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific projects and workflows.</p>
+
+		<figure class="example icons">
+			<p class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</p>
+			<p class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</p>
+		</figure>
+
+		<figure class="typeplate-code-block">
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-sass">// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+$web-fonts: null;
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+@if ($web-fonts != null) {
+	@each $font in $web-fonts {
+	@include font-face( $font,
+		font-files(
+			'#{$font}/#{$font}.woff',
+			'#{$font}/#{$font}.ttf',
+			'#{$font}/#{$font}.svg', svg
+		),
+		'#{$font}/#{$font}.eot'
+		)
+	}
+}
+//Your custom override
+$web-fonts: (web-font-name);</code></pre>
+	</figure>
+
+	<figure class="typeplate-code-block">
+		<figcaption>CSS Output</figcaption>
+		<pre><code class="language-css">@font-face {
+	font-family: "web-font-name";
+	src: url('//fonts/web-font-name/web-font-name.eot');
+	src: url('//fonts/web-font-name/web-font-name.eot?#iefix') format('eot'), url('//fonts/web-font-name/web-font-name.woff') format('woff'), url('//fonts/web-font-name/web-font-name.ttf') format('truetype'), url('//fonts/web-font-name/web-font-name.svg') format('svg');
+}
+
+@font-face {
+	font-family: "another-web-font-name";
+	src: url('//fonts/another-web-font-name/another-web-font-name.eot');
+	src: url('//fonts/another-web-font-name/another-web-font-name.eot?#iefix') format('eot'), url('//fonts/another-web-font-name/another-web-font-name.woff') format('woff'), url('//fonts/another-web-font-name/another-web-font-name.ttf') format('truetype'), url('//fonts/another-web-font-name/another-web-font-name.svg') format('sag');
+}</code></pre>
+		</figure>
+	</section>
+
 	<!-- #small-print -->
 	<section class="small-print botDivider" id="small-print">
 		<header>
@@ -930,7 +993,7 @@ $stats-border-style: 0.125rem solid #ccc;
 }
 
 	dl {
-	  @include definition-list-style(lining);
+		@include definition-list-style(lining);
 }</code></pre>
 			</figure>
 
