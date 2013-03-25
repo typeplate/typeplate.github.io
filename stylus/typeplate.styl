@@ -178,9 +178,10 @@ modular-scale($scale, $base, $value, $measure = "")
 
 base-type($weight, $line-height, $font-size, $font-family...)
     if $serif-boolean
-        font: $weight s('%s%/%s', $font-size, $line-height) $font-family
+        $serif = $font-family
     else
-        font: $weight $font-size\%/$line-height $font-family-sans
+        $serif = $font-family-sans
+    font: $weight s('%s%/%s', $font-size, $line-height) $serif
 
 
 // $H y p h e n
