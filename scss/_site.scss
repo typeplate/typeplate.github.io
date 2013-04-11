@@ -387,7 +387,7 @@ hr {
 	h1 {
 		margin: 0;
 		padding-top: .5em;
-		text-shadow: 0 1px 0px $white;
+		text-shadow: 0 1px 0 $white;
 		color: #606060;
 		.icon-download {
 			color: #929292;
@@ -405,7 +405,7 @@ hr {
 	h2 {
 		color: #6f7070;
 		text-align: center;
-		text-shadow: 0 1px 0px rgba(255,255,255,0.30);
+		text-shadow: 0 1px 0 rgba(255,255,255,0.30);
 	}
 }
 
@@ -423,7 +423,7 @@ hr {
 		width: 2.5em;
 		@extend .gamma;
 		text-align: center;
-		text-shadow: 0 1px 0px $white;
+		text-shadow: 0 1px 0 $white;
 		border: 4px solid #949494;
 		background: #000000;
 		color: #fbfbfb;

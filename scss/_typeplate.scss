@@ -672,13 +672,13 @@ h6 {
 	}
 	&:before {
 		content: '“';
-		top:  0em;
-		left: 0em;
+		top:  0;
+		left: 0;
 	}
 	&:after {
 		content: '”';
-		bottom: 0em;
-		right: 0em;
+		bottom: 0;
+		right: 0;
 	}
 }
 
