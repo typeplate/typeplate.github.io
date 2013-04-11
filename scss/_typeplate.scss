@@ -66,6 +66,22 @@ $amp-fontface-fallback: local('Georgia');
 $amp-font-family: Verdana, sans-serif;
 
 
+// $I c o n  F o n t  H e l p e r
+// --------------------------------------------------------------------------
+// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+$web-fonts: null;
+
+
 // $T y p e  S c a l e
 // --------------------------------------------------------------------------
 
@@ -127,6 +143,37 @@ $stats-border-style: 0.125rem solid #ccc;
 	unicode-range: U+270C;
 }
 
+
+// $I c o n  F o n t  H e l p e r
+// --------------------------------------------------------------------------
+// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+
+@if ($web-fonts != null) {
+	@each $font in $web-fonts {
+	@include font-face( $font,
+		font-files(
+			'#{$font}/#{$font}.woff',
+			'#{$font}/#{$font}.ttf',
+			'#{$font}/#{$font}.svg', svg
+		),
+		'#{$font}/#{$font}.eot'
+		)
+	}
+}
 
 
 // ==========================================================================
