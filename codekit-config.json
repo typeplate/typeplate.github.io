@@ -92,6 +92,7 @@
       "fileType" : 8192
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "\/lib\/logo\/drafts\/logo_v5.png" : {
 =======
     "\/less\/typeplate.less" : {
@@ -106,6 +107,31 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+=======
+    "\/less\/typeplate.less" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/less\/typeplate.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/typeplate.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/lib\/logo\/drafts\/rough sketch for different typefaces.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/rough sketch for different typefaces.png",
+      "initialSize" : 42078,
+      "fileType" : 8192
+>>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
     },
     "\/lib\/logo\/drafts\/rough sketch for different typefaces.png" : {
 >>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
@@ -126,6 +152,7 @@
 >>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
       "fileType" : 8192
     },
+<<<<<<< HEAD
     "\/css\/typeplate-unminified.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -147,6 +174,8 @@
       "outputAbbreviatedPath" : "\/js\/minified\/plugins-min.js",
       "fileType" : 64
     },
+=======
+>>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
 =======
 >>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
     "\/lib\/logo\/drafts\/sketches1.jpg" : {
@@ -266,6 +295,7 @@
       "fileType" : 64
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "\/components\/normalize.scss\/test.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -275,6 +305,8 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+=======
+>>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
 =======
 >>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
     "\/scss\/main.scss" : {
@@ -518,6 +550,21 @@
       "debugStyle" : 0
     },
     "\/scss\/_fontello.scss" : {
+<<<<<<< HEAD
+=======
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/_fontello.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/css\/_fontello.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/img\/asfalt_@2X.png" : {
+>>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
@@ -540,6 +587,7 @@
       "initialSize" : 662076,
       "fileType" : 8192
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "\/scss\/_fontello.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -566,6 +614,8 @@
       "initialSize" : 33086,
       "fileType" : 8192
     },
+=======
+>>>>>>> c9bf027d09eb1b01ed3247f47e960e079de5dd10
     "\/404.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
