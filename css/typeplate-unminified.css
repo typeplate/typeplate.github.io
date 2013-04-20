@@ -151,11 +151,11 @@ tt,
 var,
 xmp {
 	/* Accepted values: [ none | manual | auto ] */
-	-webkit-hyphens: none;	/* Safari 5.1 thru 6, iOS 4.2 thru 6 */
-	-moz-hyphens: none;		/* Firefox 16 thru 20 */
-	-ms-hyphens: none;		/* IE10 */
-	-o-hyphens: none;		/* PRESTO...haha LOL */
-	hyphens: none;			/* W3C standard */
+	-webkit-hyphens: none; /* Safari 5.1 thru 6, iOS 4.2 thru 6 */
+	-moz-hyphens: none; /* Firefox 16 thru 20 */
+	-ms-hyphens: none; /* IE10 */
+	-o-hyphens: none;	 /* PRESTO...haha LOL */
+	hyphens: none;	 /* W3C standard */
 }
 
 /**
