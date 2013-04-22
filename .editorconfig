@@ -11,17 +11,3 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-
-; tab width = 2
-; Sass, CSS, LESS and Stylus
-[scss/*.scss]
-indent_size = 2
-
-[css/*.css]
-indent_size = 2
-
-[less/*.less]
-indent_size = 2
-
-[stylus/*.styl]
-indent_size = 2
