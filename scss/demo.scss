@@ -125,6 +125,7 @@ img {
 }
 
 .nav-item {
+	@include transition(.3s all ease-in-out);
 	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
 	letter-spacing: normal;
 	display: block;

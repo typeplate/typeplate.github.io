@@ -18,7 +18,7 @@
 		<!-- normalize -->
 		<link rel="stylesheet" id="normalize-css" href="./components/normalize-css/normalize.css">
 		<!-- TypePlate -->
-		<link rel="stylesheet" id="typeplate-css" href="./css/typeplate-unminified.css?1.0">
+		<link rel="stylesheet" id="typeplate-css" href="./typeplate/css/typeplate.css?1.0.1">
 		<!-- TypePlate Demo Styles -->
 		<link rel="stylesheet" href="./css/demo.css?1.0">
 	</head>
@@ -254,8 +254,8 @@
 			$(document).ready(function() {
 				//Normalize States
 				//http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
-				var normalizeCss        = $("#normalize-css"),
-					typleplateCss       = $("#typeplate-css");
+				var normalizeCss = $("#normalize-css"),
+					typleplateCss = $("#typeplate-css");
 
 				//Normalize Radio Button
 				$('#normalize-form input[type="radio"]').on('click', function(e) {
@@ -263,7 +263,7 @@
 					var normalizeOffCheck   = $('#normalize-off').is(':checked');
 					if(normalizeOffCheck) {
 						$("#normalize-css").attr("href", "");
-					}else {
+					} else {
 						$("#normalize-css").attr("href", "./components/normalize-css/normalize.css");
 					}
 				});
@@ -274,8 +274,8 @@
 					var typePlateOffCheck   = $('#typeplate-off').is(':checked');
 					if(typePlateOffCheck) {
 						$("#typeplate-css").attr("href", "");
-					}else {
-						$("#typeplate-css").attr("href", "./css/typeplate-unminified.css");
+					} else {
+						$("#typeplate-css").attr("href", "./typeplate/css/typeplate.css");
 					}
 				});
 			}); //end document.ready
