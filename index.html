@@ -12,7 +12,7 @@
 		var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 		})();
 	</script>
-	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles.">
+	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
 	<link rel="stylesheet" href="./css/main.css?1.0.1">
 	<script src="./js/vendor/modernizr.min.js"></script>
@@ -78,32 +78,32 @@
 			<div id="drawer" class="visuallyhidden">
 				<!-- 1. Base Type -->
 				<ol>
-					<li><a href="#base-type">Base Type</a></li>
-					<li><a href="#typographic-scale">Typographic Scale</a></li>
-					<li><a href="#color">Color</a></li>
-					<li><a href="#word-wrap">Word-wrap</a></li>
+					<li><a href="#base-type" class="anchorLink">Base Type</a></li>
+					<li><a href="#typographic-scale" class="anchorLink">Typographic Scale</a></li>
+					<li><a href="#color" class="anchorLink">Color</a></li>
+					<li><a href="#word-wrap" class="anchorLink">Word-wrap</a></li>
 				</ol>
 				<!-- 2. Paragraphs -->
 				<ol>
-					<li><a href="#indenting">Indenting</a></li>
-					<li><a href="#hyphenation">Hyphenation</a></li>
+					<li><a href="#indenting" class="anchorLink">Indenting</a></li>
+					<li><a href="#hyphenation" class="anchorLink">Hyphenation</a></li>
 				</ol>
 				<!-- 3. Detailing -->
 				<ol>
-					<li><a href="#small-caps">Small Capitals</a></li>
-					<li><a href="#drop-caps">Drop Capitals</a></li>
-					<li><a href="#unicode-ampersands">Unicode Ampersands</a></li>
-					<li><a href="#small-print">Small Print</a></li>
+					<li><a href="#small-caps" class="anchorLink">Small Capitals</a></li>
+					<li><a href="#drop-caps" class="anchorLink">Drop Capitals</a></li>
+					<li><a href="#unicode-ampersands" class="anchorLink">Unicode Ampersands</a></li>
+					<li><a href="#small-print" class="anchorLink">Small Print</a></li>
 				</ol>
 				<!-- 4. Pattern Modules -->
 				<ol>
-					<li><a href="#code-blocks">Code Blocks</a></li>
-					<li><a href="#figures">Figures</a></li>
-					<li><a href="#block-quotes">Block Quotes</a></li>
-					<li><a href="#pull-quotes">Pull Quotes</a></li>
-					<li><a href="#stats-tabs">Stats Tabs</a></li>
-					<li><a href="#footnotes">Footnotes</a></li>
-					<li><a href="#definition-lists">Definition Lists</a></li>
+					<li><a href="#code-blocks" class="anchorLink">Code Blocks</a></li>
+					<li><a href="#figures" class="anchorLink">Figures</a></li>
+					<li><a href="#block-quotes" class="anchorLink">Block Quotes</a></li>
+					<li><a href="#pull-quotes" class="anchorLink">Pull Quotes</a></li>
+					<li><a href="#stats-tabs" class="anchorLink">Stats Tabs</a></li>
+					<li><a href="#footnotes" class="anchorLink">Footnotes</a></li>
+					<li><a href="#definition-lists" class="anchorLink">Definition Lists</a></li>
 				</ol>
 			</div>
 		</section>
@@ -141,7 +141,7 @@ html {
 	@include base-type($font-properties...);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #typographic-scale -->
@@ -269,7 +269,7 @@ h6 {
 	@extend %hN;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #color -->
@@ -297,7 +297,7 @@ h6 {
 	color: $heading-color;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #word-wrap -->
@@ -331,7 +331,7 @@ body {
 	@extend %breakword;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #indenting -->
@@ -362,7 +362,7 @@ p {
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #hyphenation -->
@@ -411,7 +411,7 @@ xmp {
 	@include css-hyphens(none);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #small-capitals -->
@@ -449,7 +449,7 @@ abbr {
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!--  #drop-capitals -->
@@ -492,7 +492,7 @@ abbr {
 	@include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #unicode-ampersands -->
@@ -544,7 +544,7 @@ $amp-font-family: Verdana, sans-serif;
 	@extend %ampersand-placeholder;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #web-font-helper -->
@@ -640,7 +640,7 @@ $web-fonts: (web-font-name);</code></pre>
 	font-size: 65%;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- $Code Blocks -->
@@ -686,7 +686,7 @@ code {
 	font-family: monospace;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #figures -->
@@ -711,7 +711,7 @@ code {
 	&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 		</figure>
-		<a href="#table-of-contents">back to top</a>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #block-quotes -->
@@ -753,7 +753,7 @@ code {
 	@include cite-style;
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents">back to top</a>
+			<a href="#table-of-contents" class="anchorLink">back to top</a>
 		</section>
 
 		<!-- #pull-quotes -->
@@ -810,7 +810,7 @@ code {
 	@include pull-quotes(4em, .15);
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents">back to top</a>
+			<a href="#table-of-contents" class="anchorLink">back to top</a>
 		</section>
 
 		<!-- #stats-tabs -->
@@ -875,7 +875,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	}
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents">back to top</a>
+			<a href="#table-of-contents" class="anchorLink">back to top</a>
 		</section>
 
 		<!-- #footnotes -->
@@ -907,7 +907,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	&lt;/footer&gt;
 &lt;/article&gt;</code></pre>
 			</figure>
-			<a href="#table-of-contents">back to top</a>
+			<a href="#table-of-contents" class="anchorLink">back to top</a>
 		</section>
 
 		<!-- #definition-lists -->
@@ -1055,7 +1055,7 @@ dl {
 	@include definition-list-style(dictionary-style);
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents">back to top</a>
+			<a href="#table-of-contents" class="anchorLink">back to top</a>
 		</section>
 
 		<footer role="contentinfo" class="site-footer">
@@ -1065,7 +1065,7 @@ dl {
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>
-	<script src="./js/minified/main-min.js"></script>
+	<script src="./js/minified/main-min.js?v1.0.1"></script>
 	<script>
 		var _gaq=[['_setAccount','UA-38761755-1'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
