@@ -2,14 +2,17 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8283",
   "files" : {
-    "\/404.html" : {
+    "\/scss\/demo.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/404.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/scss\/demo.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/demo.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/lib\/logo\/drafts\/sketches2.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -55,6 +58,17 @@
       "initialSize" : 42078,
       "fileType" : 8192
     },
+    "\/lib\/logo\/drafts\/logo_v9.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v9.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v9.png",
+      "initialSize" : 186332,
+      "fileType" : 8192
+    },
     "\/img\/subtle_grunge.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -64,17 +78,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/subtle_grunge.png",
       "initialSize" : 84037,
-      "fileType" : 8192
-    },
-    "\/lib\/logo\/drafts\/logo_v5.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v5.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v5.png",
-      "initialSize" : 92192,
       "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/logo_v1.png" : {
@@ -88,15 +91,15 @@
       "initialSize" : 57630,
       "fileType" : 8192
     },
-    "\/lib\/logo\/drafts\/logo_v9.png" : {
+    "\/lib\/logo\/drafts\/logo_v5.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v9.png",
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v5.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v9.png",
-      "initialSize" : 186332,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v5.png",
+      "initialSize" : 92192,
       "fileType" : 8192
     },
     "\/lib\/logo\/drafts\/sketches1.jpg" : {
@@ -142,15 +145,6 @@
       "outputAbbreviatedPath" : "\/js\/vendor\/modernizr.min-ck.js",
       "fileType" : 64
     },
-    "\/components\/normalize.scss\/test.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/lib\/logo\/drafts\/logo_v8.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -162,16 +156,27 @@
       "initialSize" : 79965,
       "fileType" : 8192
     },
-    "\/lib\/logo\/drafts\/logo_v4.png" : {
+    "\/lib\/wallpapers\/typeplate1440x900.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v4.png",
+      "inputAbbreviatedPath" : "\/lib\/wallpapers\/typeplate1440x900.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v4.png",
-      "initialSize" : 266003,
+      "outputAbbreviatedPath" : "\/lib\/wallpapers\/typeplate1440x900.png",
+      "initialSize" : 43148,
       "fileType" : 8192
+    },
+    "\/js\/minified\/main-min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/minified\/main-min-ck.js",
+      "fileType" : 64
     },
     "\/js\/main.js" : {
       "ignoreWasSetByUser" : 0,
@@ -184,15 +189,15 @@
       "outputAbbreviatedPath" : "\/js\/minified\/main-min.js",
       "fileType" : 64
     },
-    "\/lib\/wallpapers\/typeplate1440x900.png" : {
+    "\/favicon.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/wallpapers\/typeplate1440x900.png",
+      "inputAbbreviatedPath" : "\/favicon.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/wallpapers\/typeplate1440x900.png",
-      "initialSize" : 43148,
+      "outputAbbreviatedPath" : "\/favicon.png",
+      "initialSize" : 840,
       "fileType" : 8192
     },
     "\/grunt.js" : {
@@ -206,28 +211,14 @@
       "outputAbbreviatedPath" : "\/grunt-ck.js",
       "fileType" : 64
     },
-    "\/js\/minified\/main-min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/minified\/main-min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/minified\/main-min-ck.js",
-      "fileType" : 64
-    },
-    "\/scss\/main.scss" : {
+    "\/config.rb" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/main.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/main.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/config.rb",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 32768
     },
     "\/demo.html" : {
       "ignoreWasSetByUser" : 0,
@@ -249,24 +240,36 @@
       "initialSize" : 143638,
       "fileType" : 8192
     },
-    "\/config.rb" : {
+    "\/scss\/main.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/config.rb",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 32768
+      "inputAbbreviatedPath" : "\/scss\/main.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/main.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
-    "\/favicon.png" : {
+    "\/components\/normalize.scss\/test.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/favicon.png",
+      "inputAbbreviatedPath" : "\/components\/normalize.scss\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/lib\/logo\/drafts\/logo_v4.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v4.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/favicon.png",
-      "initialSize" : 840,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v4.png",
+      "initialSize" : 266003,
       "fileType" : 8192
     },
     "\/scss\/_vars.scss" : {
@@ -303,6 +306,40 @@
       "outputAbbreviatedPath" : "\/js\/vendor\/jquery.min-ck.js",
       "fileType" : 64
     },
+    "\/scss\/_icons.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/scss\/_icons.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_icons.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/lib\/logo\/drafts\/logo_v7.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v7.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v7.png",
+      "initialSize" : 76646,
+      "fileType" : 8192
+    },
+    "\/lib\/logo\/drafts\/logo_v3.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v3.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v3.png",
+      "initialSize" : 92549,
+      "fileType" : 8192
+    },
     "\/scss\/_site.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -327,40 +364,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/lib\/logo\/drafts\/logo_v3.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v3.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v3.png",
-      "initialSize" : 92549,
-      "fileType" : 8192
-    },
-    "\/lib\/logo\/drafts\/logo_v7.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v7.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v7.png",
-      "initialSize" : 76646,
-      "fileType" : 8192
-    },
-    "\/scss\/_icons.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/_icons.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_icons.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/css\/demo.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -379,16 +382,26 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/img\/logo.png" : {
+    "\/typeplate\/stylus\/typeplate.styl" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/logo.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/logo.png",
-      "initialSize" : 13420,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/typeplate\/stylus\/typeplate.styl",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/typeplate\/css\/typeplate.css",
+      "fileType" : 8,
+      "debugStyle" : 0
+    },
+    "\/components\/normalize-css\/test.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/components\/normalize-css\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/typeplate\/less\/typeplate.less" : {
       "ignoreWasSetByUser" : 0,
@@ -403,6 +416,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/img\/logo.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 13420,
+      "fileType" : 8192
+    },
     "\/typeplate\/scss\/_typeplate.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -413,27 +437,6 @@
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_typeplate.css",
       "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/components\/normalize-css\/test.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/components\/normalize-css\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/typeplate\/stylus\/typeplate.styl" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/typeplate\/stylus\/typeplate.styl",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/typeplate\/css\/typeplate.css",
-      "fileType" : 8,
       "debugStyle" : 0
     },
     "\/components\/normalize-css\/normalize.css" : {
@@ -467,15 +470,6 @@
       "initialSize" : 305142,
       "fileType" : 8192
     },
-    "\/typeplate\/css\/typeplate.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/typeplate\/css\/typeplate.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/scss\/_queries.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -488,6 +482,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/typeplate\/css\/typeplate.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/typeplate\/css\/typeplate.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/lib\/logo\/drafts\/logo_v2.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -497,6 +500,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/lib\/logo\/drafts\/logo_v2.png",
       "initialSize" : 33086,
+      "fileType" : 8192
+    },
+    "\/img\/asfalt_@2X.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
+      "initialSize" : 662076,
       "fileType" : 8192
     },
     "\/scss\/_fontello.scss" : {
@@ -511,28 +525,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/img\/asfalt_@2X.png" : {
+    "\/404.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/asfalt_@2X.png",
-      "initialSize" : 662076,
-      "fileType" : 8192
-    },
-    "\/scss\/demo.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/scss\/demo.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/demo.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/404.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     }
   },
   "manualImportLinks" : [

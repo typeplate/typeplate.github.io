@@ -1,4 +1,5 @@
-@charset "UTF-8";/*
+@charset "UTF-8";
+/*
  * ==========================================================
  * Elements of this stylesheet were first published by:
  * Paul Irish, Divya Manian, Nicolas Gallagher,
@@ -8,7 +9,526 @@
  * This stylesheet was written with the utmost care and
  * dedication given to proper attribution and sourcing.
  ============================================================
-*/article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;line-height:1.5em}button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}p,pre{margin:1.5em 0}blockquote{margin:1.5em 40px}h1{font-size:2em;line-height:1.5em;margin-top:0.75em;margin-bottom:0.75em}h2{font-size:1.5em;line-height:2em;margin-top:1em;margin-bottom:1em}h3{font-size:1.17em;line-height:1.28205em;margin-top:1.28205em;margin-bottom:1.28205em}h4{font-size:1em;line-height:1.5em;margin-top:1.5em;margin-bottom:1.5em}h5{font-size:0.83em;line-height:1.80723em;margin-top:1.80723em;margin-bottom:1.80723em}h6{font-size:0.67em;line-height:2.23881em;margin-top:2.23881em;margin-bottom:2.23881em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;_font-family:"courier new",monospace;font-size:1em;line-height:1.5em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1.5em 0;padding:0 0 0 40px}dl{padding:0}dd{margin:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border-color:#c0c0c0;margin:0 2px;border-top-style:solid;border-top-width:0.0625em;padding-top:0.4625em;border-bottom-style:solid;border-bottom-width:0.0625em;padding-bottom:0.9125em;border-left-style:solid;border-left-width:0.0625em;padding-left:0.875em;border-right-style:solid;border-right-width:0.0625em;padding-right:0.875em}legend{border:0;padding:0;*margin-left:-7px}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}/*
+*/
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* normalize.scss v2.1.0 | MIT/GPLv2 License | bit.ly/normalize-with-compass */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  /* Establish a vertical rhythm unit using $base-line-height. */
+  line-height: 1.5em;
+}
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements in IE 6/7.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+p,
+pre {
+  margin: 1.5em 0;
+}
+
+blockquote {
+  /* Set 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1.5em 40px;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  /* Set the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 2em;
+  line-height: 1.5em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin-top: 1.28205em;
+  margin-bottom: 1.28205em;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+h5 {
+  font-size: 0.83em;
+  line-height: 1.80723em;
+  margin-top: 1.80723em;
+  margin-bottom: 1.80723em;
+}
+
+h6 {
+  font-size: 0.67em;
+  line-height: 2.23881em;
+  margin-top: 2.23881em;
+  margin-bottom: 2.23881em;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+hr {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/**
+ * Set 1 unit of vertical rhythm and a consistent indentation.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1.5em 0;
+  padding: 0 0 0 40px;
+}
+
+dl {
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0;
+  /* Improve image quality when scaled in IE 7. */
+  -ms-interpolation-mode: bicubic;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border-color: #c0c0c0;
+  margin: 0 2px;
+  /* Apply borders and padding that keep the vertical rhythm. */
+  border-top-style: solid;
+  border-top-width: 0.0625em;
+  padding-top: 0.4625em;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 0.9125em;
+  border-left-style: solid;
+  border-left-width: 0.0625em;
+  padding-left: 0.875em;
+  border-right-style: solid;
+  border-right-width: 0.0625em;
+  padding-right: 0.875em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ * 4. Improve appearance and consistency with IE 6/7.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  vertical-align: baseline;
+  /* 4 */
+  *vertical-align: middle;
+  /* 4 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
 +---------------------------------------------------------------------+
 |        _                               _         _                  |
 |       | |_  _   _  _ __    ___  _ __  | |  __ _ | |_  ___           |
@@ -26,10 +546,1213 @@
 | http://creativecommons.org/licenses/by/3.0                          |
 |                                                                     |
 +---------------------------------------------------------------------+
-*/@font-face{font-family:"Ampersand";src:local("Georgia"),local("Garamond"),local("Palatino"),local("Book Antiqua");unicode-range:U+0026}@font-face{font-family:"Ampersand";src:local("Georgia");unicode-range:U+270C}.amp{font-family:Ampersand,Verdana,sans-serif}body{word-wrap:break-word}pre code,.example>pre{word-wrap:normal}html{font:normal 112.5%/1.65 serif}body{-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;-o-hyphens:auto;hyphens:auto;color:#444}h1,h2,h3,h4,h5,h6{text-rendering:optimizeLegibility;line-height:1;margin-top:0}.tera{font-size:117px;font-size:6.5rem;margin-bottom:0.25385rem}.giga{font-size:90px;font-size:5rem;margin-bottom:0.33rem}.mega{font-size:72px;font-size:4rem;margin-bottom:0.4125rem}.alpha,h1{font-size:60px;font-size:3.33333rem;margin-bottom:0.495rem}.beta,h2,.icons{font-size:48px;font-size:2.66667rem;margin-bottom:0.61875rem}.gamma,h3,#drawer::after{font-size:36px;font-size:2rem;margin-bottom:0.825rem}.delta,h4,hr.fancy:after,.nav-item{font-size:24px;font-size:1.33333rem;margin-bottom:1.2375rem}.epsilon,h5,.typeplate-code-block figcaption,.example:before,blockquote{font-size:21px;font-size:1.16667rem;margin-bottom:1.41429rem}.zeta,h6,.toc li{font-size:18px;font-size:1rem;margin-bottom:1.65rem}p{margin:0 0 1.5em}p+p{text-indent:1.5em;margin-top:-1.5em}abbr,acronym,blockquote,code,dir,kbd,listing,plaintext,q,samp,tt,var,xmp{-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-o-hyphens:none;hyphens:none}pre code{white-space:-moz-pre-wrap;white-space:pre-wrap}pre{white-space:pre}code{white-space:pre;font-family:monospace}abbr{font-variant:small-caps;font-weight:600;text-transform:lowercase;color:gray}abbr:hover{cursor:help}h1,h2,h3,h4,h5,h6{color:#222}.lining dt,.lining dd{display:inline;margin:0}.lining dt+dt:before,.lining dd+dt:before{content:"\A";white-space:pre}.lining dd+dd:before{content:", "}.lining dd:before{content:": ";margin-left:-0.2rem}.dictionary-style dt{display:inline;counter-reset:definitions}.dictionary-style dt+dt:before{content:", ";margin-left:-0.2rem}.dictionary-style dd{display:block;counter-increment:definitions}.dictionary-style dd:before{content:counter(definitions, decimal) ". "}.stats-tabs{padding:0}.stats-tabs li{display:inline-block;margin:0 0.625rem 0 0;padding:0 0.625rem 0 0;border-right:0.125rem solid #ccc}.stats-tabs li:last-child{margin:0;padding:0;border:none}.stats-tabs li a{display:inline-block;font-size:1.5rem;font-weight:bold}.stats-tabs li a b{display:block;margin:0.125rem 0 0 0;font-size:0.875rem;font-weight:normal}blockquote cite{display:block;font-size:0.875em;text-align:right}.pull-quote{position:relative;padding:1em}.pull-quote:before,.pull-quote:after{height:1em;opacity:0.15;position:absolute;font-size:4em}.pull-quote:before{content:'“';top:0;left:0}.pull-quote:after{content:'”';bottom:0;right:0}@font-face{font-family:"icomoon";src:url('../fonts/icomoon/icomoon.eot');src:url('../fonts/icomoon/icomoon.eot?#iefix') format('eot'),url('../fonts/icomoon/icomoon.woff') format('woff'), url('../fonts/icomoon/icomoon.ttf') format('truetype'), url('../fonts/icomoon/icomoon.svg') format('svg')}[data-icon]:before{font-family:'icomoon';content:attr(data-icon);speak:none;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;font-smoothing:antialiased}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:'icomoon';font-style:normal;speak:none;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;font-smoothing:antialiased}.icon-menu:before{content:"\e001"}.icon-settings:before{content:"\e000"}code[class*="language-"],pre[class*="language-"]{font-family:Monaco,"Andale Mono",monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}.lt-ie9 code[class*="language-"],.lt-ie9 pre[class*="language-"]{color:#a6a6a6}pre[class*="language-"],:not(pre)>code[class*="language-"]{background:#dddddd;background:rgba(0,0,0,0.1)}pre[class*="language-"]{padding:1em;margin:0.5em 0;overflow:auto;border-radius:0.333333em;box-shadow:1px 1px 0.5em #000 inset}.typeplate-code-block{border-radius:2px;margin:0 0 1.5em;position:relative}.typeplate-code-block figcaption{font-family:"Cassannet",sans-serif;line-height:0.5;text-transform:lowercase;color:#212121}.typeplate-code-block figcaption:after{content:":"}:not(pre)>code[class*="language-"]{padding:0.15em 0.2em 0.05em;border-radius:.3em;border:0.13em solid #7a6652;box-shadow:1px 1px 0.3em -0.1em #000 inset}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:#444}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#5e8cba}.token.selector,.token.attr-name,.token.string{color:#f95165}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#42c574}.token.atrule,.token.attr-value,.token.keyword{color:#5e8cba}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}@-ms-viewport{width:device-width}@viewport{width:device-width}@font-face{font-family:'fontello';src:url("../fonts/fontello/fontello.eot?49266960");src:url("../fonts/fontello/fontello.eot?49266960#iefix") format("embedded-opentype"),url("../fonts/fontello/fontello.woff?49266960") format("woff"),url("../fonts/fontello/fontello.ttf?49266960") format("truetype"),url("../fonts/fontello/fontello.svg?49266960#fontello") format("svg");font-weight:normal;font-style:normal}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:'fontello';font-style:normal;font-weight:normal;speak:none;display:inline-block;text-decoration:inherit;font-size:120%;width:1em;margin-right:0.2em;text-align:center}.icon-download:before{content:'\e758'}.icon-github:before{content:'\f300'}.icon-twitter:before{content:'\f309'}a,.dl-item,a[href="#table-of-contents"],.social-item{-webkit-transition:0.3s all ease-in-out;-moz-transition:0.3s all ease-in-out;-o-transition:0.3s all ease-in-out;transition:0.3s all ease-in-out}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}@media (max-width: 37.5em){html{font-size:100%}}body{background:url('../img/subtle_grunge.png?1365306827') top left repeat;color:#212121}a{text-decoration:none;color:#de4d1f}a a:visited{color:transparent}a:hover{text-decoration:underline}p code,.example code{font-size:1.125em;word-wrap:normal}abbr{font-variant:normal;text-transform:uppercase;letter-spacing:1px}abbr:hover{cursor:help}dl{margin-top:0}small{font-size:65%}img{max-width:100%}section{padding:0.825em 0 1.65em}.col-wrap{width:92%;max-width:40em;margin:0 auto}hr{border:0;height:0;padding:0;border-top:1px solid grey;border-bottom:1px solid rgba(255,255,255,0.5)}hr.fancy{border-bottom:1px solid #b1b9c4;margin:0 0 1.65em;text-align:center}hr.fancy:after{background-color:#fcfcfc;color:#b1b9c4;content:"§";position:relative;top:-0.75em}.logo{vertical-align:-200%;margin-right:1.65rem;cursor:pointer}@media (max-width: 41.25em){.logo{vertical-align:-190%;margin-right:5em}}@media (max-width: 31.25em){.logo{display:block;text-align:center;margin-right:0}}.logo-img{background:url('../img/logo.png?1365306827') 50% no-repeat;width:12em;background-size:cover}.logo-img:before{content:"";display:block;width:0;height:100%}@media (max-width: 41.25em){.logo-img{width:12em}}@media (max-width: 31.25em){.logo-img{width:10em}}.header{padding-top:1.65em;background:rgba(255,255,255,0.75) url('../img/typeplate-press.png?1365306827') center bottom no-repeat}@media (max-width: 31.25em){.header{text-align:center;padding-top:0}.header p{text-align:left}}.lede{padding-top:0.825em;margin-bottom:1.65em}.lede>p:not(.no-indent){margin-top:0}.nav{letter-spacing:-4px;display:inline-block}@media (max-width: 31.25em){.nav{padding-top:0.825em;display:block;text-align:center}}@media screen and (min-width: 37.5625em) and (max-width: 47.3125em){.nav.nav-primary{margin-top:5em}}.nav-item{border-bottom:1.5px solid rgba(156,153,153,0.69);letter-spacing:normal;display:block;line-height:2;padding:0 0.5em 0 0.25em;margin-bottom:0;color:#d94426}.nav-item:hover,.nav-item:focus{text-decoration:none;background:#f7f7f7;color:#000000}.nav-item:last-child{border-bottom:none}.nav-item:before{content:"→ "}@media (max-width: 31.25em){.nav-item{border-radius:0.333333em;display:inline-block;padding:0.825em;margin-right:0.5em;font-family:Monaco,Consolas,monospace;font-size:0.825em;background:#000;color:rgba(255,255,255,0.75)}.nav-item:before{content:""}.nav-item:visited{color:rgba(255,255,255,0.75)}.nav-item:hover,.nav-item:focus{background:#d94426;color:white}}.dl-item,a[href="#table-of-contents"],.social-item{display:inline-block;letter-spacing:normal;border-radius:0.333333em;font-family:Monaco,Consolas,monospace;font-size:0.825em;text-align:center}.downloads{background:#000 url('../img/asfalt.png?1365306827') top left repeat;padding:1.65em 0;display:block}.downloads .icon-download{color:rgba(255,255,255,0.75)}.dl-item,a[href="#table-of-contents"]{padding:0.825rem;width:23%;margin-right:2%;background:#b1b9c4;color:#000}.dl-item:last-of-type,a[href="#table-of-contents"]:last-of-type{margin-right:0}.dl-item:hover,a[href="#table-of-contents"]:hover,.dl-item:focus,a[href="#table-of-contents"]:focus{background:#d94426;color:white;text-decoration:none}.dl-item small,a[href="#table-of-contents"] small{font-size:80%}@media (max-width: 48em){.dl-item,a[href="#table-of-contents"]{font-size:0.75em;padding:0.5775rem}}@media (max-width: 41.25em){.dl-item,a[href="#table-of-contents"]{font-size:1em;padding:0.825rem;width:100%;margin-right:0;margin-bottom:1.65em}}.social-nav{position:absolute;top:1.65em;right:1.65em}@media (max-width: 37.5em){.social-nav{position:static;margin-top:0.825em;margin-bottom:0.825em}}@media screen and (min-width: 31.25em) and (max-width: 37.5em){.social-nav{text-align:right}}.social-item{margin-left:0.825em;padding:0 0.825em 0 0;background:#b1b9c4;color:#000}.social-item i{background:#000;color:rgba(255,255,255,0.75);display:inline-block;padding:0.65em 0.5em 0.5em 0.825em;margin-right:0.825em;border-top-left-radius:0.333333em;border-bottom-left-radius:0.333333em}.social-item:hover,.social-item:focus{text-decoration:none;background:#d94426;color:white}.toc{border-radius:0 0 6px 6px;background:#d5d5d5;background:rgba(0,0,0,0.1);box-shadow:inset 0 6px 4px rgba(0,0,0,0.37)}.toc ol{list-style:decimal !important;counter-reset:item;padding:0 40px}.toc li{border-bottom:2px dotted #949494;display:block}.toc ol li:before{counter-increment:item;color:#444;font-style:normal;font-family:"Cassannet","ff-meta-serif-web-pro",serif}.toc ol:nth-of-type(1) li:before{content:"1." counter(item) " – "}.toc ol:nth-of-type(2) li:before{content:"2." counter(item) " – "}.toc ol:nth-of-type(3) li:before{content:"3." counter(item) " – "}.toc ol:nth-of-type(4) li:before{content:"4." counter(item) " – "}#table-of-contents h1{margin:0;padding-top:.5em;text-shadow:0 1px 0 rgba(255,255,255,0.75);color:#606060}#table-of-contents h1 .icon-download{color:#929292}#table-of-contents h1::after{content:"click for action";display:block;font-size:.5em;color:#9b9b9b}#table-of-contents h1:hover{cursor:pointer}#table-of-contents h2{color:#6f7070;text-align:center;text-shadow:0 1px 0 rgba(255,255,255,0.3)}#drawer{padding:1.5em 0;color:white}#drawer::after{border-radius:80%;box-shadow:0 1px 4px rgba(0,0,0,0.9),0 -2px 1px rgba(255,255,255,0.9);content:"{T}";display:block;height:2.5em;line-height:2.5;margin:0 auto;width:2.5em;text-align:center;text-shadow:0 1px 0 rgba(255,255,255,0.75);border:4px solid #949494;background:#000000;color:#fbfbfb}.example{background:rgba(177,185,196,0.5);border:1px solid #b1b9c4;box-shadow:0 0 1px rgba(255,255,255,0.75);padding:1.65rem 1.65rem 0;margin:2.475rem 0 1.65rem;border-radius:0.333333em}.example:before{content:"example:";display:block;font-family:"Cassannet",sans-serif;background:none;line-height:0;position:relative;color:#212121;top:-2.125em;left:-1.65rem}.example>pre{margin-top:0;overflow:auto;white-space:pre;word-spacing:normal}.example.scale-example{padding:1.65em}.example.scale-example p{line-height:1.4;margin:0}.example.scale-example .giga{margin-top:-0.33em}.example.no-top-pad{padding-top:0}.example.no-top-pad:before{top:-0.65em}.section-title{font-size:24px;font-size:1.33333rem;margin-bottom:1.2375rem}.perma-anchor{color:#444;font-weight:normal;position:relative;top:-0.125em}.perma-anchor:hover,.perma-anchor:focus{color:#d94426}.typeplate-code-block pre{font-size:0.825em;background:#021321;box-shadow:0 0 1px rgba(255,255,255,0.75);padding:1.65rem}.no-js .typeplate-code-block pre{overflow:auto}.typeplate-code-block code{color:#ddd}.typeplate-code-block figcaption{margin-bottom:0}blockquote{font-style:italic}blockquote p:last-of-type{margin-bottom:0}blockquote cite{font-style:normal}blockquote cite:before{content:"—"}@media (max-width: 31.25em){blockquote{margin:1.5em 0.75em}blockquote cite{text-align:left}}.amp{padding:0;margin-top:-0.5em;line-height:1;font-size:3em;text-align:center}@media (max-width: 31.25em){.amp{font-size:2em}}.example-figcaption{font-style:italic;font-size:0.85em}.example-figcaption strong{font-style:normal}.pull-example{padding-bottom:1em}.icons .fs1{display:inline-block}.icons .fs1:before{padding-right:.25em;color:gray}.stats-tabs{text-align:center}.stats-tabs a{color:#000}@media (max-width: 31.25em){.stats-tabs li{margin:0 0 1em}}/*
+*/
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+0026;
+}
+
+@font-face {
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C;
+}
+
+.amp {
+  font-family: Ampersand, Verdana, sans-serif;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+pre code, .example > pre {
+  word-wrap: normal;
+}
+
+/**
+ * Dropcap Sass @include
+ * Use the following Sass @include with any selector you feel necessary.
+ *
+	@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+html {
+  font: normal 112.5%/1.65 serif;
+}
+
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  color: #444444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+}
+
+.tera {
+  font-size: 117px;
+  font-size: 6.5rem;
+  margin-bottom: 0.25385rem;
+}
+
+.giga {
+  font-size: 90px;
+  font-size: 5rem;
+  margin-bottom: 0.33rem;
+}
+
+.mega {
+  font-size: 72px;
+  font-size: 4rem;
+  margin-bottom: 0.4125rem;
+}
+
+.alpha, h1 {
+  font-size: 60px;
+  font-size: 3.33333rem;
+  margin-bottom: 0.495rem;
+}
+
+.beta, h2, .icons {
+  font-size: 48px;
+  font-size: 2.66667rem;
+  margin-bottom: 0.61875rem;
+}
+
+.gamma, h3, #drawer::after {
+  font-size: 36px;
+  font-size: 2rem;
+  margin-bottom: 0.825rem;
+}
+
+.delta, h4, hr.fancy:after, .nav-item {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  margin-bottom: 1.2375rem;
+}
+
+.epsilon, h5, .typeplate-code-block figcaption, .example:before, blockquote {
+  font-size: 21px;
+  font-size: 1.16667rem;
+  margin-bottom: 1.41429rem;
+}
+
+.zeta, h6, .toc li {
+  font-size: 18px;
+  font-size: 1rem;
+  margin-bottom: 1.65rem;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+p + p {
+  text-indent: 1.5em;
+  margin-top: -1.5em;
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+}
+
+pre code {
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+pre {
+  white-space: pre;
+}
+
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+/**
+ * Abbreviations Markup
+ *
+	<abbr title="hyper text markup language">HMTL</abbr>
+ *
+ * Extend this object into your markup.
+ *
+ */
+abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+abbr:hover {
+  cursor: help;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222222;
+}
+
+/**
+ * Lining Definition Style Markup
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.lining dd + dd:before {
+  content: ", ";
+}
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/**
+ * Dictionary Definition Style Markup
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+/**
+ * Stats Tab Markup
+ *
+	<ul class="stats-tabs">
+		<li><a href="#">[value]<b>[name]</b></a></li>
+	</ul>
+ *
+ * Extend this object into your markup.
+ *
+ */
+.stats-tabs {
+  padding: 0;
+}
+.stats-tabs li {
+  display: inline-block;
+  margin: 0 0.625rem 0 0;
+  padding: 0 0.625rem 0 0;
+  border-right: 0.125rem solid #cccccc;
+}
+.stats-tabs li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.stats-tabs li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.stats-tabs li a b {
+  display: block;
+  margin: 0.125rem 0 0 0;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+/**
+ * Blockquote Markup
+ *
+	<blockquote cite="">
+		<p>&Prime;&Prime;</p>
+		<cite>
+			<small><a href=""></a></small>
+		</cite>
+	</blockquote>
+ *
+ * Extend this object into your markup.
+ *
+ */
+blockquote cite {
+  display: block;
+  font-size: 0.875em;
+  text-align: right;
+}
+
+/**
+ * Pull Quotes Markup
+ *
+	<aside class="pull-quote">
+		<blockquote>
+			<p></p>
+		</blockquote>
+	</aside>
+ *
+ * Extend this object into your custom stylesheet.
+ *
+ */
+.pull-quote {
+  position: relative;
+  padding: 1em;
+}
+.pull-quote:before, .pull-quote:after {
+  height: 1em;
+  opacity: 0.15;
+  position: absolute;
+  font-size: 4em;
+}
+.pull-quote:before {
+  content: '“';
+  top: 0;
+  left: 0;
+}
+.pull-quote:after {
+  content: '”';
+  bottom: 0;
+  right: 0;
+}
+
+/**
+ * Figures Markup
+ *
+	<figure>
+		<figcaption>
+			<strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
+		</figcaption>
+	</figure>
+ *
+ * Extend this object into your markup.
+ *
+ */
+/**
+ * Footnote Markup : Replace 'X' with your unique number for each footnote
+ *
+	<article>
+		<p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
+		<footer>
+			<ol class="foot-notes">
+				<li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
+			</ol>
+		</footer>
+	</article>
+ *
+ * Extend this object into your markup.
+ *
+ */
+@font-face {
+  font-family: "icomoon";
+  src: url('../fonts/icomoon/icomoon.eot');
+  src: url('../fonts/icomoon/icomoon.eot?#iefix') format('eot'), url('../fonts/icomoon/icomoon.woff') format('woff'), url('../fonts/icomoon/icomoon.ttf') format('truetype'), url('../fonts/icomoon/icomoon.svg') format('svg');
+}
+
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'icomoon';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-menu:before {
+  content: "\e001";
+}
+
+.icon-settings:before {
+  content: "\e000";
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: Monaco, "Andale Mono", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.lt-ie9 code[class*="language-"], .lt-ie9
+pre[class*="language-"] {
+  color: #a6a6a6;
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+  background: #dddddd;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.333333em;
+  box-shadow: 1px 1px 0.5em black inset;
+}
+
+.typeplate-code-block {
+  border-radius: 2px;
+  margin: 0 0 1.5em;
+  position: relative;
+}
+.typeplate-code-block figcaption {
+  font-family: "Cassannet", sans-serif;
+  line-height: 0.5;
+  text-transform: lowercase;
+  color: #212121;
+}
+.typeplate-code-block figcaption:after {
+  content: ":";
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.15em 0.2em 0.05em;
+  border-radius: .3em;
+  border: 0.13em solid #7a6652;
+  box-shadow: 1px 1px 0.3em -0.1em black inset;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #444;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number {
+  color: #5e8cba;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string {
+  color: #f95165;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #42c574;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #5e8cba;
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.token.important {
+  font-weight: bold;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello/fontello.eot?49266960");
+  src: url("../fonts/fontello/fontello.eot?49266960#iefix") format("embedded-opentype"), url("../fonts/fontello/fontello.woff?49266960") format("woff"), url("../fonts/fontello/fontello.ttf?49266960") format("truetype"), url("../fonts/fontello/fontello.svg?49266960#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?49266960#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  font-size: 120%;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+}
+
+.icon-download:before {
+  content: '\e758';
+}
+
+.icon-github:before {
+  content: '\f300';
+}
+
+.icon-twitter:before {
+  content: '\f309';
+}
+
+a, .dl-item, a[href="#table-of-contents"], .social-item {
+  -webkit-transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 100%;
+  }
+}
+
+body {
+  background: url('../img/subtle_grunge.png?1365306827') top left repeat;
+  color: #212121;
+}
+
+a {
+  text-decoration: none;
+  color: #de4d1f;
+}
+a a:visited {
+  color: transparent;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p code,
+.example code {
+  font-size: 1.125em;
+  word-wrap: normal;
+}
+
+abbr {
+  font-variant: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+abbr:hover {
+  cursor: help;
+}
+
+dl {
+  margin-top: 0;
+}
+
+small {
+  font-size: 65%;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  padding: 0.825em 0 1.65em;
+}
+
+.col-wrap {
+  width: 92%;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  padding: 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+hr.fancy {
+  border-bottom: 1px solid #b1b9c4;
+  margin: 0 0 1.65em;
+  text-align: center;
+}
+hr.fancy:after {
+  background-color: #fcfcfc;
+  color: #b1b9c4;
+  content: "§";
+  position: relative;
+  top: -0.75em;
+}
+
+.logo {
+  vertical-align: -200%;
+  margin-right: 1.65rem;
+  cursor: pointer;
+}
+@media (max-width: 41.25em) {
+  .logo {
+    vertical-align: -190%;
+    margin-right: 5em;
+  }
+}
+@media (max-width: 31.25em) {
+  .logo {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+.logo-img {
+  background: url('../img/logo.png?1365306827') 50% no-repeat;
+  width: 12em;
+  background-size: cover;
+}
+.logo-img:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+@media (max-width: 41.25em) {
+  .logo-img {
+    width: 12em;
+  }
+}
+@media (max-width: 31.25em) {
+  .logo-img {
+    width: 10em;
+  }
+}
+
+.header {
+  padding-top: 1.65em;
+  background: rgba(255, 255, 255, 0.75) url('../img/typeplate-press.png?1365306827') center bottom no-repeat;
+}
+@media (max-width: 31.25em) {
+  .header {
+    text-align: center;
+    padding-top: 0;
+  }
+  .header p {
+    text-align: left;
+  }
+}
+
+.lede {
+  padding-top: 0.825em;
+  margin-bottom: 1.65em;
+}
+.lede > p:not(.no-indent) {
+  margin-top: 0;
+}
+
+.nav {
+  letter-spacing: -4px;
+  display: inline-block;
+}
+@media (max-width: 31.25em) {
+  .nav {
+    padding-top: 0.825em;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
+  .nav.nav-primary {
+    margin-top: 5em;
+  }
+}
+
+.nav-item {
+  border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
+  letter-spacing: normal;
+  display: block;
+  line-height: 2;
+  padding: 0 0.5em 0 0.25em;
+  margin-bottom: 0;
+  color: #d94426;
+}
+.nav-item:hover, .nav-item:focus {
+  text-decoration: none;
+  background: #f7f7f7;
+  color: #000000;
+}
+.nav-item:last-child {
+  border-bottom: none;
+}
+.nav-item:before {
+  content: "→ ";
+}
+@media (max-width: 31.25em) {
+  .nav-item {
+    border-radius: 0.333333em;
+    display: inline-block;
+    padding: 0.825em;
+    margin-right: 0.5em;
+    font-family: Monaco, Consolas, monospace;
+    font-size: 0.825em;
+    background: black;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .nav-item:before {
+    content: "";
+  }
+  .nav-item:visited {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .nav-item:hover, .nav-item:focus {
+    background: #d94426;
+    color: white;
+  }
+}
+
+.dl-item, a[href="#table-of-contents"],
+.social-item {
+  display: inline-block;
+  letter-spacing: normal;
+  border-radius: 0.333333em;
+  font-family: Monaco, Consolas, monospace;
+  font-size: 0.825em;
+  text-align: center;
+}
+
+.downloads {
+  background: black url('../img/asfalt.png?1365306827') top left repeat;
+  padding: 1.65em 0;
+  display: block;
+}
+.downloads .icon-download {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dl-item, a[href="#table-of-contents"] {
+  padding: 0.825rem;
+  width: 23%;
+  margin-right: 2%;
+  background: #b1b9c4;
+  color: black;
+}
+.dl-item:last-of-type, a[href="#table-of-contents"]:last-of-type {
+  margin-right: 0;
+}
+.dl-item:hover, a[href="#table-of-contents"]:hover, .dl-item:focus, a[href="#table-of-contents"]:focus {
+  background: #d94426;
+  color: white;
+  text-decoration: none;
+}
+.dl-item small, a[href="#table-of-contents"] small {
+  font-size: 80%;
+}
+@media (max-width: 48em) {
+  .dl-item, a[href="#table-of-contents"] {
+    font-size: 0.75em;
+    padding: 0.5775rem;
+  }
+}
+@media (max-width: 41.25em) {
+  .dl-item, a[href="#table-of-contents"] {
+    font-size: 1em;
+    padding: 0.825rem;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1.65em;
+  }
+}
+
+.social-nav {
+  position: absolute;
+  top: 1.65em;
+  right: 1.65em;
+}
+@media (max-width: 37.5em) {
+  .social-nav {
+    position: static;
+    margin-top: 0.825em;
+    margin-bottom: 0.825em;
+  }
+}
+@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
+  .social-nav {
+    text-align: right;
+  }
+}
+
+.social-item {
+  margin-left: 0.825em;
+  padding: 0 0.825em 0 0;
+  background: #b1b9c4;
+  color: black;
+}
+.social-item i {
+  background: black;
+  color: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  padding: 0.65em 0.5em 0.5em 0.825em;
+  margin-right: 0.825em;
+  border-top-left-radius: 0.333333em;
+  border-bottom-left-radius: 0.333333em;
+}
+.social-item:hover, .social-item:focus {
+  text-decoration: none;
+  background: #d94426;
+  color: white;
+}
+
+.toc {
+  border-radius: 0 0 6px 6px;
+  background: #d5d5d5;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
+}
+
+.toc ol {
+  list-style: decimal !important;
+  counter-reset: item;
+  padding: 0 40px;
+}
+
+.toc li {
+  border-bottom: 2px dotted #949494;
+  display: block;
+}
+
+.toc ol li:before {
+  counter-increment: item;
+  color: #444;
+  font-style: normal;
+  font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
+}
+
+.toc ol:nth-of-type(1) li:before {
+  content: "1." counter(item) " – ";
+}
+
+.toc ol:nth-of-type(2) li:before {
+  content: "2." counter(item) " – ";
+}
+
+.toc ol:nth-of-type(3) li:before {
+  content: "3." counter(item) " – ";
+}
+
+.toc ol:nth-of-type(4) li:before {
+  content: "4." counter(item) " – ";
+}
+
+#table-of-contents h1 {
+  margin: 0;
+  padding-top: .5em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  color: #606060;
+}
+#table-of-contents h1 .icon-download {
+  color: #929292;
+}
+#table-of-contents h1::after {
+  content: "click for action";
+  display: block;
+  font-size: .5em;
+  color: #9b9b9b;
+}
+#table-of-contents h1:hover {
+  cursor: pointer;
+}
+#table-of-contents h2 {
+  color: #6f7070;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+#drawer {
+  padding: 1.5em 0;
+  color: white;
+}
+#drawer::after {
+  border-radius: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 -2px 1px rgba(255, 255, 255, 0.9);
+  content: "{T}";
+  display: block;
+  height: 2.5em;
+  line-height: 2.5;
+  margin: 0 auto;
+  width: 2.5em;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  border: 4px solid #949494;
+  background: #000000;
+  color: #fbfbfb;
+}
+
+.example {
+  background: rgba(177, 185, 196, 0.5);
+  border: 1px solid #b1b9c4;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
+  padding: 1.65rem 1.65rem 0;
+  margin: 2.475rem 0 1.65rem;
+  border-radius: 0.333333em;
+}
+.example:before {
+  content: "example:";
+  display: block;
+  font-family: "Cassannet", sans-serif;
+  background: none;
+  line-height: 0;
+  position: relative;
+  color: #212121;
+  top: -2.125em;
+  left: -1.65rem;
+}
+
+.example > pre {
+  margin-top: 0;
+  overflow: auto;
+  white-space: pre;
+  word-spacing: normal;
+}
+
+.example.scale-example {
+  padding: 1.65em;
+}
+.example.scale-example p {
+  line-height: 1.4;
+  margin: 0;
+}
+.example.scale-example .giga {
+  margin-top: -0.33em;
+}
+
+.example.no-top-pad {
+  padding-top: 0;
+}
+.example.no-top-pad:before {
+  top: -0.65em;
+}
+
+.section-title {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  margin-bottom: 1.2375rem;
+}
+
+.perma-anchor {
+  color: #444;
+  font-weight: normal;
+  position: relative;
+  top: -0.125em;
+}
+.perma-anchor:hover, .perma-anchor:focus {
+  color: #d94426;
+}
+
+.typeplate-code-block pre {
+  font-size: 0.825em;
+  background: #021321;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
+  padding: 1.65rem;
+}
+.no-js .typeplate-code-block pre {
+  overflow: auto;
+}
+.typeplate-code-block code {
+  color: #ddd;
+}
+.typeplate-code-block figcaption {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+}
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+blockquote cite {
+  font-style: normal;
+}
+blockquote cite:before {
+  content: "—";
+}
+@media (max-width: 31.25em) {
+  blockquote {
+    margin: 1.5em 0.75em;
+  }
+  blockquote cite {
+    text-align: left;
+  }
+}
+
+.amp {
+  padding: 0;
+  margin-top: -0.5em;
+  line-height: 1;
+  font-size: 3em;
+  text-align: center;
+}
+@media (max-width: 31.25em) {
+  .amp {
+    font-size: 2em;
+  }
+}
+
+.example-figcaption {
+  font-style: italic;
+  font-size: 0.85em;
+}
+.example-figcaption strong {
+  font-style: normal;
+}
+
+.pull-example {
+  padding-bottom: 1em;
+}
+
+.icons .fs1 {
+  display: inline-block;
+}
+.icons .fs1:before {
+  padding-right: .25em;
+  color: gray;
+}
+
+.stats-tabs {
+  text-align: center;
+}
+.stats-tabs a {
+  color: #000;
+}
+@media (max-width: 31.25em) {
+  .stats-tabs li {
+    margin: 0 0 1em;
+  }
+}
+
+/*
  * FF Meta Serif Web Pro
  * The most influential sans serif of the digital revolution (FF Meta)
  * now has a serif companion. It took three years and three designers
  * to develop FF Meta Serif: Erik Spiekermann, Christian Schwartz and
  * Kris Sowersby. More about FF Meta Serif Web Pro http://metaserif.com
- */body{font-weight:400}.wf-loading body{font-family:serif;visibility:hidden}.wf-active body,.wf-inactive body{font-family:"ff-meta-serif-web-pro",serif;font-weight:400;visibility:visible}h1,h2,h3,h4,h5,h6{font-weight:700}@font-face{font-family:"Cassannet";src:url('../fonts/cassannet/cassannet.eot') format('embedded-opentype'), url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), url('../fonts/cassannet/cassannet.woff') format('woff'), url('../fonts/cassannet/cassannet.ttf') format('truetype'), url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg')}.site-footer{margin-top:3em;font-size:75%}.site-footer a{color:#de4d1f}.center{text-align:center}.capsify{text-transform:uppercase;letter-spacing:0.125rem}.botDivider{border-bottom:0.44444rem solid #606060}.botDivider.bright{border-bottom-color:#d94426}section,.toc,.example-figcaption,p{margin-top:0;margin-bottom:1.65rem}p.no-indent{text-indent:0}.drop-cap:first-letter{float:left;margin:0;padding:0.125em 0.125em 0 0;font-size:6em;font-family:Copperplate;line-height:0.5;text-indent:0;background:transparent;color:inherit}.lining dt,.lining dd{display:inline;margin:0}.lining dt+dt:before,.lining dd+dt:before{content:"\A";white-space:pre}.lining dd+dd:before{content:", "}.lining dd:before{content:": ";margin-left:-0.2rem}.dictionary-style dt{display:inline;counter-reset:definitions}.dictionary-style dt+dt:before{content:", ";margin-left:-0.2rem}.dictionary-style dd{display:block;counter-increment:definitions}.dictionary-style dd:before{content:counter(definitions, decimal) ". "}.visuallyhidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}
+ */
+body {
+  font-weight: 400;
+}
+.wf-loading body {
+  font-family: serif;
+  visibility: hidden;
+}
+.wf-active body, .wf-inactive body {
+  font-family: "ff-meta-serif-web-pro",serif;
+  font-weight: 400;
+  visibility: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Cassannet";
+  src: url('../fonts/cassannet/cassannet.eot') format('embedded-opentype'), url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), url('../fonts/cassannet/cassannet.woff') format('woff'), url('../fonts/cassannet/cassannet.ttf') format('truetype'), url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg');
+}
+
+.site-footer {
+  margin-top: 3em;
+  font-size: 75%;
+}
+.site-footer a {
+  color: #de4d1f;
+}
+
+.center {
+  text-align: center;
+}
+
+.capsify {
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+.botDivider {
+  border-bottom: 0.44444rem solid #606060;
+}
+.botDivider.bright {
+  border-bottom-color: #d94426;
+}
+
+section, .toc, .example-figcaption, p {
+  margin-top: 0;
+  margin-bottom: 1.65rem;
+}
+
+p.no-indent {
+  text-indent: 0;
+}
+
+.drop-cap:first-letter {
+  float: left;
+  margin: 0;
+  padding: 0.125em 0.125em 0 0;
+  font-size: 6em;
+  font-family: Copperplate;
+  line-height: 0.5;
+  text-indent: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.lining dt,
+.lining dd {
+  display: inline;
+  margin: 0;
+}
+.lining dt + dt:before,
+.lining dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.lining dd + dd:before {
+  content: ", ";
+}
+.lining dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+.dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+.dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dictionary-style dd:before {
+  content: counter(definitions, decimal) ". ";
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}

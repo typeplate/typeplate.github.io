@@ -31,12 +31,12 @@ javascripts_dir = "js"
 fonts_dir = "fonts"
 
 # Development
-#output_style = :expanded
-#environment = :development
+output_style = :expanded
+environment = :development
 
 # Production
-output_style = :compressed
-environment = :production
+#output_style = :compressed
+#environment = :production
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
@@ -69,4 +69,4 @@ Compass::BrowserSupport.add_support("repeating-linear-gradient", "webkit", "moz"
 # sass-convert -R --from scss --to sass scss scss && rm -rf sass && mv scss sass
 
 
-output_style = :compressed # by Fire.app
+#output_style = :compressed # used for Fire.app on Windows
