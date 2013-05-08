@@ -101,13 +101,13 @@ $zeta: 18 !default; // 18 = 18 × 1
 // $TypeScale Unit
 // -------------------------------------//
 
-$type-scale-unit-value: rem;
+$type-scale-unit-value: rem !default;
 
 
 // $Text Indentation Value
 // -------------------------------------//
 
-$indent-val: 1.5em;
+$indent-val: 1.5em !default;
 
 
 // $StatsTab

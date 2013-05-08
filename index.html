@@ -118,9 +118,9 @@
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">$weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$line-height: 1.65 !default;
+$font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
@@ -184,18 +184,18 @@ html {
 
 // Modular Scale Values
 // http://typecast.com/blog/contrast-through-scale
-$tera: 117;		//	117	= 18 × 6.5
-$giga: 90;		//	90  = 18 × 5
-$mega: 72;		//	72  = 18 × 4
-$alpha: 60;		//	60  = 18 × 3.3333
-$beta: 48;		//	48  = 18 × 2.6667
-$gamma: 36;		//	36  = 18 × 2
-$delta: 24;		//	24  = 18 × 1.3333
-$epsilon: 21;	//	21  = 18 × 1.1667
-$zeta: 18; 		//	18  = 18 × 1
+$tera: 117 !default; // 117	= 18 × 6.5
+$giga: 90 !default; // 90 = 18 × 5
+$mega: 72 !default; // 72 = 18 × 4
+$alpha: 60 !default; // 60 = 18 × 3.3333
+$beta: 48 !default; // 48 = 18 × 2.6667
+$gamma: 36 !default; // 36 = 18 × 2
+$delta: 24 !default; // 24 = 18 × 1.3333
+$epsilon: 21 !default; // 21 = 18 × 1.1667
+$zeta: 18 !default; // 18 = 18 × 1
 
 // typscale unit
-$type-scale-unit-value: rem;
+$type-scale-unit-value: rem !default;
 
 // typographic scale
 @mixin modular-scale($scale, $base, $value, $measure:"") {
@@ -281,8 +281,8 @@ h6 {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$body-copy-color: #444;
-$heading-color: #222;
+			<pre><code class="language-sass">$body-copy-color: #444 !default;
+$heading-color: #222 !default;
 
 body {
 	color: $body-copy-color;
@@ -352,7 +352,7 @@ body {
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">//paragraph siblings indent
-$indent-val: 1.5em;
+$indent-val: 1.5em !default;
 
 p {
 	margin: 0 0 $indent-val;
@@ -572,7 +572,7 @@ $amp-font-family: Verdana, sans-serif;
 // Example usage
 // ex.1) $web-fonts: (icon-name);
 // ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
-$web-fonts: null;
+$web-fonts: null !default;
 
 // @include font-face() is a compass function so it will require compass
 // based on this gist by Chris Van Patten
