@@ -94,11 +94,11 @@ If you're making a quick patch for Typeplate (like a spelling mistake for exampl
 
 &sect; **Stylesheets** : ``.scss``
 
-Make sure compass is installed by executing the following bash command (Mac only) from your CLI:
+Make sure compass is installed by executing the following bash command (Mac and Linux) from your CLI:
 
 	gem install compass
 
-You can always check if they're installed by running the bash command (Mac only) ``gem list`` which will list all your gems installed.
+You can always check if they're installed by running the bash command (Mac and Linux) ``gem list`` which will list all your gems installed.
 
 &sect; **Compiling** : Javascript, Sass and Compass
 
