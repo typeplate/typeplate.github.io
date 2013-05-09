@@ -1,0 +1,67 @@
+// ==========================================================================//
+//
+// $Variables
+//
+// ==========================================================================//
+
+
+// $BaseType
+// -------------------------------------//
+
+$weight: normal;
+$line-height: 1.65;
+$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
+$serif-boolean: true;
+
+
+// $Color
+// -------------------------------------//
+
+$body-copy-color: #444;
+$heading-color: #222;
+
+
+// $I c o n  F o n t  H e l p e r
+// --------------------------------------------------------------------------
+// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+$web-fonts: (cassannet, icomoon);
+
+
+// $TypeScale
+// -------------------------------------//
+
+$tera: 117; // 117 = 18 × 6.5
+$giga: 90; // 90 = 18 × 5
+$mega: 72; // 72 = 18 × 4
+$alpha: 60; // 60 = 18 × 3.3333
+$beta: 48; // 48 = 18 × 2.6667
+$gamma: 36; // 36 = 18 × 2
+$delta: 24; // 24 = 18 × 1.3333
+$epsilon: 21; // 21 = 18 × 1.1667
+$zeta: 18; // 18 = 18 × 1
+
+
+// $TypeScale Unit
+// -------------------------------------//
+
+$type-scale-unit-value: rem;
+
+
+// $Text Indentation Value
+// -------------------------------------//
+
+$indent-val: 1.5em;

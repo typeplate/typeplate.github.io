@@ -1,14 +1,6 @@
 // $IcoMoon
 // ============================================================
 
-$web-fonts: (icomoon);
-
-@if ($web-fonts != null) {
-	@each $font in $web-fonts {
-		@include font-face( $font, font-files( '#{$font}/#{$font}.woff', '#{$font}/#{$font}.ttf', '#{$font}/#{$font}.svg', svg ), '#{$font}/#{$font}.eot' )
-	}
-}
-
 // Use the following CSS code if you want to use data attributes for inserting your icons
 [data-icon]:before {
 	font-family: 'icomoon';

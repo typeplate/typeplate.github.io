@@ -559,6 +559,18 @@ table {
   unicode-range: U+270C;
 }
 
+@font-face {
+  font-family: "cassannet";
+  src: url('../fonts/cassannet/cassannet.eot');
+  src: url('../fonts/cassannet/cassannet.eot?#iefix') format('eot'), url('../fonts/cassannet/cassannet.woff') format('woff'), url('../fonts/cassannet/cassannet.ttf') format('truetype'), url('../fonts/cassannet/cassannet.svg') format('svg');
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url('../fonts/icomoon/icomoon.eot');
+  src: url('../fonts/icomoon/icomoon.eot?#iefix') format('eot'), url('../fonts/icomoon/icomoon.woff') format('woff'), url('../fonts/icomoon/icomoon.ttf') format('truetype'), url('../fonts/icomoon/icomoon.svg') format('svg');
+}
+
 .amp {
   font-family: Ampersand, Verdana, sans-serif;
 }
@@ -893,12 +905,6 @@ blockquote cite {
  * Extend this object into your markup.
  *
  */
-@font-face {
-  font-family: "icomoon";
-  src: url('../fonts/icomoon/icomoon.eot');
-  src: url('../fonts/icomoon/icomoon.eot?#iefix') format('eot'), url('../fonts/icomoon/icomoon.woff') format('woff'), url('../fonts/icomoon/icomoon.ttf') format('truetype'), url('../fonts/icomoon/icomoon.svg') format('svg');
-}
-
 [data-icon]:before {
   font-family: 'icomoon';
   content: attr(data-icon);
@@ -1168,8 +1174,8 @@ hr {
   border: 0;
   height: 0;
   padding: 0;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.29);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 hr.fancy {
   border-bottom: 1px solid #b1b9c4;
@@ -1331,15 +1337,15 @@ hr.fancy:after {
   padding: 0.825rem;
   width: 23%;
   margin-right: 2%;
-  background: #b1b9c4;
-  color: black;
+  background: #444444;
+  color: rgba(255, 255, 255, 0.75);
 }
 .dl-item:last-of-type, a[href="#table-of-contents"]:last-of-type {
   margin-right: 0;
 }
 .dl-item:hover, a[href="#table-of-contents"]:hover, .dl-item:focus, a[href="#table-of-contents"]:focus {
-  background: #d94426;
-  color: white;
+  background: #b1b9c4;
+  color: black;
   text-decoration: none;
 }
 .dl-item small, a[href="#table-of-contents"] small {
@@ -1650,11 +1656,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-}
-
-@font-face {
-  font-family: "Cassannet";
-  src: url('../fonts/cassannet/cassannet.eot') format('embedded-opentype'), url('../fonts/cassannet/cassannet.eot?#iefix') format('embedded-opentype'), url('../fonts/cassannet/cassannet.woff') format('woff'), url('../fonts/cassannet/cassannet.ttf') format('truetype'), url('../fonts/cassannet/cassannet.svg#svgFontName') format('svg');
 }
 
 .site-footer {

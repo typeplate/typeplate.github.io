@@ -100,8 +100,8 @@ hr {
 	border: 0;
 	height: 0;
 	padding: 0;
-	border-top: 1px solid grey;
-	border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+	border-top: 1px solid rgba(0, 0, 0, 0.29);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 	&.fancy {
 		border-bottom: 1px solid $cobalt-fade;
 		margin: 0 0 1.65em;
@@ -273,16 +273,16 @@ hr {
 	padding: $line-height * 0.5rem;
 	width: 23%;
 	margin-right: 2%;
-	background: $cobalt-fade;
-	color: $cobalt-deep;
+	background: $download-btn-bg;
+	color: $white;
 	// pseudo
 	&:last-of-type {
 		margin-right: 0;
 	}
 	&:hover,
 	&:focus {
-		background: $rust;
-		color: white;
+		background: $download-btn-hover;
+		color: $cobalt-deep;
 		text-decoration: none;
 	}
 	// filesize line
@@ -563,17 +563,6 @@ blockquote {
 }
 
 
-// $Typographic Scale Demo
-// ============================================================
-
-// this is a peculiar instance because we're stacking lots of titles atop one another
-// so we manually nix the normal amount of margin below titles
-// .typographic-scale .no-indent {
-// 	margin: 0;
-// 	text-indent: 0;
-// }
-
-
 // $Ampersand Demo
 // ============================================================
 
@@ -670,30 +659,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
-
-
-// $Cassannet @font-face
-// ============================================================
-// We use a helper from our compass config for this
-// http://compass-style.org/reference/compass/css3/font_face/
-
-// Cassannet Regular
-@include font-face("Cassannet", font-files(
-	"cassannet/cassannet.eot", ///* IE9 Compat Modes */
-	"cassannet/cassannet.eot?#iefix", // IE6-IE8
-	"cassannet/cassannet.woff", // Modern Browsers
-	"cassannet/cassannet.ttf", // Safari, Android, iOS
-	"cassannet/cassannet.svg#svgFontName" // Legacy iOS
-));
-// Cassannet Bold
-// @include font-face("Cassannet Bold", font-files(
-//     "cassannet/cassannet-bold.eot", ///* IE9 Compat Modes */
-//     "cassannet/cassannet-bold.eot?#iefix", // IE6-IE8
-//     "cassannet/cassannet-bold.woff", // Modern Browsers
-//     "cassannet/cassannet-bold.ttf", // Safari, Android, iOS
-//     "cassannet/cassannet-bold.svg#svgFontName" // Legacy iOS
-// ));
-
 
 
 // $Footer

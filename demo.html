@@ -21,6 +21,275 @@
 		<link rel="stylesheet" id="typeplate-css" href="./typeplate/css/typeplate.css?1.0.1">
 		<!-- TypePlate Demo Styles -->
 		<link rel="stylesheet" href="./css/demo.css?1.0">
+		<style>
+.bg-slategray {
+  color: #c7c7c7;
+  font-size: 12px;
+}
+.bg-slategray .title {
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 #000;
+}
+
+input.slide-switch[type=checkbox] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+}
+input.slide-switch[type=checkbox] + label {
+  background-clip: padding-box !important;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 12px;
+  height: 21px;
+  line-height: 21px;
+  min-width: 15px;
+  margin: 0 5px 5px 0;
+  max-width: 150px;
+  overflow: hidden;
+  padding: 0 8px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  margin: 0 5px 5px 5px;
+  background-color: #ccc;
+  background-image: none !important;
+  border: 1px solid #9b9d9d;
+  font-family: source-sb;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: 54px;
+  vertical-align: middle;
+}
+input.slide-switch[type=checkbox]:checked + label .wrapper {
+  left: 0px;
+  padding: 0 0 0 0;
+}
+input.slide-switch[type=checkbox]:checked + label .wrapper .on {
+  visibility: visible;
+  -moz-transition: visibility 0s linear 0s;
+  -webkit-transition: visibility 0s linear 0s;
+  transition: visibility 0s linear 0s;
+}
+input.slide-switch[type=checkbox]:checked + label .wrapper .off {
+  visibility: hidden;
+  -moz-transition: visibility 0s linear 0.2s;
+  -webkit-transition: visibility 0s linear 0.2s;
+  transition: visibility 0s linear 0.2s;
+}
+input.slide-switch[type=checkbox]:focus + label {
+  border: 1px solid #093ffd;
+  box-shadow: 0 0 0 2px #6fb5f1;
+  outline: none;
+  padding: 0 0 0 0;
+  margin: 0 5px 5px 5px;
+}
+input.slide-switch[type=checkbox]:focus + label .switch {
+  border: 1px solid #093ffd;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+input.slide-switch.dark[type=checkbox]:focus + label {
+  border: 1px solid rgba(34,238,51,0) 1;
+  box-shadow: 0 0 0 2px #6086a7;
+  outline: none;
+  padding: 0 0 0 0;
+  margin: 0 5px 5px 5px;
+}
+input.slide-switch.dark[type=checkbox]:focus + label .switch {
+  border: 1px solid rgba(34,238,51,0) 1;
+  box-shadow: 0 0 0 2px #6086a7;
+}
+input.slide-switch[type=checkbox] + label .wrapper {
+  display: block;
+  height: 21px;
+  position: relative;
+  top: 0px;
+  left: -38px;
+  -moz-transition: left 0.2s ease-out;
+  -webkit-transition: left 0.2s ease-out;
+  transition: left 0.2s ease-out;
+  width: 90px;
+  z-index: 1;
+}
+input.slide-switch[type=checkbox] + label .switch,
+input.slide-switch[type=checkbox] + label .on,
+input.slide-switch[type=checkbox] + label .off {
+  display: block;
+  height: 21px;
+  font-size: 12px;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  top: 0;
+}
+input.slide-switch[type=checkbox] + label .switch {
+  background: #e5e9e9;
+/* Old browsers */
+  background: -moz-linear-gradient(top, #e5e9e9, #e5e9e9);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#e5e9e9), to(#e5e9e9));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e5e9e9, #e5e9e9);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e5e9e9, #e5e9e9);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e5e9e9, #e5e9e9);
+/* IE10+ */
+  background: linear-gradient(top, #e5e9e9, #e5e9e9);
+/* W3C */
+  border: 1px solid #9b9d9d;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #fff;
+  left: 37px;
+  width: 16px;
+  top: -1px;
+  z-index: 1;
+}
+input.slide-switch[type=checkbox] + label .on {
+  background: #e0f0fa;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: inset 0 1px 0px rgba(0,0,0,0.12);
+  color: light-blue-text;
+  width: 38px;
+  padding-right: 3px;
+  visibility: hidden;
+  -moz-transition: visibility 0s linear 0.2s;
+  -webkit-transition: visibility 0s linear 0.2s;
+  transition: visibility 0s linear 0.2s;
+}
+input.slide-switch[type=checkbox] + label .off {
+  background: #d3d7d7;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: inset 0 1px 0px rgba(0,0,0,0.12);
+  left: 51px;
+  width: 38px;
+  padding-left: 3px;
+  visibility: visible;
+  -moz-transition: visibility 0s linear 0s;
+  -webkit-transition: visibility 0s linear 0s;
+  transition: visibility 0s linear 0s;
+}
+input.slide-switch.dark[type=checkbox] + label {
+  background-color: #404141;
+  border: 1px solid #2d2f31;
+  padding: 0 0 0 0;
+}
+input.slide-switch.dark[type=checkbox] + label .switch,
+input.slide-switch.dark[type=checkbox] + label .on,
+input.slide-switch.dark[type=checkbox] + label .off {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.69);
+}
+input.slide-switch.dark[type=checkbox] + label .switch {
+  background: #595b5b;
+/* Old browsers */
+  background: -moz-linear-gradient(top, #595b5b, #595b5b);
+/* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#595b5b), to(#595b5b));
+/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #595b5b, #595b5b);
+/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #595b5b, #595b5b);
+/* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #595b5b, #595b5b);
+/* IE10+ */
+  background: linear-gradient(top, #595b5b, #595b5b);
+/* W3C */
+  border: 1px solid #2d2f31;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+}
+input.slide-switch.dark[type=checkbox] + label .on {
+  background: #404141;
+  box-shadow: inset 0 1px 0px rgba(0,0,0,0.18);
+  color: dark-blue-text;
+}
+input.slide-switch.dark[type=checkbox] + label .off {
+  background: #404141;
+  box-shadow: inset 0 1px 0px rgba(0,0,0,0.18);
+  color: #999;
+}
+input.slide-switch.large[type=checkbox] + label {
+  height: 27px;
+  width: 69px;
+}
+input.slide-switch.large[type=checkbox] + label .wrapper {
+  display: block;
+  height: 27px;
+  position: relative;
+  top: 0px;
+  left: -48px;
+  -moz-transition: left 0.2s ease-out;
+  -webkit-transition: left 0.2s ease-out;
+  transition: left 0.2s ease-out;
+  z-index: 1;
+}
+input.slide-switch.large[type=checkbox] + label .switch,
+input.slide-switch.large[type=checkbox] + label .on,
+input.slide-switch.large[type=checkbox] + label .off {
+  height: 27px;
+  font-size: 14px;
+  line-height: 28px;
+}
+input.slide-switch.large[type=checkbox] + label .switch {
+  left: 47px;
+  width: 21px;
+}
+input.slide-switch.large[type=checkbox] + label .on {
+  width: 48px;
+}
+input.slide-switch.large[type=checkbox] + label .off {
+  left: 66px;
+  width: 48px;
+}
+input.slide-switch.large[type=checkbox]:checked + label .wrapper {
+  left: 0px;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+		</style>
 	</head>
 	<body>
 		<!-- $banner -->
@@ -38,17 +307,40 @@
 		<div id="typeplate-widgets-wrap">
 			<!-- Normalize Radio Toggle -->
 			<form action="." method="post" id="normalize-form" role="form">
-					<label for="normalize-on">Normalize On</label>
+				<div>
+					<label for="slideswitchlarge" class="visuallyhidden">Large Slide Switch</label>
+					<input class="slide-switch large" id="slideswitchlarge" type="checkbox" />
+					<label for="slideswitchlarge">
+						<span class="wrapper">
+							<span class="on">ON</span>
+							<span class="switch"></span>
+							<span class="off">OFF</span>
+						</span>
+					</label>
+				</div>
+				<div class="bg-slategray">
+					<label for="slideswitchlargedark" class="visuallyhidden">Large Slide Switch</label>
+					<input id="slideswitchlargedark" class="slide-switch large dark" type="checkbox" />
+					<label for="slideswitchlargedark">
+						<span class="wrapper">
+							<span class="on">ON</span>
+							<span class="switch"></span>
+							<span class="off">OFF</span>
+						</span>
+					</label>
+				</div>
+
+					<!-- <label for="normalize-on">Normalize On</label>
 					<input type="radio" name="normalize-state" id="normalize-on" value="normalize on" checked>
 					<label for="normalize-off">Normalize Off</label>
-					<input type="radio" name="normalize-state" id="normalize-off" value="normalize off">
+					<input type="radio" name="normalize-state" id="normalize-off" value="normalize off"> -->
 			</form>
 			<!-- TypePlate Radio Toggle -->
 			<form action="." method="post" id="typeplate-form" role="form">
-				<label for="typeplate-on">Typeplate On</label>
+				<!-- <label for="typeplate-on">Typeplate On</label>
 				<input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
 				<label for="typeplate-off">Typeplate Off</label>
-				<input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
+				<input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off"> -->
 			</form>
 		</div>
 		<section>

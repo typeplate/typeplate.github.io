@@ -55,8 +55,10 @@
 // $Typeplate
 // ============================================================
 
-// @Since v1.0.1
-@import "../typeplate/scss/typeplate";
+// @Since v1.0.2
+@import "typeplate-vars"; // Custom Typeplate Variables
+// @Since v1.0.2
+@import "../typeplate/scss/typeplate"; // Typeplate Presets
 
 
 // $Variables

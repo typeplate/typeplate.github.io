@@ -47,24 +47,24 @@
 	<nav class="downloads nav">
 		<div class="col-wrap">
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/css/typeplate-unminified.css" class="dl-item">
-				<i class="icon-download"></i>Raw CSS
+				<i class="icon-download"></i>CSS
 				<hr>
-				<small>v1.0.1 | 7kb</small>
+				<small>v1.0.2 | 7kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/scss/_typeplate.scss" class="dl-item">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.0.1 | 3kb</small>
+				<small>v1.0.2 | 3kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/less/typeplate.less" class="dl-item">
-				<i class="icon-download"></i>LESS Port
+				<i class="icon-download"></i>LESS
 				<hr>
-				<small>v1.0.1 | 3kb</small>
+				<small>v1.0.2 | 3kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/stylus/typeplate.styl" class="dl-item">
-				<i class="icon-download"></i>Stylus Port
+				<i class="icon-download"></i>Stylus
 				<hr>
-				<small>v1.0.1 | 3kb</small>
+				<small>v1.0.2 | 3kb</small>
 			</a>
 		</div>
 	</nav>
@@ -93,6 +93,7 @@
 					<li><a href="#small-caps" class="anchorLink">Small Capitals</a></li>
 					<li><a href="#drop-caps" class="anchorLink">Drop Capitals</a></li>
 					<li><a href="#unicode-ampersands" class="anchorLink">Unicode Ampersands</a></li>
+					<li><a href="#web-font-helper" class="anchorLink">Web Font Helper</a></li>
 					<li><a href="#small-print" class="anchorLink">Small Print</a></li>
 				</ol>
 				<!-- 4. Pattern Modules -->
@@ -555,7 +556,7 @@ $amp-font-family: Verdana, sans-serif;
 	<!-- #web-font-helper -->
 	<section class="web-font-helper botDivider" id="web-font-helper">
 		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Icon Font Helper</h1>
+			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Web Font Helper</h1>
 		</header>
 		<p>The Web Font Helper is a special tool for those that use custom fonts &amp; icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource locator">URL</abbr>s and file types it can become extremely tedious. By taking advantage of the Web Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific projects and workflows.</p>
 
@@ -563,6 +564,12 @@ $amp-font-family: Verdana, sans-serif;
 			<p class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</p>
 			<p class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</p>
 		</figure>
+
+		<figure class="typeplate-code-block">
+		<figcaption>Custom Typeplate Variables File (_typeplate-vars.scss)</figcaption>
+		<pre><code class="language-sass">//Your custom override
+$web-fonts: (web-font-name, another-web-font-name);</code></pre>
+	</figure>
 
 		<figure class="typeplate-code-block">
 		<figcaption>Sass</figcaption>
@@ -593,9 +600,7 @@ $web-fonts: null !default;
 		'#{$font}/#{$font}.eot'
 		)
 	}
-}
-//Your custom override
-$web-fonts: (web-font-name);</code></pre>
+}</code></pre>
 	</figure>
 
 	<figure class="typeplate-code-block">
@@ -612,6 +617,7 @@ $web-fonts: (web-font-name);</code></pre>
 	src: url('//fonts/another-web-font-name/another-web-font-name.eot?#iefix') format('eot'), url('//fonts/another-web-font-name/another-web-font-name.woff') format('woff'), url('//fonts/another-web-font-name/another-web-font-name.ttf') format('truetype'), url('//fonts/another-web-font-name/another-web-font-name.svg') format('sag');
 }</code></pre>
 		</figure>
+		<a href="#table-of-contents" class="anchorLink">back to top</a>
 	</section>
 
 	<!-- #small-print -->
