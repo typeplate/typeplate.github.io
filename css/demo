@@ -205,7 +205,7 @@ input[type="checkbox"] {
 #normalize-form,
 #typeplate-form {
 	display: block;
-	width: 80px;
+	width: 100px;
 }
 
 .bg-slategray {
@@ -232,9 +232,8 @@ input.slide-switch[type=checkbox] {
 input.slide-switch[type=checkbox] + label {
 	background-clip: padding-box !important;
 	border: 1px solid rgba(0,0,0,0);
-	border-radius: 3px;
+	border-radius: 6px;
 	display: inline-block;
-	font-size: 12px;
 	height: 21px;
 	line-height: 21px;
 	min-width: 15px;
@@ -249,6 +248,7 @@ input.slide-switch[type=checkbox] + label {
 	user-select: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
+	margin: 0 5px 5px 5px;
 	background-color: #ccc;
 	background-image: none !important;
 	border: 1px solid #9b9d9d;

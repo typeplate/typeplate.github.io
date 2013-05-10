@@ -73,6 +73,10 @@ abbr {
 	}
 }
 
+abbr[title="syntactically awesome stylesheets"] {
+	text-transform: capitalize;
+}
+
 dl {
 	margin-top: 0;
 }
@@ -121,7 +125,8 @@ hr {
 // ============================================================
 
 .logo {
-	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	//vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $line-height * 1rem;
 	cursor: pointer;
 
