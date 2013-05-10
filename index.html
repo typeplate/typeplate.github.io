@@ -31,7 +31,6 @@
 				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">instructions</a>
 				<a href="//typeplate.com/blog" class="nav-item epsilon">journal</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">feedback</a>
-				<a href="#" class="nav-item epsilon">stickers</a>
 			</nav>
 
 			<nav class="social-nav">
@@ -120,16 +119,13 @@
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$weight: normal;
+			<pre><code class="language-sass">$weight: normal !default;
 $line-height: 1.65 !default;
 $font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
-
-//the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss";
 $serif-boolean: true !default;
 
 @mixin base-type($weight, $line-height, $font-size, $font-family...) {

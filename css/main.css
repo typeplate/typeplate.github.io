@@ -1118,7 +1118,7 @@ a, .dl-item, a[href="#table-of-contents"], .social-item {
 }
 
 body {
-  background: url('../img/subtle_grunge.png?1361126588') top left repeat;
+  background: url('../img/subtle_grunge.png?1365306827') top left repeat;
   color: #212121;
 }
 
@@ -1195,7 +1195,7 @@ hr.fancy:after {
 }
 
 .logo {
-  vertical-align: -50%;
+  vertical-align: -100%;
   margin-right: 1.65rem;
   cursor: pointer;
 }
@@ -1214,7 +1214,7 @@ hr.fancy:after {
 }
 
 .logo-img {
-  background: url('../img/logo.png?1361815899') 50% no-repeat;
+  background: url('../img/logo.png?1365306827') 50% no-repeat;
   width: 12em;
   background-size: cover;
 }
@@ -1237,7 +1237,7 @@ hr.fancy:after {
 
 .header {
   padding-top: 1.65em;
-  background: rgba(255, 255, 255, 0.75) url('../img/typeplate-press.png?1361765229') center bottom no-repeat;
+  background: rgba(255, 255, 255, 0.75) url('../img/typeplate-press.png?1365306827') center bottom no-repeat;
 }
 @media (max-width: 31.25em) {
   .header {
@@ -1329,7 +1329,7 @@ hr.fancy:after {
 }
 
 .downloads {
-  background: black url('../img/asfalt.png?1344791417') top left repeat;
+  background: black url('../img/asfalt.png?1365306827') top left repeat;
   padding: 1.65em 0;
   display: block;
 }

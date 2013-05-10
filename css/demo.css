@@ -186,7 +186,7 @@ input[type="checkbox"] {
 #typeplate-widgets-wrap {
 	border-top: 6px solid #606060;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-	padding: .5em;
+	padding: .875em;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -229,12 +229,12 @@ input.slide-switch[type=checkbox] {
 	position: absolute !important;
 	width: 1px;
 }
+
 input.slide-switch[type=checkbox] + label {
 	background-clip: padding-box !important;
 	border: 1px solid rgba(0,0,0,0);
 	border-radius: 3px;
 	display: inline-block;
-	font-size: 12px;
 	height: 21px;
 	line-height: 21px;
 	min-width: 15px;
