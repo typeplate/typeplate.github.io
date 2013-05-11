@@ -126,7 +126,7 @@ hr {
 
 .logo {
 	//vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
-	vertical-align: -100%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $line-height * 1rem;
 	cursor: pointer;
 
@@ -202,11 +202,14 @@ hr {
 		display: block;
 		text-align: center;
 	}
+	@include breakpoint(mama-bear) {
+		display: block;
+	}
 }
 
 .nav.nav-primary {
 	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
-		margin-top: 5em;
+		//margin-top: 5em;
 	}
 }
 
@@ -315,7 +318,7 @@ hr {
 	right: 1.65em;
 	// break
 	@include breakpoint(mama-bear) {
-		position: static;
+		//position: static;
 		margin-top: 0.825em;
 		margin-bottom: 0.825em;
 	}
