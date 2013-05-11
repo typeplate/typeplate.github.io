@@ -16,6 +16,21 @@ module.exports = function(grunt) {
 			' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
 		},
 
+		// == Watch Task
+		watch: {
+			options: {
+				livereload: true
+			},
+			css: {
+				files: ['./scss/*.scss'],
+				tasks: ['compass']
+			},
+			html: {
+				files: ['./*.html'],
+				tasks: ['livereload']
+			}
+		},
+
 		// == compass
 		compass: {
 			dist: {
@@ -68,21 +83,6 @@ module.exports = function(grunt) {
 				}
 			},
 			uses_defaults: ['./js/main.js']
-		},
-
-		// == Watch Task
-		watch: {
-			options: {
-				livereload: true
-			},
-			js: {
-				files: ['<%= jshint.files %>'],
-				tasks: ['jshint', 'qunit']
-			},
-			css: {
-				files: ['./scss/*.scss'],
-				tasks: ['compass']
-			}
 		},
 
 		// == Uglify/Minification
