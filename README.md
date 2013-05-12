@@ -11,8 +11,8 @@ Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design c
 ## File Size
 Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
-- Raw Sass, LESS and Stylus = **18kb**
-- Compressed Sass, LESS and Stylus = **3kb**
+- Raw Sass = **18kb**
+- Compressed Sass = **3kb**
 - Raw CSS = **7kb**
 
 ## Installation
@@ -69,7 +69,7 @@ If the Sass version isn't your cup of tea, we've provided a CSS version. Simply 
 
 ### &sect; Installation via Bower
 
-Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the CSS, Sass, LESS and Stylus versions and watch the magic happen. This is an example of how to include either the CSS or Sass version in your project. Refer to our [Bower Repo](https://github.com/typeplate/typeplate-bower) for more details regarding LESS and Stylus.
+Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``bower install typeplate`` for the CSS, Sass versions and watch the magic happen. This is an example of how to include either the CSS or Sass version in your project. Refer to our [typeplate-bower repo](https://github.com/typeplate/typeplate-bower) for more details regarding the typeplate bower package.
 
 **Sass**
 
