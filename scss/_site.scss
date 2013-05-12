@@ -1,19 +1,17 @@
 @import "queries";
 @import "fontello";
 
-// So I measured the typographic attributes of meta-serif and came up
-// with the following values.
+// Typographic attributes of meta-serif
 //
-// border-radius
+// border-radius:
 //
 // should be a multiple of 2. meta-serif has a slight softness but not
 // by much if at all on arms and serifs.
 //
-//borders
+// borders:
 //
-// I like to play off the weight of typographic attributes and in our
-// case the stems of glyphs. Borders should be a multiple of 16 or
-// divisible by 16.
+// Borders should be a multiple of 16 or divisible by 16.
+
 
 // $Compass Extends
 // ============================================================
@@ -276,11 +274,10 @@ hr {
 		color: $white;
 	}
 }
-.dl-item {
+
+.btn {
 	@extend %transition;
 	padding: $line-height * 0.5rem;
-	width: 23%;
-	margin-right: 2%;
 	background: $download-btn-bg;
 	color: $white;
 	// pseudo
@@ -310,6 +307,16 @@ hr {
 		margin-right: 0;
 		margin-bottom: 1.65em;
 	}
+}
+
+.dl-item.btn {
+	width: 48%;
+	margin-right: 2%;
+}
+
+.btn.btn-backtotop {
+	@extend .dl-item;
+	width: 30%;
 }
 
 .social-nav {
@@ -436,14 +443,6 @@ hr {
 		background: #000000;
 		color: #fbfbfb;
 	}
-}
-
-
-// $Back to Top
-// ============================================================
-
-a[href="#table-of-contents"] {
-	@extend .dl-item;
 }
 
 
