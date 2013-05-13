@@ -1,19 +1,17 @@
 @import "queries";
 @import "fontello";
 
-// So I measured the typographic attributes of meta-serif and came up
-// with the following values.
+// Typographic attributes of meta-serif
 //
-// border-radius
+// border-radius:
 //
 // should be a multiple of 2. meta-serif has a slight softness but not
 // by much if at all on arms and serifs.
 //
-//borders
+// borders:
 //
-// I like to play off the weight of typographic attributes and in our
-// case the stems of glyphs. Borders should be a multiple of 16 or
-// divisible by 16.
+// Borders should be a multiple of 16 or divisible by 16.
+
 
 // $Compass Extends
 // ============================================================
@@ -73,6 +71,10 @@ abbr {
 	}
 }
 
+abbr[title="syntactically awesome stylesheets"] {
+	text-transform: capitalize;
+}
+
 dl {
 	margin-top: 0;
 }
@@ -100,8 +102,8 @@ hr {
 	border: 0;
 	height: 0;
 	padding: 0;
-	border-top: 1px solid grey;
-	border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+	border-top: 1px solid rgba(0, 0, 0, 0.29);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 	&.fancy {
 		border-bottom: 1px solid $cobalt-fade;
 		margin: 0 0 1.65em;
@@ -121,7 +123,8 @@ hr {
 // ============================================================
 
 .logo {
-	vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	//vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $line-height * 1rem;
 	cursor: pointer;
 
@@ -167,7 +170,6 @@ hr {
 	background: $white image-url("typeplate-press.png") center bottom no-repeat;
 	// break
 	@include breakpoint(baby-bear) {
-		text-align: center;
 		padding-top: 0;
 		p {
 			text-align: left;
@@ -195,13 +197,9 @@ hr {
 	@include breakpoint(baby-bear) {
 		padding-top: 0.825em;
 		display: block;
-		text-align: center;
 	}
-}
-
-.nav.nav-primary {
-	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
-		margin-top: 5em;
+	@media screen and (max-width: 44.9375em) {
+		display: block;
 	}
 }
 
@@ -226,28 +224,6 @@ hr {
 	&:before {
 		content: "→ ";
 	}
-	// break
-	@include breakpoint(baby-bear) {
-		&:before {
-			content: "";
-		}
-		border-radius: 0.333333em;
-		display: inline-block;
-		padding: 0.825em;
-		margin-right: 0.5em;
-		font-family: Monaco, Consolas, monospace;
-		font-size: 0.825em;
-		background: $cobalt-deep;
-		color: $white;
-		&:visited {
-			color: $white;
-		}
-		&:hover,
-		&:focus {
-			background: $rust;
-			color: white;
-		}
-	}
 }
 
 .dl-item,
@@ -268,21 +244,20 @@ hr {
 		color: $white;
 	}
 }
-.dl-item {
+
+.btn {
 	@extend %transition;
 	padding: $line-height * 0.5rem;
-	width: 23%;
-	margin-right: 2%;
-	background: $cobalt-fade;
-	color: $cobalt-deep;
+	background: $download-btn-bg;
+	color: $white;
 	// pseudo
 	&:last-of-type {
 		margin-right: 0;
 	}
 	&:hover,
 	&:focus {
-		background: $rust;
-		color: white;
+		background: $download-btn-hover;
+		color: $cobalt-deep;
 		text-decoration: none;
 	}
 	// filesize line
@@ -299,24 +274,31 @@ hr {
 		font-size: 1em;
 		padding: $line-height * 0.5rem;
 		width: 100%;
-		margin-right: 0;
-		margin-bottom: 1.65em;
+		margin-right: -2%;
 	}
+}
+
+.dl-item.btn {
+	width: 48%;
+	margin-right: 2%;
+}
+
+.btn.btn-backtotop {
+	@extend .dl-item;
+	width: 30%;
 }
 
 .social-nav {
 	position: absolute;
 	top: 1.65em;
 	right: 1.65em;
-	// break
-	@include breakpoint(mama-bear) {
+	@include breakpoint(baby-bear) {
 		position: static;
+	}
+	@include breakpoint(mama-bear) {
+		//position: static;
 		margin-top: 0.825em;
 		margin-bottom: 0.825em;
-	}
-	// break
-	@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
-		text-align: right;
 	}
 }
 
@@ -393,7 +375,7 @@ hr {
 			color: #929292;
 		}
 		&::after {
-			content: "click for action";
+			content: "-project details listing-";
 			display: block;
 			font-size: .5em;
 			color: scale-lightness(#EFEFEF, -35%);
@@ -428,14 +410,6 @@ hr {
 		background: #000000;
 		color: #fbfbfb;
 	}
-}
-
-
-// $Back to Top
-// ============================================================
-
-a[href="#table-of-contents"] {
-	@extend .dl-item;
 }
 
 
@@ -577,17 +551,6 @@ blockquote {
 }
 
 
-// $Typographic Scale Demo
-// ============================================================
-
-// this is a peculiar instance because we're stacking lots of titles atop one another
-// so we manually nix the normal amount of margin below titles
-// .typographic-scale .no-indent {
-// 	margin: 0;
-// 	text-indent: 0;
-// }
-
-
 // $Ampersand Demo
 // ============================================================
 
@@ -684,30 +647,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
-
-
-// $Cassannet @font-face
-// ============================================================
-// We use a helper from our compass config for this
-// http://compass-style.org/reference/compass/css3/font_face/
-
-// Cassannet Regular
-@include font-face("Cassannet", font-files(
-	"cassannet/cassannet.eot", ///* IE9 Compat Modes */
-	"cassannet/cassannet.eot?#iefix", // IE6-IE8
-	"cassannet/cassannet.woff", // Modern Browsers
-	"cassannet/cassannet.ttf", // Safari, Android, iOS
-	"cassannet/cassannet.svg#svgFontName" // Legacy iOS
-));
-// Cassannet Bold
-// @include font-face("Cassannet Bold", font-files(
-//     "cassannet/cassannet-bold.eot", ///* IE9 Compat Modes */
-//     "cassannet/cassannet-bold.eot?#iefix", // IE6-IE8
-//     "cassannet/cassannet-bold.woff", // Modern Browsers
-//     "cassannet/cassannet-bold.ttf", // Safari, Android, iOS
-//     "cassannet/cassannet-bold.svg#svgFontName" // Legacy iOS
-// ));
-
 
 
 // $Footer

@@ -1,9 +1,22 @@
 {
   "name": "Typeplate",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "homepage": "http://typeplate.com",
+  "repository": "https://github.com/typeplate/typeplate.github.com",
+  "licenses": "CC-3.0",
+  "author": {
+    "name": "Dennis Gaebel and Zachary Kain"
+  },
+  "private": true,
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-nodeunit": "~0.1.2"
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-jshint": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-qunit": "~0.2.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.2",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-contrib-compass": "~0.2.0"
   }
 }

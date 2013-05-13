@@ -10,9 +10,11 @@ publish
 # Sass Cache dir
 .sass-cache
 
-# this generates upon running yeoman server
-# and is annoying
+# NPM
 npm-debug.log
+
+# NODE
+node_modules
 
 #fire app log file
 fire_app_log.txt

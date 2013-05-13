@@ -4,14 +4,13 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="robots" content="all">
 	<title>Typeplate » A typographic starter kit encouraging great type on the Web</title>
 	<script>
 		(function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
 		var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 		})();
 	</script>
+	<meta name="robots" content="all">
 	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
 	<link rel="stylesheet" href="./css/main.css?1.0.1">
@@ -29,7 +28,9 @@
 			<nav class="nav nav-primary" role="navigation">
 				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">demo</a>
 				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">instructions</a>
+				<a href="//typeplate.com/blog" class="nav-item epsilon">journal</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">feedback</a>
+				<a href="//github.com/TypePlate/typeplate-bower" class="nav-item epsilon" rel="external">bower pkg</a>
 			</nav>
 
 			<nav class="social-nav">
@@ -39,43 +40,34 @@
 
 			<div class="lede">
 				<p class="delta">Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don’t separate styling and markup, making them tough to use in a truly modular fashion. We weren’t satisfied, so we made a thing that doesn’t do that.</p>
-				<p><i><b>Typeplate</b></i> is a “typographic starter kit”. We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down Sass library concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+				<p><i><b>Typeplate</b></i> is a “typographic starter kit”. We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down <abbr title="syntactically awesome stylesheets">Sass</abbr> or <abbr title="cascading stylesheets">CSS</abbr> library of your choosing primarily concerned with the appropriate technical implementation of design patterns—not how they look.</p>
 			</div>
 		</div>
 	</header>
 
 	<nav class="downloads nav">
 		<div class="col-wrap">
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/css/typeplate-unminified.css" class="dl-item">
-				<i class="icon-download"></i>Raw CSS
+			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" class="dl-item btn">
+				<i class="icon-download"></i>CSS
 				<hr>
-				<small>v1.0.1 | 7kb</small>
+				<small>v1.0.2 | 7kb</small>
 			</a>
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/scss/_typeplate.scss" class="dl-item">
+			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.0.1 | 3kb</small>
-			</a>
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/less/typeplate.less" class="dl-item">
-				<i class="icon-download"></i>LESS Port
-				<hr>
-				<small>v1.0.1 | 3kb</small>
-			</a>
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/stylus/typeplate.styl" class="dl-item">
-				<i class="icon-download"></i>Stylus Port
-				<hr>
-				<small>v1.0.1 | 3kb</small>
+				<small>v1.0.2 | 3kb</small>
 			</a>
 		</div>
 	</nav>
 
-	<div class="col-wrap">
+	<main class="col-wrap" role="main">
 		<!-- $table of contents -->
 		<section class="toc" id="table-of-contents">
 			<header>
 				<h1 class="delta center capsify">Table of Contents <b class="icon-download"></b></h1>
 			</header>
 			<div id="drawer" class="visuallyhidden">
+
 				<!-- 1. Base Type -->
 				<ol>
 					<li><a href="#base-type" class="anchorLink">Base Type</a></li>
@@ -83,18 +75,22 @@
 					<li><a href="#color" class="anchorLink">Color</a></li>
 					<li><a href="#word-wrap" class="anchorLink">Word-wrap</a></li>
 				</ol>
+
 				<!-- 2. Paragraphs -->
 				<ol>
 					<li><a href="#indenting" class="anchorLink">Indenting</a></li>
 					<li><a href="#hyphenation" class="anchorLink">Hyphenation</a></li>
 				</ol>
+
 				<!-- 3. Detailing -->
 				<ol>
 					<li><a href="#small-caps" class="anchorLink">Small Capitals</a></li>
 					<li><a href="#drop-caps" class="anchorLink">Drop Capitals</a></li>
 					<li><a href="#unicode-ampersands" class="anchorLink">Unicode Ampersands</a></li>
+					<li><a href="#web-font-helper" class="anchorLink">Web Font Helper</a></li>
 					<li><a href="#small-print" class="anchorLink">Small Print</a></li>
 				</ol>
+
 				<!-- 4. Pattern Modules -->
 				<ol>
 					<li><a href="#code-blocks" class="anchorLink">Code Blocks</a></li>
@@ -117,16 +113,13 @@
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+			<pre><code class="language-sass">$weight: normal !default;
+$line-height: 1.65 !default;
+$font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $font-family: serif;
 $font-family-sans: sans-serif;
 $font-properties: $weight, $line-height, $font-size, $font-family;
-
-//the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss";
 $serif-boolean: true !default;
 
 @mixin base-type($weight, $line-height, $font-size, $font-family...) {
@@ -141,7 +134,7 @@ html {
 	@include base-type($font-properties...);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #typographic-scale -->
@@ -170,7 +163,20 @@ html {
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
+			<pre><code class="language-markup">&lt;!-- 
+Custom header classes. These classes can be used on various elements 
+of your choosing. Classes depicted below are strictly for example 
+purposes and not a requirement.
+
+If you'd like to manipulate the size of typographic elements using our 
+Sass port, feel free to include the Sass '@extend' with your selector.
+For example… 
+
+p {
+  @extend .alpha;
+}
+--&gt;
+&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
 &lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
 &lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
 &lt;h2 class=&quot;beta&quot;&gt;Heading Beta&lt;/h2&gt;
@@ -186,18 +192,18 @@ html {
 
 // Modular Scale Values
 // http://typecast.com/blog/contrast-through-scale
-$tera: 117;		//	117	= 18 × 6.5
-$giga: 90;		//	90  = 18 × 5
-$mega: 72;		//	72  = 18 × 4
-$alpha: 60;		//	60  = 18 × 3.3333
-$beta: 48;		//	48  = 18 × 2.6667
-$gamma: 36;		//	36  = 18 × 2
-$delta: 24;		//	24  = 18 × 1.3333
-$epsilon: 21;	//	21  = 18 × 1.1667
-$zeta: 18; 		//	18  = 18 × 1
+$tera: 117 !default; // 117	= 18 × 6.5
+$giga: 90 !default; // 90 = 18 × 5
+$mega: 72 !default; // 72 = 18 × 4
+$alpha: 60 !default; // 60 = 18 × 3.3333
+$beta: 48 !default; // 48 = 18 × 2.6667
+$gamma: 36 !default; // 36 = 18 × 2
+$delta: 24 !default; // 24 = 18 × 1.3333
+$epsilon: 21 !default; // 21 = 18 × 1.1667
+$zeta: 18 !default; // 18 = 18 × 1
 
 // typscale unit
-$type-scale-unit-value: rem;
+$type-scale-unit-value: rem !default;
 
 // typographic scale
 @mixin modular-scale($scale, $base, $value, $measure:"") {
@@ -271,7 +277,7 @@ h6 {
 	@extend %hN;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #color -->
@@ -283,8 +289,8 @@ h6 {
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$body-copy-color: #444;
-$heading-color: #222;
+			<pre><code class="language-sass">$body-copy-color: #444 !default;
+$heading-color: #222 !default;
 
 body {
 	color: $body-copy-color;
@@ -299,7 +305,7 @@ h6 {
 	color: $heading-color;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #word-wrap -->
@@ -333,7 +339,7 @@ body {
 	@extend %breakword;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #indenting -->
@@ -354,7 +360,7 @@ body {
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">//paragraph siblings indent
-$indent-val: 1.5em;
+$indent-val: 1.5em !default;
 
 p {
 	margin: 0 0 $indent-val;
@@ -364,7 +370,7 @@ p {
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #hyphenation -->
@@ -385,11 +391,11 @@ p {
 			<figcaption>Sass</figcaption>
 			<pre><code class="language-sass">@mixin css-hyphens($val) {
 	// Accepted values: [ none | manual | auto ]
-	-webkit-hyphens: $val;	// Safari 5.1 thru 6, iOS 4.2 thru 6
-	-moz-hyphens: $val;		// Firefox 16 thru 20
-	-ms-hyphens: $val;		// IE10
-	-o-hyphens: $val;		// PRESTO...haha LOL
-	hyphens: $val;			// W3C standard
+	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val; // Firefox 16 thru 20
+	-ms-hyphens: $val; // IE10
+	-o-hyphens: $val; // PRESTO...haha LOL
+	hyphens: $val; // W3C standard
 }
 
 body {
@@ -415,7 +421,7 @@ xmp {
 	@include css-hyphens(none);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #small-capitals -->
@@ -453,7 +459,7 @@ abbr {
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!--  #drop-capitals -->
@@ -496,7 +502,7 @@ abbr {
 	@include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #unicode-ampersands -->
@@ -548,7 +554,74 @@ $amp-font-family: Verdana, sans-serif;
 	@extend %ampersand-placeholder;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+	</section>
+
+	<!-- #web-font-helper -->
+	<section class="web-font-helper botDivider" id="web-font-helper">
+		<header>
+			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Web Font Helper</h1>
+		</header>
+		<p>The Web Font Helper is a special tool for those that use custom fonts &amp; icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource locator">URL</abbr>s and file types it can become extremely tedious. By taking advantage of the Web Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific projects and workflows.</p>
+
+		<figure class="example icons">
+			<p class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</p>
+			<p class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</p>
+		</figure>
+
+		<figure class="typeplate-code-block">
+		<figcaption>Custom Typeplate Variables File (_typeplate-vars.scss)</figcaption>
+		<pre><code class="language-sass">//Your custom override
+$web-fonts: (web-font-name, another-web-font-name);</code></pre>
+	</figure>
+
+		<figure class="typeplate-code-block">
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-sass">// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $web-fonts: (icon-name);
+// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+$web-fonts: null !default;
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+@if ($web-fonts != null) {
+	@each $font in $web-fonts {
+	@include font-face( $font,
+		font-files(
+			'#{$font}/#{$font}.woff',
+			'#{$font}/#{$font}.ttf',
+			'#{$font}/#{$font}.svg', svg
+		),
+		'#{$font}/#{$font}.eot'
+		)
+	}
+}</code></pre>
+	</figure>
+
+	<figure class="typeplate-code-block">
+		<figcaption>CSS Output</figcaption>
+		<pre><code class="language-css">@font-face {
+	font-family: "web-font-name";
+	src: url('//fonts/web-font-name/web-font-name.eot');
+	src: url('//fonts/web-font-name/web-font-name.eot?#iefix') format('eot'), url('//fonts/web-font-name/web-font-name.woff') format('woff'), url('//fonts/web-font-name/web-font-name.ttf') format('truetype'), url('//fonts/web-font-name/web-font-name.svg') format('svg');
+}
+
+@font-face {
+	font-family: "another-web-font-name";
+	src: url('//fonts/another-web-font-name/another-web-font-name.eot');
+	src: url('//fonts/another-web-font-name/another-web-font-name.eot?#iefix') format('eot'), url('//fonts/another-web-font-name/another-web-font-name.woff') format('woff'), url('//fonts/another-web-font-name/another-web-font-name.ttf') format('truetype'), url('//fonts/another-web-font-name/another-web-font-name.svg') format('sag');
+}</code></pre>
+		</figure>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #small-print -->
@@ -583,7 +656,7 @@ $amp-font-family: Verdana, sans-serif;
 	font-size: 65%;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- $Code Blocks -->
@@ -629,7 +702,7 @@ code {
 	font-family: monospace;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #figures -->
@@ -654,7 +727,7 @@ code {
 	&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 	</section>
 
 	<!-- #block-quotes -->
@@ -718,7 +791,7 @@ figcaption %cite {
     }
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 		</section>
 
 		<!-- #pull-quotes -->
@@ -775,7 +848,7 @@ figcaption %cite {
 	@include pull-quotes(4em, .15);
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 		</section>
 
 		<!-- #stats-tabs -->
@@ -840,7 +913,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	}
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 		</section>
 
 		<!-- #footnotes -->
@@ -872,7 +945,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	&lt;/footer&gt;
 &lt;/article&gt;</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 		</section>
 
 		<!-- #definition-lists -->
@@ -1020,13 +1093,13 @@ dl {
 	@include definition-list-style(dictionary-style);
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
 		</section>
 
 		<footer role="contentinfo" class="site-footer">
 			<p>Copyright &copy;2013. Typeplate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
 		</footer>
-	</div><!-- end last col-wrap -->
+	</main>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>

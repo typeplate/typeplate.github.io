@@ -18,7 +18,7 @@
 		<!-- normalize -->
 		<link rel="stylesheet" id="normalize-css" href="./components/normalize-css/normalize.css">
 		<!-- TypePlate -->
-		<link rel="stylesheet" id="typeplate-css" href="./css/typeplate-unminified.css?1.0">
+		<link rel="stylesheet" id="typeplate-css" href="./typeplate/css/typeplate.css?1.0.2">
 		<!-- TypePlate Demo Styles -->
 		<link rel="stylesheet" href="./css/demo.css?1.0">
 	</head>
@@ -30,6 +30,7 @@
 
 			<nav role="navigation" class="nav nav-primary">
 				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon">instructions</a>
+				<a href="//typeplate.com/blog" class="nav-item epsilon">journal</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon">feedback</a>
 			</nav>
 		</header>
@@ -38,19 +39,38 @@
 		<div id="typeplate-widgets-wrap">
 			<!-- Normalize Radio Toggle -->
 			<form action="." method="post" id="normalize-form" role="form">
-					<label for="normalize-on">Normalize On</label>
-					<input type="radio" name="normalize-state" id="normalize-on" value="normalize on" checked>
-					<label for="normalize-off">Normalize Off</label>
-					<input type="radio" name="normalize-state" id="normalize-off" value="normalize off">
+
+				<!-- Normalize Toggle -->
+				<div class="bg-slategray">
+					<label for="normalize-off">Normalize</label>
+					<input id="normalize-off" class="slide-switch large dark" name="normalize-state" type="checkbox" />
+					<label for="normalize-off">
+						<span class="wrapper">
+							<span class="on">ON</span>
+							<span class="switch"></span>
+							<span class="off">OFF</span>
+						</span>
+					</label>
+				</div>
 			</form>
-			<!-- TypePlate Radio Toggle -->
+
+			<!-- TypePlate Toggle -->
 			<form action="." method="post" id="typeplate-form" role="form">
-				<label for="typeplate-on">Typeplate On</label>
-				<input type="radio" name="normalize-state" id="typeplate-on" value="typeplate on" checked>
-				<label for="typeplate-off">Typeplate Off</label>
-				<input type="radio" name="normalize-state" id="typeplate-off" value="typeplate off">
+				<!-- typeplate -->
+				<div class="bg-slategray">
+					<label for="typeplate-off">Typeplate</label>
+					<input id="typeplate-off" name="typeplate-state" class="slide-switch large dark" type="checkbox" />
+					<label for="typeplate-off">
+						<span class="wrapper">
+							<span class="on">ON</span>
+							<span class="switch"></span>
+							<span class="off">OFF</span>
+						</span>
+					</label>
+				</div>
 			</form>
 		</div>
+
 		<section>
 			<article>
 				<header>
@@ -60,7 +80,7 @@
 
 				<p class="delta lede">High above the city, on a tall column, stood the statue of the Happy Prince. He was gilded all over with thin leaves of fine gold, for eyes he had two bright sapphires, and a large red ruby glowed on his sword&ndash;hilt.</p>
 
-				<p>He was very much admired indeed. “He is as beautiful as a weathercock,” remarked one of the Town Councillors who wished to gain a reputation for having artistic taste; “only not quite so useful,” he added, fearing lest people should think him unpractical, which he really was not.</p>
+				<p class="drop-cap">He was very much admired indeed. “He is as beautiful as a weathercock,” remarked one of the Town Councillors who wished to gain a reputation for having artistic taste; “only not quite so useful,” he added, fearing lest people should think him unpractical, which he really was not.</p>
 
 				<p>“Why can’t you be like the Happy Prince?” asked a sensible mother of her little boy who was crying for the moon. “The Happy Prince never dreams of crying for anything.”</p>
 
@@ -248,34 +268,35 @@
 		<footer role="contentinfo" class="site-footer">
 			<p><small>Copyright &copy;2013. Typeplate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</small></p>
 		</footer>
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 		<script>
 			$(document).ready(function() {
 				//Normalize States
 				//http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
-				var normalizeCss        = $("#normalize-css"),
-					typleplateCss       = $("#typeplate-css");
+				var normalizeCss = $("#normalize-css"),
+					typleplateCss = $("#typeplate-css");
 
 				//Normalize Radio Button
-				$('#normalize-form input[type="radio"]').on('click', function(e) {
+				$('#normalize-form input[type="checkbox"]').on('click', function(e) {
 					//radio button checked state
-					var normalizeOffCheck   = $('#normalize-off').is(':checked');
+					var normalizeOffCheck = $('#normalize-off').is(':checked');
 					if(normalizeOffCheck) {
 						$("#normalize-css").attr("href", "");
-					}else {
+					} else {
 						$("#normalize-css").attr("href", "./components/normalize-css/normalize.css");
 					}
 				});
 
 				//TypePlate Radio Button
-				$('#typeplate-form input[type="radio"]').on('click', function(e) {
+				$('#typeplate-form input[type="checkbox"]').on('click', function(e) {
 					//radio button checked state
 					var typePlateOffCheck   = $('#typeplate-off').is(':checked');
 					if(typePlateOffCheck) {
 						$("#typeplate-css").attr("href", "");
-					}else {
-						$("#typeplate-css").attr("href", "./css/typeplate-unminified.css");
+					} else {
+						$("#typeplate-css").attr("href", "./typeplate/css/typeplate.css");
 					}
 				});
 			}); //end document.ready
