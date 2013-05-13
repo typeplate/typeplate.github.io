@@ -540,19 +540,33 @@ a[href="#table-of-contents"] {
 
 blockquote {
 	font-style: italic;
-	@extend .epsilon;
+	@extend .epsilon; 
+	margin-bottom: 0;
 	// so there's no extra line separating the quote and the citation
 	p:last-of-type {
 		margin-bottom: 0;
 	}
-	cite {
-		font-style: normal;
-		@extend %cite;
-		&:before {
-			content:"—";
-		}
-	}
 	// make more readable at narrow widths
+	@include breakpoint(baby-bear) {
+		margin: 1.5em 0.75em;
+	}
+
+    & + figcaption {
+        @extend .epsilon; 
+        margin: 0 40px 1.5em;
+        
+        cite {
+    		font-style: normal;
+    		@extend %cite;
+    		font-size: 56.875%; 
+    		
+    		&:before {
+    			content:"\2014";
+    			margin-right: .5em; 
+    		}
+    	}
+    }
+    // make more readable at narrow widths
 	@include breakpoint(baby-bear) {
 		margin: 1.5em 0.75em;
 

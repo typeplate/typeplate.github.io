@@ -150,10 +150,12 @@ html {
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
 		</header>
 		<p>Establish clearly distinguishable heading levels with font-size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Always <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
-		<blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
-			<p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
-			<cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite>
-		</blockquote>
+		<figure class="blockquote">
+    		<blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
+    			<p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
+    		</blockquote>
+    		<figcaption><cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite></figcaption>
+        </figure>
 
 		<figure class="example scale-example">
 			<p class="no-indent giga">Heading Giga</p>
@@ -372,10 +374,12 @@ p {
 		</header>
 		<p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts. <a href="http://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063" rel="external">Robert Bringhurst</a> recommends for us to leave at least two characters behind and take at least three forward.</p>
 
-		<blockquote cite="http://nicewebtype.com/notes/2013/01/16/where-to-avoid-css-hyphenation">
-			<p>Since hyphens is an inherited property, it isn’t sufficient to set it for a limited number of elements and assume you’re done. You have to make sure you’ve turned it off for the elements that shouldn’t be hyphenated.</p>
-			<cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite>
-		</blockquote>
+		<figure class="blockquote">
+    		<blockquote cite="http://nicewebtype.com/notes/2013/01/16/where-to-avoid-css-hyphenation">
+    			<p>Since hyphens is an inherited property, it isn’t sufficient to set it for a limited number of elements and assume you’re done. You have to make sure you’ve turned it off for the elements that shouldn’t be hyphenated.</p>
+    		</blockquote>
+    		<figcaption><cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite></figcaption>
+		</figure>
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
@@ -553,13 +557,14 @@ $amp-font-family: Verdana, sans-serif;
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 3.4 Small Print</h1>
 		</header>
 		<p>The <code>small</code> element is used to represent side comments or what’s commonly referred to as ‘small print’: disclaimers, caveats, legal restrictions, or copyrights. It can also be used for attributions or satisfying licensing requirements.</p>
-		<blockquote cite="http://html5doctor.com/small-hr-element/">
-			<p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
-			<p><code>small</code> text does not need to be smaller than surrounding text—if all you want is smaller text use CSS instead. Use <code>small</code> only on inline content.</p>
-			<cite>
-				<small><a href="http://html5doctor.com/small-hr-element/">Oli Studholme</a></small>
-			</cite>
-		</blockquote>
+		
+		<figure class="blockquote">
+    		<blockquote cite="http://html5doctor.com/small-hr-element/">
+    			<p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
+    			<p><code>small</code> text does not need to be smaller than surrounding text &mdash; if all you want is smaller text use CSS instead. Use <code>small</code> only on inline content.</p>
+    		</blockquote>
+    		<figcaption><cite><small><a href="http://html5doctor.com/small-hr-element/">Oli Studholme</a></small></cite></figcaption>
+		</figure>
 
 		<figure class="example no-top-pad">
 			<p class="zeta">Buy one widget, get one free!
@@ -653,42 +658,64 @@ code {
 	</section>
 
 	<!-- #block-quotes -->
-	<!-- http://html5doctor.com/blockquote-q-cite -->
+	<!-- http://www.projectevolution.com/activity/how-do-you-solve-a-problem-like-blockquote/ -->
 	<section class="block-quotes botDivider" id="block-quotes">
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#block-quotes">§</a> 4.3 Block Quotes</h1>
 		</header>
-		<p>The blockquote element represents a section that is being quoted from another source.</p>
+		<p>The blockquote element represents a section that is being quoted from another source. Good blockquotes should include a citation, but one is not required. Stylistically, these can look a lot like <a href="#pull-quotes">pull-quotes</a> by using <code>:before</code> and <code>:after</code> pseudo elements for the curly quotes, or, authors can include them inline. </p>
+		<p>The contents of <code>blockquote</code> are limited to headings and paragraphs. <code>header</code>, <code>footer</code>, or <code>cite</code> tags are not allowed. For more examples, see <a href="https://gist.github.com/murtaugh/4489740">A List Apart&rsquo;s sample blockquote patterns</a>. </p>
 
 		<figure class="example no-top-pad">
-			<blockquote cite="http://where-i-got-my-info-from.com">
-				<p>“Embracing the fluid &amp; flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web”</p>
-					<cite>
-						<small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small>
-					</cite>
-				</blockquote>
-			</figure>
+			
+			<figure>
+    			<blockquote cite="http://trentwalton.com/2012/06/19/fluid-type">
+    				<p>Embracing the fluid &amp; flexible aspect of responsive web design was an easy decision, but I’ve been less sure-footed when it comes to balancing that with setting type on the web</p>
+    			</blockquote>
+    			<figcaption><cite><small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small></cite></figcaption>
+            </figure>
+            
+		</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>HTML</figcaption>
-				<pre><code class="language-markup">&lt;blockquote cite=&quot;&quot;&gt;
-	&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
-	&lt;cite&gt;
-		&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
-	&lt;/cite&gt;
-&lt;/blockquote&gt;</code></pre>
+				<pre><code class="language-markup">&lt;figure&gt;
+    &lt;blockquote cite=&quot;&quot;&gt;
+    	&lt;p&gt;&amp;Prime;&amp;Prime;&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;figcaption&gt;	
+    	&lt;cite&gt;
+    		&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+    	&lt;/cite&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
 			</figure>
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
 				<pre><code class="language-sass">@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
-	display: $display;
-	font-size: $font-size;
-	text-align: $text-align;
+    display: $display;
+    font-size: $font-size;
+    text-align: $text-align;
 }
 
-%cite {
-	@include cite-style;
+blockquote {
+	font-style: italic;
+	margin-bottom: 0;
+	
+	// so there's no extra line separating the quote and the citation
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+figcaption %cite {
+    @include cite-style;
+    
+    &:before {
+        content: "\2014"; 
+        margin-right: .5em; 
+    }
 }</code></pre>
 			</figure>
 			<a href="#table-of-contents" class="anchorLink">back to top</a>

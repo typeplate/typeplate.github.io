@@ -618,12 +618,14 @@ h6 {
 /**
  * Blockquote Markup
  *
-	<blockquote cite="">
-		<p>&Prime;&Prime;</p>
-		<cite>
-			<small><a href=""></a></small>
-		</cite>
-	</blockquote>
+	<figure>
+    	<blockquote cite="">
+    		<p>&Prime;&Prime;</p>
+    	</blockquote>
+    	<figcaption>
+    	   <cite><a href=""></a></cite>
+        </figcaption>
+    </figure>
  *
  * Extend this object into your markup.
  *
