@@ -336,6 +336,7 @@ $stats-border-style: 0.125rem solid #ccc;
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why not just make that separately in your declaration.
+// Make sure you add the class “.drop-cap” to your markup in order to operate.
 @mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
 	&:first-letter {
 		float: $float;
@@ -348,6 +349,13 @@ $stats-border-style: 0.125rem solid #ccc;
 		background: $bg;
 		color: $color;
 	}
+}
+
+// Combats our sibling paragraphs syling and indentation
+// As not to ruin our beautiful drop caps.
+p + .drop-cap {
+	text-indent: 0;
+	margin-top: 0;
 }
 
 

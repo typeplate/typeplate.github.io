@@ -85,7 +85,7 @@
 
 .drop-cap:first-letter {
 	float: left;
-	margin: inherit;
+	margin: auto .25em auto auto;
 	padding: inherit;
 	font-size: 4em;
 	font-family: inherit;
@@ -93,6 +93,11 @@
 	text-indent: 0;
 	background: transparent;
 	color: inherit;
+}
+
+p + .drop-cap {
+	text-indent: 0;
+	margin-top: 0;
 }
 
 

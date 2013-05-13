@@ -4,21 +4,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="robots" content="all">
 	<title>Typeplate » A typographic starter kit encouraging great type on the Web</title>
 	<script>
 		(function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
 		var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 		})();
 	</script>
+	<meta name="robots" content="all">
 	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
 	<link rel="stylesheet" href="./css/main.css?1.0.1">
 	<script src="./js/vendor/modernizr.min.js"></script>
 </head>
 <body>
-	<!-- <a href=""><img src="./img/ribbon.png" alt=""></a> -->
 	<!-- $banner -->
 	<header class="header botDivider column" role="banner">
 		<div class="col-wrap">
@@ -50,10 +48,14 @@
 	<nav class="downloads nav">
 		<div class="col-wrap">
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" class="dl-item btn">
-				<i class="icon-download"></i>CSS <small>v1.0.2 | 7kb</small>
+				<i class="icon-download"></i>CSS
+				<hr>
+				<small>v1.0.2 | 7kb</small>
 			</a>
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" class="dl-item btn">
-				<i class="icon-download"></i>Sass <small>v1.0.2 | 3kb</small>
+				<i class="icon-download"></i>Sass
+				<hr>
+				<small>v1.0.2 | 3kb</small>
 			</a>
 		</div>
 	</nav>
@@ -159,11 +161,19 @@ html {
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;!-- Use our custom header classes on various elements of your choosing.
-These classes are here for demo purposes only and not a requirement.
-If you'd like to manipulate the size of typographic
-elements feel free to include the Sass @extend with your selector.
-For example… p { @extend .alpha; } --&gt;
+			<pre><code class="language-markup">&lt;!-- 
+Custom header classes. These classes can be used on various elements 
+of your choosing. Classes depicted below are strictly for example 
+purposes and not a requirement.
+
+If you'd like to manipulate the size of typographic elements using our 
+Sass port, feel free to include the Sass '@extend' with your selector.
+For example… 
+
+p {
+  @extend .alpha;
+}
+--&gt;
 &lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
 &lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
 &lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;

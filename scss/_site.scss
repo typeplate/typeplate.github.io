@@ -170,7 +170,6 @@ hr {
 	background: $white image-url("typeplate-press.png") center bottom no-repeat;
 	// break
 	@include breakpoint(baby-bear) {
-		text-align: center;
 		padding-top: 0;
 		p {
 			text-align: left;
@@ -198,16 +197,9 @@ hr {
 	@include breakpoint(baby-bear) {
 		padding-top: 0.825em;
 		display: block;
-		text-align: center;
 	}
-	@include breakpoint(mama-bear) {
+	@media screen and (max-width: 44.9375em) {
 		display: block;
-	}
-}
-
-.nav.nav-primary {
-	@media screen and (min-width: 37.5625em) and (max-width: 47.3125em) {
-		//margin-top: 5em;
 	}
 }
 
@@ -231,28 +223,6 @@ hr {
 	}
 	&:before {
 		content: "→ ";
-	}
-	// break
-	@include breakpoint(baby-bear) {
-		&:before {
-			content: "";
-		}
-		border-radius: 0.333333em;
-		display: inline-block;
-		padding: 0.825em;
-		margin-right: 0.5em;
-		font-family: Monaco, Consolas, monospace;
-		font-size: 0.825em;
-		background: $cobalt-deep;
-		color: $white;
-		&:visited {
-			color: $white;
-		}
-		&:hover,
-		&:focus {
-			background: $rust;
-			color: white;
-		}
 	}
 }
 
@@ -304,8 +274,7 @@ hr {
 		font-size: 1em;
 		padding: $line-height * 0.5rem;
 		width: 100%;
-		margin-right: 0;
-		margin-bottom: 1.65em;
+		margin-right: -2%;
 	}
 }
 
@@ -323,15 +292,13 @@ hr {
 	position: absolute;
 	top: 1.65em;
 	right: 1.65em;
-	// break
+	@include breakpoint(baby-bear) {
+		position: static;
+	}
 	@include breakpoint(mama-bear) {
 		//position: static;
 		margin-top: 0.825em;
 		margin-bottom: 0.825em;
-	}
-	// break
-	@media screen and (min-width: 31.25em) and (max-width: 37.5em) {
-		text-align: right;
 	}
 }
 
@@ -408,7 +375,7 @@ hr {
 			color: #929292;
 		}
 		&::after {
-			content: "click for action";
+			content: "-project details listing-";
 			display: block;
 			font-size: .5em;
 			color: scale-lightness(#EFEFEF, -35%);
