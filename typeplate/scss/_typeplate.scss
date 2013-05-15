@@ -670,19 +670,20 @@ h6 {
  * Blockquote Markup
  *
 	<figure>
-    	<blockquote cite="">
-    		<p>&Prime;&Prime;</p>
-    	</blockquote>
-    	<figcaption>
-    	   <cite><a href=""></a></cite>
-        </figcaption>
-    </figure>
+			<blockquote cite="">
+				<p>&Prime;&Prime;</p>
+			</blockquote>
+			<figcaption>
+				 <cite><a href=""></a></cite>
+				</figcaption>
+		</figure>
  *
  * Extend this object into your markup.
  *
  */
 
-@mixin cite-style($display:block, $text-align:right, $font-size: .875em) {
+// Citation Mixin for Custom Styling
+@mixin cite-style($display:block, $text-align:right, $font-size: inherit) {
 	display: $display;
 	font-size: $font-size;
 	text-align: $text-align;
@@ -690,6 +691,21 @@ h6 {
 
 %cite {
 	@include cite-style;
+}
+
+@mixin blockquote($content) {
+	p {
+		&:last-of-type {
+			margin-bottom: -#{$line-height/2}em;
+		}
+	}
+
+	+ figcaption {
+		@extend %cite;
+		&:before {
+			content: "#{$content}";
+		}
+	}
 }
 
 

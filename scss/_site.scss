@@ -513,40 +513,11 @@ hr {
 // ============================================================
 
 blockquote {
+	@extend .epsilon;
 	font-style: italic;
-	@extend .epsilon; 
-	margin-bottom: 0;
-	// so there's no extra line separating the quote and the citation
-	p:last-of-type {
-		margin-bottom: 0;
-	}
-	// make more readable at narrow widths
-	@include breakpoint(baby-bear) {
-		margin: 1.5em 0.75em;
-	}
-
-    & + figcaption {
-        @extend .epsilon; 
-        margin: 0 40px 1.5em;
-        
-        cite {
-    		font-style: normal;
-    		@extend %cite;
-    		font-size: 56.875%; 
-    		
-    		&:before {
-    			content:"\2014";
-    			margin-right: .5em; 
-    		}
-    	}
-    }
-    // make more readable at narrow widths
-	@include breakpoint(baby-bear) {
-		margin: 1.5em 0.75em;
-
-		cite {
-			text-align: left;
-		}
+	@include blockquote("—");
+	& + figcaption {
+		@extend .epsilon;
 	}
 }
 
@@ -729,24 +700,24 @@ p.no-indent {
 
 //Hide only visually, but have it available for screenreaders: h5bp.com/v
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
 }
 
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
 }
