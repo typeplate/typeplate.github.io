@@ -475,13 +475,17 @@ abbr {
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
+			<pre><code class="language-markup">&lt;!-- Add the drop-cap class to your element --&gt;
+&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
 		</figure>
 
 		<figure class="typeplate-code-block">
 			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">// Use ‘@include dropcap()’ with any selector. Pass in your own custom
-// arguments or feel free to use the arguments we’ve provided.
+			<pre><code class="language-sass">// Include your '@include dropcap()' mixin and pass the following
+// arguments below. Feel free to pass in arguments we've provided.
+// At this time you cannot pass in font-family arguments but you're gonna
+// change that anyway so why not just make that separately in your declaration.
+// Make sure you add the class “.drop-cap” to your markup in order to operate.
 @mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
 	&:first-letter {
 		float: $float;
@@ -496,10 +500,11 @@ abbr {
 	}
 }
 
-// Including the @mixin with our .drop-cap class purely for demo purposes.
-// Not included in the actual Typeplate Sass or CSS download.
-.drop-cap {
-	@include dropcap($margin: 0 .5em auto 0, $padding: .5em, $color: #fff, $bg: #333);
+// Combats our sibling paragraphs syling and indentation
+// As not to ruin our beautiful drop caps.
+p + .drop-cap {
+	text-indent: 0;
+	margin-top: 0;
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
@@ -668,7 +673,8 @@ $web-fonts: null !default;
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">h1 {
+			<pre><code class="language-css"> /* Code Block Example within Markup */
+h1 {
 	background: red;
 	color: blue;
 	padding: 1em;
@@ -753,9 +759,9 @@ code {
 				<figcaption>HTML</figcaption>
 				<pre><code class="language-markup">&lt;figure&gt;
 	&lt;blockquote cite=&quot;&quot;&gt;
-		&lt;p&gt;“”&lt;/p&gt;
+		&lt;p&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
-	&lt;figcaption&gt;	
+	&lt;figcaption&gt;
 		&lt;cite&gt;
 			&lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
 		&lt;/cite&gt;
@@ -765,32 +771,40 @@ code {
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">// Citation Mixin for Custom Styling
-@mixin cite-style($display:block, $text-align:right, $font-size: inherit) {
+				<pre><code class="language-sass">// $Citation Display- Default Variables
+// -------------------------------------//
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
+
+// Citation Mixin for Custom Styling
+@mixin cite-style($display, $text-align, $font-size) {
 	display: $display;
 	font-size: $font-size;
 	text-align: $text-align;
 }
 
 %cite {
-	@include cite-style;
+	@include cite-style($cite-display, $cite-text-align, $cite-font-size);
 }
 
-@mixin blockquote($content) {
+@mixin blockquote($citation-flourish) {
 	p {
 		&:last-of-type {
 			margin-bottom: -#{$line-height/2}em;
 		}
 	}
-
 	+ figcaption {
 		@extend %cite;
 		&:before {
-			content: "#{$content}";
+			content: "#{$citation-flourish}";
 		}
 	}
 }
 
+// Use the blockquote element as a selector or 
+// use a custom class on your blockquote element.
 blockquote {
 	@include blockquote("—");
 }</code></pre>
@@ -826,30 +840,40 @@ blockquote {
 
 			<figure class="typeplate-code-block">
 				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">@mixin pull-quotes($font-size, $opacity) {
+				<pre><code class="language-sass">// $Pull Quotes- Custom Variables
+// -------------------------------------//
+
+$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
 	position: relative;
-	padding: ems($font-size, $font-size);
+	padding: ems($pull-quote-fontsize, $pull-quote-fontsize);
 	&:before,
 	&:after {
-		height: ems($font-size, $font-size);
-		opacity: $opacity;
+		height: ems($pull-quote-fontsize, $pull-quote-fontsize);
+		opacity: $pull-quote-opacity;
 		position: absolute;
-		font-size: $font-size;
+		font-size: $pull-quote-fontsize;
+		color: $pull-quote-color;
 	}
 	&:before {
 		content: '“';
-		top:  0em;
-		left: 0em;
+		top:  0;
+		left: 0;
 	}
 	&:after {
 		content: '”';
-		bottom: 0em;
-		right: 0em;
+		bottom: 0;
+		right: 0;
 	}
 }
 
+// use this include on your pull quote selector class
 .pull-quote {
-	@include pull-quotes(4em, .15);
+	@include pull-quotes;
 }</code></pre>
 			</figure>
 			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>

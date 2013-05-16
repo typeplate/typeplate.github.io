@@ -26,7 +26,7 @@
 // ==========================================================================//
 
 
-// $BaseType
+// $BaseType-Variables
 // -------------------------------------//
 
 $weight: normal !default;
@@ -43,14 +43,14 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 $serif-boolean: true !default;
 
 
-// $Color
+// $Color-Variables
 // -------------------------------------//
 
 $body-copy-color: #444 !default;
 $heading-color: #222 !default;
 
 
-// $Ampersand @font-face
+// $Ampersand @font-face-Variables
 // -------------------------------------//
 
 $amp-fontface-name: Ampersand;
@@ -58,7 +58,7 @@ $amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), lo
 $amp-fontface-fallback: local('Georgia');
 
 
-// $Ampersand font-family
+// $Ampersand font-family-Variables
 // -------------------------------------//
 // Allows for our ampersand element to have differing
 // font-family from the ampersand unicode font-family.
@@ -66,7 +66,7 @@ $amp-fontface-fallback: local('Georgia');
 $amp-font-family: Verdana, sans-serif;
 
 
-// $I c o n  F o n t  H e l p e r
+// $Icon Font Helper-Variables
 // --------------------------------------------------------------------------
 // ICON FONTS HELPER
 // In order to set you must have the following…
@@ -82,7 +82,7 @@ $amp-font-family: Verdana, sans-serif;
 $web-fonts: null !default;
 
 
-// $TypeScale
+// $TypeScale-Variables
 // -------------------------------------//
 
 $tera: 117 !default; // 117 = 18 × 6.5
@@ -96,19 +96,19 @@ $epsilon: 21 !default; // 21 = 18 × 1.1667
 $zeta: 18 !default; // 18 = 18 × 1
 
 
-// $TypeScale Unit
+// $TypeScale Unit-Variables
 // -------------------------------------//
 
 $type-scale-unit-value: rem !default;
 
 
-// $Text Indentation Value
+// $Text Indentation-Variables
 // -------------------------------------//
 
 $indent-val: 1.5em !default;
 
 
-// $StatsTab
+// $StatsTab-Variables
 // -------------------------------------//
 
 $stats-font-size: 1.5rem;
@@ -117,6 +117,22 @@ $stats-list-padding: 0 0.625rem 0 0;
 $stats-item-font-size: 0.875rem;
 $stats-item-margin: 0.125rem 0 0 0;
 $stats-border-style: 0.125rem solid #ccc;
+
+
+// $Pull Quotes-Variables
+// -------------------------------------//
+
+$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+// $Citation Display-Variables
+// -------------------------------------//
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
 
 
 
@@ -213,7 +229,7 @@ $stats-border-style: 0.125rem solid #ccc;
 
 // ==========================================================================//
 //
-// $Mixins
+// $Mixins / Placeholders
 //
 // ==========================================================================//
 
@@ -298,6 +314,64 @@ $stats-border-style: 0.125rem solid #ccc;
 // Call your ampersand on any element you wish from another stylesheet
 // using this Sass extend we've provided...
 // @extend %ampersand-placeholder;
+
+
+// $Blockquote-Mixin
+// -------------------------------------//
+
+// Remove the quotes within the p tag
+// use pseudos to create curly quotes around blockquote element
+
+// Citation Mixin for Custom Styling
+@mixin cite-style($display, $text-align, $font-size) {
+	display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
+}
+
+%cite {
+	@include cite-style($cite-display, $cite-text-align, $cite-font-size);
+}
+
+@mixin blockquote($citation-flourish) {
+	p {
+		&:last-of-type {
+			margin-bottom: -#{$line-height/2}em;
+		}
+	}
+	+ figcaption {
+		@extend %cite;
+		&:before {
+			content: "#{$citation-flourish}";
+		}
+	}
+}
+
+// $Pull Quotes-Mixin
+// -------------------------------------//
+
+@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
+	position: relative;
+	padding: ems($pull-quote-fontsize, $pull-quote-fontsize);
+	&:before,
+	&:after {
+		height: ems($pull-quote-fontsize, $pull-quote-fontsize);
+		opacity: $pull-quote-opacity;
+		position: absolute;
+		font-size: $pull-quote-fontsize;
+		color: $pull-quote-color;
+	}
+	&:before {
+		content: '“';
+		top:  0;
+		left: 0;
+	}
+	&:after {
+		content: '”';
+		bottom: 0;
+		right: 0;
+	}
+}
 
 
 // $Wordwrap
@@ -664,52 +738,28 @@ h6 {
 }
 
 
-// $Blockquote Cites
+// $Blockquote-Markup
 // -------------------------------------//
 /**
  * Blockquote Markup
  *
-	<figure>
+		<figure>
 			<blockquote cite="">
-				<p>&Prime;&Prime;</p>
+				<p></p>
 			</blockquote>
-			<figcaption>
-				 <cite><a href=""></a></cite>
-				</figcaption>
+			<figcaption>	
+				<cite>
+					<small><a href=""></a></small>
+				</cite>
+			</figcaption>
 		</figure>
  *
  * Extend this object into your markup.
  *
  */
 
-// Citation Mixin for Custom Styling
-@mixin cite-style($display:block, $text-align:right, $font-size: inherit) {
-	display: $display;
-	font-size: $font-size;
-	text-align: $text-align;
-}
 
-%cite {
-	@include cite-style;
-}
-
-@mixin blockquote($content) {
-	p {
-		&:last-of-type {
-			margin-bottom: -#{$line-height/2}em;
-		}
-	}
-
-	+ figcaption {
-		@extend %cite;
-		&:before {
-			content: "#{$content}";
-		}
-	}
-}
-
-
-// $Pull Quotes
+// $Pull Quotes-Markup
 // -------------------------------------//
 // http://24ways.org/2005/swooshy-curly-quotes-without-images
 //
@@ -729,30 +779,8 @@ h6 {
  *
  */
 
-@mixin pull-quotes($font-size, $opacity) {
-	position: relative;
-	padding: ems($font-size, $font-size);
-	&:before,
-	&:after {
-		height: ems($font-size, $font-size);
-		opacity: $opacity;
-		position: absolute;
-		font-size: $font-size;
-	}
-	&:before {
-		content: '“';
-		top:  0;
-		left: 0;
-	}
-	&:after {
-		content: '”';
-		bottom: 0;
-		right: 0;
-	}
-}
-
 .pull-quote {
-	@include pull-quotes(4em, .15);
+	 @include pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color);
 }
 
 
