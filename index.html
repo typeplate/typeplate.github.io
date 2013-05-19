@@ -109,11 +109,11 @@
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
 		</header>
-		<p>For our base we use the following font settings on our <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Meyer himself</a>.</p>
+		<p>For our base we use the following font settings on the <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Meyer himself</a>.</p>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$weight: normal !default;
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">$weight: normal !default;
 $line-height: 1.65 !default;
 $font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
@@ -134,7 +134,7 @@ html {
 	@include base-type($font-properties...);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #typographic-scale -->
@@ -187,12 +187,12 @@ p {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$measure: $font-base * $line-height;
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">$measure: $font-base * $line-height;
 
 // Modular Scale Values
 // http://typecast.com/blog/contrast-through-scale
-$tera: 117 !default; // 117	= 18 × 6.5
+$tera: 117 !default; // 117 = 18 × 6.5
 $giga: 90 !default; // 90 = 18 × 5
 $mega: 72 !default; // 72 = 18 × 4
 $alpha: 60 !default; // 60 = 18 × 3.3333
@@ -234,12 +234,14 @@ $type-scale-unit-value: rem !default;
 	margin-top: 0;
 }
 
-// make a multi-dimensional array, where:
+// Multi-dimensional array, where:
 // the first value is the name of the class
 // and the second value is the variable for the size
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
-// associate h1-h6 tags with their appropriate greek heading
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// For each size in the scale we also create a class.
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
@@ -277,7 +279,7 @@ h6 {
 	@extend %hN;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #color -->
@@ -285,11 +287,11 @@ h6 {
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.3 Color</h1>
 		</header>
-		<p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles (#222).</p>
+		<p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles like (#222) for example. Since these values are considered a de facto standard in practice, they're not necessarily ordained by law.</p>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">$body-copy-color: #444 !default;
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">$body-copy-color: #444 !default;
 $heading-color: #222 !default;
 
 body {
@@ -305,22 +307,24 @@ h6 {
 	color: $heading-color;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #word-wrap -->
 	<section class="word-wrap botDivider" id="word-wrap">
 		<header>
-			<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.4 Word-wrap</h1>
+			<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.4 Word-Wrap</h1>
 		</header>
+		<p>The word-wrap <abbr title="cascading style sheets">CSS</abbr> property is used to specify whether or not the browser may break lines within words in order to prevent overflow when an otherwise unbreakable string is too long to fit in its containing box.</p>
+		<h2 class="zeta">Example:</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We’ll also be checking a few things like the longest word in the world “Methionylthreonylthreonylglutaminylarginylisoleucine” and other stuff like links that are way long such as <a href="http://google.com" rel="external">“Methionylthreonylthreonylglutaminylarginylisoleucine”</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">// Silent Sass Classes - A.K.A Placeholders
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">// Silent Sass Classes - A.K.A Placeholders
 //
 // normal: Indicates that lines may only break at normal word break points.
-// break-word : Indicates that normally unbreakable words may be broken at ...
+// break-word : Indicates that normally unbreakable words may be broken at
 // arbitrary points if there are no otherwise acceptable break points in the line.
 
 %breakword {
@@ -339,7 +343,7 @@ body {
 	@extend %breakword;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #indenting -->
@@ -348,6 +352,7 @@ body {
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#indenting">§</a> 2.1 Indenting</h1>
 		</header>
 		<p>On the web, paragraphs are commonly set in blocks, with top and bottom margins. Historically, paragraphs are set using indentation, which makes it easier to scan long-form text and are (we think) more conducive to readability.</p>
+		<p>For the curious, here's a few example sites using the paragraph indentation approach we've chosen for our starter kit…<a href="http://markboulton.co.uk">Mark Boulton</a>, <a href="http://nicewebtype.com">Nice Web Type</a>, <a href="http://andy-logic.com">Andy Rutledge</a> and <a href="http://artequalswork.com">Nathan Ford</a> just to name a few.</p>
 
 		<figure class="example no-top-pad">
 			<p>I crawled out almost immediately, and crouched, my feet still in the water, under a clump of furze.  The horse lay motionless (his neck was broken, poor brute!) and by the lightning flashes I saw the black bulk of the overturned dog cart and the silhouette of the wheel still spinning slowly.  In another moment the colossal mechanism went striding by me, and passed uphill towards Pyrford.</p>
@@ -358,19 +363,19 @@ body {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">//paragraph siblings indent
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">//paragraph siblings indent
 $indent-val: 1.5em !default;
 
 p {
-	margin: 0 0 $indent-val;
+	margin: auto auto $indent-val;
 	& + p {
 		text-indent: $indent-val;
 		margin-top: -$indent-val;
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #hyphenation -->
@@ -388,8 +393,8 @@ p {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">@mixin css-hyphens($val) {
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">@mixin css-hyphens($val) {
 	// Accepted values: [ none | manual | auto ]
 	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
 	-moz-hyphens: $val; // Firefox 16 thru 20
@@ -421,7 +426,7 @@ xmp {
 	@include css-hyphens(none);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #small-capitals -->
@@ -441,8 +446,11 @@ xmp {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-css">@mixin smallcaps($color, $font-weight) {
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+@mixin smallcaps($color, $font-weight) {
 	// depends on the font family.
 	// some font-families don’t support small caps
 	// or don’t provide them with their web font.
@@ -453,13 +461,13 @@ xmp {
 }
 
 abbr {
-	@include smallcaps(gray, 600);
+	@include smallcaps($small-caps-color, $small-caps-weight);
 	&:hover {
 		cursor: help;
 	}
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!--  #drop-capitals -->
@@ -480,8 +488,8 @@ abbr {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">// Include your '@include dropcap()' mixin and pass the following
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">// Use @include .drop-cap() to pass the following
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why not just make that separately in your declaration.
@@ -505,9 +513,13 @@ abbr {
 p + .drop-cap {
 	text-indent: 0;
 	margin-top: 0;
+}
+
+.drop-cap {
+	@include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #unicode-ampersands -->
@@ -515,22 +527,22 @@ p + .drop-cap {
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#unicode-ampersands">§</a> 3.3 Unicode Ampersands</h1>
 		</header>
-		<p>With the <code>unicode-range</code> property we can avoid using verbose markup and only target the characters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
+		<p>With the <a href="http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range"><code>unicode-range</code></a> property we can avoid using verbose markup and only target the characters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
 
 		<figure class="example amp-example">
 			<p class="amp">Amper & Sands</p>
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">//Unicode Ampersand @font-face
-$amp-fontface-name: Ampersand;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
-$amp-fontface-fallback: local('Georgia');
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">//Unicode Ampersand @font-face
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
 
 // Allows for our ampersand element to have differing
 // font-family from the ampersand unicode font-family.
-$amp-font-family: Verdana, sans-serif;
+$amp-font-family: Verdana, sans-serif !default;
 
 @font-face {
 	font-family: '#{$amp-fontface-name}';
@@ -559,13 +571,13 @@ $amp-font-family: Verdana, sans-serif;
 	@extend %ampersand-placeholder;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #web-font-helper -->
 	<section class="web-font-helper botDivider" id="web-font-helper">
 		<header>
-			<h1 class="gamma"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Web Font Helper</h1>
+			<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Web Font Helper</h1>
 		</header>
 		<p>The Web Font Helper is a special tool for those that use custom fonts &amp; icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource locator">URL</abbr>s and file types it can become extremely tedious. By taking advantage of the Web Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific projects and workflows.</p>
 
@@ -575,17 +587,17 @@ $amp-font-family: Verdana, sans-serif;
 		</figure>
 
 		<figure class="typeplate-code-block">
-		<figcaption>Custom Typeplate Variables File (_typeplate-vars.scss)</figcaption>
-		<pre><code class="language-sass">//Your custom override
+		<figcaption>_typeplate-vars.scss</figcaption>
+		<pre><code class="language-scss">//custom variable to override default value
 $web-fonts: (web-font-name, another-web-font-name);</code></pre>
 	</figure>
 
 		<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-		<pre><code class="language-sass">// ICON FONTS HELPER
+		<figcaption>_typeplate.scss</figcaption>
+		<pre><code class="language-scss">// ICON FONTS HELPER
 // In order to set you must have the following…
-// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
-// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 1. Compass
+// 2. Create a 'fonts' directory in the root of your project
 // 3. Specify within your 'config.rb' file the following line…
 //
 // fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
@@ -600,14 +612,14 @@ $web-fonts: null !default;
 // https://gist.github.com/4469518
 @if ($web-fonts != null) {
 	@each $font in $web-fonts {
-	@include font-face( $font,
-		font-files(
-			'#{$font}/#{$font}.woff',
-			'#{$font}/#{$font}.ttf',
-			'#{$font}/#{$font}.svg', svg
-		),
-		'#{$font}/#{$font}.eot'
-		)
+		@include font-face( $font,
+			font-files(
+				'#{$font}/#{$font}.woff',
+				'#{$font}/#{$font}.ttf',
+				'#{$font}/#{$font}.svg', svg
+			),
+			'#{$font}/#{$font}.eot'
+			)
 	}
 }</code></pre>
 	</figure>
@@ -626,7 +638,7 @@ $web-fonts: null !default;
 	src: url('//fonts/another-web-font-name/another-web-font-name.eot?#iefix') format('eot'), url('//fonts/another-web-font-name/another-web-font-name.woff') format('woff'), url('//fonts/another-web-font-name/another-web-font-name.ttf') format('truetype'), url('//fonts/another-web-font-name/another-web-font-name.svg') format('sag');
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #small-print -->
@@ -656,12 +668,14 @@ $web-fonts: null !default;
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-			<pre><code class="language-sass">small {
-	font-size: 65%;
+			<figcaption>_typeplate.scss</figcaption>
+			<pre><code class="language-scss">$fine-print-size: 65% !default;
+
+small {
+	font-size: $fine-print-size;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- $Code Blocks -->
@@ -669,7 +683,7 @@ $web-fonts: null !default;
 		<header>
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 4.1 Code Blocks</h1>
 		</header>
-		<p><code>Monospace</code> fonts just like you like for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
+		<p><code>Monospace</code> fonts just as you desire for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
@@ -684,8 +698,8 @@ h1 {
 		</figure>
 
 		<figure class="typeplate-code-block">
-			<figcaption>Sass</figcaption>
-		<pre><code class="language-sass">@mixin white-space($wrap-space) {
+			<figcaption>_typeplate.scss</figcaption>
+		<pre><code class="language-scss">@mixin white-space($wrap-space) {
 	@if $wrap-space == 'pre-wrap' {
 		white-space: #{-moz-}$wrap-space;	// Firefox 1.0-2.0
 		white-space: $wrap-space; 			// current browsers
@@ -708,7 +722,7 @@ code {
 	font-family: monospace;
 }</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #figures -->
@@ -733,7 +747,7 @@ code {
 	&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
 		</figure>
-		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
 
 	<!-- #block-quotes -->
@@ -770,11 +784,8 @@ code {
 			</figure>
 
 			<figure class="typeplate-code-block">
-				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">// $Citation Display- Default Variables
-// -------------------------------------//
-
-$cite-display: block !default;
+				<figcaption>_typeplate.scss</figcaption>
+				<pre><code class="language-scss">$cite-display: block !default;
 $cite-text-align: right !default;
 $cite-font-size: inherit !default;
 
@@ -809,7 +820,7 @@ blockquote {
 	@include blockquote("—");
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 		</section>
 
 		<!-- #pull-quotes -->
@@ -819,7 +830,7 @@ blockquote {
 			<header>
 				<h1 class="gamma section-title"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
 			</header>
-			<p>Pull Quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is an improvement based upon the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a> This particular example depicted takes advantage of psuedo selectors and the <code>&lt;aside&gt;</code> tag.</p>
+			<p>Pull quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is an improvement based upon the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a> This particular example depicted takes advantage of psuedo selectors and the <code>&lt;aside&gt;</code> tag.</p>
 
 			<figure class="example no-top-pad pull-example">
 				<aside class="pull-quote">
@@ -839,11 +850,8 @@ blockquote {
 			</figure>
 
 			<figure class="typeplate-code-block">
-				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">// $Pull Quotes- Custom Variables
-// -------------------------------------//
-
-$pull-quote-fontsize: 4em !default;
+				<figcaption>_typeplate.scss</figcaption>
+				<pre><code class="language-scss">$pull-quote-fontsize: 4em !default;
 $pull-quote-opacity: 0.5 !default;
 $pull-quote-color: #dc976e !default;
 
@@ -876,7 +884,7 @@ $pull-quote-color: #dc976e !default;
 	@include pull-quotes;
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 		</section>
 
 		<!-- #stats-tabs -->
@@ -905,14 +913,14 @@ $pull-quote-color: #dc976e !default;
 			</figure>
 
 			<figure class="typeplate-code-block">
-				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">//Stats Tabs Variables
-$stats-font-size: 1.125rem;
-$stats-list-margin: 0 0.625rem 0 0;
-$stats-list-padding: 0 0.625rem 0 0;
-$stats-item-font-size: 0.1875rem;
-$stats-item-margin: 0.125rem 0 0 0;
-$stats-border-style: 0.125rem solid #ccc;
+				<figcaption>_typeplate.scss</figcaption>
+				<pre><code class="language-scss">//Stats Tabs Variables
+$stats-font-size: 1.125rem !default;
+$stats-list-margin: 0 0.625rem 0 0 !default;
+$stats-list-padding: 0 0.625rem 0 0 !default;
+$stats-item-font-size: 0.1875rem !default;
+$stats-item-margin: 0.125rem 0 0 0 !default;
+$stats-border-style: 0.125rem solid #ccc !default;
 
 // Stats Tabs Styles
 .stats-tabs {
@@ -941,7 +949,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	}
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 		</section>
 
 		<!-- #footnotes -->
@@ -973,7 +981,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	&lt;/footer&gt;
 &lt;/article&gt;</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 		</section>
 
 		<!-- #definition-lists -->
@@ -1028,8 +1036,8 @@ $stats-border-style: 0.125rem solid #ccc;
 			</figure>
 
 			<figure class="typeplate-code-block">
-				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">@mixin definition-list-style($style) {
+				<figcaption>_typeplate.scss</figcaption>
+				<pre><code class="language-scss">@mixin definition-list-style($style) {
 	// lining style
 	@if $style == lining {
 		dt, dd {
@@ -1058,7 +1066,7 @@ $stats-border-style: 0.125rem solid #ccc;
 	}
 }
 
-	dl {
+dl {
 		@include definition-list-style(lining);
 }</code></pre>
 			</figure>
@@ -1093,8 +1101,8 @@ $stats-border-style: 0.125rem solid #ccc;
 			</figure>
 
 			<figure class="typeplate-code-block">
-				<figcaption>Sass</figcaption>
-				<pre><code class="language-sass">@mixin definition-list-style($style) {
+				<figcaption>_typeplate.scss</figcaption>
+				<pre><code class="language-scss">@mixin definition-list-style($style) {
 	// dictionary-style
 	@if $style == dictionary-style {
 		dt {
@@ -1121,13 +1129,13 @@ dl {
 	@include definition-list-style(dictionary-style);
 }</code></pre>
 			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">back to top</a>
+			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 		</section>
-
-		<footer role="contentinfo" class="site-footer">
-			<p>Copyright &copy;2013. Typeplate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
-		</footer>
 	</main>
+
+	<footer role="contentinfo" class="site-footer">
+		<p>Copyright &copy;2013. Typeplate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
+</footer>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>

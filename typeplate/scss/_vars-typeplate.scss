@@ -18,6 +18,12 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $serif-boolean: true;
 
 
+// $Small Print-Variables
+// -------------------------------------//
+
+$fine-print-size: 65%;
+
+
 // $Color
 // -------------------------------------//
 
@@ -25,11 +31,27 @@ $body-copy-color: #444;
 $heading-color: #222;
 
 
-// $I c o n  F o n t  H e l p e r
+// $Ampersand @font-face-Variables
+// -------------------------------------//
+
+$amp-fontface-name: Ampersand;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$amp-fontface-fallback: local('Georgia');
+
+
+// $Ampersand font-family-Variables
+// -------------------------------------//
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+
+$amp-font-family: Verdana, sans-serif;
+
+
+// $Web Font Helper
 // --------------------------------------------------------------------------
 // ICON FONTS HELPER
 // In order to set you must have the following…
-// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
+// 1. Compass
 // 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
 // 3. Specify within your 'config.rb' file the following line…
 //
@@ -78,6 +100,24 @@ $pull-quote-color: #dc976e;
 // $Citation Display-Variables
 // -------------------------------------//
 
-$cite-display: block !default;
-$cite-text-align: right !default;
-$cite-font-size: inherit !default;
+$cite-display: block;
+$cite-text-align: right;
+$cite-font-size: inherit;
+
+
+// $Small Caps-Variables
+// -------------------------------------//
+
+$small-caps-color: gray;
+$small-caps-weight: 600;
+
+
+// $StatsTab-Variables
+// -------------------------------------//
+
+$stats-font-size: 1.5rem;
+$stats-list-margin: 0 0.625rem 0 0;
+$stats-list-padding: 0 0.625rem 0 0;
+$stats-item-font-size: 0.875rem;
+$stats-item-margin: 0.125rem 0 0 0;
+$stats-border-style: 0.125rem solid #ccc;

@@ -88,7 +88,7 @@ img {
 }
 
 section {
-	padding: $line-height * 0.5em 0 $line-height * 1em;
+	padding: $line-height * 0.5em 0 $line-height * 2em;
 	@extend %rhythm;
 }
 
@@ -118,6 +118,7 @@ hr {
 		}
 	}
 }
+
 
 // $Logo
 // ============================================================
@@ -330,12 +331,12 @@ hr {
 // ============================================================
 
 .toc {
-	//border: 3px solid #afbac4;
 	border-radius: 0 0 6px 6px;
 	background: #d5d5d5;
 	background: rgba(0, 0, 0, 0.1);
 	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
 	@extend %rhythm;
+	padding-bottom: #{$line-height}em;
 }
 .toc ol {
 	list-style: decimal !important;
@@ -434,6 +435,12 @@ hr {
 		color: #212121;
 		top: -2.125em;
 		left: -1.65rem;
+	}
+	&.icons {
+		text-align: center;
+		&:before {
+			text-align: left;
+		}
 	}
 }
 .example > pre {
@@ -624,8 +631,14 @@ h1, h2, h3, h4, h5, h6 {
 // ============================================================
 
 .site-footer {
-	margin-top: 3em;
 	font-size: 75%;
+	width: 100%;
+	background: #D3C8C8;
+	background: #131415 image-url("asfalt.png") top left repeat;
+	color: #9E9E9E;
+	text-align: center;
+	height: 100%;
+	padding-top: #{$line-height * 1.5}em;
 	a {
 		color: #de4d1f;
 	}
@@ -644,12 +657,29 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 0.125rem;
 }
 
-
 // generic bottom rule class
 .botDivider {
-	border-bottom: 0.44444444rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: #{$font-size/500}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom-color: rgba(180, 180, 180, 0.25);
+	position: relative;
+	&:last-child {
+		border-bottom: none;
+	}
 	&.bright {
 		border-bottom-color: $rust;
+	}
+	&:not(.base-type):after {
+		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.82), 0 1px 1px #FFF;
+		content: "{T}";
+		position: absolute;
+		top: -#{$line-height}em;
+		left: 45%;
+		@extend .gamma;
+		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
+		color: #CCC;
+		width: 8%;
+		text-align: center;
+		border-radius: 80%;
 	}
 }
 
@@ -675,9 +705,6 @@ p.no-indent {
 // $Drop Cap
 // ============================================================
 
-// This selector class is not included in the actual stylsheet. We leave it for you to decide
-// when to use it. We only provide you with the @mixin. This is just an example of
-// our chosen class selector purely for demo purposes.
 .drop-cap {
 	@include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
 }

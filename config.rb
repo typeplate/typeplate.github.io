@@ -31,12 +31,12 @@ javascripts_dir = "js"
 fonts_dir = "fonts"
 
 # Development
-#output_style = :expanded
-#environment = :development
+output_style = :expanded
+environment = :development
 
 # Production
-output_style = :compressed
-environment = :production
+#output_style = :compressed
+#environment = :production
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
@@ -50,7 +50,10 @@ color_output = false
 # Sass Source Mapping
 # Make sure you’re running at least Chrome 24
 # http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector
-# sass_options = { :debug_info => true }
+sass_options = { :debug_info => true }
+#
+# http://benfrain.com/add-sass-compass-debug-info-for-chrome-web-developer-tools/
+# sass_options = { :sourcemap => true }
 
 # Sass Sleuth
 # http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers

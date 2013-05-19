@@ -43,6 +43,12 @@ $font-properties: $weight, $line-height, $font-size, $font-family;
 $serif-boolean: true !default;
 
 
+// $Small Print-Variables
+// -------------------------------------//
+
+$fine-print-size: 65% !default;
+
+
 // $Color-Variables
 // -------------------------------------//
 
@@ -53,9 +59,9 @@ $heading-color: #222 !default;
 // $Ampersand @font-face-Variables
 // -------------------------------------//
 
-$amp-fontface-name: Ampersand;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
-$amp-fontface-fallback: local('Georgia');
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
 
 
 // $Ampersand font-family-Variables
@@ -63,7 +69,7 @@ $amp-fontface-fallback: local('Georgia');
 // Allows for our ampersand element to have differing
 // font-family from the ampersand unicode font-family.
 
-$amp-font-family: Verdana, sans-serif;
+$amp-font-family: Verdana, sans-serif !default;
 
 
 // $Icon Font Helper-Variables
@@ -111,12 +117,12 @@ $indent-val: 1.5em !default;
 // $StatsTab-Variables
 // -------------------------------------//
 
-$stats-font-size: 1.5rem;
-$stats-list-margin: 0 0.625rem 0 0;
-$stats-list-padding: 0 0.625rem 0 0;
-$stats-item-font-size: 0.875rem;
-$stats-item-margin: 0.125rem 0 0 0;
-$stats-border-style: 0.125rem solid #ccc;
+$stats-font-size: 1.5rem !default;
+$stats-list-margin: 0 0.625rem 0 0 !default;
+$stats-list-padding: 0 0.625rem 0 0 !default;
+$stats-item-font-size: 0.875rem !default;
+$stats-item-margin: 0.125rem 0 0 0 !default;
+$stats-border-style: 0.125rem solid #ccc !default;
 
 
 // $Pull Quotes-Variables
@@ -133,6 +139,13 @@ $pull-quote-color: #dc976e !default;
 $cite-display: block !default;
 $cite-text-align: right !default;
 $cite-font-size: inherit !default;
+
+
+// $Small Caps-Variables
+// -------------------------------------//
+
+$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
 
 
 
@@ -164,8 +177,8 @@ $cite-font-size: inherit !default;
 // --------------------------------------------------------------------------
 // ICON FONTS HELPER
 // In order to set you must have the following…
-// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
-// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
+// 1. Compass
+// 2. Create a 'fonts' directory in the root of your project
 // 3. Specify within your 'config.rb' file the following line…
 //
 // fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
@@ -174,20 +187,20 @@ $cite-font-size: inherit !default;
 // ex.1) $web-fonts: (icon-name);
 // ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
 
-// @include font-face() is a compass function so it will require compass
+// @include font-face() is a compass function
 // based on this gist by Chris Van Patten
 // https://gist.github.com/4469518
 
 @if ($web-fonts != null) {
 	@each $font in $web-fonts {
-	@include font-face( $font,
-		font-files(
-			'#{$font}/#{$font}.woff',
-			'#{$font}/#{$font}.ttf',
-			'#{$font}/#{$font}.svg', svg
-		),
-		'#{$font}/#{$font}.eot'
-		)
+		@include font-face( $font,
+			font-files(
+				'#{$font}/#{$font}.woff',
+				'#{$font}/#{$font}.ttf',
+				'#{$font}/#{$font}.svg', svg
+			),
+			'#{$font}/#{$font}.eot'
+			)
 	}
 }
 
@@ -377,6 +390,7 @@ $cite-font-size: inherit !default;
 // $Wordwrap
 // -------------------------------------//
 // Silent Sass Classes - A.K.A Placeholders
+//
 // normal: Indicates that lines may only break at normal word break points.
 // break-word : Indicates that normally unbreakable words may be broken at
 // arbitrary points if there are no otherwise acceptable break points in the line.
@@ -406,7 +420,7 @@ $cite-font-size: inherit !default;
  *
  */
 
-// Include your '@include dropcap()' mixin and pass the following
+// Use @include .drop-cap() to pass the following
 // arguments below. Feel free to pass in arguments we've provided.
 // At this time you cannot pass in font-family arguments but you're gonna
 // change that anyway so why not just make that separately in your declaration.
@@ -519,6 +533,9 @@ body {
 	color: $body-copy-color;
 }
 
+small {
+	font-size: $fine-print-size;
+}
 
 // $Headings
 // -------------------------------------//
@@ -530,11 +547,13 @@ body {
 	margin-top: 0;
 }
 
-// make a multi-dimensional array, where:
+// Multi-dimensional array, where:
 // the first value is the name of the class
 // and the second value is the variable for the size
 $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
 // for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
@@ -578,7 +597,7 @@ h6 {
 // -------------------------------------//
 
 p {
-	margin: 0 0 $indent-val;
+	margin: auto auto $indent-val;
 	& + p {
 		//siblings indentation
 		text-indent: $indent-val;
@@ -646,7 +665,7 @@ code {
  *
  */
 abbr {
-	@include smallcaps(gray, 600);
+	@include smallcaps($small-caps-color, $small-caps-weight);
 	&:hover {
 		cursor: help;
 	}
