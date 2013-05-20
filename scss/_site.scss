@@ -287,6 +287,7 @@ hr {
 .btn.btn-backtotop {
 	@extend .dl-item;
 	width: 30%;
+	text-rendering: optimizeLegibility;
 }
 
 .social-nav {
@@ -660,7 +661,6 @@ h1, h2, h3, h4, h5, h6 {
 // generic bottom rule class
 .botDivider {
 	border-bottom: #{$font-size/500}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
-	border-bottom-color: rgba(180, 180, 180, 0.25);
 	position: relative;
 	&:last-child {
 		border-bottom: none;
@@ -676,7 +676,7 @@ h1, h2, h3, h4, h5, h6 {
 		left: 45%;
 		@extend .gamma;
 		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
-		color: #CCC;
+		color: #dcdcdc;
 		width: 8%;
 		text-align: center;
 		border-radius: 80%;

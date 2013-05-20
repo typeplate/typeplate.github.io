@@ -114,6 +114,15 @@ pre[class*="language-"] {
     color: #e90;
 }
 
+.language-scss {
+    .token.variable {
+        color: #819191;
+    }
+    .token.statement {
+        color: #c6342a;
+    }
+}
+
 .token.important {
     font-weight: bold;
 }
