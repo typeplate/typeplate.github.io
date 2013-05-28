@@ -9,7 +9,7 @@
 |                                                                     |
 |                                                                     |
 | URL: http://typeplate.com                                           |
-| VERSION: 1.0.1                                                      |
+| VERSION: 1.2.0                                                      |
 | Github: https://github.com/typePlate/typeplate.github.com           |
 | AUTHORS: Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals) |
 | LICENSE: Creative Commmons                                          |
@@ -73,22 +73,13 @@ $amp-font-family: Verdana, sans-serif !default;
 
 
 // $Icon Font Helper-Variables
-// --------------------------------------------------------------------------
-// ICON FONTS HELPER
-// In order to set you must have the following…
-// 1. A Compass @import rule (i.e. @import "compass") before this stylesheet
-// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
-// 3. Specify within your 'config.rb' file the following line…
-//
-// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
-//
-// Example usage
-// ex.1) $web-fonts: (icon-name);
-// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
-$web-fonts: null !default;
+// -------------------------------------//
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null !default;
 
 
-// $TypeScale-Variables
+// $Typescale-Variables
 // -------------------------------------//
 
 $tera: 117 !default; // 117 = 18 × 6.5
@@ -102,7 +93,7 @@ $epsilon: 21 !default; // 21 = 18 × 1.1667
 $zeta: 18 !default; // 18 = 18 × 1
 
 
-// $TypeScale Unit-Variables
+// $Typescale Unit-Variables
 // -------------------------------------//
 
 $type-scale-unit-value: rem !default;
@@ -117,12 +108,12 @@ $indent-val: 1.5em !default;
 // $StatsTab-Variables
 // -------------------------------------//
 
-$stats-font-size: 1.5rem !default;
-$stats-list-margin: 0 0.625rem 0 0 !default;
-$stats-list-padding: 0 0.625rem 0 0 !default;
-$stats-item-font-size: 0.875rem !default;
-$stats-item-margin: 0.125rem 0 0 0 !default;
-$stats-border-style: 0.125rem solid #ccc !default;
+$stats-font-size: 1.5em !default;
+$stats-list-margin: 0 0.625em 0 0 !default;
+$stats-list-padding: 0 0.625em 0 0 !default;
+$stats-item-font-size: 0.875em !default;
+$stats-item-margin: 0.125em 0 0 0 !default;
+$stats-border-style: 0.125em solid #ccc !default;
 
 
 // $Pull Quotes-Variables
@@ -173,9 +164,9 @@ $small-caps-weight: 600 !default;
 }
 
 
-// $I c o n  F o n t  H e l p e r
-// --------------------------------------------------------------------------
-// ICON FONTS HELPER
+// $Icon Font Helper
+// -------------------------------------//
+// ICON FONT HELPER
 // In order to set you must have the following…
 // 1. Compass
 // 2. Create a 'fonts' directory in the root of your project
@@ -184,15 +175,15 @@ $small-caps-weight: 600 !default;
 // fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
 //
 // Example usage
-// ex.1) $web-fonts: (icon-name);
-// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
 
 // @include font-face() is a compass function
 // based on this gist by Chris Van Patten
 // https://gist.github.com/4469518
 
-@if ($web-fonts != null) {
-	@each $font in $web-fonts {
+@if ($icon-fonts != null) {
+	@each $font in $icon-fonts {
 		@include font-face( $font,
 			font-files(
 				'#{$font}/#{$font}.woff',
@@ -783,7 +774,7 @@ h6 {
 // http://24ways.org/2005/swooshy-curly-quotes-without-images
 //
 // http://todomvc.com - Thanks sindresorhus!
-// https://github.com/typeplate/typeplate.github.com/issues/49
+// https://github.com/typeplate/typeplate.github.io/issues/49
 
 /**
  * Pull Quotes Markup

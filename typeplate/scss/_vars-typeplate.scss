@@ -12,10 +12,7 @@ $weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-
-//the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss";
-$serif-boolean: true;
+$serif-boolean: true; // declares serif or sans-serif for your default type
 
 
 // $Small Print-Variables
@@ -47,20 +44,11 @@ $amp-fontface-fallback: local('Georgia');
 $amp-font-family: Verdana, sans-serif;
 
 
-// $Web Font Helper
-// --------------------------------------------------------------------------
-// ICON FONTS HELPER
-// In order to set you must have the following…
-// 1. Compass
-// 2. [OPTIONAL STEP] Name your fonts directory folder if you do not have one
-// 3. Specify within your 'config.rb' file the following line…
-//
-// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
-//
-// Example usage
-// ex.1) $web-fonts: (icon-name);
-// ex.2) $web-fonts: (icon-name1, icon-name2, icon-name3);
-$web-fonts: null;
+// $Icon Font Helper-Variables
+// -------------------------------------//
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null;
 
 
 // $TypeScale
@@ -115,9 +103,9 @@ $small-caps-weight: 600;
 // $StatsTab-Variables
 // -------------------------------------//
 
-$stats-font-size: 1.5rem;
-$stats-list-margin: 0 0.625rem 0 0;
-$stats-list-padding: 0 0.625rem 0 0;
-$stats-item-font-size: 0.875rem;
-$stats-item-margin: 0.125rem 0 0 0;
-$stats-border-style: 0.125rem solid #ccc;
+$stats-font-size: 1.5em;
+$stats-list-margin: 0 0.625em 0 0;
+$stats-list-padding: 0 0.625em 0 0;
+$stats-item-font-size: 0.875em;
+$stats-item-margin: 0.125em 0 0 0;
+$stats-border-style: 0.125em solid #ccc;

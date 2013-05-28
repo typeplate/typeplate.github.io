@@ -1,16 +1,14 @@
 @import "queries";
 @import "fontello";
 
-// Typographic attributes of meta-serif
+// Typographic Attributes of Meta-serif
 //
-// border-radius:
+// BORDER-RADIUS:
+// All radius' should be a multiple of 2. Meta-serif has a slight 
+// softness but not by much if at all on arms and serifs.
 //
-// should be a multiple of 2. meta-serif has a slight softness but not
-// by much if at all on arms and serifs.
-//
-// borders:
-//
-// Borders should be a multiple of 16 or divisible by 16.
+// BORDERS:
+// All borders should be a multiple of 16 or divisible by 16.
 
 
 // $Compass Extends
@@ -250,7 +248,7 @@ hr {
 	@extend %transition;
 	padding: $line-height * 0.5rem;
 	background: $download-btn-bg;
-	color: $white;
+	color: $cobalt-deep;
 	// pseudo
 	&:last-of-type {
 		margin-right: 0;
@@ -258,7 +256,7 @@ hr {
 	&:hover,
 	&:focus {
 		background: $download-btn-hover;
-		color: $cobalt-deep;
+		color: $white;
 		text-decoration: none;
 	}
 	// filesize line
