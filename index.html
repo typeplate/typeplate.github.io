@@ -168,14 +168,14 @@ html {
 
 		<figure class="typeplate-code-block">
 			<figcaption>HTML</figcaption>
-			<pre><code class="language-markup">&lt;!-- 
-Custom header classes. These classes can be used on various elements 
-of your choosing. Classes depicted below are strictly for example 
+			<pre><code class="language-markup">&lt;!--
+Custom header classes. These classes can be used on various elements
+of your choosing. Classes depicted below are strictly for example
 purposes and not a requirement.
 
 If you'd like to manipulate the size of other typographic elements,
 feel free to include the Sass '@extend' with your selector.
-For example… 
+For example…
 
 p {
 	@extend .alpha;
@@ -653,7 +653,7 @@ $icon-fonts: null !default;
 			<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 3.4 Small Print</h1>
 		</header>
 		<p>The <code>small</code> element is used to represent side comments or what’s commonly referred to as ‘small print’: disclaimers, caveats, legal restrictions, or copyrights. It can also be used for attributions or satisfying licensing requirements.</p>
-		
+
 		<figure class="blockquote">
 				<blockquote cite="http://html5doctor.com/small-hr-element/">
 					<p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
@@ -675,10 +675,10 @@ $icon-fonts: null !default;
 
 		<figure class="typeplate-code-block">
 			<figcaption>_typeplate.scss</figcaption>
-			<pre><code class="language-scss">$fine-print-size: 65% !default;
+			<pre><code class="language-scss">$small-print-size: 65% !default;
 
 small {
-	font-size: $fine-print-size;
+	font-size: $small-print-size;
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -820,7 +820,7 @@ $cite-font-size: inherit !default;
 	}
 }
 
-// Use the blockquote element as a selector or 
+// Use the blockquote element as a selector or
 // use a custom class on your blockquote element.
 blockquote {
 	@include blockquote("—");

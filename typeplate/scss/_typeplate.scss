@@ -9,9 +9,9 @@
 |                                                                     |
 |                                                                     |
 | URL: http://typeplate.com                                           |
-| VERSION: 1.2.0                                                      |
+| VERSION: 1.1.0                                                      |
 | Github: https://github.com/typePlate/typeplate.github.com           |
-| AUTHORS: Zachary Kain (@zakkain) & Dennis Gaebel (@gryghostvisuals) |
+| AUTHORS: Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain) |
 | LICENSE: Creative Commmons                                          |
 | http://creativecommons.org/licenses/by/3.0                          |
 |                                                                     |
@@ -46,7 +46,7 @@ $serif-boolean: true !default;
 // $Small Print-Variables
 // -------------------------------------//
 
-$fine-print-size: 65% !default;
+$small-print-size: 65% !default;
 
 
 // $Color-Variables
@@ -528,11 +528,25 @@ body {
 }
 
 small {
-	font-size: $fine-print-size;
+	font-size: $small-print-size;
 }
 
 // $Headings
 // -------------------------------------//
+
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+
+// For example:
+
+// <h6 class="giga">Awesome Headline</h6>
+// <p class="tera">a story about a dude</p>
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
 
 // styles for all headings, in the style of @csswizardry
 %hN {
@@ -760,7 +774,7 @@ h6 {
 			<blockquote cite="">
 				<p></p>
 			</blockquote>
-			<figcaption>	
+			<figcaption>
 				<cite>
 					<small><a href=""></a></small>
 				</cite>

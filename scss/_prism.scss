@@ -2,96 +2,96 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    // text-shadow: 0 -.1em .2em black;
-    font-family: Monaco, 'Andale Mono', monospace;
-    direction: ltr;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
+	// text-shadow: 0 -.1em .2em black;
+	font-family: Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
 
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-    // IE <= 8
-    .lt-ie9 & {
-        color: lighten(#333, 45%);
-    }
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	// IE <= 8
+	.lt-ie9 & {
+			color: lighten(#333, 45%);
+	}
 }
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
-    background: #dddddd;
-    background: hsla(0, 0%, 0%, 0.1);
+	background: #dddddd;
+	background: hsla(0, 0%, 0%, 0.1);
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-    border-radius: 0.333333em;
-    box-shadow: 1px 1px .5em black inset;
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.333333em;
+	box-shadow: 1px 1px .5em black inset;
 }
 
 .typeplate-code-block {
-    border-radius: 2px;
-    //there was no margin so I put one in
-    //seems someone took it out? I don't
-    //like the code blocks pressed against
-    //one another. They need breathing room.
-    margin: 0 0 1.5em;
-    position: relative;
-    figcaption {
-        @extend .epsilon;
-        font-family: "Cassannet", sans-serif;
-        line-height: 0.5;
-        text-transform: lowercase;
-        color: #212121;
-        &:after {
-            content: ":";
-        }
-    }
+	border-radius: 2px;
+	//there was no margin so I put one in
+	//seems someone took it out? I don't
+	//like the code blocks pressed against
+	//one another. They need breathing room.
+	margin: 0 0 1.5em;
+	position: relative;
+	figcaption {
+			@extend .epsilon;
+			font-family: "Cassannet", sans-serif;
+			line-height: 0.5;
+			text-transform: lowercase;
+			color: #212121;
+			&:after {
+					content: ":";
+			}
+	}
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .15em .2em .05em;
-    border-radius: .3em;
-    border: .13em solid hsl(30,20%,40%);
-    box-shadow: 1px 1px .3em -.1em black inset;
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	border: .13em solid hsl(30,20%,40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #444;
+	color: #444;
 }
 
 .token.punctuation {
-    color: #999;
+	color: #999;
 }
 
 .namespace {
-    opacity: .7;
+	opacity: .7;
 }
 
 .token.property,
 .token.tag,
 .token.boolean,
 .token.number {
-    color: #5e8cba;
+	color: #5e8cba;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string {
-    color: #f95165;
+	color: #f95165;
 }
 
 .token.operator,
@@ -99,35 +99,34 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-    color: #42c574;
+	color: #FFF;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: #5e8cba;
+	color: #5e8cba;
 }
 
 
 .token.regex,
 .token.important {
-    color: #e90;
+	color: #e90;
 }
 
 .language-scss {
-    .token.variable {
-        //color: #819191;
-        color: #318bd1;
-    }
-    .token.statement {
-        color: #c6342a;
-    }
+	.token.variable {
+		color: #B10000;
+	}
+	.token.statement {
+		color: #FF1000;
+	}
 }
 
 .token.important {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .token.entity {
-    cursor: help;
+	cursor: help;
 }
