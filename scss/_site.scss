@@ -225,6 +225,10 @@ hr {
 	}
 }
 
+
+// $Downloads
+// ============================================================
+
 .dl-item,
 .social-item {
 	display: inline-block;
@@ -233,15 +237,6 @@ hr {
 	font-family: Monaco, Consolas, monospace;
 	font-size: 0.825em;
 	text-align: center;
-}
-
-.downloads {
-	background: $cobalt-deep image-url("asfalt.png") top left repeat;
-	padding: 1.65em 0;
-	display: block;
-	.icon-download {
-		color: $white;
-	}
 }
 
 .btn {
@@ -263,6 +258,12 @@ hr {
 	small {
 		font-size: 80%;
 	}
+	// back to top button
+	&.btn-backtotop {
+		@extend .dl-item;
+		width: 30%;
+		text-rendering: optimizeLegibility;
+	}
 	// break
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
@@ -273,20 +274,30 @@ hr {
 		font-size: 1em;
 		padding: $line-height * 0.5rem;
 		width: 100%;
-		margin-right: -2%;
+		//margin-right: -2%;
+	}
+}
+
+.downloads {
+	background: $cobalt-deep image-url("asfalt.png") top left repeat;
+	padding: 1.65em 0;
+	display: block;
+	.icon-download {
+		color: $white;
 	}
 }
 
 .dl-item.btn {
-	width: 48%;
-	margin-right: 2%;
+	width: 32%;
 }
 
-.btn.btn-backtotop {
-	@extend .dl-item;
-	width: 30%;
-	text-rendering: optimizeLegibility;
+[href*="_typeplate.scss"] {
+	margin: 0 1%;
 }
+
+
+// $Social Navigation
+// ============================================================
 
 .social-nav {
 	position: absolute;
@@ -637,7 +648,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #9E9E9E;
 	text-align: center;
 	height: 100%;
-	padding-top: #{$line-height * 1.5}em;
+	padding: #{$line-height * 1.5}em 0 #{$line-height/2}em;
 	a {
 		color: #de4d1f;
 	}

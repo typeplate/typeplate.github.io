@@ -26,16 +26,17 @@
  */
 
 @font-face {
-	font-family: "Ampersand";
-	src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua"); /* http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range */
-	unicode-range: U+270C;
+  font-family: "Ampersand";
+  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+  unicode-range: U+0026;
 }
 
 @font-face {
-	font-family: "Ampersand";
-	src: local("Georgia");
-	unicode-range: U+270C;
+  font-family: "Ampersand";
+  src: local("Georgia");
+  unicode-range: U+270C;
 }
+
 
 /**
  *
@@ -44,11 +45,11 @@
  *
  * For example:
  
-	<h6 class="amp">Dewey Cheat 'em & Howe</h6>
+	<h6 class="ampersand">Dewey Cheat 'em & Howe</h6>
  
  */
-.ampersand-placeholder {
-	font-family: Verdana, sans-serif;
+.ampersand {
+  font-family: Ampersand, Verdana, sans-serif;
 }
 
 
@@ -176,7 +177,7 @@ h6 {
 .tera {
 	font-size: 117px;
 	font-size: 6.5rem; /* 117 / 18 = 6.5 */
-	margin-bottom: 0.25384615384615383em;
+	margin-bottom: 0.25385em;
 }
 
 .giga {
@@ -194,14 +195,14 @@ h6 {
 h1,
 .alpha {
 	font-size: 60px;
-	font-size: 3.3333333333333335rem; /* 60 / 18 = 3.3333 */
+	font-size: 3.33333rem; /* 60 / 18 = 3.3333 */
 	margin-bottom: 0.495em;
 }
 
 h2,
 .beta {
 	font-size: 48px;
-	font-size: 2.6666666666666665rem; /* 48 / 18 = 2.6667 */
+	font-size: 2.6667rem; /* 48 / 18 = 2.6667 */
 	margin-bottom: 0.61875rem;
 }
 
@@ -222,7 +223,7 @@ h4,
 h5,
 .epsilon {
 	font-size: 21px;
-	font-size: 1.1666666666666667rem; /* 21 / 18 = 1.1667 */
+	font-size: 1.16667rem; /* 21 / 18 = 1.1667 */
 	margin-bottom: 1.4142857142857141em; /* measure( base font-size(18) * base line-height(1.65) ) / current font-size(21) = margin-bottom(1.4142857142857141) */
 }
 
@@ -454,12 +455,16 @@ abbr:hover {
 /**
  * Blockquote Markup
  *
-	<blockquote cite="">
-		<p>&Prime;&Prime;</p>
-		<cite>
-			<small><a href=""></a></small>
-		</cite>
-	</blockquote>
+	<figure>
+		<blockquote cite="">
+			<p></p>
+		</blockquote>
+		<figcaption>	
+			<cite>
+				<small><a href=""></a></small>
+			</cite>
+		</figcaption>
+	</figure>
  *
  * Extend this object into your markup.
  *
@@ -500,6 +505,7 @@ abbr:hover {
 	opacity: 0.15;
 	position: absolute;
 	font-size: 4em;
+	color: #dc976e;
 }
 .pull-quote:before {
 	content: '“';

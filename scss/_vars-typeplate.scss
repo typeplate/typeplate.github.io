@@ -60,4 +60,30 @@ $indent-val: 1.5em;
 
 $pull-quote-fontsize: 4em;
 $pull-quote-opacity: 0.5;
-$pull-quote-color: #606060;
+$pull-quote-color: #dc976e;
+
+
+// $Citation Display-Variables
+// -------------------------------------//
+
+$cite-display: block;
+$cite-text-align: right;
+$cite-font-size: inherit;
+
+
+// $Small Caps-Variables
+// -------------------------------------//
+
+$small-caps-color: gray;
+$small-caps-weight: 600;
+
+
+// $StatsTab-Variables
+// -------------------------------------//
+
+$stats-font-size: #{(($font-base * 1.1667) / $font-base)}em;
+$stats-list-margin: 0 0.625em 0 0;
+$stats-list-padding: 0 0.625em 0 0;
+$stats-item-font-size: 0.875em;
+$stats-item-margin: 0.125em 0 0 0;
+$stats-border-style: 0.125em solid #ccc;

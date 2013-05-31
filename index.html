@@ -13,7 +13,7 @@
 	<meta name="robots" content="all">
 	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-	<link rel="stylesheet" href="./css/main.css?1.0.1">
+	<link rel="stylesheet" href="./css/main.css?1.1.0">
 	<script src="./js/vendor/modernizr.min.js"></script>
 </head>
 <body>
@@ -28,9 +28,7 @@
 			<nav class="nav nav-primary" role="navigation">
 				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">demo</a>
 				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">instructions</a>
-				<a href="//typeplate.com/blog" class="nav-item epsilon">journal</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">feedback</a>
-				<a href="//github.com/TypePlate/typeplate-bower" class="nav-item epsilon" rel="external">bower pkg</a>
 			</nav>
 
 			<nav class="social-nav">
@@ -50,12 +48,19 @@
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" class="dl-item btn">
 				<i class="icon-download"></i>CSS
 				<hr>
-				<small>v1.0.2 | 7kb</small>
+				<small>v1.1.0 | 7kb</small>
 			</a>
+
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.0.2 | 3kb</small>
+				<small>v1.1.0 | 3kb</small>
+			</a>
+
+			<a href="//github.com/TypePlate/typeplate-bower" class="dl-item btn">
+				<i class="icon-download"></i>Bower Pkg.
+				<hr>
+				<small>v1.1.0 | 7kb</small>
 			</a>
 		</div>
 	</nav>
@@ -566,10 +571,11 @@ $amp-font-family: Verdana, sans-serif !default;
 }
 
 // Call your ampersand on any element you wish from another stylesheet
-// using this Sass extend we’ve provided.
-.amp {
-	@extend %ampersand-placeholder;
-}</code></pre>
+// using this Sass extend we've provided. For exmaple:
+//
+// &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
+//
+// .ampersand { @extend %ampersand-placeholder; }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 	</section>
@@ -1134,7 +1140,7 @@ dl {
 	</main>
 
 	<footer role="contentinfo" class="site-footer">
-		<p>Copyright &copy;2013. Typeplate is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
+		<p>Copyright &copy;2013. <a href="https://twitter.com/typeplate">@Typeplate</a> is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
 </footer>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

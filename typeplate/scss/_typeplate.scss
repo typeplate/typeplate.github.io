@@ -316,8 +316,11 @@ $small-caps-weight: 600 !default;
 }
 
 // Call your ampersand on any element you wish from another stylesheet
-// using this Sass extend we've provided...
-// @extend %ampersand-placeholder;
+// using this Sass extend we've provided. For exmaple:
+//
+// <h6 class="ampersand">Dewey Cheat 'em & Howe</h6>
+//
+// .ampersand { @extend %ampersand-placeholder; }
 
 
 // $Blockquote-Mixin
