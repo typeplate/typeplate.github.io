@@ -4,22 +4,19 @@
 
 - Based on use cases for most developers' workflow, we recommend using Typeplate just after your reset stylesheet (i.e. [normalize](http://necolas.github.com/normalize.css)) and your compass ``@import`` in order to operate as we've intended, but as you'll see from our <a href="http://typeplate.com/demo">demo</a> it isn't necessary.
 
-**Example using Sass:**
+- Regarding browsers <= IE8 : We don't always provide fallbacks for these legacy browsers and leave this up to you based on your needs. We feel IE8 will rapidly decline due to Microsoft upgrading users to install at least >= IE9 along with discontinuing updates for XP and below customers.
 
-```scss
-@import "compass";
-@import "[your_project_path]/reset";
-@import "[your_project_path]/typeplate";
-
-// Custom Author Styles
-// ====================================
-```
 ### &sect; Installation via ``.scss @import``
 
 Simply download our ``_typeplate.scss`` partial file and import from your project's primary ``.scss`` file like so:
 
 ```scss
+@import "compass"; // Not required. For example purposes only.
+@import "[your_project_path]/reset"; // Not required. For example purposes only.
 @import "[your_project_path]/typeplate";
+
+// Custom Author Styles
+// ====================================
 ```
 
 Authors can also take this one step further and include a custom variables file from outside the _typeplate.scss partial file. This allows authors to override the default variables set within ``_typeplate.scss``.

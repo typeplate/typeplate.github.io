@@ -48,7 +48,7 @@
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" class="dl-item btn">
 				<i class="icon-download"></i>CSS
 				<hr>
-				<small>v1.1.0 | 7kb</small>
+				<small>v1.1.0 | 11kb</small>
 			</a>
 
 			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" class="dl-item btn">
@@ -60,7 +60,7 @@
 			<a href="//github.com/TypePlate/typeplate-bower" class="dl-item btn">
 				<i class="icon-download"></i>Bower Pkg.
 				<hr>
-				<small>v1.1.0 | 7kb</small>
+				<small>v1.1.0</small>
 			</a>
 		</div>
 	</nav>
@@ -795,6 +795,17 @@ code {
 $cite-text-align: right !default;
 $cite-font-size: inherit !default;
 
+// Use our pre-defined markup and add a class
+// to your custom blockquote element.
+// For example:
+//
+// .blockquote { @include blockquote("-"); }
+//
+// "-" is your citation flourish. For example:
+//
+// I always say important things because I'm so smart
+//                                      - author name
+
 // Citation Mixin for Custom Styling
 @mixin cite-style($display, $text-align, $font-size) {
 	display: $display;
@@ -815,15 +826,9 @@ $cite-font-size: inherit !default;
 	+ figcaption {
 		@extend %cite;
 		&:before {
-			content: "#{$citation-flourish}";
+			content: $citation-flourish;
 		}
 	}
-}
-
-// Use the blockquote element as a selector or
-// use a custom class on your blockquote element.
-blockquote {
-	@include blockquote("—");
 }</code></pre>
 			</figure>
 			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>

@@ -77,6 +77,17 @@ $type-scale-unit-value: rem;
 $indent-val: 1.5em;
 
 
+// $StatsTab-Variables
+// -------------------------------------//
+
+$stats-font-size: 1.5em;
+$stats-list-margin: 0 0.625em 0 0;
+$stats-list-padding: 0 0.625em 0 0;
+$stats-item-font-size: 0.875em;
+$stats-item-margin: 0.125em 0 0 0;
+$stats-border-style: 0.125em solid #ccc;
+
+
 // $Pull Quotes-Variables
 // -------------------------------------//
 
@@ -98,14 +109,3 @@ $cite-font-size: inherit;
 
 $small-caps-color: gray;
 $small-caps-weight: 600;
-
-
-// $StatsTab-Variables
-// -------------------------------------//
-
-$stats-font-size: 1.5em;
-$stats-list-margin: 0 0.625em 0 0;
-$stats-list-padding: 0 0.625em 0 0;
-$stats-item-font-size: 0.875em;
-$stats-item-margin: 0.125em 0 0 0;
-$stats-border-style: 0.125em solid #ccc;

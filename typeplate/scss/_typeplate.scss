@@ -10,9 +10,9 @@
 |                                                                     |
 | URL: http://typeplate.com                                           |
 | VERSION: 1.1.0                                                      |
-| Github: https://github.com/typePlate/typeplate.github.com           |
+| Github: https://github.com/typeplate/typeplate.github.io            |
 | AUTHORS: Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain) |
-| LICENSE: Creative Commmons                                          |
+| LICENSE: Creative Commmons Attribution 3.0                          |
 | http://creativecommons.org/licenses/by/3.0                          |
 |                                                                     |
 +---------------------------------------------------------------------+
@@ -325,9 +325,16 @@ $small-caps-weight: 600 !default;
 
 // $Blockquote-Mixin
 // -------------------------------------//
-
-// Remove the quotes within the p tag
-// use pseudos to create curly quotes around blockquote element
+// Use our pre-defined markup and add a class
+// to your custom blockquote element.
+// For example:
+//
+// .blockquote { @include blockquote("-"); }
+//
+// "-" is your citation flourish. For example:
+//
+// I always say important things because I'm so smart
+//                                      - author name
 
 // Citation Mixin for Custom Styling
 @mixin cite-style($display, $text-align, $font-size) {
@@ -349,10 +356,11 @@ $small-caps-weight: 600 !default;
 	+ figcaption {
 		@extend %cite;
 		&:before {
-			content: "#{$citation-flourish}";
+			content: $citation-flourish;
 		}
 	}
 }
+
 
 // $Pull Quotes-Mixin
 // -------------------------------------//

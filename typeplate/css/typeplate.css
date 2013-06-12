@@ -10,9 +10,9 @@
 |                                                                     |
 | URL: http://typeplate.com                                           |
 | VERSION: 1.1.0                                                      |
-| Github: https://github.com/typePlate/typeplate.github.com           |
+| Github: https://github.com/typeplate/typeplate.github.io            |
 | AUTHORS: Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain) |
-| LICENSE: Creative Commmons                                          |
+| LICENSE: Creative Commmons Attribution 3.0                          |
 | http://creativecommons.org/licenses/by/3.0                          |
 |                                                                     |
 +---------------------------------------------------------------------+
@@ -26,15 +26,15 @@
  */
 
 @font-face {
-  font-family: "Ampersand";
-  src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
-  unicode-range: U+0026;
+	font-family: "Ampersand";
+	src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
+	unicode-range: U+0026;
 }
 
 @font-face {
-  font-family: "Ampersand";
-  src: local("Georgia");
-  unicode-range: U+270C;
+	font-family: "Ampersand";
+	src: local("Georgia");
+	unicode-range: U+270C;
 }
 
 
@@ -49,7 +49,7 @@
 
  */
 .ampersand {
-  font-family: Ampersand, Verdana, sans-serif;
+	font-family: Ampersand, Verdana, sans-serif;
 }
 
 
@@ -456,7 +456,7 @@ abbr:hover {
  * Blockquote Markup
  *
 	<figure>
-		<blockquote cite="">
+		<blockquote class="blockquote" cite="">
 			<p></p>
 		</blockquote>
 		<figcaption>
@@ -469,10 +469,19 @@ abbr:hover {
  * Extend this object into your markup.
  *
  */
-.cite {
+
+.blockquote p:last-of-type {
+	margin-bottom: -0.825em;
+}
+
+.blockquote + figcaption {
 	display: block;
-	font-size: 0.875em;
+	font-size: inherit;
 	text-align: right;
+}
+
+.blockquote + figcaption:before {
+	content: "-"; /* "-" is your citation flourish */
 }
 
 

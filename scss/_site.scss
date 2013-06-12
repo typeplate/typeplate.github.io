@@ -156,7 +156,7 @@ hr {
 	}
 
 	@include breakpoint(baby-bear) {
-		width: 10em;
+		margin: #{$line-height/2}em auto;
 	}
 }
 
@@ -194,7 +194,7 @@ hr {
 	//@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
-		padding-top: 0.825em;
+		padding: #{$line-height * 2}em 0 0;
 		display: block;
 	}
 	@media screen and (max-width: 44.9375em) {
@@ -274,7 +274,6 @@ hr {
 		font-size: 1em;
 		padding: $line-height * 0.5rem;
 		width: 100%;
-		//margin-right: -2%;
 	}
 }
 
@@ -289,10 +288,17 @@ hr {
 
 .dl-item.btn {
 	width: 32%;
+	@include breakpoint(mama-bear) {
+		display: block;
+		width: 100%;
+	}
 }
 
 [href*="_typeplate.scss"] {
 	margin: 0 1%;
+	@include breakpoint(mama-bear) {
+		margin: #{$line-height}em auto;
+	}
 }
 
 
@@ -304,10 +310,12 @@ hr {
 	top: 1.65em;
 	right: 1.65em;
 	@include breakpoint(baby-bear) {
-		position: static;
+		top: 13.25em;
+		left: 0;
+		width: 100%;
+		text-align: center;
 	}
 	@include breakpoint(mama-bear) {
-		//position: static;
 		margin-top: 0.825em;
 		margin-bottom: 0.825em;
 	}
@@ -686,7 +694,7 @@ h1, h2, h3, h4, h5, h6 {
 		@extend .gamma;
 		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
 		color: #dcdcdc;
-		width: 8%;
+		width: modular-scale($font-base, 14, em);
 		text-align: center;
 		border-radius: 80%;
 	}
