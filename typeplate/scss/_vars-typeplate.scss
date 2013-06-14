@@ -6,7 +6,7 @@
 //  ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
 //  '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
 //       .. |      ||               ||                                 
-//        ''      ''''             ''''                           VARS
+//        ''      ''''             ''''                      VARIABLES
 // 
 
 // .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
@@ -113,3 +113,17 @@ $cite-font-size: inherit;
 
 $small-caps-color: gray;
 $small-caps-weight: 600;
+
+
+// $DropCap
+// -------------------------------------//
+
+$dropcap-float-position: left;
+$dropcap-font-size: 4em;
+$dropcap-font-family: inherit;
+$dropcap-txt-indent: 0;
+$dropcap-margin: inherit;
+$dropcap-padding: inherit;
+$dropcap-color: inherit;
+$dropcap-line-height: 1;
+$dropcap-bg: transparent;

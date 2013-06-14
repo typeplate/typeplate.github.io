@@ -506,22 +506,32 @@ abbr {
 
 		<figure class="typeplate-code-block">
 			<figcaption>_typeplate.scss</figcaption>
-			<pre><code class="language-scss">// Use @include .drop-cap() to pass the following
-// arguments below. Feel free to pass in arguments we've provided.
-// At this time you cannot pass in font-family arguments but you're gonna
-// change that anyway so why not just make that separately in your declaration.
-// Make sure you add the class “.drop-cap” to your markup in order to operate.
-@mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+			<pre><code class="language-scss">$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+
+// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg); 
+// to pass the following arguments below. Feel free to pass in custom 
+// values for the variables we've provided.
+//
+// Make sure you add the class “drop-cap” to your markup in order to operate.
+@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
 	&:first-letter {
-		float: $float;
-		margin: $margin;
-		padding: $padding;
-		font-size: $font-size;
-		font-family: $font-family;
-		line-height: $lineHeight;
-		text-indent: $text-indent;
-		background: $bg;
-		color: $color;
+		float: $dropcap-float-position;
+		margin: $dropcap-margin;
+		padding: $dropcap-padding;
+		font-size: $dropcap-font-size;
+		font-family: $dropcap-font-family;
+		line-height: $dropcap-line-height;
+		text-indent: $dropcap-txt-indent;
+		background: $dropcap-bg;
+		color: $dropcap-color;
 	}
 }
 
@@ -533,7 +543,7 @@ p + .drop-cap {
 }
 
 .drop-cap {
-	@include dropcap($margin: 0, $padding: 0.125em 0.125em 0 0, $font-size: 6em, $lineHeight: 0.5, $font-family: Copperplate);
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>

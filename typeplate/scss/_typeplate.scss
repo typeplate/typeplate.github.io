@@ -2,20 +2,20 @@
  *
 .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
 
-	  .                                      '||            .           
-	.||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
-	 ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
-	 ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
-	 '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
-	      .. |      ||               ||                                 
-	       ''      ''''             ''''      A Typographic Starter Kit            
-
-	URL ............ http://typeplate.com
-	VERSION ........ 1.1.0
-	Github ......... https://github.com/typeplate/typeplate.github.io
-	AUTHORS ........ Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
-	LICENSE ........ Creative Commmons Attribution 3.0
-	LICENSE URL .... http://creativecommons.org/licenses/by/3.0
+    .                                      '||            .           
+  .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
+   ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
+   ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
+   '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
+        .. |      ||               ||                                 
+         ''      ''''             ''''      A Typographic Starter Kit            
+  
+  URL ........... http://typeplate.com
+  VERSION ....... 1.1.0
+  Github ........ https://github.com/typeplate/typeplate.github.io
+  AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+  LICENSE ....... Creative Commmons Attribution 3.0
+  LICENSE URL ... http://creativecommons.org/licenses/by/3.0
 
  .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
  *
@@ -141,10 +141,16 @@ $small-caps-weight: 600 !default;
 
 // $Variable $DropCap
 // -------------------------------------//
-//@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
 
-//$dropcap-float:;
-//$dropcap-font-size:;
+$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
 
 
 // .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
@@ -426,28 +432,28 @@ $small-caps-weight: 600 !default;
  * Dropcap Sass @include
  * Use the following Sass @include with any selector you feel necessary.
  *
-	@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
  *
- * Extend this object into your custom stylesheet.
+ * Extend this object into your custom stylesheet. Let the variables do the work.
  *
  */
 
-// Use @include .drop-cap() to pass the following
-// arguments below. Feel free to pass in arguments we've provided.
-// At this time you cannot pass in font-family arguments but you're gonna
-// change that anyway so why not just make that separately in your declaration.
-// Make sure you add the class “.drop-cap” to your markup in order to operate.
-@mixin dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent) {
+// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg); 
+// to pass the following arguments below. Feel free to pass in custom 
+// values for the variables we've provided.
+//
+// Make sure you add the class “drop-cap” to your markup in order to operate.
+@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
 	&:first-letter {
-		float: $float;
-		margin: $margin;
-		padding: $padding;
-		font-size: $font-size;
-		font-family: $font-family;
-		line-height: $lineHeight;
-		text-indent: $text-indent;
-		background: $bg;
-		color: $color;
+		float: $dropcap-float-position;
+		margin: $dropcap-margin;
+		padding: $dropcap-padding;
+		font-size: $dropcap-font-size;
+		font-family: $dropcap-font-family;
+		line-height: $dropcap-line-height;
+		text-indent: $dropcap-txt-indent;
+		background: $dropcap-bg;
+		color: $dropcap-color;
 	}
 }
 
@@ -720,7 +726,7 @@ p + .drop-cap {
 }
 
 .drop-cap {
-	@include dropcap($float: left, $font-size: 4em, $font-family: inherit, $text-indent: 0, $margin: inherit, $padding: inherit, $color: inherit, $lineHeight: 1, $bg: transparent);
+	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
 }
 
 

@@ -1,8 +1,16 @@
-// ==========================================================================//
-//
-// $Variables
-//
-// ==========================================================================//
+// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
+//   .                                      '||            .           
+// .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
+//  ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
+//  ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
+//  '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
+//       .. |      ||               ||                                 
+//        ''      ''''             ''''                      VARIABLES
+// 
+
+// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
 
 
 // $BaseType
@@ -15,6 +23,12 @@ $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $serif-boolean: true;
 
 
+// $Small Print
+// -------------------------------------//
+
+$small-print-size: 65%;
+
+
 // $Color
 // -------------------------------------//
 
@@ -22,7 +36,19 @@ $body-copy-color: #444;
 $heading-color: #222;
 
 
-// $Icon Font Helper-Variables
+// $Ampersand
+// -------------------------------------//
+
+$amp-fontface-name: Ampersand;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$amp-fontface-fallback: local('Georgia');
+
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+$amp-font-family: Verdana, sans-serif;
+
+
+// $Icon-Font-Helper
 // -------------------------------------//
 // ex.1) $icon-fonts: (icon-name);
 // ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
@@ -43,19 +69,30 @@ $epsilon: 21; // 21 = 18 × 1.1667
 $zeta: 18; // 18 = 18 × 1
 
 
-// $TypeScale Unit
+// $TypeScale-Unit
 // -------------------------------------//
 
 $type-scale-unit-value: rem;
 
 
-// $Text Indentation Value
+// $Text-Indentation
 // -------------------------------------//
 
 $indent-val: 1.5em;
 
 
-// $Pull Quotes-Variables
+// $StatsTab
+// -------------------------------------//
+
+$stats-font-size: 1.5em;
+$stats-list-margin: 0 0.625em 0 0;
+$stats-list-padding: 0 0.625em 0 0;
+$stats-item-font-size: 0.875em;
+$stats-item-margin: 0.125em 0 0 0;
+$stats-border-style: 0.125em solid #ccc;
+
+
+// $Pull-Quotes
 // -------------------------------------//
 
 $pull-quote-fontsize: 4em;
@@ -63,7 +100,7 @@ $pull-quote-opacity: 0.5;
 $pull-quote-color: gray;
 
 
-// $Citation Display-Variables
+// $Citation
 // -------------------------------------//
 
 $cite-display: block;
@@ -71,19 +108,22 @@ $cite-text-align: right;
 $cite-font-size: inherit;
 
 
-// $Small Caps-Variables
+// $SmallCaps
 // -------------------------------------//
 
 $small-caps-color: gray;
 $small-caps-weight: 600;
 
 
-// $StatsTab-Variables
+// $DropCap
 // -------------------------------------//
 
-$stats-font-size: #{(($font-base * 1.1667) / $font-base)}em;
-$stats-list-margin: 0 0.625em 0 0;
-$stats-list-padding: 0 0.625em 0 0;
-$stats-item-font-size: 0.875em;
-$stats-item-margin: 0.125em 0 0 0;
-$stats-border-style: 0.125em solid #ccc;
+$dropcap-float-position: left;
+$dropcap-font-size: 6em;
+$dropcap-font-family: Copperplate;
+$dropcap-txt-indent: 0;
+$dropcap-margin: 0;
+$dropcap-padding: 0.125em 0.125em 0 0;
+$dropcap-color: inherit;
+$dropcap-line-height: 0.5;
+$dropcap-bg: transparent;
