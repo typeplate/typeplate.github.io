@@ -1,21 +1,29 @@
-// ==========================================================================//
-//
-// $Variables
-//
-// ==========================================================================//
+// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
+//   .                                      '||            .           
+// .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
+//  ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
+//  ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
+//  '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
+//       .. |      ||               ||                                 
+//        ''      ''''             ''''                           VARS
+// 
+
+// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
 
 
 // $BaseType
 // -------------------------------------//
 
-$weight: normal;
+$font-weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $serif-boolean: true; // declares serif or sans-serif for your default type
 
 
-// $Small Print-Variables
+// $Small Print
 // -------------------------------------//
 
 $small-print-size: 65%;
@@ -28,23 +36,19 @@ $body-copy-color: #444;
 $heading-color: #222;
 
 
-// $Ampersand @font-face-Variables
+// $Ampersand
 // -------------------------------------//
 
 $amp-fontface-name: Ampersand;
 $amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
 $amp-fontface-fallback: local('Georgia');
 
-
-// $Ampersand font-family-Variables
-// -------------------------------------//
 // Allows for our ampersand element to have differing
 // font-family from the ampersand unicode font-family.
-
 $amp-font-family: Verdana, sans-serif;
 
 
-// $Icon Font Helper-Variables
+// $Icon-Font-Helper
 // -------------------------------------//
 // ex.1) $icon-fonts: (icon-name);
 // ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
@@ -65,19 +69,19 @@ $epsilon: 21; // 21 = 18 × 1.1667
 $zeta: 18; // 18 = 18 × 1
 
 
-// $TypeScale Unit
+// $TypeScale-Unit
 // -------------------------------------//
 
 $type-scale-unit-value: rem;
 
 
-// $Text Indentation Value
+// $Text-Indentation
 // -------------------------------------//
 
 $indent-val: 1.5em;
 
 
-// $StatsTab-Variables
+// $StatsTab
 // -------------------------------------//
 
 $stats-font-size: 1.5em;
@@ -88,7 +92,7 @@ $stats-item-margin: 0.125em 0 0 0;
 $stats-border-style: 0.125em solid #ccc;
 
 
-// $Pull Quotes-Variables
+// $Pull-Quotes
 // -------------------------------------//
 
 $pull-quote-fontsize: 4em;
@@ -96,7 +100,7 @@ $pull-quote-opacity: 0.5;
 $pull-quote-color: #dc976e;
 
 
-// $Citation Display-Variables
+// $Citation
 // -------------------------------------//
 
 $cite-display: block;
@@ -104,7 +108,7 @@ $cite-text-align: right;
 $cite-font-size: inherit;
 
 
-// $Small Caps-Variables
+// $SmallCaps
 // -------------------------------------//
 
 $small-caps-color: gray;

@@ -230,12 +230,24 @@ $type-scale-unit-value: rem !default;
 	@return ($measure/$scale)#{$value};
 }
 
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+
+// For example:
+
+// &lt;h6 class="giga"&gt;Awesome Headline&lt;/h6&gt;
+// &lt;p class="tera"&gt;a story about a dude&lt;/p&gt;
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
+
 // styles for all headings, in the style of @csswizardry
 %hN {
-	// voodoo to enable ligatures and kerning
-	text-rendering: optimizeLegibility;
-	// this fixes huge spaces when a heading wraps onto two lines
-	line-height: 1;
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
 	margin-top: 0;
 }
 
@@ -246,7 +258,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 
 // Sass loop to associate h1-h6 tags with their appropriate greek
 // heading based on a modular scale.
-// For each size in the scale we also create a class.
+// for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
