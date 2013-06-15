@@ -194,7 +194,7 @@ hr {
 	//@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
-		padding: #{$line-height * 2}em 0 0;
+		padding: #{$line-height * 2.5}em 0 0;
 		display: block;
 	}
 	@media screen and (max-width: 44.9375em) {
@@ -310,10 +310,12 @@ hr {
 	top: 1.65em;
 	right: 1.65em;
 	@include breakpoint(baby-bear) {
-		top: 13.25em;
+		top: 12.5em;
 		left: 0;
+		padding: #{$line-height/2}em;
 		width: 100%;
 		text-align: center;
+		background: $cobalt-deep image-url("asfalt.png") top left repeat;
 	}
 	@include breakpoint(mama-bear) {
 		margin-top: 0.825em;
@@ -327,6 +329,9 @@ hr {
 	padding: 0 0.825em 0 0;
 	background: $cobalt-fade;
 	color: $cobalt-deep;
+	@include breakpoint(baby-bear) {
+		border: 2px solid #fcfcfc;
+	}
 	i {
 		background: $cobalt-deep;
 		color: $white;

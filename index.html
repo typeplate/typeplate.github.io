@@ -26,9 +26,10 @@
 			</a>
 
 			<nav class="nav nav-primary" role="navigation">
-				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">demo</a>
-				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">instructions</a>
-				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">feedback</a>
+				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Demo</a>
+				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">Instructions</a>
+				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">Feedback</a>
+				<a href="#" class="nav-item epsilon" rel="external">Sticker Pack</a>
 			</nav>
 
 			<nav class="social-nav">
@@ -45,19 +46,19 @@
 
 	<nav class="downloads nav">
 		<div class="col-wrap">
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" class="dl-item btn">
+			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
 				<i class="icon-download"></i>CSS
 				<hr>
 				<small>v1.1.0 | 11kb</small>
 			</a>
 
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" class="dl-item btn">
+			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" data-name="Sass Port" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
 				<small>v1.1.0 | 3kb</small>
 			</a>
 
-			<a href="//github.com/TypePlate/typeplate-bower" class="dl-item btn">
+			<a href="//github.com/TypePlate/typeplate-bower" data-name="Bower Package" class="dl-item btn">
 				<i class="icon-download"></i>Bower Pkg.
 				<hr>
 				<small>v1.1.0</small>
@@ -1173,11 +1174,17 @@ dl {
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="./js/minified/main-min.js?v1.0.1"></script>
+
 	<script>
-		var _gaq=[['_setAccount','UA-38761755-1'],['_trackPageview']];
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38761755-1']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 </body>
 </html>

@@ -11,6 +11,20 @@ $(document).ready(function() {
 		drawer.toggleClass('visuallyhidden');
 	});
 
+	$('.dl-item').on('click', function() {
+		$(this).each(function() {
+			var projectUrl = $(this).attr('href'),
+					category = 'Download',
+					packageName = $(this).attr('data-name'),
+					pushTrackEvent = function() {
+						debugger;
+				_gaq.push(['_trackEvent', category, projectUrl, packageName]);
+			};
+
+			pushTrackEvent();
+		});
+	});
+
 
 	// ==========================================================================
 	// Magical Page Scroll
