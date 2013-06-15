@@ -94,6 +94,12 @@ section {
 	width: 92%;
 	max-width: 40em;
 	margin: 0 auto;
+	
+	&.top {
+		@include breakpoint(baby-bear) {
+			padding-top: 15em;
+		}
+	}
 }
 
 hr {
@@ -136,6 +142,12 @@ hr {
 		display: block;
 		text-align: center;
 		margin-right: 0;
+		
+		background: #414144;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }
 
@@ -310,6 +322,8 @@ hr {
 	top: 1.65em;
 	right: 1.65em;
 	@include breakpoint(baby-bear) {
+		//border-top: 0.225rem solid #dcdcdc;
+		//border-bottom: 0.225rem solid #dcdcdc;
 		top: 12.5em;
 		left: 0;
 		padding: #{$line-height/2}em;
@@ -330,7 +344,7 @@ hr {
 	background: $cobalt-fade;
 	color: $cobalt-deep;
 	@include breakpoint(baby-bear) {
-		border: 2px solid #fcfcfc;
+		border: 2px solid #BBAFAF;
 	}
 	i {
 		background: $cobalt-deep;
@@ -349,6 +363,7 @@ hr {
 		color: white;
 	}
 }
+
 
 // $Table of Contents
 // ============================================================
