@@ -322,8 +322,6 @@ hr {
 	top: 1.65em;
 	right: 1.65em;
 	@include breakpoint(baby-bear) {
-		//border-top: 0.225rem solid #dcdcdc;
-		//border-bottom: 0.225rem solid #dcdcdc;
 		top: 12.5em;
 		left: 0;
 		padding: #{$line-height/2}em;
@@ -401,6 +399,143 @@ hr {
 }
 
 
+// $Drawer
+// ============================================================
+
+@mixin animateIn() {
+	-webkit-animation: 2s slidein 1;
+	-moz-animation: 2s slidein 1;
+	animation: 2s slidein 1;
+}
+
+@mixin animateOut() {
+	-webkit-animation: 2s slideout 1;
+	-moz-animation: 2s slideout 1;
+	animation: 2s slideout 1;
+}
+
+#drawer {
+	height: 0;
+	overflow: hidden;
+}
+
+#drawer{
+	&.slide-down {
+		height: 1245px;
+		@include breakpoint(mama-bear) {
+			height: 1110px;
+		}
+	}
+	&.slide-up {
+		height: 0;
+	}
+}
+
+.slide-down {
+	overflow: visible;
+	@include animateIn();
+}
+
+.slide-up {
+	@include animateOut();
+}
+
+
+// KeyFrames Webkit
+// =================================
+
+@-webkit-keyframes slidein {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: 1245px;
+	}
+}
+@include breakpoint(mama-bear) {
+	@-webkit-keyframes slidein {
+		from {
+			height: 0;
+		}
+
+		to {
+			height: 1110px;
+		}
+	}
+}
+
+@-webkit-keyframes slideout {
+	from {
+		height: 1245px;
+	}
+
+	to {
+		height: 0;
+	}
+}
+
+@include breakpoint(mama-bear) {
+	@-webkit-keyframes slideout {
+		from {
+			height: 1110px;
+		}
+
+		to {
+			height: 0;
+		}
+	}
+}
+
+
+// Keyframes Mozilla
+// =================================
+
+@-mozilla-keyframes slidein {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: 1245px;
+	}
+}
+
+@-mozilla-keyframes slideout {
+	from {
+		height: 1245px;
+	}
+
+	to {
+		height: 0;
+	}
+}
+
+
+// Keyframes Standard
+// =================================
+
+@keyframes slidein {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: 1245px;
+	}
+}
+
+@keyframes slideout {
+	from {
+		height: 1245px;
+	}
+
+	to {
+		height: 0;
+	}
+}
+
+
 // $TOC Pull Down
 // ============================================================
 
@@ -431,7 +566,7 @@ hr {
 }
 
 #drawer {
-	padding: 1.5em 0;
+	//padding: 1.5em 0;
 	color: white;
 	&::after {
 		border-radius: 80%;
@@ -756,32 +891,4 @@ p.no-indent {
 
 .dictionary-style {
 	@include definition-list-style(dictionary-style);
-}
-
-
-// $Helpers
-// ============================================================
-
-//Hide only visually, but have it available for screenreaders: h5bp.com/v
-.visuallyhidden {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-}
-
-// Extends the .visuallyhidden class to allow the element to be focusable
-// when navigated to via the keyboard: h5bp.com/p
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-		clip: auto;
-		height: auto;
-		margin: 0;
-		overflow: visible;
-		position: static;
-		width: auto;
 }

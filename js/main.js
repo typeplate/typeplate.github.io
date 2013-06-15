@@ -3,12 +3,20 @@ $(document).ready(function() {
 	// ==========================================================================
 	// Table Of Contents
 
-	var toc = $('#table-of-contents h1'),
-	drawer  = $('#drawer');
+	var toc = $('.toc h1'),
+			drawer  = $('#drawer');
 
 	// Toggle The TOC Open
 	toc.on('click', function() {
-		drawer.toggleClass('visuallyhidden');
+		if(drawer.hasClass('visuallyhidden')) {
+			drawer.removeClass('visuallyhidden');
+			drawer.addClass('slide-down');
+			drawer.removeClass('slide-up');
+		}else{
+			drawer.addClass('visuallyhidden');
+			drawer.removeClass('slide-down');
+			drawer.addClass('slide-up');
+		}
 	});
 
 
