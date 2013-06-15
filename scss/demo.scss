@@ -35,8 +35,8 @@ img {
 
 #typeplate-widgets-wrap {
 	border-top: 6px solid #606060;
-	box-shadow: 0 4px 4px rgba(0,0,0,0.50);
-	padding: .5em;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+	padding: .875em;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -44,8 +44,18 @@ img {
 	z-index: 0;
 	font-family: "ff-meta-serif-web-pro",serif;
 	font-size: 100%;
-	background: #000;
+	background: $cobalt-deep image-url("asfalt.png") top left repeat;
 	color: #EFEFEF;
+}
+
+#typeplate-widgets-wrap form {
+	display: inline-block;
+}
+
+#normalize-form,
+#typeplate-form {
+	display: block;
+	width: 80px;
 }
 
 
@@ -53,7 +63,7 @@ img {
 // ============================================================
 
 .logo {
-	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
+	vertical-align: -100%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	//margin-right: $line-height * 1rem;
 	cursor: pointer;
 	// break
@@ -178,31 +188,6 @@ input[type="checkbox"] {
 	font-size: 100%;
 	line-height: normal;
 	padding: 5px;
-}
-
-#typeplate-widgets-wrap {
-	border-top: 6px solid #606060;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-	padding: .875em;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 0;
-	font-family: "ff-meta-serif-web-pro",serif;
-	font-size: 100%;
-	background: #000;
-	color: #EFEFEF;
-}
-
-#typeplate-widgets-wrap form {
-	display: inline-block;
-}
-
-#normalize-form,
-#typeplate-form {
-	display: block;
-	width: 80px;
 }
 
 .bg-slategray {

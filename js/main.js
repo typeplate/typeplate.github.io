@@ -11,18 +11,24 @@ $(document).ready(function() {
 		drawer.toggleClass('visuallyhidden');
 	});
 
-	$('.dl-item').on('click', function() {
-		$(this).each(function() {
-			var projectUrl = $(this).attr('href'),
-					category = 'Download',
-					packageName = $(this).attr('data-name'),
-					pushTrackEvent = function() {
-						debugger;
-				_gaq.push(['_trackEvent', category, projectUrl, packageName]);
-			};
 
-			pushTrackEvent();
-		});
+	// ==========================================================================
+	// Google Analytics Event Tracking
+	// Tracks when a user clicks any of our port download buttons
+	// for the Typeplate project.
+
+	$('.dl-item').on('click', function() {
+		var projectUrl = $(this).attr('href'),
+				category = 'Download',
+				action = 'Typeplate Port Download',
+				packageName = $(this).data('name'),
+				pushTrackEvent = function() {
+					_gaq.push(['_trackEvent', category, action, projectUrl, packageName]);
+				};
+
+		// Push Track Event Data Function
+		// https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#SettingUpEventTracking
+		pushTrackEvent();
 	});
 
 
