@@ -153,8 +153,15 @@ hr {
 
 .logo-img {
 	background: image-url("logo.png") 50% no-repeat;
+	.svg & {
+		background: image-url("logo-216x216.svgz") 50% no-repeat;
+		@include background-size(100%);
+	}
+	.no-svg & {
+		background: image-url("logo.png") 50% no-repeat;
+		@include background-size(cover);
+	}
 	width: 12em;
-	background-size: cover;
 
 	&:before {
 		content: "";

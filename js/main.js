@@ -12,7 +12,7 @@ $(document).ready(function() {
 			drawer.removeClass('visuallyhidden');
 			drawer.addClass('slide-down');
 			drawer.removeClass('slide-up');
-		}else{
+		}else {
 			drawer.addClass('visuallyhidden');
 			drawer.removeClass('slide-down');
 			drawer.addClass('slide-up');
