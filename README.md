@@ -33,10 +33,11 @@ If contributing non site related changes to this project please make sure you're
 typeplate.github.io
 |
 |______typeplate #project
-       |______css
-       |______scss
-       |______docs
-       |______sass-port.zip
+|      |______css
+|      |______scss
+|      |______docs
+|      |______sass-port.zip
+|
 |______scss #site styles
        
 ````
