@@ -105,17 +105,6 @@ $type-scale-unit-value: rem !default;
 $indent-val: 1.5em !default;
 
 
-// $Variable $StatsTab
-// -------------------------------------//
-
-$stats-font-size: 1.5em !default;
-$stats-list-margin: 0 0.625em 0 0 !default;
-$stats-list-padding: 0 0.625em 0 0 !default;
-$stats-item-font-size: 0.875em !default;
-$stats-item-margin: 0.125em 0 0 0 !default;
-$stats-border-style: 0.125em solid #ccc !default;
-
-
 // $Variable $Pull-Quotes
 // -------------------------------------//
 
@@ -760,45 +749,6 @@ p + .drop-cap {
  */
 .dictionary-style {
 	@include definition-list-style(dictionary-style);
-}
-
-
-// $Styles $Stats-Tabs
-// -------------------------------------//
-/**
- * Stats Tab Markup
- *
-	<ul class="stats-tabs">
-		<li><a href="#">[value]<b>[name]</b></a></li>
-	</ul>
- *
- * Extend this object into your markup.
- *
- */
-.stats-tabs {
-	padding: 0;
-	li {
-		display: inline-block;
-		margin: $stats-list-margin;
-		padding: $stats-list-padding;
-		border-right: $stats-border-style;
-		&:last-child {
-			margin: 0;
-			padding: 0;
-			border: none;
-		}
-		a {
-			display: inline-block;
-			font-size: $stats-font-size;
-			font-weight: bold;
-			b {
-				display: block;
-				margin: $stats-item-margin;
-				font-size: $stats-item-font-size;
-				font-weight: normal;
-			}
-		}
-	}
 }
 
 

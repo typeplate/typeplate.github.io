@@ -409,50 +409,6 @@ abbr:hover {
 /**
  *
  * =======================================================================
-	 Stats Tabs
- * =======================================================================
- */
-
-/**
- * Stats Tab Markup
- *
-	<ul class="stats-tabs">
-		<li><a href="#">[value]<b>[name]</b></a></li>
-	</ul>
- *
- * Extend this object into your markup.
- *
- */
-.stats-tabs {
-	padding: 0;
-}
-.stats-tabs li {
-	display: inline-block;
-	margin: 0 0.625em 0 0;
-	padding: 0 0.625em 0 0;
-	border-right: 0.125em solid #cccccc;
-}
-.stats-tabs li:last-child {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-.stats-tabs li a {
-	display: inline-block;
-	font-size: 1.5em;
-	font-weight: bold;
-}
-.stats-tabs li a b {
-	display: block;
-	margin: 0.125em 0 0 0;
-	font-size: 0.875em;
-	font-weight: normal;
-}
-
-
-/**
- *
- * =======================================================================
 	 Blockquotes
  * =======================================================================
  */

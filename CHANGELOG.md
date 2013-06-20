@@ -11,6 +11,9 @@
    - Now adds Grunt to project as a secondary option to Codekit.
    - New Demo Toggles inspired by TopCoat
    - General site styling improvements.
+   - Customizeable variables for Sass Drop Cap @mixin.
+   - Removed Stats Tabs - Issue #57 [https://github.com/typeplate/typeplate.github.io/issues/57](https://github.com/typeplate/typeplate.github.io/issues/57).
+   - Better Contributor Docs - Issue #99 [https://github.com/typeplate/typeplate.github.io/issues/99](https://github.com/typeplate/typeplate.github.io/issues/99).
 
 -------
 

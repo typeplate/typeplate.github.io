@@ -16,11 +16,11 @@
 // $BaseType
 // -------------------------------------//
 
-$weight: normal;
+$font-weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$serif-boolean: true;
+$serif-boolean: true; // declares serif or sans-serif for your default type
 
 
 // $Small Print
@@ -79,17 +79,6 @@ $type-scale-unit-value: rem;
 // -------------------------------------//
 
 $indent-val: 1.5em;
-
-
-// $StatsTab
-// -------------------------------------//
-
-$stats-font-size: 1.125em;
-$stats-list-margin: 0 0.625em 0 0;
-$stats-list-padding: 0 0.625em 0 0;
-$stats-item-font-size: 0.875em;
-$stats-item-margin: 0.125em 0 0 0;
-$stats-border-style: 0.125em solid #ccc;
 
 
 // $Pull-Quotes

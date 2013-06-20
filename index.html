@@ -27,8 +27,9 @@
 
 			<nav class="nav nav-primary" role="navigation">
 				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Demo</a>
-				<a href="//github.com/typeplate/typeplate.github.com/blob/master/README.md" class="nav-item epsilon" rel="external">Instructions</a>
+				<a href="//blog.typeplate.com" class="nav-item epsilon" rel="external">Blog</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">Feedback</a>
+				<a href="https://github.com/typeplate/typeplate.github.io/wiki/Typeplate-in-the-Wild" class="nav-item epsilon" rel="external">In the Wild</a>
 				<a href="#" class="nav-item epsilon" rel="external">Sticker Pack</a>
 			</nav>
 
@@ -103,7 +104,6 @@
 					<li><a href="#figures" class="anchorLink">Figures</a></li>
 					<li><a href="#block-quotes" class="anchorLink">Block Quotes</a></li>
 					<li><a href="#pull-quotes" class="anchorLink">Pull Quotes</a></li>
-					<li><a href="#stats-tabs" class="anchorLink">Stats Tabs</a></li>
 					<li><a href="#footnotes" class="anchorLink">Footnotes</a></li>
 					<li><a href="#definition-lists" class="anchorLink">Definition Lists</a></li>
 				</ol>
@@ -916,71 +916,6 @@ $pull-quote-color: #dc976e !default;
 // use this include on your pull quote selector class
 .pull-quote {
 	@include pull-quotes;
-}</code></pre>
-			</figure>
-			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
-		</section>
-
-		<!-- #stats-tabs -->
-		<section class="stats botDivider" id="stats-tabs">
-			<header>
-				<h1 class="gamma section-title"><a class="perma-anchor" href="#stats-tabs">§</a> 4.6 Stats Tabs ala Pears</h1>
-			</header>
-
-			<figure class="example no-top-pad">
-				<ul class="stats-tabs">
-					<li><a href="#">1,234 <b>Stratocasters</b></a></li>
-					<li><a href="#">567 <b>Acoustic</b></a></li>
-					<li><a href="#">23,456 <b>Banjo</b></a></li>
-					<li><a href="#">3,456 <b>Dulcimer</b></a></li>
-					<li><a href="#">456 <b>Ukes</b></a></li>
-					<li><a href="#">26 <b>Bass Guitar</b></a></li>
-				</ul>
-			</figure>
-
-			<figure class="typeplate-code-block">
-				<figcaption>HTML</figcaption>
-				<pre><code class="language-markup">&lt;!-- Stats Tabs --&gt;
-&lt;ul class=&quot;stats-tabs&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;[value]&lt;b&gt;[name]&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-			</figure>
-
-			<figure class="typeplate-code-block">
-				<figcaption>_typeplate.scss</figcaption>
-				<pre><code class="language-scss">//Stats Tabs Variables
-$stats-font-size: 1.125rem !default;
-$stats-list-margin: 0 0.625rem 0 0 !default;
-$stats-list-padding: 0 0.625rem 0 0 !default;
-$stats-item-font-size: 0.1875rem !default;
-$stats-item-margin: 0.125rem 0 0 0 !default;
-$stats-border-style: 0.125rem solid #ccc !default;
-
-// Stats Tabs Styles
-.stats-tabs {
-	li {
-		display: inline-block;
-		margin: $stats-list-margin;
-		padding: $stats-list-padding;
-		border-right: $stats-border-style;
-		&:last-child {
-			margin: 0;
-			padding: 0;
-			border: none;
-		}
-		a {
-			//float: left;
-			display: inline-block;
-			font-size: $stats-font-size;
-			font-weight: bold;
-			span {
-				display: block;
-				margin: $stats-item-margin;
-				font-size: $stats-item-font-size;
-				font-weight: normal;
-			}
-		}
-	}
 }</code></pre>
 			</figure>
 			<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
