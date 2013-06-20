@@ -152,12 +152,12 @@ hr {
 }
 
 .logo-img {
-	background: image-url("logo.png") 50% no-repeat;
 	.svg & {
 		background: image-url("logo-216x216.svgz") 50% no-repeat;
 		@include background-size(100%);
 	}
-	.no-svg & {
+	.no-svg &,
+	.no-js & {
 		background: image-url("logo.png") 50% no-repeat;
 		@include background-size(cover);
 	}
@@ -406,7 +406,7 @@ hr {
 }
 
 
-// $Drawer
+// $Drawer Slide Animation
 // ============================================================
 
 @mixin animateIn() {
@@ -428,9 +428,9 @@ hr {
 
 #drawer{
 	&.slide-down {
-		height: 1245px;
+		height: 1200px;
 		@include breakpoint(mama-bear) {
-			height: 1110px;
+			height: 1080px;
 		}
 	}
 	&.slide-up {
@@ -457,7 +457,7 @@ hr {
 	}
 
 	to {
-		height: 1245px;
+		height: 1200px;
 	}
 }
 @include breakpoint(mama-bear) {
@@ -467,14 +467,14 @@ hr {
 		}
 
 		to {
-			height: 1110px;
+			height: 1080px;
 		}
 	}
 }
 
 @-webkit-keyframes slideout {
 	from {
-		height: 1245px;
+		height: 1200px;
 	}
 
 	to {
@@ -485,7 +485,7 @@ hr {
 @include breakpoint(mama-bear) {
 	@-webkit-keyframes slideout {
 		from {
-			height: 1110px;
+			height: 1080px;
 		}
 
 		to {
@@ -656,7 +656,7 @@ hr {
 
 // this is breakpoint baby bear
 .section-title {
-	@include modular-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+	@include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
 }
 
 
@@ -742,7 +742,7 @@ blockquote {
 // ============================================================
 
 .pull-example {
-	padding-bottom: 1em;
+	padding-bottom: 2em;
 }
 
 
@@ -756,22 +756,6 @@ blockquote {
 		&:before {
 			padding-right: .25em;
 			color: gray;
-		}
-	}
-}
-
-
-// $Stats Tab Demo
-// ============================================================
-
-.stats-tabs {
-	text-align: center;
-	a {
-		color: #000;
-	}
-	li {
-		@include breakpoint(baby-bear) {
-			margin: 0 0 1em;
 		}
 	}
 }
@@ -802,7 +786,12 @@ body {
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 700;
 }
 
@@ -856,7 +845,7 @@ h1, h2, h3, h4, h5, h6 {
 		@extend .gamma;
 		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
 		color: #dcdcdc;
-		width: modular-scale($font-base, 14, em);
+		width: type-scale($font-base, 14, em);
 		text-align: center;
 		border-radius: 80%;
 	}

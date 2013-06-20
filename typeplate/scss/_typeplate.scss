@@ -208,30 +208,20 @@ $dropcap-bg: transparent !default;
 
 // $Function $Context Calculator
 // -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
 
-@function ems($target, $context) {
-	@return ($target/$context)#{em};
-}
-
-
-// $Function $Modular-Scale-Calculator
-// -------------------------------------//
-// http://thesassway.com/projects/modular-scale
-
-@function modular-scale($scale, $base, $value) {
-	// divide a given font-size by base font-size & return a relative em value
+@function context-calc($scale, $base, $value) {
 	@return ($scale/$base)#{$value};
 }
 
 
-// $Function $Measure-Margin-Calculator
+// $Function $Measure-Margin
 // -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
 
 @function measure-margin($scale, $measure, $value) {
-	// divide 1 unit of measure by given font-size & return a relative em value
 	@return ($measure/$scale)#{$value};
 }
-
 
 
 // .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
@@ -241,12 +231,17 @@ $dropcap-bg: transparent !default;
 // .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
 
 
-// $Mixin $Modular-Scale
+// $Mixin $Type-Scale
 // -------------------------------------//
+// provides a pixel fallback if you decide
+// to use 'rems' as a unit over ems.
 
-@mixin modular-scale($scale, $base, $value, $measure:"") {
-	font-size: $scale#{px};
-	font-size: modular-scale($scale, $base, $value);
+@mixin type-scale($scale, $base, $value, $measure:"") {
+	// If 'rem' is used as a $value then provide a px fallback.
+	@if $value == rem {
+		font-size: $scale#{px};
+	}
+	font-size: context-calc($scale, $base, $value);
 	@if $measure != "" {
 		margin-bottom: measure-margin($scale, $measure, $value);
 	}
@@ -367,15 +362,15 @@ $dropcap-bg: transparent !default;
 }
 
 
-// $Mixin $Pull Quotes
+// $Mixin $Pull-Quotes
 // -------------------------------------//
 
 @mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
 	position: relative;
-	padding: ems($pull-quote-fontsize, $pull-quote-fontsize);
+	padding: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
 	&:before,
 	&:after {
-		height: ems($pull-quote-fontsize, $pull-quote-fontsize);
+		height: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
 		opacity: $pull-quote-opacity;
 		position: absolute;
 		font-size: $pull-quote-fontsize;
@@ -585,7 +580,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
-		@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
 	}
 }
 
