@@ -81,8 +81,8 @@ img {
 
 .logo-img {
 	.svg & {
-		//background: image-url("logo-216x216.svgz") 50% no-repeat;
-		background: image-url("logo-216x216.svg") 50% no-repeat;
+		//background: image-url("logo-216x216.svg") 50% no-repeat;
+		background: image-url("logo.png") 50% no-repeat;
 		@include background-size(100%);
 	}
 	.no-svg &,
