@@ -92,7 +92,7 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 
 ### Package Management
 
-- [Bower](http://twitter.github.com/bower) (requires [Node](http://nodejs.org) &amp; [npm](https://npmjs.org))
+- [Bower](https://github.com/bower/bower) (requires [Node](http://nodejs.org) &amp; [npm](https://npmjs.org))
 
 
 ## &sect; Local Development (mac, linux)
@@ -107,9 +107,9 @@ You can always check if the correct gems are installed by running the bash comma
 
 In order to compile our projects stylesheets and scripts we use [Codekit](http://incident57.com/codekit), but you can also use [Grunt](http://gruntjs.com) which is platform independent Javascript that uses the CLI to help optimize our code much like Codekit (minus the GUI). If you'd like to use Grunt just run ``npm install`` from our project root. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
 
-&sect; **Package Management** : [Bower](http://twitter.github.com/bower)
+&sect; **Package Management** : [Bower](https://github.com/bower/bower)
 
-To keep track of our packages and allow for easy updating we use [Bower](http://twitter.github.com/bower) Package Manager which installs all our project's packages in the "components" directory. In order to install bower you must have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
+To keep track of our packages and allow for easy updating we use [Bower](https://github.com/bower/bower) Package Manager which installs all our project's packages in the "components" directory. In order to install bower you must have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
 
   npm install bower -g
 
