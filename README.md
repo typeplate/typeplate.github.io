@@ -19,7 +19,7 @@ Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just
 - Raw CSS = **11kb**
 
 ## &sect; Docs
-You'll find all our documentation within the “[typeplate/docs](https://github.com/typeplate/typeplate.github.io/tree/master/typeplate/docs)” directory. These docs include all the required instructions to get started with Typeplate.
+You'll find all our documentation within the “[typeplate/docs](https://github.com/typeplate/typeplate.github.io/blob/master/typeplate/docs/installation.md)” directory. These docs include all the required instructions to get started with Typeplate.
 
 ## &sect; Contributing Guidelines : [How to contribute](http://37signals.com/svn/posts/3349-open-source-guilt-passion)
 
