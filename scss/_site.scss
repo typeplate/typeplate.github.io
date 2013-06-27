@@ -313,7 +313,7 @@ hr {
 	}
 }
 
-[href*="_typeplate.scss"] {
+[href*="typeplate-scss.zip"] {
 	margin: 0 1%;
 	@include breakpoint(mama-bear) {
 		margin: #{$line-height}em auto;

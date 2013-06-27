@@ -18,9 +18,9 @@
 		<!-- normalize -->
 		<link rel="stylesheet" id="normalize-css" href="./components/normalize-css/normalize.css">
 		<!-- TypePlate -->
-		<link rel="stylesheet" id="typeplate-css" href="./typeplate/css/typeplate.css?1.0.2">
+		<link rel="stylesheet" id="typeplate-css" href="./typeplate/css/typeplate.css?1.1.0">
 		<!-- TypePlate Demo Styles -->
-		<link rel="stylesheet" href="./css/demo.css?1.0">
+		<link rel="stylesheet" href="./css/demo.css?1.1.0">
 	</head>
 	<body>
 		<!-- $banner -->
@@ -30,18 +30,17 @@
 
 			<nav class="nav nav-primary" role="navigation">
 				<a href="//blog.typeplate.com" class="nav-item epsilon" rel="external">Journal</a>
-				<a href="//store.typeplate.com" class="nav-item epsilon" rel="external">Shop</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">Feedback</a>
 				<a href="https://github.com/typeplate/typeplate.github.io/wiki/Typeplate-in-the-Wild" class="nav-item epsilon" rel="external">In the Wild</a>
 			</nav>
 		</header>
 
-		<!-- type widgets -->
+		<!-- #Typeplate Demo Toggles -->
 		<div id="typeplate-widgets-wrap">
 			<!-- Normalize Radio Toggle -->
 			<form action="." method="post" id="normalize-form" role="form">
 
-				<!-- Normalize Toggle -->
+				<!-- #Normalize Toggle -->
 				<div class="bg-slategray">
 					<label for="normalize-off">Normalize</label>
 					<input id="normalize-off" class="slide-switch large dark" name="normalize-state" type="checkbox" />
@@ -55,9 +54,8 @@
 				</div>
 			</form>
 
-			<!-- TypePlate Toggle -->
+			<!-- #TypePlate Toggle -->
 			<form action="." method="post" id="typeplate-form" role="form">
-				<!-- typeplate -->
 				<div class="bg-slategray">
 					<label for="typeplate-off">Typeplate</label>
 					<input id="typeplate-off" name="typeplate-state" class="slide-switch large dark" type="checkbox" />
@@ -301,6 +299,18 @@
 					}
 				});
 			}); //end document.ready
+		</script>
+
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38761755-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 		</script>
 	</body>
 </html>

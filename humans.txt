@@ -1,0 +1,28 @@
+
+    .                                      '||            .           
+  .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....  
+   ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...|| 
+   ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
+   '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
+        .. |      ||               ||                                 
+         ''      ''''             ''''      A Typographic Starter Kit
+                                                 http://typeplate.com  
+
+# TEAM
+
+    Dennis Gaebel -- Front-end Developer / Co-Creator -- @gryghostvisuals
+    Zachary Kain -- Front-end Developer / Co-Creator -- @zakkain
+    Tommy Creenan -- Logo & Avatar -- @TommyCreenan
+
+# THANKS
+
+    Trent Walton, Eric Meyer, Tim Brown, Viljamis, Vitaly, Smashing Magazine, Lea Verou & Prism.js, Happy Cog and last, but not least our users. Thank you all for your support.
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JavaScript, Compass, Sass, Ruby, Markdown
+    Normalize, Typeplate, jQuery, Modernizr, Prism
+
+# TOOLS
+
+    Grunt, Codekit, EditorConfig, Bower, Git, Typekit

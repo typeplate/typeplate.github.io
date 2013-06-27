@@ -28,7 +28,6 @@
 			<nav class="nav nav-primary" role="navigation">
 				<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Demo</a>
 				<a href="//blog.typeplate.com" class="nav-item epsilon" rel="external">Journal</a>
-				<a href="//store.typeplate.com" class="nav-item epsilon" rel="external">Shop</a>
 				<a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">Feedback</a>
 				<a href="https://github.com/typeplate/typeplate.github.io/wiki/Typeplate-in-the-Wild" class="nav-item epsilon" rel="external">In the Wild</a>
 			</nav>
@@ -53,7 +52,7 @@
 				<small>v1.1.0 | 11kb</small>
 			</a>
 
-			<a href="//raw.github.com/typeplate/typeplate.github.com/master/typeplate/scss/_typeplate.scss" data-name="Sass Port" class="dl-item btn">
+			<a href="//github.com/typeplate/typeplate.github.com/master/typeplate/scss/typeplate-scss.zip" data-name="Sass Port" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
 				<small>v1.1.0 | 3kb</small>
@@ -1119,14 +1118,22 @@ dl {
 
 	<footer role="contentinfo" class="site-footer">
 		<p>Copyright &copy;2013. <a href="https://twitter.com/typeplate">@Typeplate</a> is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
-</footer>
+	</footer>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>')</script>
-	<script src="./js/minified/main-min.js?v1.0.1"></script>
+	<script src="./js/minified/main-min.js?v1.1.0"></script>
 
 	<script>
-		
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38761755-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
 	</script>
 </body>
 </html>
