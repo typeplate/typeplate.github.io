@@ -98,14 +98,9 @@ module.exports = function(grunt) {
 	});
 
 	// == Grunt Loaded Tasks
-	grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-livereload');
+	// http://chrisawren.com/posts/Advanced-Grunt-tooling
+	// npm install --save-dev matchdep FTW
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// == Grunt Registered Tasks
 	grunt.registerTask('default', ['jshint', 'compass']);
