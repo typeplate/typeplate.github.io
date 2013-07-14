@@ -336,8 +336,8 @@ abbr {
 	color: #808080;
 }
 
-abbr:hover {
-	cursor: help; /* cursor changed to a question mark */
+abbr[title]:hover {
+	cursor: help; /* cursor changed to a question mark when it has a title */
 }
 
 

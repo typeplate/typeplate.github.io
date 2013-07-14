@@ -8,7 +8,7 @@
    ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||      
    '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...' 
         .. |      ||               ||                                 
-         ''      ''''             ''''      A Typographic Starter Kit            
+         ''      ''''             ''''      A Typographic Starter Kit
   
   URL ........... http://typeplate.com
   VERSION ....... 1.1.0
@@ -680,7 +680,7 @@ code {
  */
 abbr {
 	@include smallcaps($small-caps-color, $small-caps-weight);
-	&:hover {
+	&[title]:hover {
 		cursor: help;
 	}
 }
