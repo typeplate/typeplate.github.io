@@ -56,7 +56,7 @@ Yup that&rsquo;s right! We&rsquo;re in the bower package registry. Simply run ``
 ```scss
 @import "compass";
 @import "[your_project_path]/reset";
-@import "[root_project_path]/components/typeplate/scss/typeplate";
+@import "[root_project_path]/bower_components/typeplate/scss/typeplate";
 ```
 
 Since bower allows authors to keep packages and dependencies updated easily it also overrides any custom changes made to the package(s) contents served from the components directory -used by bower to organize packages. To alleviate this frustration we've provided a variable file to override the packages opinionated defaults. Simply duplicate the ``_typeplate-vars.scss`` file and include it from your own directory (most likely your sass directory where you keep all your related sass project files.)
@@ -67,7 +67,7 @@ Since bower allows authors to keep packages and dependencies updated easily it a
 @import "compass";
 @import "[your_project_path]/reset"; // your browser reset of choice
 @import "[your_project_path]/scss/typeplate-vars"; // duplicated var file outside bower's components directory
-@import "[root_project_path]/components/typeplate/scss/typeplate"; // the bower package directory and included file
+@import "[root_project_path]/bower_components/typeplate/scss/typeplate"; // the bower package directory and included file
 ```
 
 **CSS**
@@ -76,7 +76,7 @@ You could also use the CSS version instead (btw… we don't condone this method 
 
 ```html
 <head>
-	<link rel="stylesheet" href="[root_project_path]/components/normalize-css/normalize.css">
-	<link rel="stylesheet" href="[root_project_path]/components/typeplate/css/typeplate.css">
+	<link rel="stylesheet" href="[root_project_path]/bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="[root_project_path]/bower_components/typeplate/css/typeplate.css">
 </head>
 ```
