@@ -50,15 +50,15 @@
 // ============================================================
 
 // @Since v2.1.0
-@import "../components/normalize.scss/normalize";
+@import "../bower_components/normalize.scss/normalize";
 
 
 // $Typeplate
 // ============================================================
 
-// @Since v1.1.0
+// @Since v1.1.1
 @import "vars-typeplate"; // Custom Typeplate Variables
-// @Since v1.1.0
+// @Since v1.1.1
 @import "../typeplate/scss/typeplate"; // Typeplate Presets
 
 

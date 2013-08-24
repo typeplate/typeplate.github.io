@@ -49,18 +49,18 @@
 			<a href="https://raw.github.com/typeplate/typeplate.github.com/master/typeplate/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
 				<i class="icon-download"></i>CSS
 				<hr>
-				<small>v1.1.0 | 11kb</small>
+				<small>v1.1.1 | 11kb</small>
 			</a>
 			<a href="https://raw.github.com/typeplate/typeplate.github.io/master/typeplate/scss/typeplate-scss.zip" data-name="Sass Port" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.1.0 | 3kb</small>
+				<small>v1.1.1 | 3kb</small>
 			</a>
 
 			<a href="https://github.com/TypePlate/typeplate-bower" data-name="Bower Package" class="dl-item btn">
 				<i class="icon-download"></i>Bower Pkg.
 				<hr>
-				<small>v1.1.0</small>
+				<small>v1.1.1</small>
 			</a>
 		</div>
 	</nav>
@@ -117,25 +117,31 @@
 
 		<figure class="typeplate-code-block">
 			<figcaption>_typeplate.scss</figcaption>
-			<pre><code class="language-scss">$weight: normal !default;
+			<pre><code class="language-scss">// $Variable $BaseType
+// -------------------------------------//
+
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
+$serif-boolean: true !default;
+
+$font-family: if($serif-boolean, serif, sans-serif) !default; // Non-font-face font-stack
+
+$font-weight: normal !default;
 $line-height: 1.65 !default;
 $font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
-$font-family: serif;
-$font-family-sans: sans-serif;
-$font-properties: $weight, $line-height, $font-size, $font-family;
-$serif-boolean: true !default;
+$custom-font-family: false !default; // Custom font-face stack, if set will be added to the $font-family
 
-@mixin base-type($weight, $line-height, $font-size, $font-family...) {
-	@if $serif-boolean {
-		font: $weight #{$font-size}%/#{$line-height} $font-family;
-	}@else {
-		font: $weight #{$font-size}%/#{$line-height} $font-family-sans;
-	}
-}
+
+// $Styles $Globals
+// -------------------------------------//
 
 html {
-	@include base-type($font-properties...);
+	@if $custom-font-family {
+		font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
+	} @else {
+		font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+	}
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
