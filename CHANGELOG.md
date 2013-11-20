@@ -1,3 +1,13 @@
+**v1.1.2:**
+  
+   date: 2013-11-20
+
+   changes:
+
+   - Boolean for Paragraph Styling with Whitespace.
+
+-------
+
 **v1.0.2:**
 	
    date: 2013-05-11
