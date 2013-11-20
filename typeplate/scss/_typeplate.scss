@@ -11,7 +11,7 @@
 		 ''      ''''             ''''      A Typographic Starter Kit
 
   URL ........... http://typeplate.com
-  VERSION ....... 1.1.1
+  VERSION ....... 1.1.2
   Github ........ https://github.com/typeplate/typeplate.github.io
   AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
   LICENSE ....... Creative Commmons Attribution 3.0
@@ -44,6 +44,18 @@ $font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $custom-font-family: false !default; // Custom font-face stack, if set will be added to the $font-family
 $measure: $font-base * $line-height;
+
+
+// $Variable $Paragraphs
+// -------------------------------------//
+
+// Text Indentation Value
+$indent-val: 1.5em !default;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: false !default;
 
 
 // $Variable $Small-Print
@@ -96,12 +108,6 @@ $zeta: 18 !default; // 18 = 18 × 1
 // -------------------------------------//
 
 $type-scale-unit-value: rem !default;
-
-
-// $Variable $Text-Indentation
-// -------------------------------------//
-
-$indent-val: 1.5em !default;
 
 
 // $Variable $Pull-Quotes
@@ -611,10 +617,14 @@ h6 {
 
 p {
 	margin: auto auto $indent-val;
-	& + p {
-		//siblings indentation
-		text-indent: $indent-val;
-		margin-top: -$indent-val;
+
+	// Conditonal Check For Paragraph Styling
+	@if $paragraph-vertical-whitespace == false {
+		& + p {
+			//siblings indentation
+			text-indent: $indent-val;
+			margin-top: -$indent-val;
+		}
 	}
 }
 

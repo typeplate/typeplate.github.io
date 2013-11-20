@@ -1,15 +1,18 @@
-// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+/*
+ *
+.||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
 
-//   .                                      '||            .
-// .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....
-//  ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...||
-//  ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||
-//  '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...'
-//       .. |      ||               ||
-//        ''      ''''             ''''                      VARIABLES
-//
+    .                                      '||            .
+  .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....
+   ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...||
+   ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||
+   '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...'
+        .. |      ||               ||
+         ''      ''''             ''''                      VARIABLES
 
-// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+ .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+ *
+ */
 
 
 
@@ -21,8 +24,19 @@ $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $font-family: serif; // Non-font-face font-stack
-
 $custom-font-family: false; // Custom font-face stack, if set will be added to the $font-family
+
+
+// $Paragraphs
+// -------------------------------------//
+
+// Text Indentation Value
+$indent-val: 1.5em;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: false;
 
 
 // $Small Print
@@ -75,12 +89,6 @@ $zeta: 18; // 18 = 18 × 1
 // -------------------------------------//
 
 $type-scale-unit-value: rem;
-
-
-// $Text-Indentation
-// -------------------------------------//
-
-$indent-val: 1.5em;
 
 
 // $Pull-Quotes

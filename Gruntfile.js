@@ -103,7 +103,7 @@ module.exports = function(grunt) {
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	// == Grunt Registered Tasks
-	grunt.registerTask('default', ['jshint', 'compass']);
+	grunt.registerTask('default', ['compass']);
 	grunt.registerTask('test', ['qunit']);
 	grunt.registerTask('hint', ['jshint']);
 	grunt.registerTask('monitor', ['watch']);

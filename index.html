@@ -13,7 +13,7 @@
 	<meta name="robots" content="all">
 	<meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-	<link rel="stylesheet" href="./css/main.css?1.1.0">
+	<link rel="stylesheet" href="./css/main.css?1.1.2">
 	<script src="./js/vendor/modernizr.min.js"></script>
 </head>
 <body>
@@ -54,13 +54,13 @@
 			<a href="https://raw.github.com/typeplate/typeplate.github.io/master/typeplate/scss/typeplate-scss.zip" data-name="Sass Port" class="dl-item btn">
 				<i class="icon-download"></i>Sass
 				<hr>
-				<small>v1.1.1 | 3kb</small>
+				<small>v1.1.2 | 3kb</small>
 			</a>
 
 			<a href="https://github.com/TypePlate/typeplate-bower" data-name="Bower Package" class="dl-item btn">
 				<i class="icon-download"></i>Bower Pkg.
 				<hr>
-				<small>v1.1.1</small>
+				<small>v1.1.2</small>
 			</a>
 		</div>
 	</nav>
@@ -387,6 +387,7 @@ body {
 		</header>
 		<p>On the web, paragraphs are commonly set in blocks, with top and bottom margins. Historically, paragraphs are set using indentation, which makes it easier to scan long-form text and are (we think) more conducive to readability.</p>
 		<p>For the curious, here's a few example sites using the paragraph indentation approach we've chosen for our starter kit…<a href="http://markboulton.co.uk">Mark Boulton</a>, <a href="http://nicewebtype.com">Nice Web Type</a>, <a href="http://andy-logic.com">Andy Rutledge</a> and <a href="http://artequalswork.com">Nathan Ford</a> just to name a few.</p>
+		<p>Authors choosing to opt out of our default styling may feel free to change the boolean variable in the Sass port to remove this opinionated default as depicted in the example below. <abbr title="cascading stylesheets">CSS</abbr> people you'll have to settle for the manual route to customize.</p>
 
 		<figure class="example no-top-pad">
 			<p>I crawled out almost immediately, and crouched, my feet still in the water, under a clump of furze.  The horse lay motionless (his neck was broken, poor brute!) and by the lightning flashes I saw the black bulk of the overturned dog cart and the silhouette of the wheel still spinning slowly.  In another moment the colossal mechanism went striding by me, and passed uphill towards Pyrford.</p>
@@ -398,14 +399,24 @@ body {
 
 		<figure class="typeplate-code-block">
 			<figcaption>_typeplate.scss</figcaption>
-			<pre><code class="language-scss">//paragraph siblings indent
+			<pre><code class="language-scss">// Text Indentation Value
 $indent-val: 1.5em !default;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: false !default;
 
 p {
 	margin: auto auto $indent-val;
-	& + p {
-		text-indent: $indent-val;
-		margin-top: -$indent-val;
+
+	// Conditonal Check For Paragraph Styling
+	@if $paragraph-vertical-whitespace == false {
+		& + p {
+			//siblings indentation
+			text-indent: $indent-val;
+			margin-top: -$indent-val;
+		}
 	}
 }</code></pre>
 		</figure>
