@@ -1,4 +1,12 @@
-**v1.1.2:**
+**CSS v1.1.2:**
+  
+   date: 2014-01-11
+
+   changes:
+
+   - Issue 138: Small Unit bug for bottom margin on line 211. Now uses ems instead of rems.
+
+**Sass v1.1.2:**
   
    date: 2013-11-20
 
