@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		devUpdate: {
 			main: {
 				options: {
-					// report already updated dependencies?
+					// Report updated dependencies? 'false' | 'true'
 					reportUpdated: false,
 					// 'force'|'report'|'prompt'
 					updateType   : "force"
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 
 		// == Watch Tasks
 		watch: {
-			// HMTL
+			// HTML
 			html: {
 				files: ['**/*.html']
 			},
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 			js: {
 				files: ['js/plugins.js','js/main.js']
 			},
-			// Live Reload
+			// LiveReload
 			livereload: {
 				options: {
 					livereload: true
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 					// For me it's this...
 					// Users/grayghostvisuals/Sites/typeplate
 					base: '.',
-					keepalive: false, // needs to be tru to work with watch task
+					keepalive: false, // set to false to work side by side w/watch task.
 					livereload: true,
 					open: true
 				}
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 
 		// == Qunit Tests
 		qunit: {
-			// grunt qunit will test all .php file extensions
+			// test all .html file extensions
 			all: ['*.html']
 		},
 
