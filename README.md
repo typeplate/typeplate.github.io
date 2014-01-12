@@ -97,15 +97,21 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 
 ## &sect; Local Development (mac, linux)
 
-Make sure compass is installed by executing the following bash command from your CLI:
+Make sure [Compass](http://compass-style.org) is installed by executing the following bash command:
 
-  gem install compass
+```bash
+gem install compass
+```
 
-You can always check if the correct gems are installed by running the bash command ``gem list`` which will list all your gems installed.
+You can always check if the correct Gems are installed by running the bash command ``gem list`` which will list all your gem dependencies installed.
 
-&sect; **Compiling** : Javascript, Sass and Compass
+&sect; **Compiling** : JavaScript, Sass and Compass
 
-In order to compile our projects stylesheets and scripts we use [Codekit](http://incident57.com/codekit), but you can also use [Grunt](http://gruntjs.com) which is platform independent Javascript that uses the CLI to help optimize our code much like Codekit (minus the GUI). If you'd like to use Grunt just run ``npm install`` from our project root. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
+In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner, but you can also use [Codekit](http://incident57.com/codekit). If you'd like to use Grunt just run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
+
+&sect; **Grunt Tasks** :
+
+Those that choose to use [Grunt](http://gruntjs.com) you can execute the command ``grunt`` which will spin up a local server on ``http://localhost:9001`` and start the watch task that will also enable LiveReload for HTML, Sass, CSS and JavaScript files. In order to use LiveRealod you must have the [LiveReload Browser Extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) installed and turned on before executing the ``grunt`` task command.
 
 &sect; **Package Management** : [Bower](https://github.com/bower/bower)
 
