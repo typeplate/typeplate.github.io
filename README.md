@@ -87,8 +87,7 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 
 ### Build Tools
 
-- Windows : [fire.app](http://fireapp.handlino.com)
-- Mac : [Codekit](http://incident57.com/codekit) and [Grunt](http://gruntjs.com)
+- Grunt : [Grunt](http://gruntjs.com)
 
 ### Package Management
 
@@ -117,7 +116,7 @@ You can always check if the correct Gems are installed by running the bash comma
 
 &sect; **Compiling** : JavaScript, Sass and Compass
 
-In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner, but you can also use [Codekit](http://incident57.com/codekit). If you'd like to use Grunt just run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
+In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner. To start using Grunt run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
 
 &sect; **Grunt Tasks** :
 
