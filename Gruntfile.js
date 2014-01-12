@@ -154,6 +154,30 @@ module.exports = function(grunt) {
 				src: ['js/minified/main-min.js'],
 				dest: 'js/minified/main-min.js'
 			}
+		},
+
+		// == Asset Cache Bust
+		// https://github.com/gillesruppert/grunt-asset-cachebuster
+		// gived your assets a version flag ?v=1385933480172
+		asset_cachebuster: {
+			options: {
+				// Buster Also Accepts : Date.now()
+				buster: '1.1.2',
+				ignore: [
+					// Ignore cache busting CDN URIs
+					'//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+					'js/vendor/jquery.min.js',
+					'js/vendor/modernizr.min.js'
+				]
+			},
+			build: {
+				files: [
+					{
+						src: ['index.html'],
+						dest: 'index.html'
+					}
+				]
+			}
 		}
 	});
 
@@ -164,4 +188,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('hint', ['jshint']);
 	grunt.registerTask('glue', ['concat']);
 	grunt.registerTask('squish', ['uglify']);
+	grunt.registerTask('bust', ['asset_cachebuster']);
 };
