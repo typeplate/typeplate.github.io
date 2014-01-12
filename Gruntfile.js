@@ -1,10 +1,24 @@
-// https://github.com/gruntjs
-// http://gruntjs.com
+/*
+.|'''''|                            ||    
+|| .                                ||    
+|| |''|| '||''| '||  ||` `||''|,  ''||''  
+||    ||  ||     ||  ||   ||  ||    ||    
+`|....|' .||.    `|..'|. .||  ||.   `|..' The JavaScript Task Runner || http://gruntjs.com
+*/
+
 module.exports = function(grunt) {
 
-	// Project configuration.
+	// Grunt Loaded Tasks
+	// npm install --save-dev matchdep
+	// http://chrisawren.com/posts/Advanced-Grunt-tooling
+	// ------------------------------------------------
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+
+	// Project Config
 	grunt.initConfig({
-		// == JSON Grunt Package
+
+		// == Grunt JSON Package
 		pkg: grunt.file.readJSON('package.json'),
 
 		// == Grunt Meta Banner
@@ -16,31 +30,76 @@ module.exports = function(grunt) {
 			' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
 		},
 
-		// == Watch Task
-		watch: {
-			options: {
-				livereload: true
-			},
-			css: {
-				files: ['./scss/*.scss'],
-				tasks: ['compass']
-			},
-			html: {
-				files: ['./*.html'],
-				tasks: ['livereload']
-			}
-		},
-
-		// == compass
-		compass: {
-			dist: {
+		// == Grunt Dev Update
+		// https://npmjs.org/package/grunt-dev-update
+		// http://pgilad.github.io/grunt-dev-update
+		devUpdate: {
+			main: {
 				options: {
-					config: './config.rb'
+					// report already updated dependencies?
+					reportUpdated: false,
+					// 'force'|'report'|'prompt'
+					updateType   : "force"
 				}
 			}
 		},
 
-		// == qunit Tests
+		// == Watch Tasks
+		watch: {
+			// HMTL
+			html: {
+				files: ['**/*.html']
+			},
+			// Sass
+			sass: {
+				files: ['scss/**/*.scss'],
+				tasks: ['compass:dist']
+			},
+			// CSS
+			css: {
+				files: ['css/**/*.css']
+			},
+			// JavaScript
+			js: {
+				files: ['js/plugins.js','js/main.js']
+			},
+			// Live Reload
+			livereload: {
+				options: {
+					livereload: true
+				},
+				files: ['**/*.html', 'css/**/*.css', 'js/**/*js', '**/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+			}
+		},
+
+		// == Compass Config
+		compass: {
+			dist: {
+				options: {
+					config: 'config.rb'
+				}
+			}
+		},
+
+		// == Run A Persistant Static Web Server
+		connect: {
+			server: {
+				options: {
+					port: 9001,
+					// '.' operates from the root of your Gruntfile.js.
+					// Otherwise you gotta do something like this...
+					// Users/user-name/www-directory/website-directory
+					// For me it's this...
+					// Users/grayghostvisuals/Sites/typeplate
+					base: '.',
+					keepalive: false, // needs to be tru to work with watch task
+					livereload: true,
+					open: true
+				}
+			}
+		},
+
+		// == Qunit Tests
 		qunit: {
 			// grunt qunit will test all .php file extensions
 			all: ['*.html']
@@ -49,17 +108,18 @@ module.exports = function(grunt) {
 		// == Concatenation
 		concat: {
 			options: {
+				banner: '<%= meta.banner %>',
 				separator: ';'
 			},
 			dist: {
-				src: [ './js/plugins.js', './js/main.js'],
-				dest: './js/minified/main-min.js'
+				src: [ 'js/plugins.js', 'js/main.js'],
+				dest: 'js/minified/main-min.js'
 			}
 		},
 
-		// == JSHinting
+		// == JSHint
 		jshint: {
-			files: ['./gruntfile.js', './js/main.js'],
+			files: ['Gruntfile.js', 'js/main.js'],
 			options: {
 				curly: true,
 				eqeqeq: true,
@@ -76,13 +136,13 @@ module.exports = function(grunt) {
 					jQuery: true,
 					require: true,
 					define: true,
-					requirejs: true,
+					requirejs: false,
 					describe: true,
 					expect: true,
 					it: true
 				}
 			},
-			uses_defaults: ['./js/main.js']
+			uses_defaults: ['js/main.js']
 		},
 
 		// == Uglify/Minification
@@ -91,22 +151,17 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			dist: {
-				src: ['./js/minified/main-min.js'],
-				dest: './js/minified/main-min.js'
+				src: ['js/minified/main-min.js'],
+				dest: 'js/minified/main-min.js'
 			}
 		}
 	});
 
-	// == Grunt Loaded Tasks
-	// http://chrisawren.com/posts/Advanced-Grunt-tooling
-	// npm install --save-dev matchdep FTW
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
 	// == Grunt Registered Tasks
-	grunt.registerTask('default', ['compass']);
+	grunt.registerTask('default', ['connect', 'watch']);
+	grunt.registerTask('update', ['devUpdate']);
 	grunt.registerTask('test', ['qunit']);
 	grunt.registerTask('hint', ['jshint']);
-	grunt.registerTask('monitor', ['watch']);
-	grunt.registerTask('con', ['concat']);
-	grunt.registerTask('min', ['uglify']);
+	grunt.registerTask('glue', ['concat']);
+	grunt.registerTask('squish', ['uglify']);
 };
