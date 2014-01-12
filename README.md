@@ -97,10 +97,20 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 
 ## &sect; Local Development (mac, linux)
 
-Make sure [Compass](http://compass-style.org) is installed by executing the following bash command:
+Gem dependencies are installed using [Bundler](http://bundler.io). Bundler maintains a consistent environment for ruby applications.
+It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions)
+that it needs.
+
+If you don't have Bundler installed you can install it like so:
 
 ```bash
-gem install compass
+gem install bundler
+```
+
+Once Bundler is installed run the following command:
+
+```bash
+bundle install
 ```
 
 You can always check if the correct Gems are installed by running the bash command ``gem list`` which will list all your gem dependencies installed.
