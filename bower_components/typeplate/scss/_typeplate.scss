@@ -42,11 +42,11 @@ $font-weight: normal !default;
 $line-height: 1.65 !default;
 $font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
-$custom-font-family: false !default; // Custom font-face stack, if set will be added to the $font-family
+$custom-font-family: false !default; // Custom font-face stack, if set will be added to the $base-font-family
 $measure: $font-base * $line-height;
 
 
-// $Variable $Paragraphs
+// $Variabl $Paragraphs
 // -------------------------------------//
 
 // Text Indentation Value

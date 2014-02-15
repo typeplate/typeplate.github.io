@@ -16,37 +16,17 @@ Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just
 - Raw CSS = **11kb**
 
 ## &sect; Docs
-You'll find all our documentation within the “[typeplate/docs](https://github.com/typeplate/typeplate.github.io/blob/master/typeplate/docs/installation.md)” directory. These docs include all the required instructions to get started with Typeplate.
+You'll “[find our documentation here](https://github.com/typeplate/typeplate-bower/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
 
-## &sect; Contributing Guidelines : [How to contribute](http://37signals.com/svn/posts/3349-open-source-guilt-passion)
+## &sect; Contributing & Issues
 
-
-Third-party patches are essential for keeping Typeplate great. We want to keep it as easy as possible to contribute changes that
-get things working in your environment. There are a few guidelines that we
-need contributors to follow so that we can have a chance of keeping on
-top of things.
-
-**A quick mention about our project structure:**
-If contributing non site related changes to this project please make sure you're submitting changes using our files found within the “typeplate” directory. These files are specific to the main typeplate project. Our site files are found within the project's root ``scss`` directory (General Site styles, layout, colors etc.).
-
-````
-typeplate.github.io
-|
-|______typeplate #project
-|      |______css
-|      |______scss
-|      |______docs
-|      |______sass-port.zip
-|
-|______scss #site styles
-       
-````
+If you would like to contribute to the core of the Typeplate project and not to our main site please make sure you're submitting changes, patches and issues to our [main project repository](https://github.com/typeplate/typeplate-bower).
 
 ## &sect; Getting Started
 
 * Make sure you have a [GitHub account](https://github.com/signup/free)
 * Clearly describe an issue including steps to reproduce when it's a bug.
-* Fork [this](https://github.com/typeplate/typeplate.github.io) repository or our [bower](https://github.com/typeplate/typeplate-bower) repositry on GitHub.
+* Fork [this](https://github.com/typeplate/typeplate-bower) repository.
 
 ## &sect; Making Changes
 

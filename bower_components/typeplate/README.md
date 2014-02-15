@@ -1,3 +1,21 @@
+# Typeplate [Bower](https://github.com/bower/bower) Package
+<a href="//typeplate.com"><img src="http://typeplate.com/img/logo.png" alt="typeplate logo" width="216" height="216"></a>
+
+## &sect; What is it?
+Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don&rsquo;t separate styling and markup, making them tough to use in a truly modular fashion. We weren&rsquo;t satisfied, so we made a thing that doesn&rsquo;t do that.
+
+Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design choices, but define proper markup with extensible styling for common typographic patterns. A stripped&ndash;down Sass library concerned with the appropriate technical implementation of design patterns&ndash;not how they look.
+
+## &sect; Browser Tested, Developer Approved
+<img src="https://raw.github.com/paulirish/browser-logos/master/main-desktop.png" alt="" width="375">
+
+## &sect; File Size
+Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
+
+- Raw Sass = **19kb**
+- Compressed Sass = **3kb**
+- Raw CSS = **11kb**
+
 ## Installation
 
 - Rule #1 in Typeplate Club… Always use ``<meta charset="utf-8">`` in your document ``<head>``. Doing so alleviates authors need to use a charset from within a stylesheet. Anything imported into a document using ``<meta charset="utf-8">`` is encoded as ``utf-8`` globally.
@@ -80,3 +98,22 @@ You could also use the CSS version instead (btw… we don't condone this method 
 	<link rel="stylesheet" href="[root_project_path]/bower_components/typeplate/css/typeplate.css">
 </head>
 ```
+## Bower Installation
+
+&sect; **Package Management** : [Bower](https://github.com/bower/bower)
+
+In order to install bower you must first have [Node](http://nodejs.org) and [npm](https://npmjs.org) installed on your machine. Once [Node](http://nodejs.org) and [npm](https://npmjs.org) are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
+
+	npm install bower -g
+
+## &sect; What Else Is There?
+With so many packages to choose from, we recommend a few libraries to use with Typeplate to compliment. Bon Appetite!
+
+1. [FitText.js](http://fittextjs.com) &ndash; A jQuery plugin for inflating web type
+2. [LETTERING.JS](http://letteringjs.com) &ndash; A jQuery plugin for radical web typography
+3. [MOLTEN LEADING](https://github.com/Wilto/Molten-Leading) - Slingin &rsquo; Hot Leading
+4. [Team Sass Modular Scale](https://github.com/Team-Sass/modular-scale) - Sassy Modular Scale
+
+###### ©credits
+Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
+Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan).
