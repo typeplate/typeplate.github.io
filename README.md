@@ -16,17 +16,17 @@ Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just
 - Raw CSS = **11kb**
 
 ## &sect; Docs
-You'll “[find our documentation here](https://github.com/typeplate/typeplate-bower/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
+You'll “[find our documentation here](https://github.com/typeplate/bower/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
 
 ## &sect; Contributing & Issues
 
-If you would like to contribute to the core of the Typeplate project and not to our main site please make sure you're submitting changes, patches and issues to our [main project repository](https://github.com/typeplate/typeplate-bower).
+If you would like to contribute to the core of the Typeplate project and not to our main site please make sure you're submitting changes, patches and [issues](https://github.com/typeplate/bower/issues) to our [main project repository](https://github.com/typeplate/bower).
 
 ## &sect; Getting Started
 
 * Make sure you have a [GitHub account](https://github.com/signup/free)
 * Clearly describe an issue including steps to reproduce when it's a bug.
-* Fork [this](https://github.com/typeplate/typeplate-bower) repository.
+* Fork [this](https://github.com/typeplate/bower) repository.
 
 ## &sect; Making Changes
 
@@ -96,7 +96,7 @@ You can always check if the correct Gems are installed by running the bash comma
 
 &sect; **Compiling** : JavaScript, Sass and Compass
 
-In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner. To start using Grunt run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/typeplate.github.com/issues).
+In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner. To start using Grunt run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/bower/issues).
 
 &sect; **Grunt Tasks** :
 
