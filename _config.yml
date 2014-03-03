@@ -1,0 +1,94 @@
+# =============================================
+# BUILD CONFIG
+# =============================================
+
+# Dest config
+root:              .
+dest:              <%= site.root %>
+
+# Data
+data:              <%= site.templates %>/data
+date:              <%= new Date() %> # full date
+
+# Styles
+styles:            styles
+
+# Content
+content:           content
+
+# Templates
+templates:         templates
+layouts:           <%= site.templates %>/layouts
+layoutext:         .html
+layout:            default
+pages:             <%= site.templates %>
+includes:          <%= site.templates %>/{includes,content}
+
+# =============================================
+# EXTENSIONS
+# =============================================
+
+helpers:
+  - handlebars-helper-prettify
+
+plugins:
+
+
+# =============================================
+# PROJECT METADATA
+# =============================================
+
+# Site metadata
+brand:              Typeplate
+title:              Typeplate
+description:        <%= pkg.description %>
+lead:               >
+  A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.
+
+# URLs
+homepage:           http://typeplate.com
+repo:               <%= pkg.repository.url %>
+issues:             <%= pkg.bugs.url %>?&state=open
+
+license:
+  type:             <%= pkg.licenses[0].type %>
+  url:              <%= pkg.licenses[0].url %>
+
+# =============================================
+# SEO / SEM
+# =============================================
+
+analytics:
+  alexa:            false
+  google:
+    enabled:        true
+    account:        UA-38761755-1
+    siteid:         false
+
+
+# =============================================
+# SOCIAL / SHARING
+# =============================================
+
+# Comments
+disqus:
+  enabled:          false
+  shortname:        <%= pkg.name %>
+
+# Social
+social:
+  twitter:          false
+  twitter_related:  false
+  facebook:         false
+  linkedin:         false
+  gplus:            false
+  hn:               false
+  google:           false
+
+# Sharing
+sharing:
+  twitter:          false
+  facebook:         false
+  gplus:            false
+  hn:               false
+  google:           false
