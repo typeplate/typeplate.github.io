@@ -1,9 +1,20 @@
 {
   "name": "typeplate",
-  "version": "1.1.1",
+  "version": "1.1.2",
+  "description": "Typeplate » A typographic starter kit encouraging great type on the Web",
   "homepage": "http://typeplate.com",
-  "repository": "https://github.com/typeplate/typeplate.github.io",
-  "licenses": "CC-3.0",
+  "repository": {
+    "url": "https://github.com/typeplate/typeplate.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/typeplate/typeplate.github.io/issues"
+  },
+  "licenses": [
+    {
+      "type": "CC-3.0",
+      "url": "http://creativecommons.org/licenses/by/3.0/us/legalcode"
+    }
+  ],
   "author": {
     "name": "Dennis Gaebel and Zachary Kain"
   },
@@ -21,6 +32,8 @@
     "matchdep": "~0.3.0",
     "grunt-dev-update": "~0.3.2",
     "grunt-contrib-connect": "~0.6.0",
-    "grunt-asset-cachebuster": "~0.3.0"
+    "grunt-asset-cachebuster": "~0.3.0",
+    "assemble": "~0.4.36",
+    "handlebars-helper-prettify": "~0.2.1"
   }
 }
