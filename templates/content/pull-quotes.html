@@ -1,0 +1,65 @@
+<!-- http://24ways.org/2005/swooshy-curly-quotes-without-images -->
+<!-- http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/ -->
+<section class="pull-quotes botDivider" id="pull-quotes">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#pull-quotes">§</a> 4.4 Pull Quotes</h1>
+  </header>
+  <p>Pull quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is an improvement based upon the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a> This particular example depicted takes advantage of psuedo selectors and the <code>&lt;aside&gt;</code> tag.</p>
+
+  <figure class="example no-top-pad pull-example">
+    <aside class="pull-quote">
+      <blockquote>
+        <p>Most people who use Helvetica, use it because it's ubiquitous. It's like going to McDonald's instead of thinking about food. Because it's there, it's on every street corner, so let's eat crap because it's on the corner.</p>
+      </blockquote>
+    </aside>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;aside class=&quot;pull&ndash;quote&quot;&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/aside&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+// $Mixin $Pull Quotes
+// -------------------------------------//
+
+@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
+  position: relative;
+  padding: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+  &:before,
+  &:after {
+    height: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+    opacity: $pull-quote-opacity;
+    position: absolute;
+    font-size: $pull-quote-fontsize;
+    color: $pull-quote-color;
+  }
+  &:before {
+    content: '“';
+    top:  0;
+    left: 0;
+  }
+  &:after {
+    content: '”';
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// use this include on your pull quote selector class
+.pull-quote {
+  @include pull-quotes;
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

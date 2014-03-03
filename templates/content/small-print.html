@@ -1,0 +1,82 @@
+<section class="small-print botDivider" id="small-print">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 3.4 Small Print</h1>
+  </header>
+  <p>The <code>small</code> element is used to represent side comments or what’s commonly referred to as ‘small print’: disclaimers, caveats, legal restrictions, or copyrights. It can also be used for attributions or satisfying licensing requirements.</p>
+
+  <figure class="blockquote">
+      <blockquote cite="http://html5doctor.com/small-hr-element/">
+        <p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
+        <p><code>small</code> text does not need to be smaller than surrounding text &mdash; if all you want is smaller text use CSS instead. Use <code>small</code> only on inline content.</p>
+      </blockquote>
+      <figcaption><cite><small><a href="http://html5doctor.com/small-hr-element/">Oli Studholme</a></small></cite></figcaption>
+  </figure>
+
+  <figure class="example no-top-pad">
+    <p class="zeta">Buy one widget, get one free!
+      <small>(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)</small>
+    </p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;small&gt;(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)&lt;/small&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">$small-print-size: 65% !default;
+
+small {
+  font-size: $small-print-size;
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>
+
+<!-- $Code Blocks -->
+<section class="code-blocks botDivider" id="code-blocks">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 4.1 Code Blocks</h1>
+  </header>
+  <p><code>Monospace</code> fonts just as you desire for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-css"> /* Code Block Example within Markup */
+h1 {
+  background: red;
+  color: blue;
+  padding: 1em;
+  margin: 3em;
+  border: 2px solid black;
+}</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+  <pre><code class="language-scss">@mixin white-space($wrap-space) {
+  @if $wrap-space == 'pre-wrap' {
+    white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+    white-space: $wrap-space;       // current browsers
+  } @else {
+    white-space: $wrap-space;
+  }
+}
+
+pre code {
+  @extend %normal-wrap;
+  @include white-space(pre-wrap);
+}
+
+pre {
+  @include white-space(pre);
+}
+
+code {
+  @include white-space(pre);
+  font-family: monospace;
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

@@ -1,0 +1,167 @@
+<section class="typographic-scale botDivider" id="typographic-scale">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
+  </header>
+  <p>Establish clearly distinguishable heading levels with font-size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Do your best to <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+  <figure class="blockquote">
+      <blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
+        <p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
+      </blockquote>
+      <figcaption><cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite></figcaption>
+      </figure>
+
+  <figure class="example scale-example">
+    <p class="no-indent giga">Heading Giga</p>
+    <p class="no-indent mega">Heading Mega</p>
+    <p class="no-indent alpha">Heading Alpha</p>
+    <p class="no-indent beta">Heading Beta</p>
+    <p class="no-indent gamma">Heading Gamma</p>
+    <p class="no-indent delta">Heading Delta</p>
+    <p class="no-indent epsilon">Heading Epsilon</p>
+    <p class="no-indent zeta">Heading Zeta</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;!--
+Custom header classes. These classes can be used on various elements
+of your choosing. Classes depicted below are strictly for example
+purposes and not a requirement.
+
+If you'd like to manipulate the size of other typographic elements,
+feel free to include the Sass '@extend' with your selector.
+For example…
+
+p {
+  @extend .alpha;
+}
+--&gt;
+&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
+&lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
+&lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
+&lt;h2 class=&quot;beta&quot;&gt;Heading Beta&lt;/h2&gt;
+&lt;h3 class=&quot;gamma&quot;&gt;Heading Gamma&lt;/h3&gt;
+&lt;h4 class=&quot;delta&quot;&gt;Heading Delta&lt;/h4&gt;
+&lt;h5 class=&quot;epsilon&quot;&gt;Heading Epsilon&lt;/h5&gt;
+&lt;h6 class=&quot;zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">$measure: $font-base * $line-height;
+
+// Modular Scale Values
+// http://typecast.com/blog/contrast-through-scale
+$tera: 117 !default; // 117 = 18 × 6.5
+$giga: 90 !default; // 90 = 18 × 5
+$mega: 72 !default; // 72 = 18 × 4
+$alpha: 60 !default; // 60 = 18 × 3.3333
+$beta: 48 !default; // 48 = 18 × 2.6667
+$gamma: 36 !default; // 36 = 18 × 2
+$delta: 24 !default; // 24 = 18 × 1.3333
+$epsilon: 21 !default; // 21 = 18 × 1.1667
+$zeta: 18 !default; // 18 = 18 × 1
+
+// typscale unit
+$type-scale-unit-value: rem !default;
+
+// $Function $Context Calculator
+// -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
+
+@function context-calc($scale, $base, $value) {
+  @return ($scale/$base)#{$value};
+}
+
+// $Function $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
+
+@function measure-margin($scale, $measure, $value) {
+  @return ($measure/$scale)#{$value};
+}
+
+// $Mixin $Type-Scale
+// -------------------------------------//
+// provides a pixel fallback if you decide
+// to use 'rems' as a unit over ems.
+
+@mixin type-scale($scale, $base, $value, $measure:"") {
+  // If 'rem' is used as a $value then provide a px fallback.
+  @if $value == rem {
+    font-size: $scale#{px};
+  }
+  font-size: context-calc($scale, $base, $value);
+  @if $measure != "" {
+    margin-bottom: measure-margin($scale, $measure, $value);
+  }
+}
+
+// Extend included classes on any element of your
+// choosing for adjusting type based on the scale
+// provided.
+
+// For example:
+
+// &lt;h6 class="giga"&gt;Awesome Headline&lt;/h6&gt;
+// &lt;p class="tera"&gt;a story about a dude&lt;/p&gt;
+
+// Our Type Scale is as follows with px fallbacks
+// for IE 6-8 as they do not understand REM units.
+//
+// 18, 21, 24, 36, 48, 60, 72, 90, 117
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+  text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+  line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+  margin-top: 0;
+}
+
+// Multi-dimensional array, where:
+// the first value is the name of the class
+// and the second value is the variable for the size
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// for each size in the scale, create a class
+@each $size in $sizes {
+  .#{nth($size, 1)} {
+    @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+  }
+}
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+  @extend .alpha;
+  @extend %hN;
+}
+
+h2 {
+  @extend .beta;
+  @extend %hN;
+}
+
+h3 {
+  @extend .gamma;
+  @extend %hN;
+}
+
+h4 {
+  @extend .delta;
+  @extend %hN;
+}
+
+h5 {
+  @extend .epsilon;
+  @extend %hN;
+}
+
+h6 {
+  @extend .zeta;
+  @extend %hN;
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

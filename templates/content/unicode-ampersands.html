@@ -1,0 +1,51 @@
+<section class="ampersands botDivider" id="unicode-ampersands">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#unicode-ampersands">§</a> 3.3 Unicode Ampersands</h1>
+  </header>
+  <p>With the <a href="http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range"><code>unicode-range</code></a> property we can avoid using verbose markup and only target the characters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
+
+  <figure class="example amp-example">
+    <p class="amp">Amper & Sands</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">//Unicode Ampersand @font-face
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
+
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+$amp-font-family: Verdana, sans-serif !default;
+
+@font-face {
+  font-family: '#{$amp-fontface-name}';
+  src: $amp-fontface-source;
+  unicode-range: U+0026;
+}
+
+// Ampersand fallback font for unicode range
+@font-face {
+  font-family: '#{$amp-fontface-name}';
+  src: $amp-fontface-fallback;
+  unicode-range: U+270C;
+}
+
+@mixin ampersand($amp-font-family...) {
+  font-family: $amp-font-family;
+}
+
+%ampersand-placeholder {
+  @include ampersand($amp-fontface-name, $amp-font-family);
+}
+
+// Call your ampersand on any element you wish from another stylesheet
+// using this Sass extend we've provided. For exmaple:
+//
+// &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
+//
+// .ampersand { @extend %ampersand-placeholder; }</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

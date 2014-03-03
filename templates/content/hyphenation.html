@@ -1,0 +1,49 @@
+<section class="hyphenation botDivider" id="hyphenation">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#hyphenation">§</a> 2.2 Hyphenation</h1>
+  </header>
+  <p>Responsive or not, there’s no reason why we shouldn’t all be designing and building sites on flexible foundations. In a fluid layout, browser width and typographic measure are linked: the wider the viewport, the more characters per line. Keeping in mind that a range of 45-75 characters per line is generally accepted as safe for comfortable reading, there are a few things that can be done to avoid extra long lines of text in fluid layouts. <a href="http://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881792063" rel="external">Robert Bringhurst</a> recommends for us to leave at least two characters behind and take at least three forward.</p>
+
+  <figure class="blockquote">
+      <blockquote cite="http://nicewebtype.com/notes/2013/01/16/where-to-avoid-css-hyphenation">
+        <p>Since hyphens is an inherited property, it isn’t sufficient to set it for a limited number of elements and assume you’re done. You have to make sure you’ve turned it off for the elements that shouldn’t be hyphenated.</p>
+      </blockquote>
+      <figcaption><cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite></figcaption>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">@mixin css-hyphens($val) {
+  // Accepted values: [ none | manual | auto ]
+  -webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
+  -moz-hyphens: $val; // Firefox 16 thru 20
+  -ms-hyphens: $val; // IE10
+  -o-hyphens: $val; // PRESTO...haha LOL
+  hyphens: $val; // W3C standard
+}
+
+body {
+  // Ala Trent Walton
+  // http://trentwalton.com/2011/09/07/css-hyphenation
+  @include css-hyphens(auto);
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  // http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+  @include css-hyphens(none);
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

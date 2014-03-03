@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="robots" content="all">
+
+<script>
+  (function() {var config = {kitId: 'wxt4lbk',scriptTimeout: 3000};
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+</script>
+<title>{{site.description}}</title>
+
+<meta name="description" content="{{site.lead}}">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+
+{{~#is basename 'index'}}
+<link rel="stylesheet" href="./css/main.css?v=1.1.2">
+{{~else}}
+<!-- normalize -->
+<link rel="stylesheet" id="normalize-css" href="./bower_components/normalize-css/normalize.css">
+
+<!-- TypePlate -->
+<link rel="stylesheet" id="typeplate-css" href="./bower_components/typeplate/css/typeplate.css?1.1.2">
+
+<!-- TypePlate Demo Styles -->
+<link rel="stylesheet" href="./css/demo.css?1.1.1">
+{{/is~}}
+
+<script src="./js/vendor/modernizr.min.js"></script>

@@ -1,0 +1,65 @@
+<section class="icon-font-helper botDivider" id="icon-font-helper">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 4.5 Icon Font Helper</h1>
+  </header>
+  <p>The Icon Font Helper is a special tool for those that use custom icon fonts, but don't wanna change all the reference links for the font files &ndash;especially the multitude of file types required (EOT, TTF, SVG, & WOFF). With so many <abbr title="uniform resource identifier">URI</abbr>s and file types it can become extremely tedious. By taking advantage of the Icon Font Helper authors can write in one line using a Sass loop and Compass' <code>@include font-face</code> helper function. This setup requires a bit of configuration on an authors part depending on specific project needs and workflows.</p>
+
+  <figure class="example icons">
+    <p class="fs1" aria-hidden="true" data-icon="&#xe000;">Settings</p>
+    <p class="fs1" aria-hidden="true" data-icon="&#xe001;">Menu</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+  <figcaption>_typeplate-vars.scss</figcaption>
+  <pre><code class="language-scss">//custom variable to override default value
+$icon-fonts: (icon-font-name, another-icon-font-name);</code></pre>
+</figure>
+
+  <figure class="typeplate-code-block">
+  <figcaption>_typeplate.scss</figcaption>
+  <pre><code class="language-scss">// ICON FONTS HELPER
+// In order to set you must have the following…
+// 1. Compass
+// 2. Create a 'fonts' directory in the root of your project
+// 3. Specify within your 'config.rb' file the following line…
+//
+// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+//
+// Example usage
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null !default;
+
+// @include font-face() is a compass function so it will require compass
+// based on this gist by Chris Van Patten
+// https://gist.github.com/4469518
+@if ($icon-fonts != null) {
+  @each $font in $icon-fonts {
+    @include font-face( $font,
+      font-files(
+        '#{$font}/#{$font}.woff',
+        '#{$font}/#{$font}.ttf',
+        '#{$font}/#{$font}.svg', svg
+      ),
+      '#{$font}/#{$font}.eot'
+      )
+  }
+}</code></pre>
+</figure>
+
+<figure class="typeplate-code-block">
+  <figcaption>CSS Output</figcaption>
+  <pre><code class="language-css">@font-face {
+  font-family: "icon-font-name";
+  src: url('//fonts/icon-font-name/icon-font-name.eot');
+  src: url('//fonts/icon-font-name/icon-font-name.eot?#iefix') format('eot'), url('//fonts/icon-font-name/icon-font-name.woff') format('woff'), url('//fonts/icon-font-name/icon-font-name.ttf') format('truetype'), url('//fonts/icon-font-name/icon-font-name.svg') format('svg');
+}
+
+@font-face {
+  font-family: "another-icon-font-name";
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot');
+  src: url('//fonts/another-icon-font-name/another-icon-font-name.eot?#iefix') format('eot'), url('//fonts/another-icon-font-name/another-icon-font-name.woff') format('woff'), url('//fonts/another-icon-font-name/another-icon-font-name.ttf') format('truetype'), url('//fonts/another-icon-font-name/another-icon-font-name.svg') format('sag');
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

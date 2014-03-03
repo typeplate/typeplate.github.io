@@ -1,0 +1,146 @@
+<section class="definition-lists botDivider" id="definition-lists">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#definition-lists">§</a> 4.8 Definition Lists</h1>
+  </header>
+  <p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
+  <p>TypePlate offers several different patterns for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
+
+  <h3 class="delta">a) Multi-line Definitions (default)</h3>
+  <figure class="example no-top-pad">
+    <dl>
+      <dt><b>This is a term</b></dt>
+        <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+      <dt><b>Another Term</b></dt>
+        <dd>And it gets a definition too, which is this line</dd>
+        <dd>This is a 2<sup>nd</sup> definition for a single term. A <code>dt</code> may be followed by multiple <code>dd</code>s.</dd>
+    </dl>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;dl&gt;
+  &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+  &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </figure>
+
+  <h3 class="delta">b) Inline Definitions</h3>
+  <p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
+
+  <figure class="example no-top-pad">
+    <dl class="lining">
+      <dt><b>This is a term</b></dt>
+        <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+      <dt><b>Another Term</b></dt>
+        <dd class="micro">And it gets a definition too, which is this line</dd>
+        <dd class="micro"> this is a 2<sup>nd</sup> definition for a single term.</dd>
+      <dt><b>Term</b></dt>
+      <dt><b>Other Defined Term</b></dt>
+        <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+    </dl>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;dl class="lining"&gt;
+  &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+  &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">@mixin definition-list-style($style) {
+  // lining style
+  @if $style == lining {
+    dt, dd {
+      display: inline;
+      margin: 0;
+    }
+    dt, dd {
+      & + dt {
+        &:before {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+    }
+    dd {
+      & + dd {
+        &:before {
+          content: ", ";
+        }
+      }
+      &:before {
+          content: ": ";
+          margin-left: -0.2rem; // removes extra space between the dt and the colon
+      }
+    }
+  }
+}
+
+dl {
+    @include definition-list-style(lining);
+}</code></pre>
+  </figure>
+
+  <h3 class="delta">c) Dictionary-style Definition</h3>
+  <p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
+
+  <figure class="example no-top-pad">
+    <dl class="dictionary-style">
+      <dt><b>This is a term</b></dt>
+        <dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
+      <dt><b>Another Term</b></dt>
+        <dd>And it gets a definition too, which is this line</dd>
+        <dd> this is a 2<sup>nd</sup> definition for a single term.</dd>
+      <dt><b>Term</b></dt>
+      <dt><b>Other Defined Term</b></dt>
+        <dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
+    </dl>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
+  &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+  &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+  &lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">@mixin definition-list-style($style) {
+  // dictionary-style
+  @if $style == dictionary-style {
+    dt {
+      display: inline;
+      counter-reset: definitions;
+      & + dt {
+        &:before {
+          content: ", ";
+          margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+        }
+      }
+    }
+    dd {
+      display: block;
+      counter-increment: definitions;
+      &:before {
+        content: counter(definitions, decimal) ". ";
+      }
+    }
+  }
+}
+
+dl {
+  @include definition-list-style(dictionary-style);
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

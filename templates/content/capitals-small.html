@@ -1,0 +1,39 @@
+<section class="small-caps botDivider" id="small-caps">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#small-caps">§</a> 3.1 Small Capitals</h1>
+  </header>
+  <p>Small caps help to make abbreviations way easier to read but won’t stand out from the text. We highly suggest this bit of typographic flare with your content. True small capitals are now possible on the web, <a href="http://blog.hypsometry.com/articles/true-small-capitals-with-font-face" rel="external">but alas they are still a bitch</a> and will also depend on the type face in use. Definitely check out <a href="//opentypography.org/fontlist.html" rel="external">Open Typography</a> for those typefaces and services that provide authentic small caps.</p>
+
+  <figure class="example no-top-pad">
+    <p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;abbr title=&quot;hyper text markup language&quot;&gt;HTML&lt;/abbr&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+@mixin smallcaps($color, $font-weight) {
+  // depends on the font family.
+  // some font-families don’t support small caps
+  // or don’t provide them with their web font.
+  font-variant: small-caps;
+  font-weight: $font-weight;
+  text-transform: lowercase;
+  color: $color;
+}
+
+abbr {
+  @include smallcaps($small-caps-color, $small-caps-weight);
+  &:hover {
+    cursor: help;
+  }
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

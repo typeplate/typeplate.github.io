@@ -1,25 +1,19 @@
 /*
-.|'''''|                            ||    
-|| .                                ||    
-|| |''|| '||''| '||  ||` `||''|,  ''||''  
-||    ||  ||     ||  ||   ||  ||    ||    
+.|'''''|                            ||
+|| .                                ||
+|| |''|| '||''| '||  ||` `||''|,  ''||''
+||    ||  ||     ||  ||   ||  ||    ||
 `|....|' .||.    `|..'|. .||  ||.   `|..' The JavaScript Task Runner || http://gruntjs.com
 */
 
 module.exports = function(grunt) {
-
-	// Grunt Loaded Tasks
-	// npm install --save-dev matchdep
-	// http://chrisawren.com/posts/Advanced-Grunt-tooling
-	// ------------------------------------------------
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
 
 	// Project Config
 	grunt.initConfig({
 
 		// == Grunt JSON Package
 		pkg: grunt.file.readJSON('package.json'),
+		site: grunt.file.readYAML('_config.yml'),
 
 		// == Grunt Meta Banner
 		meta: {
@@ -29,6 +23,25 @@ module.exports = function(grunt) {
 			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
 			' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
 		},
+
+		// == Build HTML from templates
+    assemble: {
+      options: {
+      	flatten: true,
+        pkg: '<%= pkg %>',
+        site: '<%= site %>',
+
+        partials: '<%= site.includes %>/*.html',
+        layouts: '<%= site.layouts %>',
+        layoutext: '<%= site.layoutext %>',
+        layout: '<%= site.layout %>'
+      },
+      typeplate: {
+	      files: {
+	        './': '<%= site.pages %>/*.html'
+	      }
+      }
+    },
 
 		// == Grunt Dev Update
 		// https://npmjs.org/package/grunt-dev-update
@@ -166,8 +179,8 @@ module.exports = function(grunt) {
 				ignore: [
 					// Ignore cache busting CDN URIs
 					'//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-					'js/vendor/jquery.min.js',
-					'js/vendor/modernizr.min.js'
+					'js/bower_components/jquery.min.js',
+					'js/bower_components/modernizr.min.js'
 				]
 			},
 			build: {
@@ -180,6 +193,10 @@ module.exports = function(grunt) {
 			}
 		}
 	});
+
+  // Load npm tasks
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.loadNpmTasks('assemble');
 
 	// == Grunt Registered Tasks
 	grunt.registerTask('default', ['connect', 'watch']);

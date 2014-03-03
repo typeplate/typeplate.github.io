@@ -1,0 +1,29 @@
+<header class="header botDivider column" role="banner">
+  {{#is basename 'index'}}<div class="col-wrap top">{{/is}}
+
+    <!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
+    <a href="." class="logo">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img">
+    </a>
+
+    <nav class="nav nav-primary" role="navigation">
+      {{#is basename 'index'}}<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Demo</a>{{/is}}
+      <a href="//blog.typeplate.com" class="nav-item epsilon" rel="external">Journal</a>
+      <a href="//github.com/TypePlate/typeplate.github.com/issues" class="nav-item epsilon" rel="external">Feedback</a>
+      <a href="https://github.com/typeplate/typeplate.github.io/wiki/Typeplate-in-the-Wild" class="nav-item epsilon" rel="external">In the Wild</a>
+    </nav>
+
+    {{#is basename 'index'}}
+    <nav class="social-nav">
+      <a href="//github.com/typeplate/bower" class="social-item" rel="me"><i class="icon-github"></i>Fork</a>
+      <a href="//twitter.com/typeplate" class="social-item" rel="me"><i class="icon-twitter"></i>Follow</a>
+    </nav>
+
+    <div class="lede">
+      <p class="delta">Frameworks make decisions for you about how to organize, structure and design a site. Pattern libraries don’t separate styling and markup, making them tough to use in a truly modular fashion. We weren’t satisfied, so we made a thing that doesn’t do that.</p>
+      <p><i><b>Typeplate</b></i> is a “typographic starter kit”. We don’t make aesthetic design choices, but define <b>proper markup with extensible styling</b> for common typographic patterns. A stripped-down <abbr title="syntactically awesome stylesheets">Sass</abbr> or <abbr title="cascading stylesheets">CSS</abbr> library of your choosing primarily concerned with the appropriate technical implementation of design patterns—not how they look.</p>
+    </div>
+    {{/is}}
+
+  {{#is basename 'index'}}</div>{{/is}}
+</header>

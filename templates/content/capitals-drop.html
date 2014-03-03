@@ -1,0 +1,60 @@
+<section class="drop-capitals botDivider" id="drop-caps">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#drop-caps">§</a> 3.2 Drop Capitals</h1>
+  </header>
+  <p>A Drop Cap is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
+
+  <figure class="example">
+    <p class="drop-cap">There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>HTML</figcaption>
+    <pre><code class="language-markup">&lt;!-- Add the drop-cap class to your element --&gt;
+&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+
+// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+// to pass the following arguments below. Feel free to pass in custom
+// values for the variables we've provided.
+//
+// Make sure you add the class “drop-cap” to your markup in order to operate.
+@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
+  &:first-letter {
+    float: $dropcap-float-position;
+    margin: $dropcap-margin;
+    padding: $dropcap-padding;
+    font-size: $dropcap-font-size;
+    font-family: $dropcap-font-family;
+    line-height: $dropcap-line-height;
+    text-indent: $dropcap-txt-indent;
+    background: $dropcap-bg;
+    color: $dropcap-color;
+  }
+}
+
+// Combats our sibling paragraphs syling and indentation
+// As not to ruin our beautiful drop caps.
+p + .drop-cap {
+  text-indent: 0;
+  margin-top: 0;
+}
+
+.drop-cap {
+  @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>

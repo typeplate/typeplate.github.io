@@ -1,0 +1,41 @@
+<section class="indenting botDivider" id="indenting">
+  <header>
+    <h1 class="gamma section-title"><a class="perma-anchor" href="#indenting">§</a> 2.1 Indenting</h1>
+  </header>
+  <p>On the web, paragraphs are commonly set in blocks, with top and bottom margins. Historically, paragraphs are set using indentation, which makes it easier to scan long-form text and are (we think) more conducive to readability.</p>
+  <p>For the curious, here's a few example sites using the paragraph indentation approach we've chosen for our starter kit…<a href="http://markboulton.co.uk">Mark Boulton</a>, <a href="http://nicewebtype.com">Nice Web Type</a>, <a href="http://andy-logic.com">Andy Rutledge</a> and <a href="http://artequalswork.com">Nathan Ford</a> just to name a few.</p>
+  <p>Authors choosing to opt out of our default styling may feel free to change the boolean variable in the Sass port to remove this opinionated default as depicted in the example below. <abbr title="cascading stylesheets">CSS</abbr> people you'll have to settle for the manual route to customize.</p>
+
+  <figure class="example no-top-pad">
+    <p>I crawled out almost immediately, and crouched, my feet still in the water, under a clump of furze.  The horse lay motionless (his neck was broken, poor brute!) and by the lightning flashes I saw the black bulk of the overturned dog cart and the silhouette of the wheel still spinning slowly.  In another moment the colossal mechanism went striding by me, and passed uphill towards Pyrford.</p>
+    <p>Seen nearer, the Thing was incredibly strange, for it was no mere insensate machine driving on its way.  Machine it was, with a ringing metallic pace, and long, flexible, glittering tentacles (one of which gripped a young pine tree) swinging and rattling about its strange body.</p>
+    <p>It picked its road as it went striding along, and the brazen hood that surmounted it moved to and fro with the inevitable suggestion of a head looking about.  Behind the main body was a huge mass of white metal like a gigantic fisherman’s basket, and puffs of green smoke squirted out from the joints of the limbs as the monster swept by me.  And in an instant it was gone.</p>
+    <p>So much I saw then, all vaguely for the flickering of the lightning, in blinding highlights and dense black shadows.</p>
+    <p>As it passed it set up an exultant deafening howl that drowned the thunder—“Aloo! Aloo!”—and in another minute it was with its companion, half a mile away, stooping over something in the field.  I have no doubt this Thing in the field was the third of the ten cylinders they had fired at us from Mars.</p>
+  </figure>
+
+  <figure class="typeplate-code-block">
+    <figcaption>_typeplate.scss</figcaption>
+    <pre><code class="language-scss">// Text Indentation Value
+$indent-val: 1.5em !default;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: false !default;
+
+p {
+  margin: auto auto $indent-val;
+
+  // Conditonal Check For Paragraph Styling
+  @if $paragraph-vertical-whitespace == false {
+    & + p {
+      //siblings indentation
+      text-indent: $indent-val;
+      margin-top: -$indent-val;
+    }
+  }
+}</code></pre>
+  </figure>
+  <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+</section>
