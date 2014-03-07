@@ -1,4 +1,3 @@
-# Typeplate [Bower](https://github.com/bower/bower) Package
 <a href="//typeplate.com"><img src="http://typeplate.com/img/logo.png" alt="typeplate logo" width="216" height="216"></a>
 
 ## &sect; What is it?

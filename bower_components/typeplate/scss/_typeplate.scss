@@ -1,26 +1,12 @@
-/*!
- *
-.||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
-
-	.                                      '||            .
-  .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....
-   ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...||
-   ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||
-   '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...'
-		.. |      ||               ||
-		 ''      ''''             ''''      A Typographic Starter Kit
-
-  URL ........... http://typeplate.com
-  VERSION ....... 1.1.2
-  Github ........ https://github.com/typeplate/typeplate.github.io
-  AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
-  LICENSE ....... Creative Commmons Attribution 3.0
-  LICENSE URL ... http://creativecommons.org/licenses/by/3.0
-
- .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
- *
- */
-
+/*! 
+TYPEPLATE
+URL ........... http://typeplate.com
+VERSION ....... 1.1.3
+Github ........ https://github.com/typeplate/bower
+AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
+LICENSE URL ... https://github.com/typeplate/bower/blob/master/license.txt
+*/
 
 
 // .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
@@ -46,7 +32,7 @@ $custom-font-family: false !default; // Custom font-face stack, if set will be a
 $measure: $font-base * $line-height;
 
 
-// $Variabl $Paragraphs
+// $Variable $Paragraphs
 // -------------------------------------//
 
 // Text Indentation Value
@@ -238,19 +224,26 @@ $dropcap-bg: transparent !default;
 
 // $Mixin $Type-Scale
 // -------------------------------------//
-// provides a pixel fallback if you decide
-// to use 'rems' as a unit over ems.
 
 @mixin type-scale($scale, $base, $value, $measure:"") {
-	// If 'rem' is used as a $value then provide a px fallback.
+
 	@if $value == rem {
+
 		font-size: $scale#{px};
 	}
+
 	font-size: context-calc($scale, $base, $value);
+
 	@if $measure != "" {
+
+		@if $value == rem {
+			margin-bottom: measure-margin($scale, $measure, $value: px);
+		}
+
 		margin-bottom: measure-margin($scale, $measure, $value);
 	}
 }
+
 
 // $Mixin $Hypens
 // -------------------------------------//
@@ -548,6 +541,7 @@ small {
 // Extend included classes on any element of your
 // choosing for adjusting type based on the scale
 // provided.
+// Special Props to Harry Roberts for this trick.
 
 // For example:
 

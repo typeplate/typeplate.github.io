@@ -1,0 +1,5 @@
+{
+    "name": "Typeplate",
+    "description": "Typeplate is a typographic starter kit built on Sass and Compass. We don’t make aesthetic design choices, but define proper markup with extensible styling for common typographic patterns. A stripped–down Sass library concerned with the appropriate technical implementation of design patterns –not how they look.",
+    "tags": ["sass", "compass", "sass library", "typography", "starter kit", "typographic starter kit", "typographic patterns", "bower"]
+}
