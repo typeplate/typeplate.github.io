@@ -83,16 +83,29 @@ that it needs.
 If you don't have Bundler installed you can install it like so:
 
 ```bash
-gem install bundler
+$ gem install bundler
 ```
 
 Once Bundler is installed run the following command:
 
 ```bash
-bundle install
+$ bundle install
 ```
 
-You can always check if the correct Gems are installed by running the bash command ``gem list`` which will list all your gem dependencies installed.
+**You can always check if the correct Gems are installed by running the bash command ``gem list`` which will list all your gem dependencies installed.**
+
+Install Bower Components
+
+```bash
+$ bower install
+```
+
+Install NPM Modules for Grunt
+
+```bash
+$ npm install
+```
+
 
 &sect; **Compiling** : JavaScript, Sass and Compass
 

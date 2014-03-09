@@ -1,3 +1,22 @@
+**CSS v1.1.3:**
+  
+   date: 2014-03-06
+
+   changes:
+
+   - Issue 139: Pixel fallback for bottom margin on headers. Smaller Copyright Block and Harry Roberts Shoutout.
+
+**Sass v1.1.3:**
+  
+   date: 2014-03-06
+
+   changes:
+
+   - Issue 139: Pixel fallback for bottom margin on headers. Smaller Copyright Block and Harry Roberts Shoutout.
+
+-------
+
+
 **CSS v1.1.2:**
   
    date: 2014-01-11

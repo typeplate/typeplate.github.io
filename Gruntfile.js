@@ -25,23 +25,22 @@ module.exports = function(grunt) {
 		},
 
 		// == Build HTML from templates
-    assemble: {
-      options: {
-      	flatten: true,
-        pkg: '<%= pkg %>',
-        site: '<%= site %>',
-
-        partials: '<%= site.includes %>/*.html',
-        layouts: '<%= site.layouts %>',
-        layoutext: '<%= site.layoutext %>',
-        layout: '<%= site.layout %>'
-      },
-      typeplate: {
-	      files: {
-	        './': '<%= site.pages %>/*.html'
-	      }
-      }
-    },
+		assemble: {
+			options: {
+				flatten: true,
+				pkg: '<%= pkg %>',
+				site: '<%= site %>',
+				partials: '<%= site.includes %>/*.html',
+				layouts: '<%= site.layouts %>',
+				layoutext: '<%= site.layoutext %>',
+				layout: '<%= site.layout %>'
+			},
+			typeplate: {
+				files: {
+				'./': '<%= site.pages %>/*.html'
+				}
+			}
+		},
 
 		// == Grunt Dev Update
 		// https://npmjs.org/package/grunt-dev-update
@@ -169,6 +168,31 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+			main: {
+				files: [
+					// makes all src relative to cwd
+					{
+						expand: true,
+						cwd: '',
+						src: ['bower_components/normalize-css/normalize.css'],
+						dest: 'css/'
+					}
+				]
+			},
+			pkg: {
+				files: [
+					// makes all src relative to cwd
+					{
+						expand: true,
+						cwd: '',
+						src: ['bower_components/typeplate/css/typeplate.css'],
+						dest: 'css/'
+					}
+				]
+			}
+		},
+
 		// == Asset Cache Bust
 		// https://github.com/gillesruppert/grunt-asset-cachebuster
 		// gived your assets a version flag ?v=1385933480172
@@ -194,9 +218,9 @@ module.exports = function(grunt) {
 		}
 	});
 
-  // Load npm tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.loadNpmTasks('assemble');
+	// Load npm tasks
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	grunt.loadNpmTasks('assemble');
 
 	// == Grunt Registered Tasks
 	grunt.registerTask('default', ['connect', 'watch']);
@@ -206,4 +230,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('glue', ['concat']);
 	grunt.registerTask('squish', ['uglify']);
 	grunt.registerTask('bust', ['asset_cachebuster']);
+	grunt.registerTask('build', ['copy', 'glue', 'squish', 'assemble']);
 };
