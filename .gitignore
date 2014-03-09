@@ -16,5 +16,8 @@ npm-debug.log
 # NODE
 node_modules
 
+# Bower
+bower_components
+
 #fire app log file
 fire_app_log.txt
