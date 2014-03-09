@@ -13,6 +13,8 @@ module.exports = function(grunt) {
 
 		// == Grunt JSON Package
 		pkg: grunt.file.readJSON('package.json'),
+
+		// == Assemble YAML Front Matter
 		site: grunt.file.readYAML('_config.yml'),
 
 		// == Grunt Meta Banner

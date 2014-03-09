@@ -11,6 +11,7 @@
     "normalize.scss": "2.1.0"
   },
   "devDependencies": {
-    "typeplate": "~1.1.2"
+    "typeplate": "~1.1.2",
+    "normalize-css": "~3.0.0"
   }
 }

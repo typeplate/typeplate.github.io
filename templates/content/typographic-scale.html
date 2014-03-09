@@ -1,30 +1,32 @@
 <!-- #typographic-scale -->
-  <section class="typographic-scale botDivider" id="typographic-scale">
+<section class="typographic-scale botDivider" id="typographic-scale">
 	<header>
-	  <h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
+		<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
 	</header>
+
 	<p>Establish clearly distinguishable heading levels with font-size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Do your best to <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+
 	<figure class="blockquote">
 		<blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
-		  <p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
+			<p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
 		</blockquote>
 		<figcaption><cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite></figcaption>
-		</figure>
+	</figure>
 
 	<figure class="example scale-example">
-	  <p class="no-indent giga">Heading Giga</p>
-	  <p class="no-indent mega">Heading Mega</p>
-	  <p class="no-indent alpha">Heading Alpha</p>
-	  <p class="no-indent beta">Heading Beta</p>
-	  <p class="no-indent gamma">Heading Gamma</p>
-	  <p class="no-indent delta">Heading Delta</p>
-	  <p class="no-indent epsilon">Heading Epsilon</p>
-	  <p class="no-indent zeta">Heading Zeta</p>
+		<p class="no-indent giga">Heading Giga</p>
+		<p class="no-indent mega">Heading Mega</p>
+		<p class="no-indent alpha">Heading Alpha</p>
+		<p class="no-indent beta">Heading Beta</p>
+		<p class="no-indent gamma">Heading Gamma</p>
+		<p class="no-indent delta">Heading Delta</p>
+		<p class="no-indent epsilon">Heading Epsilon</p>
+		<p class="no-indent zeta">Heading Zeta</p>
 	</figure>
 
 	<figure class="typeplate-code-block">
-	  <figcaption>HTML</figcaption>
-	  <pre><code class="language-markup">&lt;!--
+		<figcaption>HTML</figcaption>
+		<pre><code class="language-markup">&lt;!--
 Custom header classes. These classes can be used on various elements
 of your choosing. Classes depicted below are strictly for example
 purposes and not a requirement.
@@ -34,7 +36,7 @@ feel free to include the Sass '@extend' with your selector.
 For example…
 
 p {
-  @extend .alpha;
+	@extend .alpha;
 }
 --&gt;
 &lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
@@ -48,8 +50,8 @@ p {
 	</figure>
 
 	<figure class="typeplate-code-block">
-	  <figcaption>_typeplate.scss</figcaption>
-	  <pre><code class="language-scss">$measure: $font-base * $line-height;
+		<figcaption>_typeplate.scss</figcaption>
+		<pre><code class="language-scss">$measure: $font-base * $line-height;
 
 // Modular Scale Values
 // http://typecast.com/blog/contrast-through-scale
@@ -71,7 +73,7 @@ $type-scale-unit-value: rem !default;
 // divide a given font-size by base font-size & return a relative value
 
 @function context-calc($scale, $base, $value) {
-  @return ($scale/$base)#{$value};
+	@return ($scale/$base)#{$value};
 }
 
 // $Function $Measure-Margin
@@ -79,7 +81,7 @@ $type-scale-unit-value: rem !default;
 // divide 1 unit of measure by given font-size & return a relative em value
 
 @function measure-margin($scale, $measure, $value) {
-  @return ($measure/$scale)#{$value};
+	@return ($measure/$scale)#{$value};
 }
 
 // $Mixin $Type-Scale
@@ -87,21 +89,21 @@ $type-scale-unit-value: rem !default;
 
 @mixin type-scale($scale, $base, $value, $measure:"") {
 
-  @if $value == rem {
+	@if $value == rem {
 
 	font-size: $scale#{px};
-  }
+	}
 
-  font-size: context-calc($scale, $base, $value);
+	font-size: context-calc($scale, $base, $value);
 
-  @if $measure != "" {
+	@if $measure != "" {
 
 	@if $value == rem {
-	  margin-bottom: measure-margin($scale, $measure, $value: px);
+		margin-bottom: measure-margin($scale, $measure, $value: px);
 	}
 
 	margin-bottom: measure-margin($scale, $measure, $value);
-  }
+	}
 }
 
 // Extend included classes on any element of your
@@ -121,9 +123,9 @@ $type-scale-unit-value: rem !default;
 
 // styles for all headings, in the style of @csswizardry
 %hN {
-  text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-  line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-  margin-top: 0;
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+	margin-top: 0;
 }
 
 // Multi-dimensional array, where:
@@ -135,41 +137,42 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // heading based on a modular scale.
 // for each size in the scale, create a class
 @each $size in $sizes {
-  .#{nth($size, 1)} {
+	.#{nth($size, 1)} {
 	@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
-  }
+	}
 }
 
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
-  @extend .alpha;
-  @extend %hN;
+	@extend .alpha;
+	@extend %hN;
 }
 
 h2 {
-  @extend .beta;
-  @extend %hN;
+	@extend .beta;
+	@extend %hN;
 }
 
 h3 {
-  @extend .gamma;
-  @extend %hN;
+	@extend .gamma;
+	@extend %hN;
 }
 
 h4 {
-  @extend .delta;
-  @extend %hN;
+	@extend .delta;
+	@extend %hN;
 }
 
 h5 {
-  @extend .epsilon;
-  @extend %hN;
+	@extend .epsilon;
+	@extend %hN;
 }
 
 h6 {
-  @extend .zeta;
-  @extend %hN;
+	@extend .zeta;
+	@extend %hN;
 }</code></pre>
 	</figure>
+
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
-  </section>
+</section>
