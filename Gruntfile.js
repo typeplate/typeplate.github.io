@@ -156,6 +156,31 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+			main: {
+				files: [
+					// makes all src relative to cwd
+					{
+						expand: true,
+						cwd: '',
+						src: ['bower_components/normalize-css/normalize.css'],
+						dest: 'css/'
+					}
+				]
+			},
+			pkg: {
+				files: [
+					// makes all src relative to cwd
+					{
+						expand: true,
+						cwd: '',
+						src: ['bower_components/typeplate/css/typeplate.css'],
+						dest: 'css/'
+					}
+				]
+			}
+		},
+
 		// == Asset Cache Bust
 		// https://github.com/gillesruppert/grunt-asset-cachebuster
 		// gived your assets a version flag ?v=1385933480172
@@ -189,4 +214,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('glue', ['concat']);
 	grunt.registerTask('squish', ['uglify']);
 	grunt.registerTask('bust', ['asset_cachebuster']);
+	grunt.registerTask('build', ['copy', 'glue', 'squish']);
 };
