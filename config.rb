@@ -19,7 +19,7 @@ http_images_dir = "img"
 #end
 
 #import paths
-#add_import_path = "app/components"
+#add_import_path = ""
 
 #Project Assets Location
 css_dir = "css"
@@ -47,19 +47,8 @@ line_comments = false
 # Color output
 color_output = false
 
-# Sass Source Mapping
-# Make sure you’re running at least Chrome 24
-# http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector
+# Source Maps
 sass_options = { :debug_info => true }
-#
-# http://benfrain.com/add-sass-compass-debug-info-for-chrome-web-developer-tools/
-# sass_options = { :sourcemap => true }
-
-# Sass Sleuth
-# http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers
-#if environment != :production
-#    sass_options = {:debug_info => true}
-#end
 
 # Add support for repeating linear gradients
 # https://github.com/chriseppstein/compass/issues/401

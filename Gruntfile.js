@@ -8,16 +8,17 @@
 
 module.exports = function(grunt) {
 
-	// Project Config
+	// Load NPM Tasks
+	// https://github.com/shootaroo/jit-grunt
+	require('jit-grunt')(grunt);
+
 	grunt.initConfig({
 
-		// == Grunt JSON Package
 		pkg: grunt.file.readJSON('package.json'),
 
 		// == Assemble YAML Front Matter
 		site: grunt.file.readYAML('_config.yml'),
 
-		// == Grunt Meta Banner
 		meta: {
 			banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
 			'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
 			' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n'
 		},
 
-		// == Build HTML from templates
+		// == Assemble
 		assemble: {
 			options: {
 				flatten: true,
@@ -60,29 +61,31 @@ module.exports = function(grunt) {
 
 		// == Watch Tasks
 		watch: {
-			// HTML
 			html: {
-				files: ['**/*.html']
+				files: ['templates/**/*.html'],
+				tasks : ['assemble']
 			},
-			// Sass
+
 			sass: {
 				files: ['scss/**/*.scss'],
 				tasks: ['compass:dist']
 			},
-			// CSS
+
 			css: {
 				files: ['css/**/*.css']
 			},
-			// JavaScript
+
 			js: {
 				files: ['js/plugins.js','js/main.js']
 			},
-			// LiveReload
+
 			livereload: {
+
 				options: {
 					livereload: true
 				},
-				files: ['**/*.html', 'css/**/*.css', 'js/**/*js', '**/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+
+				files: ['templates/**/*.html', 'css/**/*.css', 'js/**/*js', '**/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
 			}
 		},
 
@@ -115,7 +118,6 @@ module.exports = function(grunt) {
 
 		// == Qunit Tests
 		qunit: {
-			// test all .html file extensions
 			all: ['*.html']
 		},
 
@@ -173,7 +175,6 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					// makes all src relative to cwd
 					{
 						expand: true,
 						cwd: '',
@@ -184,7 +185,6 @@ module.exports = function(grunt) {
 			},
 			pkg: {
 				files: [
-					// makes all src relative to cwd
 					{
 						expand: true,
 						cwd: '',
@@ -219,10 +219,6 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-
-	// Load npm tasks
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-	grunt.loadNpmTasks('assemble');
 
 	// == Grunt Registered Tasks
 	grunt.registerTask('default', ['connect', 'watch']);

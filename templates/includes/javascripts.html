@@ -7,38 +7,46 @@
 
 {{#is basename 'demo'}}
 <script>
-  $(document).ready(function() {
-    //Normalize States
-    //http://stackoverflow.com/questions/6482860/change-an-link-depending-on-the-radio-button-options-selected-using-jquery
-    var normalizeCss = $("#normalize-css"),
-      typleplateCss = $("#typeplate-css");
+	$(document).ready(function() {
 
-    //Normalize Radio Button
-    $('#normalize-form input[type="checkbox"]').on('click', function(e) {
-      //radio button checked state
-      var normalizeOffCheck = $('#normalize-off').is(':checked');
-      if(normalizeOffCheck) {
-        $("#normalize-css").attr("href", "");
-      } else {
-        $("#normalize-css").attr("href", "./css/bower_components/normalize-css/normalize.css");
-      }
-    });
+		var normalizeCss = $("#normalize-css"),
+			typleplateCss = $("#typeplate-css");
 
-    //TypePlate Radio Button
-    $('#typeplate-form input[type="checkbox"]').on('click', function(e) {
-      //radio button checked state
-      var typePlateOffCheck   = $('#typeplate-off').is(':checked');
-      if(typePlateOffCheck) {
-        $("#typeplate-css").attr("href", "");
-      } else {
-        $("#typeplate-css").attr("href", "./css/bower_components/typeplate/css/typeplate.css");
-      }
-    });
-  }); //end document.ready
+		$('#normalize-form input[type="checkbox"]').on('click', function(e) {
+
+			var normalizeOffCheck = $('#normalize-off').is(':checked');
+
+			if(normalizeOffCheck) {
+
+				$("#normalize-css").attr("href", "");
+
+			} else {
+
+				$("#normalize-css").attr("href", "./css/bower_components/normalize-css/normalize.css");
+
+			}
+		});
+
+
+		$('#typeplate-form input[type="checkbox"]').on('click', function(e) {
+
+			var typePlateOffCheck = $('#typeplate-off').is(':checked');
+
+			if(typePlateOffCheck) {
+
+				$("#typeplate-css").attr("href", "");
+
+			} else {
+
+				$("#typeplate-css").attr("href", "./css/bower_components/typeplate/css/typeplate.css");
+
+			}
+		});
+	}); //end document.ready
 </script>
 {{/is}}
 
 
 {{#if site.analytics.google.enabled}}
-  {{> google-analytics }}
+	{{> google-analytics }}
 {{/if}}
