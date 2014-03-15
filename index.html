@@ -150,9 +150,9 @@ $custom-font-family: false !default; // Custom font-face stack, if set will be a
 
 html {
 	@if $custom-font-family {
-	font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
+		font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
 	} @else {
-	font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+		font: $font-weight #{$font-size}%/#{$line-height} $font-family;
 	}
 }</code></pre>
 	</figure>
@@ -253,19 +253,18 @@ $type-scale-unit-value: rem !default;
 @mixin type-scale($scale, $base, $value, $measure:"") {
 
 	@if $value == rem {
-
-	font-size: $scale#{px};
+		font-size: $scale#{px};
 	}
 
 	font-size: context-calc($scale, $base, $value);
 
 	@if $measure != "" {
 
-	@if $value == rem {
-		margin-bottom: measure-margin($scale, $measure, $value: px);
-	}
+		@if $value == rem {
+			margin-bottom: measure-margin($scale, $measure, $value: px);
+		}
 
-	margin-bottom: measure-margin($scale, $measure, $value);
+		margin-bottom: measure-margin($scale, $measure, $value);
 	}
 }
 
@@ -301,7 +300,7 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 // for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
-	@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
 	}
 }
 
