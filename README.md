@@ -16,11 +16,11 @@ Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just
 - Raw CSS = **11kb**
 
 ## &sect; Docs
-You'll “[find our documentation here](https://github.com/typeplate/bower/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
+You'll “[find our documentation here](https://github.com/typeplate/starter-kit/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
 
 ## &sect; Contributing & Issues
 
-If you would like to contribute to the core of the Typeplate project and not to our main site please make sure you're submitting changes, patches and [issues](https://github.com/typeplate/bower/issues) to our [main project repository](https://github.com/typeplate/bower).
+If you would like to contribute to the core of the Typeplate project and not to our main site please make sure you're submitting changes, patches and [issues](https://github.com/typeplate/starter-kit/issues) to our [main project repository](https://github.com/typeplate/starter-kit).
 
 ## &sect; Getting Started
 
