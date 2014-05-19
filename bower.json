@@ -1,6 +1,6 @@
 {
   "name": "typeplate",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "main": "css/main.css",
   "ignore": [
     "**/.*",
@@ -8,10 +8,13 @@
     "bower_components"
   ],
   "dependencies": {
-    "normalize.scss": "2.1.0"
+    "normalize.scss": "2.1.0",
+    "normalize-css": "~3.0.0",
+    "typeplate": "~1.1.2",
   },
   "devDependencies": {
-    "typeplate": "~1.1.2",
-    "normalize-css": "~3.0.0"
+    "normalize.scss": "2.1.0",
+    "normalize-css": "~3.0.0",
+    "typeplate": "~1.1.4",
   }
 }

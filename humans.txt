@@ -16,7 +16,7 @@
 
 # THANKS
 
-    Trent Walton, Eric Meyer, Tim Brown, Viljamis, Vitaly, Smashing Magazine, Lea Verou & Prism.js, Happy Cog and last, but not least our users. Thank you all for your support.
+    Trent Walton, Eric Meyer, Tim Brown, Viljamis, Vitaly, Smashing Magazine, Lea Verou & Prism.js, Happy Cog and last, but not least our users and contributors. Thank you all for your support.
 
 # TECHNOLOGY COLOPHON
 

@@ -57,18 +57,19 @@
 		<a href="https://raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
 			<i class="icon-download"></i>CSS
 			<hr>
-			<small>v1.1.3 | 11kb</small>
+			<small>v1.1.4 | 10kb</small>
 		</a>
+
 		<a href="https://raw.github.com/typeplate/starter-kit/master/scss/typeplate-scss.zip" data-name="Sass Port" class="dl-item btn">
 			<i class="icon-download"></i>Sass
 			<hr>
-			<small>v1.1.3 | 3kb</small>
+			<small>v1.1.4 | 3kb</small>
 		</a>
 
 		<a href="https://github.com/typeplate/starter-kit" data-name="Bower Package" class="dl-item btn">
 			<i class="icon-download"></i>Bower Pkg.
 			<hr>
-			<small>v1.1.3</small>
+			<small>v1.1.4</small>
 		</a>
 	</div>
 </nav>
@@ -244,27 +245,40 @@ $type-scale-unit-value: rem !default;
 // divide 1 unit of measure by given font-size & return a relative em value
 
 @function measure-margin($scale, $measure, $value) {
-	@return ($measure/$scale)#{$value};
+	$pixelValue: $measure/$scale;
+	$remValue: $pixelValue * $font-base;
+
+	@if $value == rem {
+		@return $pixelValue#{$value};
+	} @else if $value == em {
+		@return ($remValue/$scale)#{$value};
+	} @else {
+		@return $remValue#{$value};
+	}
 }
 
 // $Mixin $Type-Scale
 // -------------------------------------//
 
 @mixin type-scale($scale, $base, $value, $measure:"") {
-
 	@if $value == rem {
+		font-size: $scale#{px};
+		font-size: context-calc($scale, $base, $value);
+	} @else if $value == em {
+		font-size: context-calc($scale, $base, $value);
+	} @else {
 		font-size: $scale#{px};
 	}
 
-	font-size: context-calc($scale, $base, $value);
-
 	@if $measure != "" {
-
 		@if $value == rem {
 			margin-bottom: measure-margin($scale, $measure, $value: px);
+			margin-bottom: measure-margin($scale, $measure, $value);
+		} @else if $value == em {
+			margin-bottom: measure-margin($scale, $measure, $value: em);
+		} @else {
+			margin-bottom: measure-margin($scale, $measure, $value);
 		}
-
-		margin-bottom: measure-margin($scale, $measure, $value);
 	}
 }
 
