@@ -597,8 +597,8 @@ hr {
 // ============================================================
 
 .example {
-	background: transparentize($cobalt-fade, 0.5);
-	border: 1px solid $cobalt-fade;
+	background: rgba(177, 185, 196, 0.16);
+	border: 1px solid rgba(177, 185, 196, 0.55);
 	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
 	padding: $typl8-line-height * 1rem $typl8-line-height * 1rem 0;
 	margin: $typl8-line-height * 1.5rem 0 $typl8-line-height * 1rem;
@@ -753,7 +753,7 @@ blockquote {
 		display: inline-block;
 		&:before {
 			padding-right: .25em;
-			color: gray;
+			color: #3A1414;
 		}
 	}
 }
