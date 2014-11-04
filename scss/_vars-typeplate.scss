@@ -2,115 +2,72 @@
 // TYPEPLATE : Custom Sass Variables
 // ===================================================
 
+// $Base
+// -------------------------------------//
+// General base styles for type
+//
+// $typl8-custom-font               [<"Custom-Font-Name">[, <fallback>]]
+// $typl8-font-size                 112.5% converts to an 18px base
+// $typl8-font-base                 converts % base value to a px value (16 * (112.5/100) = 18)
+// $typl8-font-family               non-font-face stack
 
-// $BaseType
+$typl8-serif-boolean: true;
+$typl8-custom-font: false;
+$typl8-font-family: if($typl8-serif-boolean, serif, sans-serif);
+$typl8-font-weight: normal;
+$typl8-line-height: 1.65;
+$typl8-font-size: 112.5;
+$typl8-font-base: 16 * ($typl8-font-size/100);
+$typl8-measure: $typl8-font-base * $typl8-line-height;
+$typl8-prefixes: -webkit-, -moz-, -ms-, '';
+
+
+// $Base-Colors
 // -------------------------------------//
 
-$font-weight: normal;
-$line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$font-family: serif; // Non-font-face font-stack
-
-$custom-font-family: false; // Custom font-face stack, if set will be added to the $base-font-family
-
-
-// $Paragraphs
-// -------------------------------------//
-
-// Text Indentation Value
-$indent-val: 1.5em;
-
-// Paragraph Styling Boolean
-// 'false' means no vertical whitespace
-// between subsequent paragraphs.
-$paragraph-vertical-whitespace: false;
-
-
-// $Small Print
-// -------------------------------------//
-
-$small-print-size: 65%;
-
-
-// $Color
-// -------------------------------------//
-
-$body-copy-color: #444;
-$heading-color: #222;
+$typl8-heading-color: #222;
+$typl8-copy-color: #444;
 
 
 // $Ampersand
 // -------------------------------------//
 
-$amp-fontface-name: Ampersand;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
-$amp-fontface-fallback: local('Georgia');
-
-// Allows for our ampersand element to have differing
-// font-family from the ampersand unicode font-family.
-$amp-font-family: Verdana, sans-serif;
+$typl8-amp-fontface: Ampersand;
+$typl8-amp-fontfamily: Verdana, sans-serif;
+$typl8-amp-src: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$typl8-amp-fallback: local('Georgia');
 
 
 // $Icon-Font-Helper
 // -------------------------------------//
 // ex.1) $icon-fonts: (icon-name);
 // ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-$icon-fonts: (cassannet, icomoon);
+$typl8-icon-fonts: (cassannet, icomoon);
 
 
 // $TypeScale
 // -------------------------------------//
 
-$tera: 117; // 117 = 18 × 6.5
-$giga: 90; // 90 = 18 × 5
-$mega: 72; // 72 = 18 × 4
-$alpha: 60; // 60 = 18 × 3.3333
-$beta: 48; // 48 = 18 × 2.6667
-$gamma: 36; // 36 = 18 × 2
-$delta: 24; // 24 = 18 × 1.3333
-$epsilon: 21; // 21 = 18 × 1.1667
-$zeta: 18; // 18 = 18 × 1
-
-
-// $TypeScale-Unit
-// -------------------------------------//
-
-$type-scale-unit-value: rem;
-
-
-// $Pull-Quotes
-// -------------------------------------//
-
-$pull-quote-fontsize: 4em;
-$pull-quote-opacity: 0.5;
-$pull-quote-color: gray;
-
-
-// $Citation
-// -------------------------------------//
-
-$cite-display: block;
-$cite-text-align: right;
-$cite-font-size: inherit;
-
-
-// $SmallCaps
-// -------------------------------------//
-
-$small-caps-color: gray;
-$small-caps-weight: 600;
+$typl8-tera: 117; // 117 = 18 × 6.5
+$typl8-giga: 90; // 90 = 18 × 5
+$typl8-mega: 72; // 72 = 18 × 4
+$typl8-alpha: 60; // 60 = 18 × 3.3333
+$typl8-beta: 48; // 48 = 18 × 2.6667
+$typl8-gamma: 36; // 36 = 18 × 2
+$typl8-delta: 24; // 24 = 18 × 1.3333
+$typl8-epsilon: 21; // 21 = 18 × 1.1667
+$typl8-zeta: 18; // 18 = 18 × 1
 
 
 // $DropCap
 // -------------------------------------//
 
-$dropcap-float-position: left;
-$dropcap-font-size: 6em;
-$dropcap-font-family: Copperplate;
-$dropcap-txt-indent: 0;
-$dropcap-margin: 0;
-$dropcap-padding: 0.125em 0.125em 0 0;
-$dropcap-color: inherit;
-$dropcap-line-height: 0.5;
-$dropcap-bg: transparent;
+$typl8-dropcap-float-position: left;
+$typl8-dropcap-font-size: 6em;
+$typl8-dropcap-font-family: Copperplate;
+$typl8-dropcap-txt-indent: 0;
+$typl8-dropcap-margin: 0;
+$typl8-dropcap-padding: 0.125em 0.125em 0 0;
+$typl8-dropcap-color: inherit;
+$typl8-dropcap-line-height: 0.5;
+$typl8-dropcap-bg: transparent;

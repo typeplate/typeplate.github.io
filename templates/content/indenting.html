@@ -15,24 +15,26 @@
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">// Text Indentation Value
-$indent-val: 1.5em !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Paragraphs Variables
+// -------------------------------------//
+// Controls paragraphs vertical whitespace
+// for subsequent paragraphs.
+//
+// $typl8-paragraph-spacing             [<'false'> | <'true'>]
 
-// Paragraph Styling Boolean
-// 'false' means no vertical whitespace
-// between subsequent paragraphs.
-$paragraph-vertical-whitespace: false !default;
+$typl8-paragraph-spacing: false !default;
+$typl8-indent-val: 1.5em !default;
+
+// $Parargraphs Styles
+// -------------------------------------//
 
 p {
-	margin: auto auto $indent-val;
-
-	// Conditonal Check For Paragraph Styling
-	@if $paragraph-vertical-whitespace == false {
+	margin: auto auto $typl8-indent-val;
+	@if $typl8-paragraph-spacing == false {
 		& + p {
-			//siblings indentation
-			text-indent: $indent-val;
-			margin-top: -$indent-val;
+			text-indent: $typl8-indent-val;
+			margin-top: -$typl8-indent-val;
 		}
 	}
 }</code></pre>

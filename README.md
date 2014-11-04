@@ -11,9 +11,9 @@ Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design c
 ## &sect; File Size
 Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
 
-- Raw Sass = **19kb**
-- Compressed Sass = **3kb**
-- Raw CSS = **11kb**
+- Raw Sass = **18 KB**
+- Compressed Sass = **3 KB**
+- Raw CSS = **10 KB**
 
 ## &sect; Docs
 You'll “[find our documentation here](https://github.com/typeplate/starter-kit/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
@@ -130,5 +130,5 @@ With so many packages to choose from, we recommend a few libraries to use with T
 4. [Team Sass Modular Scale](https://github.com/Team-Sass/modular-scale) - Sassy Modular Scale
 
 ###### ©credits
-Typeplate &copy;2013 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
+Typeplate &copy;2014 &bull; A [@grayghostvisuals](https://twitter.com/gryghostvisuals) and [@zakkain](https://twitter.com/zakkain) Joint™
 Logo Crafting by [@TommyCreenan](https://twitter.com/TommyCreenan).

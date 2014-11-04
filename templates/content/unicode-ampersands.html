@@ -9,43 +9,47 @@
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">//Unicode Ampersand @font-face
-$amp-fontface-name: Ampersand !default;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
-$amp-fontface-fallback: local('Georgia') !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Ampersands Variables
+// -------------------------------------//
 
-// Allows for our ampersand element to have differing
-// font-family from the ampersand unicode font-family.
-$amp-font-family: Verdana, sans-serif !default;
+$typl8-amp-fontface: Ampersand !default;
+$typl8-amp-fontfamily: Verdana, sans-serif !default;
+$typl8-amp-src: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$typl8-amp-fallback: local('Georgia') !default;
+
+// $Unicode-Range-Ampersand font-face
+// -------------------------------------//
 
 @font-face {
-	font-family: '#{$amp-fontface-name}';
-	src: $amp-fontface-source;
+	font-family: '#{$typl8-amp-fontface}';
+	src: $typl8-amp-src;
 	unicode-range: U+0026;
 }
 
-// Ampersand fallback font for unicode range
 @font-face {
-	font-family: '#{$amp-fontface-name}';
-	src: $amp-fontface-fallback;
+	font-family: '#{$typl8-amp-fontface}'; // fallback
+	src: $typl8-amp-fallback;
 	unicode-range: U+270C;
 }
 
-@mixin ampersand($amp-font-family...) {
-	font-family: $amp-font-family;
+// $Ampersands Extend
+// -------------------------------------//
+// Call your custom ampersand on any element.
+//
+// @markup                  &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
+// @example                 .ampersand { @extend %typl8-amp-placeholder; }
+
+%typl8-amp-placeholder {
+	@include typl8-ampersand($typl8-amp-fontface, $typl8-amp-fontfamily);
 }
 
-%ampersand-placeholder {
-	@include ampersand($amp-fontface-name, $amp-font-family);
-}
+// $Ampersand Mixin
+// -------------------------------------//
 
-// Call your ampersand on any element you wish from another stylesheet
-// using this Sass extend we've provided. For exmaple:
-//
-// &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
-//
-// .ampersand { @extend %ampersand-placeholder; }</code></pre>
+@mixin typl8-ampersand($typl8-amp-fontfamily...) {
+	font-family: $typl8-amp-fontfamily;
+}</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>

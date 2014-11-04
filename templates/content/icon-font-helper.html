@@ -10,39 +10,36 @@
 	</figure>
 
 	<figure class="typeplate-code-block">
-	<figcaption>_typeplate-vars.scss</figcaption>
-	<pre><code class="language-scss">//custom variable to override default value
-$icon-fonts: (icon-font-name, another-icon-font-name);</code></pre>
-</figure>
-
-	<figure class="typeplate-code-block">
-	<figcaption>_typeplate.scss</figcaption>
-	<pre><code class="language-scss">// ICON FONTS HELPER
-// In order to set you must have the following…
-// 1. Compass
-// 2. Create a 'fonts' directory in the root of your project
-// 3. Specify within your 'config.rb' file the following line…
+	<figcaption>Sass</figcaption>
+	<pre><code class="language-scss">// $Icon-Font-Helper Variables
+// -------------------------------------//
+// Link single or multiple icon font sets. Requires Compass
 //
-// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
-//
-// Example usage
-// ex.1) $icon-fonts: (icon-name);
-// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-$icon-fonts: null !default;
+// single icon font             $typl8-icon-fonts: (icon-name);
+// multiple icon fonts          $typl8-icon-fonts: (icon-name1, icon-name2, icon-name3);
 
-// @include font-face() is a compass function so it will require compass
-// based on this gist by Chris Van Patten
-// https://gist.github.com/4469518
-@if ($icon-fonts != null) {
-	@each $font in $icon-fonts {
-		@include font-face( $font,
+$typl8-icon-fonts: null !default;
+
+// $Icon-Font-Helper Mixin
+// -------------------------------------//
+// Loading multiple icon fonts using Compass
+//
+// 1. Install Compass.
+// 2. Create a 'fonts' directory in the root of your project.
+// 3. Specify within your 'config.rb' the following line…
+//      fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+// 4. Set your '$typl8-icon-fonts' variable as noted
+
+@if ($typl8-icon-fonts != null) {
+	@each $font in $typl8-icon-fonts {
+		@include font-face($font,
 			font-files(
 				'#{$font}/#{$font}.woff',
 				'#{$font}/#{$font}.ttf',
 				'#{$font}/#{$font}.svg', svg
-			),
-			'#{$font}/#{$font}.eot'
-			)
+				),
+			  '#{$font}/#{$font}.eot'
+		)
 	}
 }</code></pre>
 </figure>

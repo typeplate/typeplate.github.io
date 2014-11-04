@@ -59,7 +59,6 @@ p code,
 }
 
 abbr {
-	// @include smallcaps(gray, 600);
 	// ff-meta-serif has no real small caps, so we fake it
 	font-variant: normal;
 	text-transform: uppercase;
@@ -86,7 +85,7 @@ img {
 }
 
 section {
-	padding: $line-height * 0.5em 0 $line-height * 2em;
+	padding: $typl8-line-height * 0.5em 0 $typl8-line-height * 2em;
 	@extend %rhythm;
 }
 
@@ -113,7 +112,7 @@ hr {
 		margin: 0 0 1.65em;
 		text-align: center;
 		&:after {
-			@extend .delta;
+			@extend .typl8-delta;
 			background-color: #fcfcfc;
 			color: $cobalt-fade;
 			content: "§";
@@ -130,7 +129,7 @@ hr {
 .logo {
 	//vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
-	margin-right: $line-height * 1rem;
+	margin-right: $typl8-line-height * 1rem;
 	cursor: pointer;
 
 	@include breakpoint(papa-bear) {
@@ -176,7 +175,7 @@ hr {
 	}
 
 	@include breakpoint(baby-bear) {
-		margin: #{$line-height/2}em auto;
+		margin: #{$typl8-line-height/2}em auto;
 	}
 }
 
@@ -214,7 +213,7 @@ hr {
 	//@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
-		padding: #{$line-height * 2.5}em 0 0;
+		padding: #{$typl8-line-height * 2.5}em 0 0;
 		display: block;
 	}
 	@media screen and (max-width: 44.9375em) {
@@ -226,7 +225,7 @@ hr {
 	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
 	letter-spacing: normal;
 	display: block;
-	@extend .delta;
+	@extend .typl8-delta;
 	line-height: 2;
 	padding: 0 0.5em 0 0.25em;
 	margin-bottom: 0;
@@ -261,7 +260,7 @@ hr {
 
 .btn {
 	@extend %transition;
-	padding: $line-height * 0.5rem;
+	padding: $typl8-line-height * 0.5rem;
 	background: $download-btn-bg;
 	color: $cobalt-deep;
 	// pseudo
@@ -287,12 +286,12 @@ hr {
 	// break
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
-		padding: $line-height * 0.35rem;
+		padding: $typl8-line-height * 0.35rem;
 	}
 	// break
 	@include breakpoint(papa-bear) {
 		font-size: 1em;
-		padding: $line-height * 0.5rem;
+		padding: $typl8-line-height * 0.5rem;
 		width: 100%;
 	}
 }
@@ -314,10 +313,10 @@ hr {
 	}
 }
 
-[href*="typeplate-scss.zip"] {
+[href*="typeplate-sk.zip"] {
 	margin: 0 1%;
 	@include breakpoint(mama-bear) {
-		margin: #{$line-height}em auto;
+		margin: #{$typl8-line-height}em auto;
 	}
 }
 
@@ -332,7 +331,7 @@ hr {
 	@include breakpoint(baby-bear) {
 		top: 12.5em;
 		left: 0;
-		padding: #{$line-height/2}em;
+		padding: #{$typl8-line-height/2}em;
 		width: 100%;
 		text-align: center;
 		background: $cobalt-deep image-url("asfalt.png") top left repeat;
@@ -380,7 +379,7 @@ hr {
 	background: rgba(0, 0, 0, 0.1);
 	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
 	@extend %rhythm;
-	padding-bottom: #{$line-height}em;
+	padding-bottom: #{$typl8-line-height}em;
 }
 .toc ol {
 	list-style: decimal !important;
@@ -390,7 +389,7 @@ hr {
 .toc li {
 	border-bottom: 2px dotted #949494;
 	display: block;
-	@extend .zeta;
+	@extend .typl8-zeta;
 }
 .toc ol li:before {
 	counter-increment: item;
@@ -574,7 +573,6 @@ hr {
 }
 
 #drawer {
-	//padding: 1.5em 0;
 	color: white;
 	&::after {
 		border-radius: 80%;
@@ -585,7 +583,7 @@ hr {
 		line-height: 2.5;
 		margin: 0 auto;
 		width: 2.5em;
-		@extend .gamma;
+		@extend .typl8-gamma;
 		text-align: center;
 		text-shadow: 0 1px 0 $white;
 		border: 4px solid #949494;
@@ -602,12 +600,12 @@ hr {
 	background: transparentize($cobalt-fade, 0.5);
 	border: 1px solid $cobalt-fade;
 	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-	padding: $line-height * 1rem $line-height * 1rem 0;
-	margin: $line-height * 1.5rem 0 $line-height * 1rem;
+	padding: $typl8-line-height * 1rem $typl8-line-height * 1rem 0;
+	margin: $typl8-line-height * 1.5rem 0 $typl8-line-height * 1rem;
 	border-radius: 0.333333em;
 	&:before {
 		content: "example:";
-		@extend .epsilon;
+		@extend .typl8-epsilon;
 		display: block;
 		font-family: "Cassannet", sans-serif;
 		background: none;
@@ -629,7 +627,7 @@ hr {
 	overflow: auto;
 	white-space: pre;
 	word-spacing: normal;
-	@extend %normal-wrap;
+	@extend %typl8-normal-wrap;
 }
 
 // hotfix for typographic scale example
@@ -639,7 +637,7 @@ hr {
 		line-height: 1.4;
 		margin: 0;
 	}
-	.giga {
+	.typl8-giga {
 		margin-top: -0.33em;
 	}
 }
@@ -657,7 +655,7 @@ hr {
 
 // this is breakpoint baby bear
 .section-title {
-	@include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+	@include typl8-typescale($typl8-delta, $typl8-font-base, '#{$typl8-typescale-unit}', $typl8-measure);
 }
 
 
@@ -683,7 +681,7 @@ hr {
 		font-size: 0.825em;
 		background: #021321;
 		box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-		padding: $line-height * 1rem;
+		padding: $typl8-line-height * 1rem;
 		.no-js & {
 			overflow: auto;
 		}
@@ -701,11 +699,10 @@ hr {
 // ============================================================
 
 blockquote {
-	@extend .epsilon;
 	font-style: italic;
-	@include blockquote("—");
+	@include typl8-blockquote("—");
 	& + figcaption {
-		@extend .epsilon;
+		@extend .typl8-epsilon;
 	}
 }
 
@@ -714,7 +711,7 @@ blockquote {
 // ============================================================
 
 .amp {
-	@extend %ampersand-placeholder;
+	@extend %typl8-amp-placeholder;
 	padding: 0;
 	margin-top: -0.5em;
 	line-height: 1;
@@ -751,7 +748,7 @@ blockquote {
 // ============================================================
 
 .icons {
-	@extend .beta;
+	@extend .typl8-beta;
 	.fs1 {
 		display: inline-block;
 		&:before {
@@ -808,7 +805,7 @@ h6 {
 	color: #9E9E9E;
 	text-align: center;
 	height: 100%;
-	padding: #{$line-height * 1.5}em 0 #{$line-height/2}em;
+	padding: #{$typl8-line-height * 1.5}em 0 #{$typl8-line-height/2}em;
 	a {
 		color: #de4d1f;
 	}
@@ -829,7 +826,7 @@ h6 {
 
 // generic bottom rule class
 .botDivider {
-	border-bottom: #{$font-size/500}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: #{$typl8-font-size/500}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 	position: relative;
 	&:last-child {
 		border-bottom: none;
@@ -841,12 +838,12 @@ h6 {
 		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.82), 0 1px 1px #FFF;
 		content: "{T}";
 		position: absolute;
-		top: -#{$line-height}em;
+		top: -#{typl8-context-calc($typl8-font-base, 14, em)};
 		left: 45%;
-		@extend .gamma;
+		@extend .typl8-gamma;
 		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
 		color: #dcdcdc;
-		width: type-scale($font-base, 14, em);
+		width: typl8-context-calc($typl8-font-base, 14, em);
 		text-align: center;
 		border-radius: 80%;
 	}
@@ -855,7 +852,7 @@ h6 {
 //control our vertical rhythm
 %rhythm {
 	margin-top: 0;
-	margin-bottom: $line-height * 1rem;
+	margin-bottom: $typl8-line-height * 1rem;
 }
 
 
@@ -874,18 +871,18 @@ p.no-indent {
 // $Drop Cap
 // ============================================================
 
-.drop-cap {
-	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+.typl8-drop-cap {
+	@include typl8-dropcap($typl8-dropcap-float-position, $typl8-dropcap-font-size, $typl8-dropcap-font-family, $typl8-dropcap-txt-indent, $typl8-dropcap-margin, $typl8-dropcap-padding, $typl8-dropcap-color, $typl8-dropcap-line-height, $typl8-dropcap-bg);
 }
 
 
 // $Definition Lists
 // ============================================================
 
-.lining {
-	@include definition-list-style(lining);
+.typl8-lining {
+	@include typl8-definition-list-style(lining);
 }
 
-.dictionary-style {
-	@include definition-list-style(dictionary-style);
+.typl8-dictionary-style {
+	@include typl8-definition-list-style(dictionary-style);
 }

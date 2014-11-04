@@ -32,45 +32,43 @@
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$cite-display: block !default;
-$cite-text-align: right !default;
-$cite-font-size: inherit !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Citations Variables
+// -------------------------------------//
 
-// Use our pre-defined markup and add a class
-// to your custom blockquote element.
-// For example:
-//
-// .blockquote { @include blockquote("-"); }
-//
-// "-" is your citation flourish. For example:
+$typl8-cite-display: block !default;
+$typl8-cite-align: right !default;
+$typl8-cite-font-size: inherit !default;
+
+// $Blockquote Mixin
+// -------------------------------------//
+// "-" is your citation flourish.
 //
 // I always say important things because I'm so smart
-//                                      - author name
+//                           - Super Important Person
+//
+// @example                 .your-class-name { @include blockquote("-"); }
 
-// Citation Mixin for Custom Styling
-@mixin cite-style($display, $text-align, $font-size) {
-	display: $display;
-	font-size: $font-size;
-	text-align: $text-align;
-}
-
-%cite {
-	@include cite-style($cite-display, $cite-text-align, $cite-font-size);
-}
-
-@mixin blockquote($citation-flourish) {
+@mixin typl8-blockquote($citation-flourish) {
 	p {
 		&:last-of-type {
-			margin-bottom: -#{$line-height/2}em;
+			margin-bottom: -#{$typl8-line-height/2}em;
 		}
 	}
+
 	+ figcaption {
-		@extend %cite;
+		@extend %typl8-cite;
+
 		&:before {
 			content: $citation-flourish;
 		}
 	}
+}
+
+@mixin typl8-cite-style($display, $text-align, $font-size) {
+	display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>

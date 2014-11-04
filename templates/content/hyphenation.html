@@ -12,37 +12,46 @@
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin css-hyphens($val) {
-	// Accepted values: [ none | manual | auto ]
-	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
-	-moz-hyphens: $val; // Firefox 16 thru 20
-	-ms-hyphens: $val; // IE10
-	-o-hyphens: $val; // PRESTO...haha LOL
-	hyphens: $val; // W3C standard
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Hypens
+// -------------------------------------//
+$typl8-prefixes: -webkit-, -moz-, -ms-, '';
+
+// $Hypens Mixin
+// -------------------------------------//
+// @notes
+// http://caniuse.com/#search=hyphens
+// http://trentwalton.com/2011/09/07/css-hyphenation
+//
+// @values              [ none | manual | auto ]
+
+@mixin typl8-hyphens($val) {
+	@each $prefix in $typl8-prefixes {
+		#{$prefix}hyphens: $val;
+	}
 }
+
+// $Hyphenation Styles
+// -------------------------------------//
+// @notes
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 
 body {
 	// Ala Trent Walton
 	// http://trentwalton.com/2011/09/07/css-hyphenation
-	@include css-hyphens(auto);
+	@include typl8-hyphens(auto);
 }
 
+input,
 abbr,
 acronym,
 blockquote,
 code,
-dir,
 kbd,
-listing,
-plaintext,
 q,
 samp,
-tt,
-var,
-xmp {
-	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
-	@include css-hyphens(none);
+var {
+	@include typl8-hyphens(none);
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>

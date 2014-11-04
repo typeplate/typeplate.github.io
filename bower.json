@@ -9,12 +9,10 @@
   ],
   "dependencies": {
     "normalize.scss": "2.1.0",
-    "normalize-css": "~3.0.0",
-    "typeplate": "~1.1.2",
+    "normalize-css": "~3.0.0"
   },
   "devDependencies": {
     "normalize.scss": "2.1.0",
-    "normalize-css": "~3.0.0",
-    "typeplate": "~1.1.4",
+    "normalize-css": "~3.0.0"
   }
 }

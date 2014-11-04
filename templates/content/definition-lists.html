@@ -6,7 +6,7 @@
 	<p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
 	<p>TypePlate offers several different patterns for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
 
-	<h3 class="delta">a) Multi-line Definitions (default)</h3>
+	<h3 class="typl8-delta">a) Multi-line Definitions (default)</h3>
 	<figure class="example no-top-pad">
 		<dl>
 			<dt><b>This is a term</b></dt>
@@ -25,11 +25,11 @@
 &lt;/dl&gt;</code></pre>
 	</figure>
 
-	<h3 class="delta">b) Inline Definitions</h3>
+	<h3 class="typl8-delta">b) Inline Definitions</h3>
 	<p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
 
 	<figure class="example no-top-pad">
-		<dl class="lining">
+		<dl class="typl8-lining">
 			<dt><b>This is a term</b></dt>
 				<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
 			<dt><b>Another Term</b></dt>
@@ -43,22 +43,30 @@
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;dl class="lining"&gt;
+		<pre><code class="language-markup">&lt;dl class="typl8-lining"&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
 	&lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin definition-list-style($style) {
-	// lining style
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Definition-Lists Mixin
+// -------------------------------------//
+// @notes
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+
+@mixin typl8-definition-list-style($style) {
 	@if $style == lining {
-		dt, dd {
+		dt,
+		dd {
 			display: inline;
 			margin: 0;
 		}
-		dt, dd {
+
+		dt,
+		dd {
 			& + dt {
 				&:before {
 					content: "\A";
@@ -66,6 +74,7 @@
 				}
 			}
 		}
+
 		dd {
 			& + dd {
 				&:before {
@@ -74,22 +83,25 @@
 			}
 			&:before {
 					content: ": ";
-					margin-left: -0.2rem; // removes extra space between the dt and the colon
+					margin-left: -0.2rem; //removes extra space between the dt and the colon
 			}
 		}
 	}
 }
 
-dl {
-		@include definition-list-style(lining);
+// $Definition Helper
+// -------------------------------------//
+
+.typl8-lining {
+	@include typl8-definition-list-style(lining);
 }</code></pre>
 	</figure>
 
-	<h3 class="delta">c) Dictionary-style Definition</h3>
+	<h3 class="typl8-delta">c) Dictionary-style Definition</h3>
 	<p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
 
 	<figure class="example no-top-pad">
-		<dl class="dictionary-style">
+		<dl class="typl8-dictionary-style">
 			<dt><b>This is a term</b></dt>
 				<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
 			<dt><b>Another Term</b></dt>
@@ -103,7 +115,7 @@ dl {
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
+		<pre><code class="language-markup">&lt;dl class="typl8-dictionary-style"&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
 		&lt;dd&gt;&lt;/dd&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
@@ -115,9 +127,13 @@ dl {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin definition-list-style($style) {
-	// dictionary-style
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Definition-Lists Variables
+// -------------------------------------//
+// @notes
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+@mixin typl8-definition-list-style($style) {
 	@if $style == dictionary-style {
 		dt {
 			display: inline;
@@ -125,10 +141,11 @@ dl {
 			& + dt {
 				&:before {
 					content: ", ";
-					margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+					margin-left: -0.2rem; // removes extra space between the dt and the comma
 				}
 			}
 		}
+
 		dd {
 			display: block;
 			counter-increment: definitions;
@@ -139,8 +156,11 @@ dl {
 	}
 }
 
-dl {
-	@include definition-list-style(dictionary-style);
+// $Definition Helper
+// -------------------------------------//
+
+.typl8-dictionary-style {
+	@include typl8-definition-list-style(dictionary-style);
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>

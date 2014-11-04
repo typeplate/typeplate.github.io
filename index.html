@@ -16,7 +16,7 @@
 <meta name="description" content="A typographic starter kit for Web developers and designers, where we don’t make too many design choices, but we do set out patterns for proper markup and “pre-designed” styles for great Web typography.
 ">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-<link rel="stylesheet" href="./css/main.css?v=1.1.3"><script src="./js/vendor/modernizr.min.js"></script>
+<link rel="stylesheet" href="./css/main.css?v=2.0.0"><script src="./js/vendor/modernizr.min.js"></script>
 	</head>
 
 	<body>
@@ -54,22 +54,22 @@
 		<!-- Main content -->
 		<nav class="downloads nav">
 	<div class="col-wrap">
-		<a href="https://raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
+		<a href="//raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
 			<i class="icon-download"></i>CSS
 			<hr>
-			<small>v1.1.4 | 10kb</small>
+			<small>v2.0.0 | 10 KB</small>
 		</a>
 
-		<a href="https://raw.github.com/typeplate/starter-kit/master/scss/typeplate-scss.zip" data-name="Sass Port" class="dl-item btn">
+		<a href="//github.com/typeplate/starter-kit/blob/development/typeplate-sk.zip?raw=true" data-name="Sass Port" class="dl-item btn">
 			<i class="icon-download"></i>Sass
 			<hr>
-			<small>v1.1.4 | 3kb</small>
+			<small>v2.0.0 | 18 KB</small>
 		</a>
 
 		<a href="https://github.com/typeplate/starter-kit" data-name="Bower Package" class="dl-item btn">
 			<i class="icon-download"></i>Bower Pkg.
 			<hr>
-			<small>v1.1.4</small>
+			<small>v2.0.0</small>
 		</a>
 	</div>
 </nav>
@@ -80,7 +80,7 @@
 <section class="toc" id="table-of-contents">
 
 	<header>
-		<h1 class="delta center capsify">Table of Contents <b class="icon-download"></b></h1>
+		<h1 class="typl8-delta center capsify">Table of Contents <b class="icon-download"></b></h1>
 	</header>
 
 	<div id="drawer" class="visuallyhidden">
@@ -129,32 +129,36 @@
 	<p>For our base we use the following font settings on the <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Meyer himself</a>.</p>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">// $Variable $BaseType
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Base Variables
 // -------------------------------------//
+// General base styles for type
 
 //the serif boolean var can be redeclared from another stylesheet. However
 //the var must be placed after your @import "typeplate.scss";
-$serif-boolean: true !default;
+$typl8-serif-boolean: true !default;
+$typl8-custom-font: false !default;
+$typl8-font-family: if($typl8-serif-boolean, serif, sans-serif) !default;
+$typl8-font-weight: normal !default;
+$typl8-line-height: 1.65 !default;
+$typl8-font-size: 112.5 !default;
+$typl8-font-base: 16 * ($typl8-font-size/100) !default;
+$typl8-measure: $typl8-font-base * $typl8-line-height;
 
-$font-family: if($serif-boolean, serif, sans-serif) !default; // Non-font-face font-stack
 
-$font-weight: normal !default;
-$line-height: 1.65 !default;
-$font-size: 112.5 !default; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
-$custom-font-family: false !default; // Custom font-face stack, if set will be added to the $font-family
-
-
-// $Styles $Globals
+// $Global Styles
 // -------------------------------------//
 
 html {
-	@if $custom-font-family {
-		font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
+	@if $typl8-custom-font {
+		font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-custom-font, $typl8-font-family;
 	} @else {
-		font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+		font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-font-family;
 	}
+}
+
+body {
+	color: $typl8-copy-color;
 }</code></pre>
 	</figure>
 
@@ -165,12 +169,12 @@ html {
 	<!-- #typographic-scale -->
 <section class="typographic-scale botDivider" id="typographic-scale">
 	<header>
-		<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
+		<h1 class="typl8-gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
 	</header>
 
 	<p>Establish clearly distinguishable heading levels with font-size. Don’t randomly pick font sizes, choose a type hierarchy that is harmonious and consistent. Do your best to <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">use a modular scale</a> that calculates those sizes from a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
 
-	<figure class="blockquote">
+	<figure class="typl8-blockquote">
 		<blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
 			<p>By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers.</p>
 		</blockquote>
@@ -178,14 +182,14 @@ html {
 	</figure>
 
 	<figure class="example scale-example">
-		<p class="no-indent giga">Heading Giga</p>
-		<p class="no-indent mega">Heading Mega</p>
-		<p class="no-indent alpha">Heading Alpha</p>
-		<p class="no-indent beta">Heading Beta</p>
-		<p class="no-indent gamma">Heading Gamma</p>
-		<p class="no-indent delta">Heading Delta</p>
-		<p class="no-indent epsilon">Heading Epsilon</p>
-		<p class="no-indent zeta">Heading Zeta</p>
+		<p class="no-indent typl8-giga">Heading Giga</p>
+		<p class="no-indent typl8-mega">Heading Mega</p>
+		<p class="no-indent typl8-alpha">Heading Alpha</p>
+		<p class="no-indent typl8-beta">Heading Beta</p>
+		<p class="no-indent typl8-gamma">Heading Gamma</p>
+		<p class="no-indent typl8-delta">Heading Delta</p>
+		<p class="no-indent typl8-epsilon">Heading Epsilon</p>
+		<p class="no-indent typl8-zeta">Heading Zeta</p>
 	</figure>
 
 	<figure class="typeplate-code-block">
@@ -200,53 +204,80 @@ feel free to include the Sass '@extend' with your selector.
 For example…
 
 p {
-	@extend .alpha;
+	@extend .typl8-alpha;
 }
 --&gt;
-&lt;h1 class=&quot;giga&quot;&gt;Heading Giga&lt;/h1&gt;
-&lt;h1 class=&quot;mega&quot;&gt;Heading Mega&lt;/h1&gt;
-&lt;h1 class=&quot;alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
-&lt;h2 class=&quot;beta&quot;&gt;Heading Beta&lt;/h2&gt;
-&lt;h3 class=&quot;gamma&quot;&gt;Heading Gamma&lt;/h3&gt;
-&lt;h4 class=&quot;delta&quot;&gt;Heading Delta&lt;/h4&gt;
-&lt;h5 class=&quot;epsilon&quot;&gt;Heading Epsilon&lt;/h5&gt;
-&lt;h6 class=&quot;zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre>
+&lt;h1 class=&quot;typl8-giga&quot;&gt;Heading Giga&lt;/h1&gt;
+&lt;h1 class=&quot;typl8-mega&quot;&gt;Heading Mega&lt;/h1&gt;
+&lt;h1 class=&quot;typl8-alpha&quot;&gt;Heading Alpha&lt;/h1&gt;
+&lt;h2 class=&quot;typl8-beta&quot;&gt;Heading Beta&lt;/h2&gt;
+&lt;h3 class=&quot;typl8-gamma&quot;&gt;Heading Gamma&lt;/h3&gt;
+&lt;h4 class=&quot;typl8-delta&quot;&gt;Heading Delta&lt;/h4&gt;
+&lt;h5 class=&quot;typl8-epsilon&quot;&gt;Heading Epsilon&lt;/h5&gt;
+&lt;h6 class=&quot;typl8-zeta&quot;&gt;Heading Zeta&lt;/h6&gt;</code></pre>
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$measure: $font-base * $line-height;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">$typl8-measure: $typl8-font-base * $typl8-line-height;
 
-// Modular Scale Values
-// http://typecast.com/blog/contrast-through-scale
-$tera: 117 !default; // 117 = 18 × 6.5
-$giga: 90 !default; // 90 = 18 × 5
-$mega: 72 !default; // 72 = 18 × 4
-$alpha: 60 !default; // 60 = 18 × 3.3333
-$beta: 48 !default; // 48 = 18 × 2.6667
-$gamma: 36 !default; // 36 = 18 × 2
-$delta: 24 !default; // 24 = 18 × 1.3333
-$epsilon: 21 !default; // 21 = 18 × 1.1667
-$zeta: 18 !default; // 18 = 18 × 1
-
-// typscale unit
-$type-scale-unit-value: rem !default;
-
-// $Function $Context Calculator
+// $Typescale
 // -------------------------------------//
-// divide a given font-size by base font-size & return a relative value
+// Greek heading names and scale using base font-size
+//
+// typl8-tera                    117 = 18 × 6.5
+// typl8-giga                     90 = 18 × 5
+// typl8-mega                     72 = 18 × 4
+// typl8-alpha                    60 = 18 × 3.3333
+// typl8-beta                     48 = 18 × 2.6667
+// typl8-gamma                    36 = 18 × 2
+// typl8-delta                    24 = 18 × 1.3333
+// typl8-epsilon                  21 = 18 × 1.1667
+// typl8-zeta                     18 = 18 × 1
 
-@function context-calc($scale, $base, $value) {
+$typl8-scale: (
+  typl8-tera: 117,
+  typl8-giga: 90,
+  typl8-mega: 72,
+  typl8-alpha: 60,
+  typl8-beta: 48,
+  typl8-gamma: 36,
+  typl8-delta: 24,
+  typl8-epsilon: 21,
+  typl8-zeta: 18,
+) !default;
+
+$typl8-headings: (
+  h1: typl8-mega,
+  h2: typl8-alpha,
+  h3: typl8-beta,
+  h4: typl8-gamma,
+  h5: typl8-delta,
+  h6: typl8-zeta
+) !default;
+
+// $Typescale Unit
+// -------------------------------------//
+
+$typl8-typescale-unit: rem !default;
+
+// $Context Calculator
+// -------------------------------------//
+// target / context = result
+//
+// @example             p { font-size: typl8-context-calc(24, 16, px); }
+
+@function typl8-context-calc($scale, $base, $value) {
 	@return ($scale/$base)#{$value};
 }
 
-// $Function $Measure-Margin
+// $Measure-Margin
 // -------------------------------------//
-// divide 1 unit of measure by given font-size & return a relative em value
+// divide 1 unit of measure by given font-size & return relative value
 
-@function measure-margin($scale, $measure, $value) {
+@function typl8-measure-margin($scale, $measure, $value) {
 	$pixelValue: $measure/$scale;
-	$remValue: $pixelValue * $font-base;
+	$remValue: $pixelValue * $typl8-font-base;
 
 	@if $value == rem {
 		@return $pixelValue#{$value};
@@ -257,97 +288,50 @@ $type-scale-unit-value: rem !default;
 	}
 }
 
-// $Mixin $Type-Scale
+// $Typescale Mixin
 // -------------------------------------//
 
-@mixin type-scale($scale, $base, $value, $measure:"") {
+@mixin typl8-typescale($scale, $base, $value, $measure:"") {
 	@if $value == rem {
 		font-size: $scale#{px};
-		font-size: context-calc($scale, $base, $value);
+		font-size: typl8-context-calc($scale, $base, $value);
 	} @else if $value == em {
-		font-size: context-calc($scale, $base, $value);
+		font-size: typl8-context-calc($scale, $base, $value);
 	} @else {
 		font-size: $scale#{px};
 	}
 
 	@if $measure != "" {
 		@if $value == rem {
-			margin-bottom: measure-margin($scale, $measure, $value: px);
-			margin-bottom: measure-margin($scale, $measure, $value);
+			margin-bottom: typl8-measure-margin($scale, $measure, $value: px);
+			margin-bottom: typl8-measure-margin($scale, $measure, $value);
 		} @else if $value == em {
-			margin-bottom: measure-margin($scale, $measure, $value: em);
+			margin-bottom: typl8-measure-margin($scale, $measure, $value: em);
 		} @else {
-			margin-bottom: measure-margin($scale, $measure, $value);
+			margin-bottom: typl8-measure-margin($scale, $measure, $value);
 		}
 	}
 }
 
-// Extend included classes on any element of your
-// choosing for adjusting type based on the scale
-// provided.
+// $Headings Styles
+// -------------------------------------//
+// Heading scale. Call from actual headings or other elements.
 // Special Props to Harry Roberts for this trick.
-
-// For example:
-
-// &lt;h6 class="giga"&gt;Awesome Headline&lt;/h6&gt;
-// &lt;p class="tera"&gt;a story about a dude&lt;/p&gt;
-
-// Our Type Scale is as follows with px fallbacks
-// for IE 6-8 as they do not understand REM units.
 //
-// 18, 21, 24, 36, 48, 60, 72, 90, 117
+// @markup                      &lt;h6 class="typl8-giga"&gt;Awesome Headline&lt;/h6&gt;
+//                              &lt;p class="typl8-tera"&gt;A story about a dude&lt;/p&gt;
+// optimizeLegibility           Enables ligatures and kerning
+// single line height           Fixes large spaces when a heading wraps two lines
 
-// styles for all headings, in the style of @csswizardry
-%hN {
-	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-	line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-	margin-top: 0;
+%typl8-hN {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+  color: $typl8-heading-color;
 }
 
-// Multi-dimensional array, where:
-// the first value is the name of the class
-// and the second value is the variable for the size
-$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
-
-// Sass loop to associate h1-h6 tags with their appropriate greek
-// heading based on a modular scale.
-// for each size in the scale, create a class
-@each $size in $sizes {
-	.#{nth($size, 1)} {
-		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
-	}
-}
-
-// associate h1-h6 tags with their appropriate greek heading
-h1 {
-	@extend .alpha;
-	@extend %hN;
-}
-
-h2 {
-	@extend .beta;
-	@extend %hN;
-}
-
-h3 {
-	@extend .gamma;
-	@extend %hN;
-}
-
-h4 {
-	@extend .delta;
-	@extend %hN;
-}
-
-h5 {
-	@extend .epsilon;
-	@extend %hN;
-}
-
-h6 {
-	@extend .zeta;
-	@extend %hN;
-}</code></pre>
+@include typl8-headings;
+@include typl8-headings-style;</code></pre>
 	</figure>
 
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -363,11 +347,13 @@ h6 {
 
 	<figure class="typeplate-code-block">
 		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$body-copy-color: #444 !default;
-$heading-color: #222 !default;
+		<pre><code class="language-scss">// $Color Variables
+// -------------------------------------//
+$typl8-body-copy-color: #444 !default;
+$typl8-heading-color: #222 !default;
 
 body {
-	color: $body-copy-color;
+	color: $typl8-body-copy-color;
 }
 
 h1,
@@ -376,7 +362,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: $heading-color;
+	color: $typl8-heading-color;
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -388,31 +374,37 @@ h6 {
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.4 Word-Wrap</h1>
 	</header>
 	<p>The word-wrap <abbr title="cascading style sheets">CSS</abbr> property is used to specify whether or not the browser may break lines within words in order to prevent overflow when an otherwise unbreakable string is too long to fit in its containing box.</p>
-	<h2 class="zeta">Example:</h2>
+	<h2 class="typl8-zeta">Example:</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We’ll also be checking a few things like the longest word in the world “Methionylthreonylthreonylglutaminylarginylisoleucine” and other stuff like links that are way long such as <a href="http://google.com" rel="external">“Methionylthreonylthreonylglutaminylarginylisoleucine”</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">// Silent Sass Classes - A.K.A Placeholders
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Wordwrap
+// -------------------------------------//
+// Control word wrapping and breaks in your text.
 //
-// normal: Indicates that lines may only break at normal word break points.
-// break-word : Indicates that normally unbreakable words may be broken at
-// arbitrary points if there are no otherwise acceptable break points in the line.
+// 'normal'                     Lines may only break at normal word break points.
+// 'break-word'                 Unbreakable words may be broken at arbitrary points.
+//
+// @example                     article { @extend %typl8-breakword; }
 
-%breakword {
+%typl8-breakword {
 	word-wrap: break-word;
 }
 
-%normal-wrap {
+%typl8-normal-wrap {
 	word-wrap: normal;
 }
 
-%auto-wrap {
+%typl8-inherit-wrap {
 	word-wrap: auto;
 }
 
+// $Global Styles
+// -------------------------------------//
+
 body {
-	@extend %breakword;
+	@extend %typl8-breakword;
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -437,24 +429,26 @@ body {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">// Text Indentation Value
-$indent-val: 1.5em !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Paragraphs Variables
+// -------------------------------------//
+// Controls paragraphs vertical whitespace
+// for subsequent paragraphs.
+//
+// $typl8-paragraph-spacing             [<'false'> | <'true'>]
 
-// Paragraph Styling Boolean
-// 'false' means no vertical whitespace
-// between subsequent paragraphs.
-$paragraph-vertical-whitespace: false !default;
+$typl8-paragraph-spacing: false !default;
+$typl8-indent-val: 1.5em !default;
+
+// $Parargraphs Styles
+// -------------------------------------//
 
 p {
-	margin: auto auto $indent-val;
-
-	// Conditonal Check For Paragraph Styling
-	@if $paragraph-vertical-whitespace == false {
+	margin: auto auto $typl8-indent-val;
+	@if $typl8-paragraph-spacing == false {
 		& + p {
-			//siblings indentation
-			text-indent: $indent-val;
-			margin-top: -$indent-val;
+			text-indent: $typl8-indent-val;
+			margin-top: -$typl8-indent-val;
 		}
 	}
 }</code></pre>
@@ -478,37 +472,46 @@ p {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin css-hyphens($val) {
-	// Accepted values: [ none | manual | auto ]
-	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
-	-moz-hyphens: $val; // Firefox 16 thru 20
-	-ms-hyphens: $val; // IE10
-	-o-hyphens: $val; // PRESTO...haha LOL
-	hyphens: $val; // W3C standard
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Hypens
+// -------------------------------------//
+$typl8-prefixes: -webkit-, -moz-, -ms-, '';
+
+// $Hypens Mixin
+// -------------------------------------//
+// @notes
+// http://caniuse.com/#search=hyphens
+// http://trentwalton.com/2011/09/07/css-hyphenation
+//
+// @values              [ none | manual | auto ]
+
+@mixin typl8-hyphens($val) {
+	@each $prefix in $typl8-prefixes {
+		#{$prefix}hyphens: $val;
+	}
 }
+
+// $Hyphenation Styles
+// -------------------------------------//
+// @notes
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 
 body {
 	// Ala Trent Walton
 	// http://trentwalton.com/2011/09/07/css-hyphenation
-	@include css-hyphens(auto);
+	@include typl8-hyphens(auto);
 }
 
+input,
 abbr,
 acronym,
 blockquote,
 code,
-dir,
 kbd,
-listing,
-plaintext,
 q,
 samp,
-tt,
-var,
-xmp {
-	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
-	@include css-hyphens(none);
+var {
+	@include typl8-hyphens(none);
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -532,23 +535,37 @@ xmp {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$small-caps-color: gray !default;
-$small-caps-weight: 600 !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Small-Caps Variables
+// -------------------------------------//
 
-@mixin smallcaps($color, $font-weight) {
-	// depends on the font family.
-	// some font-families don’t support small caps
-	// or don’t provide them with their web font.
-	font-variant: small-caps;
+$typl8-smcps-color: gray !default;
+$typl8-smcps-weight: 600 !default;
+
+// $Smallcaps Mixin
+// -------------------------------------//
+// @notes
+// http://caniuse.com/#search=font-variant
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// 'font-variant' depends on the font family in use.
+// Some font-families don't support small caps
+// or don't provide them with their Webfont.
+
+@mixin typl8-smallcaps($color, $font-weight) {
+	@each $prefix in $typl8-prefixes {
+		#{$prefix}font-variant: small-caps;
+	}
 	font-weight: $font-weight;
 	text-transform: lowercase;
 	color: $color;
 }
 
+// $Smallcaps Styles
+// -------------------------------------//
+
 abbr {
-	@include smallcaps($small-caps-color, $small-caps-weight);
-	&:hover {
+	@include typl8-smallcaps($typl8-smcps-color, $typl8-smcps-weight);
+	&[title]:hover {
 		cursor: help;
 	}
 }</code></pre>
@@ -565,55 +582,83 @@ abbr {
 	<p>A Drop Cap is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
 
 	<figure class="example">
-		<p class="drop-cap">There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.</p>
+		<p class="typl8-drop-cap">There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.</p>
 	</figure>
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
 		<pre><code class="language-markup">&lt;!-- Add the drop-cap class to your element --&gt;
-&lt;p class=&quot;drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
+&lt;p class=&quot;typl8-drop-cap&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in aliquid rem. Esse laboriosam nisi quas eveniet atque consequatur perferendis nostrum dignissimos magni cum suscipit delectus nam placeat qui rem.&lt;/p&gt;</code></pre>
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$dropcap-float-position: left !default;
-$dropcap-font-size: 4em !default;
-$dropcap-font-family: inherit !default;
-$dropcap-txt-indent: 0 !default;
-$dropcap-margin: inherit !default;
-$dropcap-padding: inherit !default;
-$dropcap-color: inherit !default;
-$dropcap-line-height: 1 !default;
-$dropcap-bg: transparent !default;
+		<figcaption>Typeplate Sass Helper</figcaption>
+		<pre><code class="language-scss">// $DropCap
+// -------------------------------------//
 
-// Use @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
-// to pass the following arguments below. Feel free to pass in custom
-// values for the variables we've provided.
+$typl8-dropcap-float-position: left !default;
+$typl8-dropcap-font-size: 4em !default;
+$typl8-dropcap-font-family: inherit !default;
+$typl8-dropcap-txt-indent: 0 !default;
+$typl8-dropcap-margin: 10px 10px 0 0 !default;
+$typl8-dropcap-padding: 0 20px !default;
+$typl8-dropcap-color: inherit !default;
+$typl8-dropcap-line-height: 1 !default;
+$typl8-dropcap-bg: transparent !default;
+
+// $Dropcap Mixin
+// -------------------------------------//
+// Add styling to intro paragraphs using a dropcap
 //
-// Make sure you add the class “drop-cap” to your markup in order to operate.
-@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
+// @markup              &lt;p class="typl8-drop-cap"&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+// @example             .dropcap { @include typl8-dropcap; }
+
+@mixin typl8-dropcap(
+	$float-position,
+	$font-size,
+	$font-family,
+	$txt-indent,
+	$margin,
+	$padding,
+	$color,
+	$line-height,
+	$bg
+	) {
 	&:first-letter {
-		float: $dropcap-float-position;
-		margin: $dropcap-margin;
-		padding: $dropcap-padding;
-		font-size: $dropcap-font-size;
-		font-family: $dropcap-font-family;
-		line-height: $dropcap-line-height;
-		text-indent: $dropcap-txt-indent;
-		background: $dropcap-bg;
-		color: $dropcap-color;
+		float: $float-position;
+		margin: $margin;
+		padding: $padding;
+		font-size: $font-size;
+		font-family: $font-family;
+		line-height: $line-height;
+		text-indent: $txt-indent;
+		background: $bg;
+		color: $color;
 	}
 }
 
-// Combats our sibling paragraphs syling and indentation
-// As not to ruin our beautiful drop caps.
-p + .drop-cap {
-	text-indent: 0;
-	margin-top: 0;
+// $Dropcap Helper
+// -------------------------------------//
+
+.typl8-drop-cap {
+	@include dropcap(
+		$typl8-dropcap-float-position,
+		$typl8-dropcap-font-size,
+		$typl8-dropcap-font-family,
+		$typl8-dropcap-txt-indent,
+		$typl8-dropcap-margin,
+		$typl8-dropcap-padding,
+		$typl8-dropcap-color,
+		$typl8-dropcap-line-height,
+		$typl8-dropcap-bg
+	);
 }
 
-.drop-cap {
-	@include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+// @notes
+// combats our sibling paragraph syling and indentation
+p + .typl8-drop-cap {
+	text-indent: 0;
+	margin-top: 0;
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -631,43 +676,47 @@ p + .drop-cap {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">//Unicode Ampersand @font-face
-$amp-fontface-name: Ampersand !default;
-$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
-$amp-fontface-fallback: local('Georgia') !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Ampersands Variables
+// -------------------------------------//
 
-// Allows for our ampersand element to have differing
-// font-family from the ampersand unicode font-family.
-$amp-font-family: Verdana, sans-serif !default;
+$typl8-amp-fontface: Ampersand !default;
+$typl8-amp-fontfamily: Verdana, sans-serif !default;
+$typl8-amp-src: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$typl8-amp-fallback: local('Georgia') !default;
+
+// $Unicode-Range-Ampersand font-face
+// -------------------------------------//
 
 @font-face {
-	font-family: '#{$amp-fontface-name}';
-	src: $amp-fontface-source;
+	font-family: '#{$typl8-amp-fontface}';
+	src: $typl8-amp-src;
 	unicode-range: U+0026;
 }
 
-// Ampersand fallback font for unicode range
 @font-face {
-	font-family: '#{$amp-fontface-name}';
-	src: $amp-fontface-fallback;
+	font-family: '#{$typl8-amp-fontface}'; // fallback
+	src: $typl8-amp-fallback;
 	unicode-range: U+270C;
 }
 
-@mixin ampersand($amp-font-family...) {
-	font-family: $amp-font-family;
+// $Ampersands Extend
+// -------------------------------------//
+// Call your custom ampersand on any element.
+//
+// @markup                  &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
+// @example                 .ampersand { @extend %typl8-amp-placeholder; }
+
+%typl8-amp-placeholder {
+	@include typl8-ampersand($typl8-amp-fontface, $typl8-amp-fontfamily);
 }
 
-%ampersand-placeholder {
-	@include ampersand($amp-fontface-name, $amp-font-family);
-}
+// $Ampersand Mixin
+// -------------------------------------//
 
-// Call your ampersand on any element you wish from another stylesheet
-// using this Sass extend we've provided. For exmaple:
-//
-// &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
-//
-// .ampersand { @extend %ampersand-placeholder; }</code></pre>
+@mixin typl8-ampersand($typl8-amp-fontfamily...) {
+	font-family: $typl8-amp-fontfamily;
+}</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
@@ -685,39 +734,36 @@ $amp-font-family: Verdana, sans-serif !default;
 	</figure>
 
 	<figure class="typeplate-code-block">
-	<figcaption>_typeplate-vars.scss</figcaption>
-	<pre><code class="language-scss">//custom variable to override default value
-$icon-fonts: (icon-font-name, another-icon-font-name);</code></pre>
-</figure>
-
-	<figure class="typeplate-code-block">
-	<figcaption>_typeplate.scss</figcaption>
-	<pre><code class="language-scss">// ICON FONTS HELPER
-// In order to set you must have the following…
-// 1. Compass
-// 2. Create a 'fonts' directory in the root of your project
-// 3. Specify within your 'config.rb' file the following line…
+	<figcaption>Sass</figcaption>
+	<pre><code class="language-scss">// $Icon-Font-Helper Variables
+// -------------------------------------//
+// Link single or multiple icon font sets. Requires Compass
 //
-// fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
-//
-// Example usage
-// ex.1) $icon-fonts: (icon-name);
-// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-$icon-fonts: null !default;
+// single icon font             $typl8-icon-fonts: (icon-name);
+// multiple icon fonts          $typl8-icon-fonts: (icon-name1, icon-name2, icon-name3);
 
-// @include font-face() is a compass function so it will require compass
-// based on this gist by Chris Van Patten
-// https://gist.github.com/4469518
-@if ($icon-fonts != null) {
-	@each $font in $icon-fonts {
-		@include font-face( $font,
+$typl8-icon-fonts: null !default;
+
+// $Icon-Font-Helper Mixin
+// -------------------------------------//
+// Loading multiple icon fonts using Compass
+//
+// 1. Install Compass.
+// 2. Create a 'fonts' directory in the root of your project.
+// 3. Specify within your 'config.rb' the following line…
+//      fonts_dir = "name-of-your-fonts-directory" ( i.e. fonts_dir = "fonts" )
+// 4. Set your '$typl8-icon-fonts' variable as noted
+
+@if ($typl8-icon-fonts != null) {
+	@each $font in $typl8-icon-fonts {
+		@include font-face($font,
 			font-files(
 				'#{$font}/#{$font}.woff',
 				'#{$font}/#{$font}.ttf',
 				'#{$font}/#{$font}.svg', svg
-			),
-			'#{$font}/#{$font}.eot'
-			)
+				),
+			  '#{$font}/#{$font}.eot'
+		)
 	}
 }</code></pre>
 </figure>
@@ -746,7 +792,7 @@ $icon-fonts: null !default;
 	</header>
 	<p>The <code>small</code> element is used to represent side comments or what’s commonly referred to as ‘small print’: disclaimers, caveats, legal restrictions, or copyrights. It can also be used for attributions or satisfying licensing requirements.</p>
 
-	<figure class="blockquote">
+	<figure class="typl8-blockquote">
 			<blockquote cite="http://html5doctor.com/small-hr-element/">
 				<p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
 				<p><code>small</code> text does not need to be smaller than surrounding text &mdash; if all you want is smaller text use CSS instead. Use <code>small</code> only on inline content.</p>
@@ -755,7 +801,7 @@ $icon-fonts: null !default;
 	</figure>
 
 	<figure class="example no-top-pad">
-		<p class="zeta">Buy one widget, get one free!
+		<p class="typl8-zeta">Buy one widget, get one free!
 			<small>(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)</small>
 		</p>
 	</figure>
@@ -766,11 +812,17 @@ $icon-fonts: null !default;
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$small-print-size: 65% !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Small-Print Variables
+// -------------------------------------//
+
+$typl8-small-print-size: 65% !default;
+
+// $Legal Text Styles
+// -------------------------------------//
 
 small {
-	font-size: $small-print-size;
+	font-size: $typl8-small-print-size;
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -796,27 +848,33 @@ h1 {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-	<pre><code class="language-scss">@mixin white-space($wrap-space) {
+		<figcaption>Sass</figcaption>
+	<pre><code class="language-scss">// $Code Mixin
+// -------------------------------------//
+
+@mixin typl8-white-space($wrap-space) {
 	@if $wrap-space == 'pre-wrap' {
-		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
-		white-space: $wrap-space;       // current browsers
+		white-space: #{-moz-}$wrap-space;
+		white-space: $wrap-space;
 	} @else {
 		white-space: $wrap-space;
 	}
 }
 
-pre code {
-	@extend %normal-wrap;
-	@include white-space(pre-wrap);
-}
+// $Codeblock Styles
+// -------------------------------------//
 
 pre {
-	@include white-space(pre);
+	@include typl8-white-space(pre);
+
+	code {
+		@extend %typl8-normal-wrap;
+		@include typl8-white-space(pre-wrap);
+	}
 }
 
 code {
-	@include white-space(pre);
+	@include typl8-white-space(pre);
 	font-family: monospace;
 }</code></pre>
 	</figure>
@@ -884,45 +942,43 @@ code {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$cite-display: block !default;
-$cite-text-align: right !default;
-$cite-font-size: inherit !default;
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Citations Variables
+// -------------------------------------//
 
-// Use our pre-defined markup and add a class
-// to your custom blockquote element.
-// For example:
-//
-// .blockquote { @include blockquote("-"); }
-//
-// "-" is your citation flourish. For example:
+$typl8-cite-display: block !default;
+$typl8-cite-align: right !default;
+$typl8-cite-font-size: inherit !default;
+
+// $Blockquote Mixin
+// -------------------------------------//
+// "-" is your citation flourish.
 //
 // I always say important things because I'm so smart
-//                                      - author name
+//                           - Super Important Person
+//
+// @example                 .your-class-name { @include blockquote("-"); }
 
-// Citation Mixin for Custom Styling
-@mixin cite-style($display, $text-align, $font-size) {
-	display: $display;
-	font-size: $font-size;
-	text-align: $text-align;
-}
-
-%cite {
-	@include cite-style($cite-display, $cite-text-align, $cite-font-size);
-}
-
-@mixin blockquote($citation-flourish) {
+@mixin typl8-blockquote($citation-flourish) {
 	p {
 		&:last-of-type {
-			margin-bottom: -#{$line-height/2}em;
+			margin-bottom: -#{$typl8-line-height/2}em;
 		}
 	}
+
 	+ figcaption {
-		@extend %cite;
+		@extend %typl8-cite;
+
 		&:before {
 			content: $citation-flourish;
 		}
 	}
+}
+
+@mixin typl8-cite-style($display, $text-align, $font-size) {
+	display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
 }</code></pre>
 		</figure>
 		<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -938,7 +994,7 @@ $cite-font-size: inherit !default;
 	<p>Pull quotes are tricky, but with this little ditty they’re not so difficult or tedious anymore. The example is an improvement based upon the <a href="http://24ways.org/2005/swooshy-curly-quotes-without-images" rel="external" target="blank">24 ways article discussing swooshy curly quotes without images.</a> This particular example depicted takes advantage of psuedo selectors and the <code>&lt;aside&gt;</code> tag.</p>
 
 	<figure class="example no-top-pad pull-example">
-		<aside class="pull-quote">
+		<aside class="typl8-pull-quote">
 			<blockquote>
 				<p>Most people who use Helvetica, use it because it's ubiquitous. It's like going to McDonald's instead of thinking about food. Because it's there, it's on every street corner, so let's eat crap because it's on the corner.</p>
 			</blockquote>
@@ -947,7 +1003,7 @@ $cite-font-size: inherit !default;
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;aside class=&quot;pull&ndash;quote&quot;&gt;
+		<pre><code class="language-markup">&lt;aside class=&quot;typl8&ndash;pull&ndash;quote&quot;&gt;
 	&lt;blockquote&gt;
 		&lt;p&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
@@ -955,31 +1011,37 @@ $cite-font-size: inherit !default;
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">$pull-quote-fontsize: 4em !default;
-$pull-quote-opacity: 0.5 !default;
-$pull-quote-color: #dc976e !default;
-
-
-// $Mixin $Pull Quotes
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Pull-Quotes Variables
 // -------------------------------------//
 
-@mixin pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color) {
+$typl8-pull-quote-fontsize: 4em !default;
+$typl8-pull-quote-opacity: 0.5 !default;
+$typl8-pull-quote-color: #dc976e !default;
+
+
+// $Pull-Quotes Mixin
+// -------------------------------------//
+
+@mixin typl8-pull-quotes($fontsize, $opacity, $color) {
 	position: relative;
-	padding: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
+	padding: typl8-context-calc($fontsize, $fontsize, em);
+
 	&:before,
 	&:after {
-		height: context-calc($pull-quote-fontsize, $pull-quote-fontsize, em);
-		opacity: $pull-quote-opacity;
+		height: typl8-context-calc($fontsize, $fontsize, em);
+		opacity: $opacity;
 		position: absolute;
-		font-size: $pull-quote-fontsize;
-		color: $pull-quote-color;
+		font-size: $fontsize;
+		color: $color;
 	}
+
 	&:before {
 		content: '“';
 		top:  0;
 		left: 0;
 	}
+
 	&:after {
 		content: '”';
 		bottom: 0;
@@ -987,9 +1049,17 @@ $pull-quote-color: #dc976e !default;
 	}
 }
 
-// use this include on your pull quote selector class
-.pull-quote {
-	@include pull-quotes;
+// $Pull-Quotes Helper
+// -------------------------------------//
+// @notes
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
+
+.typl8-pull-quote {
+	@include typl8-pull-quotes(
+		$typl8-pull-quote-fontsize,
+		$typl8-pull-quote-opacity,
+		$typl8-pull-quote-color
+	);
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -1036,7 +1106,7 @@ $pull-quote-color: #dc976e !default;
 	<p>The dl element is for another type of list called a definition list. Instead of list items, the content of a dl consists of dt (Definition Term) and dd (Definition Description) pairs.</p>
 	<p>TypePlate offers several different patterns for definition lists. In all three of the examples below, the contents of dts are wrapped in b tags, and a class of .micro is given to the contents of dds. First is the default format for definitions lists.</p>
 
-	<h3 class="delta">a) Multi-line Definitions (default)</h3>
+	<h3 class="typl8-delta">a) Multi-line Definitions (default)</h3>
 	<figure class="example no-top-pad">
 		<dl>
 			<dt><b>This is a term</b></dt>
@@ -1055,11 +1125,11 @@ $pull-quote-color: #dc976e !default;
 &lt;/dl&gt;</code></pre>
 	</figure>
 
-	<h3 class="delta">b) Inline Definitions</h3>
+	<h3 class="typl8-delta">b) Inline Definitions</h3>
 	<p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
 
 	<figure class="example no-top-pad">
-		<dl class="lining">
+		<dl class="typl8-lining">
 			<dt><b>This is a term</b></dt>
 				<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
 			<dt><b>Another Term</b></dt>
@@ -1073,22 +1143,30 @@ $pull-quote-color: #dc976e !default;
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;dl class="lining"&gt;
+		<pre><code class="language-markup">&lt;dl class="typl8-lining"&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
 	&lt;dd&gt;&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin definition-list-style($style) {
-	// lining style
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Definition-Lists Mixin
+// -------------------------------------//
+// @notes
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+
+@mixin typl8-definition-list-style($style) {
 	@if $style == lining {
-		dt, dd {
+		dt,
+		dd {
 			display: inline;
 			margin: 0;
 		}
-		dt, dd {
+
+		dt,
+		dd {
 			& + dt {
 				&:before {
 					content: "\A";
@@ -1096,6 +1174,7 @@ $pull-quote-color: #dc976e !default;
 				}
 			}
 		}
+
 		dd {
 			& + dd {
 				&:before {
@@ -1104,22 +1183,25 @@ $pull-quote-color: #dc976e !default;
 			}
 			&:before {
 					content: ": ";
-					margin-left: -0.2rem; // removes extra space between the dt and the colon
+					margin-left: -0.2rem; //removes extra space between the dt and the colon
 			}
 		}
 	}
 }
 
-dl {
-		@include definition-list-style(lining);
+// $Definition Helper
+// -------------------------------------//
+
+.typl8-lining {
+	@include typl8-definition-list-style(lining);
 }</code></pre>
 	</figure>
 
-	<h3 class="delta">c) Dictionary-style Definition</h3>
+	<h3 class="typl8-delta">c) Dictionary-style Definition</h3>
 	<p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
 
 	<figure class="example no-top-pad">
-		<dl class="dictionary-style">
+		<dl class="typl8-dictionary-style">
 			<dt><b>This is a term</b></dt>
 				<dd>this is the definition of that term, which both live in a <code>dl</code>.</dd>
 			<dt><b>Another Term</b></dt>
@@ -1133,7 +1215,7 @@ dl {
 
 	<figure class="typeplate-code-block">
 		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;dl class="dictionary-style"&gt;
+		<pre><code class="language-markup">&lt;dl class="typl8-dictionary-style"&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
 		&lt;dd&gt;&lt;/dd&gt;
 	&lt;dt&gt;&lt;b&gt;&lt;/b&gt;&lt;/dt&gt;
@@ -1145,9 +1227,13 @@ dl {
 	</figure>
 
 	<figure class="typeplate-code-block">
-		<figcaption>_typeplate.scss</figcaption>
-		<pre><code class="language-scss">@mixin definition-list-style($style) {
-	// dictionary-style
+		<figcaption>Sass</figcaption>
+		<pre><code class="language-scss">// $Definition-Lists Variables
+// -------------------------------------//
+// @notes
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+@mixin typl8-definition-list-style($style) {
 	@if $style == dictionary-style {
 		dt {
 			display: inline;
@@ -1155,10 +1241,11 @@ dl {
 			& + dt {
 				&:before {
 					content: ", ";
-					margin-left: -0.2rem; /* removes extra space between the dt and the comma */
+					margin-left: -0.2rem; // removes extra space between the dt and the comma
 				}
 			}
 		}
+
 		dd {
 			display: block;
 			counter-increment: definitions;
@@ -1169,8 +1256,11 @@ dl {
 	}
 }
 
-dl {
-	@include definition-list-style(dictionary-style);
+// $Definition Helper
+// -------------------------------------//
+
+.typl8-dictionary-style {
+	@include typl8-definition-list-style(dictionary-style);
 }</code></pre>
 	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
@@ -1180,7 +1270,7 @@ dl {
 		<!-- Footer -->
 		
 <footer role="contentinfo" class="site-footer">
-	<p>Copyright &copy;2013. <a href="https://twitter.com/typeplate">@Typeplate</a> is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
+	<p>Copyright &copy;2014. <a href="https://twitter.com/typeplate">@Typeplate</a> is a <a href="https://twitter.com/gryghostvisuals">@gryghostvisuals</a> and <a href="https://twitter.com/zakkain">@zakkain</a> Joint<sup>&trade;</sup> Logo Crafting by <a href="https://twitter.com/TommyCreenan">@TommyCreenan</a>.</p>
 </footer>
 
 
@@ -1189,7 +1279,7 @@ dl {
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 
 
-<script src="./js/minified/main-min.js?v=1.1.3"></script>
+<script src="./js/minified/main-min.js?v=2.0.0"></script>
 
 
 

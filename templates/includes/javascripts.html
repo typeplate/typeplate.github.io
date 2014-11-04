@@ -2,7 +2,7 @@
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 
 {{#is basename 'index'}}
-<script src="./js/minified/main-min.js?v=1.1.3"></script>
+<script src="./js/minified/main-min.js?v=2.0.0"></script>
 {{/is}}
 
 {{#is basename 'demo'}}
@@ -22,7 +22,7 @@
 
 			} else {
 
-				$("#normalize-css").attr("href", "./css/bower_components/normalize-css/normalize.css");
+				$("#normalize-css").attr("href", "//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css");
 
 			}
 		});
@@ -38,7 +38,7 @@
 
 			} else {
 
-				$("#typeplate-css").attr("href", "./css/bower_components/typeplate/css/typeplate.css");
+				$("#typeplate-css").attr("href", "./css/typeplate.css");
 
 			}
 		});
