@@ -410,15 +410,15 @@ hr {
 // ============================================================
 
 @mixin animateIn() {
-	-webkit-animation: 2s slidein 1;
-	-moz-animation: 2s slidein 1;
-	animation: 2s slidein 1;
+	-webkit-animation: 1000ms slidein 1;
+	-moz-animation: 1000ms slidein 1;
+	animation: 1000ms slidein 1;
 }
 
 @mixin animateOut() {
-	-webkit-animation: 2s slideout 1;
-	-moz-animation: 2s slideout 1;
-	animation: 2s slideout 1;
+	-webkit-animation: 1000ms slideout 1;
+	-moz-animation: 1000ms slideout 1;
+	animation: 1000ms slideout 1;
 }
 
 #drawer {
@@ -428,7 +428,7 @@ hr {
 
 #drawer{
 	&.slide-down {
-		height: 1200px;
+		height: 996px;
 		@include breakpoint(mama-bear) {
 			height: 1080px;
 		}
@@ -457,7 +457,7 @@ hr {
 	}
 
 	to {
-		height: 1200px;
+		height: 996px;
 	}
 }
 @include breakpoint(mama-bear) {
