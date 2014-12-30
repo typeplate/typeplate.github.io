@@ -127,7 +127,6 @@ hr {
 // ============================================================
 
 .logo {
-	//vertical-align: -200%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	vertical-align: -50%; // why? NO IDEA. But 'middle' doesn't quite line up as nicely
 	margin-right: $typl8-line-height * 1rem;
 	cursor: pointer;
@@ -141,8 +140,7 @@ hr {
 		display: block;
 		text-align: center;
 		margin-right: 0;
-		
-		background: #414144;
+
 		width: 100%;
 		position: absolute;
 		left: 0;
@@ -152,7 +150,6 @@ hr {
 
 .logo-img {
 	.svg & {
-		//background: image-url("logo-216x216.svg") 50% no-repeat;
 		background: image-url("logo.png") 50% no-repeat;
 		@include background-size(100%);
 	}
@@ -263,7 +260,7 @@ hr {
 	padding: $typl8-line-height * 0.5rem;
 	background: $download-btn-bg;
 	color: $cobalt-deep;
-	// pseudo
+
 	&:last-of-type {
 		margin-right: 0;
 	}
@@ -834,7 +831,7 @@ h6 {
 	&.bright {
 		border-bottom-color: $rust;
 	}
-	&:not(.base-type):after {
+	&:not(.base-type):not(.header):after {
 		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.82), 0 1px 1px #FFF;
 		content: "{T}";
 		position: absolute;
