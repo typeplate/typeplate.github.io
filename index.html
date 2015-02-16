@@ -121,19 +121,19 @@ keyframes fade {
 		<a href="//raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn">
 			<i class="icon-download"></i>CSS
 			<hr>
-			<small>v2.0.0 | 10 KB</small>
+			<small>v2.1.0 | 10 KB</small>
 		</a>
 
 		<a href="//github.com/typeplate/starter-kit/blob/development/typeplate-sk.zip?raw=true" data-name="Sass Port" class="dl-item btn">
 			<i class="icon-download"></i>Sass
 			<hr>
-			<small>v2.0.0 | 18 KB</small>
+			<small>v2.1.0 | 18 KB</small>
 		</a>
 
 		<a href="https://github.com/typeplate/starter-kit" data-name="Bower Package" class="dl-item btn">
 			<i class="icon-download"></i>Bower Pkg.
 			<hr>
-			<small>v2.0.0</small>
+			<small>v2.1.0</small>
 		</a>
 	</div>
 </nav>
@@ -329,10 +329,10 @@ $typl8-typescale-unit: rem !default;
 // -------------------------------------//
 // target / context = result
 //
-// @example             p { font-size: typl8-context-calc(24, 16, px); }
+// @example             p { font-size: typl8-context-calc(24, 16, px, 18 * 1.65); }
 
 @function typl8-context-calc($scale, $base, $value) {
-	@return ($scale/$base)#{$value};
+  @return ($scale/$base) + $value;
 }
 
 // $Measure-Margin
@@ -340,41 +340,41 @@ $typl8-typescale-unit: rem !default;
 // divide 1 unit of measure by given font-size & return relative value
 
 @function typl8-measure-margin($scale, $measure, $value) {
-	$pixelValue: $measure/$scale;
-	$remValue: $pixelValue * $typl8-font-base;
+  $pixelValue: $scale/$measure; // ($measure/$scale) issue#40 https://github.com/typeplate/starter-kit/issues/40
+  $remValue: $pixelValue * $typl8-font-base;
 
-	@if $value == rem {
-		@return $pixelValue#{$value};
-	} @else if $value == em {
-		@return ($remValue/$scale)#{$value};
-	} @else {
-		@return $remValue#{$value};
-	}
+  @if $value == rem {
+    @return $pixelValue + $value;
+  } @else if $value == em {
+    @return ($remValue/$scale) + $value;
+  } @else {
+    @return $remValue * 1px;
+  }
 }
 
-// $Typescale Mixin
+// $Typescale
 // -------------------------------------//
 
 @mixin typl8-typescale($scale, $base, $value, $measure:"") {
-	@if $value == rem {
-		font-size: $scale#{px};
-		font-size: typl8-context-calc($scale, $base, $value);
-	} @else if $value == em {
-		font-size: typl8-context-calc($scale, $base, $value);
-	} @else {
-		font-size: $scale#{px};
-	}
+  @if $value == rem {
+    font-size: $scale * 1px;
+    font-size: typl8-context-calc($scale, $base, $value);
+  } @else if $value == em {
+    font-size: typl8-context-calc($scale, $base, $value);
+  } @else {
+    font-size: $scale * 1px;
+  }
 
-	@if $measure != "" {
-		@if $value == rem {
-			margin-bottom: typl8-measure-margin($scale, $measure, $value: px);
-			margin-bottom: typl8-measure-margin($scale, $measure, $value);
-		} @else if $value == em {
-			margin-bottom: typl8-measure-margin($scale, $measure, $value: em);
-		} @else {
-			margin-bottom: typl8-measure-margin($scale, $measure, $value);
-		}
-	}
+  @if $measure != "" {
+    @if $value == rem {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value: px);
+      margin-bottom: typl8-measure-margin($scale, $measure, $value);
+    } @else if $value == em {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value: em);
+    } @else {
+      margin-bottom: typl8-measure-margin($scale, $measure, $value);
+    }
+  }
 }
 
 // $Headings Styles

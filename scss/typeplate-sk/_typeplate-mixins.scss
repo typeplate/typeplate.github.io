@@ -3,12 +3,12 @@
 
 @mixin typl8-typescale($scale, $base, $value, $measure:"") {
   @if $value == rem {
-    font-size: $scale#{px};
+    font-size: $scale * 1px;
     font-size: typl8-context-calc($scale, $base, $value);
   } @else if $value == em {
     font-size: typl8-context-calc($scale, $base, $value);
   } @else {
-    font-size: $scale#{px};
+    font-size: $scale * 1px;
   }
 
   @if $measure != "" {
@@ -47,7 +47,7 @@
       @include typl8-typescale(
         $size,
         $typl8-font-base,
-        '#{$typl8-typescale-unit}',
+        $typl8-typescale-unit,
         $typl8-measure
       );
     }

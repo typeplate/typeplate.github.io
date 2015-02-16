@@ -2,10 +2,10 @@
 // -------------------------------------//
 // target / context = result
 //
-// @example             p { font-size: context-calc(24, 16, px); }
+// @example             p { font-size: typl8-context-calc(24, 16, px, 18 * 1.65); }
 
 @function typl8-context-calc($scale, $base, $value) {
-  @return ($scale/$base)#{$value};
+  @return ($scale/$base) + $value;
 }
 
 
@@ -14,14 +14,14 @@
 // divide 1 unit of measure by given font-size & return relative value
 
 @function typl8-measure-margin($scale, $measure, $value) {
-  $pixelValue: $measure/$scale;
+  $pixelValue: $scale/$measure; // ($measure/$scale) issue#40 https://github.com/typeplate/starter-kit/issues/40
   $remValue: $pixelValue * $typl8-font-base;
 
   @if $value == rem {
-    @return $pixelValue#{$value};
+    @return $pixelValue + $value;
   } @else if $value == em {
-    @return ($remValue/$scale)#{$value};
+    @return ($remValue/$scale) + $value;
   } @else {
-    @return $remValue#{$value};
+    @return $remValue * 1px;
   }
 }

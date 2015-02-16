@@ -55,7 +55,7 @@ license:
   url:              <%= pkg.licenses[0].url %>
 
 #Project Version
-version: 2.0.0
+version: 2.1.0
 
 
 # =============================================
