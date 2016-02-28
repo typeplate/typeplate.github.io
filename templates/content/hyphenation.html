@@ -11,48 +11,5 @@
 			<figcaption><cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite></figcaption>
 	</figure>
 
-	<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-		<pre><code class="language-scss">// $Hypens
-// -------------------------------------//
-$typl8-prefixes: -webkit-, -moz-, -ms-, '';
-
-// $Hypens Mixin
-// -------------------------------------//
-// @notes
-// http://caniuse.com/#search=hyphens
-// http://trentwalton.com/2011/09/07/css-hyphenation
-//
-// @values              [ none | manual | auto ]
-
-@mixin typl8-hyphens($val) {
-	@each $prefix in $typl8-prefixes {
-		#{$prefix}hyphens: $val;
-	}
-}
-
-// $Hyphenation Styles
-// -------------------------------------//
-// @notes
-// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
-
-body {
-	// Ala Trent Walton
-	// http://trentwalton.com/2011/09/07/css-hyphenation
-	@include typl8-hyphens(auto);
-}
-
-input,
-abbr,
-acronym,
-blockquote,
-code,
-kbd,
-q,
-samp,
-var {
-	@include typl8-hyphens(none);
-}</code></pre>
-	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>

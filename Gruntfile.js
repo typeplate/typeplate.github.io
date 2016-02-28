@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 	// Load NPM Tasks
 	// https://github.com/shootaroo/jit-grunt
 	require('jit-grunt')(grunt);
+	grunt.loadNpmTasks('grunt-postcss');
 
 	grunt.initConfig({
 
@@ -68,7 +69,7 @@ module.exports = function(grunt) {
 
 			sass: {
 				files: ['scss/**/*.scss'],
-				tasks: ['compass:dist']
+				tasks: ['sass:dist', 'postcss']
 			},
 
 			css: {
@@ -89,12 +90,30 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// == Compass Config
-		compass: {
+		// == Sass Config
+		sass: {
+			options: {
+				sourceMap: true
+			},
 			dist: {
-				options: {
-					config: 'config.rb'
+				files: {
+					'css/main.css' : 'scss/main.scss'
 				}
+			}
+		},
+
+		// == PostCSS
+		// https://github.com/nDmitry/grunt-postcss
+		postcss: {
+			options: {
+				processors: [
+					require('autoprefixer')({
+						browsers: 'last 2 versions'
+					})
+				]
+			},
+			dist: {
+				src: 'css/main.css'
 			}
 		},
 

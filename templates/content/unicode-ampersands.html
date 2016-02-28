@@ -8,48 +8,5 @@
 		<p class="amp">Amper & Sands</p>
 	</figure>
 
-	<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-		<pre><code class="language-scss">// $Ampersands Variables
-// -------------------------------------//
-
-$typl8-amp-fontface: Ampersand !default;
-$typl8-amp-fontfamily: Verdana, sans-serif !default;
-$typl8-amp-src: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
-$typl8-amp-fallback: local('Georgia') !default;
-
-// $Unicode-Range-Ampersand font-face
-// -------------------------------------//
-
-@font-face {
-	font-family: '#{$typl8-amp-fontface}';
-	src: $typl8-amp-src;
-	unicode-range: U+0026;
-}
-
-@font-face {
-	font-family: '#{$typl8-amp-fontface}'; // fallback
-	src: $typl8-amp-fallback;
-	unicode-range: U+270C;
-}
-
-// $Ampersands Extend
-// -------------------------------------//
-// Call your custom ampersand on any element.
-//
-// @markup                  &lt;h6 class="ampersand"&gt;Dewey Cheat 'em & Howe&lt;/h6&gt;
-// @example                 .ampersand { @extend %typl8-amp-placeholder; }
-
-%typl8-amp-placeholder {
-	@include typl8-ampersand($typl8-amp-fontface, $typl8-amp-fontfamily);
-}
-
-// $Ampersand Mixin
-// -------------------------------------//
-
-@mixin typl8-ampersand($typl8-amp-fontfamily...) {
-	font-family: $typl8-amp-fontfamily;
-}</code></pre>
-	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>

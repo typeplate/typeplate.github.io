@@ -4,7 +4,7 @@
 // Typographic Attributes of Meta-serif
 //
 // BORDER-RADIUS:
-// All radius' should be a multiple of 2. Meta-serif has a slight 
+// All radius' should be a multiple of 2. Meta-serif has a slight
 // softness but not by much if at all on arms and serifs.
 //
 // BORDERS:
@@ -15,7 +15,7 @@
 // ============================================================
 
 %transition {
-	@include transition(.3s all ease-in-out);
+	transition: .3s all ease-in-out;
 }
 
 
@@ -23,7 +23,7 @@
 // ============================================================
 
 * {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 html {
@@ -93,7 +93,7 @@ section {
 	width: 92%;
 	max-width: 40em;
 	margin: 0 auto;
-	
+
 	&.top {
 		@include breakpoint(baby-bear) {
 			padding-top: 15em;
@@ -150,13 +150,13 @@ hr {
 
 .logo-img {
 	.svg & {
-		background: image-url("logo.png") 50% no-repeat;
-		@include background-size(100%);
+		background: url("../img/logo.png") 50% no-repeat;
+		background-size: 100%;
 	}
 	.no-svg &,
 	.no-js & {
-		background: image-url("logo.png") 50% no-repeat;
-		@include background-size(cover);
+		background: url("../img/logo.png") 50% no-repeat;
+		background-size: cover;
 	}
 	width: 12em;
 
@@ -182,7 +182,7 @@ hr {
 
 .header {
 	padding-top: 1.65em;
-	background: $white image-url("typeplate-press.png") center bottom no-repeat;
+	background: $white url("../img/typeplate-press.png") center bottom no-repeat;
 	// break
 	@include breakpoint(baby-bear) {
 		padding-top: 0;
@@ -205,9 +205,6 @@ hr {
 // ============================================================
 
 .nav {
-	// in preparation for inline-block children
-	letter-spacing: -4px;
-	//@extend %rhythm;
 	display: inline-block;
 	@include breakpoint(baby-bear) {
 		padding: #{$typl8-line-height * 2.5}em 0 0;
@@ -219,25 +216,21 @@ hr {
 }
 
 .nav-item {
-	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
-	letter-spacing: normal;
-	display: block;
 	@extend .typl8-delta;
-	line-height: 2;
-	padding: 0 0.5em 0 0.25em;
+	border-bottom: 1.5px solid rgba(156, 153, 153, 0.69);
+	display: block;
 	margin-bottom: 0;
+	padding: 0 0.5em 0 0.25em;
+	line-height: 2;
+	letter-spacing: normal;
 	color: $rust;
 	&:hover,
 	&:focus {
 		text-decoration: none;
-		background: #f7f7f7;
 		color: #000000;
 	}
 	&:last-child {
 		border-bottom: none;
-	}
-	&:before {
-		content: "→ ";
 	}
 }
 
@@ -247,11 +240,11 @@ hr {
 
 .dl-item,
 .social-item {
-	display: inline-block;
-	letter-spacing: normal;
 	border-radius: 0.333333em;
+	display: inline-block;
 	font-family: Monaco, Consolas, monospace;
 	font-size: 0.825em;
+	letter-spacing: normal;
 	text-align: center;
 }
 
@@ -270,22 +263,22 @@ hr {
 		color: $white;
 		text-decoration: none;
 	}
-	// filesize line
+
 	small {
 		font-size: 80%;
 	}
-	// back to top button
+
 	&.btn-backtotop {
 		@extend .dl-item;
 		width: 30%;
 		text-rendering: optimizeLegibility;
 	}
-	// break
+
 	@include breakpoint(bigass-bear) {
 		font-size: 0.75em;
 		padding: $typl8-line-height * 0.35rem;
 	}
-	// break
+
 	@include breakpoint(papa-bear) {
 		font-size: 1em;
 		padding: $typl8-line-height * 0.5rem;
@@ -294,27 +287,19 @@ hr {
 }
 
 .downloads {
-	background: $cobalt-deep image-url("asfalt.png") top left repeat;
-	padding: 1.65em 0;
 	display: block;
-	.icon-download {
-		color: $white;
+	padding: 1.65em 0;
+	background: $cobalt-deep url("../img/asfalt.png") top left repeat;
+
+	.col-wrap{
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
 	}
 }
 
 .dl-item.btn {
-	width: 32%;
-	@include breakpoint(mama-bear) {
-		display: block;
-		width: 100%;
-	}
-}
-
-[href*="typeplate-sk.zip"] {
-	margin: 0 1%;
-	@include breakpoint(mama-bear) {
-		margin: #{$typl8-line-height}em auto;
-	}
+	flex: 0 0 24%
 }
 
 
@@ -331,7 +316,7 @@ hr {
 		padding: #{$typl8-line-height/2}em;
 		width: 100%;
 		text-align: center;
-		background: $cobalt-deep image-url("asfalt.png") top left repeat;
+		background: $cobalt-deep url("../img/asfalt.png") top left repeat;
 	}
 	@include breakpoint(mama-bear) {
 		margin-top: 0.825em;
@@ -348,6 +333,7 @@ hr {
 	@include breakpoint(baby-bear) {
 		border: 2px solid #BBAFAF;
 	}
+
 	i {
 		background: $cobalt-deep;
 		color: $white;
@@ -357,7 +343,7 @@ hr {
 		border-top-left-radius: 0.333333em;
 		border-bottom-left-radius: 0.333333em;
 	}
-	// pseudo
+
 	&:hover,
 	&:focus {
 		text-decoration: none;
@@ -372,30 +358,29 @@ hr {
 
 .toc {
 	border-radius: 0 0 6px 6px;
-	background: #d5d5d5;
-	background: rgba(0, 0, 0, 0.1);
-	box-shadow: inset 0 6px 4px rgba(0, 0, 0, 0.37);
+	border-top: 0.125rem solid rgba(220, 220, 220, 0.06);
+	background: #081818 url("../img/asfalt.png") top left repeat;
 	@extend %rhythm;
 	padding-bottom: #{$typl8-line-height}em;
 }
+
 .toc ol {
 	list-style: decimal !important;
 	counter-reset: item;
-	padding: 0 40px;
 }
+
 .toc li {
-	border-bottom: 2px dotted #949494;
 	display: block;
 	@extend .typl8-zeta;
 }
+
 .toc ol li:before {
 	counter-increment: item;
-	color: #444;
+	color: rgb(93, 93, 89);
 	font-style: normal;
 	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
 
-// epic loop wizardy!
 @for $i from 1 through 4 {
 	.toc ol:nth-of-type(#{$i}) li:before {
 		content: "#{$i}." counter(item) " – ";
@@ -403,189 +388,58 @@ hr {
 }
 
 
-// $Drawer Slide Animation
-// ============================================================
-
-@mixin animateIn() {
-	-webkit-animation: 1000ms slidein 1;
-	-moz-animation: 1000ms slidein 1;
-	animation: 1000ms slidein 1;
-}
-
-@mixin animateOut() {
-	-webkit-animation: 1000ms slideout 1;
-	-moz-animation: 1000ms slideout 1;
-	animation: 1000ms slideout 1;
-}
-
-#drawer {
-	height: 0;
-	overflow: hidden;
-}
-
-#drawer{
-	&.slide-down {
-		height: 996px;
-		@include breakpoint(mama-bear) {
-			height: 1080px;
-		}
-	}
-	&.slide-up {
-		height: 0;
-	}
-}
-
-.slide-down {
-	overflow: visible;
-	@include animateIn();
-}
-
-.slide-up {
-	@include animateOut();
-}
-
-
-// KeyFrames Webkit
-// =================================
-
-@-webkit-keyframes slidein {
-	from {
-		height: 0;
-	}
-
-	to {
-		height: 996px;
-	}
-}
-@include breakpoint(mama-bear) {
-	@-webkit-keyframes slidein {
-		from {
-			height: 0;
-		}
-
-		to {
-			height: 1080px;
-		}
-	}
-}
-
-@-webkit-keyframes slideout {
-	from {
-		height: 1200px;
-	}
-
-	to {
-		height: 0;
-	}
-}
-
-@include breakpoint(mama-bear) {
-	@-webkit-keyframes slideout {
-		from {
-			height: 1080px;
-		}
-
-		to {
-			height: 0;
-		}
-	}
-}
-
-
-// Keyframes Mozilla
-// =================================
-
-@-mozilla-keyframes slidein {
-	from {
-		height: 0;
-	}
-
-	to {
-		height: 1245px;
-	}
-}
-
-@-mozilla-keyframes slideout {
-	from {
-		height: 1245px;
-	}
-
-	to {
-		height: 0;
-	}
-}
-
-
-// Keyframes Standard
-// =================================
-
-@keyframes slidein {
-	from {
-		height: 0;
-	}
-
-	to {
-		height: 1245px;
-	}
-}
-
-@keyframes slideout {
-	from {
-		height: 1245px;
-	}
-
-	to {
-		height: 0;
-	}
-}
-
-
-// $TOC Pull Down
+// $TOC
 // ============================================================
 
 #table-of-contents {
 	h1 {
 		margin: 0;
-		padding-top: .5em;
-		text-shadow: 0 1px 0 $white;
-		color: #606060;
-		.icon-download {
-			color: #929292;
-		}
-		&::after {
-			content: "-project details listing-";
-			display: block;
-			font-size: .5em;
-			color: scale-lightness(#EFEFEF, -35%);
-		}
+		padding-top: 0.5em;
+		color: white;
+
 		&:hover {
 			cursor: pointer;
 		}
 	}
-	h2 {
-		color: #6f7070;
-		text-align: center;
-		text-shadow: 0 1px 0 rgba(255,255,255,0.30);
-	}
 }
 
 #drawer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: flex-start;
+	height: 0;
+	min-height: 0;
+	opacity: 0;
+	padding-left: 18px;
+	padding-right: 18px;
+	position: relative;
+	transition: 480ms all cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	color: white;
+
 	&::after {
-		border-radius: 80%;
-		box-shadow: 0 1px 4px rgba(0,0,0,0.90), 0 -2px 1px rgba(255,255,255,0.90);
-		content: "{T}";
-		display: block;
-		height: 2.5em;
-		line-height: 2.5;
-		margin: 0 auto;
-		width: 2.5em;
 		@extend .typl8-gamma;
+		content: "{ T }";
+		display: block;
+		position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 480ms opacity cubic-bezier(0.68, -0.55, 0.27, 1.55);
 		text-align: center;
-		text-shadow: 0 1px 0 $white;
-		border: 4px solid #949494;
-		background: #000000;
 		color: #fbfbfb;
+	}
+
+	&.slide-down {
+		min-height: 28em;
+		opacity: 1;
+		padding-top: 42px;
+	}
+
+	&.slide-down::after {
+		opacity: 1;
 	}
 }
 
@@ -600,25 +454,20 @@ hr {
 	padding: $typl8-line-height * 1rem $typl8-line-height * 1rem 0;
 	margin: $typl8-line-height * 1.5rem 0 $typl8-line-height * 1rem;
 	border-radius: 0.333333em;
+
 	&:before {
 		content: "example:";
 		@extend .typl8-epsilon;
 		display: block;
-		font-family: "Cassannet", sans-serif;
 		background: none;
 		line-height: 0;
 		position: relative;
-		color: #212121;
+		color: #9F9F9F;
 		top: -2.125em;
 		left: -1.65rem;
 	}
-	&.icons {
-		text-align: center;
-		&:before {
-			text-align: left;
-		}
-	}
 }
+
 .example > pre {
 	margin-top: 0;
 	overflow: auto;
@@ -767,17 +616,22 @@ blockquote {
  */
 
 body {
+	opacity: 0;
+	transition: 250ms opacity ease-in-out;
 	font-weight: 400;
+
 	.wf-loading & {
-		//Typekit Active FOUT Loading
 		font-family: serif;
 		visibility: hidden;
 	}
+
+	.no-js &,
 	.wf-active &,
 	.wf-inactive & {
+		opacity: 1;
+		visibility: visible;
 		font-family: "ff-meta-serif-web-pro",serif;
 		font-weight: 400;
-		visibility: visible;
 	}
 }
 
@@ -797,8 +651,7 @@ h6 {
 .site-footer {
 	font-size: 75%;
 	width: 100%;
-	background: #D3C8C8;
-	background: #131415 image-url("asfalt.png") top left repeat;
+	background: #131415 url("../img/asfalt.png") top left repeat;
 	color: #9E9E9E;
 	text-align: center;
 	height: 100%;
@@ -823,7 +676,7 @@ h6 {
 
 // generic bottom rule class
 .botDivider {
-	border-bottom: #{$typl8-font-size/500}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
+	border-bottom: #{$typl8-font-size/800}rem solid $botDividerBorder;// Thickness is based on the thickness of meta-serif stems (measured 8px at 18px font-size)
 	position: relative;
 	&:last-child {
 		border-bottom: none;
@@ -832,17 +685,14 @@ h6 {
 		border-bottom-color: $rust;
 	}
 	&:not(.base-type):not(.header):after {
-		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.82), 0 1px 1px #FFF;
+		@extend .typl8-gamma;
 		content: "{T}";
 		position: absolute;
 		top: -#{typl8-context-calc($typl8-font-base, 14, em)};
 		left: 45%;
-		@extend .typl8-gamma;
-		background: #B3AEAE image-url("subtle_grunge.png") top left repeat;
-		color: #dcdcdc;
 		width: typl8-context-calc($typl8-font-base, 14, em);
 		text-align: center;
-		border-radius: 80%;
+		background: rgb(255, 255, 255);
 	}
 }
 
@@ -882,4 +732,57 @@ p.no-indent {
 
 .typl8-dictionary-style {
 	@include typl8-definition-list-style(dictionary-style);
+}
+
+
+
+// $Carbon Ads
+// ============================================================
+
+#carbonads {
+  border-bottom: 1px solid rgba(116, 109, 109, 0.08);
+  min-height: 100px;
+  position: relative;
+  opacity: 0;
+  animation: fade .3s forwards 1;
+  background: rgba(250, 250, 250, 0.64);
+}
+.carbon-wrap {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+.carbon-wrap > a {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 6px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.carbon-img img {
+  animation: fade .3s forwards 1;
+  vertical-align: middle;
+  opacity: 0;
+}
+.carbon-text {
+  color: rgb(185, 185, 186);
+}
+.carbon-poweredby {
+  padding-right: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 40px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 12px;
+  color: rgba(105, 118, 118, 0.46);
+  font-style: italic;
+}
+
+@keyframes fade {
+  to {opacity: 1;}
 }

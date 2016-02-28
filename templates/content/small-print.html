@@ -18,25 +18,6 @@
 		</p>
 	</figure>
 
-	<figure class="typeplate-code-block">
-		<figcaption>HTML</figcaption>
-		<pre><code class="language-markup">&lt;small&gt;(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)&lt;/small&gt;</code></pre>
-	</figure>
-
-	<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-		<pre><code class="language-scss">// $Small-Print Variables
-// -------------------------------------//
-
-$typl8-small-print-size: 65% !default;
-
-// $Legal Text Styles
-// -------------------------------------//
-
-small {
-	font-size: $typl8-small-print-size;
-}</code></pre>
-	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
@@ -47,48 +28,5 @@ small {
 	</header>
 	<p><code>Monospace</code> fonts just as you desire for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
-	<figure class="typeplate-code-block">
-		<figcaption>HTML</figcaption>
-		<pre><code class="language-css"> /* Code Block Example within Markup */
-h1 {
-	background: red;
-	color: blue;
-	padding: 1em;
-	margin: 3em;
-	border: 2px solid black;
-}</code></pre>
-	</figure>
-
-	<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-	<pre><code class="language-scss">// $Code Mixin
-// -------------------------------------//
-
-@mixin typl8-white-space($wrap-space) {
-	@if $wrap-space == 'pre-wrap' {
-		white-space: #{-moz-}$wrap-space;
-		white-space: $wrap-space;
-	} @else {
-		white-space: $wrap-space;
-	}
-}
-
-// $Codeblock Styles
-// -------------------------------------//
-
-pre {
-	@include typl8-white-space(pre);
-
-	code {
-		@extend %typl8-normal-wrap;
-		@include typl8-white-space(pre-wrap);
-	}
-}
-
-code {
-	@include typl8-white-space(pre);
-	font-family: monospace;
-}</code></pre>
-	</figure>
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>

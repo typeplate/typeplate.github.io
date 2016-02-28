@@ -40,17 +40,11 @@
 // http://designingfortheweb.co.uk/book
 
 
-// $Compass
-// ============================================================
-
-@import "compass";
-
-
 // $Normalize - Sass Bower Package
 // ============================================================
 
 // @Since v2.1.0
-@import "../bower_components/normalize.scss/normalize";
+@import "../bower_components/normalize-scss/_normalize.scss";
 
 
 // $Typeplate

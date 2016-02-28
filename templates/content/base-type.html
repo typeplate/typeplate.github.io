@@ -3,41 +3,7 @@
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
 	</header>
 
-	<p>For our base we use the following font settings on the <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also make sure not to use united values for our line-heights per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Mr. Eric Meyer himself</a>.</p>
+	<p>For a solid base we use <a href="https://github.com/typeplate/starter-kit/blob/master/scss/_typeplate-styles.scss#L4-L10">typical default font settings</a> styled on the <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also ensure united values for line-heights are never used per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Eric Meyer</a>.</p>
 
-	<figure class="typeplate-code-block">
-		<figcaption>Sass</figcaption>
-		<pre><code class="language-scss">// $Base Variables
-// -------------------------------------//
-// General base styles for type
-
-//the serif boolean var can be redeclared from another stylesheet. However
-//the var must be placed after your @import "typeplate.scss";
-$typl8-serif-boolean: true !default;
-$typl8-custom-font: false !default;
-$typl8-font-family: if($typl8-serif-boolean, serif, sans-serif) !default;
-$typl8-font-weight: normal !default;
-$typl8-line-height: 1.65 !default;
-$typl8-font-size: 112.5 !default;
-$typl8-font-base: 16 * ($typl8-font-size/100) !default;
-$typl8-measure: $typl8-font-base * $typl8-line-height;
-
-
-// $Global Styles
-// -------------------------------------//
-
-html {
-	@if $typl8-custom-font {
-		font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-custom-font, $typl8-font-family;
-	} @else {
-		font: $typl8-font-weight #{$typl8-font-size + "%"}/#{$typl8-line-height} $typl8-font-family;
-	}
-}
-
-body {
-	color: $typl8-copy-color;
-}</code></pre>
-	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+	<!-- <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a> -->
 </section>
