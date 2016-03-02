@@ -389,7 +389,7 @@ Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
 License ....... Creative Commmons Attribution 3.0
 License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
 */
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .icons, .typl8-gamma, h4, #drawer::after, .botDivider:not(.base-type):not(.header):after, .typl8-delta, h5, hr.fancy:after, .nav-item, .typl8-epsilon, .typeplate-code-block figcaption, .example:before, blockquote + figcaption, .typl8-zeta, h6, .toc li {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .icons, .typl8-gamma, h4, #drawer::after, .botDivider:not(.base-type):not(.header):after, .typl8-delta, h5, hr.fancy:after, .nav-item, .typl8-epsilon, .typeplate-code-block figcaption, blockquote + figcaption, .typl8-zeta, h6, .toc li {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -460,7 +460,7 @@ body {
   margin-bottom: 14.5454545455px;
   margin-bottom: 0.8080808081rem; }
 
-.typl8-epsilon, .typeplate-code-block figcaption, .example:before, blockquote + figcaption {
+.typl8-epsilon, .typeplate-code-block figcaption, blockquote + figcaption {
   font-size: 21px;
   font-size: 1.1666666667rem;
   margin-bottom: 12.7272727273px;
@@ -835,7 +835,7 @@ a, .btn, .social-item {
     font-size: 100%; } }
 
 body {
-  background: image-url("subtle_grunge.png") top left repeat;
+  background: url("../img/subtle_grunge.png") top left repeat;
   color: #212121; }
 
 a {
@@ -880,6 +880,11 @@ section {
   @media (max-width: 31.25em) {
     .col-wrap.top {
       padding-top: 15em; } }
+
+.list-reset {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0; }
 
 hr {
   border: 0;
@@ -976,7 +981,7 @@ hr {
   .nav-item:last-child {
     border-bottom: none; }
 
-.dl-item, .btn.btn-backtotop,
+.dl-item,
 .social-item {
   border-radius: 0.333333em;
   display: inline-block;
@@ -987,8 +992,7 @@ hr {
 
 .btn {
   padding: 0.825rem;
-  background: #b1b9c4;
-  color: black; }
+  background: rgba(41, 41, 41, 0.97); }
   .btn:last-of-type {
     margin-right: 0; }
   .btn:hover, .btn:focus {
@@ -1023,10 +1027,13 @@ hr {
         -ms-flex-pack: justify;
             justify-content: space-between; }
 
-.dl-item.btn, .btn.btn-backtotop {
+.dl-item {
+  box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08), 1px 1px 1px black;
   -webkit-flex: 0 0 24%;
       -ms-flex: 0 0 24%;
-          flex: 0 0 24%; }
+          flex: 0 0 24%;
+  background: rgba(41, 41, 41, 0.22);
+  color: rgba(255, 255, 255, 0.75); }
 
 .social-nav {
   position: absolute;
@@ -1068,8 +1075,7 @@ hr {
 
 .toc {
   border-radius: 0 0 6px 6px;
-  border-top: 0.125rem solid rgba(220, 220, 220, 0.06);
-  background: #081818 url("../img/asfalt.png") top left repeat;
+  background: #DE4D1F;
   padding-bottom: 1.65em; }
 
 .toc ol {
@@ -1079,9 +1085,20 @@ hr {
 .toc li {
   display: block; }
 
+.toc a {
+  transition: none;
+  color: #6B2813; }
+  .toc a:hover {
+    border-bottom: 1.5px solid #000;
+    text-decoration: none;
+    color: #000; }
+
+.toc li a {
+  color: #6B2813; }
+
 .toc ol li:before {
   counter-increment: item;
-  color: #5d5d59;
+  color: rgba(140, 0, 0, 0.66);
   font-style: normal;
   font-family: "Cassannet", "ff-meta-serif-web-pro", serif; }
 
@@ -1147,40 +1164,23 @@ hr {
     opacity: 1; }
 
 .example {
-  background: rgba(177, 185, 196, 0.16);
-  border: 1px solid rgba(177, 185, 196, 0.55);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
-  padding: 1.65rem 1.65rem 0;
-  margin: 2.475rem 0 1.65rem;
-  border-radius: 0.333333em; }
+  margin-left: 0;
+  margin-right: 0; }
   .example:before {
     content: "example:";
+    font-style: italic;
     display: block;
     background: none;
-    line-height: 0;
     position: relative;
     color: #9F9F9F;
-    top: -2.125em;
-    left: -1.65rem; }
+    top: 0;
+    left: 0; }
 
 .example > pre {
   margin-top: 0;
   overflow: auto;
   white-space: pre;
   word-spacing: normal; }
-
-.example.scale-example {
-  padding: 1.65em; }
-  .example.scale-example p {
-    line-height: 1.4;
-    margin: 0; }
-  .example.scale-example .typl8-giga {
-    margin-top: -0.33em; }
-
-.example.no-top-pad {
-  padding-top: 0; }
-  .example.no-top-pad:before {
-    top: -0.65em; }
 
 .section-title {
   font-size: 24px;
@@ -1304,7 +1304,7 @@ h6 {
     left: 45%;
     width: 1.2857142857em;
     text-align: center;
-    background: white; }
+    background: white url("../img/subtle_grunge.png") top left repeat; }
 
 section, .toc, .example-figcaption, p {
   margin-top: 0;

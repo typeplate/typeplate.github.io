@@ -33,7 +33,7 @@ html {
 }
 
 body {
-	background: image-url("subtle_grunge.png") top left repeat;
+	background: url("../img/subtle_grunge.png") top left repeat;
 	color: #212121;
 }
 
@@ -99,6 +99,12 @@ section {
 			padding-top: 15em;
 		}
 	}
+}
+
+.list-reset {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 hr {
@@ -251,8 +257,7 @@ hr {
 .btn {
 	@extend %transition;
 	padding: $typl8-line-height * 0.5rem;
-	background: $download-btn-bg;
-	color: $cobalt-deep;
+	background: rgba(41, 41, 41, 0.97);
 
 	&:last-of-type {
 		margin-right: 0;
@@ -269,7 +274,6 @@ hr {
 	}
 
 	&.btn-backtotop {
-		@extend .dl-item;
 		width: 30%;
 		text-rendering: optimizeLegibility;
 	}
@@ -298,8 +302,11 @@ hr {
 	}
 }
 
-.dl-item.btn {
-	flex: 0 0 24%
+.dl-item {
+	box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08), 1px 1px 1px rgb(0, 0, 0);
+	flex: 0 0 24%;
+	background: rgba(41, 41, 41, 0.22);
+	color: $white;
 }
 
 
@@ -358,8 +365,7 @@ hr {
 
 .toc {
 	border-radius: 0 0 6px 6px;
-	border-top: 0.125rem solid rgba(220, 220, 220, 0.06);
-	background: #081818 url("../img/asfalt.png") top left repeat;
+	background: #DE4D1F;
 	@extend %rhythm;
 	padding-bottom: #{$typl8-line-height}em;
 }
@@ -374,9 +380,23 @@ hr {
 	@extend .typl8-zeta;
 }
 
+.toc a {
+	transition: none;
+	color: #6B2813;
+	&:hover {
+		border-bottom: 1.5px solid #000;
+		text-decoration: none;
+		color: #000;
+	}
+}
+
+.toc li a {
+	color: #6B2813;
+}
+
 .toc ol li:before {
 	counter-increment: item;
-	color: rgb(93, 93, 89);
+	color: rgba(140, 0, 0, 0.66);
 	font-style: normal;
 	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
@@ -448,23 +468,17 @@ hr {
 // ============================================================
 
 .example {
-	background: rgba(177, 185, 196, 0.16);
-	border: 1px solid rgba(177, 185, 196, 0.55);
-	box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.75);
-	padding: $typl8-line-height * 1rem $typl8-line-height * 1rem 0;
-	margin: $typl8-line-height * 1.5rem 0 $typl8-line-height * 1rem;
-	border-radius: 0.333333em;
-
+	margin-left: 0;
+	margin-right: 0;
 	&:before {
 		content: "example:";
-		@extend .typl8-epsilon;
+		font-style: italic;
 		display: block;
 		background: none;
-		line-height: 0;
 		position: relative;
 		color: #9F9F9F;
-		top: -2.125em;
-		left: -1.65rem;
+		top: 0;
+		left: 0;
 	}
 }
 
@@ -474,25 +488,6 @@ hr {
 	white-space: pre;
 	word-spacing: normal;
 	@extend %typl8-normal-wrap;
-}
-
-// hotfix for typographic scale example
-.example.scale-example {
-	padding: 1.65em;
-	p {
-		line-height: 1.4;
-		margin: 0;
-	}
-	.typl8-giga {
-		margin-top: -0.33em;
-	}
-}
-
-.example.no-top-pad {
-	padding-top: 0;
-	&:before {
-		top: -0.65em;
-	}
 }
 
 
@@ -692,7 +687,7 @@ h6 {
 		left: 45%;
 		width: typl8-context-calc($typl8-font-base, 14, em);
 		text-align: center;
-		background: rgb(255, 255, 255);
+		background: rgb(255, 255, 255) url("../img/subtle_grunge.png") top left repeat;
 	}
 }
 

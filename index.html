@@ -69,7 +69,6 @@
 
 
 <main class="col-wrap" role="main">
-	<!-- Table of Contents -->
 	<!-- $table of contents -->
 <section class="toc" id="table-of-contents">
 
@@ -113,27 +112,22 @@
 	</div>
 </section>
 
-
-	<!-- #base-type -->
 	<section class="base-type botDivider" id="base-type">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.1 Base Type</h1>
 	</header>
 
-	<p>For a solid base we use <a href="https://github.com/typeplate/starter-kit/blob/master/scss/_typeplate-styles.scss#L4-L10">typical default font settings</a> styled on the <abbr title="hyper text markup language"><code>HTML</code></abbr> element to standardize the typographic scale in a consistent manner. We also ensure united values for line-heights are never used per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Eric Meyer</a>.</p>
+	<p>For a solid base we use <a href="https://github.com/typeplate/starter-kit/blob/master/scss/_typeplate-styles.scss#L4-L10">default font settings</a> to allow elements to display in their natural size determined by the browser's default stylesheet. This makes for <a href="https://www.filamentgroup.com/lab/how-we-learned-to-leave-body-font-size-alone.html">lighter CSS and more flexibility</a> in the markup you choose to use. We also ensure united values for line-heights are never used per the <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights" rel="external">recommendations of Eric Meyer</a>.</p>
 
-	<!-- <a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a> -->
 </section>
 
-
-	<!-- #typographic-scale -->
 	<!-- #typographic-scale -->
 <section class="typographic-scale botDivider" id="typographic-scale">
 	<header>
 		<h1 class="typl8-gamma section-title"><a class="perma-anchor" href="#base-type">§</a> 1.2 Typographic Scale</h1>
 	</header>
 
-	<p>Establish clearly distinguishable heading levels with consistent font-sizes over random chosen values. Choose a type hierarchy that is harmonious and consistent with your project. In order to do so we suggest <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">using a modular scale</a> that calculates sizes via a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
+	<p>Establish clearly distinguishable heading levels with consistent font-sizes over randomly chosen values. Choose a type hierarchy that is harmonious and consistent with your project. In order to do so we suggest <a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">using a modular scale</a> that calculates sizes via a ratio ensuring your design and typography can relate in a meaningful way. There’s an excellent calculator for this at <a href="http://modularscale.com" rel="external">modularscale.com</a>.</p>
 
 	<figure class="typl8-blockquote">
 		<blockquote cite="http://www.alistapart.com/articles/more-meaningful-typography">
@@ -142,7 +136,7 @@
 		<figcaption><cite class="author"><small><a href="http://www.alistapart.com/articles/more-meaningful-typography" rel="external">Tim Brown</a></small></cite></figcaption>
 	</figure>
 
-	<figure class="example scale-example">
+	<figure class="example">
 		<p class="no-indent typl8-giga">Heading Giga</p>
 		<p class="no-indent typl8-mega">Heading Mega</p>
 		<p class="no-indent typl8-alpha">Heading Alpha</p>
@@ -152,24 +146,24 @@
 		<p class="no-indent typl8-epsilon">Heading Epsilon</p>
 		<p class="no-indent typl8-zeta">Heading Zeta</p>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #color -->
 	<section class="color botDivider" id="color">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.3 Color</h1>
 	</header>
 
-	<p>Just like in print, don’t use the darkest black available in your body text (#000). Instead, go for something softer, like #444. You can use a slightly darker color for titles like (#222) for example. Since these values are considered a de facto standard in practice, they're not necessarily ordained by law.</p>
+	<p>Just like in print, don’t use the darkest black available in your body text (<code style="color:#000">#000</code>). Instead, go for something softer, like <code style="color:#444">#444</code>. You can use a slightly darker color for titles like (<code style="color:#222">#222</code>) for example. Since these values are considered a de facto standard in practice, they're not necessarily ordained by law.</p>
 
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
+	<figure class="example">
+		<ul style="display: flex;" class="list-reset">
+			<li style="width: 100px;height: 100px; background: #000"></li>
+			<li style="width: 100px;height: 100px; background: #222"></li>
+			<li style="width: 100px;height: 100px; background: #444"></li>
+		</ul>
+	</figure>
 </section>
 
-
-	<!-- #word-wrap -->
 	<section class="word-wrap botDivider" id="word-wrap">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#color">§</a> 1.4 Word-Wrap</h1>
@@ -184,8 +178,6 @@
 	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #indenting -->
 	<section class="indenting botDivider" id="indenting">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#indenting">§</a> 2.1 Indenting</h1>
@@ -194,19 +186,15 @@
 	<p>For the curious, here's a few example sites using the paragraph indentation approach we've chosen for our starter kit…<a href="http://markboulton.co.uk">Mark Boulton</a>, <a href="http://nicewebtype.com">Nice Web Type</a>, <a href="http://andy-logic.com">Andy Rutledge</a> and <a href="http://artequalswork.com">Nathan Ford</a> just to name a few.</p>
 	<p>Authors choosing to opt out of our default styling may feel free to change the boolean variable in the Sass port to remove this opinionated default as depicted in the example below. <abbr title="cascading stylesheets">CSS</abbr> people you'll have to settle for the manual route to customize.</p>
 
-	<figure class="example no-top-pad">
+	<figure class="example">
 		<p>I crawled out almost immediately, and crouched, my feet still in the water, under a clump of furze.  The horse lay motionless (his neck was broken, poor brute!) and by the lightning flashes I saw the black bulk of the overturned dog cart and the silhouette of the wheel still spinning slowly.  In another moment the colossal mechanism went striding by me, and passed uphill towards Pyrford.</p>
 		<p>Seen nearer, the Thing was incredibly strange, for it was no mere insensate machine driving on its way.  Machine it was, with a ringing metallic pace, and long, flexible, glittering tentacles (one of which gripped a young pine tree) swinging and rattling about its strange body.</p>
 		<p>It picked its road as it went striding along, and the brazen hood that surmounted it moved to and fro with the inevitable suggestion of a head looking about.  Behind the main body was a huge mass of white metal like a gigantic fisherman’s basket, and puffs of green smoke squirted out from the joints of the limbs as the monster swept by me.  And in an instant it was gone.</p>
 		<p>So much I saw then, all vaguely for the flickering of the lightning, in blinding highlights and dense black shadows.</p>
 		<p>As it passed it set up an exultant deafening howl that drowned the thunder—“Aloo! Aloo!”—and in another minute it was with its companion, half a mile away, stooping over something in the field.  I have no doubt this Thing in the field was the third of the ten cylinders they had fired at us from Mars.</p>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #hyphenation -->
 	<section class="hyphenation botDivider" id="hyphenation">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#hyphenation">§</a> 2.2 Hyphenation</h1>
@@ -219,12 +207,8 @@
 			</blockquote>
 			<figcaption><cite class="author"><small><a href="http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/" rel="external">Eric Meyer</a></small></cite></figcaption>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #small-capitals -->
 	<section class="small-caps botDivider" id="small-caps">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#small-caps">§</a> 3.1 Small Capitals</h1>
@@ -235,28 +219,21 @@
 	<figure class="example no-top-pad">
 		<p>Lorem ipsum dolor sit amet, consectetur <abbr title="hyper text markup language">HTML</abbr> adipisicing elit. <abbr title="cascading styling sheets">CSS</abbr> Laboriosam voluptatem a beatae accusantium accusamus dolor provident error consectetur quibusdam suscipit neque temporibus. Velit omnis voluptatum quasi tempora reiciendis expedita reprehenderit.</p>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #drop-capitals -->
 	<section class="drop-capitals botDivider" id="drop-caps">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#drop-caps">§</a> 3.2 Drop Capitals</h1>
 	</header>
 
-	<p>A Drop Cap is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
+	<p>A “Drop Cap” is the art of using an uppercase glyph to mark the start of copy. A technique that has been around for almost two thousand years!</p>
 
 	<figure class="example">
 		<p class="typl8-drop-cap">There now is your insular city of the Manhattoes, belted round by wharves as Indian isles by coral reefs—commerce surrounds it with her surf. Right and left, the streets take you waterward. Its extreme downtown is the battery, where that noble mole is washed by waves, and cooled by breezes, which a few hours previous were out of sight of land. Look at the crowds of water-gazers there.</p>
 	</figure>
 
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #unicode-ampersands -->
 	<section class="ampersands botDivider" id="unicode-ampersands">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#unicode-ampersands">§</a> 3.3 Unicode Ampersands</h1>
@@ -266,12 +243,8 @@
 	<figure class="example amp-example">
 		<p class="amp">Amper & Sands</p>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #small-print -->
 	<section class="small-print botDivider" id="small-print">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 3.4 Small Print</h1>
@@ -286,28 +259,22 @@
 			<figcaption><cite><small><a href="http://html5doctor.com/small-hr-element/">Oli Studholme</a></small></cite></figcaption>
 	</figure>
 
-	<figure class="example no-top-pad">
+	<figure class="example">
 		<p class="typl8-zeta">Buy one widget, get one free!
 			<small>(While supplies last. Offer expires on the vernal equinox. Not valid in Ohio.)</small>
 		</p>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-<!-- $Code Blocks -->
+	<!-- $Code Blocks -->
 <section class="code-blocks botDivider" id="code-blocks">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#code-blocks">§</a> 4.1 Code Blocks</h1>
 	</header>
 	<p><code>Monospace</code> fonts just as you desire for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #figures -->
-	<!-- [1/6/13 7:09:04 PM] Zak Kain: I think what’s missing here is the html markup component, for the more complex sections (like figure). Setting some baseline CSS for figure is difficult without being too restrictive in styling, but you can offer markup patterns for "how to do a proper figure with caption, citation etc". Same goes for blockquotes (which I have a lot of work on actually, I’ll pull-request you when this is live) -->
 	<section class="figures botDivider" id="figures">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#figures">§</a> 4.2 Figures</h1>
@@ -319,12 +286,8 @@
 			<strong>Fig. 4.2 | </strong>Type Anatomy, a diagram and anatomy of typography.
 		</figcaption>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #block-quotes -->
 	<!-- http://www.projectevolution.com/activity/how-do-you-solve-a-problem-like-blockquote -->
 <!-- https://github.com/typeplate/typeplate.github.com/issues/95 -->
 <section class="block-quotes botDivider" id="block-quotes">
@@ -344,11 +307,8 @@
 		</figure>
 	</figure>
 
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #pull-quotes -->
 	<!-- http://24ways.org/2005/swooshy-curly-quotes-without-images -->
 <!-- http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/ -->
 <section class="pull-quotes botDivider" id="pull-quotes">
@@ -364,12 +324,8 @@
 			</blockquote>
 		</aside>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #footnotes -->
 	<section class="footnotes botDivider" id="footnotes">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#footnotes">§</a> 4.7 Footnotes</h1>
@@ -385,12 +341,8 @@
 			</footer>
 		</article>
 	</figure>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
-
-	<!-- #definition-lists -->
 	<section class="definition-lists botDivider" id="definition-lists">
 	<header>
 		<h1 class="gamma section-title"><a class="perma-anchor" href="#definition-lists">§</a> 4.8 Definition Lists</h1>
@@ -442,7 +394,6 @@
 		</dl>
 	</figure>
 
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
 </main>
