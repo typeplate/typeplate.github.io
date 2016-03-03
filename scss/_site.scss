@@ -1,5 +1,4 @@
 @import "queries";
-@import "fontello";
 
 // Typographic Attributes of Meta-serif
 //
@@ -113,11 +112,13 @@ hr {
 	padding: 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.29);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+
 	&.fancy {
 		border-bottom: 1px solid $cobalt-fade;
 		margin: 0 0 1.65em;
 		text-align: center;
-		&:after {
+
+		&::after {
 			@extend .typl8-delta;
 			background-color: #fcfcfc;
 			color: $cobalt-fade;
@@ -155,18 +156,20 @@ hr {
 }
 
 .logo-img {
+	width: 12em;
+
 	.svg & {
 		background: url("../img/logo.png") 50% no-repeat;
 		background-size: 100%;
 	}
+
 	.no-svg &,
 	.no-js & {
 		background: url("../img/logo.png") 50% no-repeat;
 		background-size: cover;
 	}
-	width: 12em;
 
-	&:before {
+	&::before {
 		content: "";
 		display: block;
 		width: 0;
@@ -189,9 +192,10 @@ hr {
 .header {
 	padding-top: 1.65em;
 	background: $white url("../img/typeplate-press.png") center bottom no-repeat;
-	// break
+
 	@include breakpoint(baby-bear) {
 		padding-top: 0;
+
 		p {
 			text-align: left;
 		}
@@ -230,11 +234,13 @@ hr {
 	line-height: 2;
 	letter-spacing: normal;
 	color: $rust;
+
 	&:hover,
 	&:focus {
 		text-decoration: none;
 		color: #000000;
 	}
+
 	&:last-child {
 		border-bottom: none;
 	}
@@ -254,14 +260,17 @@ hr {
 	text-align: center;
 }
 
+
 .btn {
 	@extend %transition;
+	border: none;
 	padding: $typl8-line-height * 0.5rem;
 	background: rgba(41, 41, 41, 0.97);
 
 	&:last-of-type {
 		margin-right: 0;
 	}
+
 	&:hover,
 	&:focus {
 		background: $download-btn-hover;
@@ -290,6 +299,7 @@ hr {
 	}
 }
 
+
 .downloads {
 	display: block;
 	padding: 1.65em 0;
@@ -302,11 +312,22 @@ hr {
 	}
 }
 
+
 .dl-item {
 	box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08), 1px 1px 1px rgb(0, 0, 0);
-	flex: 0 0 24%;
+	flex: 0 0 19%;
+	position: relative;
 	background: rgba(41, 41, 41, 0.22);
 	color: $white;
+
+	&::after {
+		content: attr(aria-label);
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -26px;
+		color: white;
+	}
 }
 
 
@@ -396,15 +417,19 @@ hr {
 
 .toc ol li:before {
 	counter-increment: item;
-	color: rgba(140, 0, 0, 0.66);
+	color: rgba(255, 255, 255, 0.7);
 	font-style: normal;
 	font-family: "Cassannet", "ff-meta-serif-web-pro", serif;
 }
 
 @for $i from 1 through 4 {
 	.toc ol:nth-of-type(#{$i}) li:before {
-		content: "#{$i}." counter(item) " – ";
+		content: "#{$i}." counter(item) " ... ";
 	}
+}
+
+.example ul li:hover {
+	content: attr(data-alt);
 }
 
 

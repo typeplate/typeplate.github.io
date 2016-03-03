@@ -12,16 +12,7 @@
 */
 
 
-// $Current Pattern Libraries
-// ============================================================
-// REUZE ME : http://reuze.me
-// PEARS : http://pea.rs
-// INUIT : http://inuitcss.com
-// THIS IS RESPONSIVE : http://bradfrost.github.com/this-is-responsive/
-// WebCraft : https://github.com/zakkain/webcraft
-
-
-// $W3C Specs - CSS3 Fonts Module
+// $W3C Fonts Module Spec
 // ============================================================
 // http://dev.w3.org/csswg/css3-fonts
 
@@ -30,14 +21,10 @@
 // ============================================================
 // http://blog.typekit.com/2010/10/15/type-rendering-operating-systems
 // http://stylemanual.org
-// http://ui-patterns.com
 // http://www.kaikkonendesign.fi/typography
 // http://www.w3.org/wiki/Common_HTML_entities_used_for_typography
 // http://webdesignerwall.com/tutorials/using-html-symbol-entities
-// http://spiffingcss.com
 // http://webtypography.net/toc
-// http://hackdesign.org/courses
-// http://designingfortheweb.co.uk/book
 
 
 // $Normalize - Sass Bower Package
@@ -64,7 +51,7 @@
 // $Icons
 // ============================================================
 
-@import "icons";
+// @import "icons";
 
 
 // $Prism

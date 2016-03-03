@@ -389,7 +389,7 @@ Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
 License ....... Creative Commmons Attribution 3.0
 License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
 */
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .icons, .typl8-gamma, h4, #drawer::after, .botDivider:not(.base-type):not(.header):after, .typl8-delta, h5, hr.fancy:after, .nav-item, .typl8-epsilon, .typeplate-code-block figcaption, blockquote + figcaption, .typl8-zeta, h6, .toc li {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .icons, .typl8-gamma, h4, #drawer::after, .botDivider:not(.base-type):not(.header):after, .typl8-delta, h5, hr.fancy::after, .nav-item, .typl8-epsilon, .typeplate-code-block figcaption, blockquote + figcaption, .typl8-zeta, h6, .toc li {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -454,7 +454,7 @@ body {
   margin-bottom: 21.8181818182px;
   margin-bottom: 1.2121212121rem; }
 
-.typl8-delta, h5, hr.fancy:after, .nav-item {
+.typl8-delta, h5, hr.fancy::after, .nav-item {
   font-size: 24px;
   font-size: 1.3333333333rem;
   margin-bottom: 14.5454545455px;
@@ -656,30 +656,6 @@ p + .typl8-drop-cap {
  * Extend this object into your markup.
  *
  */
-[data-icon]:before {
-  font-family: 'icomoon';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
-
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: 'icomoon';
-  font-style: normal;
-  speak: none;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
-
-.icon-menu:before {
-  content: "\e001"; }
-
-.icon-settings:before {
-  content: "\e000"; }
-
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: Monaco, 'Andale Mono', monospace;
@@ -785,45 +761,6 @@ pre[class*="language-"] {
 @viewport {
   width: device-width; }
 
-@font-face {
-  font-family: 'fontello';
-  src: url("../fonts/fontello/fontello.eot?49266960");
-  src: url("../fonts/fontello/fontello.eot?49266960#iefix") format("embedded-opentype"), url("../fonts/fontello/fontello.woff?49266960") format("woff"), url("../fonts/fontello/fontello.ttf?49266960") format("truetype"), url("../fonts/fontello/fontello.svg?49266960#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?49266960#fontello') format('svg');
-  }
-}
-*/
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: 'fontello';
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  font-size: 120%;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center; }
-
-.icon-download:before {
-  content: '\e758'; }
-
-.icon-github:before {
-  content: '\f300'; }
-
-.icon-twitter:before {
-  content: '\f309'; }
-
 a, .btn, .social-item {
   transition: .3s all ease-in-out; }
 
@@ -896,7 +833,7 @@ hr {
     border-bottom: 1px solid #b1b9c4;
     margin: 0 0 1.65em;
     text-align: center; }
-    hr.fancy:after {
+    hr.fancy::after {
       background-color: #fcfcfc;
       color: #b1b9c4;
       content: "§";
@@ -930,7 +867,7 @@ hr {
   .no-js .logo-img {
     background: url("../img/logo.png") 50% no-repeat;
     background-size: cover; }
-  .logo-img:before {
+  .logo-img::before {
     content: "";
     display: block;
     width: 0;
@@ -991,6 +928,7 @@ hr {
   text-align: center; }
 
 .btn {
+  border: none;
   padding: 0.825rem;
   background: rgba(41, 41, 41, 0.97); }
   .btn:last-of-type {
@@ -1029,11 +967,19 @@ hr {
 
 .dl-item {
   box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08), 1px 1px 1px black;
-  -webkit-flex: 0 0 24%;
-      -ms-flex: 0 0 24%;
-          flex: 0 0 24%;
+  -webkit-flex: 0 0 19%;
+      -ms-flex: 0 0 19%;
+          flex: 0 0 19%;
+  position: relative;
   background: rgba(41, 41, 41, 0.22);
   color: rgba(255, 255, 255, 0.75); }
+  .dl-item::after {
+    content: attr(aria-label);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -26px;
+    color: white; }
 
 .social-nav {
   position: absolute;
@@ -1098,21 +1044,24 @@ hr {
 
 .toc ol li:before {
   counter-increment: item;
-  color: rgba(140, 0, 0, 0.66);
+  color: rgba(255, 255, 255, 0.7);
   font-style: normal;
   font-family: "Cassannet", "ff-meta-serif-web-pro", serif; }
 
 .toc ol:nth-of-type(1) li:before {
-  content: "1." counter(item) " – "; }
+  content: "1." counter(item) " ... "; }
 
 .toc ol:nth-of-type(2) li:before {
-  content: "2." counter(item) " – "; }
+  content: "2." counter(item) " ... "; }
 
 .toc ol:nth-of-type(3) li:before {
-  content: "3." counter(item) " – "; }
+  content: "3." counter(item) " ... "; }
 
 .toc ol:nth-of-type(4) li:before {
-  content: "4." counter(item) " – "; }
+  content: "4." counter(item) " ... "; }
+
+.example ul li:hover {
+  content: attr(data-alt); }
 
 #table-of-contents h1 {
   margin: 0;

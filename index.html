@@ -57,13 +57,16 @@
 		<!-- Main content -->
 		<nav class="downloads nav">
 	<div class="col-wrap">
-		<a href="//raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn" title="typeplate.css">CSS</a>
 
-		<a href="//github.com/typeplate/starter-kit/blob/development/typeplate-sk.zip?raw=true" data-name="Sass Port" class="dl-item btn" title="typeplate.scss">Sass</a>
+		<a href="https://raw.github.com/typeplate/starter-kit/master/css/typeplate.css" data-name="CSS Port" class="dl-item btn" title="typeplate.css">CSS</a>
 
-		<a href="https://github.com/typeplate/starter-kit" data-name="Bower Package" class="dl-item btn" title="bower install typeplate-starter-kit --save">Bower</a>
+		<a href="https://github.com/typeplate/starter-kit/blob/development/typeplate-sk.zip?raw=true" data-name="Sass Port" class="dl-item btn" title="typeplate.scss">Sass</a>
 
-		<a href="https://github.com/typeplate/starter-kit" data-name="NPM Package" class="dl-item btn" title="npm install typeplate --save">NPM</a>
+		<button data-name="CDJS Package" class="dl-item btn" data-clipboard-action="copy" data-clipboard-text="https://cdnjs.com/typeplate">CDNJS</button>
+
+		<button data-name="Bower Package" class="dl-item btn" data-clipboard-action="copy" data-clipboard-text="bower install typeplate-starter-kit --save">Bower</button>
+
+		<button data-name="NPM Package" class="dl-item btn" data-clipboard-action="copy" data-clipboard-text="npm install typeplate --save">NPM</button>
 	</div>
 </nav>
 
@@ -157,9 +160,9 @@
 
 	<figure class="example">
 		<ul style="display: flex;" class="list-reset">
-			<li style="width: 100px;height: 100px; background: #000"></li>
-			<li style="width: 100px;height: 100px; background: #222"></li>
-			<li style="width: 100px;height: 100px; background: #444"></li>
+			<li style="width: 100px;height: 100px; background: #000"><code style="color:#CCC">#000</code></li>
+			<li style="width: 100px;height: 100px; background: #222"><code style="color:#CCC">#222</code></li>
+			<li style="width: 100px;height: 100px; background: #444"><code style="color:#CCC">#444</code></li>
 		</ul>
 	</figure>
 </section>
@@ -174,8 +177,6 @@
 	<h2 class="typl8-zeta">Example:</h2>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio iste voluptates saepe ipsa magni repellendus explicabo numquam expedita dolore eveniet accusantium iure sit consequatur? Dolore minus vel blanditiis velit deserunt! We’ll also be checking a few things like the longest word in the world “Methionylthreonylthreonylglutaminylarginylisoleucine” and other stuff like links that are way long such as <a href="http://google.com" rel="external">“Methionylthreonylthreonylglutaminylarginylisoleucine”</a> and other long links like <a href="http://google.com" rel="external">http://192.168.1.100/somedirectory/stayout/of/my/shit</a></p>
-
-	<a href="#table-of-contents" class="anchorLink btn btn-backtotop">↑ back to top</a>
 </section>
 
 	<section class="indenting botDivider" id="indenting">
@@ -240,7 +241,7 @@
 	</header>
 	<p>With the <a href="http://24ways.org/2011/creating-custom-font-stacks-with-unicode-range"><code>unicode-range</code></a> property we can avoid using verbose markup and only target the characters we like according to the unicode unique identifier. We also harness the power of the <code>%placeholder</code> in Sass allowing like minded selectors to string together this shared property in a DRY way from one single declaration. Copy and paste the Sass below into <a href="http://codepen.io/pen" rel="external">Codepen</a> and check out the output for yourself. Hint: create multiple classes.</p>
 
-	<figure class="example amp-example">
+	<figure class="example">
 		<p class="amp">Amper & Sands</p>
 	</figure>
 </section>
@@ -253,8 +254,7 @@
 
 	<figure class="typl8-blockquote">
 			<blockquote cite="http://html5doctor.com/small-hr-element/">
-				<p><code>small</code> is now for side comments, which are the inline equivalent of <code>aside</code>—content which is not the main focus of the page. A common example is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content.</p>
-				<p><code>small</code> text does not need to be smaller than surrounding text &mdash; if all you want is smaller text use CSS instead. Use <code>small</code> only on inline content.</p>
+				<p>…A common use is inline legalese, such as a copyright statement in a page footer, a disclaimer, or licensing information. It can also be used for attribution. Don’t use it for block-level content (paragraphs, lists, etc.), as this would be considered main content. <code>small</code> text does not need to be smaller than surrounding text &mdash; if all you want is smaller text use CSS instead.</p>
 			</blockquote>
 			<figcaption><cite><small><a href="http://html5doctor.com/small-hr-element/">Oli Studholme</a></small></cite></figcaption>
 	</figure>
@@ -273,6 +273,14 @@
 	</header>
 	<p><code>Monospace</code> fonts just as you desire for all your code block dreams! Monospace fonts or <i>“fixed pitch”</i> fonts, contain characters that all have the same character width. ‘l’, ‘1’ and ‘i’ are easily distinguished with monospace, ‘0’, ‘o’ and ‘O’ are easily distinguished and clear punctuation characters, especially braces, parenthesis and brackets.</p>
 
+
+<figure class="typeplate-code-block">
+	<pre class="language-css"><code>.this-widget {
+  max-width: 200px;
+  opacity: 0.5;
+  color: red;
+}</code></pre>
+</figure>
 </section>
 
 	<section class="figures botDivider" id="figures">
@@ -285,6 +293,16 @@
 		<figcaption class="example-figcaption">
 			<strong>Fig. 4.2 | </strong>Type Anatomy, a diagram and anatomy of typography.
 		</figcaption>
+	</figure>
+
+	<figure class="typeplate-code-block">
+		<pre class="language-markup"><code>&lt;figure&gt;
+	&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
+
+	&lt;figcaption&gt;
+		&lt;strong&gt;&lt;/strong&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
 	</figure>
 </section>
 
@@ -305,6 +323,20 @@
 			</blockquote>
 			<figcaption><cite><small><a href="http://trentwalton.com/2012/06/19/fluid-type">Trent Walton</a></small></cite></figcaption>
 		</figure>
+	</figure>
+
+	<figure class="typeplate-code-block">
+	<pre class="language-markup"><code>&lt;figure&gt;
+	&lt;blockquote cite=&quot;&quot;&gt;
+		&lt;p&gt;&lt;/p&gt;
+	&lt;/blockquote&gt;
+
+	&lt;figcaption&gt;
+	  &lt;cite&gt;
+	    &lt;small&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/small&gt;
+	  &lt;/cite&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
 	</figure>
 
 </section>
@@ -410,6 +442,55 @@
 		<!-- JavaScript and analytics -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
+
+<script src="./node_modules/clipboard/dist/clipboard.min.js"></script>
+<script>
+var dl_btns        = document.querySelectorAll('.btn'),
+		dl_btns_length = dl_btns.length;
+
+for (var i = 0, l = dl_btns_length; i < l; i++) {
+	dl_btns[i].addEventListener('mouseleave', function(e) {
+		e.currentTarget.classList.toggle('tooltipped');
+		e.currentTarget.removeAttribute('aria-label');
+	});
+}
+
+function showTooltip(elem, msg) {
+	elem.classList.toggle('tooltipped');
+	elem.setAttribute('aria-label', msg);
+}
+
+function fallbackMessage(action) {
+	var actionMsg = '',
+			actionKey = (action === 'cut' ? 'X' : 'C');
+
+	if(/iPhone|iPad/i.test(navigator.userAgent)) {
+		actionMsg = 'No support :(';
+	}
+
+	else if (/Mac/i.test(navigator.userAgent)) {
+		actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+	}
+
+	else {
+		actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+	}
+
+	return actionMsg;
+}
+
+// https://clipboardjs.com
+var clipboard = new Clipboard('.dl-item.btn');
+
+clipboard.on('success', function(e) {
+	e.clearSelection();
+	showTooltip(e.trigger, 'Copied!')
+});
+
+clipboard.on('error', function(e) {
+	showTooltip(e.trigger, fallbackMessage(e.action));
+});
+</script>
 
 
 <script src="./js/minified/main-min.js?v=2.0.0"></script>

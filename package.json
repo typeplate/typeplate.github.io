@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.3.3",
+    "clipboard": "^1.5.9",
     "grunt-postcss": "^0.7.2"
   }
 }
