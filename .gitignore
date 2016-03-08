@@ -7,8 +7,10 @@ publish
 #Hidden Mac dir Files
 .DS_Store
 
-# Sass Cache dir
+# Sass
 .sass-cache
+css/*.map
+scss/*.map
 
 # NPM
 npm-debug.log

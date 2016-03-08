@@ -1025,8 +1025,9 @@ hr {
   padding-bottom: 1.65em; }
 
 .toc ol {
+  counter-reset: item;
   list-style: decimal !important;
-  counter-reset: item; }
+  padding-left: 0; }
 
 .toc li {
   display: block; }
@@ -1089,8 +1090,8 @@ hr {
   height: 0;
   min-height: 0;
   opacity: 0;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
   position: relative;
   transition: 480ms all cubic-bezier(0.68, -0.55, 0.27, 1.55);
   color: white; }

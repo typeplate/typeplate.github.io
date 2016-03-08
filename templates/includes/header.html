@@ -1,17 +1,21 @@
 <header class="header botDivider column" role="banner">
 	{{#is basename 'index'}}<div class="col-wrap top">{{/is}}
 
+	{{#is basename 'index'}}
 	<!-- oppa csswizardry style: http://csswizardry.com/2013/01/your-logo-is-still-an-image-and-so-is-mine -->
 	<a href="." class="logo">
 		<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Typeplate" class="logo-img">
 	</a>
+	{{/is}}
 
+	{{#is basename 'index'}}
 	<nav class="nav nav-primary" role="navigation">
-		{{#is basename 'index'}}<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Live Demo</a>{{/is}}
+		<a href="./demo.html" class="nav-item epsilon" rel="bookmark">Live Demo</a>
 		<a href="http://blog.typeplate.com" class="nav-item epsilon" rel="external">News & Updates</a>
 		<a href="https://github.com/typeplate/starter-kit/issues" class="nav-item epsilon" rel="external">Bug Tracker</a>
 		<a href="https://twitter.com/Typeplate" class="nav-item epsilon" rel="external">Say Hello</a>
 	</nav>
+	{{/is}}
 
 	{{#is basename 'index'}}
 		<nav class="social-nav">
