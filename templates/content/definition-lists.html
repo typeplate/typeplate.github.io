@@ -17,6 +17,17 @@
 		</dl>
 	</figure>
 
+<figure class="typeplate-code-block">
+	<pre class="language-markup"><code>&lt;dl&gt;
+	&lt;dt&gt;&lt;b&gt;This is a term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;this is the definition of that term, which both live in a &lt;code&gt;dl&lt;/code&gt;.&lt;/dd&gt;
+
+	&lt;dt&gt;&lt;b&gt;Another Term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;And it gets a definition too, which is this line&lt;/dd&gt;
+	&lt;dd&gt;This is a 2&lt;sup&gt;nd&lt;/sup&gt; definition for a single term. A &lt;code&gt;dt&lt;/code&gt; may be followed by multiple &lt;code&gt;dd&lt;/code&gt;s.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</figure>
+
 	<h3 class="typl8-delta">b) Inline Definitions</h3>
 	<p>The second format for definition lists is lining. This style is more robust, with support for multiple terms defined by a single definition, and applies proper punctuation (: ,) where appropriate:</p>
 
@@ -32,6 +43,22 @@
 				<dd><code>dt</code> terms may stand on their own without an accompanying <code>dd</code>, but in that case they <em>share</em> descriptions with the next available <code>dt</code>. You may not have a <code>dd</code> without a parent <code>dt</code>.</dd>
 		</dl>
 	</figure>
+
+<figure class="typeplate-code-block">
+	<pre class="language-markup"><code>&lt;dl class=&quot;typl8-lining&quot;&gt;
+	&lt;dt&gt;&lt;b&gt;This is a term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;this is the definition of that term, which both live in a &lt;code&gt;dl&lt;/code&gt;.&lt;/dd&gt;
+
+	&lt;dt&gt;&lt;b&gt;Another Term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd class=&quot;micro&quot;&gt;And it gets a definition too, which is this line&lt;/dd&gt;
+	&lt;dd class=&quot;micro&quot;&gt; this is a 2&lt;sup&gt;nd&lt;/sup&gt; definition for a single term.&lt;/dd&gt;
+
+	&lt;dt&gt;&lt;b&gt;Term&lt;/b&gt;&lt;/dt&gt;
+
+	&lt;dt&gt;&lt;b&gt;Other Defined Term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;code&gt;dt&lt;/code&gt; terms may stand on their own without an accompanying &lt;code&gt;dd&lt;/code&gt;, but in that case they &lt;em&gt;share&lt;/em&gt; descriptions with the next available &lt;code&gt;dt&lt;/code&gt;. You may not have a &lt;code&gt;dd&lt;/code&gt; without a parent &lt;code&gt;dt&lt;/code&gt;.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</figure>
 
 	<h3 class="typl8-delta">c) Dictionary-style Definition</h3>
 	<p>The third format for definition lists is dictionary. This style is more a formal, applying proper punctuation where necessary and includes ordinal indicators:</p>
@@ -49,4 +76,19 @@
 		</dl>
 	</figure>
 
+<figure class="typeplate-code-block">
+	<pre class="language-markup"><code>&lt;dl class=&quot;typl8-dictionary-style&quot;&gt;
+	&lt;dt&gt;&lt;b&gt;This is a term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;this is the definition of that term, which both live in a &lt;code&gt;dl&lt;/code&gt;.&lt;/dd&gt;
+
+	&lt;dt&gt;&lt;b&gt;Another Term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;And it gets a definition too, which is this line&lt;/dd&gt;
+	&lt;dd&gt; this is a 2&lt;sup&gt;nd&lt;/sup&gt; definition for a single term.&lt;/dd&gt;
+
+	&lt;dt&gt;&lt;b&gt;Term&lt;/b&gt;&lt;/dt&gt;
+
+	&lt;dt&gt;&lt;b&gt;Other Defined Term&lt;/b&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;code&gt;dt&lt;/code&gt; terms may stand on their own without an accompanying &lt;code&gt;dd&lt;/code&gt;, but in that case they &lt;em&gt;share&lt;/em&gt; descriptions with the next available &lt;code&gt;dt&lt;/code&gt;. You may not have a &lt;code&gt;dd&lt;/code&gt; without a parent &lt;code&gt;dt&lt;/code&gt;.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</figure>
 </section>

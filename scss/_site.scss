@@ -315,7 +315,7 @@ hr {
 
 .dl-item {
 	box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.08), 1px 1px 1px rgb(0, 0, 0);
-	flex: 0 0 19%;
+	flex: 0 0 23.5%;
 	position: relative;
 	background: rgba(41, 41, 41, 0.22);
 	color: $white;
@@ -493,18 +493,16 @@ hr {
 // ============================================================
 
 .example {
+	border-radius: 2px;
 	margin-left: 0;
 	margin-right: 0;
-	&:before {
-		content: "example:";
-		font-style: italic;
-		display: block;
-		background: none;
-		position: relative;
-		color: #9F9F9F;
-		top: 0;
-		left: 0;
-	}
+	padding: 20px 20px 10px;
+	background: rgba(204, 204, 204, 0.38);
+}
+
+.example--ampersand {
+	background: transparent;
+	padding-bottom: 0;
 }
 
 .example > pre {
