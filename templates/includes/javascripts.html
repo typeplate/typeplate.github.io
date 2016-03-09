@@ -1,7 +1,7 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
 
-<script src="./node_modules/clipboard/dist/clipboard.min.js"></script>
+<script src="./js/minified/clipboard.min.js"></script>
 <script>
 var dl_btns        = document.querySelectorAll('.btn'),
 		dl_btns_length = dl_btns.length;
@@ -50,10 +50,6 @@ clipboard.on('error', function(e) {
 });
 </script>
 
-{{#is basename 'index'}}
-<script src="./js/minified/main-min.js?v=2.0.0"></script>
-{{/is}}
-
 {{#is basename 'demo'}}
 <script>
 	$(document).ready(function() {
@@ -95,6 +91,9 @@ clipboard.on('error', function(e) {
 </script>
 {{/is}}
 
+{{#is basename 'index'}}
+<script src="./js/minified/main-min.js?v=2.0.0"></script>
+{{/is}}
 
 {{#if site.analytics.google.enabled}}
 	{{> google-analytics }}
