@@ -9,11 +9,7 @@ Typeplate is a "typographic starter kit". We don&rsquo;t make aesthetic design c
 <img src="https://raw.github.com/paulirish/browser-logos/master/main-desktop.png" alt="" width="375">
 
 ## &sect; File Size
-Not much goin&rsquo; on here in terms of bulk. As you can see, Typeplate is just a measely 3kb when compressed. That's really, really small.
-
-- Raw Sass = **18 KB**
-- Compressed Sass = **3 KB**
-- Raw CSS = **10 KB**
+Typeplate is just a measely **4.91 KB** and especially smaller when compressed!
 
 ## &sect; Docs
 You'll “[find our documentation here](https://github.com/typeplate/starter-kit/blob/master/README.md)”. This document includes all the required instructions to get started with Typeplate.
@@ -43,7 +39,7 @@ If you would like to contribute to the core of the Typeplate project and not to 
 * Make sure your commit messages are in the proper format.
 
 ````
-(Issue#) Commit message about your awesome code contribution. 
+(Issue#) Commit message about your awesome code contribution.
 ##only provide an issue number if you're PR is referencing an issue.
 ````
 
@@ -62,8 +58,7 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 ## &sect; Project Stack
 ### Language Abstractions
 
-- [Compass](http://compass-style.org)
-- [Sass](http://sass-lang.com)
+- [Sass - (LibSass)](http://sass-lang.com)
 
 ### Build Tools
 
@@ -71,43 +66,17 @@ When contributing (by the way you're awesome for that so thanks) please keep you
 
 ### Package Management
 
-- [Bower](https://github.com/bower/bower) (requires [Node](http://nodejs.org) &amp; [npm](https://npmjs.org))
-
+- [Bower](https://github.com/bower/bower)
 
 ## &sect; Local Development (mac, linux)
 
-Gem dependencies are installed using [Bundler](http://bundler.io). Bundler maintains a consistent environment for ruby applications.
-It tracks an application's code and the rubygems it needs to run, so that an application will always have the exact gems (and versions)
-that it needs.
-
-If you don't have Bundler installed you can install it like so:
+Install Packages
 
 ```bash
-$ gem install bundler
+$ npm install && bower install
 ```
 
-Once Bundler is installed run the following command:
-
-```bash
-$ bundle install
-```
-
-**You can always check if the correct Gems are installed by running the bash command ``gem list`` which will list all your gem dependencies installed.**
-
-Install Bower Components
-
-```bash
-$ bower install
-```
-
-Install NPM Modules for Grunt
-
-```bash
-$ npm install
-```
-
-
-&sect; **Compiling** : JavaScript, Sass and Compass
+&sect; **Compiling** : JavaScript, Sass
 
 In order to compile our projects stylesheets and scripts we use [Grunt](http://gruntjs.com) which is platform independent JavaScript task runner. To start using Grunt run ``npm install`` from the project's root directory. If you're still curious how to use Grunt then feel free to leave us a comment in our project's [Issue Tracker](https://github.com/typeplate/bower/issues).
 
@@ -119,7 +88,9 @@ Those that choose to use [Grunt](http://gruntjs.com) you can execute the command
 
 To keep track of our packages and allow for easy updating we use [Bower](https://github.com/bower/bower) Package Manager which installs all our project's packages in the "components" directory. In order to install bower you must have Node and npm installed on your machine. Once Node and npm are installed simply run the command below  (which works on both Windows/Mac and one of the reasons why we chose it).
 
-  npm install bower -g
+```bash
+npm install bower -g
+```
 
 ## &sect; What Else Is There?
 With so many packages to choose from, we recommend a few libraries to use with Typeplate to compliment. Bon Appetite!
